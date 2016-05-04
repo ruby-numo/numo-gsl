@@ -1,4 +1,4 @@
-# Numo::GSL : GSL wrapper for Numo::NArray
+# GSL interface for Ruby with Numo::NArray
 
 * Pre-alpha version under development.
 * [GitHub site](https://github.com/masa16/numo-gsl)
