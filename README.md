@@ -1,6 +1,7 @@
 # Numo::GSL : GSL wrapper for Numo::NArray
 
-* [GitHub](https://github.com/masa16/numo-gsl)
+* Pre-alpha, development version.
+* [GitHub site](https://github.com/masa16/numo-gsl)
 
 ## Implemented Modules
 
