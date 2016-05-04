@@ -4,7 +4,7 @@
 
 ## Implemented Modules
 
-* [Special Functions](https://www.gnu.org/software/gsl/manual/html_node/Special-Functions.html)
+* [Special Functions](http://masa16.github.io/numo-gsl/ref/sf/Numo/GSL/Sf.html)
 
   * More modules will be implemented.
 
