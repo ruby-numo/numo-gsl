@@ -1,0 +1,17 @@
+COGEN=ruby gen/cogen.rb -l
+ERB=gen/gsl_sf.erb.c
+DEPS=$(ERB) gen/erbpp_gsl.rb gen/tmpl/*.c
+
+doc : gsl_sf.c
+	yard doc *.c types/*.c
+
+gsl_sf.c : $(DEPS)
+	$(COGEN) -o $@ $(ERB)
+
+cleansrc:
+	-$(Q)$(RM) gsl_sf.c
+
+cleandoc:
+	-$(Q)$(RM_RF) doc .yardoc
+
+clean: cleansrc cleandoc

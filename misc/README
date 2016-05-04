@@ -1,0 +1,9 @@
+= generate ext/numo/gsl/sf/gen/gsl_sf_def.rb from texinfo
+
+    ruby deftypefun.rb
+
+= compare function lists from C header and texinfo
+
+    ruby mklist.rb gsl_sf_def.rb > list_from_texi
+    ruby parse_c.rb |sort> list_from_header
+    diff -wu list_from_texi list_from_header|lv
