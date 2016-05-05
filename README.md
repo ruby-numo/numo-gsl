@@ -7,9 +7,9 @@
 
 * [Mathematical Functions](http://masa16.github.io/numo-gsl/doc/Numo/GSL.html)
 * [Special Functions](http://masa16.github.io/numo-gsl/doc/Numo/GSL/Sf.html)
-* [Constatnts](http://masa16.github.io/numo-gsl/doc/Numo/GSL/Const.html)
+* [Constants](http://masa16.github.io/numo-gsl/doc/Numo/GSL/Const.html)
 
-* More modules will be implemented.
+More modules will be implemented.
 
 ## Installation
 
