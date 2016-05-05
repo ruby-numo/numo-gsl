@@ -151,7 +151,7 @@ if __FILE__ == $0
       g.tables.each do |t|
         t.each do |x|
           if name_re =~ x[0]
-            list[x[0]] = x[1]
+            list[x[0].strip] = x[1]
           end
         end
       end
@@ -159,8 +159,9 @@ if __FILE__ == $0
       #list = b.map{|x| DefTypeFun.new(*x)}
       #list.each{|x| puts x if /^gsl_sf_/=~x.func_name}
     end
+    list2 = list.keys.sort.map{|k| [k,list[k]]}
     FileUtils.mkdir_p(File.dirname(out_path))
-    PP.pp(list.to_a,open(out_path,"w"))
-    puts "Wrote #{list.size} definitions to #{out_path}"
+    PP.pp(list2,open(out_path,"w"))
+    puts "Wrote #{list2.size} definitions to #{out_path}"
   end
 end
