@@ -114,7 +114,7 @@ Init_sf()
     rb_define_const(mG,"PREC_SINGLE",INT2FIX(GSL_PREC_SINGLE));
     rb_define_const(mG,"PREC_APPROX",INT2FIX(GSL_PREC_APPROX));
 
-    mL = rb_define_module_under(mG, "Legendre");
+    mL = rb_define_module_under(mSf, "Legendre");
     rb_define_const(mL,"SCHMIDT",INT2FIX(GSL_SF_LEGENDRE_SCHMIDT));
     rb_define_const(mL,"SPHARM",INT2FIX(GSL_SF_LEGENDRE_SPHARM));
     rb_define_const(mL,"FULL",INT2FIX(GSL_SF_LEGENDRE_FULL));
