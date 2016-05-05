@@ -79,7 +79,7 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">gsl_sf.c</dd>
+    <dd class="r1 last">ext/numo/gsl/sf/gsl_sf.c</dd>
   
 </dl>
 <div class="clear"></div>
@@ -87,6 +87,8 @@
 <h2>Defined Under Namespace</h2>
 <p class="children">
   
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Sf/Legendre.html" title="Numo::GSL::Sf::Legendre (module)">Legendre</a></span>
     
   
     
@@ -6262,8 +6264,8 @@ int_0^xdt exp(-t^3)$ Ei_3(x) = int_0^xdt exp(-t^3) for $x ge 0$ x &gt;= 0.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>These routines compute the quantity exp(x)-1 using an algorithm that is
-accurate for small x.</p>
+<p>This function computes the value of exp(x)-1 in a way that is accurate for
+small x.</p>
 </div></span>
   
 </li>
@@ -8203,7 +8205,8 @@ with extended range.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>These routines compute the hypotenuse function $sqrt+ y^2$ sqrt@+ y^2@ avoiding overflow and underflow.</p>
+<p>This function computes the value of $sqrt+ y^2$ sqrt@+ y^2@ in
+a way that avoids overflow.</p>
 </div></span>
   
 </li>
@@ -10950,7 +10953,7 @@ coordinates (x,y), x = rcos(theta), y = rsin(theta).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>These routines compute the power x^n for integer n.</p>
+<p>These routines computes the power x^n for integer n.</p>
 </div></span>
   
 </li>
@@ -12186,7 +12189,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 131</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 131</span>
 
 static VALUE
 numo_s_airy_Ai(int argc, VALUE *v, VALUE mod)
@@ -12350,7 +12353,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 796</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 759</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 759</span>
 
 static VALUE
 numo_s_airy_Ai_deriv(int argc, VALUE *v, VALUE mod)
@@ -12514,7 +12517,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 876</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 839</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 839</span>
 
 static VALUE
 numo_s_airy_Ai_deriv_e(int argc, VALUE *v, VALUE mod)
@@ -12679,7 +12682,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 1108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1071</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1071</span>
 
 static VALUE
 numo_s_airy_Ai_deriv_scaled(int argc, VALUE *v, VALUE mod)
@@ -12844,7 +12847,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 1190</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1153</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1153</span>
 
 static VALUE
 numo_s_airy_Ai_deriv_scaled_e(int argc, VALUE *v, VALUE mod)
@@ -13008,7 +13011,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 211</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 211</span>
 
 static VALUE
 numo_s_airy_Ai_e(int argc, VALUE *v, VALUE mod)
@@ -13173,7 +13176,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 481</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 444</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 444</span>
 
 static VALUE
 numo_s_airy_Ai_scaled(int argc, VALUE *v, VALUE mod)
@@ -13338,7 +13341,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 564</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 527</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 527</span>
 
 static VALUE
 numo_s_airy_Ai_scaled_e(int argc, VALUE *v, VALUE mod)
@@ -13502,7 +13505,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 323</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 286</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 286</span>
 
 static VALUE
 numo_s_airy_Bi(int argc, VALUE *v, VALUE mod)
@@ -13666,7 +13669,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 951</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 914</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 914</span>
 
 static VALUE
 numo_s_airy_Bi_deriv(int argc, VALUE *v, VALUE mod)
@@ -13830,7 +13833,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 1031</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 994</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 994</span>
 
 static VALUE
 numo_s_airy_Bi_deriv_e(int argc, VALUE *v, VALUE mod)
@@ -13995,7 +13998,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 1267</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1230</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1230</span>
 
 static VALUE
 numo_s_airy_Bi_deriv_scaled(int argc, VALUE *v, VALUE mod)
@@ -14160,7 +14163,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 1349</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1312</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1312</span>
 
 static VALUE
 numo_s_airy_Bi_deriv_scaled_e(int argc, VALUE *v, VALUE mod)
@@ -14324,7 +14327,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 403</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 366</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 366</span>
 
 static VALUE
 numo_s_airy_Bi_e(int argc, VALUE *v, VALUE mod)
@@ -14489,7 +14492,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 640</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 603</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 603</span>
 
 static VALUE
 numo_s_airy_Bi_scaled(int argc, VALUE *v, VALUE mod)
@@ -14654,7 +14657,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 721</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 684</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 684</span>
 
 static VALUE
 numo_s_airy_Bi_scaled_e(int argc, VALUE *v, VALUE mod)
@@ -14787,7 +14790,7 @@ Ai(x).</p>
 1405</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1382</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1382</span>
 
 static VALUE
 numo_s_airy_zero_Ai(VALUE mod,VALUE v0)
@@ -14906,7 +14909,7 @@ derivative Ai&#39;(x).</p>
 1637</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1614</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1614</span>
 
 static VALUE
 numo_s_airy_zero_Ai_deriv(VALUE mod,VALUE v0)
@@ -15025,7 +15028,7 @@ derivative Ai&#39;(x).</p>
 1697</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1674</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1674</span>
 
 static VALUE
 numo_s_airy_zero_Ai_deriv_e(VALUE mod,VALUE v0)
@@ -15144,7 +15147,7 @@ Ai(x).</p>
 1465</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1442</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1442</span>
 
 static VALUE
 numo_s_airy_zero_Ai_e(VALUE mod,VALUE v0)
@@ -15263,7 +15266,7 @@ Bi(x).</p>
 1521</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1498</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1498</span>
 
 static VALUE
 numo_s_airy_zero_Bi(VALUE mod,VALUE v0)
@@ -15382,7 +15385,7 @@ derivative Bi&#39;(x).</p>
 1753</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1730</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1730</span>
 
 static VALUE
 numo_s_airy_zero_Bi_deriv(VALUE mod,VALUE v0)
@@ -15501,7 +15504,7 @@ derivative Bi&#39;(x).</p>
 1813</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1790</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1790</span>
 
 static VALUE
 numo_s_airy_zero_Bi_deriv_e(VALUE mod,VALUE v0)
@@ -15620,7 +15623,7 @@ Bi(x).</p>
 1581</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1558</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1558</span>
 
 static VALUE
 numo_s_airy_zero_Bi_e(VALUE mod,VALUE v0)
@@ -15743,7 +15746,7 @@ the machine number 2*M_PI is included in the range.</p>
 31581</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31558</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31558</span>
 
 static VALUE
 numo_s_angle_restrict_pos(VALUE mod,VALUE v0)
@@ -15865,7 +15868,7 @@ Return Values: GSL_ELOSS</p>
 31519</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31496</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31496</span>
 
 static VALUE
 numo_s_angle_restrict_symm(VALUE mod,VALUE v0)
@@ -15985,7 +15988,7 @@ arctan(t)/t. Domain: Exceptional Return Values:</p>
 15944</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15921</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15921</span>
 
 static VALUE
 numo_s_atanint(VALUE mod,VALUE v0)
@@ -16105,7 +16108,7 @@ arctan(t)/t. Domain: Exceptional Return Values:</p>
 16006</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15983</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15983</span>
 
 static VALUE
 numo_s_atanint_e(VALUE mod,VALUE v0)
@@ -16224,7 +16227,7 @@ zeroth order, I_0(x). Exceptional Return Values: GSL_EOVRFLW</p>
 2819</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2796</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2796</span>
 
 static VALUE
 numo_s_bessel_I0(VALUE mod,VALUE v0)
@@ -16343,7 +16346,7 @@ zeroth order, I_0(x). Exceptional Return Values: GSL_EOVRFLW</p>
 2880</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2857</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2857</span>
 
 static VALUE
 numo_s_bessel_I0_e(VALUE mod,VALUE v0)
@@ -16462,7 +16465,7 @@ function of zeroth order exp(-|x|) I_0(x). Exceptional Return Values: none</p>
 3296</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3273</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3273</span>
 
 static VALUE
 numo_s_bessel_I0_scaled(VALUE mod,VALUE v0)
@@ -16581,7 +16584,7 @@ function of zeroth order, exp(-|x|) i_0(x). Exceptional Return Values: none</p>
 6012</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5989</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5989</span>
 
 static VALUE
 numo_s_bessel_i0_scaled(VALUE mod,VALUE v0)
@@ -16700,7 +16703,7 @@ function of zeroth order exp(-|x|) I_0(x). Exceptional Return Values: none</p>
 3357</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3334</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3334</span>
 
 static VALUE
 numo_s_bessel_I0_scaled_e(VALUE mod,VALUE v0)
@@ -16819,7 +16822,7 @@ function of zeroth order, exp(-|x|) i_0(x). Exceptional Return Values: none</p>
 6073</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6050</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6050</span>
 
 static VALUE
 numo_s_bessel_i0_scaled_e(VALUE mod,VALUE v0)
@@ -16938,7 +16941,7 @@ first order, I_1(x). Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 2937</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2914</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2914</span>
 
 static VALUE
 numo_s_bessel_I1(VALUE mod,VALUE v0)
@@ -17057,7 +17060,7 @@ first order, I_1(x). Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 2998</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2975</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2975</span>
 
 static VALUE
 numo_s_bessel_I1_e(VALUE mod,VALUE v0)
@@ -17177,7 +17180,7 @@ GSL_EUNDRFLW</p>
 3414</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3391</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3391</span>
 
 static VALUE
 numo_s_bessel_I1_scaled(VALUE mod,VALUE v0)
@@ -17297,7 +17300,7 @@ GSL_EUNDRFLW</p>
 6130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6107</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6107</span>
 
 static VALUE
 numo_s_bessel_i1_scaled(VALUE mod,VALUE v0)
@@ -17417,7 +17420,7 @@ GSL_EUNDRFLW</p>
 3475</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3452</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3452</span>
 
 static VALUE
 numo_s_bessel_I1_scaled_e(VALUE mod,VALUE v0)
@@ -17537,7 +17540,7 @@ GSL_EUNDRFLW</p>
 6191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6168</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6168</span>
 
 static VALUE
 numo_s_bessel_i1_scaled_e(VALUE mod,VALUE v0)
@@ -17657,7 +17660,7 @@ GSL_EUNDRFLW</p>
 6248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6225</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6225</span>
 
 static VALUE
 numo_s_bessel_i2_scaled(VALUE mod,VALUE v0)
@@ -17777,7 +17780,7 @@ GSL_EUNDRFLW</p>
 6309</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6286</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6286</span>
 
 static VALUE
 numo_s_bessel_i2_scaled_e(VALUE mod,VALUE v0)
@@ -17916,7 +17919,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 6380</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6349</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6349</span>
 
 static VALUE
 numo_s_bessel_il_scaled(VALUE mod,VALUE v0,VALUE v1)
@@ -18072,7 +18075,7 @@ Conditions: l=0,1,…,lmax Exceptional Return Values: GSL_EUNDRFLW</p>
 6544</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6507</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6507</span>
 
 static VALUE
 numo_s_bessel_il_scaled_array(VALUE mod,VALUE v0,VALUE v1)
@@ -18225,7 +18228,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 6456</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6425</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6425</span>
 
 static VALUE
 numo_s_bessel_il_scaled_e(VALUE mod,VALUE v0,VALUE v1)
@@ -18371,7 +18374,7 @@ order n, I_n(x). Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 3068</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3037</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3037</span>
 
 static VALUE
 numo_s_bessel_In(VALUE mod,VALUE v0,VALUE v1)
@@ -18544,7 +18547,7 @@ nmin Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW, GSL_EUNDRFLW</p>
 3239</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3197</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3197</span>
 
 static VALUE
 numo_s_bessel_In_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -18701,7 +18704,7 @@ order n, I_n(x). Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 3143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3112</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3112</span>
 
 static VALUE
 numo_s_bessel_In_e(VALUE mod,VALUE v0,VALUE v1)
@@ -18848,7 +18851,7 @@ GSL_EUNDRFLW</p>
 3545</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3514</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3514</span>
 
 static VALUE
 numo_s_bessel_In_scaled(VALUE mod,VALUE v0,VALUE v1)
@@ -19021,7 +19024,7 @@ Return Values: GSL_EUNDRFLW</p>
 3716</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3674</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3674</span>
 
 static VALUE
 numo_s_bessel_In_scaled_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -19179,7 +19182,7 @@ GSL_EUNDRFLW</p>
 3620</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3589</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3589</span>
 
 static VALUE
 numo_s_bessel_In_scaled_e(VALUE mod,VALUE v0,VALUE v1)
@@ -19318,7 +19321,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 7449</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7426</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7426</span>
 
 static VALUE
 numo_s_bessel_Inu(VALUE mod,VALUE v0,VALUE v1)
@@ -19449,7 +19452,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 7515</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7492</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7492</span>
 
 static VALUE
 numo_s_bessel_Inu_e(VALUE mod,VALUE v0,VALUE v1)
@@ -19581,7 +19584,7 @@ GSL_EDOM</p>
 7578</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7555</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7555</span>
 
 static VALUE
 numo_s_bessel_Inu_scaled(VALUE mod,VALUE v0,VALUE v1)
@@ -19713,7 +19716,7 @@ GSL_EDOM</p>
 7645</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7622</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7622</span>
 
 static VALUE
 numo_s_bessel_Inu_scaled_e(VALUE mod,VALUE v0,VALUE v1)
@@ -19832,7 +19835,7 @@ order, J_0(x). Exceptional Return Values: none</p>
 1870</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1847</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1847</span>
 
 static VALUE
 numo_s_bessel_J0(VALUE mod,VALUE v0)
@@ -19951,7 +19954,7 @@ order, j_0(x) = sin(x)/x. Exceptional Return Values: none</p>
 4741</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4718</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4718</span>
 
 static VALUE
 numo_s_bessel_j0(VALUE mod,VALUE v0)
@@ -20070,7 +20073,7 @@ order, J_0(x). Exceptional Return Values: none</p>
 1931</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1908</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1908</span>
 
 static VALUE
 numo_s_bessel_J0_e(VALUE mod,VALUE v0)
@@ -20189,7 +20192,7 @@ order, j_0(x) = sin(x)/x. Exceptional Return Values: none</p>
 4802</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4779</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4779</span>
 
 static VALUE
 numo_s_bessel_j0_e(VALUE mod,VALUE v0)
@@ -20308,7 +20311,7 @@ order, J_1(x). Exceptional Return Values: GSL_EUNDRFLW</p>
 1988</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 1965</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 1965</span>
 
 static VALUE
 numo_s_bessel_J1(VALUE mod,VALUE v0)
@@ -20428,7 +20431,7 @@ GSL_EUNDRFLW</p>
 4859</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4836</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4836</span>
 
 static VALUE
 numo_s_bessel_j1(VALUE mod,VALUE v0)
@@ -20547,7 +20550,7 @@ order, J_1(x). Exceptional Return Values: GSL_EUNDRFLW</p>
 2049</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2026</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2026</span>
 
 static VALUE
 numo_s_bessel_J1_e(VALUE mod,VALUE v0)
@@ -20667,7 +20670,7 @@ GSL_EUNDRFLW</p>
 4920</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4897</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4897</span>
 
 static VALUE
 numo_s_bessel_j1_e(VALUE mod,VALUE v0)
@@ -20787,7 +20790,7 @@ Values: GSL_EUNDRFLW</p>
 4977</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4954</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4954</span>
 
 static VALUE
 numo_s_bessel_j2(VALUE mod,VALUE v0)
@@ -20907,7 +20910,7 @@ Values: GSL_EUNDRFLW</p>
 5038</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5015</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5015</span>
 
 static VALUE
 numo_s_bessel_j2_e(VALUE mod,VALUE v0)
@@ -21046,7 +21049,7 @@ x &gt;= 0.0 Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 5111</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5080</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5080</span>
 
 static VALUE
 numo_s_bessel_jl(VALUE mod,VALUE v0,VALUE v1)
@@ -21202,7 +21205,7 @@ l=0,1,…,lmax Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 5277</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5240</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5240</span>
 
 static VALUE
 numo_s_bessel_jl_array(VALUE mod,VALUE v0,VALUE v1)
@@ -21355,7 +21358,7 @@ x &gt;= 0.0 Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 5189</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5158</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5158</span>
 
 static VALUE
 numo_s_bessel_jl_e(VALUE mod,VALUE v0,VALUE v1)
@@ -21513,7 +21516,7 @@ GSL_EUNDRFLW</p>
 5367</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5330</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5330</span>
 
 static VALUE
 numo_s_bessel_jl_steed_array(VALUE mod,VALUE v0,VALUE v1)
@@ -21665,7 +21668,7 @@ J_n(x). Exceptional Return Values: GSL_EUNDRFLW</p>
 2119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2088</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2088</span>
 
 static VALUE
 numo_s_bessel_Jn(VALUE mod,VALUE v0,VALUE v1)
@@ -21836,7 +21839,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 2287</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2245</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2245</span>
 
 static VALUE
 numo_s_bessel_Jn_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -21993,7 +21996,7 @@ J_n(x). Exceptional Return Values: GSL_EUNDRFLW</p>
 2194</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2163</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2163</span>
 
 static VALUE
 numo_s_bessel_Jn_e(VALUE mod,VALUE v0,VALUE v1)
@@ -22132,7 +22135,7 @@ GSL_EUNDRFLW</p>
 7199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7176</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7176</span>
 
 static VALUE
 numo_s_bessel_Jnu(VALUE mod,VALUE v0,VALUE v1)
@@ -22263,7 +22266,7 @@ GSL_EUNDRFLW</p>
 7263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7240</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7240</span>
 
 static VALUE
 numo_s_bessel_Jnu_e(VALUE mod,VALUE v0,VALUE v1)
@@ -22383,7 +22386,7 @@ Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 3774</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3751</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3751</span>
 
 static VALUE
 numo_s_bessel_K0(VALUE mod,VALUE v0)
@@ -22503,7 +22506,7 @@ Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 3836</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3813</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3813</span>
 
 static VALUE
 numo_s_bessel_K0_e(VALUE mod,VALUE v0)
@@ -22623,7 +22626,7 @@ Exceptional Return Values: GSL_EDOM</p>
 4258</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4235</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4235</span>
 
 static VALUE
 numo_s_bessel_K0_scaled(VALUE mod,VALUE v0)
@@ -22743,7 +22746,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 6602</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6579</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6579</span>
 
 static VALUE
 numo_s_bessel_k0_scaled(VALUE mod,VALUE v0)
@@ -22863,7 +22866,7 @@ Exceptional Return Values: GSL_EDOM</p>
 4320</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4297</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4297</span>
 
 static VALUE
 numo_s_bessel_K0_scaled_e(VALUE mod,VALUE v0)
@@ -22983,7 +22986,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 6664</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6641</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6641</span>
 
 static VALUE
 numo_s_bessel_k0_scaled_e(VALUE mod,VALUE v0)
@@ -23103,7 +23106,7 @@ Values: GSL_EDOM, GSL_EOVRFLW, GSL_EUNDRFLW</p>
 3894</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3871</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3871</span>
 
 static VALUE
 numo_s_bessel_K1(VALUE mod,VALUE v0)
@@ -23223,7 +23226,7 @@ Values: GSL_EDOM, GSL_EOVRFLW, GSL_EUNDRFLW</p>
 3956</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3933</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3933</span>
 
 static VALUE
 numo_s_bessel_K1_e(VALUE mod,VALUE v0)
@@ -23343,7 +23346,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 4378</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4355</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4355</span>
 
 static VALUE
 numo_s_bessel_K1_scaled(VALUE mod,VALUE v0)
@@ -23463,7 +23466,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW, GSL_EOVRFLW</p>
 6722</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6699</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6699</span>
 
 static VALUE
 numo_s_bessel_k1_scaled(VALUE mod,VALUE v0)
@@ -23583,7 +23586,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 4440</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4417</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4417</span>
 
 static VALUE
 numo_s_bessel_K1_scaled_e(VALUE mod,VALUE v0)
@@ -23703,7 +23706,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW, GSL_EOVRFLW</p>
 6784</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6761</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6761</span>
 
 static VALUE
 numo_s_bessel_k1_scaled_e(VALUE mod,VALUE v0)
@@ -23823,7 +23826,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW, GSL_EOVRFLW</p>
 6842</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6819</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6819</span>
 
 static VALUE
 numo_s_bessel_k2_scaled(VALUE mod,VALUE v0)
@@ -23943,7 +23946,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW, GSL_EOVRFLW</p>
 6904</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6881</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6881</span>
 
 static VALUE
 numo_s_bessel_k2_scaled_e(VALUE mod,VALUE v0)
@@ -24082,7 +24085,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 6975</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 6944</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 6944</span>
 
 static VALUE
 numo_s_bessel_kl_scaled(VALUE mod,VALUE v0,VALUE v1)
@@ -24238,7 +24241,7 @@ Conditions: l=0,1,…,lmax Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 7139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7102</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7102</span>
 
 static VALUE
 numo_s_bessel_kl_scaled_array(VALUE mod,VALUE v0,VALUE v1)
@@ -24391,7 +24394,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 7051</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7020</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7020</span>
 
 static VALUE
 numo_s_bessel_kl_scaled_e(VALUE mod,VALUE v0,VALUE v1)
@@ -24538,7 +24541,7 @@ Values: GSL_EDOM, GSL_EOVRFLW, GSL_EUNDRFLW</p>
 4027</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 3996</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 3996</span>
 
 static VALUE
 numo_s_bessel_Kn(VALUE mod,VALUE v0,VALUE v1)
@@ -24712,7 +24715,7 @@ GSL_EOVRFLW, GSL_EUNDRFLW</p>
 4200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4158</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4158</span>
 
 static VALUE
 numo_s_bessel_Kn_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -24870,7 +24873,7 @@ Values: GSL_EDOM, GSL_EOVRFLW, GSL_EUNDRFLW</p>
 4103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4072</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4072</span>
 
 static VALUE
 numo_s_bessel_Kn_e(VALUE mod,VALUE v0,VALUE v1)
@@ -25017,7 +25020,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 4511</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4480</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4480</span>
 
 static VALUE
 numo_s_bessel_Kn_scaled(VALUE mod,VALUE v0,VALUE v1)
@@ -25191,7 +25194,7 @@ GSL_EDOM, GSL_EUNDRFLW</p>
 4684</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4642</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4642</span>
 
 static VALUE
 numo_s_bessel_Kn_scaled_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -25349,7 +25352,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 4587</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 4556</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 4556</span>
 
 static VALUE
 numo_s_bessel_Kn_scaled_e(VALUE mod,VALUE v0,VALUE v1)
@@ -25488,7 +25491,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 7707</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7684</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7684</span>
 
 static VALUE
 numo_s_bessel_Knu(VALUE mod,VALUE v0,VALUE v1)
@@ -25619,7 +25622,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EUNDRFLW</p>
 7773</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7750</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7750</span>
 
 static VALUE
 numo_s_bessel_Knu_e(VALUE mod,VALUE v0,VALUE v1)
@@ -25750,7 +25753,7 @@ fractional order nu, exp(+|x|) K_nu(x) for x&gt;0, nu&gt;0. Domain: x &gt;
 7963</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7940</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7940</span>
 
 static VALUE
 numo_s_bessel_Knu_scaled(VALUE mod,VALUE v0,VALUE v1)
@@ -25881,7 +25884,7 @@ fractional order nu, exp(+|x|) K_nu(x) for x&gt;0, nu&gt;0. Domain: x &gt;
 8029</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8006</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8006</span>
 
 static VALUE
 numo_s_bessel_Knu_scaled_e(VALUE mod,VALUE v0,VALUE v1)
@@ -26012,7 +26015,7 @@ function of fractional order nu, ln(K_nu(x)) for x&gt;0, nu&gt;0. Domain: x
 7835</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7812</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7812</span>
 
 static VALUE
 numo_s_bessel_lnKnu(VALUE mod,VALUE v0,VALUE v1)
@@ -26143,7 +26146,7 @@ function of fractional order nu, ln(K_nu(x)) for x&gt;0, nu&gt;0. Domain: x
 7901</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7878</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7878</span>
 
 static VALUE
 numo_s_bessel_lnKnu_e(VALUE mod,VALUE v0,VALUE v1)
@@ -26263,7 +26266,7 @@ GSL_EUNDRFLW</p>
 2344</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2321</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2321</span>
 
 static VALUE
 numo_s_bessel_Y0(VALUE mod,VALUE v0)
@@ -26382,7 +26385,7 @@ order, y_0(x) = -cos(x)/x. Exceptional Return Values: none</p>
 5424</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5401</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5401</span>
 
 static VALUE
 numo_s_bessel_y0(VALUE mod,VALUE v0)
@@ -26502,7 +26505,7 @@ GSL_EUNDRFLW</p>
 2405</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2382</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2382</span>
 
 static VALUE
 numo_s_bessel_Y0_e(VALUE mod,VALUE v0)
@@ -26621,7 +26624,7 @@ order, y_0(x) = -cos(x)/x. Exceptional Return Values: none</p>
 5485</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5462</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5462</span>
 
 static VALUE
 numo_s_bessel_y0_e(VALUE mod,VALUE v0)
@@ -26741,7 +26744,7 @@ GSL_EOVRFLW, GSL_EUNDRFLW</p>
 2462</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2439</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2439</span>
 
 static VALUE
 numo_s_bessel_Y1(VALUE mod,VALUE v0)
@@ -26861,7 +26864,7 @@ GSL_EUNDRFLW</p>
 5542</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5519</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5519</span>
 
 static VALUE
 numo_s_bessel_y1(VALUE mod,VALUE v0)
@@ -26981,7 +26984,7 @@ GSL_EOVRFLW, GSL_EUNDRFLW</p>
 2523</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2500</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2500</span>
 
 static VALUE
 numo_s_bessel_Y1_e(VALUE mod,VALUE v0)
@@ -27101,7 +27104,7 @@ GSL_EUNDRFLW</p>
 5603</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5580</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5580</span>
 
 static VALUE
 numo_s_bessel_y1_e(VALUE mod,VALUE v0)
@@ -27221,7 +27224,7 @@ Values: GSL_EUNDRFLW</p>
 5660</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5637</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5637</span>
 
 static VALUE
 numo_s_bessel_y2(VALUE mod,VALUE v0)
@@ -27341,7 +27344,7 @@ Values: GSL_EUNDRFLW</p>
 5721</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5698</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5698</span>
 
 static VALUE
 numo_s_bessel_y2_e(VALUE mod,VALUE v0)
@@ -27479,7 +27482,7 @@ y_l(x), for $l geq 0$ l &gt;= 0. Exceptional Return Values: GSL_EUNDRFLW</p>
 5792</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5761</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5761</span>
 
 static VALUE
 numo_s_bessel_yl(VALUE mod,VALUE v0,VALUE v1)
@@ -27635,7 +27638,7 @@ l=0,1,…,lmax Exceptional Return Values: GSL_EUNDRFLW</p>
 5955</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5918</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5918</span>
 
 static VALUE
 numo_s_bessel_yl_array(VALUE mod,VALUE v0,VALUE v1)
@@ -27787,7 +27790,7 @@ y_l(x), for $l geq 0$ l &gt;= 0. Exceptional Return Values: GSL_EUNDRFLW</p>
 5868</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 5837</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 5837</span>
 
 static VALUE
 numo_s_bessel_yl_e(VALUE mod,VALUE v0,VALUE v1)
@@ -27934,7 +27937,7 @@ GSL_EUNDRFLW</p>
 2593</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2562</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2562</span>
 
 static VALUE
 numo_s_bessel_Yn(VALUE mod,VALUE v0,VALUE v1)
@@ -28106,7 +28109,7 @@ GSL_EOVRFLW, GSL_EUNDRFLW</p>
 2762</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2720</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2720</span>
 
 static VALUE
 numo_s_bessel_Yn_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -28264,7 +28267,7 @@ GSL_EUNDRFLW</p>
 2668</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 2637</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 2637</span>
 
 static VALUE
 numo_s_bessel_Yn_e(VALUE mod,VALUE v0,VALUE v1)
@@ -28402,7 +28405,7 @@ fractional order nu, Y_nu(x). Exceptional Return Values:</p>
 7323</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7300</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7300</span>
 
 static VALUE
 numo_s_bessel_Ynu(VALUE mod,VALUE v0,VALUE v1)
@@ -28532,7 +28535,7 @@ fractional order nu, Y_nu(x). Exceptional Return Values:</p>
 7387</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 7364</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 7364</span>
 
 static VALUE
 numo_s_bessel_Ynu_e(VALUE mod,VALUE v0,VALUE v1)
@@ -28651,7 +28654,7 @@ function J_0(x). Exceptional Return Values:</p>
 8086</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8063</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8063</span>
 
 static VALUE
 numo_s_bessel_zero_J0(VALUE mod,VALUE v0)
@@ -28770,7 +28773,7 @@ function J_0(x). Exceptional Return Values:</p>
 8147</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8124</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8124</span>
 
 static VALUE
 numo_s_bessel_zero_J0_e(VALUE mod,VALUE v0)
@@ -28889,7 +28892,7 @@ function J_1(x). Exceptional Return Values:</p>
 8204</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8181</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8181</span>
 
 static VALUE
 numo_s_bessel_zero_J1(VALUE mod,VALUE v0)
@@ -29008,7 +29011,7 @@ function J_1(x). Exceptional Return Values:</p>
 8265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8242</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8242</span>
 
 static VALUE
 numo_s_bessel_zero_J1_e(VALUE mod,VALUE v0)
@@ -29139,7 +29142,7 @@ values of nu. Exceptional Return Values:</p>
 8326</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8303</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8303</span>
 
 static VALUE
 numo_s_bessel_zero_Jnu(VALUE mod,VALUE v0,VALUE v1)
@@ -29270,7 +29273,7 @@ values of nu. Exceptional Return Values:</p>
 8391</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8368</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8368</span>
 
 static VALUE
 numo_s_bessel_zero_Jnu_e(VALUE mod,VALUE v0,VALUE v1)
@@ -29401,7 +29404,7 @@ exceptions: GSL_EDOM, GSL_EOVRFLW, GSL_EUNDRFLW</p>
 19542</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19519</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19519</span>
 
 static VALUE
 numo_s_beta(VALUE mod,VALUE v0,VALUE v1)
@@ -29532,7 +29535,7 @@ exceptions: GSL_EDOM, GSL_EOVRFLW, GSL_EUNDRFLW</p>
 19607</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19584</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19584</span>
 
 static VALUE
 numo_s_beta_e(VALUE mod,VALUE v0,VALUE v1)
@@ -29678,7 +29681,7 @@ $I_x(a,b,x) = (1/a) x^a {}_2F_1(a,1-b,a+1,x)/B(a,b)$ I_x(a,b,x) = (1/a) x^a
 19801</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19778</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19778</span>
 
 static VALUE
 numo_s_beta_inc(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -29824,7 +29827,7 @@ $I_x(a,b,x) = (1/a) x^a {}_2F_1(a,1-b,a+1,x)/B(a,b)$ I_x(a,b,x) = (1/a) x^a
 19873</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19850</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19850</span>
 
 static VALUE
 numo_s_beta_inc_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -29946,7 +29949,7 @@ GSL_EOVRFLW, GSL_EUNDRFLW</p>
 15465</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15442</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15442</span>
 
 static VALUE
 numo_s_Chi(VALUE mod,VALUE v0)
@@ -30068,7 +30071,7 @@ GSL_EOVRFLW, GSL_EUNDRFLW</p>
 15528</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15505</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15505</span>
 
 static VALUE
 numo_s_Chi_e(VALUE mod,VALUE v0)
@@ -30201,7 +30204,7 @@ numo_s_Chi_e(VALUE mod,VALUE v0)
 18300</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18277</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18277</span>
 
 static VALUE
 numo_s_choose(VALUE mod,VALUE v0,VALUE v1)
@@ -30334,7 +30337,7 @@ numo_s_choose(VALUE mod,VALUE v0,VALUE v1)
 18364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18341</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18341</span>
 
 static VALUE
 numo_s_choose_e(VALUE mod,VALUE v0,VALUE v1)
@@ -30454,7 +30457,7 @@ Exceptional Return Values: GSL_EDOM</p>
 15824</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15801</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15801</span>
 
 static VALUE
 numo_s_Ci(VALUE mod,VALUE v0)
@@ -30574,7 +30577,7 @@ Exceptional Return Values: GSL_EDOM</p>
 15886</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15863</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15863</span>
 
 static VALUE
 numo_s_Ci_e(VALUE mod,VALUE v0)
@@ -30692,7 +30695,7 @@ numo_s_Ci_e(VALUE mod,VALUE v0)
 8446</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8423</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8423</span>
 
 static VALUE
 numo_s_clausen(VALUE mod,VALUE v0)
@@ -30810,7 +30813,7 @@ numo_s_clausen(VALUE mod,VALUE v0)
 8505</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8482</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8482</span>
 
 static VALUE
 numo_s_clausen_e(VALUE mod,VALUE v0)
@@ -30941,7 +30944,7 @@ GSL_EOVRFLW</p>
 31019</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30996</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30996</span>
 
 static VALUE
 numo_s_complex_cos_e(VALUE mod,VALUE v0,VALUE v1)
@@ -31073,7 +31076,7 @@ return]</p>
 10824</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10801</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10801</span>
 
 static VALUE
 numo_s_complex_dilog_e(VALUE mod,VALUE v0,VALUE v1)
@@ -31204,7 +31207,7 @@ where theta lies in the range [-pi,pi]. Exceptional Return Values: GSL_EDOM</p>
 27019</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26996</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26996</span>
 
 static VALUE
 numo_s_complex_log_e(VALUE mod,VALUE v0,VALUE v1)
@@ -31335,7 +31338,7 @@ Return Values: GSL_EDOM, GSL_ELOSS</p>
 31087</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31064</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31064</span>
 
 static VALUE
 numo_s_complex_logsin_e(VALUE mod,VALUE v0,VALUE v1)
@@ -31465,7 +31468,7 @@ and imaginary parts in szr, szi. Exceptional Return Values: GSL_EOVRFLW</p>
 30952</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30929</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30929</span>
 
 static VALUE
 numo_s_complex_sin_e(VALUE mod,VALUE v0,VALUE v1)
@@ -31596,7 +31599,7 @@ GSL_EDOM</p>
 25691</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25668</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25668</span>
 
 static VALUE
 numo_s_conicalP_0(VALUE mod,VALUE v0,VALUE v1)
@@ -31727,7 +31730,7 @@ GSL_EDOM</p>
 25757</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25734</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25734</span>
 
 static VALUE
 numo_s_conicalP_0_e(VALUE mod,VALUE v0,VALUE v1)
@@ -31858,7 +31861,7 @@ GSL_EDOM</p>
 25818</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25795</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25795</span>
 
 static VALUE
 numo_s_conicalP_1(VALUE mod,VALUE v0,VALUE v1)
@@ -31989,7 +31992,7 @@ GSL_EDOM</p>
 25883</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25860</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25860</span>
 
 static VALUE
 numo_s_conicalP_1_e(VALUE mod,VALUE v0,VALUE v1)
@@ -32139,7 +32142,7 @@ $P^-m_+ i lambda(x)$ P^@-m@_@+ i lambda@(x) for x &gt;
 26115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26084</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26084</span>
 
 static VALUE
 numo_s_conicalP_cyl_reg(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -32297,7 +32300,7 @@ $P^-m_+ i lambda(x)$ P^@-m@_@+ i lambda@(x) for x &gt;
 26195</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26164</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26164</span>
 
 static VALUE
 numo_s_conicalP_cyl_reg_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -32436,7 +32439,7 @@ $P^1/2_+ i lambda(x)$ P^@1/2@_@+ i lambda@(x) for x &gt;
 25438</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25415</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25415</span>
 
 static VALUE
 numo_s_conicalP_half(VALUE mod,VALUE v0,VALUE v1)
@@ -32567,7 +32570,7 @@ $P^1/2_+ i lambda(x)$ P^@1/2@_@+ i lambda@(x) for x &gt;
 25503</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25480</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25480</span>
 
 static VALUE
 numo_s_conicalP_half_e(VALUE mod,VALUE v0,VALUE v1)
@@ -32698,7 +32701,7 @@ $P^-1/2_+ i lambda(x)$ P^@-1/2@_@+ i lambda@(x) for x
 25564</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25541</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25541</span>
 
 static VALUE
 numo_s_conicalP_mhalf(VALUE mod,VALUE v0,VALUE v1)
@@ -32829,7 +32832,7 @@ $P^-1/2_+ i lambda(x)$ P^@-1/2@_@+ i lambda@(x) for x
 25629</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25606</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25606</span>
 
 static VALUE
 numo_s_conicalP_mhalf_e(VALUE mod,VALUE v0,VALUE v1)
@@ -32979,7 +32982,7 @@ $P^-1/2-l_+ i lambda(x)$ P^@-1/2-l@_@+ i lambda@(x) for x
 25959</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25928</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25928</span>
 
 static VALUE
 numo_s_conicalP_sph_reg(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -33137,7 +33140,7 @@ $P^-1/2-l_+ i lambda(x)$ P^@-1/2-l@_@+ i lambda@(x) for x
 26039</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26008</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26008</span>
 
 static VALUE
 numo_s_conicalP_sph_reg_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -33264,7 +33267,7 @@ Values:</p>
 30583</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30560</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30560</span>
 
 static VALUE
 numo_s_cos(VALUE mod,VALUE v0)
@@ -33383,7 +33386,7 @@ Values:</p>
 30643</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30620</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30620</span>
 
 static VALUE
 numo_s_cos_e(VALUE mod,VALUE v0)
@@ -33515,7 +33518,7 @@ propagated error.</p>
 31713</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31690</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31690</span>
 
 static VALUE
 numo_s_cos_err_e(VALUE mod,VALUE v0,VALUE v1)
@@ -33670,7 +33673,7 @@ C_L(eta) for L = Lmin dots Lmin + kmax, Lmin &gt; -1.</p>
 9453</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9416</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9416</span>
 
 static VALUE
 numo_s_coulomb_CL_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -33814,7 +33817,7 @@ C_L(eta) for L &gt; -1.</p>
 9370</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9347</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9347</span>
 
 static VALUE
 numo_s_coulomb_CL_e(VALUE mod,VALUE v0,VALUE v1)
@@ -33981,7 +33984,7 @@ the exponent is stored in F_exponent.</p>
 9013</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8976</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8976</span>
 
 static VALUE
 numo_s_coulomb_wave_F_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -34162,7 +34165,7 @@ of overflow the exponents are stored in F_exponent and G_exponent.</p>
 9110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9073</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9073</span>
 
 static VALUE
 numo_s_coulomb_wave_FG_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -34343,7 +34346,7 @@ exp_F, exp_G, return]</p>
 8923</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8892</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8892</span>
 
 static VALUE
 numo_s_coulomb_wave_FG_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -34520,7 +34523,7 @@ G_exponent, return]</p>
 9215</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9178</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9178</span>
 
 static VALUE
 numo_s_coulomb_wave_FGp_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -34702,7 +34705,7 @@ This function reduces to spherical Bessel functions in the limit eta to 0.</p>
 9307</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9270</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9270</span>
 
 static VALUE
 numo_s_coulomb_wave_sphF_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -34899,7 +34902,7 @@ two_ma/2, etc. Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 9504</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9476</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9476</span>
 
 static VALUE
 numo_s_coupling_3j(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4,VALUE v5)
@@ -35095,7 +35098,7 @@ two_ma/2, etc. Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 9563</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9527</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9527</span>
 
 static VALUE
 numo_s_coupling_3j_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4,VALUE v5)
@@ -35291,7 +35294,7 @@ two_ma/2, etc. Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 9614</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9586</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9586</span>
 
 static VALUE
 numo_s_coupling_6j(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4,VALUE v5)
@@ -35487,7 +35490,7 @@ two_ma/2, etc. Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 9673</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9637</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9637</span>
 
 static VALUE
 numo_s_coupling_6j_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4,VALUE v5)
@@ -35722,7 +35725,7 @@ two_ma/2, etc. Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 9734</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9700</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9700</span>
 
 static VALUE
 numo_s_coupling_9j(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4,VALUE v5,VALUE v6,VALUE v7,VALUE v8)
@@ -35963,7 +35966,7 @@ two_ma/2, etc. Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 9803</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9761</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9761</span>
 
 static VALUE
 numo_s_coupling_9j_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4,VALUE v5,VALUE v6,VALUE v7,VALUE v8)
@@ -36101,7 +36104,7 @@ Exceptional Return Values: GSL_EUNDRFLW</p>
 9859</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9836</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9836</span>
 
 static VALUE
 numo_s_dawson(VALUE mod,VALUE v0)
@@ -36220,7 +36223,7 @@ Exceptional Return Values: GSL_EUNDRFLW</p>
 9919</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9896</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9896</span>
 
 static VALUE
 numo_s_dawson_e(VALUE mod,VALUE v0)
@@ -36339,7 +36342,7 @@ int_0^x dt (t/(e^t - 1)). Exceptional Return Values: GSL_EDOM</p>
 9976</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 9953</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 9953</span>
 
 static VALUE
 numo_s_debye_1(VALUE mod,VALUE v0)
@@ -36458,7 +36461,7 @@ int_0^x dt (t/(e^t - 1)). Exceptional Return Values: GSL_EDOM</p>
 10037</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10014</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10014</span>
 
 static VALUE
 numo_s_debye_1_e(VALUE mod,VALUE v0)
@@ -36578,7 +36581,7 @@ GSL_EUNDRFLW</p>
 10094</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10071</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10071</span>
 
 static VALUE
 numo_s_debye_2(VALUE mod,VALUE v0)
@@ -36698,7 +36701,7 @@ GSL_EUNDRFLW</p>
 10155</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10132</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10132</span>
 
 static VALUE
 numo_s_debye_2_e(VALUE mod,VALUE v0)
@@ -36818,7 +36821,7 @@ GSL_EUNDRFLW</p>
 10212</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10189</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10189</span>
 
 static VALUE
 numo_s_debye_3(VALUE mod,VALUE v0)
@@ -36938,7 +36941,7 @@ GSL_EUNDRFLW</p>
 10273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10250</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10250</span>
 
 static VALUE
 numo_s_debye_3_e(VALUE mod,VALUE v0)
@@ -37058,7 +37061,7 @@ GSL_EUNDRFLW</p>
 10330</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10307</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10307</span>
 
 static VALUE
 numo_s_debye_4(VALUE mod,VALUE v0)
@@ -37178,7 +37181,7 @@ GSL_EUNDRFLW</p>
 10391</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10368</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10368</span>
 
 static VALUE
 numo_s_debye_4_e(VALUE mod,VALUE v0)
@@ -37298,7 +37301,7 @@ GSL_EUNDRFLW</p>
 10448</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10425</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10425</span>
 
 static VALUE
 numo_s_debye_5(VALUE mod,VALUE v0)
@@ -37418,7 +37421,7 @@ GSL_EUNDRFLW</p>
 10509</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10486</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10486</span>
 
 static VALUE
 numo_s_debye_5_e(VALUE mod,VALUE v0)
@@ -37538,7 +37541,7 @@ GSL_EUNDRFLW</p>
 10566</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10543</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10543</span>
 
 static VALUE
 numo_s_debye_6(VALUE mod,VALUE v0)
@@ -37658,7 +37661,7 @@ GSL_EUNDRFLW</p>
 10627</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10604</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10604</span>
 
 static VALUE
 numo_s_debye_6_e(VALUE mod,VALUE v0)
@@ -37783,7 +37786,7 @@ S(x)=Li_2(1-x) as the dilogarithm rather than Li_2(x).</p>
 10690</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10667</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10667</span>
 
 static VALUE
 numo_s_dilog(VALUE mod,VALUE v0)
@@ -37908,7 +37911,7 @@ S(x)=Li_2(1-x) as the dilogarithm rather than Li_2(x).</p>
 10757</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10734</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10734</span>
 
 static VALUE
 numo_s_dilog_e(VALUE mod,VALUE v0)
@@ -38029,7 +38032,7 @@ GSL_EOVRFLW</p>
 17937</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17914</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17914</span>
 
 static VALUE
 numo_s_doublefact(VALUE mod,VALUE v0)
@@ -38150,7 +38153,7 @@ GSL_EOVRFLW</p>
 18000</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17977</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17977</span>
 
 static VALUE
 numo_s_doublefact_e(VALUE mod,VALUE v0)
@@ -38315,7 +38318,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12049</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12012</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12012</span>
 
 static VALUE
 numo_s_ellint_D(int argc, VALUE *v, VALUE mod)
@@ -38494,7 +38497,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12100</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12100</span>
 
 static VALUE
 numo_s_ellint_D_e(int argc, VALUE *v, VALUE mod)
@@ -38671,7 +38674,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11703</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11666</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11666</span>
 
 static VALUE
 numo_s_ellint_E(int argc, VALUE *v, VALUE mod)
@@ -38848,7 +38851,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11789</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11752</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11752</span>
 
 static VALUE
 numo_s_ellint_E_e(int argc, VALUE *v, VALUE mod)
@@ -39014,7 +39017,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11163</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11163</span>
 
 static VALUE
 numo_s_ellint_Ecomp(int argc, VALUE *v, VALUE mod)
@@ -39180,7 +39183,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11283</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11246</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11246</span>
 
 static VALUE
 numo_s_ellint_Ecomp_e(int argc, VALUE *v, VALUE mod)
@@ -39357,7 +39360,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11535</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11498</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11498</span>
 
 static VALUE
 numo_s_ellint_F(int argc, VALUE *v, VALUE mod)
@@ -39534,7 +39537,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11621</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11584</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11584</span>
 
 static VALUE
 numo_s_ellint_F_e(int argc, VALUE *v, VALUE mod)
@@ -39700,7 +39703,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11039</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11002</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11002</span>
 
 static VALUE
 numo_s_ellint_Kcomp(int argc, VALUE *v, VALUE mod)
@@ -39866,7 +39869,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11085</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11085</span>
 
 static VALUE
 numo_s_ellint_Kcomp_e(int argc, VALUE *v, VALUE mod)
@@ -40055,7 +40058,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11875</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11838</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11838</span>
 
 static VALUE
 numo_s_ellint_P(int argc, VALUE *v, VALUE mod)
@@ -40244,7 +40247,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11965</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11928</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11928</span>
 
 static VALUE
 numo_s_ellint_P_e(int argc, VALUE *v, VALUE mod)
@@ -40422,7 +40425,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11329</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11329</span>
 
 static VALUE
 numo_s_ellint_Pcomp(int argc, VALUE *v, VALUE mod)
@@ -40600,7 +40603,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 11453</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 11416</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 11416</span>
 
 static VALUE
 numo_s_ellint_Pcomp_e(int argc, VALUE *v, VALUE mod)
@@ -40776,7 +40779,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12217</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12180</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12180</span>
 
 static VALUE
 numo_s_ellint_RC(int argc, VALUE *v, VALUE mod)
@@ -40952,7 +40955,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12301</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12264</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12264</span>
 
 static VALUE
 numo_s_ellint_RC_e(int argc, VALUE *v, VALUE mod)
@@ -41139,7 +41142,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12384</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12347</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12347</span>
 
 static VALUE
 numo_s_ellint_RD(int argc, VALUE *v, VALUE mod)
@@ -41326,7 +41329,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12471</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12434</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12434</span>
 
 static VALUE
 numo_s_ellint_RD_e(int argc, VALUE *v, VALUE mod)
@@ -41513,7 +41516,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12554</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12517</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12517</span>
 
 static VALUE
 numo_s_ellint_RF(int argc, VALUE *v, VALUE mod)
@@ -41700,7 +41703,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12641</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12604</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12604</span>
 
 static VALUE
 numo_s_ellint_RF_e(int argc, VALUE *v, VALUE mod)
@@ -41898,7 +41901,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12727</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12690</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12690</span>
 
 static VALUE
 numo_s_ellint_RJ(int argc, VALUE *v, VALUE mod)
@@ -42096,7 +42099,7 @@ Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.</p>
 12817</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12780</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12780</span>
 
 static VALUE
 numo_s_ellint_RJ_e(int argc, VALUE *v, VALUE mod)
@@ -42241,7 +42244,7 @@ GSL_EDOM</p>
 12888</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12865</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12865</span>
 
 static VALUE
 numo_s_elljac_e(VALUE mod,VALUE v0,VALUE v1)
@@ -42361,7 +42364,7 @@ exp(-t^2). Exceptional Return Values: none</p>
 12947</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12924</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12924</span>
 
 static VALUE
 numo_s_erf(VALUE mod,VALUE v0)
@@ -42481,7 +42484,7 @@ exp(-t^2). Exceptional Return Values: none</p>
 13010</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 12987</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 12987</span>
 
 static VALUE
 numo_s_erf_e(VALUE mod,VALUE v0)
@@ -42601,7 +42604,7 @@ int_x^infty dt exp(-t^2/2). Exceptional Return Values: none</p>
 13425</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13402</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13402</span>
 
 static VALUE
 numo_s_erf_Q(VALUE mod,VALUE v0)
@@ -42721,7 +42724,7 @@ int_x^infty dt exp(-t^2/2). Exceptional Return Values: none</p>
 13488</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13465</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13465</span>
 
 static VALUE
 numo_s_erf_Q_e(VALUE mod,VALUE v0)
@@ -42840,7 +42843,7 @@ numo_s_erf_Q_e(VALUE mod,VALUE v0)
 13305</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13282</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13282</span>
 
 static VALUE
 numo_s_erf_Z(VALUE mod,VALUE v0)
@@ -42959,7 +42962,7 @@ numo_s_erf_Z(VALUE mod,VALUE v0)
 13366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13343</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13343</span>
 
 static VALUE
 numo_s_erf_Z_e(VALUE mod,VALUE v0)
@@ -43079,7 +43082,7 @@ erf(x) = (2/sqrtpi) int_x^infty exp(-t^2)$ erfc(x) = 1 - erf(x) =
 13068</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13045</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13045</span>
 
 static VALUE
 numo_s_erfc(VALUE mod,VALUE v0)
@@ -43199,7 +43202,7 @@ erf(x) = (2/sqrtpi) int_x^infty exp(-t^2)$ erfc(x) = 1 - erf(x) =
 13130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13107</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13107</span>
 
 static VALUE
 numo_s_erfc_e(VALUE mod,VALUE v0)
@@ -43318,7 +43321,7 @@ Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 32351</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 32328</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 32328</span>
 
 static VALUE
 numo_s_eta(VALUE mod,VALUE v0)
@@ -43437,7 +43440,7 @@ Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 32411</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 32388</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 32388</span>
 
 static VALUE
 numo_s_eta_e(VALUE mod,VALUE v0)
@@ -43551,7 +43554,7 @@ Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 32257</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 32239</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 32239</span>
 
 static VALUE
 numo_s_eta_int(VALUE mod,VALUE v0)
@@ -43668,7 +43671,7 @@ Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 32295</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 32269</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 32269</span>
 
 static VALUE
 numo_s_eta_int_e(VALUE mod,VALUE v0)
@@ -43790,7 +43793,7 @@ and error checking. Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 13661</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13638</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13638</span>
 
 static VALUE
 numo_s_exp(VALUE mod,VALUE v0)
@@ -43909,7 +43912,7 @@ and error checking. Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 13722</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13699</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13699</span>
 
 static VALUE
 numo_s_exp_e(VALUE mod,VALUE v0)
@@ -44030,7 +44033,7 @@ Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 13785</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13762</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13762</span>
 
 static VALUE
 numo_s_exp_e10_e(VALUE mod,VALUE v0)
@@ -44160,7 +44163,7 @@ Exceptional Return Values:</p>
 14555</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14532</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14532</span>
 
 static VALUE
 numo_s_exp_err_e(VALUE mod,VALUE v0,VALUE v1)
@@ -44291,7 +44294,7 @@ Exceptional Return Values:</p>
 14620</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14597</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14597</span>
 
 static VALUE
 numo_s_exp_err_e10_e(VALUE mod,VALUE v0,VALUE v1)
@@ -44421,7 +44424,7 @@ product y exp(x). Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 13845</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13822</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13822</span>
 
 static VALUE
 numo_s_exp_mult(VALUE mod,VALUE v0,VALUE v1)
@@ -44551,7 +44554,7 @@ product y exp(x). Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 13909</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13886</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13886</span>
 
 static VALUE
 numo_s_exp_mult_e(VALUE mod,VALUE v0,VALUE v1)
@@ -44682,7 +44685,7 @@ Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 13974</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13951</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13951</span>
 
 static VALUE
 numo_s_exp_mult_e10_e(VALUE mod,VALUE v0,VALUE v1)
@@ -44835,7 +44838,7 @@ GSL_EUNDRFLW</p>
 14690</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14667</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14667</span>
 
 static VALUE
 numo_s_exp_mult_err_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -44989,7 +44992,7 @@ GSL_EOVRFLW, GSL_EUNDRFLW</p>
 14761</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14738</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14738</span>
 
 static VALUE
 numo_s_exp_mult_err_e10_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -45109,7 +45112,7 @@ Exceptional Return Values: GSL_EDOM</p>
 15586</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15563</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15563</span>
 
 static VALUE
 numo_s_expint_3(VALUE mod,VALUE v0)
@@ -45229,7 +45232,7 @@ Exceptional Return Values: GSL_EDOM</p>
 15648</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15625</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15625</span>
 
 static VALUE
 numo_s_expint_3_e(VALUE mod,VALUE v0)
@@ -45352,7 +45355,7 @@ GSL_EUNDRFLW</p>
 14821</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14798</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14798</span>
 
 static VALUE
 numo_s_expint_E1(VALUE mod,VALUE v0)
@@ -45475,7 +45478,7 @@ GSL_EUNDRFLW</p>
 14885</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14862</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14862</span>
 
 static VALUE
 numo_s_expint_E1_e(VALUE mod,VALUE v0)
@@ -45598,7 +45601,7 @@ GSL_EUNDRFLW</p>
 14945</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14922</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14922</span>
 
 static VALUE
 numo_s_expint_E2(VALUE mod,VALUE v0)
@@ -45721,7 +45724,7 @@ GSL_EUNDRFLW</p>
 15009</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14986</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14986</span>
 
 static VALUE
 numo_s_expint_E2_e(VALUE mod,VALUE v0)
@@ -45844,7 +45847,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW, GSL_EUNDRFLW</p>
 15222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15199</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15199</span>
 
 static VALUE
 numo_s_expint_Ei(VALUE mod,VALUE v0)
@@ -45967,7 +45970,7 @@ Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW, GSL_EUNDRFLW</p>
 15288</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15265</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15265</span>
 
 static VALUE
 numo_s_expint_Ei_e(VALUE mod,VALUE v0)
@@ -46109,7 +46112,7 @@ GSL_EUNDRFLW</p>
 15082</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15051</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15051</span>
 
 static VALUE
 numo_s_expint_En(VALUE mod,VALUE v0,VALUE v1)
@@ -46259,7 +46262,7 @@ GSL_EUNDRFLW</p>
 15160</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15129</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15129</span>
 
 static VALUE
 numo_s_expint_En_e(VALUE mod,VALUE v0,VALUE v1)
@@ -46310,8 +46313,8 @@ numo_s_expint_En_e(VALUE mod,VALUE v0,VALUE v1)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>These routines compute the quantity exp(x)-1 using an algorithm that is
-accurate for small x. Exceptional Return Values:  GSL_EOVRFLW</p>
+<p>This function computes the value of exp(x)-1 in a way that is accurate for
+small x. It provides an alternative to the BSD math function expm1(x).</p>
 
 
   </div>
@@ -46360,33 +46363,33 @@ accurate for small x. Exceptional Return Values:  GSL_EOVRFLW</p>
       <pre class="lines">
 
 
-14008
-14009
-14010
-14011
-14012
-14013
-14014
-14015
-14016
-14017
-14018
-14019
-14020
-14021
-14022
-14023
-14024
-14025
-14026
-14027
-14028
-14029
-14030
-14031</pre>
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14008</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 322</span>
 
 static VALUE
 numo_s_expm1(VALUE mod,VALUE v0)
@@ -46398,7 +46401,7 @@ numo_s_expm1(VALUE mod,VALUE v0)
 
     
 
-#line 50 &quot;gen/tmpl/sf_basic.c&quot;
+#line 50 &quot;gen/tmpl/basic_func.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_expm1,NO_LOOP,1,1,ain,aout};
@@ -46407,7 +46410,7 @@ numo_s_expm1(VALUE mod,VALUE v0)
 
 
     
-#line 66 &quot;gen/tmpl/sf_basic.c&quot;
+#line 66 &quot;gen/tmpl/basic_func.c&quot;
     vr = na_ndloop(&amp;ndf,1,v0);
     
     return sf_extract(vr);
@@ -46505,7 +46508,7 @@ accurate for small x. Exceptional Return Values:  GSL_EOVRFLW</p>
 14092</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14069</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14069</span>
 
 static VALUE
 numo_s_expm1_e(VALUE mod,VALUE v0)
@@ -46626,7 +46629,7 @@ Values:  GSL_EOVRFLW</p>
 14151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14128</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14128</span>
 
 static VALUE
 numo_s_exprel(VALUE mod,VALUE v0)
@@ -46747,7 +46750,7 @@ Exceptional Return Values:  GSL_EOVRFLW</p>
 14273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14250</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14250</span>
 
 static VALUE
 numo_s_exprel_2(VALUE mod,VALUE v0)
@@ -46868,7 +46871,7 @@ Exceptional Return Values:  GSL_EOVRFLW</p>
 14336</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14313</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14313</span>
 
 static VALUE
 numo_s_exprel_2_e(VALUE mod,VALUE v0)
@@ -46989,7 +46992,7 @@ Values:  GSL_EOVRFLW</p>
 14214</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14191</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14191</span>
 
 static VALUE
 numo_s_exprel_e(VALUE mod,VALUE v0)
@@ -47135,7 +47138,7 @@ N-relative exponential is given by,</p>
 14411</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14380</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14380</span>
 
 static VALUE
 numo_s_exprel_n(VALUE mod,VALUE v0,VALUE v1)
@@ -47289,7 +47292,7 @@ N-relative exponential is given by,</p>
 14491</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 14460</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 14460</span>
 
 static VALUE
 numo_s_exprel_n_e(VALUE mod,VALUE v0,VALUE v1)
@@ -47418,7 +47421,7 @@ not considered an overflow is given by the macro GSL_SF_FACT_NMAX and is
 17814</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17791</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17791</span>
 
 static VALUE
 numo_s_fact(VALUE mod,VALUE v0)
@@ -47539,7 +47542,7 @@ not considered an overflow is given by the macro GSL_SF_FACT_NMAX and is
 17878</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17855</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17855</span>
 
 static VALUE
 numo_s_fact_e(VALUE mod,VALUE v0)
@@ -47659,7 +47662,7 @@ Values: GSL_EUNDRFLW</p>
 16185</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16162</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16162</span>
 
 static VALUE
 numo_s_fermi_dirac_0(VALUE mod,VALUE v0)
@@ -47779,7 +47782,7 @@ Values: GSL_EUNDRFLW</p>
 16246</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16223</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16223</span>
 
 static VALUE
 numo_s_fermi_dirac_0_e(VALUE mod,VALUE v0)
@@ -47899,7 +47902,7 @@ GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16303</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16280</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16280</span>
 
 static VALUE
 numo_s_fermi_dirac_1(VALUE mod,VALUE v0)
@@ -48019,7 +48022,7 @@ GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16341</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16341</span>
 
 static VALUE
 numo_s_fermi_dirac_1_e(VALUE mod,VALUE v0)
@@ -48139,7 +48142,7 @@ Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16422</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16399</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16399</span>
 
 static VALUE
 numo_s_fermi_dirac_2(VALUE mod,VALUE v0)
@@ -48259,7 +48262,7 @@ Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16484</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16461</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16461</span>
 
 static VALUE
 numo_s_fermi_dirac_2_e(VALUE mod,VALUE v0)
@@ -48378,7 +48381,7 @@ F_@3/2@(x). Exceptional Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16931</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16908</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16908</span>
 
 static VALUE
 numo_s_fermi_dirac_3half(VALUE mod,VALUE v0)
@@ -48497,7 +48500,7 @@ F_@3/2@(x). Exceptional Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16993</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16970</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16970</span>
 
 static VALUE
 numo_s_fermi_dirac_3half_e(VALUE mod,VALUE v0)
@@ -48616,7 +48619,7 @@ F_@1/2@(x). Exceptional Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16811</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16788</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16788</span>
 
 static VALUE
 numo_s_fermi_dirac_half(VALUE mod,VALUE v0)
@@ -48735,7 +48738,7 @@ F_@1/2@(x). Exceptional Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16873</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16850</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16850</span>
 
 static VALUE
 numo_s_fermi_dirac_half_e(VALUE mod,VALUE v0)
@@ -48866,7 +48869,7 @@ zero, $F_0(x,b) = ln(1 + e^b-x) - (b-x)$ F_0(x,b) = ln(1 + e^@b-x@) -
 17055</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17032</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17032</span>
 
 static VALUE
 numo_s_fermi_dirac_inc_0(VALUE mod,VALUE v0,VALUE v1)
@@ -48997,7 +49000,7 @@ zero, $F_0(x,b) = ln(1 + e^b-x) - (b-x)$ F_0(x,b) = ln(1 + e^@b-x@) -
 17121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17098</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17098</span>
 
 static VALUE
 numo_s_fermi_dirac_inc_0_e(VALUE mod,VALUE v0,VALUE v1)
@@ -49137,7 +49140,7 @@ GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16556</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16525</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16525</span>
 
 static VALUE
 numo_s_fermi_dirac_int(VALUE mod,VALUE v0,VALUE v1)
@@ -49285,7 +49288,7 @@ GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16633</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16602</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16602</span>
 
 static VALUE
 numo_s_fermi_dirac_int_e(VALUE mod,VALUE v0,VALUE v1)
@@ -49413,7 +49416,7 @@ e^x / (1 + e^x). Exceptional Return Values: GSL_EUNDRFLW</p>
 16065</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16042</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16042</span>
 
 static VALUE
 numo_s_fermi_dirac_m1(VALUE mod,VALUE v0)
@@ -49533,7 +49536,7 @@ e^x / (1 + e^x). Exceptional Return Values: GSL_EUNDRFLW</p>
 16128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16105</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16105</span>
 
 static VALUE
 numo_s_fermi_dirac_m1_e(VALUE mod,VALUE v0)
@@ -49652,7 +49655,7 @@ F_@-1/2@(x). Exceptional Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16691</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16668</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16668</span>
 
 static VALUE
 numo_s_fermi_dirac_mhalf(VALUE mod,VALUE v0)
@@ -49771,7 +49774,7 @@ F_@-1/2@(x). Exceptional Return Values: GSL_EUNDRFLW, GSL_EOVRFLW</p>
 16753</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 16730</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 16730</span>
 
 static VALUE
 numo_s_fermi_dirac_mhalf_e(VALUE mod,VALUE v0)
@@ -49893,7 +49896,7 @@ exceptions: GSL_EDOM, GSL_EOVRFLW, GSL_EROUND</p>
 17181</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17158</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17158</span>
 
 static VALUE
 numo_s_gamma(VALUE mod,VALUE v0)
@@ -50015,7 +50018,7 @@ exceptions: GSL_EDOM, GSL_EOVRFLW, GSL_EROUND</p>
 17245</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17222</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17222</span>
 
 static VALUE
 numo_s_gamma_e(VALUE mod,VALUE v0)
@@ -50147,7 +50150,7 @@ GSL_EDOM</p>
 19148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19125</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19125</span>
 
 static VALUE
 numo_s_gamma_inc(VALUE mod,VALUE v0,VALUE v1)
@@ -50279,7 +50282,7 @@ GSL_EDOM</p>
 19215</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19192</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19192</span>
 
 static VALUE
 numo_s_gamma_inc_e(VALUE mod,VALUE v0,VALUE v1)
@@ -50414,7 +50417,7 @@ $x ge 0$ x &gt;= 0.</p>
 19411</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19388</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19388</span>
 
 static VALUE
 numo_s_gamma_inc_P(VALUE mod,VALUE v0,VALUE v1)
@@ -50549,7 +50552,7 @@ $x ge 0$ x &gt;= 0.</p>
 19481</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19458</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19458</span>
 
 static VALUE
 numo_s_gamma_inc_P_e(VALUE mod,VALUE v0,VALUE v1)
@@ -50681,7 +50684,7 @@ exceptions: GSL_EDOM</p>
 19278</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19255</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19255</span>
 
 static VALUE
 numo_s_gamma_inc_Q(VALUE mod,VALUE v0,VALUE v1)
@@ -50813,7 +50816,7 @@ exceptions: GSL_EDOM</p>
 19345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19322</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19322</span>
 
 static VALUE
 numo_s_gamma_inc_Q_e(VALUE mod,VALUE v0,VALUE v1)
@@ -50932,7 +50935,7 @@ using the real Lanczos method. exceptions: GSL_EUNDRFLW, GSL_EROUND</p>
 17620</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17597</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17597</span>
 
 static VALUE
 numo_s_gammainv(VALUE mod,VALUE v0)
@@ -51051,7 +51054,7 @@ using the real Lanczos method. exceptions: GSL_EUNDRFLW, GSL_EROUND</p>
 17681</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17658</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17658</span>
 
 static VALUE
 numo_s_gammainv_e(VALUE mod,VALUE v0)
@@ -51176,7 +51179,7 @@ numo_s_gammainv_e(VALUE mod,VALUE v0)
 17498</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17475</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17475</span>
 
 static VALUE
 numo_s_gammastar(VALUE mod,VALUE v0)
@@ -51301,7 +51304,7 @@ numo_s_gammastar(VALUE mod,VALUE v0)
 17563</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17540</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17540</span>
 
 static VALUE
 numo_s_gammastar_e(VALUE mod,VALUE v0)
@@ -51432,7 +51435,7 @@ Exceptional Return Values: none</p>
 19935</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19912</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19912</span>
 
 static VALUE
 numo_s_gegenpoly_1(VALUE mod,VALUE v0,VALUE v1)
@@ -51563,7 +51566,7 @@ Exceptional Return Values: none</p>
 20125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20102</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20102</span>
 
 static VALUE
 numo_s_gegenpoly_1_e(VALUE mod,VALUE v0,VALUE v1)
@@ -51694,7 +51697,7 @@ Exceptional Return Values: none</p>
 19997</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19974</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19974</span>
 
 static VALUE
 numo_s_gegenpoly_2(VALUE mod,VALUE v0,VALUE v1)
@@ -51825,7 +51828,7 @@ Exceptional Return Values: none</p>
 20191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20168</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20168</span>
 
 static VALUE
 numo_s_gegenpoly_2_e(VALUE mod,VALUE v0,VALUE v1)
@@ -51956,7 +51959,7 @@ Exceptional Return Values: none</p>
 20059</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20036</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20036</span>
 
 static VALUE
 numo_s_gegenpoly_3(VALUE mod,VALUE v0,VALUE v1)
@@ -52087,7 +52090,7 @@ Exceptional Return Values: none</p>
 20257</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20234</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20234</span>
 
 static VALUE
 numo_s_gegenpoly_3_e(VALUE mod,VALUE v0,VALUE v1)
@@ -52245,7 +52248,7 @@ Values: GSL_EDOM</p>
 20504</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20467</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20467</span>
 
 static VALUE
 numo_s_gegenpoly_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -52410,7 +52413,7 @@ Exceptional Return Values: GSL_EDOM</p>
 20334</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20303</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20303</span>
 
 static VALUE
 numo_s_gegenpoly_n(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -52569,7 +52572,7 @@ Exceptional Return Values: GSL_EDOM</p>
 20415</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20384</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20384</span>
 
 static VALUE
 numo_s_gegenpoly_n_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -52696,7 +52699,7 @@ Exceptional Return Values: GSL_EUNDRFLW</p>
 13544</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13521</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13521</span>
 
 static VALUE
 numo_s_hazard(VALUE mod,VALUE v0)
@@ -52815,7 +52818,7 @@ Exceptional Return Values: GSL_EUNDRFLW</p>
 13604</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13581</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13581</span>
 
 static VALUE
 numo_s_hazard_e(VALUE mod,VALUE v0)
@@ -52989,7 +52992,7 @@ $psi(n,l,r) = R_n Y_lm$ psi(n,l,r) = R_n Y_@lm@.</p>
 8721</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8684</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8684</span>
 
 static VALUE
 numo_s_hydrogenicR(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -53134,7 +53137,7 @@ exp(-Z r).</p>
 8565</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8542</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8542</span>
 
 static VALUE
 numo_s_hydrogenicR_1(VALUE mod,VALUE v0,VALUE v1)
@@ -53265,7 +53268,7 @@ exp(-Z r).</p>
 8629</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8606</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8606</span>
 
 static VALUE
 numo_s_hydrogenicR_1_e(VALUE mod,VALUE v0,VALUE v1)
@@ -53439,7 +53442,7 @@ $psi(n,l,r) = R_n Y_lm$ psi(n,l,r) = R_n Y_@lm@.</p>
 8817</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 8780</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 8780</span>
 
 static VALUE
 numo_s_hydrogenicR_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -53586,7 +53589,7 @@ exceptions: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 20568</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20545</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20545</span>
 
 static VALUE
 numo_s_hyperg_0F1(VALUE mod,VALUE v0,VALUE v1)
@@ -53719,7 +53722,7 @@ exceptions: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 20636</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20613</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20613</span>
 
 static VALUE
 numo_s_hyperg_0F1_e(VALUE mod,VALUE v0,VALUE v1)
@@ -53861,7 +53864,7 @@ b. exceptions:</p>
 20868</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20845</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20845</span>
 
 static VALUE
 numo_s_hyperg_1F1(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -54003,7 +54006,7 @@ b. exceptions:</p>
 20936</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20913</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20913</span>
 
 static VALUE
 numo_s_hyperg_1F1_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -54159,7 +54162,7 @@ n. exceptions:</p>
 20718</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20681</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20681</span>
 
 static VALUE
 numo_s_hyperg_1F1_int(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -54329,7 +54332,7 @@ n. exceptions:</p>
 20804</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20767</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20767</span>
 
 static VALUE
 numo_s_hyperg_1F1_int_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -54486,7 +54489,7 @@ U(a,1+a-b,-1/x)$ 2F0(a,b,x) = (-1/x)^a U(a,1+a-b,-1/x) exceptions: GSL_EDOM</p>
 22012</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21989</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21989</span>
 
 static VALUE
 numo_s_hyperg_2F0(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -54629,7 +54632,7 @@ U(a,1+a-b,-1/x)$ 2F0(a,b,x) = (-1/x)^a U(a,1+a-b,-1/x) exceptions: GSL_EDOM</p>
 22083</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22060</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22060</span>
 
 static VALUE
 numo_s_hyperg_2F0_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -54786,7 +54789,7 @@ integer m. exceptions:</p>
 21455</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21432</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21432</span>
 
 static VALUE
 numo_s_hyperg_2F1(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -54939,7 +54942,7 @@ parameters for |x| &lt; 1.</p>
 21598</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21575</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21575</span>
 
 static VALUE
 numo_s_hyperg_2F1_conj(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -55092,7 +55095,7 @@ parameters for |x| &lt; 1.</p>
 21669</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21646</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21646</span>
 
 static VALUE
 numo_s_hyperg_2F1_conj_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -55245,7 +55248,7 @@ a_I, c, x) / Gamma© for |x| &lt; 1. exceptions:</p>
 21874</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21851</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21851</span>
 
 static VALUE
 numo_s_hyperg_2F1_conj_renorm(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -55398,7 +55401,7 @@ a_I, c, x) / Gamma© for |x| &lt; 1. exceptions:</p>
 21945</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21922</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21922</span>
 
 static VALUE
 numo_s_hyperg_2F1_conj_renorm_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -55555,7 +55558,7 @@ integer m. exceptions:</p>
 21531</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21508</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21508</span>
 
 static VALUE
 numo_s_hyperg_2F1_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -55708,7 +55711,7 @@ exceptions:</p>
 21736</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21713</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21713</span>
 
 static VALUE
 numo_s_hyperg_2F1_renorm(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -55861,7 +55864,7 @@ exceptions:</p>
 21807</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21784</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21784</span>
 
 static VALUE
 numo_s_hyperg_2F1_renorm_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -56002,7 +56005,7 @@ exceptions:</p>
 21249</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21226</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21226</span>
 
 static VALUE
 numo_s_hyperg_U(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -56143,7 +56146,7 @@ exceptions:</p>
 21315</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21292</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21292</span>
 
 static VALUE
 numo_s_hyperg_U_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -56285,7 +56288,7 @@ exceptions:</p>
 21383</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21360</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21360</span>
 
 static VALUE
 numo_s_hyperg_U_e10_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -56440,7 +56443,7 @@ integer parameters m, n. exceptions:</p>
 21017</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 20980</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 20980</span>
 
 static VALUE
 numo_s_hyperg_U_int(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -56609,7 +56612,7 @@ integer parameters m, n. exceptions:</p>
 21102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21065</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21065</span>
 
 static VALUE
 numo_s_hyperg_U_int_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -56779,7 +56782,7 @@ with extended range.</p>
 21187</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 21150</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 21150</span>
 
 static VALUE
 numo_s_hyperg_U_int_e10_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -56836,7 +56839,9 @@ numo_s_hyperg_U_int_e10_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>These routines compute the hypotenuse function $sqrt+ y^2$ sqrt@+ y^2@ avoiding overflow and underflow. Exceptional Return Values:</p>
+<p>This function computes the value of $sqrt+ y^2$ sqrt@+ y^2@ in
+a way that avoids overflow. It provides an alternative to the BSD math
+function hypot(x,y).</p>
 
 
   </div>
@@ -56896,33 +56901,33 @@ numo_s_hyperg_U_int_e10_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
       <pre class="lines">
 
 
-30680
-30681
-30682
-30683
-30684
-30685
-30686
-30687
-30688
-30689
-30690
-30691
-30692
-30693
-30694
-30695
-30696
-30697
-30698
-30699
-30700
-30701
-30702
-30703</pre>
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30680</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 383</span>
 
 static VALUE
 numo_s_hypot(VALUE mod,VALUE v0,VALUE v1)
@@ -56934,7 +56939,7 @@ numo_s_hypot(VALUE mod,VALUE v0,VALUE v1)
 
     
 
-#line 50 &quot;gen/tmpl/sf_basic.c&quot;
+#line 50 &quot;gen/tmpl/basic_func.c&quot;
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_hypot,NO_LOOP,2,1,ain,aout};
@@ -56943,7 +56948,7 @@ numo_s_hypot(VALUE mod,VALUE v0,VALUE v1)
 
 
     
-#line 66 &quot;gen/tmpl/sf_basic.c&quot;
+#line 66 &quot;gen/tmpl/basic_func.c&quot;
     vr = na_ndloop(&amp;ndf,2,v0,v1);
     
     return sf_extract(vr);
@@ -57051,7 +57056,7 @@ numo_s_hypot(VALUE mod,VALUE v0,VALUE v1)
 30767</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30744</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30744</span>
 
 static VALUE
 numo_s_hypot_e(VALUE mod,VALUE v0,VALUE v1)
@@ -57182,7 +57187,7 @@ GSL_EUNDRFLW, GSL_EOVRFLW</p>
 32162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 32139</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 32139</span>
 
 static VALUE
 numo_s_hzeta(VALUE mod,VALUE v0,VALUE v1)
@@ -57313,7 +57318,7 @@ GSL_EUNDRFLW, GSL_EOVRFLW</p>
 32227</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 32204</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 32204</span>
 
 static VALUE
 numo_s_hzeta_e(VALUE mod,VALUE v0,VALUE v1)
@@ -57444,7 +57449,7 @@ Values: none</p>
 22380</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22357</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22357</span>
 
 static VALUE
 numo_s_laguerre_1(VALUE mod,VALUE v0,VALUE v1)
@@ -57575,7 +57580,7 @@ Values: none</p>
 22567</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22544</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22544</span>
 
 static VALUE
 numo_s_laguerre_1_e(VALUE mod,VALUE v0,VALUE v1)
@@ -57706,7 +57711,7 @@ Values: none</p>
 22441</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22418</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22418</span>
 
 static VALUE
 numo_s_laguerre_2(VALUE mod,VALUE v0,VALUE v1)
@@ -57837,7 +57842,7 @@ Values: none</p>
 22632</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22609</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22609</span>
 
 static VALUE
 numo_s_laguerre_2_e(VALUE mod,VALUE v0,VALUE v1)
@@ -57968,7 +57973,7 @@ Values: none</p>
 22502</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22479</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22479</span>
 
 static VALUE
 numo_s_laguerre_3(VALUE mod,VALUE v0,VALUE v1)
@@ -58099,7 +58104,7 @@ Values: none</p>
 22697</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22674</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22674</span>
 
 static VALUE
 numo_s_laguerre_3_e(VALUE mod,VALUE v0,VALUE v1)
@@ -58251,7 +58256,7 @@ Exceptional Return Values: GSL_EDOM</p>
 22776</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22745</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22745</span>
 
 static VALUE
 numo_s_laguerre_n(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -58411,7 +58416,7 @@ Exceptional Return Values: GSL_EDOM</p>
 22859</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22828</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22828</span>
 
 static VALUE
 numo_s_laguerre_n_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -58538,7 +58543,7 @@ exceptions: GSL_EDOM, GSL_EMAXITER</p>
 22139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22116</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22116</span>
 
 static VALUE
 numo_s_lambert_W0(VALUE mod,VALUE v0)
@@ -58657,7 +58662,7 @@ exceptions: GSL_EDOM, GSL_EMAXITER</p>
 22199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22176</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22176</span>
 
 static VALUE
 numo_s_lambert_W0_e(VALUE mod,VALUE v0)
@@ -58776,7 +58781,7 @@ $W_-1(x)$ W_@-1@(x). exceptions: GSL_EDOM, GSL_EMAXITER</p>
 22257</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22234</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22234</span>
 
 static VALUE
 numo_s_lambert_Wm1(VALUE mod,VALUE v0)
@@ -58895,7 +58900,7 @@ $W_-1(x)$ W_@-1@(x). exceptions: GSL_EDOM, GSL_EMAXITER</p>
 22319</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22296</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22296</span>
 
 static VALUE
 numo_s_lambert_Wm1_e(VALUE mod,VALUE v0)
@@ -59065,7 +59070,7 @@ Numo::GSL::Sf::Legendre::SPHARM, Numo::GSL::Sf::Legendre::FULL</p>
 24028</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23990</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23990</span>
 
 static VALUE
 numo_s_legendre_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -59271,7 +59276,7 @@ parameter csphase to either -1 or 1 respectively.</p>
 24131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24089</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24089</span>
 
 static VALUE
 numo_s_legendre_array_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -59418,7 +59423,7 @@ P_l^&#39;&#39;m(x). The index is given by l(l+1)/2 + m.</p>
 25027</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25007</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25007</span>
 
 static VALUE
 numo_s_legendre_array_index(VALUE mod,VALUE v0,VALUE v1)
@@ -59531,7 +59536,7 @@ precomputing multiplicative factors used in the recurrence relations.</p>
 24992</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24974</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24974</span>
 
 static VALUE
 numo_s_legendre_array_n(VALUE mod,VALUE v0)
@@ -59697,7 +59702,7 @@ return]</p>
 24849</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24811</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24811</span>
 
 static VALUE
 numo_s_legendre_deriv2_alt_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -59904,7 +59909,7 @@ return]</p>
 24959</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24917</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24917</span>
 
 static VALUE
 numo_s_legendre_deriv2_alt_array_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -60094,7 +60099,7 @@ return]</p>
 24637</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24599</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24599</span>
 
 static VALUE
 numo_s_legendre_deriv2_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -60301,7 +60306,7 @@ return]</p>
 24746</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24704</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24704</span>
 
 static VALUE
 numo_s_legendre_deriv2_array_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -60488,7 +60493,7 @@ Numo::GSL::Sf::Legendre::SPHARM, Numo::GSL::Sf::Legendre::FULL</p>
 24431</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24393</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24393</span>
 
 static VALUE
 numo_s_legendre_deriv_alt_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -60692,7 +60697,7 @@ parameter csphase to either -1 or 1 respectively.</p>
 24535</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24493</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24493</span>
 
 static VALUE
 numo_s_legendre_deriv_alt_array_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -60879,7 +60884,7 @@ Numo::GSL::Sf::Legendre::SPHARM, Numo::GSL::Sf::Legendre::FULL</p>
 24229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24191</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24191</span>
 
 static VALUE
 numo_s_legendre_deriv_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -61083,7 +61088,7 @@ parameter csphase to either -1 or 1 respectively.</p>
 24334</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 24292</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24292</span>
 
 static VALUE
 numo_s_legendre_deriv_array_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -61254,7 +61259,7 @@ Return Values: GSL_EDOM</p>
 26549</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26518</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26518</span>
 
 static VALUE
 numo_s_legendre_H3d(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -61397,7 +61402,7 @@ GSL_EDOM</p>
 26262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26239</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26239</span>
 
 static VALUE
 numo_s_legendre_H3d_0(VALUE mod,VALUE v0,VALUE v1)
@@ -61532,7 +61537,7 @@ GSL_EDOM</p>
 26333</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26310</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26310</span>
 
 static VALUE
 numo_s_legendre_H3d_0_e(VALUE mod,VALUE v0,VALUE v1)
@@ -61669,7 +61674,7 @@ GSL_EDOM</p>
 26400</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26377</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26377</span>
 
 static VALUE
 numo_s_legendre_H3d_1(VALUE mod,VALUE v0,VALUE v1)
@@ -61806,7 +61811,7 @@ GSL_EDOM</p>
 26471</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26448</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26448</span>
 
 static VALUE
 numo_s_legendre_H3d_1_e(VALUE mod,VALUE v0,VALUE v1)
@@ -61958,7 +61963,7 @@ lmax. Exceptional Return Values:</p>
 26714</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26681</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26681</span>
 
 static VALUE
 numo_s_legendre_H3d_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -62120,7 +62125,7 @@ Return Values: GSL_EDOM</p>
 26631</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26600</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26600</span>
 
 static VALUE
 numo_s_legendre_H3d_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -62247,7 +62252,7 @@ explicit representations for l=1, 2, 3. Exceptional Return Values: none</p>
 22918</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22895</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22895</span>
 
 static VALUE
 numo_s_legendre_P1(VALUE mod,VALUE v0)
@@ -62366,7 +62371,7 @@ explicit representations for l=1, 2, 3. Exceptional Return Values: none</p>
 23099</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23076</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23076</span>
 
 static VALUE
 numo_s_legendre_P1_e(VALUE mod,VALUE v0)
@@ -62485,7 +62490,7 @@ explicit representations for l=1, 2, 3. Exceptional Return Values: none</p>
 22977</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 22954</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 22954</span>
 
 static VALUE
 numo_s_legendre_P2(VALUE mod,VALUE v0)
@@ -62604,7 +62609,7 @@ explicit representations for l=1, 2, 3. Exceptional Return Values: none</p>
 23162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23139</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23139</span>
 
 static VALUE
 numo_s_legendre_P2_e(VALUE mod,VALUE v0)
@@ -62723,7 +62728,7 @@ explicit representations for l=1, 2, 3. Exceptional Return Values: none</p>
 23036</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23013</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23013</span>
 
 static VALUE
 numo_s_legendre_P3(VALUE mod,VALUE v0)
@@ -62842,7 +62847,7 @@ explicit representations for l=1, 2, 3. Exceptional Return Values: none</p>
 23225</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23202</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23202</span>
 
 static VALUE
 numo_s_legendre_P3_e(VALUE mod,VALUE v0)
@@ -62981,7 +62986,7 @@ specific value of l, x subject to $l ge 0$ l &gt;= 0, $|x| le 1$ |x| &lt;=
 23299</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23268</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23268</span>
 
 static VALUE
 numo_s_legendre_Pl(VALUE mod,VALUE v0,VALUE v1)
@@ -63090,7 +63095,7 @@ Exceptional Return Values: GSL_EDOM</p>
 23459</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23426</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23426</span>
 
 static VALUE
 numo_s_legendre_Pl_array(VALUE mod,VALUE v0,VALUE v1)
@@ -63201,7 +63206,7 @@ Exceptional Return Values: GSL_EDOM</p>
 23543</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23510</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23510</span>
 
 static VALUE
 numo_s_legendre_Pl_deriv_array(VALUE mod,VALUE v0,VALUE v1)
@@ -63350,7 +63355,7 @@ specific value of l, x subject to $l ge 0$ l &gt;= 0, $|x| le 1$ |x| &lt;=
 23378</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23347</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23347</span>
 
 static VALUE
 numo_s_legendre_Pl_e(VALUE mod,VALUE v0,VALUE v1)
@@ -63514,7 +63519,7 @@ Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 25111</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25074</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25074</span>
 
 static VALUE
 numo_s_legendre_Plm(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -63684,7 +63689,7 @@ Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 25199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25162</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25162</span>
 
 static VALUE
 numo_s_legendre_Plm_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -63817,7 +63822,7 @@ x != 1. Exceptional Return Values: GSL_EDOM</p>
 23601</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23578</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23578</span>
 
 static VALUE
 numo_s_legendre_Q0(VALUE mod,VALUE v0)
@@ -63936,7 +63941,7 @@ x != 1. Exceptional Return Values: GSL_EDOM</p>
 23663</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23640</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23640</span>
 
 static VALUE
 numo_s_legendre_Q0_e(VALUE mod,VALUE v0)
@@ -64055,7 +64060,7 @@ x != 1. Exceptional Return Values: GSL_EDOM</p>
 23721</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23698</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23698</span>
 
 static VALUE
 numo_s_legendre_Q1(VALUE mod,VALUE v0)
@@ -64174,7 +64179,7 @@ x != 1. Exceptional Return Values: GSL_EDOM</p>
 23783</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23760</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23760</span>
 
 static VALUE
 numo_s_legendre_Q1_e(VALUE mod,VALUE v0)
@@ -64312,7 +64317,7 @@ x != 1 and $l ge 0$ l &gt;= 0. Exceptional Return Values: GSL_EDOM</p>
 23855</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23824</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23824</span>
 
 static VALUE
 numo_s_legendre_Ql(VALUE mod,VALUE v0,VALUE v1)
@@ -64458,7 +64463,7 @@ x != 1 and $l ge 0$ l &gt;= 0. Exceptional Return Values: GSL_EDOM</p>
 23932</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 23901</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 23901</span>
 
 static VALUE
 numo_s_legendre_Ql_e(VALUE mod,VALUE v0,VALUE v1)
@@ -64625,7 +64630,7 @@ standard normalization of P_l^m(x). Exceptional Return Values: GSL_EDOM</p>
 25286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25249</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25249</span>
 
 static VALUE
 numo_s_legendre_sphPlm(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -64798,7 +64803,7 @@ standard normalization of P_l^m(x). Exceptional Return Values: GSL_EDOM</p>
 25377</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 25340</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25340</span>
 
 static VALUE
 numo_s_legendre_sphPlm_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -64942,7 +64947,7 @@ subject to a and b not being negative integers. exceptions: GSL_EDOM</p>
 19668</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19645</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19645</span>
 
 static VALUE
 numo_s_lnbeta(VALUE mod,VALUE v0,VALUE v1)
@@ -65072,7 +65077,7 @@ subject to a and b not being negative integers. exceptions: GSL_EDOM</p>
 19733</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19710</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19710</span>
 
 static VALUE
 numo_s_lnbeta_e(VALUE mod,VALUE v0,VALUE v1)
@@ -65202,7 +65207,7 @@ the sum log(n!) - log(m!) - log((n-m)!). exceptions: GSL_EDOM</p>
 18424</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18401</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18401</span>
 
 static VALUE
 numo_s_lnchoose(VALUE mod,VALUE v0,VALUE v1)
@@ -65332,7 +65337,7 @@ the sum log(n!) - log(m!) - log((n-m)!). exceptions: GSL_EDOM</p>
 18488</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18465</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18465</span>
 
 static VALUE
 numo_s_lnchoose_e(VALUE mod,VALUE v0,VALUE v1)
@@ -65451,7 +65456,7 @@ none</p>
 31261</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31238</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31238</span>
 
 static VALUE
 numo_s_lncosh(VALUE mod,VALUE v0)
@@ -65570,7 +65575,7 @@ none</p>
 31321</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31298</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31298</span>
 
 static VALUE
 numo_s_lncosh_e(VALUE mod,VALUE v0)
@@ -65689,7 +65694,7 @@ log(n!!). exceptions: none</p>
 18179</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18156</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18156</span>
 
 static VALUE
 numo_s_lndoublefact(VALUE mod,VALUE v0)
@@ -65808,7 +65813,7 @@ log(n!!). exceptions: none</p>
 18240</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18217</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18217</span>
 
 static VALUE
 numo_s_lndoublefact_e(VALUE mod,VALUE v0)
@@ -65928,7 +65933,7 @@ algorithm is faster than computing ln(Gamma(n+1)) via gsl_sf_lngamma for n
 18059</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18036</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18036</span>
 
 static VALUE
 numo_s_lnfact(VALUE mod,VALUE v0)
@@ -66048,7 +66053,7 @@ algorithm is faster than computing ln(Gamma(n+1)) via gsl_sf_lngamma for n
 18122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18099</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18099</span>
 
 static VALUE
 numo_s_lnfact_e(VALUE mod,VALUE v0)
@@ -66170,7 +66175,7 @@ GSL_EDOM, GSL_EROUND</p>
 17305</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17282</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17282</span>
 
 static VALUE
 numo_s_lngamma(VALUE mod,VALUE v0)
@@ -66306,7 +66311,7 @@ GSL_ELOSS</p>
 17754</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17731</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17731</span>
 
 static VALUE
 numo_s_lngamma_complex_e(VALUE mod,VALUE v0,VALUE v1)
@@ -66428,7 +66433,7 @@ GSL_EDOM, GSL_EROUND</p>
 17369</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17346</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17346</span>
 
 static VALUE
 numo_s_lngamma_e(VALUE mod,VALUE v0)
@@ -66551,7 +66556,7 @@ exceptions: GSL_EDOM, GSL_EROUND</p>
 17437</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 17414</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 17414</span>
 
 static VALUE
 numo_s_lngamma_sgn_e(VALUE mod,VALUE v0)
@@ -66681,7 +66686,7 @@ log(Gamma(a + x)/Gamma(a)). exceptions:  GSL_EDOM</p>
 18827</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18804</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18804</span>
 
 static VALUE
 numo_s_lnpoch(VALUE mod,VALUE v0,VALUE v1)
@@ -66811,7 +66816,7 @@ log(Gamma(a + x)/Gamma(a)). exceptions:  GSL_EDOM</p>
 18891</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18868</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18868</span>
 
 static VALUE
 numo_s_lnpoch_e(VALUE mod,VALUE v0,VALUE v1)
@@ -66943,7 +66948,7 @@ x)/Gamma(a). exceptions:  GSL_EDOM</p>
 18961</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18938</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18938</span>
 
 static VALUE
 numo_s_lnpoch_sgn_e(VALUE mod,VALUE v0,VALUE v1)
@@ -67062,7 +67067,7 @@ Exceptional Return Values: GSL_EDOM</p>
 31144</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31121</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31121</span>
 
 static VALUE
 numo_s_lnsinh(VALUE mod,VALUE v0)
@@ -67181,7 +67186,7 @@ Exceptional Return Values: GSL_EDOM</p>
 31205</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31182</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31182</span>
 
 static VALUE
 numo_s_lnsinh_e(VALUE mod,VALUE v0)
@@ -67300,7 +67305,7 @@ Exceptional Return Values: GSL_EDOM</p>
 26771</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26748</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26748</span>
 
 static VALUE
 numo_s_log(VALUE mod,VALUE v0)
@@ -67420,7 +67425,7 @@ GSL_EDOM</p>
 27077</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27054</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27054</span>
 
 static VALUE
 numo_s_log_1plusx(VALUE mod,VALUE v0)
@@ -67540,7 +67545,7 @@ GSL_EDOM</p>
 27139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27116</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27116</span>
 
 static VALUE
 numo_s_log_1plusx_e(VALUE mod,VALUE v0)
@@ -67660,7 +67665,7 @@ GSL_EDOM</p>
 27197</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27174</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27174</span>
 
 static VALUE
 numo_s_log_1plusx_mx(VALUE mod,VALUE v0)
@@ -67780,7 +67785,7 @@ GSL_EDOM</p>
 27259</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27236</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27236</span>
 
 static VALUE
 numo_s_log_1plusx_mx_e(VALUE mod,VALUE v0)
@@ -67899,7 +67904,7 @@ ne 0. Exceptional Return Values: GSL_EDOM</p>
 26889</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26866</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26866</span>
 
 static VALUE
 numo_s_log_abs(VALUE mod,VALUE v0)
@@ -68018,7 +68023,7 @@ ne 0. Exceptional Return Values: GSL_EDOM</p>
 26950</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26927</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26927</span>
 
 static VALUE
 numo_s_log_abs_e(VALUE mod,VALUE v0)
@@ -68137,7 +68142,7 @@ Exceptional Return Values: GSL_EDOM</p>
 26832</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 26809</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 26809</span>
 
 static VALUE
 numo_s_log_e(VALUE mod,VALUE v0)
@@ -68256,7 +68261,7 @@ log(erfc(x)). Exceptional Return Values: none</p>
 13187</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13164</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13164</span>
 
 static VALUE
 numo_s_log_erfc(VALUE mod,VALUE v0)
@@ -68375,7 +68380,7 @@ log(erfc(x)). Exceptional Return Values: none</p>
 13248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 13225</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 13225</span>
 
 static VALUE
 numo_s_log_erfc_e(VALUE mod,VALUE v0)
@@ -68513,7 +68518,7 @@ Mathieu functions ce_n(q,x) and se_n(q,x), respectively.</p>
 27329</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27298</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27298</span>
 
 static VALUE
 numo_s_mathieu_a(VALUE mod,VALUE v0,VALUE v1)
@@ -68702,7 +68707,7 @@ the array result_array.</p>
 27651</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27600</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27600</span>
 
 static VALUE
 numo_s_mathieu_a_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -68868,7 +68873,7 @@ Mathieu functions ce_n(q,x) and se_n(q,x), respectively.</p>
 27404</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27373</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27373</span>
 
 static VALUE
 numo_s_mathieu_a_e(VALUE mod,VALUE v0,VALUE v1)
@@ -69014,7 +69019,7 @@ Mathieu functions ce_n(q,x) and se_n(q,x), respectively.</p>
 27474</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27443</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27443</span>
 
 static VALUE
 numo_s_mathieu_b(VALUE mod,VALUE v0,VALUE v1)
@@ -69203,7 +69208,7 @@ the array result_array.</p>
 27753</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27702</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27702</span>
 
 static VALUE
 numo_s_mathieu_b_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -69369,7 +69374,7 @@ Mathieu functions ce_n(q,x) and se_n(q,x), respectively.</p>
 27549</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27518</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27518</span>
 
 static VALUE
 numo_s_mathieu_b_e(VALUE mod,VALUE v0,VALUE v1)
@@ -69526,7 +69531,7 @@ se_n(q,x), respectively.</p>
 27826</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27795</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27795</span>
 
 static VALUE
 numo_s_mathieu_ce(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -69726,7 +69731,7 @@ in the array result_array.</p>
 28159</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28108</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 28108</span>
 
 static VALUE
 numo_s_mathieu_ce_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4)
@@ -69903,7 +69908,7 @@ se_n(q,x), respectively.</p>
 27903</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27872</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27872</span>
 
 static VALUE
 numo_s_mathieu_ce_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -70084,7 +70089,7 @@ Mc_n^@(j)@ or $Ms_n^(j)$ Ms_n^@(j)@.</p>
 28363</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28326</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 28326</span>
 
 static VALUE
 numo_s_mathieu_Mc(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -70308,7 +70313,7 @@ result_array.</p>
 28780</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28722</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 28722</span>
 
 static VALUE
 numo_s_mathieu_Mc_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4,VALUE v5)
@@ -70516,7 +70521,7 @@ Mc_n^@(j)@ or $Ms_n^(j)$ Ms_n^@(j)@.</p>
 28465</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28428</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 28428</span>
 
 static VALUE
 numo_s_mathieu_Mc_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -70703,7 +70708,7 @@ Mc_n^@(j)@ or $Ms_n^(j)$ Ms_n^@(j)@.</p>
 28563</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28526</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 28526</span>
 
 static VALUE
 numo_s_mathieu_Ms(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -70927,7 +70932,7 @@ result_array.</p>
 28895</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28837</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 28837</span>
 
 static VALUE
 numo_s_mathieu_Ms_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4,VALUE v5)
@@ -71135,7 +71140,7 @@ Mc_n^@(j)@ or $Ms_n^(j)$ Ms_n^@(j)@.</p>
 28665</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28628</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 28628</span>
 
 static VALUE
 numo_s_mathieu_Ms_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -71298,7 +71303,7 @@ se_n(q,x), respectively.</p>
 27976</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 27945</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 27945</span>
 
 static VALUE
 numo_s_mathieu_se(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -71498,7 +71503,7 @@ in the array result_array.</p>
 28265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28214</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 28214</span>
 
 static VALUE
 numo_s_mathieu_se_array(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4)
@@ -71675,7 +71680,7 @@ se_n(q,x), respectively.</p>
 28053</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28022</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 28022</span>
 
 static VALUE
 numo_s_mathieu_se_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -71813,7 +71818,7 @@ error in result. Exceptional Return Values: GSL_EOVRFLW, GSL_EUNDRFLW</p>
 10888</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10865</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10865</span>
 
 static VALUE
 numo_s_multiply_e(VALUE mod,VALUE v0,VALUE v1)
@@ -71967,7 +71972,7 @@ GSL_EUNDRFLW</p>
 10961</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 10938</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 10938</span>
 
 static VALUE
 numo_s_multiply_err_e(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -72099,7 +72104,7 @@ limiting value of the ratio is returned. exceptions:  GSL_EDOM, GSL_EOVRFLW</p>
 18701</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18678</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18678</span>
 
 static VALUE
 numo_s_poch(VALUE mod,VALUE v0,VALUE v1)
@@ -72231,7 +72236,7 @@ limiting value of the ratio is returned. exceptions:  GSL_EDOM, GSL_EOVRFLW</p>
 18767</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18744</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18744</span>
 
 static VALUE
 numo_s_poch_e(VALUE mod,VALUE v0,VALUE v1)
@@ -72361,7 +72366,7 @@ numo_s_poch_e(VALUE mod,VALUE v0,VALUE v1)
 19021</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18998</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18998</span>
 
 static VALUE
 numo_s_pochrel(VALUE mod,VALUE v0,VALUE v1)
@@ -72491,7 +72496,7 @@ numo_s_pochrel(VALUE mod,VALUE v0,VALUE v1)
 19085</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 19062</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 19062</span>
 
 static VALUE
 numo_s_pochrel_e(VALUE mod,VALUE v0,VALUE v1)
@@ -72622,7 +72627,7 @@ Values: GSL_ELOSS</p>
 31389</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31366</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31366</span>
 
 static VALUE
 numo_s_polar_to_rect(VALUE mod,VALUE v0,VALUE v1)
@@ -72665,11 +72670,10 @@ numo_s_polar_to_rect(VALUE mod,VALUE v0,VALUE v1)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>These routines compute the power x^n for integer n.  The power is computed
-using the minimum number of multiplications. For example, x^8 is computed
-as ((x^2)^2)^2, requiring only 3 multiplications.  For reasons of
-efficiency, these functions do not check for overflow or underflow
-conditions.</p>
+<p>These routines computes the power x^n for integer n.  The power is computed
+efficiently—for example, x^8 is computed as ((x^2)^2)^2, requiring only 3
+multiplications.  A version of this function which also computes the
+numerical error in the result is available as gsl_sf_pow_int_e.</p>
 
 
   </div>
@@ -72729,41 +72733,41 @@ conditions.</p>
       <pre class="lines">
 
 
-28936
-28937
-28938
-28939
-28940
-28941
-28942
-28943
-28944
-28945
-28946
-28947
-28948
-28949
-28950
-28951
-28952
-28953
-28954
-28955
-28956
-28957
-28958
-28959
-28960
-28961
-28962
-28963
-28964
-28965
-28966
-28967</pre>
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 28936</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 812</span>
 
 static VALUE
 numo_s_pow_int(VALUE mod,VALUE v0,VALUE v1)
@@ -72778,7 +72782,7 @@ numo_s_pow_int(VALUE mod,VALUE v0,VALUE v1)
 
     
 
-#line 50 &quot;gen/tmpl/sf_basic.c&quot;
+#line 50 &quot;gen/tmpl/basic_func.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_pow_int,NO_LOOP,1,1,ain,aout};
@@ -72791,10 +72795,10 @@ numo_s_pow_int(VALUE mod,VALUE v0,VALUE v1)
 
 
     
-#line 64 &quot;gen/tmpl/sf_basic.c&quot;
+#line 64 &quot;gen/tmpl/basic_func.c&quot;
     vr = na_ndloop3(&amp;ndf,opt,1,v0);
     
-#line 68 &quot;gen/tmpl/sf_basic.c&quot;
+#line 68 &quot;gen/tmpl/basic_func.c&quot;
     return sf_extract(vr);
 }</pre>
     </td>
@@ -72912,7 +72916,7 @@ conditions.</p>
 29044</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29013</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29013</span>
 
 static VALUE
 numo_s_pow_int_e(VALUE mod,VALUE v0,VALUE v1)
@@ -73040,7 +73044,7 @@ GSL_ELOSS</p>
 29174</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29151</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29151</span>
 
 static VALUE
 numo_s_psi(VALUE mod,VALUE v0)
@@ -73160,7 +73164,7 @@ GSL_ELOSS</p>
 29486</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29463</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29463</span>
 
 static VALUE
 numo_s_psi_1(VALUE mod,VALUE v0)
@@ -73280,7 +73284,7 @@ GSL_ELOSS</p>
 29548</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29525</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29525</span>
 
 static VALUE
 numo_s_psi_1_e(VALUE mod,VALUE v0)
@@ -73394,7 +73398,7 @@ integer n. Domain: n integer, n &gt; 0 Exceptional Return Values: GSL_EDOM</p>
 29388</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29370</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29370</span>
 
 static VALUE
 numo_s_psi_1_int(VALUE mod,VALUE v0)
@@ -73511,7 +73515,7 @@ integer n. Domain: n integer, n &gt; 0 Exceptional Return Values: GSL_EDOM</p>
 29428</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29402</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29402</span>
 
 static VALUE
 numo_s_psi_1_int_e(VALUE mod,VALUE v0)
@@ -73633,7 +73637,7 @@ numo_s_psi_1_int_e(VALUE mod,VALUE v0)
 29294</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29271</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29271</span>
 
 static VALUE
 numo_s_psi_1piy(VALUE mod,VALUE v0)
@@ -73752,7 +73756,7 @@ numo_s_psi_1piy(VALUE mod,VALUE v0)
 29356</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29333</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29333</span>
 
 static VALUE
 numo_s_psi_1piy_e(VALUE mod,VALUE v0)
@@ -73872,7 +73876,7 @@ GSL_ELOSS</p>
 29236</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29213</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29213</span>
 
 static VALUE
 numo_s_psi_e(VALUE mod,VALUE v0)
@@ -73987,7 +73991,7 @@ The digamma function is also called the Psi function. Domain: n integer, n
 29076</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29058</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29058</span>
 
 static VALUE
 numo_s_psi_int(VALUE mod,VALUE v0)
@@ -74105,7 +74109,7 @@ The digamma function is also called the Psi function. Domain: n integer, n
 29116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29090</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29090</span>
 
 static VALUE
 numo_s_psi_int_e(VALUE mod,VALUE v0)
@@ -74247,7 +74251,7 @@ Return Values: GSL_EDOM</p>
 29621</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29590</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29590</span>
 
 static VALUE
 numo_s_psi_n(VALUE mod,VALUE v0,VALUE v1)
@@ -74394,7 +74398,7 @@ Return Values: GSL_EDOM</p>
 29699</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29668</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29668</span>
 
 static VALUE
 numo_s_psi_n_e(VALUE mod,VALUE v0,VALUE v1)
@@ -74534,7 +74538,7 @@ GSL_EDOM</p>
 31458</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31435</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31435</span>
 
 static VALUE
 numo_s_rect_to_polar(VALUE mod,VALUE v0,VALUE v1)
@@ -74654,7 +74658,7 @@ GSL_EUNDRFLW</p>
 15345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15322</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15322</span>
 
 static VALUE
 numo_s_Shi(VALUE mod,VALUE v0)
@@ -74774,7 +74778,7 @@ GSL_EUNDRFLW</p>
 15406</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15383</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15383</span>
 
 static VALUE
 numo_s_Shi_e(VALUE mod,VALUE v0)
@@ -74893,7 +74897,7 @@ sin(t)/t$ Si(x) = int_0^x dt sin(t)/t. Exceptional Return Values: none</p>
 15705</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15682</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15682</span>
 
 static VALUE
 numo_s_Si(VALUE mod,VALUE v0)
@@ -75012,7 +75016,7 @@ sin(t)/t$ Si(x) = int_0^x dt sin(t)/t. Exceptional Return Values: none</p>
 15766</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 15743</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 15743</span>
 
 static VALUE
 numo_s_Si_e(VALUE mod,VALUE v0)
@@ -75130,7 +75134,7 @@ numo_s_Si_e(VALUE mod,VALUE v0)
 30467</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30444</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30444</span>
 
 static VALUE
 numo_s_sin(VALUE mod,VALUE v0)
@@ -75248,7 +75252,7 @@ numo_s_sin(VALUE mod,VALUE v0)
 30527</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30504</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30504</span>
 
 static VALUE
 numo_s_sin_e(VALUE mod,VALUE v0)
@@ -75380,7 +75384,7 @@ propagated error.</p>
 31647</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31624</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31624</span>
 
 static VALUE
 numo_s_sin_err_e(VALUE mod,VALUE v0,VALUE v1)
@@ -75499,7 +75503,7 @@ Exceptional Return Values: none</p>
 30824</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30801</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30801</span>
 
 static VALUE
 numo_s_sinc(VALUE mod,VALUE v0)
@@ -75618,7 +75622,7 @@ Exceptional Return Values: none</p>
 30885</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30862</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30862</span>
 
 static VALUE
 numo_s_sinc_e(VALUE mod,VALUE v0)
@@ -75738,7 +75742,7 @@ K_5/3(t)$ x int_x^infty dt K_@5/3@(t) for $x ge 0$ x &gt;= 0. Domain: x
 29759</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29736</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29736</span>
 
 static VALUE
 numo_s_synchrotron_1(VALUE mod,VALUE v0)
@@ -75858,7 +75862,7 @@ K_5/3(t)$ x int_x^infty dt K_@5/3@(t) for $x ge 0$ x &gt;= 0. Domain: x
 29823</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29800</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29800</span>
 
 static VALUE
 numo_s_synchrotron_1_e(VALUE mod,VALUE v0)
@@ -75978,7 +75982,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 29883</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29860</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29860</span>
 
 static VALUE
 numo_s_synchrotron_2(VALUE mod,VALUE v0)
@@ -76098,7 +76102,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 29947</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29924</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29924</span>
 
 static VALUE
 numo_s_synchrotron_2_e(VALUE mod,VALUE v0)
@@ -76236,7 +76240,7 @@ numo_s_synchrotron_2_e(VALUE mod,VALUE v0)
 18561</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18530</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18530</span>
 
 static VALUE
 numo_s_taylorcoeff(VALUE mod,VALUE v0,VALUE v1)
@@ -76382,7 +76386,7 @@ numo_s_taylorcoeff(VALUE mod,VALUE v0,VALUE v1)
 18639</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 18608</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 18608</span>
 
 static VALUE
 numo_s_taylorcoeff_e(VALUE mod,VALUE v0,VALUE v1)
@@ -76509,7 +76513,7 @@ Values: GSL_EDOM</p>
 30003</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 29980</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 29980</span>
 
 static VALUE
 numo_s_transport_2(VALUE mod,VALUE v0)
@@ -76628,7 +76632,7 @@ Values: GSL_EDOM</p>
 30063</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30040</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30040</span>
 
 static VALUE
 numo_s_transport_2_e(VALUE mod,VALUE v0)
@@ -76747,7 +76751,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 30119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30096</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30096</span>
 
 static VALUE
 numo_s_transport_3(VALUE mod,VALUE v0)
@@ -76866,7 +76870,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 30179</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30156</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30156</span>
 
 static VALUE
 numo_s_transport_3_e(VALUE mod,VALUE v0)
@@ -76985,7 +76989,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 30235</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30212</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30212</span>
 
 static VALUE
 numo_s_transport_4(VALUE mod,VALUE v0)
@@ -77104,7 +77108,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 30295</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30272</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30272</span>
 
 static VALUE
 numo_s_transport_4_e(VALUE mod,VALUE v0)
@@ -77223,7 +77227,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 30351</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30328</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30328</span>
 
 static VALUE
 numo_s_transport_5(VALUE mod,VALUE v0)
@@ -77342,7 +77346,7 @@ Values: GSL_EDOM, GSL_EUNDRFLW</p>
 30411</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 30388</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 30388</span>
 
 static VALUE
 numo_s_transport_5_e(VALUE mod,VALUE v0)
@@ -77461,7 +77465,7 @@ ne 1. Domain: s != 1.0 Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 31846</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31823</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31823</span>
 
 static VALUE
 numo_s_zeta(VALUE mod,VALUE v0)
@@ -77580,7 +77584,7 @@ ne 1. Domain: s != 1.0 Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 31909</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31886</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31886</span>
 
 static VALUE
 numo_s_zeta_e(VALUE mod,VALUE v0)
@@ -77695,7 +77699,7 @@ GSL_EOVRFLW</p>
 31746</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31728</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31728</span>
 
 static VALUE
 numo_s_zeta_int(VALUE mod,VALUE v0)
@@ -77813,7 +77817,7 @@ GSL_EOVRFLW</p>
 31787</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31761</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31761</span>
 
 static VALUE
 numo_s_zeta_int_e(VALUE mod,VALUE v0)
@@ -77935,7 +77939,7 @@ numo_s_zeta_int_e(VALUE mod,VALUE v0)
 32039</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 32016</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 32016</span>
 
 static VALUE
 numo_s_zetam1(VALUE mod,VALUE v0)
@@ -78054,7 +78058,7 @@ numo_s_zetam1(VALUE mod,VALUE v0)
 32101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 32078</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 32078</span>
 
 static VALUE
 numo_s_zetam1_e(VALUE mod,VALUE v0)
@@ -78168,7 +78172,7 @@ integer, n != 1 Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 31941</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31923</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31923</span>
 
 static VALUE
 numo_s_zetam1_int(VALUE mod,VALUE v0)
@@ -78285,7 +78289,7 @@ integer, n != 1 Exceptional Return Values: GSL_EDOM, GSL_EOVRFLW</p>
 31981</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'gsl_sf.c', line 31955</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 31955</span>
 
 static VALUE
 numo_s_zetam1_int_e(VALUE mod,VALUE v0)
@@ -78324,7 +78328,7 @@ numo_s_zetam1_int_e(VALUE mod,VALUE v0)
 </div>
 
     <div id="footer">
-  Generated on Wed May  4 16:47:29 2016 by
+  Generated on Thu May  5 22:10:08 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>
