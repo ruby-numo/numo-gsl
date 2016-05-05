@@ -1,0 +1,18 @@
+# GSL::Sf
+* Generate Test code.
+* Allow Input/Output argument.
+   gsl_sf_bessel_sequence_Jnu_e
+   gsl_sf_angle_restrict_symm_e
+   gsl_sf_angle_restrict_pos_e
+* Allow NArray Integer for input argument.
+* Add function written not in texinfo but in header.
+* Different GSL versions have different API.
+* Loops in iterator.
+* Fix doc: Invalid Input/Output types for scalar function.
+* Fix doc: Add C function definition in doc.
+
+# GSL::Stat
+* implement
+
+# GSL::Rng
+* implement
