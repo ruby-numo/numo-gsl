@@ -1,8 +1,5 @@
 require 'rbconfig.rb'
 require 'numo/narray'
-
-#RbConfig::MAKEFILE_CONFIG["optflags"] = "-g3 -gdwarf-2"
-
 require 'mkmf'
 
 # configure options: --with-gsl-lib=path
@@ -34,26 +31,19 @@ libs.each do |x|
   exit 1 unless have_library(x)
 end
 
-#$CFLAGS="-g -O0"
-
+# check narray.h
 $LOAD_PATH.each do |x|
-  if File.exist? File.join(x,'numo/numo/narray.h')
+  if File.exist? File.join(x,'numo','numo/narray.h')
     $INCFLAGS = "-I#{x}/numo " + $INCFLAGS
     break
   end
 end
+exit 1 unless have_header('numo/narray.h')
 
+# source file to compile
 srcs = %w(
-gsl_sf
+ gsl_sf
 )
-
 $objs = srcs.collect{|i| i+".o"}
-fflags = ""
-
-if !have_header('numo/narray.h')
-  print "Header numo/narray.h was not found. Give pathname as follows:
-  % ruby extconf.rb --with-narray-include=narray_h_dir"
-  exit 1
-end
 
 create_makefile('numo/gsl/sf')
