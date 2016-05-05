@@ -5,7 +5,9 @@
 
 ## Implemented Modules
 
-* [Special Functions](http://masa16.github.io/numo-gsl/ref/sf/Numo/GSL/Sf.html)
+* [Mathematical Functions](http://masa16.github.io/numo-gsl/doc/Numo/GSL.html)
+* [Special Functions](http://masa16.github.io/numo-gsl/doc/Numo/GSL/Sf.html)
+* [Constatnts](http://masa16.github.io/numo-gsl/doc/Numo/GSL/Const.html)
 
   * More modules will be implemented.
 
