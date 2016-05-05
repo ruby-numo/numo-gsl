@@ -6,7 +6,7 @@ $LOAD_PATH.unshift libpath
 
 require "erbpp"
 require "optparse"
-require_relative "erbpp_gsl"
+require_relative "erbpp_gsl_sf"
 
 tmpfile = ".cogen.tmp"
 outfile = nil

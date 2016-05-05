@@ -95,7 +95,7 @@ sf_extract(VALUE v)
 mod_var "mSf"
 m_prefix "gsl_sf_"
 
-load_sf_def "gen/gsl_sf_def.rb"
+load_sf_def "gen/sf_def.rb"
 
 %>
 <% Function.codes.each do |x| %>

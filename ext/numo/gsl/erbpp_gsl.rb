@@ -1,6 +1,5 @@
 require 'erbpp'
 
-
 class Argument
 
   def description
@@ -308,23 +307,16 @@ class Counter
   end
 end
 
-class GslSfFunction < Function
-  RE = /^ no match $/
+#----------------------------------------------------------
 
-  class << self
-    def lookup(h)
-      self::RE =~ h[:func_name]
-    end
+class GslFunction < Function
+
+  def self.lookup(h)
+    false
   end
 
-  PARAM_DESC =
-    {
-     "norm"=>"@param [Integer] norm Type of normalization to use. The possible values are: Numo::GSL::Sf::Legendre::NONE, Numo::GSL::Sf::Legendre::SCHMIDT, Numo::GSL::Sf::Legendre::SPHARM, Numo::GSL::Sf::Legendre::FULL",
-     "mode"=>"@param [Integer] mode  The following precision levels are available: Numo::GSL::PREC_DOUBLE, Numo::GSL::PREC_SINGLE, Numo::GSL::PREC_APPROX.",
-     "lmax"=>"@param [Integer] lmax",
-     "csphase"=>"@param [Float] csphase  To include or exclude the Condon-Shortley phase factor of (-1)^m, set the parameter csphase to either -1 or 1 respectively.",
-     "work"=>"@param [Numo::GSL::Sf::MathieuWorkspace] work",
-    }
+  PARAM_DESC = {}
+  PARAM_NAMES = {}
 
   def param_desc
     self.class::PARAM_DESC
@@ -342,15 +334,6 @@ class GslSfFunction < Function
     @args_input.map{|a| a.description}+[r]
   end
 
-  PARAM_NAMES =
-  {
-   "double" => %w[csphase],
-   "int" => true, #%w[n m i j l kmax lmax nmin nmax size order_min order_max],
-   "size_t" => true, #%w[lmax],
-   "gsl_sf_legendre_t" => true,
-   "gsl_mode_t" => true,
-   "gsl_sf_mathieu_workspace *"=>true,
-  }
 
   def param_names
     self.class::PARAM_NAMES
@@ -400,16 +383,12 @@ class GslSfFunction < Function
     if @args_in.empty?
       tmpl = "sf_scalar"
     end
-    @name = h[:func_name]
-    super(parent,tmpl,
-          singleton:true,
-          c_method:@name,
-          method:@name.sub(/^gsl_sf_/,""),
-          **h)
+    h[:singleton] = true
+    super(parent,tmpl,**h)
     @counter = Counter.new
   end
 
-  attr_reader :name
+  #attr_reader :name
   attr_reader :args_out, :args_in, :args_param, :varg
   attr_reader :generate_array
 
@@ -473,215 +452,6 @@ class GslSfFunction < Function
 
   def ndl_args
     @args_in.map{|a| a.v_var}.join(",")
-  end
-
-end
-
-
-class MathieuArray < GslSfFunction
-  RE = /^gsl_sf_mathieu_\w+_array$/
-
-  def initialize(parent,**h)
-    super(parent,"sf_basic",**h)
-
-    case c_method
-    when /_(a|b)_array$/
-      @mathieu_type = :characteristic
-    when /_(c|s)e_array$/
-      @mathieu_type = :angular
-    when /_M(c|s)_array$/
-      @mathieu_type = :radial
-    end
-
-    if @mathieu_type == :radial
-      @preproc_code = <<EOL
-    if (c0!=1 || c0!=2) {
-        rb_raise(rb_eArgError,"j should be 1 or 2");
-    }
-    if (c1<0 || c2<0 || c1>c2) {
-        rb_raise(rb_eArgError,"should be nmin>=0 && nmax>=0 && nmin<=nmax");
-    }
-    shape[0] = c2-c1+1;
-EOL
-      else
-        @preproc_code = <<EOL
-    if (c0<0 || c1<0 || c0>c1) {
-        rb_raise(rb_eArgError,"should be nmin>=0 && nmax>=0 && nmin<=nmax");
-    }
-    shape[0] = c1-c0+1;
-EOL
-    end
-  end
-end
-
-
-class BesselArray < GslSfFunction
-  RE = /^gsl_sf_bessel_\w+_array$/
-
-  def initialize(parent,**h)
-    super(parent,"sf_basic",**h)
-    if n_arg == 3
-      @preproc_code = <<EOL
-    if (c0<0 || c1<0 || c0>c1) {
-        rb_raise(rb_eArgError,"should be nmin>=0 && nmax>=0 && nmin<=nmax");
-    }
-    shape[0] = c1-c0+1;
-EOL
-    else
-      @preproc_code = <<EOL
-    if (c0<0) {
-        rb_raise(rb_eArgError,"should be lmax>=0");
-    }
-    shape[0] = c0+1;
-EOL
-    end
-  end
-end
-
-
-class CoulombArray < GslSfFunction
-  RE = /^gsl_sf_coulomb_\w+_array$/
-
-  def initialize(parent,**h)
-    super(parent,"sf_basic",**h)
-    c = find_name("kmax").c_var
-    @preproc_code = <<EOL
-    if (#{c}<0) {
-        rb_raise(rb_eArgError,"should be kmax>=0");
-    }
-    shape[0] = #{c}+1;
-EOL
-  end
-end
-
-
-class GegenpolyArray < GslSfFunction
-  RE = /^gsl_sf_gegenpoly_array$/
-
-  def initialize(parent,**h)
-    super(parent,"sf_basic",**h)
-    c = find_name("nmax").c_var
-    @preproc_code = <<EOL
-    if (#{c}<0) {
-        rb_raise(rb_eArgError,"should be kmax>=0");
-    }
-    shape[0] = #{c}+1;
-EOL
-  end
-end
-
-
-class LegendreArray < GslSfFunction
-  RE = /^gsl_sf_legendre\w*_array(_e)?$/
-
-  def initialize(parent,**h)
-    super(parent,"sf_basic",**h)
-    c = find_name("lmax").c_var
-    @preproc_code = "    shape[0] = gsl_sf_legendre_array_n(#{c});"
-  end
-end
-
-
-class SfBasic < GslSfFunction
-  RE = /^gsl_sf_/
-  #RE = /^gsl_sf_coupling/
-
-  def initialize(parent,**h)
-    @preproc_code = ""
-    super(parent,"sf_basic",**h)
-  end
-
-  class << self
-    def lookup(h)
-      #return /airy/ =~ h[:func_name]
-      case h[:func_name]
-      when /_(alloc)|(free)$/
-        false
-      #when /coulomb/
-      #  false
-      when /angle_restrict_\w+_e/ # overwrite on *theta
-        false
-      when /bessel_sequence_Jnu_e/ # overwrite on v[]
-        false
-      #when /gegenpoly_array/
-      #  false
-      else
-        true
-      end
-    end
-  end
-
-end
-
-
-module DefMethod
-
-  def check_gsl_sf(h)
-    if /These functions are now deprecated/m =~ h[:desc]
-      $stderr.puts "depricated: #{h[:func_name]}"
-      return false
-    end
-    if /This function is now deprecated/m =~ h[:desc]
-      $stderr.puts "depricated: #{h[:func_name]}"
-      return false
-    end
-    a = [
-     LegendreArray,
-     MathieuArray,
-     BesselArray,
-     CoulombArray,
-     GegenpolyArray,
-     SfBasic
-    ]
-    a.each do |c|
-      if c.lookup(h)
-        c.new(self,**h)
-        return true
-      end
-    end
-    $stderr.puts "skip #{h[:func_type]} #{h[:func_name]} #{h[:args].inspect}"
-    false
-  end
-
-  def load_sf_def(file)
-    str = open(file,"r").read
-    ary = eval(str)
-    ary.each{|h| check_gsl_sf(h)}
-  end
-
-end
-
-# ----------------------------------------------------------------------
-
-class DefineModule < ErbPP
-
-  include DefMethod
-
-  def initialize(erb_path, type_file=nil)
-    super(nil, erb_path)
-    @class_alias = []
-    @upcast = []
-    @mod_var = "mM"
-    @tmpl_dir = File.join(File.dirname(erb_path),"tmpl")
-    load_type(type_file) if type_file
-  end
-
-  attr_reader :tmpl_dir
-
-  def load_type(file)
-    eval File.read(file)
-  end
-
-  attrs = %w[
-    m_prefix
-    mod_var
-    class_name
-    desc
-  ]
-  define_attrs attrs
-
-  def class_alias(*args)
-    @class_alias.concat(args)
   end
 
 end
