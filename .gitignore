@@ -44,3 +44,5 @@ TAGS
 /ext/numo/gsl/*/mkmf.log
 /ext/numo/gsl/*/extconf.h
 /ext/numo/gsl/sf/gsl_sf.c
+/ext/numo/gsl/sys/gsl_sys.c
+/ext/numo/gsl/const/gsl_const.c

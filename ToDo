@@ -11,6 +11,9 @@
 * Fix doc: Invalid Input/Output types for scalar function.
 * Fix doc: Add C function definition in doc.
 
+# GSL elementary functions
+* implement
+
 # GSL::Stat
 * implement
 

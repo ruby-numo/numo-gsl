@@ -1,1 +1,1 @@
-#define NUMO_GSL_VERSION "0.0.1"
+#define NUMO_GSL_VERSION "0.2.1"
