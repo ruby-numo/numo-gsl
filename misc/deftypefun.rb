@@ -75,28 +75,29 @@ end
 
 if __FILE__ == $0
   require 'pp'
+  require 'fileutils'
   require_relative 'parse_texi'
 
   texi_files =
   [
-   ["specfunc-*.texi","gsl_sf_def.rb"],
+   ["specfunc-*.texi","../ext/numo/gsl/sf/gen/sf_def.rb"],
+   ["math.texi","../ext/numo/gsl/sys/gen/sys_def.rb"],
+   ["statistics.texi","../ext/numo/gsl/stats/gen/stats_def.rb"],
    #["specfunc-legendre.texi","gsl_sf_def.rb"]
   ]
   doc_dir = "../../gsl-2.1/doc"
-  out_dir = "../ext/numo/gsl/sf/gen"
-  #out_dir = "."
 
-  texi_files.each do |pat,out_file|
+  texi_files.each do |pat,out_path|
     list = []
     Dir.glob(File.join(doc_dir,pat)) do |fn|
-      puts "\n#--- #{File.basename(fn)} ---"
+      puts "# #{File.basename(fn)}"
       a = ParseTexi.parse(open(fn))
       #pp a
       list.concat DefTypeFun.parse(a)
       #list = b.map{|x| DefTypeFun.new(*x)}
       #list.each{|x| puts x if /^gsl_sf_/=~x.func_name}
     end
-    out_path = File.join(out_dir,out_file)
+    FileUtils.mkdir_p(File.dirname(out_path))
     PP.pp(list,open(out_path,"w"))
     puts "Wrote #{list.size} definitions to #{out_path}."
   end
