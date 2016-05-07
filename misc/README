@@ -1,6 +1,6 @@
-= generate ext/numo/gsl/sf/gen/gsl_sf_def.rb from texinfo
+= generate ext/numo/gsl/*/gen/[func|const]_def.rb from texinfo
 
-    ruby deftypefun.rb
+    ruby gendef.rb
 
 = compare function lists from C header and texinfo
 

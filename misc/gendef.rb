@@ -26,7 +26,6 @@ class ParseGslTexi
     else
       return
     end
-    #pp a
     a[2].each do |l|
       case l.size
       when 1
@@ -93,6 +92,7 @@ class ParseGslTexi
 
 end
 
+
 module ParseMacro
   module_function
 
@@ -120,48 +120,62 @@ if __FILE__ == $0
   src_files =
   [
    ["doc/const.texi",
+    "../ext/numo/gsl/const/gen",
     "const/gsl_const_*.h",
     /^GSL_CONST_(.*)$/,
-    "../ext/numo/gsl/const/gen/const_def.rb"],
+   ],
    ["doc/math.texi",
-    "none",
+    "../ext/numo/gsl/sys/gen",
+    nil,
     /^M_(.*)$/,
-    "../ext/numo/gsl/sys/gen/const_def.rb"],
-   #["specfunc-legendre.texi","gsl_sf_def.rb"]
+   ],
+   ["doc/specfunc-*.texi",
+    "../ext/numo/gsl/sf/gen"],
+   ["doc/statistics.texi",
+    "../ext/numo/gsl/stats/gen"],
   ]
   src_dir = "../../gsl-2.1"
 
-  src_files.each do |texi_pat,h_pat,name_re,out_path|
-    list = {}
-    Dir.glob(File.join(src_dir,h_pat)) do |fn|
-      puts "# #{File.basename(fn)}"
-      t = ParseMacro.parse_const(open(fn))
-      t.each do |x|
-        if name_re =~ x[0]
-          list[x[0]] = x[1]
+  src_files.each do |texi_pat,out_path,h_pat,name_re|
+    funcs = []
+    const = {}
+
+    if h_pat && name_re
+      Dir.glob(File.join(src_dir,h_pat)) do |fn|
+        puts "# read #{File.basename(fn)}"
+        t = ParseMacro.parse_const(open(fn))
+        t.each do |x|
+          if name_re =~ x[0]
+            const[x[0]] = x[1]
+          end
         end
       end
     end
+
     Dir.glob(File.join(src_dir,texi_pat)) do |fn|
       puts "# #{File.basename(fn)}"
       a = ParseTexi.parse(open(fn))
-      #pp a
       g = ParseGslTexi.new
       g.parse(a)
       g.tables.each do |t|
         t.each do |x|
-          if name_re =~ x[0]
-            list[x[0].strip] = x[1]
+          if name_re && name_re =~ x[0]
+            const[x[0].strip] = x[1]
           end
         end
       end
-      #list.concat DefTypeFun.parse(a)
-      #list = b.map{|x| DefTypeFun.new(*x)}
-      #list.each{|x| puts x if /^gsl_sf_/=~x.func_name}
+      funcs.concat g.deftypefun
     end
-    list2 = list.keys.sort.map{|k| [k,list[k]]}
     FileUtils.mkdir_p(File.dirname(out_path))
-    PP.pp(list2,open(out_path,"w"))
-    puts "Wrote #{list2.size} definitions to #{out_path}"
+    if !const.empty?
+      clist = const.keys.sort.map{|k| [k,const[k]]}
+      PP.pp(clist,open(File.join(out_path,"const_def.rb"),"w"))
+      puts "Wrote #{clist.size} constants to #{out_path}/const_def.rb"
+    end
+    if !funcs.empty?
+      PP.pp(funcs,open(File.join(out_path,"func_def.rb"),"w"))
+      puts "Wrote #{funcs.size} functions to #{out_path}/func_def.rb"
+    end
   end
+
 end
