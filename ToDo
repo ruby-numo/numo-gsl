@@ -11,11 +11,65 @@
 * Fix doc: Invalid Input/Output types for scalar function.
 * Fix doc: Add C function definition in doc.
 
-# GSL elementary functions
-* implement
-
 # GSL::Stat
 * implement
 
 # GSL::Rng
 * implement
+
+# Erbpp
+* c_method definition
+
+# Done
+* Mathematical Functions:
+* Special Functions:
+* Physical Constants:
+
+# To do
+* Polynomials:
+* Fast Fourier Transforms:
+* Random Number Generation:
+* Random Number Distributions:
+* Statistics:
+* Running Statistics:
+* Histograms:
+* Wavelet Transforms:
+* Interpolation:
+* Least-Squares Fitting:
+* Nonlinear Least-Squares Fitting:
+* Basis Splines:
+
+# NArray has
+* Complex Numbers:
+* Vectors and Matrices:
+* Sorting:
+
+# non-array?
+* Permutations:
+* Combinations:
+* Multisets:
+* Numerical Integration:
+* N-tuples:
+* Monte Carlo Integration:
+* Simulated Annealing:
+* Ordinary Differential Equations:
+* Numerical Differentiation:
+* Chebyshev Approximations:
+* Series Acceleration:
+* Discrete Hankel Transforms:
+* One dimensional Root-Finding:
+* One dimensional Minimization:
+* Multidimensional Root-Finding:
+* Multidimensional Minimization:
+
+# Linalg has
+* Linear Algebra:
+* Eigensystems:
+
+# ?
+* BLAS Support:
+* Sparse Matrices:
+* Sparse BLAS Support:
+* Sparse Linear Algebra:
+* IEEE floating-point arithmetic:
+* Quasi-Random Sequences:
