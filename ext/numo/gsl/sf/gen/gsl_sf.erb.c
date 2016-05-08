@@ -16,6 +16,13 @@
 
 typedef double dtype;
 
+<%
+mod_var "mSf"
+m_prefix "gsl_sf_"
+
+load_sf_def "gen/func_def.rb"
+%>
+
 #define GET_PTR(lp,i) (((lp)->args[i]).ptr + ((lp)->iter[i]).pos)
 #define cDF numo_cDFloat
 #define cSZ numo_cUInt64
@@ -65,39 +72,6 @@ sf_mathieu_init(VALUE self, VALUE n, VALUE q)
 }
 
 
-static VALUE
-sf_extract(VALUE v)
-{
-    long i, n;
-    VALUE x, y;
-    narray_t *na;
-
-    if (IsNArray(v)){
-        GetNArray(v,na);
-        if (NA_NDIM(na)==0) {
-            return rb_funcall(v, rb_intern("extract"), 0);
-        }
-    } else if (RTEST(rb_obj_is_kind_of(v, rb_cArray))) {
-        n = RARRAY_LEN(v);
-        for (i=0; i<n; i++) {
-            x = RARRAY_AREF(v,i);
-            y = sf_extract(x);
-            if (x != y) {
-                RARRAY_ASET(v,i,y);
-            }
-        }
-    }
-    return v;
-}
-
-
-<%
-mod_var "mSf"
-m_prefix "gsl_sf_"
-
-load_sf_def "gen/func_def.rb"
-
-%>
 <% Function.codes.each do |x| %>
 <%= x %><% end %>
 

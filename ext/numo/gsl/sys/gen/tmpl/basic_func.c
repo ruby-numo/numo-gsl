@@ -33,7 +33,6 @@ static void
 static VALUE
 <%=c_func%>(<%=cdef_args%>)
 {
-    VALUE vr;
     <% args_param.each do |a| %>
     <%=a.def_var%><% end %>
 
@@ -49,7 +48,7 @@ static VALUE
 
     ndfunc_arg_in_t ain[<%=n_in%>] = {<%=def_ain%>};
     ndfunc_arg_out_t aout[<%=n_out%>] = {<%=def_aout%>};
-    ndfunc_t ndf = {<%=c_iter%>,NO_LOOP,<%=n_in%>,<%=n_out%>,ain,aout};
+    ndfunc_t ndf = {<%=c_iter%>,NO_LOOP|NDF_EXTRACT,<%=n_in%>,<%=n_out%>,ain,aout};
 
     <% if n_param == 1 %>
     <%=args_param[0].set_param("opt")%>
@@ -61,9 +60,8 @@ static VALUE
 <%=preproc_code()%>
 
     <% if n_param > 0 %>
-    vr = na_ndloop3(&ndf,opt,<%=n_in%>,<%=ndl_args%>);
+    return na_ndloop3(&ndf,opt,<%=n_in%>,<%=ndl_args%>);
     <% else %>
-    vr = na_ndloop(&ndf,<%=n_in%>,<%=ndl_args%>);
+    return na_ndloop(&ndf,<%=n_in%>,<%=ndl_args%>);
     <% end %>
-    return sf_extract(vr);
 }
