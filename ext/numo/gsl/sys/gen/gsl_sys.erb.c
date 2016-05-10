@@ -17,7 +17,7 @@
 
 typedef double dtype;
 
-#define GET_PTR(lp,i) (((lp)->args[i]).ptr + ((lp)->iter[i]).pos)
+#define GET_PTR(lp,i) (((lp)->args[i]).ptr + ((lp)->args[i].iter[0]).pos)
 #define cDF numo_cDFloat
 #define cSZ numo_cUInt64
 #if SIZEOF_INT == 4
