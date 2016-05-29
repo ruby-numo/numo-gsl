@@ -1,3 +1,4 @@
+
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
@@ -18,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["masa16.tanaka@gmail.com"]
   spec.description   = %q{Numo::Gsl development version.}
   spec.summary       = %q{Numo::Gsl development version}
-  spec.homepage      = "https://github.com/masa16/numo-gsl"
+  spec.homepage      = "https://github.com/ruby-numo/gsl"
   spec.license       = "GPL-3"
 
   spec.files         = `git ls-files Gemfile README.md Rakefile ext lib numo-gsl.gemspec spec`.split($/)
