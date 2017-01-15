@@ -85,7 +85,7 @@ class SfBasic < GslFunction
 
   def initialize(parent,**h)
     @preproc_code = ""
-    h[:method] = h[:func_name].sub(/^gsl_sf_/,"")
+    h[:meth] = h[:func_name].sub(/^gsl_sf_/,"")
     super(parent,"sf_basic",**h)
   end
 

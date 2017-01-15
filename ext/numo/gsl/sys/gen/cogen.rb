@@ -1,7 +1,7 @@
 #! /usr/bin/env ruby
 
 libpath = File.absolute_path(File.dirname(__FILE__)) +
-  "/../../../../../../numo-narray/lib"
+  "/../../../../../../narray/lib"
 $LOAD_PATH.unshift libpath
 
 require "erbpp"
