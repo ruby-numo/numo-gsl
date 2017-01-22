@@ -63,7 +63,7 @@ static VALUE
 sf_mathieu_init(VALUE self, VALUE n, VALUE q)
 {
     gsl_sf_mathieu_workspace *w;
-    w = gsl_sf_mathieu_alloc(NUM2SIZE(n), NUM2DBL(q));
+    w = gsl_sf_mathieu_alloc(NUM2SIZET(n), NUM2DBL(q));
     if (!w) {
         DATA_PTR(self) = w;
     }

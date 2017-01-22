@@ -16,7 +16,7 @@ class Argument
      "double"=>"%2 = NUM2DBL(%1)",
      "int"=>"%2 = NUM2INT(%1)",
      "unsigned int"=>"%2 = NUM2UINT(%1)",
-     "size_t"=>"%2 = NUM2SIZE(%1)",
+     "size_t"=>"%2 = NUM2SIZET(%1)",
      "gsl_mode_t"=>"%2 = NUM2INT(%1)",
      "gsl_sf_legendre_t"=>"%2 = NUM2INT(%1)",
      "gsl_sf_mathieu_workspace *"=>'
@@ -32,7 +32,7 @@ class Argument
      "double"=>"DBL2NUM(%1)",
      "int"=>"INT2NUM(%1)",
      "unsigned int"=>"UINT2NUM(%1)",
-     "size_t"=>"SIZE2NUM(%1)",
+     "size_t"=>"SIZET2NUM(%1)",
      "gsl_sf_result *"=>["DBL2NUM(%1.val)","DBL2NUM(%1.err)"]
     }
 
