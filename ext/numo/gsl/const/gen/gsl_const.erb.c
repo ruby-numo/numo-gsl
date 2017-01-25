@@ -16,8 +16,6 @@
 <%
 mod_var "mC"
 #m_prefix "gsl_"
-
-load_const_def "gen/const_def.rb"
 %>
 
 void

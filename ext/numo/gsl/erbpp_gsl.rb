@@ -1,5 +1,47 @@
 require 'erbpp'
 
+class DefineModule < ErbPP
+
+  def initialize(erb_path,&block)
+    super(nil, erb_path)
+    @mod_var = "mM"
+    @tmpl_dir = File.join(File.dirname(erb_path),"tmpl")
+    instance_eval(&block)
+  end
+
+  attr_reader :tmpl_dir
+
+  define_attrs %w[
+    m_prefix
+    mod_var
+    class_name
+    desc
+  ]
+
+  def class_alias(*args)
+    @class_alias.concat(args)
+  end
+
+  def load_func_def(file)
+    str = open(file,"r").read
+    ary = eval(str)
+    ary.each{|h| check_func_def(h)}
+  end
+
+  def load_const_def(file)
+    str = open(file,"r").read
+    ary = eval(str)
+    ary.each do |name,desc|
+      desc ||= ""
+      value = "DBL2NUM(#{name})"
+      #name.sub!(/^M_/,"")
+      Const.new(self,name,value,desc)
+    end
+  end
+
+end
+
+
 class Argument
 
   def description

@@ -6,7 +6,7 @@ $LOAD_PATH.unshift libpath
 
 require "erbpp"
 require "optparse"
-require_relative "erbpp_gsl_const"
+require_relative "../../erbpp_gsl"
 
 tmpfile = ".cogen.tmp"
 outfile = nil
@@ -17,7 +17,10 @@ opts.on("-o FILE"){|v| outfile=v; $stdout=open(tmpfile,"w") }
 opts.parse!(ARGV)
 
 erb_path, type_file = ARGV
-DefineModule.new(erb_path).run
+DefineModule.new(erb_path) do
+  load_const_def "gen/const_def.rb"
+  run
+end
 
 if outfile
   require "fileutils"

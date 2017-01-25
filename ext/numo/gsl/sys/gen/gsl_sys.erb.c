@@ -31,9 +31,6 @@ typedef double dtype;
 <%
 mod_var "mG"
 m_prefix "gsl_"
-
-load_sys_def "gen/func_def.rb"
-load_const_def "gen/const_def.rb"
 %>
 
 <% Function.codes.each do |x| %>

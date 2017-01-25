@@ -1,7 +1,7 @@
 COGEN=ruby gen/cogen.rb -l
 GENSRC=gsl_const.c
 ERBSRC=gen/gsl_const.erb.c
-GENDEPS=$(ERBSRC) gen/erbpp_*.rb
+GENDEPS=$(ERBSRC)
 
 $(GENSRC) : $(GENDEPS)
 	$(COGEN) -o $@ $(ERBSRC)

@@ -1,27 +1,8 @@
 require_relative "../../erbpp_gsl"
 
-class DefineModule < ErbPP
+class DefineSys < DefineModule
 
-  def initialize(erb_path)
-    super(nil, erb_path)
-    @mod_var = "mM"
-    @tmpl_dir = File.join(File.dirname(erb_path),"tmpl")
-  end
-
-  attr_reader :tmpl_dir
-
-  define_attrs %w[
-    m_prefix
-    mod_var
-    class_name
-    desc
-  ]
-
-  def class_alias(*args)
-    @class_alias.concat(args)
-  end
-
-  def check_gsl_sys(h)
+  def check_func_def(h)
     if /These functions are now deprecated/m =~ h[:desc]
       $stderr.puts "depricated: #{h[:func_name]}"
       return false
@@ -41,23 +22,6 @@ class DefineModule < ErbPP
     end
     $stderr.puts "skip #{h[:func_type]} #{h[:func_name]} #{h[:args].inspect}"
     false
-  end
-
-  def load_sys_def(file)
-    str = open(file,"r").read
-    ary = eval(str)
-    ary.each{|h| check_gsl_sys(h)}
-  end
-
-  def load_const_def(file)
-    str = open(file,"r").read
-    ary = eval(str)
-    ary.each do |name,desc|
-      desc ||= ""
-      value = "DBL2NUM(#{name})"
-      #name.sub!(/^M_/,"")
-      Const.new(self,name,value,desc)
-    end
   end
 
 end

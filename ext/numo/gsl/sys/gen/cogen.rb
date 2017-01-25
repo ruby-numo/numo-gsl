@@ -17,7 +17,11 @@ opts.on("-o FILE"){|v| outfile=v; $stdout=open(tmpfile,"w") }
 opts.parse!(ARGV)
 
 erb_path, type_file = ARGV
-DefineModule.new(erb_path).run
+DefineSys.new(erb_path) do
+  load_func_def "gen/func_def.rb"
+  load_const_def "gen/const_def.rb"
+  run
+end
 
 if outfile
   require "fileutils"
