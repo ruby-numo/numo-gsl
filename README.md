@@ -5,10 +5,11 @@
 
 ## Implemented Modules
 
-* [Mathematical Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL.html)
-* [Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
-* [Special Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html)
-* [Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Stat.html)
+* [Numo::GSL API document](http://ruby-numo.github.io/gsl/doc/)
+  * [Mathematical Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL.html)
+  * [Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
+  * [Special Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html)
+  * [Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Stats.html)
 
 More modules will be implemented.
 
