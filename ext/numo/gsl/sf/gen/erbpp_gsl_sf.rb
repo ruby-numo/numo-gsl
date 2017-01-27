@@ -34,11 +34,6 @@ end
 
 class SfBasic < GslFunction
   RE = /^gsl_sf_/
-  #RE = /^gsl_sf_coupling/
-
-  def self.lookup(h)
-    RE =~ h[:func_name]
-  end
 
   PARAM_DESC =
     {
@@ -60,27 +55,32 @@ class SfBasic < GslFunction
 
   def initialize(parent,**h)
     @preproc_code = ""
-    h[:meth] = h[:func_name].sub(/^gsl_sf_/,"")
-    super(parent,"sf_basic",**h)
+    meth = h[:meth] = h[:func_name].sub(/^gsl_sf_/,"")
+    if [/^coupling_/,
+        /^legendre_array_(n|index)/,
+        /^psi(_1)?_int/,
+        /^z?eta(m1)?_int/].any?{|re| re =~ meth}
+      tmpl = "sf_scalar"
+    else
+      tmpl = "sf_basic"
+    end
+    super(parent,tmpl,**h)
   end
 
-  class << self
-    def lookup(h)
-      #return /airy/ =~ h[:func_name]
+  def self.lookup(h)
+    if RE =~ h[:func_name]
       case h[:func_name]
       when /_(alloc)|(free)$/
         false
-      #when /coulomb/
-      #  false
       when /angle_restrict_\w+_e/ # overwrite on *theta
         false
       when /bessel_sequence_Jnu_e/ # overwrite on v[]
         false
-      #when /gegenpoly_array/
-      #  false
       else
         true
       end
+    else
+      false
     end
   end
 

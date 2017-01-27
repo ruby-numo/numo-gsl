@@ -422,9 +422,6 @@ class GslFunction < Function
         break
       end
     end
-    if @args_in.empty?
-      tmpl = "sf_scalar"
-    end
     h[:singleton] = true
     super(parent,tmpl,**h)
     @counter = Counter.new
