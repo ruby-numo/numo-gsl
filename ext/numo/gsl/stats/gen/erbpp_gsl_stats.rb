@@ -42,7 +42,7 @@ class StatsBasic < GslFunction
   def initialize(parent,**h)
     @preproc_code = ""
     h[:meth] = h[:func_name].sub(/^gsl_stats_/,"")
-    tmpl = self.class.find_template_from_args(h[:args])
+    tmpl = self.class.find_template(h)
     super(parent,tmpl,**h)
     @varg = -1
     n_arg(-1)
@@ -108,8 +108,23 @@ class StatsBasic < GslFunction
       false
     end
 
+    def find_template(h)
+      case h[:func_name]
+      when "gsl_stats_spearman"
+        "stats_spearman"
+      when "gsl_stats_minmax_index"
+        "stats_minmax_index"
+      when "gsl_stats_minmax"
+        "stats_minmax"
+      when /_(min|max)_index$/
+        "stats_1a0p_index"
+      else
+        find_template_from_args(h[:args])
+      end
+    end
+
     def lookup(h)
-      tmpl = find_template_from_args(h[:args])
+      tmpl = find_template(h)
       return File.exist?("gen/tmpl/#{tmpl}.c")
     end
 

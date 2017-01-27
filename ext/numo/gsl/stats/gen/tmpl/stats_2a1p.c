@@ -24,11 +24,12 @@ static void
 static VALUE
 <%=c_func%>(int argc, VALUE *argv, VALUE mod)
 {
-    VALUE v, reduce;
+    VALUE reduce;
     double opt[1];
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{sym_reduce,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = { <%=c_iter%>, STRIDE_LOOP_NIP|NDF_FLAT_REDUCE, 3, 1, ain, aout };
+    ndfunc_t ndf = { <%=c_iter%>, STRIDE_LOOP_NIP|NDF_FLAT_REDUCE|NDF_EXTRACT,
+                     3, 1, ain, aout };
 
     if (argc<3) {
         rb_raise(rb_eArgError,"wrong number of argument (%d for >=3)",argc);
@@ -37,6 +38,5 @@ static VALUE
     opt[0] = NUM2DBL(argv[2]);
 
     reduce = na_reduce_dimension(argc-3, argv+3, 2, argv);
-    v =  na_ndloop3(&ndf, opt, 2, *argv, reduce);
-    return rb_funcall(v,rb_intern("extract"),0);
+    return na_ndloop3(&ndf, opt, 3, argv[0], argv[1], reduce);
 }
