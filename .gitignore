@@ -50,3 +50,6 @@ TAGS
 /ext/numo/gsl/sf/gsl_sf.c
 /ext/numo/gsl/sys/gsl_sys.c
 /ext/numo/gsl/const/gsl_const.c
+/ext/numo/gsl/stats/gsl_stats.c
+t.rb
+*.bak[0-9]
