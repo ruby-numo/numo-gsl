@@ -124,46 +124,21 @@ class Argument
      "gsl_sf_result_e10 *"=>["Numo::DFloat"]*2+["Numo::Int32"]
     }
 
-  def initialize(func,idx,type,name)
+  def initialize(func,idx,type,name,prop=nil)
     @func = func
     @idx  = idx
-    @type = type.sub(/^const\s+/,"").strip
+    @type = type
     @name = name
+    @prop = prop
 
-    if /_array$/ =~ @name && /(.+)\*$/ =~ @type
-      @type = $1.strip
-      @name = @name+"[]"
-    end
+    @input  = @prop[:input]
+    @output = @prop[:output]
+    @narray = @prop[:narray]
+    @param  = @prop[:param]
+    @pass   = @prop[:pass]
 
-    if @name == "return"
-      @input = false
-      @output = true
-      @param = false
-      @narray = true
-      @pass = :return
-    elsif /\[\]$/ =~ @name
-      @input = false
-      @output = true
-      @param = false
-      @narray = true
-      @pass = :array
-    elsif func.is_param(@type,@name)
-      @input = true
-      @output = false
-      @param = true
-      @narray = false
-    elsif /(.+)\*$/ =~ @type
+    if /(.+)\*$/ =~ @type
       @type2 = $1.strip
-      @input = false
-      @output = true
-      @param = false
-      @narray = true
-      @pass = :pointer
-    else
-      @input = true
-      @output = false
-      @param = false
-      @narray = true
     end
 
     if @output
@@ -383,7 +358,8 @@ class GslFunction < Function
 
   def is_param(tp,nm)
     #$stderr.puts "type='#{tp}' name='#{nm}'"
-    case a = self.class::PARAM_NAMES[tp]
+    a = self.class::PARAM_NAMES[tp]
+    case a
     when Array
       a.include?(nm)
     else
@@ -392,14 +368,36 @@ class GslFunction < Function
   end
 
   def parse_args(h)
-    @parsed_args = h[:args].map.with_index do |x,i|
-      Argument.new(self,i,x[0],x[1])
+    i = 0
+    @parsed_args = []
+    h[:args].each do |type,name|
+      type = type.sub(/^const\s+/,"").strip
+      if /_array$/ =~ name && /(.+)\*$/ =~ type
+        type = $1.strip
+        name = name+"[]"
+      end
+      prop = argument_property(type,name)
+      @parsed_args << Argument.new(self,i,type,name,prop)
+      i += 1
     end
     t = h[:func_type]
     if t != "void"
-      i = @parsed_args.size
-      r = Argument.new(self,i,t,"return")
-      @parsed_args << r
+      prop = argument_property(t,"return")
+      @parsed_args << Argument.new(self,i,t,"return",prop)
+    end
+  end
+
+  def argument_property(type,name)
+    if name == "return"
+      {output:true, narray:true, pass: :return}
+    elsif /\[\]$/ =~ name
+      {output:true, narray:true, pass: :array}
+    elsif is_param(type,name)
+      {input:true, param:true}
+    elsif /\*$/ =~ type
+      {output:true, narray:true, pass: :pointer}
+    else
+      {input:true, narray:true}
     end
   end
 
