@@ -46,9 +46,9 @@ class Argument
 
   def description
     @func.param_desc[@name] ||
-      if @param
+      if @prop[:param]
         "@param [#{rb_class}] #{@name}"
-      elsif @narray
+      elsif @prop[:narray]
         "@param [#{na_class}] #{@name}"
       end
   end
@@ -124,39 +124,39 @@ class Argument
      "gsl_sf_result_e10 *"=>["Numo::DFloat"]*2+["Numo::Int32"]
     }
 
-  def initialize(func,idx,type,name,prop=nil)
+  def initialize(func,idx,type,name,prop)
     @func = func
     @idx  = idx
     @type = type
     @name = name
     @prop = prop
-
-    @input  = @prop[:input]
-    @output = @prop[:output]
-    @narray = @prop[:narray]
-    @param  = @prop[:param]
-    @pass   = @prop[:pass]
+    @pass = @prop[:pass]
 
     if /(.+)\*$/ =~ @type
       @type2 = $1.strip
     end
 
-    if @output
-      if @type == "gsl_sf_result_e10 *"
-        @n_out = 3
-      elsif @type == "gsl_sf_result *"
-        @n_out = 2
-      else
-        @n_out = 1
-      end
+    if @prop[:output]
+      @n_out =
+        case @type
+        when "gsl_sf_result_e10 *"
+          3
+        when "gsl_sf_result *"
+          2
+        else
+          1
+        end
     end
 
     @ctype = CTYPEMAP[@type] || CTYPEMAP[@type2]
   end
 
-  attr_reader :type,:name
-  attr_reader :input,:output,:param,:narray
+  attr_reader :type, :name
   attr_reader :pass, :n_out
+
+  [:input,:output,:param,:narray].each do |sym|
+    define_method(sym){@prop[sym]}
+  end
 
   def c_var
     "c#{@idx}"
@@ -179,9 +179,10 @@ class Argument
   end
 
   def aout_def
-    if @type == "gsl_sf_result_e10 *"
+    case @type
+    when "gsl_sf_result_e10 *"
       return "{cDF,0},{cDF,0},{cI,0}"
-    elsif @type == "gsl_sf_result *"
+    when "gsl_sf_result *"
       return "{cDF,0},{cDF,0}"
     end
     case @pass
@@ -218,9 +219,9 @@ class Argument
   end
 
   def def_var
-    if @param
+    if @prop[:param]
       "#{@type} #{c_var};"
-    elsif @input
+    elsif @prop[:input]
       "#{@type} #{c_var};"
     elsif @pass == :array
       "#{@type} *#{c_var};"
