@@ -1,6 +1,0 @@
-{
-  "name": "Ruby/Numo::GSL",
-  "tagline": "GSL interface for Ruby with Numo::NArray",
-  "body": "# GSL interface for Ruby with Numo::NArray\r\n\r\n* Pre-alpha version under development.\r\n* [GitHub site](https://github.com/masa16/numo-gsl)\r\n\r\n## Implemented Modules\r\n\r\n* [Mathematical Functions](http://masa16.github.io/numo-gsl/doc/Numo/GSL.html)\r\n* [Special Functions](http://masa16.github.io/numo-gsl/doc/Numo/GSL/Sf.html)\r\n* [Constants](http://masa16.github.io/numo-gsl/doc/Numo/GSL/Const.html)\r\n\r\nMore modules will be implemented.\r\n\r\n## Installation\r\n\r\n* Install [Numo::NArray](https://github.com/masa16/numo-narray)\r\n* Install [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version 2.1\r\n\r\n* Install Numo::GSL\r\n  ```shell\r\n$ git clone git://github.com/masa16/numo-gsl.git\r\n$ cd numo-gsl\r\n$ rake build\r\n$ gem install pkg/numo-gsl-*.gem\r\n```\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
