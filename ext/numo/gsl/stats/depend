@@ -1,0 +1,16 @@
+COGEN=ruby gen/cogen.rb -l
+GENSRC=gsl_stats.c
+ERBSRC=gen/gsl_stats.erb.c
+GENDEPS=$(ERBSRC) gen/erbpp_gsl*.rb gen/tmpl/*.c
+
+$(GENSRC) : $(GENDEPS)
+	$(COGEN) -o $@ $(ERBSRC)
+
+doc : $(GENSRC)
+	yard doc $(GENSRC) types/*.c
+
+clean: cleansrc cleandoc
+cleansrc:
+	-$(Q)$(RM) $(GENSRC)
+cleandoc:
+	-$(Q)$(RM_RF) doc .yardoc
