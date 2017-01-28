@@ -78,7 +78,7 @@ Init_sf()
 {
     VALUE mNumo, mG, mSf, mL;
 
-    mNumo = rb_const_get(rb_cObject, rb_intern("Numo"));
+    mNumo = rb_define_module("Numo");
     mG = rb_define_module_under(mNumo, "GSL");
     mSf = rb_define_module_under(mG, "Sf");
 

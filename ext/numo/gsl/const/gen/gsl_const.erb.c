@@ -23,7 +23,7 @@ Init_const()
 {
     VALUE mNumo, mG, mC;
 
-    mNumo = rb_const_get(rb_cObject, rb_intern("Numo"));
+    mNumo = rb_define_module("Numo");
     mG = rb_define_module_under(mNumo, "GSL");
     mC = rb_define_module_under(mG, "Const");
 

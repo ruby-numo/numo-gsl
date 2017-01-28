@@ -40,7 +40,7 @@ Init_stats()
 {
     VALUE mNumo, mGSL, mStats;
 
-    mNumo = rb_const_get(rb_cObject, rb_intern("Numo"));
+    mNumo = rb_define_module("Numo");
     mGSL = rb_define_module_under(mNumo, "GSL");
     mStats = rb_define_module_under(mGSL, "Stats");
 

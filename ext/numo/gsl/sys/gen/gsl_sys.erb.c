@@ -41,7 +41,7 @@ Init_sys()
 {
     VALUE mNumo, mG;
 
-    mNumo = rb_const_get(rb_cObject, rb_intern("Numo"));
+    mNumo = rb_define_module("Numo");
     mG = rb_define_module_under(mNumo, "GSL");
 
     <% Function.definitions.each do |x| %>
