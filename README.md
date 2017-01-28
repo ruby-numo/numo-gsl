@@ -10,6 +10,7 @@
   * [Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
   * [Special Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html)
   * [Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Stats.html)
+  * [Random Number Generation](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rng.html)
 
 More modules will be implemented.
 

@@ -12,7 +12,7 @@
 * Fix doc: Add C function definition in doc.
 
 # GSL::Stat
-* implement
+* implement -- done
 
 # GSL::Rng
 * implement
