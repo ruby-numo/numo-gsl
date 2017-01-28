@@ -67,10 +67,15 @@
 <h2 id="implemented-modules">Implemented Modules</h2>
 
 <ul>
-  <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL.html">Mathematical Functions</a></li>
-  <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html">Constants</a></li>
-  <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html">Special Functions</a></li>
-  <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Stat.html">Statistics</a></li>
+  <li><a href="http://ruby-numo.github.io/gsl/doc/">Numo::GSL API document</a>
+    <ul>
+      <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL.html">Mathematical Functions</a></li>
+      <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html">Constants</a></li>
+      <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html">Special Functions</a></li>
+      <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Stats.html">Statistics</a></li>
+      <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rng.html">Random Number Generation</a></li>
+    </ul>
+  </li>
 </ul>
 
 <p>More modules will be implemented.</p>
@@ -92,10 +97,25 @@ $ gem install pkg/numo-gsl-*.gem
 </ul>
 
 <p>rubygems is to be created.</p>
+
+<h1 id="quick-start">Quick start</h1>
+
+<p>If you’re familiar with Docker, the following commands should work in most cases:</p>
+
+<p><code>
+git clone https://github.com/ruby-numo/gsl
+cd gsl
+docker build -t numogsl .
+docker run -d -p 8888:8888 numogsl start-notebook.sh --NotebookApp.token=''
+</code></p>
+
+<p>and open a web browser to http://localhost:8888 .</p>
+
+<p>Our Docker image is based on Minimal Jupyter Notebook Stack. See https://github.com/jupyter/docker-stacks/tree/master/minimal-notebook for more details on the Docker command options.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Fri Jan 27 21:53:58 2017 by
+  Generated on Sat Jan 28 20:10:31 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

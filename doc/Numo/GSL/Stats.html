@@ -2474,7 +2474,7 @@ numo_s_max_index(int argc, VALUE *argv, VALUE mod)
 {
     narray_t *na;
     VALUE idx, reduce;
-    ndfunc_arg_in_t ain[3] = {{Qnil,0},{Qnil,0},{sym_reduce,0}};
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{Qnil,0},{sym_reduce,0}};
     ndfunc_arg_out_t aout[1] = {{0,0,0}};
     ndfunc_t ndf = {0, STRIDE_LOOP_NIP|NDF_FLAT_REDUCE|NDF_EXTRACT, 3,1, ain,aout};
 
@@ -2903,7 +2903,7 @@ numo_s_min_index(int argc, VALUE *argv, VALUE mod)
 {
     narray_t *na;
     VALUE idx, reduce;
-    ndfunc_arg_in_t ain[3] = {{Qnil,0},{Qnil,0},{sym_reduce,0}};
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{Qnil,0},{sym_reduce,0}};
     ndfunc_arg_out_t aout[1] = {{0,0,0}};
     ndfunc_t ndf = {0, STRIDE_LOOP_NIP|NDF_FLAT_REDUCE|NDF_EXTRACT, 3,1, ain,aout};
 
@@ -6512,7 +6512,7 @@ numo_s_wvariance_with_fixed_mean(int argc, VALUE *argv, VALUE mod)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 27 21:54:04 2017 by
+  Generated on Sat Jan 28 20:10:38 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

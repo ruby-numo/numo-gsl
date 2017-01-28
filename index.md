@@ -10,6 +10,7 @@
   * [Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
   * [Special Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html)
   * [Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Stats.html)
+  * [Random Number Generation](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rng.html)
 
 More modules will be implemented.
 
@@ -27,3 +28,18 @@ $ gem install pkg/numo-gsl-*.gem
 ```
 
 rubygems is to be created.
+
+# Quick start
+
+If you're familiar with Docker, the following commands should work in most cases:
+
+```
+git clone https://github.com/ruby-numo/gsl
+cd gsl
+docker build -t numogsl .
+docker run -d -p 8888:8888 numogsl start-notebook.sh --NotebookApp.token=''
+```
+
+and open a web browser to http://localhost:8888 .
+
+Our Docker image is based on Minimal Jupyter Notebook Stack. See https://github.com/jupyter/docker-stacks/tree/master/minimal-notebook for more details on the Docker command options.
