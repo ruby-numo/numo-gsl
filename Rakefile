@@ -1,7 +1,7 @@
 require "bundler/gem_tasks"
 
 task :doc do
-  sh "yard -r README.md ext/numo/gsl/*/*.c"
+  sh "yard -m markdown -r README.md ext/numo/gsl/*/*.c"
 end
 
 task :cleandoc do

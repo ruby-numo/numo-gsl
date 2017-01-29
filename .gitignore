@@ -47,11 +47,7 @@ TAGS
 /ext/numo/gsl/*/Makefile
 /ext/numo/gsl/*/mkmf.log
 /ext/numo/gsl/*/extconf.h
-/ext/numo/gsl/sf/gsl_sf.c
-/ext/numo/gsl/sys/gsl_sys.c
-/ext/numo/gsl/const/gsl_const.c
-/ext/numo/gsl/stats/gsl_stats.c
-/ext/numo/gsl/rng/gsl_rng.c
+/ext/numo/gsl/*/gsl_*.c
 t.rb
 *.bak[0-9]
 bak
