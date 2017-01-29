@@ -167,7 +167,7 @@ class Argument
   end
 
   def v_var
-    if @func.varg
+    if @func.n_arg < 0
       "v[#{@idx}]"
     else
       "v#{@idx}"
@@ -409,10 +409,8 @@ class GslFunction < Function
     @args_in = @parsed_args.select{|a|a.narray && a.input}
     @args_out = @parsed_args.select{|a|a.narray && a.output}
     if @args_param.any?{|a| a.type=="gsl_mode_t"}
-      @varg = -1
       n_arg(-1)
     else
-      @varg = nil
       n_arg(@args_param.size+@args_in.size)
     end
     @parsed_args.each do |a|
@@ -427,7 +425,7 @@ class GslFunction < Function
   end
 
   #attr_reader :name
-  attr_reader :args_out, :args_in, :args_param, :varg
+  attr_reader :args_out, :args_in, :args_param
   attr_reader :generate_array
 
   def n_param
@@ -480,7 +478,7 @@ class GslFunction < Function
   end
 
   def cdef_args
-    if @varg
+    if n_arg == -1
       "int argc, VALUE *v, VALUE mod"
     else
       "VALUE mod," +
