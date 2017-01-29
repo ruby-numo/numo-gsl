@@ -145,8 +145,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Default seed.</p>
+    <span class="summary_desc"><div class='inline'><p>Default seed.</p>
 </div></span>
   
 </li>
@@ -180,7 +179,8 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+</div></span>
   
 </li>
 
@@ -202,8 +202,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This function returns a random integer from the generator.</p>
+    <span class="summary_desc"><div class='inline'><p>This function returns a random integer from the generator.</p>
 </div></span>
   
 </li>
@@ -228,8 +227,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Creates a new PRNG using <code>seed</code> to set the initial state.</p>
+    <span class="summary_desc"><div class='inline'><p>Creates a new PRNG using +seed+ to set the initial state.</p>
 </div></span>
   
 </li>
@@ -252,8 +250,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This function returns the largest value that gsl_rng_get can return.</p>
+    <span class="summary_desc"><div class='inline'><p>This function returns the largest value that gsl_rng_get can return.</p>
 </div></span>
   
 </li>
@@ -276,8 +273,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This function returns the smallest value that gsl_rng_get can return.</p>
+    <span class="summary_desc"><div class='inline'><p>This function returns the smallest value that gsl_rng_get can return.</p>
 </div></span>
   
 </li>
@@ -300,8 +296,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This function returns a pointer to the name of the generator.</p>
+    <span class="summary_desc"><div class='inline'><p>This function returns a pointer to the name of the generator.</p>
 </div></span>
   
 </li>
@@ -326,8 +321,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This function initializes (or ‘seeds’) the random number generator.</p>
+    <span class="summary_desc"><div class='inline'><p>This function initializes (or ‘seeds’) the random number generator.</p>
 </div></span>
   
 </li>
@@ -350,8 +344,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This function return the size of the state of generator.</p>
+    <span class="summary_desc"><div class='inline'><p>This function return the size of the state of generator.</p>
 </div></span>
   
 </li>
@@ -374,9 +367,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This function returns a double precision floating point number uniformly
-distributed in the range [0,1).</p>
+    <span class="summary_desc"><div class='inline'><p>This function returns a double precision floating point number uniformly distributed in the range [0,1).</p>
 </div></span>
   
 </li>
@@ -399,9 +390,7 @@ distributed in the range [0,1).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This function returns a random integer from 0 to n-1 inclusive by scaling
-down and/or discarding samples from the generator r.</p>
+    <span class="summary_desc"><div class='inline'><p>This function returns a random integer from 0 to n-1 inclusive by scaling down and/or discarding samples from the generator r.</p>
 </div></span>
   
 </li>
@@ -424,9 +413,7 @@ down and/or discarding samples from the generator r.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This function returns a positive double precision floating point number
-uniformly distributed in the range (0,1), excluding both 0.0 and 1.0.</p>
+    <span class="summary_desc"><div class='inline'><p>This function returns a positive double precision floating point number uniformly distributed in the range (0,1), excluding both 0.0 and 1.0.</p>
 </div></span>
   
 </li>
@@ -449,9 +436,8 @@ uniformly distributed in the range (0,1), excluding both 0.0 and 1.0.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Creates a new PRNG using <code>seed</code> to set the initial state. If
-<code>seed</code> is omitted, the generator is initialized with
+    <p>Creates a new PRNG using +seed+ to set the initial state.
+If +seed+ is omitted, the generator is initialized with
 Numo::GSL::Rng.default_seed.</p>
 
 
@@ -521,8 +507,7 @@ rng_init(int argc, VALUE *argv, VALUE self)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Default seed</p>
+    <p>Default seed</p>
 
 
   </div>
@@ -618,11 +603,11 @@ rng_clone(VALUE self)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This function returns a random integer from the generator. The minimum and
-maximum values depend on the algorithm used, but all integers in the range
-[min,max] are equally likely. The values of min and max can be determined
-using the auxiliary functions gsl_rng_max ® and gsl_rng_min ®.</p>
+    <p>This function returns a random integer from the generator.
+The minimum and maximum values depend on the algorithm used, but all
+integers in the range [min,max] are equally likely.
+The values of min and max can be determined using the auxiliary
+functions gsl_rng_max (r) and gsl_rng_min (r).</p>
 
 
   </div>
@@ -642,8 +627,7 @@ using the auxiliary functions gsl_rng_max ® and gsl_rng_min ®.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>returns random number</p>
+        <div class='inline'><p>returns random number</p>
 </div>
       
     </li>
@@ -692,8 +676,7 @@ rng_get(VALUE self)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This function returns the largest value that gsl_rng_get can return.</p>
+    <p>This function returns the largest value that gsl_rng_get can return.</p>
 
 
   </div>
@@ -743,10 +726,10 @@ rng_max(VALUE self)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This function returns the smallest value that gsl_rng_get can return.
-Usually this value is zero. There are some generators with algorithms that
-cannot return zero, and for these generators the minimum value is 1.</p>
+    <p>This function returns the smallest value that gsl_rng_get can
+return. Usually this value is zero. There are some generators with
+algorithms that cannot return zero, and for these generators the
+minimum value is 1.</p>
 
 
   </div>
@@ -796,8 +779,7 @@ rng_min(VALUE self)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This function returns a pointer to the name of the generator.</p>
+    <p>This function returns a pointer to the name of the generator.</p>
 
 
   </div>
@@ -851,23 +833,24 @@ rng_name(VALUE self)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This function initializes (or ‘seeds’) the random number generator. If the
-generator is seeded with the same value of s on two different runs, the
-same stream of random numbers will be generated by successive calls to the
-routines below. If different values of s &gt;= 1 are supplied, then the
-generated streams of random numbers should be completely different. If the
-seed s is zero then the standard seed from the original implementation is
-used instead. For example, the original Fortran source code for the ranlux
-generator used a seed of 314159265, and so choosing s equal to zero
-reproduces this when using gsl_rng_ranlux.</p>
+    <p>This function initializes (or ‘seeds’) the random number
+generator. If the generator is seeded with the same value of s on
+two different runs, the same stream of random numbers will be
+generated by successive calls to the routines below. If different
+values of s &gt;= 1 are supplied, then the generated streams of random
+numbers should be completely different. If the seed s is zero then
+the standard seed from the original implementation is used
+instead. For example, the original Fortran source code for the
+ranlux generator used a seed of 314159265, and so choosing s equal
+to zero reproduces this when using gsl_rng_ranlux.</p>
 
-<p>When using multiple seeds with the same generator, choose seed values
-greater than zero to avoid collisions with the default setting.</p>
+<p>When using multiple seeds with the same generator, choose seed
+values greater than zero to avoid collisions with the default
+setting.</p>
 
-<p>Note that the most generators only accept 32-bit seeds, with higher values
-being reduced modulo 2^32. For generators with smaller ranges the maximum
-seed value will typically be lower.</p>
+<p>Note that the most generators only accept 32-bit seeds, with higher
+values being reduced modulo 2^32. For generators with smaller ranges
+the maximum seed value will typically be lower.</p>
 
 
   </div>
@@ -919,8 +902,7 @@ rng_set(VALUE self, VALUE seed)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This function return the size of the state of generator.</p>
+    <p>This function return the size of the state of generator.</p>
 
 
   </div>
@@ -970,14 +952,14 @@ rng_size(VALUE self)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This function returns a double precision floating point number uniformly
-distributed in the range [0,1). The range includes 0.0 but excludes 1.0.
-The value is typically obtained by dividing the result of gsl_rng_get® by
-gsl_rng_max® + 1.0 in double precision. Some generators compute this ratio
-internally so that they can provide floating point numbers with more than
-32 bits of randomness (the maximum number of bits that can be portably
-represented in a single unsigned long int).</p>
+    <p>This function returns a double precision floating point number
+uniformly distributed in the range [0,1). The range includes 0.0 but
+excludes 1.0. The value is typically obtained by dividing the result
+of gsl_rng_get(r) by gsl_rng_max(r) + 1.0 in double precision. Some
+generators compute this ratio internally so that they can provide
+floating point numbers with more than 32 bits of randomness (the
+maximum number of bits that can be portably represented in a single
+unsigned long int).</p>
 
 
   </div>
@@ -997,8 +979,7 @@ represented in a single unsigned long int).</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>returns random number</p>
+        <div class='inline'><p>returns random number</p>
 </div>
       
     </li>
@@ -1047,25 +1028,24 @@ rng_uniform(VALUE self)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This function returns a random integer from 0 to n-1 inclusive by scaling
-down and/or discarding samples from the generator r. All integers in the
-range [0,n-1] are produced with equal probability. For generators with a
-non-zero minimum value an offset is applied so that zero is returned with
-the correct probability.</p>
+    <p>This function returns a random integer from 0 to n-1 inclusive by
+scaling down and/or discarding samples from the generator r. All
+integers in the range [0,n-1] are produced with equal
+probability. For generators with a non-zero minimum value an offset
+is applied so that zero is returned with the correct probability.</p>
 
-<p>Note that this function is designed for sampling from ranges smaller than
-the range of the underlying generator. The parameter n must be less than or
-equal to the range of the generator r. If n is larger than the range of the
-generator then the function calls the error handler with an error code of
-GSL_EINVAL and returns zero.</p>
+<p>Note that this function is designed for sampling from ranges smaller
+than the range of the underlying generator. The parameter n must be
+less than or equal to the range of the generator r. If n is larger
+than the range of the generator then the function calls the error
+handler with an error code of GSL_EINVAL and returns zero.</p>
 
-<p>In particular, this function is not intended for generating the full range
-of unsigned integer values [0,2^32-1]. Instead choose a generator with the
-maximal integer range and zero minimum value, such as gsl_rng_ranlxd1,
-gsl_rng_mt19937 or gsl_rng_taus, and sample it directly using gsl_rng_get.
-The range of each generator can be found using the auxiliary functions
-described in the next section.</p>
+<p>In particular, this function is not intended for generating the full
+range of unsigned integer values [0,2^32-1]. Instead choose a
+generator with the maximal integer range and zero minimum value,
+such as gsl_rng_ranlxd1, gsl_rng_mt19937 or gsl_rng_taus, and sample
+it directly using gsl_rng_get. The range of each generator can be
+found using the auxiliary functions described in the next section.</p>
 
 
   </div>
@@ -1100,8 +1080,7 @@ described in the next section.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>returns random number</p>
+        <div class='inline'><p>returns random number</p>
 </div>
       
     </li>
@@ -1150,12 +1129,11 @@ rng_uniform_int(VALUE self, VALUE n)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This function returns a positive double precision floating point number
-uniformly distributed in the range (0,1), excluding both 0.0 and 1.0. The
-number is obtained by sampling the generator with the algorithm of
-gsl_rng_uniform until a non-zero value is obtained. You can use this
-function if you need to avoid a singularity at 0.0.</p>
+    <p>This function returns a positive double precision floating point
+number uniformly distributed in the range (0,1), excluding both 0.0
+and 1.0. The number is obtained by sampling the generator with the
+algorithm of gsl_rng_uniform until a non-zero value is obtained. You
+can use this function if you need to avoid a singularity at 0.0.</p>
 
 
   </div>
@@ -1175,8 +1153,7 @@ function if you need to avoid a singularity at 0.0.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>returns random number</p>
+        <div class='inline'><p>returns random number</p>
 </div>
       
     </li>
@@ -1219,7 +1196,7 @@ rng_uniform_pos(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sat Jan 28 20:10:38 2017 by
+  Generated on Sun Jan 29 19:32:10 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
