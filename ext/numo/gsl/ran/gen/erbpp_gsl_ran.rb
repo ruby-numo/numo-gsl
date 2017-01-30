@@ -78,7 +78,7 @@ class RanPdf < GslFunction
     }
   PARAM_NAMES =
     {
-     "double" => %w[a b p mu nu nu1 nu2 sigma sigma_x sigma_y rho zeta],
+     "double" => %w[a b p n mu nu nu1 nu2 sigma sigma_x sigma_y rho zeta],
      "unsigned int" => %w[n n1 n2 t],
      "size_t" => true,
     }
