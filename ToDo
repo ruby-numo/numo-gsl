@@ -15,7 +15,8 @@
 * implement -- done
 
 # GSL::Rng
-* implement
+* pdf, cdf -- done
+* implement generator
 
 # Erbpp
 * c_method definition
