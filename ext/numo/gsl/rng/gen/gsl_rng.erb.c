@@ -214,8 +214,9 @@ create_new_narray(VALUE datatype, VALUE vshape)
   maximum number of bits that can be portably represented in a single
   unsigned long int).
 
-  @overload uniform
-  @return [Float]  returns random number
+  @overload uniform([shape])
+  @param  [Array or Integer]  shape (optional) shape for result NArray
+  @return [Float or DFloat]  returns random number
 */
 static VALUE
 rng_uniform(int argc, VALUE *argv, VALUE self)
@@ -246,8 +247,9 @@ rng_uniform(int argc, VALUE *argv, VALUE self)
   algorithm of gsl_rng_uniform until a non-zero value is obtained. You
   can use this function if you need to avoid a singularity at 0.0.
 
-  @overload uniform_pos
-  @return [Float]  returns random number
+  @overload uniform_pos([shape])
+  @param  [Array or Integer]  shape (optional) shape for result NArray
+  @return [Float or DFloat]  returns random number
  */
 static VALUE
 rng_uniform_pos(int argc, VALUE *argv, VALUE self)
@@ -291,9 +293,10 @@ rng_uniform_pos(int argc, VALUE *argv, VALUE self)
   it directly using gsl_rng_get. The range of each generator can be
   found using the auxiliary functions described in the next section.
 
-  @overload uniform_int(n)
+  @overload uniform_int(n,[shape])
   @param  [Integer]  n
-  @return [Float]  returns random number
+  @param  [Array or Integer]  shape (optional) shape for result NArray
+  @return [Float or DFloat]  returns random number
  */
 
 static VALUE
@@ -450,8 +453,7 @@ f.each do |h|
   @overload <%= name %>(<%params.each{|x|%><%=x[0]%>,<%}%>[shape])
   <% params.each do |x|%>
   @param  [<%=x[1]%>]  <%=x[0]%><% end %>
-  @overload <%= name %>([shape])
-  @param  [Array or Integer]  shape  (optional) shape for result NArray
+  @param  [Array or Integer]  shape (optional) shape for result NArray
   @return [Float or DFloat]  returns random number
 
 <%= h[:desc] %>
