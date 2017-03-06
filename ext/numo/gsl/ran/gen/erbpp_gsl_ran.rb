@@ -11,6 +11,9 @@ class DefineRan < DefineModule
       $stderr.puts "depricated: #{h[:func_name]}"
       return false
     end
+    if /^gsl_cdf/ =~ h[:func_name] # defined in CDF
+      return false
+    end
     [
      RanDirichletPdf,
      RanMultinomialPdf,
