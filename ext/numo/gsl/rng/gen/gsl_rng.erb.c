@@ -13,6 +13,7 @@
 #include "numo/narray.h"
 #include "numo/template.h"
 #include <gsl/gsl_rng.h>
+#include <gsl/gsl_randist.h>
 
 <% RNG_TYPES = "
 GSL_VAR const gsl_rng_type *gsl_rng_borosh13;
@@ -175,6 +176,34 @@ rng_get(VALUE self)
     return ULONG2NUM(gsl_rng_get(r));
 }
 
+
+static VALUE
+create_new_narray(VALUE datatype, VALUE vshape)
+{
+    size_t size, *shape;
+    int j, ndim;
+
+    switch(TYPE(vshape)) {
+    case T_FIXNUM:
+    case T_BIGNUM:
+        size = NUM2SIZET(vshape);
+        ndim = 1;
+        shape = &size;
+        break;
+    case T_ARRAY:
+        ndim = RARRAY_LEN(vshape);
+        shape = ALLOCA_N(size_t,ndim);
+        size = 1;
+        for (j=0; j<ndim; j++) {
+            shape[j] = NUM2SIZET(RARRAY_AREF(vshape,j));
+        }
+        break;
+    default:
+        rb_raise(rb_eArgError,"invalid argument for shape");
+    }
+    return rb_narray_new(datatype,ndim,shape);
+}
+
 /*
   This function returns a double precision floating point number
   uniformly distributed in the range [0,1). The range includes 0.0 but
@@ -189,12 +218,25 @@ rng_get(VALUE self)
   @return [Float]  returns random number
 */
 static VALUE
-rng_uniform(VALUE self)
+rng_uniform(int argc, VALUE *argv, VALUE self)
 {
+    VALUE vshape, vna;
+    size_t i, size;
+    double *ptr;
     gsl_rng *r;
-
     Data_Get_Struct(self, gsl_rng, r);
-    return rb_float_new(gsl_rng_uniform(r));
+
+    if (rb_scan_args(argc, argv, "01", &vshape) == 0) {
+        return rb_float_new(gsl_rng_uniform(r));
+    } else {
+        vna = create_new_narray(numo_cDFloat,vshape);
+        ptr = (double*)na_get_pointer_for_write(vna);
+        size = RNARRAY_SIZE(vna);
+        for (i=0; i<size; i++) {
+            ptr[i] = gsl_rng_uniform(r);
+        }
+        return vna;
+    }
 }
 
 /*
@@ -208,12 +250,25 @@ rng_uniform(VALUE self)
   @return [Float]  returns random number
  */
 static VALUE
-rng_uniform_pos(VALUE self)
+rng_uniform_pos(int argc, VALUE *argv, VALUE self)
 {
+    VALUE vshape, vna;
+    size_t i, size;
+    double *ptr;
     gsl_rng *r;
-
     Data_Get_Struct(self, gsl_rng, r);
-    return rb_float_new(gsl_rng_uniform_pos(r));
+
+    if (rb_scan_args(argc, argv, "01", &vshape) == 0) {
+        return rb_float_new(gsl_rng_uniform_pos(r));
+    } else {
+        vna = create_new_narray(numo_cDFloat,vshape);
+        ptr = (double*)na_get_pointer_for_write(vna);
+        size = RNARRAY_SIZE(vna);
+        for (i=0; i<size; i++) {
+            ptr[i] = gsl_rng_uniform_pos(r);
+        }
+        return vna;
+    }
 }
 
 /*
@@ -240,13 +295,41 @@ rng_uniform_pos(VALUE self)
   @param  [Integer]  n
   @return [Float]  returns random number
  */
-static VALUE
-rng_uniform_int(VALUE self, VALUE n)
-{
-    gsl_rng *r;
 
+static VALUE
+rng_uniform_int(int argc, VALUE *argv, VALUE self)
+{
+    VALUE vshape, vna, vn;
+    size_t i, size;
+    int nargs;
+    unsigned long n;
+    u_int32_t *p32;
+    u_int64_t *p64;
+    gsl_rng *r;
     Data_Get_Struct(self, gsl_rng, r);
-    return ULONG2NUM(gsl_rng_uniform_int(r, NUM2ULONG(n)));
+
+    nargs = rb_scan_args(argc, argv, "11", &vn, &vshape);
+    n = NUM2ULONG(vn);
+    if (nargs == 1) {
+        return ULONG2NUM(gsl_rng_uniform_int(r, n));
+    } else {
+        if (n > 4294967295ul) {
+            vna = create_new_narray(numo_cUInt64,vshape);
+            p64 = (u_int64_t*)na_get_pointer_for_write(vna);
+            size = RNARRAY_SIZE(vna);
+            for (i=0; i<size; i++) {
+                p64[i] = (u_int64_t)gsl_rng_uniform_int(r, n);
+            }
+        } else {
+            vna = create_new_narray(numo_cUInt32,vshape);
+            p32 = (u_int32_t*)na_get_pointer_for_write(vna);
+            size = RNARRAY_SIZE(vna);
+            for (i=0; i<size; i++) {
+                p32[i] = (u_int32_t)gsl_rng_uniform_int(r, n);
+            }
+        }
+        return vna;
+    }
 }
 
 /*
@@ -319,6 +402,93 @@ rng_s_default_seed(VALUE self)
 }
 
 
+<%
+$defs = []
+f = eval(open("../ran/gen/func_def.rb").read).
+    select{|h| h[:func_name] =~ /^gsl_ran_(.*)$/}
+
+f.each do |h|
+  func_name = h[:func_name]
+  name = func_name.sub(/^gsl_ran_/,"")
+  args = h[:args]
+
+  if args.shift[0] == "const gsl_rng *"
+    an = []
+    vn = []
+    vardef = []
+    varconv = []
+    params = []
+    unknown = false
+    args.each_with_index do |tn,i|
+      if /^\w+$/ !~ tn[1] # pointer?
+        unknown = true
+        break
+      end
+      an << a = "a#{i}"
+      vn << v = "v#{i}"
+      case tn[0]
+      when "double"
+        varconv << "#{a} = NUM2DBL(#{v});"
+        params << [tn[1],"Float"]
+      when "unsigned int"
+        varconv << "#{a} = NUM2UINT(#{v});"
+        params << [tn[1],"Integer"]
+      else
+        unknown = true
+        break
+      end
+      vardef << "#{tn[0]} #{a}"
+    end
+    if unknown
+      $stderr.puts "not defined: #{func_name} #{h[:args].inspect}"
+      next
+    end
+    $defs << "rb_define_method(cRng, \"#{name}\", numo_gsl_ran_#{name}, -1);"
+    n = args.size
+%>
+/*
+  @overload <%= name %>(<%params.each{|x|%><%=x[0]%>,<%}%>[shape])
+  <% params.each do |x|%>
+  @param  [<%=x[1]%>]  <%=x[0]%><% end %>
+  @overload <%= name %>([shape])
+  @param  [Array or Integer]  shape  (optional) shape for result NArray
+  @return [Float or DFloat]  returns random number
+
+<%= h[:desc] %>
+ */
+static VALUE
+numo_gsl_ran_<%=name%>(int argc, VALUE *argv, VALUE self)
+{
+    VALUE vshape, vna;
+    size_t i, size;
+    int nargs;
+    double *ptr;
+    gsl_rng *r;
+    <% vn.each do |v|%>
+    VALUE <%=v%>;<% end %>
+    <% vardef.each do |x|%>
+    <%=x%>;<% end %>
+
+    Data_Get_Struct(self, gsl_rng, r);
+
+    nargs = rb_scan_args(argc, argv, "<%=n%>1" <%vn.map{|v|%>, &<%=v%><%}%>, &vshape);
+    <% varconv.each do |x|%><%=x%>
+    <% end %>
+    if (nargs == <%=n%>) {
+        return rb_float_new(<%=func_name%>(r <%an.map{|a|%>, <%=a%><%}%>));
+    } else {
+        vna = create_new_narray(numo_cDFloat,vshape);
+        ptr = (double*)na_get_pointer_for_write(vna);
+        size = RNARRAY_SIZE(vna);
+        for (i=0; i<size; i++) {
+            ptr[i] = <%=func_name%>(r <%an.map{|a|%>, <%=a%><%}%>);
+        }
+        return vna;
+    }
+}
+<% end; end %>
+
+
 void
 Init_rng()
 {
@@ -337,9 +507,9 @@ Init_rng()
     rb_define_alias( cRng, "set_seed", "set");
     rb_define_alias( cRng, "seed=", "set");
     rb_define_method(cRng, "get", rng_get, 0);
-    rb_define_method(cRng, "uniform", rng_uniform, 0);
-    rb_define_method(cRng, "uniform_pos", rng_uniform_pos, 0);
-    rb_define_method(cRng, "uniform_int", rng_uniform_int, 1);
+    rb_define_method(cRng, "uniform", rng_uniform, -1);
+    rb_define_method(cRng, "uniform_pos", rng_uniform_pos, -1);
+    rb_define_method(cRng, "uniform_int", rng_uniform_int, -1);
 
     rb_define_method(cRng, "name", rng_name, 0);
     rb_define_method(cRng, "max", rng_max, 0);
@@ -350,8 +520,10 @@ Init_rng()
     rb_define_alias( cRng, "dup", "clone");
     rb_define_singleton_method(cRng, "default_seed", rng_s_default_seed, 0);
 
-    <% RNG_TYPES.each do |x| c = camelize(x)%>{
-      VALUE c<%=c%> = rb_define_class_under(cRng, "<%=c%>", cRng);
-      rb_define_alloc_func(c<%=c%>, rng_<%=x%>_s_alloc);
-    }<% end %>
+    <% RNG_TYPES.each do |x| c = camelize(x)%>
+    { VALUE c<%=c%> = rb_define_class_under(cRng, "<%=c%>", cRng);
+      rb_define_alloc_func(c<%=c%>, rng_<%=x%>_s_alloc); }<% end %>
+
+    <% $defs.each do |x| %>
+    <%=x%><% end %>
 }
