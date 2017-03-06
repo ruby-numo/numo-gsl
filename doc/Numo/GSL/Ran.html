@@ -3261,14 +3261,6 @@ the formula given above.</p>
       <pre class="lines">
 
 
-2506
-2507
-2508
-2509
-2510
-2511
-2512
-2513
 2514
 2515
 2516
@@ -3288,10 +3280,18 @@ the formula given above.</p>
 2530
 2531
 2532
-2533</pre>
+2533
+2534
+2535
+2536
+2537
+2538
+2539
+2540
+2541</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2506</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2514</span>
 
 static VALUE
 numo_s_geometric_pdf(VALUE mod,VALUE v0,VALUE v1)
@@ -3744,14 +3744,6 @@ t, using the formula given above.</p>
       <pre class="lines">
 
 
-2585
-2586
-2587
-2588
-2589
-2590
-2591
-2592
 2593
 2594
 2595
@@ -3783,10 +3775,18 @@ t, using the formula given above.</p>
 2621
 2622
 2623
-2624</pre>
+2624
+2625
+2626
+2627
+2628
+2629
+2630
+2631
+2632</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2585</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2593</span>
 
 static VALUE
 numo_s_hypergeometric_pdf(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
@@ -4156,14 +4156,6 @@ using the formula given above.</p>
       <pre class="lines">
 
 
-2666
-2667
-2668
-2669
-2670
-2671
-2672
-2673
 2674
 2675
 2676
@@ -4183,10 +4175,18 @@ using the formula given above.</p>
 2690
 2691
 2692
-2693</pre>
+2693
+2694
+2695
+2696
+2697
+2698
+2699
+2700
+2701</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2666</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2674</span>
 
 static VALUE
 numo_s_logarithmic_pdf(VALUE mod,VALUE v0,VALUE v1)
@@ -4799,7 +4799,7 @@ n, using the formula given above.</p>
         <span class='name'>n</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
@@ -4831,7 +4831,6 @@ n, using the formula given above.</p>
       <pre class="lines">
 
 
-2355
 2356
 2357
 2358
@@ -4858,10 +4857,18 @@ n, using the formula given above.</p>
 2379
 2380
 2381
-2382</pre>
+2382
+2383
+2384
+2385
+2386
+2387
+2388
+2389
+2390</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2355</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2356</span>
 
 static VALUE
 numo_s_negative_binomial_pdf(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -4869,18 +4876,25 @@ numo_s_negative_binomial_pdf(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
   
     double c1;
   
+    double c2;
+  
 
   
 
 #line 45 &quot;gen/tmpl/sf_basic.c&quot;
-    ndfunc_arg_in_t ain[2] = {{cUI,0},{cDF,0}};
+    ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_negative_binomial_pdf,NO_LOOP|NDF_EXTRACT,2,1,ain,aout};
+    ndfunc_t ndf = {iter_negative_binomial_pdf,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
 
   
-    void *opt;
-        c1 = NUM2DBL(v1);
-    opt = &amp;c1; //p
+#line 53 &quot;gen/tmpl/sf_basic.c&quot;
+    void *opt[2];
+    
+          c1 = NUM2DBL(v1);
+    opt[0] = &amp;c1; //p
+
+          c2 = NUM2DBL(v2);
+    opt[1] = &amp;c2; //n
 
   
 
@@ -4888,7 +4902,7 @@ numo_s_negative_binomial_pdf(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
 
   
 #line 63 &quot;gen/tmpl/sf_basic.c&quot;
-    return na_ndloop3(&amp;ndf,opt,2,v0,v2);
+    return na_ndloop3(&amp;ndf,opt,1,v0);
   
 }</pre>
     </td>
@@ -5141,14 +5155,6 @@ n, using the formula given above.</p>
       <pre class="lines">
 
 
-2430
-2431
-2432
-2433
-2434
-2435
-2436
-2437
 2438
 2439
 2440
@@ -5175,10 +5181,18 @@ n, using the formula given above.</p>
 2461
 2462
 2463
-2464</pre>
+2464
+2465
+2466
+2467
+2468
+2469
+2470
+2471
+2472</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2430</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 2438</span>
 
 static VALUE
 numo_s_pascal_pdf(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
@@ -6211,7 +6225,7 @@ numo_s_weibull_pdf(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
 </div>
 
       <div id="footer">
-  Generated on Sun Jan 29 19:32:03 2017 by
+  Generated on Mon Mar  6 23:55:05 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
