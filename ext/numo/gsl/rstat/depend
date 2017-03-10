@@ -1,0 +1,16 @@
+COGEN=erb
+GENSRC=gsl_rstat.c
+ERBSRC=gen/gsl_rstat.erb.c
+GENDEPS=$(ERBSRC)
+
+$(GENSRC) : $(GENDEPS)
+	$(COGEN) $(ERBSRC) > $@
+
+doc : $(GENSRC)
+	yard doc $(GENSRC) types/*.c
+
+clean: cleansrc cleandoc
+cleansrc:
+	-$(Q)$(RM) $(GENSRC)
+cleandoc:
+	-$(Q)$(RM_RF) doc .yardoc
