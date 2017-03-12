@@ -1,10 +1,9 @@
-COGEN=erb
+COGEN=ruby erbpp_rstat.rb
 GENSRC=gsl_rstat.c
-ERBSRC=gen/gsl_rstat.erb.c
-GENDEPS=$(ERBSRC)
+GENDEPS=
 
 $(GENSRC) : $(GENDEPS)
-	$(COGEN) $(ERBSRC) > $@
+	$(COGEN) > $@
 
 doc : $(GENSRC)
 	yard doc $(GENSRC) types/*.c
