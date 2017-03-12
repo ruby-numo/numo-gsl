@@ -21,3 +21,7 @@ p Numo::GSL::Sf.bessel_Jn_array(nmin, nmax, x)
 
 
 p Numo::GSL::Sf::MathieuWorkspace.new(100,1.5)
+
+p a = Numo::DFloat[1..5]-2.5
+p Numo::GSL::Sf.log_abs(a.inplace)
+p a

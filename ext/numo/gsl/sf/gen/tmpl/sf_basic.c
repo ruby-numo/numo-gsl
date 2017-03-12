@@ -44,7 +44,7 @@ static VALUE
 
     ndfunc_arg_in_t ain[<%=n_in%>] = {<%=def_ain%>};
     ndfunc_arg_out_t aout[<%=n_out%>] = {<%=def_aout%>};
-    ndfunc_t ndf = {<%=c_iter%>,NO_LOOP|NDF_EXTRACT,<%=n_in%>,<%=n_out%>,ain,aout};
+    ndfunc_t ndf = {<%=c_iter%>,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,<%=n_in%>,<%=n_out%>,ain,aout};
 
   <% if n_param == 1 %>
     void *opt;
