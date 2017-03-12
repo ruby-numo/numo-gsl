@@ -3,9 +3,8 @@
 
   <%= description %>
 */
-<% set n_arg:0 %>
 static VALUE
-<%=c_func%>(VALUE self)
+<%=c_func%>(VALUE self)<% set n_arg:0 %>
 {
     <%=struct%> *w;
 

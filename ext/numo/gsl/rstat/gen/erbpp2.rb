@@ -127,6 +127,7 @@ class DefClass < ErbPP
   def description
     @opts[:description]
   end
+  alias desc description
   def undef_alloc_func
     UndefAllocFunc.new(self)
   end

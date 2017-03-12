@@ -9,9 +9,8 @@ rstat_methods = eval(open("gen/func_def.rb").read).
     h[:args] == [["gsl_rstat_workspace *", "w"]]
   end
 
-name="Rstat"
-
 lib = DefLib.new(nil,'lib') do
+  name = "Rstat"
   set file_name: "gsl_#{name}.c"
   set include_files: ["gsl/gsl_rstat.h"]
   set lib_name: name.downcase
@@ -36,8 +35,7 @@ lib = DefLib.new(nil,'lib') do
     end
   end
 
-  name="Quantile"
-
+  name = "Quantile"
   def_class('class') do
     set name: "rstat_"+name.downcase
     set class_name: name
