@@ -1,14 +1,15 @@
 require_relative "gen/erbpp2"
 
-rstat_methods = eval(open("gen/func_def.rb").read).
-  select do |h| h[:func_name] =~ /^gsl_rstat_([a-z]+)$/ &&
-    h[:func_type] == "double" &&
-    h[:args] == [["gsl_rstat_workspace *", "w"]]
-  end
+gsl_methods = eval(open("gen/func_def.rb").read)
+rstat_methods = gsl_methods.select do |h|
+  h[:func_name] =~ /^gsl_rstat_([a-z]+)$/ &&
+  h[:func_type] == "double" &&
+  h[:args] == [["gsl_rstat_workspace *", "w"]]
+end
 
 DefLib.new(nil,'lib') do
   set erb_dir: "gen/tmpl"
-  set erb_suffix: ".erb.c"
+  set erb_suffix: ".c"
 
   name = "Rstat"
   set file_name: "gsl_#{name}.c"
@@ -23,15 +24,15 @@ DefLib.new(nil,'lib') do
     set struct: "gsl_rstat_workspace"
 
     undef_alloc_func
-    def_method("new", 's_new0', name:"new", singleton:true)
-    def_method("reset", 'f_void_arg0', name:"reset")
-    def_method("n", 'f_sizet_arg0', name:"n")
+    def_method("new", 'new_void', name:"new", singleton:true)
+    def_method("reset", 'void_f_void', name:"reset")
+    def_method("n", 'sizet_f_void', name:"n")
     def_alias("size", "n")
     def_alias("length", "n")
-    def_method("add", 'f_add')
+    def_method("add", 'self_f_DFloat')
     rstat_methods.each do |h|
       m = h[:func_name].sub(/^gsl_rstat_/,"")
-      def_method(m, 'f_dbl_arg0', desc:h[:desc])
+      def_method(m, 'double_f_void', desc:h[:desc])
     end
   end
 
@@ -44,9 +45,9 @@ DefLib.new(nil,'lib') do
     set struct: "gsl_rstat_quantile_workspace"
 
     undef_alloc_func
-    def_method("new", 's_new_dbl', singleton:true)
-    #def_method("reset", 'f_void_arg0')
-    def_method("add", 'f_add')
-    def_method("get", 'f_dbl_arg0')
+    def_method("new", 'new_double', singleton:true)
+    #def_method("reset", 'void_f_void')
+    def_method("add", 'self_f_DFloat')
+    def_method("get", 'double_f_void')
   end
 end.run

@@ -1,9 +1,6 @@
 require "erb"
-#require "erbpp/line_number"
 
 class ErbPpNode
-
-  class ParamNotSetError < StandardError; end
 
   def initialize(parent, **opts, &block)
     @parent = parent
@@ -70,9 +67,20 @@ class ErbPP < ErbPpNode
   def load_erb
     safe_level = nil
     trim_mode = '%<>'
-    erb_path = File.join(get(:erb_dir), erb_base) + get(:erb_suffix)
-    @erb = ERB.new(File.read(erb_path), safe_level, trim_mode)
-    @erb.filename = erb_path
+    file = erb_base + get(:erb_suffix)
+    dirs = get(:erb_dir)
+    dirs = [dirs] if !dirs.kind_of?(Array)
+    dirs.each do |x|
+      Dir.glob(x).each do |dir|
+        path = File.join(dir,file)
+        if File.exist?(path)
+          @erb = ERB.new(File.read(path), safe_level, trim_mode)
+          @erb.filename = path
+          return path
+        end
+      end
+    end
+    raise "file not found: #{file.inspect} in #{dirs.inspect}"
   end
 
   def run
