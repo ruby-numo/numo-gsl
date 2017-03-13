@@ -23,7 +23,6 @@ static const rb_data_type_t <%=name%>_data_type = {
 };
 <% set data_type_var:name+"_data_type" %>
 
-
 <%= method_code %>
 
 /*

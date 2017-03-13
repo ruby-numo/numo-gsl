@@ -1,15 +1,15 @@
 require_relative "gen/erbpp2"
 
-ErbPP.set_erb_dir("gen/tmpl")
-ErbPP.set_erb_suffix(".erb.c")
-
 rstat_methods = eval(open("gen/func_def.rb").read).
   select do |h| h[:func_name] =~ /^gsl_rstat_([a-z]+)$/ &&
     h[:func_type] == "double" &&
     h[:args] == [["gsl_rstat_workspace *", "w"]]
   end
 
-lib = DefLib.new(nil,'lib') do
+DefLib.new(nil,'lib') do
+  set erb_dir: "gen/tmpl"
+  set erb_suffix: ".erb.c"
+
   name = "Rstat"
   set file_name: "gsl_#{name}.c"
   set include_files: ["gsl/gsl_rstat.h"]
@@ -49,6 +49,4 @@ lib = DefLib.new(nil,'lib') do
     def_method("add", 'f_add')
     def_method("get", 'f_dbl_arg0')
   end
-end
-
-lib.run
+end.run

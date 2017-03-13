@@ -1,4 +1,5 @@
 require "erb"
+#require "erbpp/line_number"
 
 class ErbPpNode
 
@@ -38,6 +39,10 @@ class ErbPpNode
     nil
   end
 
+  def description
+    @opts[:description] || @opts[:desc]
+  end
+
   alias method_missing_alias method_missing
 
   def method_missing(_meth_id, *args, &block)
@@ -55,29 +60,19 @@ class ErbPpNode
   end
 end
 
-
 class ErbPP < ErbPpNode
 
-  @@erb_dir = ""
-  def self.set_erb_dir(dir)
-    @@erb_dir = dir
-  end
-
-  @@erb_suffix = ""
-  def self.set_erb_suffix(sufx)
-    @@erb_suffix = sufx
-  end
-
-  def initialize(parent, erb_file, **opts, &block)
-    @erb_path = File.join(@@erb_dir,erb_file)+@@erb_suffix
+  def initialize(parent, erb_base, **opts, &block)
     super(parent, **opts, &block)
+    @opts[:erb_base] = erb_base
   end
 
   def load_erb
     safe_level = nil
     trim_mode = '%<>'
-    @erb = ERB.new(File.read(@erb_path),safe_level,trim_mode)
-    @erb.filename = @erb_path
+    erb_path = File.join(get(:erb_dir), erb_base) + get(:erb_suffix)
+    @erb = ERB.new(File.read(erb_path), safe_level, trim_mode)
+    @erb.filename = erb_path
   end
 
   def run
@@ -90,7 +85,6 @@ class ErbPP < ErbPpNode
     @erb.result(binding)
   end
 end
-
 
 class DefLib < ErbPP
   def id_assign
@@ -124,10 +118,6 @@ class DefClass < ErbPP
   def method_code
     @children.map{|c| c.result}.join("\n")
   end
-  def description
-    @opts[:description]
-  end
-  alias desc description
   def undef_alloc_func
     UndefAllocFunc.new(self)
   end
@@ -148,10 +138,6 @@ class DefMethod < ErbPP
   def define
     s = (singleton) ? "_singleton" : ""
     "rb_define#{s}_method(#{class_var}, \"#{name}\", #{c_func}, #{n_arg});"
-  end
-
-  def description
-    @opts[:description] || @opts[:desc]
   end
 
   def singleton
