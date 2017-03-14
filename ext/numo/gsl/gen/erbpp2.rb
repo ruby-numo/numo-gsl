@@ -108,9 +108,12 @@ class DefLib < ErbPP
   def def_class(erb_path, **opts, &block)
     DefClass.new(self, erb_path, **opts, &block)
   end
+  def def_module(erb_path, **opts, &block)
+    DefModule.new(self, erb_path, **opts, &block)
+  end
 end
 
-class DefClass < ErbPP
+class DefModule < ErbPP
   def id_list
     @id_list ||= []
   end
@@ -132,8 +135,20 @@ class DefClass < ErbPP
   def def_method(m, erb_path, **opts, &block)
     DefMethod.new(self, erb_path, name:m, **opts, &block)
   end
+  def def_singleton_method(m, erb_path, **opts, &block)
+    DefMethod.new(self, erb_path, name:m, singleton:true, **opts, &block)
+  end
   def def_alias(from, to)
     DefAlias.new(self, from:from, to:to)
+  end
+  def _mod_var
+    @opts[:module_var]
+  end
+end
+
+class DefClass < DefModule
+  def _mod_var
+    @opts[:class_var]
   end
 end
 
@@ -145,7 +160,7 @@ class DefMethod < ErbPP
 
   def define
     s = (singleton) ? "_singleton" : ""
-    "rb_define#{s}_method(#{class_var}, \"#{name}\", #{c_func}, #{n_arg});"
+    "rb_define#{s}_method(#{_mod_var}, \"#{name}\", #{c_func}, #{n_arg});"
   end
 
   def singleton
@@ -155,12 +170,12 @@ end
 
 class DefAlias < ErbPpNode
   def define
-    "rb_define_alias(#{class_var}, \"#{from}\", \"#{to}\");"
+    "rb_define_alias(#{_mod_var}, \"#{from}\", \"#{to}\");"
   end
 end
 
 class UndefAllocFunc < ErbPpNode
   def define
-    "rb_undef_alloc_func(#{class_var});"
+    "rb_undef_alloc_func(#{_mod_var});"
   end
 end
