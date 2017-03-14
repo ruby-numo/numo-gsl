@@ -40,7 +40,7 @@ def find_template(h,tp)
 end
 
 DefLib.new(nil,'lib_rstat') do
-  set erb_dir: "../gen/tmpl"
+  set erb_dir: %w[gen/tmpl ../gen/tmpl]
   set erb_suffix: ".c"
 
   name = "Rstat"
