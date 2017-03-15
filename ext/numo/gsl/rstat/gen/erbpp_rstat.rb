@@ -18,21 +18,36 @@ end
 def find_template(h,tp)
   func_type = h[:func_type]
   arg_types = h[:args].map{|a| a[0]}
+  if /_alloc$/ =~ h[:func_name]
+    h[:singleton] = true
+    h[:func_name] = "new"
+    r =
+      case arg_types
+      when [""], ["void"]
+        "c_new_void"
+      when ["const double"], ["double"]
+        "c_new_double"
+      else
+        $stderr.puts "skip1 "+h[:func_name]
+        nil
+      end
+    return r
+  end
   case arg_types
   when [tp]
     case func_type
     when "double"
-      "double_f_void"
+      "c_double_f_void"
     when "size_t"
-      "sizet_f_void"
+      "c_sizet_f_void"
     when "int"
-      "void_f_void"
+      "c_void_f_void"
     else
       $stderr.puts "skip "+h[:func_name]
       nil
     end
   when ["const double",tp]
-    "self_f_DFloat"
+    "c_self_f_DFloat"
   else
     $stderr.puts "skip "+h[:func_name]
     nil
@@ -56,11 +71,10 @@ DefLib.new(nil,'lib_rstat') do
     set struct: "gsl_rstat_workspace"
 
     undef_alloc_func
-    def_method("new", 'new_void', name:"new", singleton:true)
     rstat_methods.each do |h|
       if t = find_template(h, "gsl_rstat_workspace *")
         m = h[:func_name].sub(/^gsl_rstat_/,"")
-        def_method(m, t, desc:h[:desc])
+        def_method(m, t, **h)
       end
     end
     def_alias("size", "n")
@@ -76,11 +90,10 @@ DefLib.new(nil,'lib_rstat') do
     set struct: "gsl_rstat_quantile_workspace"
 
     undef_alloc_func
-    def_method("new", 'new_double', singleton:true)
     rquantile_methods.each do |h|
       if t = find_template(h, "gsl_rstat_quantile_workspace *")
         m = h[:func_name].sub(/^gsl_rstat_quantile_/,"")
-        def_method(m, t, desc:h[:desc])
+        def_method(m, t, **h)
       end
     end
   end
