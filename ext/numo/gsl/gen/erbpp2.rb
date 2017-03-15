@@ -25,13 +25,11 @@ class ErbPpNode
     if respond_to?(key)
       return send(key, *args, &block)
     end
-    if args.empty? && block.nil?
-      v = @opts[key]
-      return v if v
+    if args.empty? && block.nil? && @opts.has_key?(key)
+      return @opts[key]
     end
     if @parent
-      v = @parent.get(key, *args, &block)
-      return v if v
+      return @parent.get(key, *args, &block)
     end
     nil
   end
@@ -45,7 +43,7 @@ class ErbPpNode
   def method_missing(_meth_id, *args, &block)
     if args.empty?
       v = get(_meth_id, *args, &block)
-      return v if v
+      return v if !v.nil?
     end
     method_missing_alias(_meth_id, *args, &block)
   end
@@ -97,12 +95,12 @@ end
 class DefLib < ErbPP
   def id_assign
     ids = []
-    @children.each{|c| ids.concat(c.id_list)}
+    @children.each{|c| a=c.get(:id_list); ids.concat(a) if a}
     ids.sort.uniq.map{|x| "id_#{x} = rb_intern(\"#{x}\");"}
   end
   def id_decl
     ids = []
-    @children.each{|c| ids.concat(c.id_list)}
+    @children.each{|c| a=c.get(:id_list); ids.concat(a) if a}
     ids.sort.uniq.map{|x| "ID id_#{x};"}
   end
   def def_class(erb_path, **opts, &block)
