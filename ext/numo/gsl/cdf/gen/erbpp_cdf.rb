@@ -11,19 +11,19 @@ def find_template(h)
   arg_types = h[:args].map{|a| a[0]}
   case arg_types
   when ["double"]
-    "DFloat_f_DFloat"
+    "m_DFloat_f_DFloat"
   when ["double"]*2
-    "DFloat_f_DFloat_double"
+    "m_DFloat_f_DFloat_double"
   when ["double"]*3
-    "DFloat_f_DFloat_double_x2"
+    "m_DFloat_f_DFloat_double_x2"
   when ["unsigned int","double"]
-    "DFloat_f_UInt32_double"
+    "m_DFloat_f_UInt32_double"
   when ["unsigned int","double","unsigned int"]
-    "DFloat_f_UInt32_double_uint"
+    "m_DFloat_f_UInt32_double_uint"
   when ["unsigned int","double","double"]
-    "DFloat_f_UInt32_double_x2"
+    "m_DFloat_f_UInt32_double_x2"
   when ["unsigned int"]*4
-    "DFloat_f_UInt32_uint_x3"
+    "m_DFloat_f_UInt32_uint_x3"
   else
     puts "skipping "+h[:func_name]
   end
