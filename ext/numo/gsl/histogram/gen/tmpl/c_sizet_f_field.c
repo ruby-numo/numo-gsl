@@ -1,8 +1,8 @@
 /*
   @overload <%=name%>
-  @return [Float]
+  @return [Integer]
 
-  <%= description %>
+  returns <%=name%> field in <%=struct%> struct.
 */
 static VALUE
 <%=c_func%>(VALUE self)<% set n_arg:0 %>
@@ -11,5 +11,5 @@ static VALUE
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
 
-    return DBL2NUM(gsl_<%=c_func%>(w));
+    return SIZET2NUM(w-><%=name%>);
 }
