@@ -8,22 +8,19 @@ cdf_methods = gsl_methods.select do |h|
 end
 
 def find_template(h)
+  if /This function is now deprecated/m =~ h[:desc]
+    $stderr.puts "depricated: #{h[:func_name]}"
+    return nil
+  end
   arg_types = h[:args].map{|a| a[0]}
   case arg_types
-  when ["double"]
-    "m_DFloat_f_DFloat"
-  when ["double"]*2
-    "m_DFloat_f_DFloat_double"
-  when ["double"]*3
-    "m_DFloat_f_DFloat_double_x2"
-  when ["unsigned int","double"]
-    "m_DFloat_f_UInt32_double"
-  when ["unsigned int","double","unsigned int"]
-    "m_DFloat_f_UInt32_double_uint"
-  when ["unsigned int","double","double"]
-    "m_DFloat_f_UInt32_double_x2"
-  when ["unsigned int"]*4
-    "m_DFloat_f_UInt32_uint_x3"
+  when ["double"];                                "m_DFloat_f_DFloat"
+  when ["double"]*2;                              "m_DFloat_f_DFloat_double"
+  when ["double"]*3;                              "m_DFloat_f_DFloat_double_x2"
+  when ["unsigned int","double"];                 "m_DFloat_f_UInt32_double"
+  when ["unsigned int","double","unsigned int"];  "m_DFloat_f_UInt32_double_uint"
+  when ["unsigned int","double","double"];        "m_DFloat_f_UInt32_double_x2"
+  when ["unsigned int"]*4;                        "m_DFloat_f_UInt32_uint_x3"
   else
     puts "skipping "+h[:func_name]
   end
