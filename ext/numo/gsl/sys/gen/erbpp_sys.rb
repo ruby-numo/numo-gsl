@@ -3,6 +3,12 @@ require "erbpp/line_number"
 
 func_list = eval(open("gen/func_def.rb").read)
 const_list = eval(open("gen/const_def.rb").read)
+prec_list = %w[
+GSL_PREC_DOUBLE
+GSL_PREC_SINGLE
+GSL_PREC_APPROX
+GSL_MODE_DEFAULT
+]
 
 def find_template(h)
   func_type = h[:func_type]
@@ -58,6 +64,12 @@ DefLib.new(nil,'lib') do
       m = a[0]
       v = "DBL2NUM(#{a[0]})"
       def_const(m, v, desc:a[1]||"")
+    end
+
+    prec_list.each do |a|
+      m = a.sub(/GSL_/,"")
+      v = "FIX2NUM(#{a})"
+      def_const(m, v, desc:"")
     end
   end
 
