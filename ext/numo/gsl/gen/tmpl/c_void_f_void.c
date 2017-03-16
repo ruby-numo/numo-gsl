@@ -9,6 +9,6 @@ static VALUE
     <%=struct%> *w;
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
-    gsl_<%=c_func%>(w);
+    <%=func_name%>(w);
     return Qnil;
 }

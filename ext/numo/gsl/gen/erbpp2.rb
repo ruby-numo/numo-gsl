@@ -122,7 +122,7 @@ class DefModule < ErbPP
     "init_#{name}"
   end
   def call_init
-    "#{init_func}(#{namespace_var});"
+    "#{init_func}();"
   end
   def method_code
     @children.map{|c| c.result}.join("\n")

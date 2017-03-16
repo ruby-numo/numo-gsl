@@ -2,7 +2,7 @@
   class definition: <%= full_class_name %>
 */
 
-VALUE <%=class_var%>;
+static VALUE <%=class_var%>;
 
 static void
 <%=name%>_free(void *ptr)
@@ -30,10 +30,10 @@ static const rb_data_type_t <%=name%>_data_type = {
   <%= description %>
  */
 static void
-<%=init_func%>(VALUE mG)
+<%=init_func%>()
 {
     /* declare <%= full_class_name %> */
-    <%=class_var%> = rb_define_class_under(mG, "<%=class_name%>", rb_cObject);
+    <%=class_var%> = rb_define_class_under(<%=ns_var%>, "<%=class_name%>", rb_cObject);
     <% @children.each do |m| %>
     <%= m.define %><% end %>
 }

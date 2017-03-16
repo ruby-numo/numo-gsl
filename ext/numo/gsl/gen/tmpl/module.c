@@ -11,10 +11,10 @@ static VALUE <%=module_var%>;
   <%= description %>
  */
 static void
-<%=init_func%>(VALUE mG)
+<%=init_func%>()
 {
     /* declare <%= full_module_name %> */
-    <%=module_var%> = rb_define_module_under(mG, "<%=module_name%>");
+    <%=module_var%> = rb_define_module_under(<%=ns_var%>, "<%=module_name%>");
     <% @children.each do |m| %>
     <%= m.define %><% end %>
 }

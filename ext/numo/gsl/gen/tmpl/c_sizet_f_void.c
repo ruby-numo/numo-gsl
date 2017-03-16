@@ -11,5 +11,5 @@ static VALUE
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
 
-    return SIZET2NUM(gsl_<%=c_func%>(w));
+    return SIZET2NUM(<%=func_name%>(w));
 }

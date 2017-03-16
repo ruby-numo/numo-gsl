@@ -19,7 +19,7 @@ static VALUE
     v2 = cast_1d_contiguous(v2, numo_cDFloat);
     p2 = (double*)na_get_pointer_for_read(v2);
 
-    gsl_<%=c_func%>(w, p1, RNARRAY_SIZE(v1), p2, RNARRAY_SIZE(v2));
+    <%=func_name%>(w, p1, RNARRAY_SIZE(v1), p2, RNARRAY_SIZE(v2));
     RB_GC_GUARD(v1);
     RB_GC_GUARD(v2);
     return self;

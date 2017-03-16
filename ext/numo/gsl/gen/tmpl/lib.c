@@ -13,6 +13,8 @@
 #include <<%=f%>>
 <% end %>
 
+static VALUE <%=ns_var%>;
+
 struct opt_d_u {double d; unsigned int u;};
 
 <% id_decl.each do |x| %>
@@ -26,11 +28,9 @@ struct opt_d_u {double d; unsigned int u;};
 void
 Init_<%=lib_name%>(void)
 {
-    VALUE mNumo, mG;
-
-    mNumo = rb_define_module("Numo");
-    mG = rb_define_module_under(mNumo, "GSL");
-    <% set namespace_var:"mG" %>
+    VALUE mN;
+    mN = rb_define_module("Numo");
+    <%=ns_var%> = rb_define_module_under(mN, "GSL");
 
     <% id_assign.each do |x| %>
     <%= x %><% end %>

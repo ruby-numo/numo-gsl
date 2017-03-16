@@ -11,5 +11,5 @@ static VALUE
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
 
-    return DBL2NUM(gsl_<%=c_func%>(w));
+    return DBL2NUM(<%=func_name%>(w));
 }

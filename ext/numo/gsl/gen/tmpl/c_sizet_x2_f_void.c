@@ -12,6 +12,6 @@ static VALUE
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
 
-    gsl_<%=c_func%>(w, &i, &j);
+    <%=func_name%>(w, &i, &j);
     return rb_assoc_new(SIZET2NUM(i), SIZET2NUM(j));
 }

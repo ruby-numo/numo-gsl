@@ -13,7 +13,7 @@ n = case name
           } else {                              \
               y1 = x1;                          \
           }                                     \
-          gsl_<%=c_func%>(<%=c_args%>);         \
+          <%=func_name%>(<%=c_args%>);         \
       }
 
 static void

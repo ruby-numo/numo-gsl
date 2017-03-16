@@ -17,23 +17,23 @@ iter_<%=c_func%>(na_loop_t *const lp)
         if (idx2) {
             for (i=0; i<n; i++) {
                 GET_DATA_INDEX(p1,idx1,double,x);
-                y = gsl_<%=c_func%>(<%=c_args%>);
+                y = <%=func_name%>(<%=c_args%>);
                 SET_DATA_INDEX(p2,idx2,double,y);
             }
         } else {
                 GET_DATA_INDEX(p1,idx1,double,x);
-                y = gsl_<%=c_func%>(<%=c_args%>);
+                y = <%=func_name%>(<%=c_args%>);
                 SET_DATA_STRIDE(p2,s2,double,y);
         }
     } else {
         if (idx2) {
                 GET_DATA_STRIDE(p1,s1,double,x);
-                y = gsl_<%=c_func%>(<%=c_args%>);
+                y = <%=func_name%>(<%=c_args%>);
                 SET_DATA_INDEX(p2,idx2,double,y);
         } else {
             for (i=0; i<n; i++) {
                 GET_DATA_STRIDE(p1,s1,double,x);
-                y = gsl_<%=c_func%>(<%=c_args%>);
+                y = <%=func_name%>(<%=c_args%>);
                 SET_DATA_STRIDE(p2,s2,double,y);
             }
         }

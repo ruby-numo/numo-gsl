@@ -13,5 +13,5 @@ static VALUE
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
 
-    return DBL2NUM(gsl_<%=c_func%>(w, NUM2SIZET(v1), NUM2SIZET(v2)));
+    return DBL2NUM(<%=func_name%>(w, NUM2SIZET(v1), NUM2SIZET(v2)));
 }

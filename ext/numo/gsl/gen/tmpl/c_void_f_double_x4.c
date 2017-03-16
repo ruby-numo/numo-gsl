@@ -15,6 +15,6 @@ static VALUE
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
 
-    gsl_<%=c_func%>(w, NUM2DBL(v1),NUM2DBL(v2),NUM2DBL(v3),NUM2DBL(v4));
+    <%=func_name%>(w, NUM2DBL(v1),NUM2DBL(v2),NUM2DBL(v3),NUM2DBL(v4));
     return Qnil;
 }

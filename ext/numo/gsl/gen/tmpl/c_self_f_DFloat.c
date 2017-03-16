@@ -15,12 +15,12 @@ iter_<%=c_func%>(na_loop_t *const lp)
     if (idx1) {
         for (i=0; i<n; i++) {
             GET_DATA_INDEX(p1,idx1,double,x);
-            gsl_<%=c_func%>(<%=c_args%>);
+            <%=func_name%>(<%=c_args%>);
         }
     } else {
         for (i=0; i<n; i++) {
             GET_DATA_STRIDE(p1,s1,double,x);
-            gsl_<%=c_func%>(<%=c_args%>);
+            <%=func_name%>(<%=c_args%>);
         }
     }
 }

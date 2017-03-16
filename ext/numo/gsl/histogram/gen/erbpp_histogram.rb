@@ -50,6 +50,10 @@ end
 
 
 def find_template(h,tp)
+  if /This function is now deprecated/m =~ h[:desc]
+    $stderr.puts "depricated: #{h[:func_name]}"
+    return nil
+  end
   func_type = h[:func_type]
   arg_types = h[:args].map{|a| a[0].sub(/^const /,"")}
   h[:postpose] = false
@@ -57,7 +61,7 @@ def find_template(h,tp)
   when /_free$/; nil
   when /_alloc$/
     h[:singleton] = true
-    h[:func_name] = "new"
+    h[:name] = "new"
     case arg_types
     when ["size_t"];                   "c_new_sizet"
     when ["size_t","size_t"];          "c_new_sizet_x2"
@@ -115,6 +119,7 @@ end
 DefLib.new(nil,'lib') do
   set erb_dir: %w[gen/tmpl ../gen/tmpl]
   set erb_suffix: ".c"
+  set ns_var: "mG"
 
   ErbPP.new(self,"cast_1d_contiguous",call_init:"")
 
@@ -138,7 +143,7 @@ DefLib.new(nil,'lib') do
       undef_alloc_func
       list.each do |h|
         if t = find_template(h, "gsl_#{base} *")
-          m = h[:func_name].sub(/^gsl_#{base}_/,"")
+          m = h[:name] || h[:func_name].sub(/^gsl_#{base}_/,"")
           def_method(m, t, **h)
         else
           $stderr.puts "skip "+h[:func_name]

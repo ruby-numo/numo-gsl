@@ -1,6 +1,6 @@
 COGEN=ruby gen/erbpp_rstat.rb
 GENSRC=gsl_rstat.c
-GENDEPS=gen/erbpp_rstat.rb ../gen/*.rb ../gen/tmpl/*.c gen/tmpl/*.c
+GENDEPS=gen/erbpp_rstat.rb ../gen/*.rb ../gen/tmpl/*.c
 
 $(GENSRC) : $(GENDEPS)
 	$(COGEN) > $@

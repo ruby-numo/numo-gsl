@@ -6,7 +6,7 @@
         } else {                                \
             y1 = x1;                            \
         }                                       \
-        y2 = gsl_<%=c_func%>(<%=c_args%>);      \
+        y2 = <%=func_name%>(<%=c_args%>);      \
     }
 
 static void

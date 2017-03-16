@@ -17,7 +17,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
         GET_DATA_STRIDE(p1,s1,double,x1);
         GET_DATA_STRIDE(p2,s2,double,x2);
         GET_DATA_STRIDE(p3,s3,double,x3);
-        gsl_<%=c_func%>(<%=c_args%>);
+        <%=func_name%>(<%=c_args%>);
     }
 }
 

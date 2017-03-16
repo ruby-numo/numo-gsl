@@ -18,13 +18,13 @@ iter_<%=c_func%>(na_loop_t *const lp)
             for (i=0; i<n; i++) {
                 GET_DATA_INDEX(p1,idx1,double,x);
                 GET_DATA_INDEX(p2,idx2,double,y);
-                gsl_<%=c_func%>(<%=c_args%>);
+                <%=func_name%>(<%=c_args%>);
             }
         } else {
             for (i=0; i<n; i++) {
                 GET_DATA_INDEX(p1,idx1,double,x);
                 GET_DATA_STRIDE(p2,s2,double,y);
-                gsl_<%=c_func%>(<%=c_args%>);
+                <%=func_name%>(<%=c_args%>);
             }
         }
     } else {
@@ -32,13 +32,13 @@ iter_<%=c_func%>(na_loop_t *const lp)
             for (i=0; i<n; i++) {
                 GET_DATA_INDEX(p1,idx1,double,x);
                 GET_DATA_STRIDE(p2,s2,double,y);
-                gsl_<%=c_func%>(<%=c_args%>);
+                <%=func_name%>(<%=c_args%>);
             }
         } else {
             for (i=0; i<n; i++) {
                 GET_DATA_STRIDE(p1,s1,double,x);
                 GET_DATA_STRIDE(p2,s2,double,y);
-                gsl_<%=c_func%>(<%=c_args%>);
+                <%=func_name%>(<%=c_args%>);
             }
         }
     }

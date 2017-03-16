@@ -16,7 +16,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
 
     for (i=0; i<n; i++) {
         GET_DATA_STRIDE(p1,s1,double,x);
-        y = gsl_<%=c_func%>(x, c1);
+        y = <%=func_name%>(x, c1);
         SET_DATA_STRIDE(p2,s2,double,y);
     }
 }

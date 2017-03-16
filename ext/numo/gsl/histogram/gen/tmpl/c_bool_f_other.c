@@ -14,6 +14,6 @@ static VALUE
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
     TypedData_Get_Struct(v1, <%=struct%>, &<%=data_type_var%>, w1);
 
-    stat = gsl_<%=c_func%>(w, w1);
+    stat = <%=func_name%>(w, w1);
     return (stat) ? Qtrue: Qfalse;
 }
