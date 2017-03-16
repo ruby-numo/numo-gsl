@@ -15,7 +15,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
     c1 = *(double*)(lp->opt_ptr);
 
     for (; i--;) {
-        GET_DATA_STRIDE(p1,s1,double,x);
+        GET_DATA_STRIDE(p1,s1,unsigned int,x);
         y = <%=func_name%>(x, c1);
         SET_DATA_STRIDE(p2,s2,double,y);
     }
@@ -34,7 +34,7 @@ static VALUE
 {
     ndfunc_arg_in_t ain[1] = {{numo_cUInt32,0}};
     ndfunc_arg_out_t aout[1] = {{numo_cDFloat,0}};
-    ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
     double c1;
 
     c1 = NUM2DBL(v1);

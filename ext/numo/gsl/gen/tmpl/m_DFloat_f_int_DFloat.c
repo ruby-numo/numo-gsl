@@ -5,36 +5,37 @@ iter_<%=c_func%>(na_loop_t *const lp)
     char    *p1, *p2;
     ssize_t  s1, s2;
     double   x, y;
-    <%=struct%> *w = (<%=struct%>*)(lp->opt_ptr);
-    <% c_args = get(:postpose) ? "x,w" : "w,x" %>
+    int      c0;
 
     INIT_COUNTER(lp, i);
     INIT_PTR(lp, 0, p1, s1);
     INIT_PTR(lp, 1, p2, s2);
+    c0 = *(int*)(lp->opt_ptr);
 
     for (; i--; ) {
         GET_DATA_STRIDE(p1,s1,double,x);
-        y = <%=func_name%>(<%=c_args%>);
+        y = <%=func_name%>(c0, x);
         SET_DATA_STRIDE(p2,s2,double,y);
     }
 }
 
 /*
-  @overload <%=name%>(<%=args[1][1]%>)
-  @param  [DFloat]   <%=args[1][1]%>
-  @return [<%=class_name%>]  self
+  @overload <%=name%>(<%=args[0][1]%>, <%=args[1][1]%>)
+  @param  [Integer]   <%=args[0][1]%>
+  @param  [DFloat]    <%=args[1][1]%>
+  @return [DFloat]    result
 
   <%= description %>
 */
 static VALUE
-<%=c_func%>(VALUE self, VALUE v1)<% set n_arg:1 %>
+<%=c_func%>(VALUE mod, VALUE v0, VALUE v1)<% set n_arg:2 %>
 {
-    <%=struct%> *w;
     ndfunc_arg_in_t ain[1] = {{numo_cDFloat,0}};
     ndfunc_arg_out_t aout[1] = {{numo_cDFloat,0}};
     ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    int c0;
 
-    TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
+    c0 = NUM2INT(v0);
 
-    return na_ndloop3(&ndf, w, 1, v1);
+    return na_ndloop3(&ndf, &c0, 1, v1);
 }

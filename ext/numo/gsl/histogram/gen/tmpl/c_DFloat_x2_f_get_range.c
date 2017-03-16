@@ -68,7 +68,7 @@ static VALUE
     ndfunc_arg_in_t ain[1] = {{numo_cInt64,0}};
 #endif
     ndfunc_arg_out_t aout[2] = {{numo_cDFloat,0},{numo_cDFloat,0}};
-    ndfunc_t ndf = {iter_<%=c_func%>, FULL_LOOP, 1,2, ain,aout};
+    ndfunc_t ndf = {iter_<%=c_func%>, FULL_LOOP|NDF_EXTRACT, 1,2, ain,aout};
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
 

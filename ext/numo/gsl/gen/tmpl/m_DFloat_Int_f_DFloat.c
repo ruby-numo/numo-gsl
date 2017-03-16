@@ -32,7 +32,7 @@ static VALUE
 {
     ndfunc_arg_in_t ain[1] = {{numo_cDFloat,0}};
     ndfunc_arg_out_t aout[2] = {{numo_cDFloat,0},{cInt,0}};
-    ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP, 1,2, ain,aout};
+    ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP|NDF_EXTRACT, 1,2, ain,aout};
 
     return na_ndloop(&ndf, 1, v0);
 }

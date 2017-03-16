@@ -13,13 +13,27 @@
 #include <<%=f%>>
 <% end %>
 
+#define GET_PTR(lp,i) (((lp)->args[i]).ptr + ((lp)->args[i].iter[0]).pos)
+
 #if SIZEOF_INT == 4
-#define cInt numo_cInt32
-#define cUInt numo_cUInt32
-#elif SIZEOF_INT == 8
-#define cInt numo_cInt64
-#define cUInt numo_cUInt64
+#define cI numo_cInt32
+#define cUI numo_cUInt32
+#elif SIZEOF_INT==8
+#define cI numo_cInt64
+#define cUI numo_cUInt64
 #endif
+
+#if SIZEOF_SIZE_T == 4
+#define cSZ numo_cUInt32
+#define cSSZ numo_cInt32
+#elif SIZEOF_SIZE_T == 8
+#define cSZ numo_cUInt64
+#define cSSZ numo_cInt64
+#endif
+
+#define cDF numo_cDFloat
+#define cInt cI
+#define cUInt cUI
 
 static VALUE <%=ns_var%>;
 
