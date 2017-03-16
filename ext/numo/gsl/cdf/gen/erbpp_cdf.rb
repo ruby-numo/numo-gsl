@@ -37,6 +37,7 @@ DefLib.new(nil,'lib') do
   set file_name: "gsl_#{name.downcase}.c"
   set include_files: ["gsl/gsl_cdf.h"]
   set lib_name: name.downcase
+  set ns_var: "mG"
 
   def_module('module') do
     set name: name.downcase
@@ -47,7 +48,7 @@ DefLib.new(nil,'lib') do
     cdf_methods.each do |h|
       if tmpl = find_template(h)
         m = h[:func_name].sub(/^gsl_cdf_/,"")
-        def_method(m, tmpl, desc:h[:desc], args:h[:args])
+        def_method(m, tmpl, **h)
       end
     end
   end
