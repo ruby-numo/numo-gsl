@@ -1,7 +1,7 @@
 static void
 iter_<%=c_func%>(na_loop_t *const lp)
 {
-    size_t   n, i;
+    size_t   i;
     char    *p1, *p2;
     ssize_t  s1, s2;
     size_t  *idx1, *idx2;
@@ -9,38 +9,14 @@ iter_<%=c_func%>(na_loop_t *const lp)
     <%=struct%> *w = (<%=struct%>*)(lp->opt_ptr);
     <% c_args = get(:postpose) ? "x,y,w" : "w,x,y" %>
 
-    INIT_COUNTER(lp, n);
-    INIT_PTR_IDX(lp, 0, p1, s1, idx1);
-    INIT_PTR_IDX(lp, 1, p2, s2, idx2);
+    INIT_COUNTER(lp, i);
+    INIT_PTR(lp, 0, p1, s1);
+    INIT_PTR(lp, 1, p2, s2);
 
-    if (idx1) {
-        if (idx2) {
-            for (i=0; i<n; i++) {
-                GET_DATA_INDEX(p1,idx1,double,x);
-                GET_DATA_INDEX(p2,idx2,double,y);
-                <%=func_name%>(<%=c_args%>);
-            }
-        } else {
-            for (i=0; i<n; i++) {
-                GET_DATA_INDEX(p1,idx1,double,x);
-                GET_DATA_STRIDE(p2,s2,double,y);
-                <%=func_name%>(<%=c_args%>);
-            }
-        }
-    } else {
-        if (idx2) {
-            for (i=0; i<n; i++) {
-                GET_DATA_INDEX(p1,idx1,double,x);
-                GET_DATA_STRIDE(p2,s2,double,y);
-                <%=func_name%>(<%=c_args%>);
-            }
-        } else {
-            for (i=0; i<n; i++) {
-                GET_DATA_STRIDE(p1,s1,double,x);
-                GET_DATA_STRIDE(p2,s2,double,y);
-                <%=func_name%>(<%=c_args%>);
-            }
-        }
+    for (; i--;) {
+        GET_DATA_STRIDE(p1,s1,double,x);
+        GET_DATA_STRIDE(p2,s2,double,y);
+        <%=func_name%>(<%=c_args%>);
     }
 }
 
@@ -57,7 +33,7 @@ static VALUE
 {
     <%=struct%> *w;
     ndfunc_arg_in_t ain[2] = {{numo_cDFloat,0},{numo_cDFloat,0}};
-    ndfunc_t ndf = {iter_<%=c_func%>, FULL_LOOP, 2,0, ain,0};
+    ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP, 2,0, ain,0};
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);
 

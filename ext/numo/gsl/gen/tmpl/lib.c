@@ -13,6 +13,14 @@
 #include <<%=f%>>
 <% end %>
 
+#if SIZEOF_INT == 4
+#define cInt numo_cInt32
+#define cUInt numo_cUInt32
+#elif SIZEOF_INT == 8
+#define cInt numo_cInt64
+#define cUInt numo_cUInt64
+#endif
+
 static VALUE <%=ns_var%>;
 
 struct opt_d_u {double d; unsigned int u;};

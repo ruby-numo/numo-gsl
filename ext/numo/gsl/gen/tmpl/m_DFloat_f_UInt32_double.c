@@ -1,20 +1,20 @@
 static void
 iter_<%=c_func%>(na_loop_t *const lp)
 {
-    size_t   n, i;
+    size_t   i;
     char    *p1, *p2;
     ssize_t  s1, s2;
     unsigned int x;
     double   y;
     double   c1;
 
-    INIT_COUNTER(lp, n);
+    INIT_COUNTER(lp, i);
     INIT_PTR(lp, 0, p1, s1);
     INIT_PTR(lp, 1, p2, s2);
 
     c1 = *(double*)(lp->opt_ptr);
 
-    for (i=0; i<n; i++) {
+    for (; i--;) {
         GET_DATA_STRIDE(p1,s1,double,x);
         y = <%=func_name%>(x, c1);
         SET_DATA_STRIDE(p2,s2,double,y);

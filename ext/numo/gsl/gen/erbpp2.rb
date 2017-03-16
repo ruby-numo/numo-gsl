@@ -139,6 +139,9 @@ class DefModule < ErbPP
   def def_alias(from, to)
     DefAlias.new(self, from:from, to:to)
   end
+  def def_const(m, v, **opts, &block)
+    DefConst.new(self, name:m, value:v, **opts, &block)
+  end
   def _mod_var
     @opts[:module_var]
   end
@@ -175,5 +178,12 @@ end
 class UndefAllocFunc < ErbPpNode
   def define
     "rb_undef_alloc_func(#{_mod_var});"
+  end
+end
+
+class DefConst < ErbPpNode
+  def define
+    "/*#{desc}*/
+    rb_define_const(#{_mod_var},\"#{name}\",#{value});"
   end
 end

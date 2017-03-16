@@ -1,20 +1,20 @@
 static void
 iter_<%=c_func%>(na_loop_t *const lp)
 {
-    size_t   n, i;
+    size_t   i;
     char    *p1, *p2, *p3, *p4;
     ssize_t  s1, s2, s3, s4;
     double   x1, x2, y3, y4;
     <%=struct%> *w = (<%=struct%>*)(lp->opt_ptr);
     <% c_args = get(:postpose) ? "x1,x2,&y3,&y4,w" : "w,x1,x2,&y3,&y4" %>
 
-    INIT_COUNTER(lp, n);
+    INIT_COUNTER(lp, i);
     INIT_PTR(lp, 0, p1, s1);
     INIT_PTR(lp, 1, p2, s2);
     INIT_PTR(lp, 2, p3, s3);
     INIT_PTR(lp, 3, p4, s4);
 
-    for (i=0; i<n; i++) {
+    for (; i--; ) {
         GET_DATA_STRIDE(p1,s1,double,x1);
         GET_DATA_STRIDE(p2,s2,double,x2);
         <%=func_name%>(<%=c_args%>);

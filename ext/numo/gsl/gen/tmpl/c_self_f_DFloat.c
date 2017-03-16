@@ -1,7 +1,7 @@
 static void
 iter_<%=c_func%>(na_loop_t *const lp)
 {
-    size_t   n, i;
+    size_t   i;
     char    *p1;
     ssize_t  s1;
     size_t  *idx1;
@@ -9,16 +9,16 @@ iter_<%=c_func%>(na_loop_t *const lp)
     <%=struct%> *w = (<%=struct%>*)(lp->opt_ptr);
     <% c_args = get(:postpose) ? "x,w" : "w,x" %>
 
-    INIT_COUNTER(lp, n);
+    INIT_COUNTER(lp, i);
     INIT_PTR_IDX(lp, 0, p1, s1, idx1);
 
     if (idx1) {
-        for (i=0; i<n; i++) {
+        for (; i--;) {
             GET_DATA_INDEX(p1,idx1,double,x);
             <%=func_name%>(<%=c_args%>);
         }
     } else {
-        for (i=0; i<n; i++) {
+        for (; i--;) {
             GET_DATA_STRIDE(p1,s1,double,x);
             <%=func_name%>(<%=c_args%>);
         }

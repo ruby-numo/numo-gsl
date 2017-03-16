@@ -1,7 +1,7 @@
 static void
 iter_<%=c_func%>(na_loop_t *const lp)
 {
-    size_t   n, i;
+    size_t   i;
     char    *p1, *p2;
     ssize_t  s1, s2;
     unsigned int x;
@@ -9,7 +9,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
     unsigned int *opt;
     unsigned int c1, c2, c3;
 
-    INIT_COUNTER(lp, n);
+    INIT_COUNTER(lp, i);
     INIT_PTR(lp, 0, p1, s1);
     INIT_PTR(lp, 1, p2, s2);
 
@@ -18,7 +18,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
     c2 = opt[1];
     c3 = opt[2];
 
-    for (i=0; i<n; i++) {
+    for (; i--;) {
         GET_DATA_STRIDE(p1,s1,double,x);
         y = <%=func_name%>(x, c1, c2, c3);
         SET_DATA_STRIDE(p2,s2,double,y);
