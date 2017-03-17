@@ -156,12 +156,12 @@ end
 class DefMethod < ErbPP
   def c_func
     s = (singleton) ? "_s" : ""
-    "#{@parent.name}#{s}_#{name}"
+    "#{@parent.name}#{s}_#{@opts[:name]}"
   end
 
   def define
     s = (singleton) ? "_singleton" : ""
-    "rb_define#{s}_method(#{_mod_var}, \"#{name}\", #{c_func}, #{n_arg});"
+    "rb_define#{s}_method(#{_mod_var}, \"#{@opts[:name]}\", #{c_func}, #{n_arg});"
   end
 
   def singleton
