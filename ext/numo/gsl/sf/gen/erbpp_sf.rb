@@ -6,7 +6,8 @@ gsl_list = eval(open("gen/func_def.rb").read)
 sf_list = []
 mathieu_list = []
 gsl_list.each do |h|
-  if h[:args].any?{|a| a[0] == "gsl_sf_mathieu_workspace *"}
+  if h[:args].any?{|a| a[0] == "gsl_sf_mathieu_workspace *"} ||
+      h[:func_type] == "gsl_sf_mathieu_workspace *"
     mathieu_list << h
   else
     case h[:func_name]
@@ -14,36 +15,6 @@ gsl_list.each do |h|
       sf_list << h
     else
       $stderr.puts "skip "+ h[:func_name]
-    end
-  end
-end
-
-def find_c_template(h,tp)
-  func_type = h[:func_type]
-  arg_types = h[:args].map{|a| a[0].sub(/^const /,"")}
-  if /This function is now deprecated/m =~ h[:desc]
-    $stderr.puts "depricated: #{h[:func_name]}"
-    return nil
-  end
-  case h[:func_name]
-  when /_free$/; nil
-  when /_alloc$/
-    h[:singleton] = true
-    h[:name] = "new"
-    case arg_types
-    when [""], ["void"];      "c_new_void"
-    when ["size_t","double"]; "c_new_sizet_double"
-    end
-  else
-    case arg_types
-    when [tp]
-      case func_type
-      when "double";          "c_double_f_void"
-      when "size_t";          "c_sizet_f_void"
-      when "int";             "c_void_f_void"
-      end
-    when ["double",tp]
-      h[:postpose] = true;    "c_self_f_DFloat"
     end
   end
 end
@@ -79,10 +50,10 @@ DefLib.new(nil,'lib') do
     set struct: "gsl_sf_mathieu_workspace"
 
     undef_alloc_func
+    c = MathieuArray
     mathieu_list.each do |h|
-      if t = find_c_template(h, "gsl_sf_mathieu_workspace *")
-        m = h[:name] || h[:func_name].sub(/^gsl_sf_mathieu_/,"")
-        def_method(m, t, **h)
+      if t = c.lookup(h)
+        c.new(self, t, **h)
       else
         $stderr.puts "skip "+h[:func_name] if /_e$/ !~ h[:func_name]
       end

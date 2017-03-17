@@ -346,7 +346,7 @@ class GslFunction < DefMethod
         break
       end
     end
-    h[:name] = h[:func_name].sub(/^gsl_sf_/,"")
+    h[:name] ||= h[:func_name].sub(/^gsl_sf_/,"")
     h[:singleton] = true
     super(parent,tmpl,**h)
     if @args_param.any?{|a| a.type=="gsl_mode_t"}
@@ -559,7 +559,7 @@ class SfBasic < GslFunction
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    h[:name] = h[:func_name].sub(/^gsl_sf_/,"")
+    h[:name] ||= h[:func_name].sub(/^gsl_sf_/,"")
     super(parent,tmpl,**h)
   end
 
@@ -591,15 +591,35 @@ class SfBasic < GslFunction
 end
 
 
-class MathieuArray < SfBasic
+class MathieuArray < DefMethod
   RE = /^gsl_sf_mathieu_\w+_array$/
 
   def self.lookup(h)
-    "sf_basic" if RE =~ h[:func_name]
+    case h[:func_name]
+    when "gsl_sf_mathieu_alloc"
+      "c_new_sizet_double"
+    when RE
+      arg_types = h[:args].map{|a| a[0].sub(/^const /,"")}
+      tp = "gsl_sf_mathieu_workspace *"
+      case arg_types
+      when ["int"]*2+["double",tp,"double"];     "c_DFloat_f_int_x2_DFloat"
+      when ["int"]*2+["double"]*2+[tp,"double"]; "c_DFloat_f_int_x2_DFloat_x2"
+      when ["int"]*3+["double"]*2+[tp,"double"]; "c_DFloat_f_int_x3_DFloat_x2"
+      end
+    end
   end
 
   def initialize(parent,tmpl,**h)
     super(parent,tmpl,**h)
+
+    case h[:func_name]
+    when "gsl_sf_mathieu_alloc"
+      set name: "new"
+      set singleton: true
+    when /_array$/
+      set name: h[:func_name].sub(/^gsl_sf_mathieu_/,"")
+      set singleton: false
+    end
 
     case func_name
     when /_(a|b)_array$/
