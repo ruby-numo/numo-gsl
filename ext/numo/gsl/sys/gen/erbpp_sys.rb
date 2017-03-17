@@ -41,7 +41,7 @@ DefLib.new(nil,'lib') do
   set erb_suffix: ".c"
 
   set file_name: "gsl_sys.c"
-  set include_files: %w[gsl/gsl_sys.h gsl/gsl_pow_int.h gsl/gsl_math.h]
+  set include_files: %w[gsl/gsl_sys.h gsl/gsl_pow_int.h gsl/gsl_math.h gsl/gsl_mode.h]
   set lib_name: "sys"
   set ns_var: "mGSL"
 
@@ -68,7 +68,7 @@ DefLib.new(nil,'lib') do
 
     prec_list.each do |a|
       m = a.sub(/GSL_/,"")
-      v = "FIX2NUM(#{a})"
+      v = "INT2FIX(#{a})"
       def_const(m, v, desc:"")
     end
   end
