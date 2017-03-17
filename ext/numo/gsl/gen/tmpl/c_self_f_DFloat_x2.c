@@ -4,7 +4,6 @@ iter_<%=c_func%>(na_loop_t *const lp)
     size_t   i;
     char    *p1, *p2;
     ssize_t  s1, s2;
-    size_t  *idx1, *idx2;
     double   x, y;
     <%=struct%> *w = (<%=struct%>*)(lp->opt_ptr);
     <% c_args = get(:postpose) ? "x,y,w" : "w,x,y" %>
@@ -32,7 +31,7 @@ static VALUE
 <%=c_func%>(VALUE self, VALUE v1, VALUE v2)<% set n_arg:2 %>
 {
     <%=struct%> *w;
-    ndfunc_arg_in_t ain[2] = {{numo_cDFloat,0},{numo_cDFloat,0}};
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP, 2,0, ain,0};
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);

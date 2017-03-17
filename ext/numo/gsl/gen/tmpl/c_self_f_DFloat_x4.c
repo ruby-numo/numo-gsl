@@ -37,7 +37,7 @@ static VALUE
 <%=c_func%>(VALUE self, VALUE v1, VALUE v2, VALUE v3, VALUE v4)<% set n_arg:4 %>
 {
     <%=struct%> *w;
-    ndfunc_arg_in_t ain[4] = {{numo_cDFloat,0},{numo_cDFloat,0},{numo_cDFloat,0},{numo_cDFloat,0}};
+    ndfunc_arg_in_t ain[4] = {{cDF,0},{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP, 4,0, ain,0};
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);

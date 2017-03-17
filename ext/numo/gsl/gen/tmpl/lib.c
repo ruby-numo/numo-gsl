@@ -37,8 +37,6 @@
 
 static VALUE <%=ns_var%>;
 
-struct opt_d_u {double d; unsigned int u;};
-
 <% id_decl.each do |x| %>
 <%= x %><% end %>
 

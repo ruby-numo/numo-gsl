@@ -30,8 +30,8 @@ static VALUE
 <%=c_func%>(VALUE self, VALUE v1)<% set n_arg:1 %>
 {
     <%=struct%> *w;
-    ndfunc_arg_in_t ain[1] = {{numo_cDFloat,0}};
-    ndfunc_arg_out_t aout[1] = {{numo_cDFloat,0}};
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, w);

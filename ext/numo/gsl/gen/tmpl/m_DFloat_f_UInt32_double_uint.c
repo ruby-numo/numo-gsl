@@ -38,7 +38,7 @@ static VALUE
 <%=c_func%>(VALUE mod, VALUE v0, VALUE v1, VALUE v2)<% set n_arg:3 %>
 {
     ndfunc_arg_in_t ain[1] = {{numo_cUInt32,0}};
-    ndfunc_arg_out_t aout[1] = {{numo_cDFloat,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
     struct opt_d_u opt;
 

@@ -21,15 +21,15 @@ iter_<%=c_func%>(na_loop_t *const lp)
 /*
   @overload <%=name%>(<%=args[0][1]%>)
   @param  [DFloat]   <%=args[0][1]%>
-  @return [DFloat]   result
+  @return [Int]      result
 
   <%= description %>
 */
 static VALUE
 <%=c_func%>(VALUE mod, VALUE v0)<% set n_arg:1 %>
 {
-    ndfunc_arg_in_t ain[1] = {{numo_cDFloat,0}};
-    ndfunc_arg_out_t aout[1] = {{cInt,0}};
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cI,0}};
     ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&ndf, 1, v0);

@@ -30,8 +30,8 @@ iter_<%=c_func%>(na_loop_t *const lp)
 static VALUE
 <%=c_func%>(VALUE mod, VALUE v0, VALUE v1)<% set n_arg:2 %>
 {
-    ndfunc_arg_in_t ain[1] = {{numo_cDFloat,0}};
-    ndfunc_arg_out_t aout[2] = {{numo_cDFloat,0},{cInt,0}};
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[2] = {{cDF,0},{cInt,0}};
     ndfunc_t ndf = {iter_<%=c_func%>, STRIDE_LOOP|NDF_EXTRACT, 1,2, ain,aout};
 
     return na_ndloop(&ndf, 1, v0);
