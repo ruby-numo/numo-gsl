@@ -26,7 +26,7 @@ static VALUE
     shape[1] = w->ny;
     <%end%>
 
-    v = rb_narray_new(numo_cDFloat, <%=nd%>, shape);
+    v = rb_narray_new(cDF, <%=nd%>, shape);
     d = (double*)na_get_pointer_for_write(v);
     for (i=0; i<n; i++) {
         d[i] = w-><%=name%>[i];
