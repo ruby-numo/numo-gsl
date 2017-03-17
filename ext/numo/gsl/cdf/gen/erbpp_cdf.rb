@@ -17,10 +17,10 @@ def find_template(h)
   when ["double"];                                "m_DFloat_f_DFloat"
   when ["double"]*2;                              "m_DFloat_f_DFloat_double"
   when ["double"]*3;                              "m_DFloat_f_DFloat_double_x2"
-  when ["unsigned int","double"];                 "m_DFloat_f_UInt32_double"
-  when ["unsigned int","double","unsigned int"];  "m_DFloat_f_UInt32_double_uint"
-  when ["unsigned int","double","double"];        "m_DFloat_f_UInt32_double_x2"
-  when ["unsigned int"]*4;                        "m_DFloat_f_UInt32_uint_x3"
+  when ["unsigned int","double"];                 "m_DFloat_f_UInt_double"
+  when ["unsigned int","double","unsigned int"];  "m_DFloat_f_UInt_double_uint"
+  when ["unsigned int","double","double"];        "m_DFloat_f_UInt_double_x2"
+  when ["unsigned int"]*4;                        "m_DFloat_f_UInt_uint_x3"
   else
     puts "skipping "+h[:func_name]
   end
