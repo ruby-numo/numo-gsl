@@ -1,7 +1,14 @@
 require "bundler/gem_tasks"
 
 task :doc do
-  sh "yard -m markdown -r README.md ext/numo/gsl/*/*.c"
+  srcs = []
+  Dir.glob("ext/numo/gsl/*").each do |d|
+    if File.exist?(d+"/extconf.rb")
+      sh "cd #{d}; ruby extconf.rb; make clean; make src"
+      srcs << d+"/*.c"
+    end
+  end
+  sh "yard -m markdown -r README.md #{srcs.join(' ')}"
 end
 
 task :cleandoc do
