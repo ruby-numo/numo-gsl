@@ -36,7 +36,7 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../_index.html">Index (G)</a> &raquo;
+    <a href="../x_index.html">Index (G)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../Numo.html" title="Numo (module)">Numo</a></span></span>
      &raquo; 
     <span class="title">GSL</span>
@@ -78,8 +78,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>ext/numo/gsl/cdf/gsl_cdf.c<span class="defines">,<br />
-  ext/numo/gsl/const/gsl_const.c,<br /> ext/numo/gsl/ran/gsl_ran.c,<br /> ext/numo/gsl/rng/gsl_rng.c,<br /> ext/numo/gsl/sf/gsl_sf.c,<br /> ext/numo/gsl/stats/gsl_stats.c,<br /> ext/numo/gsl/sys/gsl_sys.c</span>
+    <dd>ext/numo/gsl/stats/gsl_stats.c<span class="defines">,<br />
+  ext/numo/gsl/rng/gsl_rng.c,<br /> ext/numo/gsl/rstat/gsl_rstat.c,<br /> ext/numo/gsl/histogram/gsl_histogram.c,<br /> ext/numo/gsl/cdf/gsl_cdf.c,<br /> ext/numo/gsl/const/gsl_const.c,<br /> ext/numo/gsl/sys/gsl_sys.c,<br /> ext/numo/gsl/sf/gsl_sf.c,<br /> ext/numo/gsl/ran/gsl_ran.c</span>
 </dd>
   </dl>
   
@@ -93,28 +93,13 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="GSL/Rng.html" title="Numo::GSL::Rng (class)">Rng</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="GSL/Histogram.html" title="Numo::GSL::Histogram (class)">Histogram</a></span>, <span class='object_link'><a href="GSL/Histogram2D.html" title="Numo::GSL::Histogram2D (class)">Histogram2D</a></span>, <span class='object_link'><a href="GSL/Histogram2DPdf.html" title="Numo::GSL::Histogram2DPdf (class)">Histogram2DPdf</a></span>, <span class='object_link'><a href="GSL/HistogramPdf.html" title="Numo::GSL::HistogramPdf (class)">HistogramPdf</a></span>, <span class='object_link'><a href="GSL/Rng.html" title="Numo::GSL::Rng (class)">Rng</a></span>, <span class='object_link'><a href="GSL/Rstat.html" title="Numo::GSL::Rstat (class)">Rstat</a></span>
     
   
 </p>
 
   <h2>Constant Summary</h2>
   <dl class="constants">
-    
-      <dt id="PREC_DOUBLE-constant" class="">PREC_DOUBLE =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_PREC_DOUBLE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="PREC_SINGLE-constant" class="">PREC_SINGLE =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_PREC_SINGLE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="PREC_APPROX-constant" class="">PREC_APPROX =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_PREC_APPROX</span><span class='rparen'>)</span></pre></dd>
     
       <dt id="M_1_PI-constant" class="">M_1_PI =
         <div class="docstring">
@@ -371,6 +356,26 @@
       </dt>
       <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#M_SQRTPI-constant" title="Numo::GSL::M_SQRTPI (constant)">M_SQRTPI</a></span></span><span class='rparen'>)</span></pre></dd>
     
+      <dt id="PREC_DOUBLE-constant" class="">PREC_DOUBLE =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_PREC_DOUBLE</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="PREC_SINGLE-constant" class="">PREC_SINGLE =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_PREC_SINGLE</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="PREC_APPROX-constant" class="">PREC_APPROX =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_PREC_APPROX</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MODE_DEFAULT-constant" class="">MODE_DEFAULT =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_MODE_DEFAULT</span><span class='rparen'>)</span></pre></dd>
+    
   </dl>
 
 
@@ -381,7 +386,7 @@
 
   
     <h2>
-      Class Method Summary
+      Instance Method Summary
       <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
@@ -390,7 +395,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#acosh-class_method" title="acosh (class method)">.<strong>acosh</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#acosh-instance_method" title="#acosh (instance method)">#<strong>acosh</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -413,7 +418,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#asinh-class_method" title="asinh (class method)">.<strong>asinh</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#asinh-instance_method" title="#asinh (instance method)">#<strong>asinh</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -436,7 +441,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#atanh-class_method" title="atanh (class method)">.<strong>atanh</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#atanh-instance_method" title="#atanh (instance method)">#<strong>atanh</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -459,7 +464,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#expm1-class_method" title="expm1 (class method)">.<strong>expm1</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#expm1-instance_method" title="#expm1 (instance method)">#<strong>expm1</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -482,7 +487,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#fcmp-class_method" title="fcmp (class method)">.<strong>fcmp</strong>(x, y, epsilon)  &#x21d2; Numo::Int32 </a>
+      <a href="#fcmp-instance_method" title="#fcmp (instance method)">#<strong>fcmp</strong>(x, y, epsilon)  &#x21d2; Int </a>
     
 
     
@@ -505,7 +510,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#finite-class_method" title="finite (class method)">.<strong>finite</strong>(x)  &#x21d2; Numo::Int32 </a>
+      <a href="#finite-instance_method" title="#finite (instance method)">#<strong>finite</strong>(x)  &#x21d2; Int </a>
     
 
     
@@ -528,7 +533,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#frexp-class_method" title="frexp (class method)">.<strong>frexp</strong>(x)  &#x21d2; [Numo::Int32, Numo::DFloat] </a>
+      <a href="#frexp-instance_method" title="#frexp (instance method)">#<strong>frexp</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -551,7 +556,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#hypot-class_method" title="hypot (class method)">.<strong>hypot</strong>(x, y)  &#x21d2; Numo::DFloat </a>
+      <a href="#hypot-instance_method" title="#hypot (instance method)">#<strong>hypot</strong>(x, y)  &#x21d2; DFloat </a>
     
 
     
@@ -574,7 +579,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#hypot3-class_method" title="hypot3 (class method)">.<strong>hypot3</strong>(x, y, z)  &#x21d2; Numo::DFloat </a>
+      <a href="#hypot3-instance_method" title="#hypot3 (instance method)">#<strong>hypot3</strong>(x, y, z)  &#x21d2; DFloat </a>
     
 
     
@@ -597,7 +602,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#isinf-class_method" title="isinf (class method)">.<strong>isinf</strong>(x)  &#x21d2; Numo::Int32 </a>
+      <a href="#isinf-instance_method" title="#isinf (instance method)">#<strong>isinf</strong>(x)  &#x21d2; Int </a>
     
 
     
@@ -620,7 +625,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#isnan-class_method" title="isnan (class method)">.<strong>isnan</strong>(x)  &#x21d2; Numo::Int32 </a>
+      <a href="#isnan-instance_method" title="#isnan (instance method)">#<strong>isnan</strong>(x)  &#x21d2; Int </a>
     
 
     
@@ -643,7 +648,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldexp-class_method" title="ldexp (class method)">.<strong>ldexp</strong>(x, e)  &#x21d2; Numo::DFloat </a>
+      <a href="#ldexp-instance_method" title="#ldexp (instance method)">#<strong>ldexp</strong>(x, e)  &#x21d2; DFloat </a>
     
 
     
@@ -666,7 +671,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#log1p-class_method" title="log1p (class method)">.<strong>log1p</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#log1p-instance_method" title="#log1p (instance method)">#<strong>log1p</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -689,7 +694,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_2-class_method" title="pow_2 (class method)">.<strong>pow_2</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_2-instance_method" title="#pow_2 (instance method)">#<strong>pow_2</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -712,7 +717,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_3-class_method" title="pow_3 (class method)">.<strong>pow_3</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_3-instance_method" title="#pow_3 (instance method)">#<strong>pow_3</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -735,7 +740,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_4-class_method" title="pow_4 (class method)">.<strong>pow_4</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_4-instance_method" title="#pow_4 (instance method)">#<strong>pow_4</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -758,7 +763,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_5-class_method" title="pow_5 (class method)">.<strong>pow_5</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_5-instance_method" title="#pow_5 (instance method)">#<strong>pow_5</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -781,7 +786,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_6-class_method" title="pow_6 (class method)">.<strong>pow_6</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_6-instance_method" title="#pow_6 (instance method)">#<strong>pow_6</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -804,7 +809,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_7-class_method" title="pow_7 (class method)">.<strong>pow_7</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_7-instance_method" title="#pow_7 (instance method)">#<strong>pow_7</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -827,7 +832,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_8-class_method" title="pow_8 (class method)">.<strong>pow_8</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_8-instance_method" title="#pow_8 (instance method)">#<strong>pow_8</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -850,7 +855,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_9-class_method" title="pow_9 (class method)">.<strong>pow_9</strong>(x)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_9-instance_method" title="#pow_9 (instance method)">#<strong>pow_9</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -873,7 +878,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_int-class_method" title="pow_int (class method)">.<strong>pow_int</strong>(x, n)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_int-instance_method" title="#pow_int (instance method)">#<strong>pow_int</strong>(x, n)  &#x21d2; DFloat </a>
     
 
     
@@ -896,7 +901,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_uint-class_method" title="pow_uint (class method)">.<strong>pow_uint</strong>(x, n)  &#x21d2; Numo::DFloat </a>
+      <a href="#pow_uint-instance_method" title="#pow_uint (instance method)">#<strong>pow_uint</strong>(x, n)  &#x21d2; DFloat </a>
     
 
     
@@ -921,14 +926,14 @@
 
 
 
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="acosh-class_method">
+  <h3 class="signature first" id="acosh-instance_method">
   
-    .<strong>acosh</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>acosh</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -953,7 +958,7 @@ alternative to the standard math function acosh(x).</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -967,12 +972,12 @@ alternative to the standard math function acosh(x).</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -985,53 +990,27 @@ alternative to the standard math function acosh(x).</p>
       <pre class="lines">
 
 
-462
-463
-464
-465
-466
-467
-468
-469
-470
-471
-472
-473
-474
-475
-476
-477
-478
-479
-480
-481
-482
-483</pre>
+376
+377
+378
+379
+380
+381
+382
+383
+384</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 462</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 376</span>
 
 static VALUE
-numo_s_acosh(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_acosh(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_acosh,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_acosh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -1039,9 +1018,9 @@ numo_s_acosh(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="asinh-class_method">
+  <h3 class="signature " id="asinh-instance_method">
   
-    .<strong>asinh</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>asinh</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -1066,7 +1045,7 @@ alternative to the standard math function asinh(x).</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1080,12 +1059,12 @@ alternative to the standard math function asinh(x).</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -1098,53 +1077,27 @@ alternative to the standard math function asinh(x).</p>
       <pre class="lines">
 
 
-516
-517
-518
-519
-520
-521
-522
-523
-524
-525
-526
-527
-528
-529
-530
-531
-532
-533
-534
-535
-536
-537</pre>
+414
+415
+416
+417
+418
+419
+420
+421
+422</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 516</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 414</span>
 
 static VALUE
-numo_s_asinh(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_asinh(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_asinh,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_asinh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -1152,9 +1105,9 @@ numo_s_asinh(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="atanh-class_method">
+  <h3 class="signature " id="atanh-instance_method">
   
-    .<strong>atanh</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>atanh</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -1179,7 +1132,7 @@ alternative to the standard math function atanh(x).</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1193,12 +1146,12 @@ alternative to the standard math function atanh(x).</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -1211,53 +1164,27 @@ alternative to the standard math function atanh(x).</p>
       <pre class="lines">
 
 
-570
-571
-572
-573
-574
-575
-576
-577
-578
-579
-580
-581
-582
-583
-584
-585
-586
-587
-588
-589
-590
-591</pre>
+452
+453
+454
+455
+456
+457
+458
+459
+460</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 570</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 452</span>
 
 static VALUE
-numo_s_atanh(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_atanh(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_atanh,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_atanh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -1265,9 +1192,9 @@ numo_s_atanh(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="expm1-class_method">
+  <h3 class="signature " id="expm1-instance_method">
   
-    .<strong>expm1</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>expm1</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -1293,7 +1220,7 @@ function expm1(x).</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1307,12 +1234,12 @@ function expm1(x).</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -1325,53 +1252,27 @@ function expm1(x).</p>
       <pre class="lines">
 
 
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309</pre>
+250
+251
+252
+253
+254
+255
+256
+257
+258</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 288</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 250</span>
 
 static VALUE
-numo_s_expm1(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_expm1(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_expm1,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_expm1, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -1379,9 +1280,9 @@ numo_s_expm1(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="fcmp-class_method">
+  <h3 class="signature " id="fcmp-instance_method">
   
-    .<strong>fcmp</strong>(x, y, epsilon)  &#x21d2; <tt>Numo::Int32</tt> 
+    #<strong>fcmp</strong>(x, y, epsilon)  &#x21d2; <tt>Int</tt> 
   
 
   
@@ -1422,7 +1323,7 @@ approximately zero.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1433,7 +1334,7 @@ approximately zero.</p>
         <span class='name'>y</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1444,7 +1345,7 @@ approximately zero.</p>
         <span class='name'>epsilon</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1458,12 +1359,12 @@ approximately zero.</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::Int32</tt>)</span>
+        <span class='type'>(<tt>Int</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -1476,53 +1377,27 @@ approximately zero.</p>
       <pre class="lines">
 
 
-1362
-1363
-1364
-1365
-1366
-1367
-1368
-1369
-1370
-1371
-1372
-1373
-1374
-1375
-1376
-1377
-1378
-1379
-1380
-1381
-1382
-1383</pre>
+1019
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1362</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1019</span>
 
 static VALUE
-numo_s_fcmp(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_fcmp(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
+#line 37 &quot;../gen/tmpl/m_Int_f_DFloat_x3.c&quot;
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
-    ndfunc_t ndf = {iter_fcmp,NO_LOOP|NDF_EXTRACT,3,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_fcmp, STRIDE_LOOP|NDF_EXTRACT, 3,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,3,v0,v1,v2);
-    
+    return na_ndloop(&amp;ndf, 3, v0, v1, v2);
 }</pre>
     </td>
   </tr>
@@ -1530,9 +1405,9 @@ numo_s_fcmp(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="finite-class_method">
+  <h3 class="signature " id="finite-instance_method">
   
-    .<strong>finite</strong>(x)  &#x21d2; <tt>Numo::Int32</tt> 
+    #<strong>finite</strong>(x)  &#x21d2; <tt>Int</tt> 
   
 
   
@@ -1557,7 +1432,7 @@ infinite or not-a-number.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1571,12 +1446,12 @@ infinite or not-a-number.</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::Int32</tt>)</span>
+        <span class='type'>(<tt>Int</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -1589,53 +1464,27 @@ infinite or not-a-number.</p>
       <pre class="lines">
 
 
+172
+173
+174
+175
+176
+177
 178
 179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199</pre>
+180</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 178</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 172</span>
 
 static VALUE
-numo_s_finite(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_finite(VALUE mod, VALUE v0){
+#line 31 &quot;../gen/tmpl/m_Int_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
-    ndfunc_t ndf = {iter_finite,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_finite, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -1643,9 +1492,9 @@ numo_s_finite(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="frexp-class_method">
+  <h3 class="signature " id="frexp-instance_method">
   
-    .<strong>frexp</strong>(x)  &#x21d2; <tt>[Numo::Int32, Numo::DFloat]</tt> 
+    #<strong>frexp</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -1675,7 +1524,7 @@ math function frexp(x, e).</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1689,12 +1538,12 @@ math function frexp(x, e).</p>
     <li>
       
       
-        <span class='type'>(<tt>[Numo::Int32, Numo::DFloat]</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>array of [e, return]</p>
+        <div class='inline'><p>array of [result, e]</p>
 </div>
       
     </li>
@@ -1707,53 +1556,27 @@ math function frexp(x, e).</p>
       <pre class="lines">
 
 
-700
-701
-702
-703
-704
-705
-706
-707
-708
-709
-710
-711
-712
-713
-714
-715
-716
-717
-718
-719
-720
-721</pre>
+540
+541
+542
+543
+544
+545
+546
+547
+548</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 700</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 540</span>
 
 static VALUE
-numo_s_frexp(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_frexp(VALUE mod, VALUE v0, VALUE v1){
+#line 33 &quot;../gen/tmpl/m_DFloat_Int_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
-    ndfunc_arg_out_t aout[2] = {{cI,0},{cDF,0}};
-    ndfunc_t ndf = {iter_frexp,NO_LOOP|NDF_EXTRACT,1,2,ain,aout};
+    ndfunc_arg_out_t aout[2] = {{cDF,0},{cInt,0}};
+    ndfunc_t ndf = {iter_sys_frexp, STRIDE_LOOP|NDF_EXTRACT, 1,2, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -1761,9 +1584,9 @@ numo_s_frexp(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="hypot-class_method">
+  <h3 class="signature " id="hypot-instance_method">
   
-    .<strong>hypot</strong>(x, y)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>hypot</strong>(x, y)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -1790,7 +1613,7 @@ alternative to the BSD math function hypot(x,y).</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1801,7 +1624,7 @@ alternative to the BSD math function hypot(x,y).</p>
         <span class='name'>y</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1815,12 +1638,12 @@ alternative to the BSD math function hypot(x,y).</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -1833,53 +1656,27 @@ alternative to the BSD math function hypot(x,y).</p>
       <pre class="lines">
 
 
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362
-363
-364
-365
-366
-367
-368</pre>
+293
+294
+295
+296
+297
+298
+299
+300
+301</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 347</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 293</span>
 
 static VALUE
-numo_s_hypot(VALUE mod,VALUE v0,VALUE v1)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_hypot(VALUE mod, VALUE v0, VALUE v1){
+#line 33 &quot;../gen/tmpl/m_DFloat_f_DFloat_x2.c&quot;
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_hypot,NO_LOOP|NDF_EXTRACT,2,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_hypot, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,2,v0,v1);
-    
+    return na_ndloop(&amp;ndf, 2, v0, v1);
 }</pre>
     </td>
   </tr>
@@ -1887,9 +1684,9 @@ numo_s_hypot(VALUE mod,VALUE v0,VALUE v1)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="hypot3-class_method">
+  <h3 class="signature " id="hypot3-instance_method">
   
-    .<strong>hypot3</strong>(x, y, z)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>hypot3</strong>(x, y, z)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -1915,7 +1712,7 @@ $\sqrt+ y^2 + z^2$
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1926,7 +1723,7 @@ $\sqrt+ y^2 + z^2$
         <span class='name'>y</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1937,7 +1734,7 @@ $\sqrt+ y^2 + z^2$
         <span class='name'>z</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -1951,12 +1748,12 @@ $\sqrt+ y^2 + z^2$
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -1969,53 +1766,27 @@ $\sqrt+ y^2 + z^2$
       <pre class="lines">
 
 
-408
-409
-410
-411
-412
-413
-414
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424
-425
-426
-427
-428
-429</pre>
+338
+339
+340
+341
+342
+343
+344
+345
+346</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 408</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 338</span>
 
 static VALUE
-numo_s_hypot3(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_hypot3(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
+#line 36 &quot;../gen/tmpl/m_DFloat_f_DFloat_x3.c&quot;
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_hypot3,NO_LOOP|NDF_EXTRACT,3,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_hypot3, STRIDE_LOOP|NDF_EXTRACT, 3,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,3,v0,v1,v2);
-    
+    return na_ndloop(&amp;ndf, 3, v0, v1, v2);
 }</pre>
     </td>
   </tr>
@@ -2023,9 +1794,9 @@ numo_s_hypot3(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="isinf-class_method">
+  <h3 class="signature " id="isinf-instance_method">
   
-    .<strong>isinf</strong>(x)  &#x21d2; <tt>Numo::Int32</tt> 
+    #<strong>isinf</strong>(x)  &#x21d2; <tt>Int</tt> 
   
 
   
@@ -2057,7 +1828,7 @@ return value from gsl_isinf().</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -2071,12 +1842,12 @@ return value from gsl_isinf().</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::Int32</tt>)</span>
+        <span class='type'>(<tt>Int</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -2089,15 +1860,6 @@ return value from gsl_isinf().</p>
       <pre class="lines">
 
 
-124
-125
-126
-127
-128
-129
-130
-131
-132
 133
 134
 135
@@ -2106,36 +1868,19 @@ return value from gsl_isinf().</p>
 138
 139
 140
-141
-142
-143
-144
-145</pre>
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 124</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 133</span>
 
 static VALUE
-numo_s_isinf(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_isinf(VALUE mod, VALUE v0){
+#line 31 &quot;../gen/tmpl/m_Int_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
-    ndfunc_t ndf = {iter_isinf,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_isinf, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -2143,9 +1888,9 @@ numo_s_isinf(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="isnan-class_method">
+  <h3 class="signature " id="isnan-instance_method">
   
-    .<strong>isnan</strong>(x)  &#x21d2; <tt>Numo::Int32</tt> 
+    #<strong>isnan</strong>(x)  &#x21d2; <tt>Int</tt> 
   
 
   
@@ -2169,7 +1914,7 @@ numo_s_isinf(VALUE mod,VALUE v0)
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -2183,12 +1928,12 @@ numo_s_isinf(VALUE mod,VALUE v0)
     <li>
       
       
-        <span class='type'>(<tt>Numo::Int32</tt>)</span>
+        <span class='type'>(<tt>Int</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -2201,53 +1946,27 @@ numo_s_isinf(VALUE mod,VALUE v0)
       <pre class="lines">
 
 
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84</pre>
+87
+88
+89
+90
+91
+92
+93
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 63</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 87</span>
 
 static VALUE
-numo_s_isnan(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_isnan(VALUE mod, VALUE v0){
+#line 31 &quot;../gen/tmpl/m_Int_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
-    ndfunc_t ndf = {iter_isnan,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_isnan, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -2255,9 +1974,9 @@ numo_s_isnan(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="ldexp-class_method">
+  <h3 class="signature " id="ldexp-instance_method">
   
-    .<strong>ldexp</strong>(x, e)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>ldexp</strong>(x, e)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2282,7 +2001,7 @@ alternative to the standard math function ldexp(x,e).</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -2293,7 +2012,7 @@ alternative to the standard math function ldexp(x,e).</p>
         <span class='name'>e</span>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -2307,12 +2026,12 @@ alternative to the standard math function ldexp(x,e).</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -2325,69 +2044,27 @@ alternative to the standard math function ldexp(x,e).</p>
       <pre class="lines">
 
 
-629
-630
-631
-632
-633
-634
-635
-636
-637
-638
-639
-640
-641
-642
-643
-644
-645
-646
-647
-648
-649
-650
-651
-652
-653
-654
-655
-656
-657
-658</pre>
+494
+495
+496
+497
+498
+499
+500
+501
+502</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 629</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 494</span>
 
 static VALUE
-numo_s_ldexp(VALUE mod,VALUE v0,VALUE v1)
-{
-    
-    int c1;
-
-    
-    void *opt;
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
-    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+sys_ldexp(VALUE mod, VALUE v0, VALUE v1){
+#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_Int.c&quot;
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cInt,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_ldexp,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_ldexp, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
 
-    
-        c1 = NUM2INT(v1);
-    opt = &amp;c1; //e
-
-    
-
-
-    
-#line 63 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop3(&amp;ndf,opt,1,v0);
-    
-#line 67 &quot;gen/tmpl/basic_func.c&quot;
+    return na_ndloop(&amp;ndf, 2, v0, v1);
 }</pre>
     </td>
   </tr>
@@ -2395,9 +2072,9 @@ numo_s_ldexp(VALUE mod,VALUE v0,VALUE v1)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="log1p-class_method">
+  <h3 class="signature " id="log1p-instance_method">
   
-    .<strong>log1p</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>log1p</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2423,7 +2100,7 @@ function log1p(x).</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -2437,12 +2114,12 @@ function log1p(x).</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -2455,53 +2132,27 @@ function log1p(x).</p>
       <pre class="lines">
 
 
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254</pre>
+211
+212
+213
+214
+215
+216
+217
+218
+219</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 233</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 211</span>
 
 static VALUE
-numo_s_log1p(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_log1p(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_log1p,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_log1p, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -2509,9 +2160,9 @@ numo_s_log1p(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_2-class_method">
+  <h3 class="signature " id="pow_2-instance_method">
   
-    .<strong>pow_2</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>pow_2</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2539,7 +2190,7 @@ product expression.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -2553,12 +2204,12 @@ product expression.</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -2571,53 +2222,27 @@ product expression.</p>
       <pre class="lines">
 
 
-887
-888
-889
-890
-891
-892
-893
-894
-895
-896
-897
-898
-899
-900
-901
-902
-903
-904
-905
-906
-907
-908</pre>
+671
+672
+673
+674
+675
+676
+677
+678
+679</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 887</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 671</span>
 
 static VALUE
-numo_s_pow_2(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_pow_2(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_2,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_pow_2, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -2625,9 +2250,9 @@ numo_s_pow_2(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_3-class_method">
+  <h3 class="signature " id="pow_3-instance_method">
   
-    .<strong>pow_3</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>pow_3</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2655,7 +2280,7 @@ product expression.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -2669,12 +2294,12 @@ product expression.</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -2687,53 +2312,27 @@ product expression.</p>
       <pre class="lines">
 
 
-944
-945
-946
-947
-948
-949
-950
-951
-952
-953
-954
-955
-956
-957
-958
-959
-960
-961
-962
-963
-964
-965</pre>
+712
+713
+714
+715
+716
+717
+718
+719
+720</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 944</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 712</span>
 
 static VALUE
-numo_s_pow_3(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_pow_3(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_3,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_pow_3, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -2741,9 +2340,9 @@ numo_s_pow_3(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_4-class_method">
+  <h3 class="signature " id="pow_4-instance_method">
   
-    .<strong>pow_4</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>pow_4</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2771,7 +2370,7 @@ product expression.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -2785,12 +2384,12 @@ product expression.</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -2803,53 +2402,27 @@ product expression.</p>
       <pre class="lines">
 
 
-1001
-1002
-1003
-1004
-1005
-1006
-1007
-1008
-1009
-1010
-1011
-1012
-1013
-1014
-1015
-1016
-1017
-1018
-1019
-1020
-1021
-1022</pre>
+753
+754
+755
+756
+757
+758
+759
+760
+761</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1001</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 753</span>
 
 static VALUE
-numo_s_pow_4(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_pow_4(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_4,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_pow_4, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -2857,9 +2430,9 @@ numo_s_pow_4(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_5-class_method">
+  <h3 class="signature " id="pow_5-instance_method">
   
-    .<strong>pow_5</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>pow_5</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2887,7 +2460,7 @@ product expression.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -2901,12 +2474,12 @@ product expression.</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -2919,53 +2492,27 @@ product expression.</p>
       <pre class="lines">
 
 
-1058
-1059
-1060
-1061
-1062
-1063
-1064
-1065
-1066
-1067
-1068
-1069
-1070
-1071
-1072
-1073
-1074
-1075
-1076
-1077
-1078
-1079</pre>
+794
+795
+796
+797
+798
+799
+800
+801
+802</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1058</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 794</span>
 
 static VALUE
-numo_s_pow_5(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
+sys_pow_5(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_5,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_pow_5, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
+    return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
     </td>
   </tr>
@@ -2973,9 +2520,9 @@ numo_s_pow_5(VALUE mod,VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_6-class_method">
+  <h3 class="signature " id="pow_6-instance_method">
   
-    .<strong>pow_6</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+    #<strong>pow_6</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3003,7 +2550,7 @@ product expression.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
@@ -3017,12 +2564,12 @@ product expression.</p>
     <li>
       
       
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+        <span class='type'>(<tt>DFloat</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>return</p>
+        <div class='inline'><p>result</p>
 </div>
       
     </li>
@@ -3035,629 +2582,6 @@ product expression.</p>
       <pre class="lines">
 
 
-1115
-1116
-1117
-1118
-1119
-1120
-1121
-1122
-1123
-1124
-1125
-1126
-1127
-1128
-1129
-1130
-1131
-1132
-1133
-1134
-1135
-1136</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1115</span>
-
-static VALUE
-numo_s_pow_6(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
-    ndfunc_arg_in_t ain[1] = {{cDF,0}};
-    ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_6,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
-
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="pow_7-class_method">
-  
-    .<strong>pow_7</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>These functions can be used to compute small integer powers x^2,
-x^3, etc. efficiently. The functions will be inlined when
-HAVE_INLINE is defined, so that use of these functions
-should be as efficient as explicitly writing the corresponding
-product expression.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>x</span>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>return</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-1172
-1173
-1174
-1175
-1176
-1177
-1178
-1179
-1180
-1181
-1182
-1183
-1184
-1185
-1186
-1187
-1188
-1189
-1190
-1191
-1192
-1193</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1172</span>
-
-static VALUE
-numo_s_pow_7(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
-    ndfunc_arg_in_t ain[1] = {{cDF,0}};
-    ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_7,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
-
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="pow_8-class_method">
-  
-    .<strong>pow_8</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>These functions can be used to compute small integer powers x^2,
-x^3, etc. efficiently. The functions will be inlined when
-HAVE_INLINE is defined, so that use of these functions
-should be as efficient as explicitly writing the corresponding
-product expression.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>x</span>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>return</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-1229
-1230
-1231
-1232
-1233
-1234
-1235
-1236
-1237
-1238
-1239
-1240
-1241
-1242
-1243
-1244
-1245
-1246
-1247
-1248
-1249
-1250</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1229</span>
-
-static VALUE
-numo_s_pow_8(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
-    ndfunc_arg_in_t ain[1] = {{cDF,0}};
-    ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_8,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
-
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="pow_9-class_method">
-  
-    .<strong>pow_9</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>These functions can be used to compute small integer powers x^2,
-x^3, etc. efficiently. The functions will be inlined when
-HAVE_INLINE is defined, so that use of these functions
-should be as efficient as explicitly writing the corresponding
-product expression.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>x</span>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>return</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-1286
-1287
-1288
-1289
-1290
-1291
-1292
-1293
-1294
-1295
-1296
-1297
-1298
-1299
-1300
-1301
-1302
-1303
-1304
-1305
-1306
-1307</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1286</span>
-
-static VALUE
-numo_s_pow_9(VALUE mod,VALUE v0)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
-    ndfunc_arg_in_t ain[1] = {{cDF,0}};
-    ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_9,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
-
-    
-
-
-    
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,1,v0);
-    
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="pow_int-class_method">
-  
-    .<strong>pow_int</strong>(x, n)  &#x21d2; <tt>Numo::DFloat</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>These routines computes the power x^n for integer n.  The
-power is computed efficiently—for example, x^8 is computed as
-((x^2)^2)^2, requiring only 3 multiplications.  A version of this
-function which also computes the numerical error in the result is
-available as gsl_sf_pow_int_e.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>x</span>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>n</span>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>return</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-762
-763
-764
-765
-766
-767
-768
-769
-770
-771
-772
-773
-774
-775
-776
-777
-778
-779
-780
-781
-782
-783
-784
-785
-786
-787
-788
-789
-790
-791</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 762</span>
-
-static VALUE
-numo_s_pow_int(VALUE mod,VALUE v0,VALUE v1)
-{
-    
-    int c1;
-
-    
-    void *opt;
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
-    ndfunc_arg_in_t ain[1] = {{cDF,0}};
-    ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_int,NO_LOOP|NDF_EXTRACT,1,1,ain,aout};
-
-    
-        c1 = NUM2INT(v1);
-    opt = &amp;c1; //n
-
-    
-
-
-    
-#line 63 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop3(&amp;ndf,opt,1,v0);
-    
-#line 67 &quot;gen/tmpl/basic_func.c&quot;
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="pow_uint-class_method">
-  
-    .<strong>pow_uint</strong>(x, n)  &#x21d2; <tt>Numo::DFloat</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>These routines computes the power x^n for integer n.  The
-power is computed efficiently—for example, x^8 is computed as
-((x^2)^2)^2, requiring only 3 multiplications.  A version of this
-function which also computes the numerical error in the result is
-available as gsl_sf_pow_int_e.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>x</span>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>n</span>
-      
-      
-        <span class='type'>(<tt>Numo::UInt32</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>return</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-830
-831
-832
-833
-834
 835
 836
 837
@@ -3666,40 +2590,491 @@ available as gsl_sf_pow_int_e.</p>
 840
 841
 842
-843
-844
-845
-846
-847
-848
-849
-850
-851</pre>
+843</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 830</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 835</span>
 
 static VALUE
-numo_s_pow_uint(VALUE mod,VALUE v0,VALUE v1)
-{
-    
-
-    
-
-    
-
-#line 49 &quot;gen/tmpl/basic_func.c&quot;
-    ndfunc_arg_in_t ain[2] = {{cDF,0},{cUI,0}};
+sys_pow_6(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_pow_uint,NO_LOOP|NDF_EXTRACT,2,1,ain,aout};
+    ndfunc_t ndf = {iter_sys_pow_6, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
+    return na_ndloop(&amp;ndf, 1, v0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="pow_7-instance_method">
+  
+    #<strong>pow_7</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These functions can be used to compute small integer powers x^2,
+x^3, etc. efficiently. The functions will be inlined when
+HAVE_INLINE is defined, so that use of these functions
+should be as efficient as explicitly writing the corresponding
+product expression.</p>
 
 
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>result</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+876
+877
+878
+879
+880
+881
+882
+883
+884</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 876</span>
+
+static VALUE
+sys_pow_7(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_sys_pow_7, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+
+    return na_ndloop(&amp;ndf, 1, v0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
     
-#line 65 &quot;gen/tmpl/basic_func.c&quot;
-    return na_ndloop(&amp;ndf,2,v0,v1);
+      <div class="method_details ">
+  <h3 class="signature " id="pow_8-instance_method">
+  
+    #<strong>pow_8</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These functions can be used to compute small integer powers x^2,
+x^3, etc. efficiently. The functions will be inlined when
+HAVE_INLINE is defined, so that use of these functions
+should be as efficient as explicitly writing the corresponding
+product expression.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>result</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+917
+918
+919
+920
+921
+922
+923
+924
+925</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 917</span>
+
+static VALUE
+sys_pow_8(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_sys_pow_8, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+
+    return na_ndloop(&amp;ndf, 1, v0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="pow_9-instance_method">
+  
+    #<strong>pow_9</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These functions can be used to compute small integer powers x^2,
+x^3, etc. efficiently. The functions will be inlined when
+HAVE_INLINE is defined, so that use of these functions
+should be as efficient as explicitly writing the corresponding
+product expression.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>result</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+958
+959
+960
+961
+962
+963
+964
+965
+966</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 958</span>
+
+static VALUE
+sys_pow_9(VALUE mod, VALUE v0){
+#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_sys_pow_9, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+
+    return na_ndloop(&amp;ndf, 1, v0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pow_int-instance_method">
+  
+    #<strong>pow_int</strong>(x, n)  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These routines computes the power x^n for integer n.  The
+power is computed efficiently—for example, x^8 is computed as
+((x^2)^2)^2, requiring only 3 multiplications.  A version of this
+function which also computes the numerical error in the result is
+available as gsl_sf_pow_int_e.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>result</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+585
+586
+587
+588
+589
+590
+591
+592
+593</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 585</span>
+
+static VALUE
+sys_pow_int(VALUE mod, VALUE v0, VALUE v1){
+#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_Int.c&quot;
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cInt,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_sys_pow_int, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
+
+    return na_ndloop(&amp;ndf, 2, v0, v1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pow_uint-instance_method">
+  
+    #<strong>pow_uint</strong>(x, n)  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These routines computes the power x^n for integer n.  The
+power is computed efficiently—for example, x^8 is computed as
+((x^2)^2)^2, requiring only 3 multiplications.  A version of this
+function which also computes the numerical error in the result is
+available as gsl_sf_pow_int_e.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>result</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+630
+631
+632
+633
+634
+635
+636
+637
+638</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 630</span>
+
+static VALUE
+sys_pow_uint(VALUE mod, VALUE v0, VALUE v1){
+#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_UInt.c&quot;
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cUInt,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_sys_pow_uint, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
+
+    return na_ndloop(&amp;ndf, 2, v0, v1);
 }</pre>
     </td>
   </tr>
@@ -3711,7 +3086,7 @@ numo_s_pow_uint(VALUE mod,VALUE v0,VALUE v1)
 </div>
 
       <div id="footer">
-  Generated on Mon Mar  6 23:55:03 2017 by
+  Generated on Sun Mar 19 00:56:49 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

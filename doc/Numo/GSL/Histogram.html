@@ -1,0 +1,3245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Numo::GSL::Histogram
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Numo::GSL::Histogram";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../x_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Numo.html" title="Numo (module)">Numo</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../GSL.html" title="Numo::GSL (module)">GSL</a></span></span>
+     &raquo; 
+    <span class="title">Histogram</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Numo::GSL::Histogram
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Numo::GSL::Histogram</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>ext/numo/gsl/histogram/gsl_histogram.c</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(n)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>allocate instance of Histogram class.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#accumulate-instance_method" title="#accumulate (instance method)">#<strong>accumulate</strong>(h, x, weight)  &#x21d2; Histogram </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function is similar to gsl_histogram_increment but increases the value of the appropriate bin in the histogram h by the floating-point number weight.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add-instance_method" title="#add (instance method)">#<strong>add</strong>(h2)  &#x21d2; Bool </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function adds the contents of the bins in histogram h2 to the corresponding bins of histogram h1,  i.e.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bin-instance_method" title="#bin (instance method)">#<strong>bin</strong>  &#x21d2; DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns bin field in gsl_histogram struct.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bins-instance_method" title="#bins (instance method)">#<strong>bins</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>These functions return the maximum upper and minimum lower range limits and the number of bins of the histogram h.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#div-instance_method" title="#div (instance method)">#<strong>div</strong>(h2)  &#x21d2; Bool </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function divides the contents of the bins of histogram h1 by the contents of the corresponding bins in histogram h2, i.e.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#equal_bins_p-instance_method" title="#equal_bins_p (instance method)">#<strong>equal_bins_p</strong>(h2)  &#x21d2; Bool </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns 1 if the all of the individual bin ranges of the two histograms are identical, and 0 otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(i)  &#x21d2; Histogram </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the contents of the i-th bin of the histogram h.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_range-instance_method" title="#get_range (instance method)">#<strong>get_range</strong>(i)  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function finds the upper and lower range limits of the i-th bin of the histogram h.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#increment-instance_method" title="#increment (instance method)">#<strong>increment</strong>(x)  &#x21d2; Histogram </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function updates the histogram h by adding one (1.0) to the bin whose range contains the coordinate x.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max-instance_method" title="#max (instance method)">#<strong>max</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>These functions return the maximum upper and minimum lower range limits and the number of bins of the histogram h.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_bin-instance_method" title="#max_bin (instance method)">#<strong>max_bin</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the index of the bin containing the maximum value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_val-instance_method" title="#max_val (instance method)">#<strong>max_val</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the maximum value contained in the histogram bins.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mean-instance_method" title="#mean (instance method)">#<strong>mean</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the mean of the histogrammed variable, where the histogram is regarded as a probability distribution.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#memcpy-instance_method" title="#memcpy (instance method)">#<strong>memcpy</strong>(src)  &#x21d2; Bool </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function copies the histogram src into the pre-existing histogram dest, making dest into an exact copy of src.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#min-instance_method" title="#min (instance method)">#<strong>min</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>These functions return the maximum upper and minimum lower range limits and the number of bins of the histogram h.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#min_bin-instance_method" title="#min_bin (instance method)">#<strong>min_bin</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the index of the bin containing the minimum value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#min_val-instance_method" title="#min_val (instance method)">#<strong>min_val</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the minimum value contained in the histogram bins.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mul-instance_method" title="#mul (instance method)">#<strong>mul</strong>(h2)  &#x21d2; Bool </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function multiplies the contents of the bins of histogram h1 by the contents of the corresponding bins in histogram h2, i.e.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#n-instance_method" title="#n (instance method)">#<strong>n</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns n field in gsl_histogram struct.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#range-instance_method" title="#range (instance method)">#<strong>range</strong>  &#x21d2; DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns range field in gsl_histogram struct.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset-instance_method" title="#reset (instance method)">#<strong>reset</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function resets all the bins in the histogram h to zero.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scale-instance_method" title="#scale (instance method)">#<strong>scale</strong>(h, scale)  &#x21d2; Qnil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function multiplies the contents of the bins of histogram h by the constant scale, i.e.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_ranges-instance_method" title="#set_ranges (instance method)">#<strong>set_ranges</strong>(range[])  &#x21d2; Histogram </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function sets the ranges of the existing histogram h using the array range of size size.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_ranges_uniform-instance_method" title="#set_ranges_uniform (instance method)">#<strong>set_ranges_uniform</strong>(h, xmin, xmax)  &#x21d2; Qnil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function sets the ranges of the existing histogram h to cover the range xmin to xmax uniformly.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shift-instance_method" title="#shift (instance method)">#<strong>shift</strong>(h, offset)  &#x21d2; Qnil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function shifts the contents of the bins of histogram h by the constant offset, i.e.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sigma-instance_method" title="#sigma (instance method)">#<strong>sigma</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the standard deviation of the histogrammed variable, where the histogram is regarded as a probability distribution.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sub-instance_method" title="#sub (instance method)">#<strong>sub</strong>(h2)  &#x21d2; Bool </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function subtracts the contents of the bins in histogram h2 from the corresponding bins of histogram h1, i.e.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sum-instance_method" title="#sum (instance method)">#<strong>sum</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the sum of all bin values.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new-class_method">
+  
+    .<strong>new</strong>(n)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>allocate instance of Histogram class.</p>
+
+<p>This function allocates memory for a histogram with n bins, and
+returns a pointer to a newly created gsl_histogram struct.  If
+insufficient memory is available a null pointer is returned and the
+error handler is invoked with an error code of GSL_ENOMEM. The
+bins and ranges are not initialized, and should be prepared using one of
+the range-setting functions below in order to make the histogram ready
+for use.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>n</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>parameter</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+192
+193
+194
+195
+196
+197
+198
+199</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 192</span>
+
+static VALUE
+histogram_s_new(VALUE self, VALUE v1){
+#line 16 &quot;../gen/tmpl/c_new_sizet.c&quot;
+    gsl_histogram *w;
+    w = gsl_histogram_alloc(NUM2SIZET(v1));
+
+    return TypedData_Wrap_Struct(cHistogram, &amp;histogram_data_type, (void*)w);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="accumulate-instance_method">
+  
+    #<strong>accumulate</strong>(h, x, weight)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function is similar to gsl_histogram_increment but increases
+the value of the appropriate bin in the histogram h by the
+floating-point number weight.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>weight</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 384</span>
+
+static VALUE
+histogram_accumulate(VALUE self, VALUE v1, VALUE v2){
+#line 33 &quot;../gen/tmpl/c_self_f_DFloat_x2.c&quot;
+    gsl_histogram *w;
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
+    ndfunc_t ndf = {iter_histogram_accumulate, STRIDE_LOOP, 2,0, ain,0};
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    na_ndloop3(&amp;ndf, w, 2, v1, v2);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add-instance_method">
+  
+    #<strong>add</strong>(h2)  &#x21d2; <tt>Bool</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function adds the contents of the bins in histogram h2 to the
+corresponding bins of histogram h1,  i.e. h’_1(i) = h_1(i) +
+h_2(i).  The two histograms must have identical bin ranges.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>h2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 750</span>
+
+static VALUE
+histogram_add(VALUE self, VALUE v1){
+#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+    int stat;
+    gsl_histogram *w, *w1;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+    TypedData_Get_Struct(v1, gsl_histogram, &amp;histogram_data_type, w1);
+
+    stat = gsl_histogram_add(w, w1);
+    return (stat) ? Qtrue: Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bin-instance_method">
+  
+    #<strong>bin</strong>  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns bin field in gsl_histogram struct.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>narray of bin field in gsl_histogram.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 151</span>
+
+static VALUE
+histogram_bin(VALUE self){
+#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+    gsl_histogram *w;
+    double *d;
+    VALUE v;
+    size_t n, i, shape[1];
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    
+#line 22 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+    shape[0] = n = w-&gt;n;
+    
+
+#line 29 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+    v = rb_narray_new(cDF, 1, shape);
+    d = (double*)na_get_pointer_for_write(v);
+    for (i=0; i&lt;n; i++) {
+        d[i] = w-&gt;bin[i];
+    }
+    return v;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bins-instance_method">
+  
+    #<strong>bins</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These functions return the maximum upper and minimum lower range limits
+and the number of bins of the histogram h.  They provide a way of
+determining these values without accessing the gsl_histogram
+struct directly.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+561
+562
+563
+564
+565
+566
+567
+568
+569</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 561</span>
+
+static VALUE
+histogram_bins(VALUE self){
+#line 10 &quot;../gen/tmpl/c_sizet_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return SIZET2NUM(gsl_histogram_bins(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="div-instance_method">
+  
+    #<strong>div</strong>(h2)  &#x21d2; <tt>Bool</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function divides the contents of the bins of histogram h1 by
+the contents of the corresponding bins in histogram h2,
+i.e. h’_1(i) = h_1(i) / h_2(i).  The two histograms must have
+identical bin ranges.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>h2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 821</span>
+
+static VALUE
+histogram_div(VALUE self, VALUE v1){
+#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+    int stat;
+    gsl_histogram *w, *w1;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+    TypedData_Get_Struct(v1, gsl_histogram, &amp;histogram_data_type, w1);
+
+    stat = gsl_histogram_div(w, w1);
+    return (stat) ? Qtrue: Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="equal_bins_p-instance_method">
+  
+    #<strong>equal_bins_p</strong>(h2)  &#x21d2; <tt>Bool</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns 1 if the all of the individual bin
+ranges of the two histograms are identical, and 0
+otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>h2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 727</span>
+
+static VALUE
+histogram_equal_bins_p(VALUE self, VALUE v1){
+#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+    int stat;
+    gsl_histogram *w, *w1;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+    TypedData_Get_Struct(v1, gsl_histogram, &amp;histogram_data_type, w1);
+
+    stat = gsl_histogram_equal_bins_p(w, w1);
+    return (stat) ? Qtrue: Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get-instance_method">
+  
+    #<strong>get</strong>(i)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the contents of the i-th bin of the histogram
+h.  If i lies outside the valid range of indices for the
+histogram then the error handler is called with an error code of
+GSL_EDOM and the function returns 0.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>i</span>
+      
+      
+        <span class='type'>(<tt>Int32/64</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 436</span>
+
+static VALUE
+histogram_get(VALUE self, VALUE v1){
+#line 39 &quot;gen/tmpl/c_DFloat_f_get.c&quot;
+    gsl_histogram *w;
+    ndfunc_arg_in_t ain[1] = {{cSSZ,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_histogram_get, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return na_ndloop3(&amp;ndf, w, 1, v1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_range-instance_method">
+  
+    #<strong>get_range</strong>(i)  &#x21d2; <tt>Array</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function finds the upper and lower range limits of the i-th
+bin of the histogram h.  If the index i is valid then the
+corresponding range limits are stored in lower and upper.
+The lower limit is inclusive (i.e. events with this coordinate are
+included in the bin) and the upper limit is exclusive (i.e. events with
+the coordinate of the upper limit are excluded and fall in the
+neighboring higher bin, if it exists).  The function returns 0 to
+indicate success.  If i lies outside the valid range of indices for
+the histogram then the error handler is called and the function returns
+an error code of GSL_EDOM.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>i</span>
+      
+      
+        <span class='type'>(<tt>Int32/64</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Int32/64 NArray</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>array of [[DFloat] lower, [DFloat] upper]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 498</span>
+
+static VALUE
+histogram_get_range(VALUE self, VALUE v1){
+#line 48 &quot;gen/tmpl/c_DFloat_x2_f_get_range.c&quot;
+    gsl_histogram *w;
+    ndfunc_arg_in_t ain[1] = {{cSSZ,0}};
+    ndfunc_arg_out_t aout[2] = {{cDF,0},{cDF,0}};
+    ndfunc_t ndf = {iter_histogram_get_range, STRIDE_LOOP|NDF_EXTRACT, 1,2, ain,aout};
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return na_ndloop3(&amp;ndf, w, 1, v1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="increment-instance_method">
+  
+    #<strong>increment</strong>(x)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function updates the histogram h by adding one (1.0) to the
+bin whose range contains the coordinate x.</p>
+
+<p>If x lies in the valid range of the histogram then the function
+returns zero to indicate success.  If x is less than the lower
+limit of the histogram then the function returns GSL_EDOM, and
+none of bins are modified.  Similarly, if the value of x is greater
+than or equal to the upper limit of the histogram then the function
+returns GSL_EDOM, and none of the bins are modified.  The error
+handler is not called, however, since it is often necessary to compute
+histograms for a small range of a larger dataset, ignoring the values
+outside the range of interest.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 339</span>
+
+static VALUE
+histogram_increment(VALUE self, VALUE v1){
+#line 38 &quot;../gen/tmpl/c_self_f_DFloat.c&quot;
+    gsl_histogram *w;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_histogram_increment, FULL_LOOP, 1,0, ain,0};
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    na_ndloop3(&amp;ndf, w, 1, v1);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max-instance_method">
+  
+    #<strong>max</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These functions return the maximum upper and minimum lower range limits
+and the number of bins of the histogram h.  They provide a way of
+determining these values without accessing the gsl_histogram
+struct directly.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+521
+522
+523
+524
+525
+526
+527
+528
+529</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 521</span>
+
+static VALUE
+histogram_max(VALUE self){
+#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return DBL2NUM(gsl_histogram_max(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_bin-instance_method">
+  
+    #<strong>max_bin</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the index of the bin containing the maximum
+value. In the case where several bins contain the same maximum value the
+smallest index is returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+613
+614
+615
+616
+617
+618
+619
+620
+621</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 613</span>
+
+static VALUE
+histogram_max_bin(VALUE self){
+#line 10 &quot;../gen/tmpl/c_sizet_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return SIZET2NUM(gsl_histogram_max_bin(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_val-instance_method">
+  
+    #<strong>max_val</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the maximum value contained in the histogram bins.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+594
+595
+596
+597
+598
+599
+600
+601
+602</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 594</span>
+
+static VALUE
+histogram_max_val(VALUE self){
+#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return DBL2NUM(gsl_histogram_max_val(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mean-instance_method">
+  
+    #<strong>mean</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the mean of the histogrammed variable, where the
+histogram is regarded as a probability distribution. Negative bin values
+are ignored for the purposes of this calculation.  The accuracy of the
+result is limited by the bin width.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+669
+670
+671
+672
+673
+674
+675
+676
+677</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 669</span>
+
+static VALUE
+histogram_mean(VALUE self){
+#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return DBL2NUM(gsl_histogram_mean(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="memcpy-instance_method">
+  
+    #<strong>memcpy</strong>(src)  &#x21d2; <tt>Bool</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function copies the histogram src into the pre-existing
+histogram dest, making dest into an exact copy of src.
+The two histograms must be of the same size.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>src</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 280</span>
+
+static VALUE
+histogram_memcpy(VALUE self, VALUE v1){
+#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+    int stat;
+    gsl_histogram *w, *w1;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+    TypedData_Get_Struct(v1, gsl_histogram, &amp;histogram_data_type, w1);
+
+    stat = gsl_histogram_memcpy(w, w1);
+    return (stat) ? Qtrue: Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="min-instance_method">
+  
+    #<strong>min</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These functions return the maximum upper and minimum lower range limits
+and the number of bins of the histogram h.  They provide a way of
+determining these values without accessing the gsl_histogram
+struct directly.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+541
+542
+543
+544
+545
+546
+547
+548
+549</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 541</span>
+
+static VALUE
+histogram_min(VALUE self){
+#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return DBL2NUM(gsl_histogram_min(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="min_bin-instance_method">
+  
+    #<strong>min_bin</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the index of the bin containing the minimum
+value. In the case where several bins contain the same maximum value the
+smallest index is returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+649
+650
+651
+652
+653
+654
+655
+656
+657</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 649</span>
+
+static VALUE
+histogram_min_bin(VALUE self){
+#line 10 &quot;../gen/tmpl/c_sizet_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return SIZET2NUM(gsl_histogram_min_bin(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="min_val-instance_method">
+  
+    #<strong>min_val</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the minimum value contained in the histogram bins.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+630
+631
+632
+633
+634
+635
+636
+637
+638</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 630</span>
+
+static VALUE
+histogram_min_val(VALUE self){
+#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return DBL2NUM(gsl_histogram_min_val(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mul-instance_method">
+  
+    #<strong>mul</strong>(h2)  &#x21d2; <tt>Bool</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function multiplies the contents of the bins of histogram h1
+by the contents of the corresponding bins in histogram h2,
+i.e. h’_1(i) = h_1(i) * h_2(i).  The two histograms must have
+identical bin ranges.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>h2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 797</span>
+
+static VALUE
+histogram_mul(VALUE self, VALUE v1){
+#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+    int stat;
+    gsl_histogram *w, *w1;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+    TypedData_Get_Struct(v1, gsl_histogram, &amp;histogram_data_type, w1);
+
+    stat = gsl_histogram_mul(w, w1);
+    return (stat) ? Qtrue: Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="n-instance_method">
+  
+    #<strong>n</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns n field in gsl_histogram struct.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103
+104
+105
+106
+107
+108</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 100</span>
+
+static VALUE
+histogram_n(VALUE self){
+#line 10 &quot;gen/tmpl/c_sizet_f_field.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return SIZET2NUM(w-&gt;n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="range-instance_method">
+  
+    #<strong>range</strong>  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns range field in gsl_histogram struct.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>narray of range field in gsl_histogram.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 119</span>
+
+static VALUE
+histogram_range(VALUE self){
+#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+    gsl_histogram *w;
+    double *d;
+    VALUE v;
+    size_t n, i, shape[1];
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    
+    shape[0] = n = w-&gt;n+1;
+    
+
+#line 29 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+    v = rb_narray_new(cDF, 1, shape);
+    d = (double*)na_get_pointer_for_write(v);
+    for (i=0; i&lt;n; i++) {
+        d[i] = w-&gt;range[i];
+    }
+    return v;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset-instance_method">
+  
+    #<strong>reset</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function resets all the bins in the histogram h to zero.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+577
+578
+579
+580
+581
+582
+583
+584
+585</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 577</span>
+
+static VALUE
+histogram_reset(VALUE self){
+#line 9 &quot;../gen/tmpl/c_void_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+    gsl_histogram_reset(w);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scale-instance_method">
+  
+    #<strong>scale</strong>(h, scale)  &#x21d2; <tt>Qnil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function multiplies the contents of the bins of histogram h
+by the constant scale, i.e. $h’_1(i) = h_1(i) * \hboxscale$
+h’_1(i) = h_1(i) * scale.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>h</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Qnil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 844</span>
+
+static VALUE
+histogram_scale(VALUE self, VALUE v1){
+#line 11 &quot;../gen/tmpl/c_void_f_double.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    gsl_histogram_scale(w, NUM2DBL(v1));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_ranges-instance_method">
+  
+    #<strong>set_ranges</strong>(range[])  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function sets the ranges of the existing histogram h using
+the array range of size size.  The values of the histogram
+bins are reset to zero.  The range array should contain the
+desired bin limits.  The ranges can be arbitrary, subject to the
+restriction that they are monotonically increasing.</p>
+
+<p>The following example shows how to create a histogram with logarithmic
+bins with ranges [1,10), [10,100) and [100,1000).</p>
+
+<p>gsl_histogram * h = gsl_histogram_alloc (3);</p>
+
+<p>// bin[0] covers the range 1 &lt;= x &lt; 10
+// bin[1] covers the range 10 &lt;= x &lt; 100
+// bin[2] covers the range 100 &lt;= x &lt; 1000</p>
+
+<p>double range[4] = @{ 1.0, 10.0, 100.0, 1000.0 @};</p>
+
+<p>gsl_histogram_set_ranges (h, range, 4);</p>
+
+<p>Note that the size of the range array should be defined to be one
+element bigger than the number of bins.  The additional element is
+required for the upper value of the final bin.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>range[]</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 230</span>
+
+static VALUE
+histogram_set_ranges(VALUE self, VALUE v1){
+#line 11 &quot;gen/tmpl/c_self_f_set_ranges.c&quot;
+    gsl_histogram *w;
+    double *p1;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    v1 = cast_1d_contiguous(v1, cDF);
+    p1 = (double*)na_get_pointer_for_read(v1);
+    gsl_histogram_set_ranges(w, p1, RNARRAY_SIZE(v1));
+    RB_GC_GUARD(v1);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_ranges_uniform-instance_method">
+  
+    #<strong>set_ranges_uniform</strong>(h, xmin, xmax)  &#x21d2; <tt>Qnil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function sets the ranges of the existing histogram h to cover
+the range xmin to xmax uniformly.  The values of the
+histogram bins are reset to zero.  The bin ranges are shown in the table
+below,</p>
+
+<p>where d is the bin spacing, d = (xmax-xmin)/n.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>h</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>xmin</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Qnil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 259</span>
+
+static VALUE
+histogram_set_ranges_uniform(VALUE self, VALUE v1, VALUE v2){
+#line 12 &quot;../gen/tmpl/c_void_f_double_x2.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    gsl_histogram_set_ranges_uniform(w, NUM2DBL(v1), NUM2DBL(v2));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shift-instance_method">
+  
+    #<strong>shift</strong>(h, offset)  &#x21d2; <tt>Qnil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function shifts the contents of the bins of histogram h by
+the constant offset, i.e. $h’_1(i) = h_1(i) + \hboxoffset$
+h’_1(i) = h_1(i) + offset.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>h</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Qnil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 865</span>
+
+static VALUE
+histogram_shift(VALUE self, VALUE v1){
+#line 11 &quot;../gen/tmpl/c_void_f_double.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    gsl_histogram_shift(w, NUM2DBL(v1));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sigma-instance_method">
+  
+    #<strong>sigma</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the standard deviation of the histogrammed
+variable, where the histogram is regarded as a probability
+distribution. Negative bin values are ignored for the purposes of this
+calculation. The accuracy of the result is limited by the bin width.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+689
+690
+691
+692
+693
+694
+695
+696
+697</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 689</span>
+
+static VALUE
+histogram_sigma(VALUE self){
+#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return DBL2NUM(gsl_histogram_sigma(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sub-instance_method">
+  
+    #<strong>sub</strong>(h2)  &#x21d2; <tt>Bool</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function subtracts the contents of the bins in histogram h2
+from the corresponding bins of histogram h1, i.e. h’_1(i) =
+h_1(i) - h_2(i).  The two histograms must have identical bin ranges.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>h2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 773</span>
+
+static VALUE
+histogram_sub(VALUE self, VALUE v1){
+#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+    int stat;
+    gsl_histogram *w, *w1;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+    TypedData_Get_Struct(v1, gsl_histogram, &amp;histogram_data_type, w1);
+
+    stat = gsl_histogram_sub(w, w1);
+    return (stat) ? Qtrue: Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sum-instance_method">
+  
+    #<strong>sum</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the sum of all bin values. Negative bin values
+are included in the sum.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+707
+708
+709
+710
+711
+712
+713
+714
+715</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 707</span>
+
+static VALUE
+histogram_sum(VALUE self){
+#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+    gsl_histogram *w;
+
+    TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
+
+    return DBL2NUM(gsl_histogram_sum(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sun Mar 19 00:56:58 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.4.0).
+</div>
+
+    </div>
+  </body>
+</html>

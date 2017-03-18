@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Numo::GSL::Sf::Mathieu
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Numo::GSL::Sf::Mathieu";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../x_index.html">Index (M)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Numo.html" title="Numo (module)">Numo</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../GSL.html" title="Numo::GSL (module)">GSL</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Sf.html" title="Numo::GSL::Sf (module)">Sf</a></span></span>
+     &raquo; 
+    <span class="title">Mathieu</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Numo::GSL::Sf::Mathieu
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Numo::GSL::Sf::Mathieu</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>ext/numo/gsl/sf/gsl_sf.c</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(v1, v2)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#a_array-instance_method" title="#a_array (instance method)">#<strong>a_array</strong>(order_min, order_max, q)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>These routines compute a series of Mathieu characteristic values a_n(q), b_n(q) for n from order_min to order_max inclusive, storing the results in the array result_array.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#b_array-instance_method" title="#b_array (instance method)">#<strong>b_array</strong>(order_min, order_max, q)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>These routines compute a series of Mathieu characteristic values a_n(q), b_n(q) for n from order_min to order_max inclusive, storing the results in the array result_array.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ce_array-instance_method" title="#ce_array (instance method)">#<strong>ce_array</strong>(nmin, nmax, q, x)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>These routines compute a series of the angular Mathieu functions ce_n(q,x) and se_n(q,x) of order n from nmin to nmax inclusive, storing the results in the array result_array.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#Mc_array-instance_method" title="#Mc_array (instance method)">#<strong>Mc_array</strong>(j, nmin, nmax, q)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>These routines compute a series of the radial Mathieu functions of kind j, with order from nmin to nmax inclusive, storing the results in the array result_array.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#Ms_array-instance_method" title="#Ms_array (instance method)">#<strong>Ms_array</strong>(j, nmin, nmax, q)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>These routines compute a series of the radial Mathieu functions of kind j, with order from nmin to nmax inclusive, storing the results in the array result_array.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#se_array-instance_method" title="#se_array (instance method)">#<strong>se_array</strong>(nmin, nmax, q, x)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>These routines compute a series of the angular Mathieu functions ce_n(q,x) and se_n(q,x) of order n from nmin to nmax inclusive, storing the results in the array result_array.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new-class_method">
+  
+    .<strong>new</strong>(v1, v2)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25471
+25472
+25473
+25474
+25475
+25476
+25477
+25478</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25471</span>
+
+static VALUE
+sf_mathieu_s_new(VALUE self, VALUE v1, VALUE v2){
+#line 17 &quot;../gen/tmpl/c_new_sizet_double.c&quot;
+    gsl_sf_mathieu_workspace *w;
+    w = gsl_sf_mathieu_alloc(NUM2SIZET(v1), NUM2DBL(v2));
+
+    return TypedData_Wrap_Struct(cMathieu, &amp;sf_mathieu_data_type, (void*)w);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="a_array-instance_method">
+  
+    #<strong>a_array</strong>(order_min, order_max, q)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These routines compute a series of Mathieu characteristic values
+a_n(q), b_n(q) for n from order_min to
+order_max inclusive, storing the results in the array result_array.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>order_min</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>order_max</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>q</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>returns result_array[]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25509
+25510
+25511
+25512
+25513
+25514
+25515
+25516
+25517
+25518
+25519
+25520
+25521
+25522
+25523
+25524
+25525
+25526
+25527
+25528
+25529
+25530
+25531
+25532</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25509</span>
+
+static VALUE
+sf_mathieu_a_array(VALUE self, VALUE v0, VALUE v1, VALUE v2){
+#line 30 &quot;gen/tmpl/c_DFloat_f_int_x2_DFloat.c&quot;
+    gsl_sf_mathieu_workspace *w;
+    int nmin, nmax;
+    size_t shape[1];
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,1,shape}};
+    ndfunc_t ndf = {iter_sf_mathieu_a_array,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,1,1,ain,aout};
+    void *opt[3];
+
+    TypedData_Get_Struct(self, gsl_sf_mathieu_workspace, &amp;sf_mathieu_data_type, w);
+
+    nmin = NUM2INT(v0);
+    nmax = NUM2INT(v1);
+    opt[0] = w;
+    opt[1] = &amp;nmin;
+    opt[2] = &amp;nmax;
+    if (nmin&lt;0 || nmax&lt;0 || nmin&gt;nmax) {
+        rb_raise(rb_eArgError,&quot;should be nmin&gt;=0 &amp;&amp; nmax&gt;=0 &amp;&amp; nmin&lt;=nmax&quot;);
+    }
+    shape[0] = nmax-nmin+1;
+    return na_ndloop3(&amp;ndf,opt,1,v2);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="b_array-instance_method">
+  
+    #<strong>b_array</strong>(order_min, order_max, q)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These routines compute a series of Mathieu characteristic values
+a_n(q), b_n(q) for n from order_min to
+order_max inclusive, storing the results in the array result_array.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>order_min</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>order_max</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>q</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>returns result_array[]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25563
+25564
+25565
+25566
+25567
+25568
+25569
+25570
+25571
+25572
+25573
+25574
+25575
+25576
+25577
+25578
+25579
+25580
+25581
+25582
+25583
+25584
+25585
+25586</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25563</span>
+
+static VALUE
+sf_mathieu_b_array(VALUE self, VALUE v0, VALUE v1, VALUE v2){
+#line 30 &quot;gen/tmpl/c_DFloat_f_int_x2_DFloat.c&quot;
+    gsl_sf_mathieu_workspace *w;
+    int nmin, nmax;
+    size_t shape[1];
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,1,shape}};
+    ndfunc_t ndf = {iter_sf_mathieu_b_array,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,1,1,ain,aout};
+    void *opt[3];
+
+    TypedData_Get_Struct(self, gsl_sf_mathieu_workspace, &amp;sf_mathieu_data_type, w);
+
+    nmin = NUM2INT(v0);
+    nmax = NUM2INT(v1);
+    opt[0] = w;
+    opt[1] = &amp;nmin;
+    opt[2] = &amp;nmax;
+    if (nmin&lt;0 || nmax&lt;0 || nmin&gt;nmax) {
+        rb_raise(rb_eArgError,&quot;should be nmin&gt;=0 &amp;&amp; nmax&gt;=0 &amp;&amp; nmin&lt;=nmax&quot;);
+    }
+    shape[0] = nmax-nmin+1;
+    return na_ndloop3(&amp;ndf,opt,1,v2);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ce_array-instance_method">
+  
+    #<strong>ce_array</strong>(nmin, nmax, q, x)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These routines compute a series of the angular Mathieu functions
+ce_n(q,x) and se_n(q,x) of order n from
+nmin to nmax inclusive, storing the results in the array
+result_array.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>nmin</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nmax</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>q</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>returns result_array[]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25620
+25621
+25622
+25623
+25624
+25625
+25626
+25627
+25628
+25629
+25630
+25631
+25632
+25633
+25634
+25635
+25636
+25637
+25638
+25639
+25640
+25641
+25642
+25643</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25620</span>
+
+static VALUE
+sf_mathieu_ce_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
+#line 32 &quot;gen/tmpl/c_DFloat_f_int_x2_DFloat_x2.c&quot;
+    gsl_sf_mathieu_workspace *w;
+    int nmin, nmax;
+    size_t shape[1];
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,1,shape}};
+    ndfunc_t ndf = {iter_sf_mathieu_ce_array,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,2,1,ain,aout};
+    void *opt[3];
+
+    TypedData_Get_Struct(self, gsl_sf_mathieu_workspace, &amp;sf_mathieu_data_type, w);
+
+    nmin = NUM2INT(v0);
+    nmax = NUM2INT(v1);
+    opt[0] = w;
+    opt[1] = &amp;nmin;
+    opt[2] = &amp;nmax;
+    if (nmin&lt;0 || nmax&lt;0 || nmin&gt;nmax) {
+        rb_raise(rb_eArgError,&quot;should be nmin&gt;=0 &amp;&amp; nmax&gt;=0 &amp;&amp; nmin&lt;=nmax&quot;);
+    }
+    shape[0] = nmax-nmin+1;
+    return na_ndloop3(&amp;ndf,opt,2,v2,v3);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Mc_array-instance_method">
+  
+    #<strong>Mc_array</strong>(j, nmin, nmax, q)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These routines compute a series of the radial Mathieu functions of
+kind j, with order from nmin to nmax inclusive, storing the
+results in the array result_array.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>j</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nmin</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nmax</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>q</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>returns work</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25734
+25735
+25736
+25737
+25738
+25739
+25740
+25741
+25742
+25743
+25744
+25745
+25746
+25747
+25748
+25749
+25750
+25751
+25752
+25753
+25754
+25755
+25756
+25757
+25758
+25759</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25734</span>
+
+static VALUE
+sf_mathieu_Mc_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3, VALUE v4){
+#line 33 &quot;gen/tmpl/c_DFloat_f_int_x3_DFloat_x2.c&quot;
+    gsl_sf_mathieu_workspace *w;
+    int j, nmin, nmax;
+    size_t shape[1];
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,1,shape}};
+    ndfunc_t ndf = {iter_sf_mathieu_Mc_array,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,2,1,ain,aout};
+    void *opt[4];
+
+    TypedData_Get_Struct(self, gsl_sf_mathieu_workspace, &amp;sf_mathieu_data_type, w);
+
+    j    = NUM2INT(v0);
+    nmin = NUM2INT(v1);
+    nmax = NUM2INT(v2);
+    opt[0] = w;
+    opt[1] = &amp;j; //j
+    opt[2] = &amp;nmin;
+    opt[3] = &amp;nmax;
+    if (nmin&lt;0 || nmax&lt;0 || nmin&gt;nmax) {
+        rb_raise(rb_eArgError,&quot;should be nmin&gt;=0 &amp;&amp; nmax&gt;=0 &amp;&amp; nmin&lt;=nmax&quot;);
+    }
+    shape[0] = nmax-nmin+1;
+    return na_ndloop3(&amp;ndf,opt,2,v3,v4);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Ms_array-instance_method">
+  
+    #<strong>Ms_array</strong>(j, nmin, nmax, q)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These routines compute a series of the radial Mathieu functions of
+kind j, with order from nmin to nmax inclusive, storing the
+results in the array result_array.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>j</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nmin</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nmax</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>q</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>returns work</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25793
+25794
+25795
+25796
+25797
+25798
+25799
+25800
+25801
+25802
+25803
+25804
+25805
+25806
+25807
+25808
+25809
+25810
+25811
+25812
+25813
+25814
+25815
+25816
+25817
+25818</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25793</span>
+
+static VALUE
+sf_mathieu_Ms_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3, VALUE v4){
+#line 33 &quot;gen/tmpl/c_DFloat_f_int_x3_DFloat_x2.c&quot;
+    gsl_sf_mathieu_workspace *w;
+    int j, nmin, nmax;
+    size_t shape[1];
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,1,shape}};
+    ndfunc_t ndf = {iter_sf_mathieu_Ms_array,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,2,1,ain,aout};
+    void *opt[4];
+
+    TypedData_Get_Struct(self, gsl_sf_mathieu_workspace, &amp;sf_mathieu_data_type, w);
+
+    j    = NUM2INT(v0);
+    nmin = NUM2INT(v1);
+    nmax = NUM2INT(v2);
+    opt[0] = w;
+    opt[1] = &amp;j; //j
+    opt[2] = &amp;nmin;
+    opt[3] = &amp;nmax;
+    if (nmin&lt;0 || nmax&lt;0 || nmin&gt;nmax) {
+        rb_raise(rb_eArgError,&quot;should be nmin&gt;=0 &amp;&amp; nmax&gt;=0 &amp;&amp; nmin&lt;=nmax&quot;);
+    }
+    shape[0] = nmax-nmin+1;
+    return na_ndloop3(&amp;ndf,opt,2,v3,v4);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="se_array-instance_method">
+  
+    #<strong>se_array</strong>(nmin, nmax, q, x)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>These routines compute a series of the angular Mathieu functions
+ce_n(q,x) and se_n(q,x) of order n from
+nmin to nmax inclusive, storing the results in the array
+result_array.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>nmin</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nmax</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>q</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>returns result_array[]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25677
+25678
+25679
+25680
+25681
+25682
+25683
+25684
+25685
+25686
+25687
+25688
+25689
+25690
+25691
+25692
+25693
+25694
+25695
+25696
+25697
+25698
+25699
+25700</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25677</span>
+
+static VALUE
+sf_mathieu_se_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
+#line 32 &quot;gen/tmpl/c_DFloat_f_int_x2_DFloat_x2.c&quot;
+    gsl_sf_mathieu_workspace *w;
+    int nmin, nmax;
+    size_t shape[1];
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,1,shape}};
+    ndfunc_t ndf = {iter_sf_mathieu_se_array,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,2,1,ain,aout};
+    void *opt[3];
+
+    TypedData_Get_Struct(self, gsl_sf_mathieu_workspace, &amp;sf_mathieu_data_type, w);
+
+    nmin = NUM2INT(v0);
+    nmax = NUM2INT(v1);
+    opt[0] = w;
+    opt[1] = &amp;nmin;
+    opt[2] = &amp;nmax;
+    if (nmin&lt;0 || nmax&lt;0 || nmin&gt;nmax) {
+        rb_raise(rb_eArgError,&quot;should be nmin&gt;=0 &amp;&amp; nmax&gt;=0 &amp;&amp; nmin&lt;=nmax&quot;);
+    }
+    shape[0] = nmax-nmin+1;
+    return na_ndloop3(&amp;ndf,opt,2,v2,v3);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sun Mar 19 00:56:59 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.4.0).
+</div>
+
+    </div>
+  </body>
+</html>
