@@ -50,7 +50,8 @@ class RanDist < GslFunction
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    super(parent,tmpl,**h)
+    m = h[:func_name].sub(/^gsl_ran_/,"")
+    super(parent,tmpl,name:m,**h)
   end
 
   def self.lookup(h)
@@ -86,7 +87,8 @@ class RanPdf < GslFunction
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    super(parent,tmpl,**h)
+    m = h[:func_name].sub(/^gsl_ran_/,"")
+    super(parent,tmpl,name:m,**h)
   end
 
   def self.lookup(h)
@@ -124,7 +126,8 @@ class RanDiscretePdf < DefMethod
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    super(parent,tmpl,**h)
+    m = h[:func_name].sub(/^gsl_ran_/,"")
+    super(parent,tmpl,name:m,**h)
   end
 
   def self.lookup(h)
@@ -147,7 +150,8 @@ class RanDirichletPdf < GslFunction
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    super(parent,tmpl,**h)
+    m = h[:func_name].sub(/^gsl_ran_/,"")
+    super(parent,tmpl,name:m,**h)
   end
 
   def self.lookup(h)
@@ -171,7 +175,8 @@ class RanMultinomialPdf < GslFunction
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    super(parent,tmpl,**h)
+    m = h[:func_name].sub(/^gsl_ran_/,"")
+    super(parent,tmpl,name:m,**h)
   end
 
   def self.lookup(h)
