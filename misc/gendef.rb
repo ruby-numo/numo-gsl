@@ -135,8 +135,12 @@ if __FILE__ == $0
     "../ext/numo/gsl/stats/gen"],
    ["doc/randist.texi",
     "../ext/numo/gsl/ran/gen"],
+   ["doc/rng.texi",
+    "../ext/numo/gsl/rng/gen"],
    ["doc/rstat.texi",
     "../ext/numo/gsl/rstat/gen"],
+   ["doc/histogram.texi",
+    "../ext/numo/gsl/histogram/gen"],
   ]
   src_dir = "../../gsl-2.1"
 
