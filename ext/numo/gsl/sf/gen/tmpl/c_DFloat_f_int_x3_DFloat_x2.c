@@ -51,5 +51,5 @@ static VALUE
         rb_raise(rb_eArgError,"should be nmin>=0 && nmax>=0 && nmin<=nmax");
     }
     shape[0] = nmax-nmin+1;
-    return na_ndloop3(&ndf,opt,2,v2,v3);
+    return na_ndloop3(&ndf,opt,2,v3,v4);
 }
