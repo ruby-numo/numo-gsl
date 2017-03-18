@@ -1,8 +1,8 @@
-require_relative "../../erbpp_gsl"
+require_relative "../../gen/func_parser"
 
-class DefineRan < DefineModule
+class DefRan < DefModule
 
-  def check_func_def(h)
+  def check_func(h)
     if /These functions are now deprecated/m =~ h[:desc]
       $stderr.puts "depricated: #{h[:func_name]}"
       return false
@@ -20,8 +20,8 @@ class DefineRan < DefineModule
      RanPdf,
      #RanDist,
     ].each do |c|
-      if c.lookup(h)
-        c.new(self,**h)
+      if t = c.lookup(h)
+        c.new(self,t,**h)
         return true
       end
     end
@@ -48,10 +48,10 @@ class RanDist < GslFunction
      "gsl_rng" => true,
     }
 
-  def initialize(parent,**h)
+  def initialize(parent,tmpl,**h)
     @preproc_code = ""
     #meth = h[:meth] = h[:func_name].sub(/^gsl_ran_/,"")
-    tmpl = "ran_dist"
+    #tmpl = "ran_dist"
     super(parent,tmpl,**h)
   end
 
@@ -63,7 +63,7 @@ class RanDist < GslFunction
       when /_pdf$/
         false
       else
-        true
+        "ran_dist"
       end
     else
       false
@@ -86,10 +86,10 @@ class RanPdf < GslFunction
      "size_t" => true,
     }
 
-  def initialize(parent,**h)
+  def initialize(parent,tmpl,**h)
     @preproc_code = ""
     h[:meth] = h[:func_name].sub(/^gsl_ran_/,"")
-    tmpl = "sf_basic"
+    #tmpl = "mod_func_noloop"
     super(parent,tmpl,**h)
   end
 
@@ -103,7 +103,7 @@ class RanPdf < GslFunction
       when /discrete/
         false
       else
-        true
+        "mod_func_noloop"
       end
     else
       false
@@ -130,16 +130,15 @@ end
 class RanDirichletPdf < GslFunction
   RE = /^gsl_ran_dirichlet_(ln)?pdf$/
 
-  def initialize(parent,**h)
+  def initialize(parent,tmpl,**h)
     @preproc_code = ""
     h[:meth] = h[:func_name].sub(/^gsl_ran_/,"")
-    tmpl = "dirichlet"
     super(parent,tmpl,**h)
-    n_arg(-1)
+    set n_arg:-1
   end
 
   def self.lookup(h)
-    RE =~ h[:func_name]
+    "dirichlet" if RE =~ h[:func_name]
   end
 
   def argument_property(type,name)
@@ -157,16 +156,15 @@ end
 class RanMultinomialPdf < GslFunction
   RE = /^gsl_ran_multinomial_(ln)?pdf$/
 
-  def initialize(parent,**h)
+  def initialize(parent,tmpl,**h)
     @preproc_code = ""
     h[:meth] = h[:func_name].sub(/^gsl_ran_/,"")
-    tmpl = "multinomial"
     super(parent,tmpl,**h)
-    n_arg(-1)
+    set n_arg:-1
   end
 
   def self.lookup(h)
-    RE =~ h[:func_name]
+    "multinomial" if RE =~ h[:func_name]
   end
 
   def argument_property(type,name)
