@@ -1,9 +1,15 @@
+<%
+set name: "new"
+set singleton: true
+%>
 /*
   @overload <%=name%>(<%=args.map{|a| a[1]}.join(",")%>)
   @param  [Integer]  <%=args[0][1]%> parameter
   @param  [Integer]  <%=args[1][1]%> parameter
 
   allocate instance of <%=class_name%> class.
+
+<%= desc %>
  */
 static VALUE
 <%=c_func%>(VALUE self, VALUE v1, VALUE v2)<% set n_arg:2 %>

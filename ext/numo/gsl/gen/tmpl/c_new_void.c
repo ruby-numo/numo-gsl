@@ -1,7 +1,13 @@
+<%
+set name: "new"
+set singleton: true
+%>
 /*
   @overload new
 
   allocate instance of <%=class_name%> class.
+
+<%= desc %>
  */
 static VALUE
 <%=c_func%>(VALUE self)<% set n_arg:0 %>
