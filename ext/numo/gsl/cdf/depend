@@ -2,11 +2,13 @@ COGEN=ruby gen/erbpp_cdf.rb
 GENSRC=gsl_cdf.c
 GENDEPS=gen/erbpp_cdf.rb ../gen/*.rb ../gen/tmpl/*.c
 
+src : $(GENSRC)
+
 $(GENSRC) : $(GENDEPS)
 	$(COGEN) > $@
 
 doc : $(GENSRC)
-	yard doc $(GENSRC) types/*.c
+	yard doc $(GENSRC)
 
 clean: cleansrc cleandoc
 cleansrc:

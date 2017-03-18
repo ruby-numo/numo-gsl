@@ -3,11 +3,13 @@ GENSRC=gsl_rng.c
 ERBSRC=gen/gsl_rng.erb.c
 GENDEPS=$(ERBSRC)
 
+src : $(GENSRC)
+
 $(GENSRC) : $(GENDEPS)
 	$(COGEN) $(ERBSRC) > $@
 
 doc : $(GENSRC)
-	yard doc $(GENSRC) types/*.c
+	yard doc $(GENSRC)
 
 clean: cleansrc cleandoc
 cleansrc:
