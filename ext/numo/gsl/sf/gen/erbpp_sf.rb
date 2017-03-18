@@ -4,6 +4,7 @@ require "erbpp/line_number"
 gsl_list = eval(open("gen/func_def.rb").read)
 sf_list = []
 mathieu_list = []
+
 gsl_list.each do |h|
   if h[:args].any?{|a| a[0] == "gsl_sf_mathieu_workspace *"} ||
       h[:func_type] == "gsl_sf_mathieu_workspace *"

@@ -1,8 +1,8 @@
-require_relative "../../erbpp_gsl"
+require_relative "../../gen/func_parser"
 
-class DefineStats < DefineModule
+class DefStats < DefModule
 
-  def check_func_def(h)
+  def check_func(h)
     if /These functions are now deprecated/m =~ h[:desc]
       $stderr.puts "depricated: #{h[:func_name]}"
       return false
@@ -15,8 +15,8 @@ class DefineStats < DefineModule
      StatsBasic
     ]
     a.each do |c|
-      if c.lookup(h)
-        c.new(self,**h)
+      if t = c.lookup(h)
+        c.new(self,t,**h)
         return true
       end
     end
@@ -39,13 +39,12 @@ class StatsBasic < GslFunction
      "size_t" => [], #%w[lmax],
     }
 
-  def initialize(parent,**h)
+  def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    h[:meth] = h[:func_name].sub(/^gsl_stats_/,"")
-    tmpl = self.class.find_template(h)
-    super(parent,tmpl,**h)
+    m = h[:func_name].sub(/^gsl_stats_/,"")
+    super(parent,tmpl,name:m,**h)
     @varg = -1
-    n_arg(-1)
+    set n_arg: -1
   end
 
   def argument_property(type,name)
@@ -125,7 +124,7 @@ class StatsBasic < GslFunction
 
     def lookup(h)
       tmpl = find_template(h)
-      return File.exist?("gen/tmpl/#{tmpl}.c")
+      return tmpl if File.exist?("gen/tmpl/#{tmpl}.c")
     end
 
   end

@@ -1,7 +1,7 @@
 <% [64,32].each do |i| %>
 #define idx_t int<%=i%>_t
 static void
-<%=c_iter%>_index<%=i%>(na_loop_t *const lp)
+iter_<%=c_func%>_index<%=i%>(na_loop_t *const lp)
 {
     size_t   n, idx;
     char    *d_ptr, *i_ptr, *o_ptr;
@@ -10,7 +10,7 @@ static void
     INIT_COUNTER(lp, n);
     INIT_PTR(lp, 0, d_ptr, d_step);
 
-    idx = <%=c_method%>((double*)d_ptr,d_step/sizeof(double),n);
+    idx = <%=func_name%>((double*)d_ptr,d_step/sizeof(double),n);
 
     INIT_PTR(lp, 1, i_ptr, i_step);
     o_ptr = NDL_PTR(lp,2);
@@ -21,8 +21,8 @@ static void
 
 /*
  <%=desc%>
-  @overload <%=method%>() => Integer
-  @overload <%=method%>(axis0,axis1,..) => Integer or Numo::Int32/64
+  @overload <%=name%>() => Integer
+  @overload <%=name%>(axis0,axis1,..) => Integer or Numo::Int32/64
   <% desc_param.each do |x|%>
   <%=x%><% end %>
 */
@@ -45,11 +45,11 @@ static VALUE
     if (na->size > (~(u_int32_t)0)) {
         aout[0].type = numo_cInt64;
         idx = rb_narray_new(numo_cInt64, na->ndim, na->shape);
-        ndf.func = <%=c_iter%>_index64;
+        ndf.func = iter_<%=c_func%>_index64;
     } else {
         aout[0].type = numo_cInt32;
         idx = rb_narray_new(numo_cInt32, na->ndim, na->shape);
-        ndf.func = <%=c_iter%>_index32;
+        ndf.func = iter_<%=c_func%>_index32;
     }
     rb_funcall(idx, rb_intern("seq"), 0);
 
