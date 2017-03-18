@@ -50,8 +50,6 @@ class RanDist < GslFunction
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    #meth = h[:meth] = h[:func_name].sub(/^gsl_ran_/,"")
-    #tmpl = "ran_dist"
     super(parent,tmpl,**h)
   end
 
@@ -88,13 +86,7 @@ class RanPdf < GslFunction
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    h[:meth] = h[:func_name].sub(/^gsl_ran_/,"")
-    #tmpl = "mod_func_noloop"
     super(parent,tmpl,**h)
-  end
-
-  def self.lookup(h)
-    RE =~ h[:func_name]
   end
 
   def self.lookup(h)
@@ -127,14 +119,35 @@ class RanPdf < GslFunction
 end
 
 
+class RanDiscretePdf < DefMethod
+  RE = /^gsl_ran_discrete.*$/
+
+  def initialize(parent,tmpl,**h)
+    @preproc_code = ""
+    super(parent,tmpl,**h)
+  end
+
+  def self.lookup(h)
+    case h[:func_name]
+    when "gsl_ran_discrete_preproc"
+      "c_new_DFloat"
+    when "gsl_ran_discrete_pdf"
+      h[:postpose] = true
+      "c_DFloat_f_SZ"
+    else
+      false
+    end
+  end
+
+end
+
+
 class RanDirichletPdf < GslFunction
   RE = /^gsl_ran_dirichlet_(ln)?pdf$/
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    h[:meth] = h[:func_name].sub(/^gsl_ran_/,"")
     super(parent,tmpl,**h)
-    set n_arg:-1
   end
 
   def self.lookup(h)
@@ -158,9 +171,7 @@ class RanMultinomialPdf < GslFunction
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    h[:meth] = h[:func_name].sub(/^gsl_ran_/,"")
     super(parent,tmpl,**h)
-    set n_arg:-1
   end
 
   def self.lookup(h)

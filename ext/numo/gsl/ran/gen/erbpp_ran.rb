@@ -3,9 +3,12 @@ require "erbpp/line_number"
 
 gsl_list = eval(open("gen/func_def.rb").read)
 ran_list = []
-mathieu_list = []
+disc_list = []
+
 gsl_list.each do |h|
   case h[:func_name]
+  when /^gsl_ran_discrete_(\w+)$/
+    disc_list << h
   when /^gsl_ran_(\w+)_pdf$/
     ran_list << h
   else
@@ -31,6 +34,25 @@ DefLib.new(nil,'lib') do
 
     ran_list.each do |h|
       check_func(h)
+    end
+  end
+
+  def_class('class') do
+    set ns_var: "mRan"
+    set name: "ran_discrete"
+    set class_name: "Discrete"
+    set class_var: "cDiscrete"
+    set full_class_name: "Numo::GSL::Ran::Discrete"
+    set struct: "gsl_ran_discrete_t"
+
+    c = RanDiscretePdf
+    disc_list.each do |h|
+      if t = c.lookup(h)
+        m = h[:func_name].sub(/gsl_ran_discrete_/,"")
+        c.new(self, t, name:m, **h)
+      else
+        $stderr.puts "skip "+h[:func_name]
+      end
     end
   end
 
