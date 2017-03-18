@@ -1,4 +1,3 @@
-require_relative "../../gen/erbpp2"
 require_relative "parse_sf"
 require "erbpp/line_number"
 
@@ -29,7 +28,7 @@ DefLib.new(nil,'lib') do
   set include_files: ["gsl/gsl_sf.h"]
   set lib_name: "sf"
 
-  DefSfModule.new(self,'module') do
+  DefSf.new(self,'module') do
     set name: "sf"
     set module_name: "Sf"
     set module_var: "mSf"
