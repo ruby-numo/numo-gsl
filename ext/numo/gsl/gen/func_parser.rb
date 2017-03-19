@@ -271,6 +271,64 @@ end
 
 #----------------------------------------------------------
 
+class FuncMatch
+
+  def initialize(*args,type:nil,name:nil)
+    @func_type = type
+    @func_name = name
+    @args = args
+  end
+
+  def ===(h)
+    if /These functions are now deprecated/m =~ h[:desc]
+      $stderr.puts "depricated: #{h[:func_name]}"
+      return false
+    end
+    if /This function is now deprecated/m =~ h[:desc]
+      $stderr.puts "depricated: #{h[:func_name]}"
+      return false
+    end
+    if @func_type
+      return false unless t = h[:func_type]
+      t.sub!(/^const\s+/,"")
+      #$stderr.puts [t,@func_type].inspect
+      return false unless @func_type === t
+    end
+    if @func_name
+      return false unless @func_name === h[:func_name]
+    end
+    if @args
+      return false unless h_args = h[:args]
+      #$stderr.puts [@args,h_args].inspect
+      return false unless @args.size == 0 || @args.size == h_args.size
+      @args.each_with_index do |a,i|
+        #$stderr.puts [a,h_args[i]].inspect
+        return false unless h_a = h_args[i]
+        case a
+        when Array
+          if a[0] # C type
+            return false unless t = h_a[0]
+            t.sub!(/^const\s+/,"")
+            return false unless a[0] === t
+          end
+          if a[1] # var name
+            return false unless a[1] === h_a[1]
+          end
+        else # String or Regexp
+          #$stderr.puts [a,h_a[0]].inspect
+          return false unless t = h_a[0]
+          t.sub!(/^const\s+/,"")
+          #$stderr.puts [a,t].inspect
+          return false unless a === t
+        end
+      end
+    end
+    #$stderr.puts self.inspect
+    true
+  end
+
+end
+
 class Counter
   def initialize
     @i = 0
