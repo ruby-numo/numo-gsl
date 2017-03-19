@@ -65,7 +65,7 @@ class Interp < DefMethod
 
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
-    m = h[:func_name].sub(/^gsl_[^_]+_/,"")
+    m = h[:func_name].sub(/^gsl_[^_]+_(accel_)?/,"")
     super(parent,tmpl,name:m,**h)
   end
 
