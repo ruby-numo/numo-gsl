@@ -19,6 +19,8 @@
 
   * [Histograms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Histogram.html)
     * [2D Histograms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Histogram2D.html)
+  * [Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline.html)
+    * [2D Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline2D.html)
 
 More modules will be implemented.
 
