@@ -93,23 +93,6 @@ class Interp < DefMethod
   end
 end
 
-=begin
-class Interp2D < Interp
-
-  def initialize(parent,tmpl,**h)
-    @preproc_code = ""
-    m = h[:func_name].sub(/^gsl_[^_]+_/,"")
-    super(parent,tmpl,name:m,**h)
-  end
-
-  def self.lookup(h,tp)
-    case h
-    else; Interp.lookup(h,tp)
-    end
-  end
-
-end
-=end
 
 class InterpInit < DefMethod
 
@@ -131,67 +114,3 @@ class InterpInit < DefMethod
   end
 
 end
-
-
-=begin
-  def self.lookup(h,tp)
-    if /This function is now deprecated/m =~ h[:desc]
-      $stderr.puts "depricated: #{h[:func_name]}"
-      return nil
-    end
-    func_type = h[:func_type]
-    arg_types = h[:args].map{|a| a[0].sub(/^const /,"")}
-    h[:postpose] = false
-    #
-    case h[:func_name].sub(/gsl_interp/,"")
-    when /_(alloc|init|free)$/;          false
-    #when "_set_ranges";                  "c_self_f_set_ranges"
-    #when "2d_set_ranges";                "c_self_f_2d_set_ranges"
-    #when "_get";                         "c_DFloat_f_get"
-    #when "2d_get";                       "c_DFloat_f_2d_get"
-    #when /(2d)?_get_[xy]?range/;         "c_DFloat_x2_f_get_range"
-    #when "_increment";                   "c_self_f_DFloat"
-    #when "_accumulate";                  "c_self_f_DFloat_x2"
-    #when "2d_increment";                 "c_self_f_DFloat_x2"
-    #when "2d_accumulate";                "c_self_f_DFloat_x3"
-    #when /(2d)?_pdf_init/;               "c_bool_f_pdf_init"
-    #when "_pdf_sample";                  "c_DFloat_f_DFloat"
-    #when "2d_pdf_sample";                "c_DFloat_x2_f_DFloat_x2"
-    else
-      case func_type
-      when "double"
-        case arg_types
-        when [tp];                       "c_double_f_void"
-        when [tp,"double"];              "c_double_f_double"
-        when [tp,"size_t"];              "c_double_f_sizet"
-        when [tp,"size_t","size_t"];     "c_double_f_sizet_x2"
-        end
-      when "double *"
-        case arg_types
-        when ["struct"];                 "c_DFloat_f_field"
-        end
-      when "size_t"
-        case arg_types
-        when [tp];                       "c_sizet_f_void"
-        when [tp,"double"];              "c_sizet_f_double"
-        when [tp,"size_t"];              "c_sizet_f_sizet"
-        when ["struct"];                 "c_sizet_f_field"
-        end
-      when "int"
-        case arg_types
-        when [tp];                       "c_void_f_void"
-        when [tp,"double"];              "c_void_f_double"
-        when [tp,*["double"]*2];         "c_void_f_double_x2"
-        when [tp,*["double"]*4];         "c_void_f_double_x4"
-        when [tp,"size_t"];              "c_void_f_sizet"
-        when [tp,tp];                    "c_bool_f_other"
-        end
-      when "void"
-        case arg_types
-        when [tp];                       "c_void_f_void"
-        when [tp,*["size_t *"]*2];       "c_sizet_x2_f_void"
-        end
-      end
-    end
-  end
-=end
