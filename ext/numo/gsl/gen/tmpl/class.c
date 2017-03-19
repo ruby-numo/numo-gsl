@@ -24,16 +24,3 @@ static const rb_data_type_t <%=name%>_data_type = {
 <% set data_type_var:name+"_data_type" %>
 
 <%= method_code %>
-
-/*
-  Document-class: <%= full_class_name %>
-  <%= description %>
- */
-static void
-<%=init_func%>()
-{
-    /* declare <%= full_class_name %> */
-    <%=class_var%> = rb_define_class_under(<%=ns_var%>, "<%=class_name%>", rb_cObject);
-    <% @children.each do |m| %>
-    <%= m.define %><% end %>
-}

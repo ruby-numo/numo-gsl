@@ -37,14 +37,6 @@
 
 static VALUE <%=ns_var%>;
 
-static void
-init_gsl(void)
-{
-    VALUE mN;
-    mN = rb_define_module("Numo");
-    <%=ns_var%> = rb_define_module_under(mN, "GSL");
-}
-
 <% id_decl.each do |x| %>
 <%= x %><% end %>
 
@@ -56,11 +48,14 @@ init_gsl(void)
 void
 Init_<%=lib_name%>(void)
 {
+    VALUE mN;
+    mN = rb_define_module("Numo");
+    <%=ns_var%> = rb_define_module_under(mN, "GSL");
 
     <% id_assign.each do |x| %>
     <%= x %><% end %>
 
-    init_gsl();
-    <% children.each do |c| %>
-    <%= c.call_init %><% end %>
+<% children.each do |c| %>
+<%= c.define %>
+<% end %>
 }
