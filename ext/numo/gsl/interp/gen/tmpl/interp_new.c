@@ -4,13 +4,7 @@ set singleton: true
 set alloc_func: func_name.sub(/_init$/,"_alloc")
 %>
 /*
-  @overload <%=name%>(<%=args[1][1]%>,<%=args[2][1]%>)
-  @param  [DFloat]  <%=args[1][1]%>
-  @param  [DFloat]  <%=args[2][1]%>
-
-  allocate instance of <%=class_name%> class.
-
-  <%= desc %>
+  :nodoc:
  */
 static VALUE
 <%=c_func%>(VALUE self, const gsl_interp_type *t, VALUE v1, VALUE v2)<% set n_arg:2 %>

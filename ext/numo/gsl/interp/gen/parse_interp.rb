@@ -88,6 +88,9 @@ class Interp < DefMethod
     end
   end
 
+  def define
+    super unless /_init$/ =~ get(:func_name)
+  end
 end
 
 =begin
