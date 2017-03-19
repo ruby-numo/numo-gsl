@@ -7,6 +7,17 @@ interp_accel_list = []
 interp2d_list = []
 spline_list = []
 spline2d_list = []
+desc = {}
+
+gsl_list.each do |h|
+  desc[h[:func_name]] = h[:desc]
+end
+
+gsl_list.each do |h|
+  if /^gsl_spline/ =~ h[:func_name] && h[:desc].empty?
+    h[:desc] = desc[h[:func_name].sub(/_spline/,"_interp")]
+  end
+end
 
 gsl_list.each do |h|
   case h[:func_name]
