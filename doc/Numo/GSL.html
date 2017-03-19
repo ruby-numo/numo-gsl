@@ -79,7 +79,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>ext/numo/gsl/stats/gsl_stats.c<span class="defines">,<br />
-  ext/numo/gsl/rng/gsl_rng.c,<br /> ext/numo/gsl/rstat/gsl_rstat.c,<br /> ext/numo/gsl/histogram/gsl_histogram.c,<br /> ext/numo/gsl/cdf/gsl_cdf.c,<br /> ext/numo/gsl/const/gsl_const.c,<br /> ext/numo/gsl/sys/gsl_sys.c,<br /> ext/numo/gsl/sf/gsl_sf.c,<br /> ext/numo/gsl/ran/gsl_ran.c</span>
+  ext/numo/gsl/rng/gsl_rng.c,<br /> ext/numo/gsl/rstat/gsl_rstat.c,<br /> ext/numo/gsl/histogram/gsl_histogram.c,<br /> ext/numo/gsl/cdf/gsl_cdf.c,<br /> ext/numo/gsl/const/gsl_const.c,<br /> ext/numo/gsl/sys/gsl_sys.c,<br /> ext/numo/gsl/sf/gsl_sf.c,<br /> ext/numo/gsl/ran/gsl_ran.c,<br /> ext/numo/gsl/interp/gsl_interp.c</span>
 </dd>
   </dl>
   
@@ -93,7 +93,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="GSL/Histogram.html" title="Numo::GSL::Histogram (class)">Histogram</a></span>, <span class='object_link'><a href="GSL/Histogram2D.html" title="Numo::GSL::Histogram2D (class)">Histogram2D</a></span>, <span class='object_link'><a href="GSL/Histogram2DPdf.html" title="Numo::GSL::Histogram2DPdf (class)">Histogram2DPdf</a></span>, <span class='object_link'><a href="GSL/HistogramPdf.html" title="Numo::GSL::HistogramPdf (class)">HistogramPdf</a></span>, <span class='object_link'><a href="GSL/Rng.html" title="Numo::GSL::Rng (class)">Rng</a></span>, <span class='object_link'><a href="GSL/Rstat.html" title="Numo::GSL::Rstat (class)">Rstat</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="GSL/Histogram.html" title="Numo::GSL::Histogram (class)">Histogram</a></span>, <span class='object_link'><a href="GSL/Histogram2D.html" title="Numo::GSL::Histogram2D (class)">Histogram2D</a></span>, <span class='object_link'><a href="GSL/Histogram2DPdf.html" title="Numo::GSL::Histogram2DPdf (class)">Histogram2DPdf</a></span>, <span class='object_link'><a href="GSL/HistogramPdf.html" title="Numo::GSL::HistogramPdf (class)">HistogramPdf</a></span>, <span class='object_link'><a href="GSL/InterpAccel.html" title="Numo::GSL::InterpAccel (class)">InterpAccel</a></span>, <span class='object_link'><a href="GSL/Rng.html" title="Numo::GSL::Rng (class)">Rng</a></span>, <span class='object_link'><a href="GSL/Rstat.html" title="Numo::GSL::Rstat (class)">Rstat</a></span>, <span class='object_link'><a href="GSL/Spline.html" title="Numo::GSL::Spline (class)">Spline</a></span>, <span class='object_link'><a href="GSL/Spline2D.html" title="Numo::GSL::Spline2D (class)">Spline2D</a></span>
     
   
 </p>
@@ -990,18 +990,18 @@ alternative to the standard math function acosh(x).</p>
       <pre class="lines">
 
 
-376
-377
-378
-379
-380
-381
-382
-383
-384</pre>
+368
+369
+370
+371
+372
+373
+374
+375
+376</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 376</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 368</span>
 
 static VALUE
 sys_acosh(VALUE mod, VALUE v0){
@@ -1077,18 +1077,18 @@ alternative to the standard math function asinh(x).</p>
       <pre class="lines">
 
 
-414
-415
-416
-417
-418
-419
-420
-421
-422</pre>
+406
+407
+408
+409
+410
+411
+412
+413
+414</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 414</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 406</span>
 
 static VALUE
 sys_asinh(VALUE mod, VALUE v0){
@@ -1164,18 +1164,18 @@ alternative to the standard math function atanh(x).</p>
       <pre class="lines">
 
 
-452
-453
-454
-455
-456
-457
-458
-459
-460</pre>
+444
+445
+446
+447
+448
+449
+450
+451
+452</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 452</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 444</span>
 
 static VALUE
 sys_atanh(VALUE mod, VALUE v0){
@@ -1252,18 +1252,18 @@ function expm1(x).</p>
       <pre class="lines">
 
 
-250
-251
-252
-253
-254
-255
-256
-257
-258</pre>
+242
+243
+244
+245
+246
+247
+248
+249
+250</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 250</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 242</span>
 
 static VALUE
 sys_expm1(VALUE mod, VALUE v0){
@@ -1377,18 +1377,18 @@ approximately zero.</p>
       <pre class="lines">
 
 
-1019
-1020
-1021
-1022
-1023
-1024
-1025
-1026
-1027</pre>
+1011
+1012
+1013
+1014
+1015
+1016
+1017
+1018
+1019</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1019</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1011</span>
 
 static VALUE
 sys_fcmp(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
@@ -1464,18 +1464,18 @@ infinite or not-a-number.</p>
       <pre class="lines">
 
 
-172
-173
-174
-175
-176
-177
-178
-179
-180</pre>
+164
+165
+166
+167
+168
+169
+170
+171
+172</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 172</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 164</span>
 
 static VALUE
 sys_finite(VALUE mod, VALUE v0){
@@ -1556,18 +1556,18 @@ math function frexp(x, e).</p>
       <pre class="lines">
 
 
-540
-541
-542
-543
-544
-545
-546
-547
-548</pre>
+532
+533
+534
+535
+536
+537
+538
+539
+540</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 540</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 532</span>
 
 static VALUE
 sys_frexp(VALUE mod, VALUE v0, VALUE v1){
@@ -1656,18 +1656,18 @@ alternative to the BSD math function hypot(x,y).</p>
       <pre class="lines">
 
 
-293
-294
-295
-296
-297
-298
-299
-300
-301</pre>
+285
+286
+287
+288
+289
+290
+291
+292
+293</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 293</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 285</span>
 
 static VALUE
 sys_hypot(VALUE mod, VALUE v0, VALUE v1){
@@ -1766,18 +1766,18 @@ $\sqrt+ y^2 + z^2$
       <pre class="lines">
 
 
-338
-339
-340
-341
-342
-343
-344
-345
-346</pre>
+330
+331
+332
+333
+334
+335
+336
+337
+338</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 338</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 330</span>
 
 static VALUE
 sys_hypot3(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
@@ -1860,18 +1860,18 @@ return value from gsl_isinf().</p>
       <pre class="lines">
 
 
-133
-134
-135
-136
-137
-138
-139
-140
-141</pre>
+125
+126
+127
+128
+129
+130
+131
+132
+133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 133</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 125</span>
 
 static VALUE
 sys_isinf(VALUE mod, VALUE v0){
@@ -1946,18 +1946,18 @@ sys_isinf(VALUE mod, VALUE v0){
       <pre class="lines">
 
 
-87
-88
-89
-90
-91
-92
-93
-94
-95</pre>
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 87</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 79</span>
 
 static VALUE
 sys_isnan(VALUE mod, VALUE v0){
@@ -2044,18 +2044,18 @@ alternative to the standard math function ldexp(x,e).</p>
       <pre class="lines">
 
 
-494
-495
-496
-497
-498
-499
-500
-501
-502</pre>
+486
+487
+488
+489
+490
+491
+492
+493
+494</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 494</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 486</span>
 
 static VALUE
 sys_ldexp(VALUE mod, VALUE v0, VALUE v1){
@@ -2132,18 +2132,18 @@ function log1p(x).</p>
       <pre class="lines">
 
 
-211
-212
-213
-214
-215
-216
-217
-218
-219</pre>
+203
+204
+205
+206
+207
+208
+209
+210
+211</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 211</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 203</span>
 
 static VALUE
 sys_log1p(VALUE mod, VALUE v0){
@@ -2222,18 +2222,18 @@ product expression.</p>
       <pre class="lines">
 
 
-671
-672
-673
-674
-675
-676
-677
-678
-679</pre>
+663
+664
+665
+666
+667
+668
+669
+670
+671</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 671</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 663</span>
 
 static VALUE
 sys_pow_2(VALUE mod, VALUE v0){
@@ -2312,18 +2312,18 @@ product expression.</p>
       <pre class="lines">
 
 
-712
-713
-714
-715
-716
-717
-718
-719
-720</pre>
+704
+705
+706
+707
+708
+709
+710
+711
+712</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 712</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 704</span>
 
 static VALUE
 sys_pow_3(VALUE mod, VALUE v0){
@@ -2402,18 +2402,18 @@ product expression.</p>
       <pre class="lines">
 
 
-753
-754
-755
-756
-757
-758
-759
-760
-761</pre>
+745
+746
+747
+748
+749
+750
+751
+752
+753</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 753</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 745</span>
 
 static VALUE
 sys_pow_4(VALUE mod, VALUE v0){
@@ -2492,18 +2492,18 @@ product expression.</p>
       <pre class="lines">
 
 
-794
-795
-796
-797
-798
-799
-800
-801
-802</pre>
+786
+787
+788
+789
+790
+791
+792
+793
+794</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 794</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 786</span>
 
 static VALUE
 sys_pow_5(VALUE mod, VALUE v0){
@@ -2582,18 +2582,18 @@ product expression.</p>
       <pre class="lines">
 
 
-835
-836
-837
-838
-839
-840
-841
-842
-843</pre>
+827
+828
+829
+830
+831
+832
+833
+834
+835</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 835</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 827</span>
 
 static VALUE
 sys_pow_6(VALUE mod, VALUE v0){
@@ -2672,18 +2672,18 @@ product expression.</p>
       <pre class="lines">
 
 
-876
-877
-878
-879
-880
-881
-882
-883
-884</pre>
+868
+869
+870
+871
+872
+873
+874
+875
+876</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 876</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 868</span>
 
 static VALUE
 sys_pow_7(VALUE mod, VALUE v0){
@@ -2762,18 +2762,18 @@ product expression.</p>
       <pre class="lines">
 
 
-917
-918
-919
-920
-921
-922
-923
-924
-925</pre>
+909
+910
+911
+912
+913
+914
+915
+916
+917</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 917</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 909</span>
 
 static VALUE
 sys_pow_8(VALUE mod, VALUE v0){
@@ -2852,18 +2852,18 @@ product expression.</p>
       <pre class="lines">
 
 
-958
-959
-960
-961
-962
-963
-964
-965
-966</pre>
+950
+951
+952
+953
+954
+955
+956
+957
+958</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 958</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 950</span>
 
 static VALUE
 sys_pow_9(VALUE mod, VALUE v0){
@@ -2953,18 +2953,18 @@ available as gsl_sf_pow_int_e.</p>
       <pre class="lines">
 
 
-585
-586
-587
-588
-589
-590
-591
-592
-593</pre>
+577
+578
+579
+580
+581
+582
+583
+584
+585</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 585</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 577</span>
 
 static VALUE
 sys_pow_int(VALUE mod, VALUE v0, VALUE v1){
@@ -3054,18 +3054,18 @@ available as gsl_sf_pow_int_e.</p>
       <pre class="lines">
 
 
-630
-631
-632
-633
-634
-635
-636
-637
-638</pre>
+622
+623
+624
+625
+626
+627
+628
+629
+630</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 630</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 622</span>
 
 static VALUE
 sys_pow_uint(VALUE mod, VALUE v0, VALUE v1){
@@ -3086,7 +3086,7 @@ sys_pow_uint(VALUE mod, VALUE v0, VALUE v1){
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 19 00:56:49 2017 by
+  Generated on Mon Mar 20 06:56:54 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
