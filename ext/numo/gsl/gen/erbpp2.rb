@@ -53,6 +53,9 @@ class ErbPpNode
 
   def result
   end
+
+  def define
+  end
 end
 
 class ErbPP < ErbPpNode
@@ -82,12 +85,12 @@ class ErbPP < ErbPpNode
   end
 
   def run
-    load_erb unless @erb
+    load_erb #unless @erb
     @erb.run(binding)
   end
 
   def result
-    load_erb unless @erb
+    load_erb #unless @erb
     @erb.result(binding)
   end
 end
@@ -118,11 +121,15 @@ class DefModule < ErbPP
   def add_id(id)
     id_list << id
   end
-  def init_func
-    "init_#{name}"
+  def define
+    f = get(:erb_base)
+    set erb_base: init_erb
+    s = result
+    set erb_base: f
+    s
   end
-  def call_init
-    "#{init_func}();"
+  def init_erb
+    @opts[:init_erb] || "init_module"
   end
   def method_code
     @children.map{|c| c.result}.join("\n")
@@ -150,6 +157,12 @@ end
 class DefClass < DefModule
   def _mod_var
     @opts[:class_var]
+  end
+  def init_erb
+    @opts[:init_erb] || "init_class"
+  end
+  def super_class
+    @opts[:super_class] || "rb_cObject"
   end
 end
 
