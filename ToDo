@@ -11,13 +11,6 @@
 * Fix doc: Invalid Input/Output types for scalar function.
 * Fix doc: Add C function definition in doc.
 
-# GSL::Stat
-* implement -- done
-
-# GSL::Rng
-* pdf, cdf -- done
-* implement generator
-
 # Erbpp
 * c_method definition
 
@@ -25,20 +18,21 @@
 * Mathematical Functions:
 * Special Functions:
 * Physical Constants:
+* Random Number Generation: rng
+* Random Number Distributions: pdf, cdf
+* Statistics:
+* Running Statistics:
+* Histograms:
 
 # To do
 * Polynomials:
 * Fast Fourier Transforms:
-* Random Number Generation:
-* Random Number Distributions:
-* Statistics:
-* Running Statistics:
-* Histograms:
 * Wavelet Transforms:
 * Interpolation:
 * Least-Squares Fitting:
 * Nonlinear Least-Squares Fitting:
 * Basis Splines:
+* Sparse matrix:
 
 # NArray has
 * Complex Numbers:
