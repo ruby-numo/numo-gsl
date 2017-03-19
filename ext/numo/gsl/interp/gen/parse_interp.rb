@@ -98,7 +98,7 @@ class InterpInit < DefMethod
 
   def initialize(parent,tmpl,**h)
     super(parent,tmpl,name:"new",**h)
-    t = get(:interp_type).sub("gsl_interp_","")
+    t = get(:interp_type).sub(/gsl_interp(2d)?_/,"")
     set interp_type_name: t
     set c_interp_new: "#{parent.name}_s_new"
     set type_class: t.split('_').map{|x| x.capitalize}.join("")
