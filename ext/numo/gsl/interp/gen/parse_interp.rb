@@ -16,15 +16,34 @@ class DefInterp < DefClass
    gsl_interp2d_bicubic
   ]
 
+  def FM(*args,**opts)
+    FuncMatch.new(*args,**opts)
+  end
+
+  def lookup(h,tp)
+    case h
+    when FM(name:/_free$/);  false
+    when FM(tp,*[["double",/\[\]$/]]*3,*["size_t"]*2,name:/_init$/)
+                                                          "interp2d_new"
+    when FM(name:"gsl_interp_bsearch");                   "interp_bsearch"
+    when FM(tp, type:"char *");                           "c_str_f_void"
+    when FM(tp, type:"unsigned int");                     "c_uint_f_void"
+    when FM(tp, *[["double",/\[\]$/]]*2, "size_t", name:/_init$/)
+                                                          "interp_new"
+    when FM(tp, "double",      /accel/,   type:"double"); "spline_eval"
+    when FM(tp,*["double"]*2,  /accel/,   type:"double"); "spline_integ"
+    when FM(tp,*["double"]*2,*[/accel/]*2,type:"double"); "spline2d_eval"
+
+    when FM(name:"gsl_interp_accel_alloc");               "c_new_void"
+    when FM(tp);                                          "c_self_f_void"
+    end
+  end
+
   def check_func(h)
-    [
-     Interp,
-    ].each do |c|
-      if t = c.lookup(h, get(:struct)+" *")
-        c.new(self, t, **h)
-        def_type_new(h)
-        return true
-      end
+    if t = lookup(h, get(:struct)+" *")
+      Interp.new(self, t, **h)
+      def_type_new(h)
+      return true
     end
     #$stderr.puts "skip #{h[:func_type]} #{h[:func_name]} #{h[:args].inspect}"
     false
@@ -54,38 +73,13 @@ class DefInterp < DefClass
       end
     end
   end
-
-end
-
-def FM(*args,**opts)
-  FuncMatch.new(*args,**opts)
 end
 
 class Interp < DefMethod
-
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
     m = h[:func_name].sub(/^gsl_[^_]+_(accel_)?/,"")
     super(parent,tmpl,name:m,**h)
-  end
-
-  def self.lookup(h,tp)
-    case h
-    when FM(name:/_free$/);               false
-    when FM(tp,*[["double",/\[\]$/]]*3,*["size_t"]*2,name:/_init$/)
-                                                      "interp2d_new"
-    when FM(name:"gsl_interp_bsearch");               "interp_bsearch"
-    when FM(tp, type:"char *");                       "c_str_f_void"
-    when FM(tp, type:"unsigned int");                 "c_uint_f_void"
-    when FM(tp, *[["double",/\[\]$/]]*2, "size_t", name:/_init$/)
-                                                      "interp_new"
-    when FM(tp, "double",    /accel/,type:"double");       "spline_eval"
-    when FM(tp,*["double"]*2,/accel/,type:"double");       "spline_integ"
-    when FM(tp,*["double"]*2,*[/accel/]*2,type:"double");  "spline2d_eval"
-
-    when FM(name:"gsl_interp_accel_alloc");  "c_new_void"
-    when FM(tp);                             "c_self_f_void"
-    end
   end
 
   def define
@@ -93,9 +87,7 @@ class Interp < DefMethod
   end
 end
 
-
 class InterpInit < DefMethod
-
   def initialize(parent,tmpl,**h)
     super(parent,tmpl,name:"new",**h)
     t = get(:interp_type).sub(/gsl_interp(2d)?_/,"")
@@ -112,5 +104,4 @@ class InterpInit < DefMethod
     "{ VALUE c#{type_class} = rb_define_class_under(#{_mod_var}, \"#{type_class}\", #{_mod_var});
       rb_define_singleton_method(c#{type_class}, \"new\", #{c_func}, #{n_arg}); }"
   end
-
 end
