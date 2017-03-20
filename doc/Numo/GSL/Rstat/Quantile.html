@@ -248,24 +248,28 @@ is O(1).</p>
       <pre class="lines">
 
 
-367
-368
 369
 370
 371
 372
 373
-374</pre>
+374
+375
+376
+377
+378</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 367</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 369</span>
 
 static VALUE
 rstat_quantile_s_new(VALUE self, VALUE p){
 #line 16 &quot;../gen/tmpl/c_new_double.c&quot;
     gsl_rstat_quantile_workspace *w;
     w = gsl_rstat_quantile_alloc(NUM2DBL(p));
-
+    if (!w) {
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    }
     return TypedData_Wrap_Struct(cQuantile, &amp;rstat_quantile_data_type, (void*)w);
 }</pre>
     </td>
@@ -339,10 +343,6 @@ the new data point x.</p>
       <pre class="lines">
 
 
-412
-413
-414
-415
 416
 417
 418
@@ -350,10 +350,14 @@ the new data point x.</p>
 420
 421
 422
-423</pre>
+423
+424
+425
+426
+427</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 412</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 416</span>
 
 static VALUE
 rstat_quantile_add(VALUE self, VALUE v1){
@@ -412,18 +416,18 @@ rstat_quantile_add(VALUE self, VALUE v1){
       <pre class="lines">
 
 
-432
-433
-434
-435
 436
 437
 438
 439
-440</pre>
+440
+441
+442
+443
+444</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 432</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 436</span>
 
 static VALUE
 rstat_quantile_get(VALUE self){
@@ -444,7 +448,7 @@ rstat_quantile_get(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 20 07:09:33 2017 by
+  Generated on Tue Mar 21 01:18:12 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

@@ -315,7 +315,9 @@
 24980
 24981
 24982
-24983</pre>
+24983
+24984
+24985</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 24976</span>
@@ -325,7 +327,9 @@ sf_mathieu_s_new(VALUE self, VALUE v1, VALUE v2){
 #line 17 &quot;../gen/tmpl/c_new_sizet_double.c&quot;
     gsl_sf_mathieu_workspace *w;
     w = gsl_sf_mathieu_alloc(NUM2SIZET(v1), NUM2DBL(v2));
-
+    if (!w) {
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    }
     return TypedData_Wrap_Struct(cMathieu, &amp;sf_mathieu_data_type, (void*)w);
 }</pre>
     </td>
@@ -422,8 +426,6 @@ order_max inclusive, storing the results in the array result_array.</p>
       <pre class="lines">
 
 
-25014
-25015
 25016
 25017
 25018
@@ -445,10 +447,12 @@ order_max inclusive, storing the results in the array result_array.</p>
 25034
 25035
 25036
-25037</pre>
+25037
+25038
+25039</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25014</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25016</span>
 
 static VALUE
 sf_mathieu_a_array(VALUE self, VALUE v0, VALUE v1, VALUE v2){
@@ -562,8 +566,6 @@ order_max inclusive, storing the results in the array result_array.</p>
       <pre class="lines">
 
 
-25068
-25069
 25070
 25071
 25072
@@ -585,10 +587,12 @@ order_max inclusive, storing the results in the array result_array.</p>
 25088
 25089
 25090
-25091</pre>
+25091
+25092
+25093</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25068</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25070</span>
 
 static VALUE
 sf_mathieu_b_array(VALUE self, VALUE v0, VALUE v1, VALUE v2){
@@ -714,8 +718,6 @@ result_array.</p>
       <pre class="lines">
 
 
-25125
-25126
 25127
 25128
 25129
@@ -737,10 +739,12 @@ result_array.</p>
 25145
 25146
 25147
-25148</pre>
+25148
+25149
+25150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25125</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25127</span>
 
 static VALUE
 sf_mathieu_ce_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
@@ -865,8 +869,6 @@ results in the array result_array.</p>
       <pre class="lines">
 
 
-25239
-25240
 25241
 25242
 25243
@@ -890,10 +892,12 @@ results in the array result_array.</p>
 25261
 25262
 25263
-25264</pre>
+25264
+25265
+25266</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25239</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25241</span>
 
 static VALUE
 sf_mathieu_Mc_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3, VALUE v4){
@@ -1020,8 +1024,6 @@ results in the array result_array.</p>
       <pre class="lines">
 
 
-25298
-25299
 25300
 25301
 25302
@@ -1045,10 +1047,12 @@ results in the array result_array.</p>
 25320
 25321
 25322
-25323</pre>
+25323
+25324
+25325</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25298</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25300</span>
 
 static VALUE
 sf_mathieu_Ms_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3, VALUE v4){
@@ -1176,8 +1180,6 @@ result_array.</p>
       <pre class="lines">
 
 
-25182
-25183
 25184
 25185
 25186
@@ -1199,10 +1201,12 @@ result_array.</p>
 25202
 25203
 25204
-25205</pre>
+25205
+25206
+25207</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25182</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25184</span>
 
 static VALUE
 sf_mathieu_se_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
@@ -1238,7 +1242,7 @@ sf_mathieu_se_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 20 07:09:34 2017 by
+  Generated on Tue Mar 21 01:18:13 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

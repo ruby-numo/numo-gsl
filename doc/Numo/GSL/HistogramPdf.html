@@ -322,24 +322,28 @@ code of GSL_ENOMEM.</p>
       <pre class="lines">
 
 
-991
-992
 993
 994
 995
 996
 997
-998</pre>
+998
+999
+1000
+1001
+1002</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 991</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 993</span>
 
 static VALUE
 histogram_pdf_s_new(VALUE self, VALUE v1){
 #line 16 &quot;../gen/tmpl/c_new_sizet.c&quot;
     gsl_histogram_pdf *w;
     w = gsl_histogram_pdf_alloc(NUM2SIZET(v1));
-
+    if (!w) {
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    }
     return TypedData_Wrap_Struct(cHistogramPdf, &amp;histogram_pdf_data_type, (void*)w);
 }</pre>
     </td>
@@ -412,10 +416,6 @@ negative values.</p>
       <pre class="lines">
 
 
-1014
-1015
-1016
-1017
 1018
 1019
 1020
@@ -424,10 +424,14 @@ negative values.</p>
 1023
 1024
 1025
-1026</pre>
+1026
+1027
+1028
+1029
+1030</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1014</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1018</span>
 
 static VALUE
 histogram_pdf_init(VALUE self, VALUE v1){
@@ -487,18 +491,18 @@ histogram_pdf_init(VALUE self, VALUE v1){
       <pre class="lines">
 
 
-901
-902
 903
 904
 905
 906
 907
 908
-909</pre>
+909
+910
+911</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 901</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 903</span>
 
 static VALUE
 histogram_pdf_n(VALUE self){
@@ -558,8 +562,6 @@ histogram_pdf_n(VALUE self){
       <pre class="lines">
 
 
-920
-921
 922
 923
 924
@@ -579,10 +581,12 @@ histogram_pdf_n(VALUE self){
 938
 939
 940
-941</pre>
+941
+942
+943</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 920</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 922</span>
 
 static VALUE
 histogram_pdf_range(VALUE self){
@@ -682,10 +686,6 @@ $(r - sum[i])/(sum[i+1] - sum[i])$
       <pre class="lines">
 
 
-1069
-1070
-1071
-1072
 1073
 1074
 1075
@@ -693,10 +693,14 @@ $(r - sum[i])/(sum[i+1] - sum[i])$
 1077
 1078
 1079
-1080</pre>
+1080
+1081
+1082
+1083
+1084</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1069</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1073</span>
 
 static VALUE
 histogram_pdf_sample(VALUE self, VALUE v1){
@@ -759,8 +763,6 @@ histogram_pdf_sample(VALUE self, VALUE v1){
       <pre class="lines">
 
 
-952
-953
 954
 955
 956
@@ -781,10 +783,12 @@ histogram_pdf_sample(VALUE self, VALUE v1){
 971
 972
 973
-974</pre>
+974
+975
+976</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 952</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 954</span>
 
 static VALUE
 histogram_pdf_sum(VALUE self){
@@ -819,7 +823,7 @@ histogram_pdf_sum(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 20 07:09:33 2017 by
+  Generated on Tue Mar 21 01:18:12 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
