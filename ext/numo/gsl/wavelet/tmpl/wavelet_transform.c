@@ -15,7 +15,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
 
     p = (double*)(lp->args[0].ptr + lp->args[0].iter[0].pos);
     n = lp->args[0].shape[0];
-    <%=func_name%>(w, p, n, n, dir, ws);
+    <%=func_name%>(w, p, 1, n, dir, ws);
 }
 
 /*
@@ -29,10 +29,10 @@ iter_<%=c_func%>(na_loop_t *const lp)
 static VALUE
 <%=c_func%>(VALUE self, VALUE v1, VALUE v2)<% set n_arg:2 %>
 {
-    ndfunc_arg_in_t ain[1] = {{OVERWRITE,2}};
+    ndfunc_arg_in_t ain[1] = {{OVERWRITE,1}};
     ndfunc_t ndf = {iter_<%=c_func%>, NO_LOOP, 1,0, ain,0};
     <%=struct%> *w;
-    gsl_wavelet_workspace *a;
+    gsl_wavelet_workspace *ws;
     size_t    n;
     int       dir;
     void     *opts[3];
@@ -44,8 +44,8 @@ static VALUE
     v1 = wavelet_array_check(v1, 1, &n);
 
     vws = wavelet_workspace_s_new(cWaveletWorkspace, SIZET2NUM(n));
-    TypedData_Get_Struct(vws, gsl_wavelet_workspace, &wavelet_workspace_data_type, a);
-    opts[1] = a;
+    TypedData_Get_Struct(vws, gsl_wavelet_workspace, &wavelet_workspace_data_type, ws);
+    opts[1] = ws;
     dir = NUM2INT(v2);
     opts[2] = &dir;
 
