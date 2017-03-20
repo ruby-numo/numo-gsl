@@ -14,6 +14,8 @@ static VALUE
 {
     <%=struct%> *w;
     w = <%=func_name%>();
-
+    if (!w) {
+        rb_raise(rb_eNoMemError,"fail to allocate struct");
+    }
     return TypedData_Wrap_Struct(<%=class_var%>, &<%=data_type_var%>, (void*)w);
 }

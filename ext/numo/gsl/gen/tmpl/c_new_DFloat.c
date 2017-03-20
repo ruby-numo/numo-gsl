@@ -22,6 +22,8 @@ static VALUE
     d = (double*)na_get_pointer_for_read(v1);
     w = <%=func_name%>(na->size, d);
     RB_GC_GUARD(v1);
-
+    if (!w) {
+        rb_raise(rb_eNoMemError,"fail to allocate struct");
+    }
     return TypedData_Wrap_Struct(<%=class_var%>, &<%=data_type_var%>, (void*)w);
 }
