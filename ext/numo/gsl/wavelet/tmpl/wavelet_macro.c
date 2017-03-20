@@ -1,0 +1,1 @@
+#define gsl_wavelet2d_free gsl_wavelet_free

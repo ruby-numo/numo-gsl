@@ -1,0 +1,17 @@
+COGEN=ruby erbpp_wavelet.rb
+GENSRC=gsl_wavelet.c
+GENDEPS=erbpp_wavelet.rb ../gen/*.rb ../gen/tmpl/*.c tmpl/*.c
+
+src : $(GENSRC)
+
+$(GENSRC) : $(GENDEPS)
+	$(COGEN) > $@
+
+doc : $(GENSRC)
+	yard doc $(GENSRC)
+
+clean: cleansrc cleandoc
+cleansrc:
+	-$(Q)$(RM) $(GENSRC)
+cleandoc:
+	-$(Q)$(RM_RF) doc .yardoc

@@ -22,6 +22,9 @@
   * [Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline.html)
     * [2D Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline2D.html)
 
+  * [Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet.html)
+    * [2D Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet2D.html)
+
 More modules will be implemented.
 
 ## Installation

@@ -141,6 +141,10 @@ if __FILE__ == $0
     "../ext/numo/gsl/rstat/gen"],
    ["doc/histogram.texi",
     "../ext/numo/gsl/histogram/gen"],
+   ["doc/interp.texi",
+    "../ext/numo/gsl/interp/gen"],
+   ["doc/dwt.texi",
+    "../ext/numo/gsl/wavelet"],
   ]
   src_dir = "../../gsl-2.1"
 
@@ -174,7 +178,7 @@ if __FILE__ == $0
       end
       funcs.concat g.deftypefun
     end
-    FileUtils.mkdir_p(File.dirname(out_path))
+    FileUtils.mkdir_p(out_path)
     if !const.empty?
       clist = const.keys.sort.map{|k| [k,const[k]]}
       PP.pp(clist,open(File.join(out_path,"const_def.rb"),"w"))
