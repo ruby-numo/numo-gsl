@@ -23,12 +23,11 @@
 * Statistics:
 * Running Statistics:
 * Histograms:
+* Interpolation: - only gsl_spline_* (Higher-level Interface), omit gsl_interp_*
+* Wavelet Transforms: - omit matrix interface
 
 # To do
 * Polynomials:
-* Fast Fourier Transforms:
-* Wavelet Transforms:
-* Interpolation:
 * Least-Squares Fitting:
 * Nonlinear Least-Squares Fitting:
 * Basis Splines:
@@ -60,6 +59,9 @@
 # Linalg has
 * Linear Algebra:
 * Eigensystems:
+
+# FFTW has
+* Fast Fourier Transforms:
 
 # ?
 * BLAS Support:
