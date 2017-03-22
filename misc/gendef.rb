@@ -145,6 +145,23 @@ if __FILE__ == $0
     "../ext/numo/gsl/interp/gen"],
    ["doc/dwt.texi",
     "../ext/numo/gsl/wavelet"],
+   ["doc/fitting.texi",
+    "../ext/numo/gsl/wavelet"],
+   ["doc/fitting.texi",
+    "../ext/numo/gsl/fit",
+    nil,
+    /^gsl_fit_(.*)$/,
+   ],
+   ["doc/*fit*.texi",
+    "../ext/numo/gsl/multifit",
+    nil,
+    /^gsl_multifit_(.*)$/,
+   ],
+   ["doc/fitting.texi",
+    "../ext/numo/gsl/multilarge",
+    nil,
+    /^gsl_multilarge_(.*)$/,
+   ],
   ]
   src_dir = "../../gsl-2.1"
 
@@ -176,7 +193,9 @@ if __FILE__ == $0
           end
         end
       end
-      funcs.concat g.deftypefun
+      f = g.deftypefun
+      f = f.select{|h| name_re =~ h[:func_name]} if name_re
+      funcs.concat(f)
     end
     FileUtils.mkdir_p(out_path)
     if !const.empty?

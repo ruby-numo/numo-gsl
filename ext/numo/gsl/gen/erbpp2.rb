@@ -200,3 +200,14 @@ class DefConst < ErbPpNode
     rb_define_const(#{_mod_var},\"#{name}\",#{value});"
   end
 end
+
+class DefStruct < ErbPpNode
+  def method_code
+    "static VALUE #{class_var};"
+  end
+  def define
+    items = members.map{|s| "\"#{s}\""}.join(",")
+    "/*#{description}*/
+    #{class_var} = rb_struct_define(\"#{class_name}\",#{items},NULL);"
+  end
+end
