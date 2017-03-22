@@ -270,18 +270,18 @@ w.</p>
       <pre class="lines">
 
 
-318
-319
-320
-321
-322
-323
-324
-325
-326</pre>
+332
+333
+334
+335
+336
+337
+338
+339
+340</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 318</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 332</span>
 
 static VALUE
 wavelet_name(VALUE self){
@@ -400,21 +400,6 @@ power of 2 or if insufficient workspace is provided.</p>
       <pre class="lines">
 
 
-391
-392
-393
-394
-395
-396
-397
-398
-399
-400
-401
-402
-403
-404
-405
 406
 407
 408
@@ -426,18 +411,33 @@ power of 2 or if insufficient workspace is provided.</p>
 414
 415
 416
-417</pre>
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 391</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 406</span>
 
 static VALUE
 wavelet_transform(VALUE self, VALUE v1, VALUE v2){
 #line 32 &quot;tmpl/wavelet_transform.c&quot;
-    ndfunc_arg_in_t ain[1] = {{OVERWRITE,2}};
+    ndfunc_arg_in_t ain[1] = {{OVERWRITE,1}};
     ndfunc_t ndf = {iter_wavelet_transform, NO_LOOP, 1,0, ain,0};
     gsl_wavelet *w;
-    gsl_wavelet_workspace *a;
+    gsl_wavelet_workspace *ws;
     size_t    n;
     int       dir;
     void     *opts[3];
@@ -449,8 +449,8 @@ wavelet_transform(VALUE self, VALUE v1, VALUE v2){
     v1 = wavelet_array_check(v1, 1, &amp;n);
 
     vws = wavelet_workspace_s_new(cWaveletWorkspace, SIZET2NUM(n));
-    TypedData_Get_Struct(vws, gsl_wavelet_workspace, &amp;wavelet_workspace_data_type, a);
-    opts[1] = a;
+    TypedData_Get_Struct(vws, gsl_wavelet_workspace, &amp;wavelet_workspace_data_type, ws);
+    opts[1] = ws;
     dir = NUM2INT(v2);
     opts[2] = &amp;dir;
 
@@ -555,23 +555,23 @@ power of 2 or if insufficient workspace is provided.</p>
       <pre class="lines">
 
 
-461
-462
-463
-464
-465
-466
-467
-468
-469
-470
-471
-472
-473
-474</pre>
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 461</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 477</span>
 
 static VALUE
 wavelet_transform_forward(VALUE self, VALUE v1){
@@ -684,23 +684,23 @@ power of 2 or if insufficient workspace is provided.</p>
       <pre class="lines">
 
 
-518
-519
-520
-521
-522
-523
-524
-525
-526
-527
-528
-529
-530
-531</pre>
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 518</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 535</span>
 
 static VALUE
 wavelet_transform_inverse(VALUE self, VALUE v1){
@@ -726,7 +726,7 @@ wavelet_transform_inverse(VALUE self, VALUE v1){
 </div>
 
       <div id="footer">
-  Generated on Tue Mar 21 01:18:13 2017 by
+  Generated on Thu Mar 23 07:16:14 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
