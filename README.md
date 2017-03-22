@@ -25,6 +25,8 @@
   * [Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet.html)
     * [2D Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet2D.html)
 
+  * [Linear regression](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Fit.html)
+
 More modules will be implemented.
 
 ## Installation
