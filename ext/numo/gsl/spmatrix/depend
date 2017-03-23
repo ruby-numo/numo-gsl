@@ -1,0 +1,17 @@
+COGEN=ruby erbpp_spmatrix.rb
+GENSRC=gsl_spmatrix.c
+GENDEPS=erbpp_spmatrix.rb ../gen/*.rb ../gen/tmpl/*.c tmpl/*.c
+
+src : $(GENSRC)
+
+$(GENSRC) : $(GENDEPS)
+	$(COGEN) > $@
+
+doc : $(GENSRC)
+	yard doc $(GENSRC)
+
+clean: cleansrc cleandoc
+cleansrc:
+	-$(Q)$(RM) $(GENSRC)
+cleandoc:
+	-$(Q)$(RM_RF) doc .yardoc

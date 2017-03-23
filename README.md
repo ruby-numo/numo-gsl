@@ -27,6 +27,8 @@
 
   * [Linear regression](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Fit.html)
 
+  * [Sparse Matrices](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spmatrix.html)
+
 More modules will be implemented.
 
 ## Installation

@@ -35,8 +35,12 @@ class ErbPpNode
   end
 
   def description
-    @opts[:description] || @opts[:desc]
+    if s = @opts[:description] || @opts[:desc]
+      s.gsub(/\@\{/,"[").gsub(/\@\}/,"]")
+    end
   end
+
+  alias desc description
 
   alias method_missing_alias method_missing
 
