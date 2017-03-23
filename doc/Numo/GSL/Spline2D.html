@@ -425,8 +425,8 @@ GSL_EDOM is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 868</span>
 
 static VALUE
-spline2d_eval(VALUE self, VALUE v1, VALUE v2){
-#line 41 &quot;gen/tmpl/spline2d_eval.c&quot;
+spline2d_eval(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline2d_eval, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -558,8 +558,8 @@ GSL_EDOM is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 938</span>
 
 static VALUE
-spline2d_eval_deriv_x(VALUE self, VALUE v1, VALUE v2){
-#line 41 &quot;gen/tmpl/spline2d_eval.c&quot;
+spline2d_eval_deriv_x(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline2d_eval_deriv_x, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -691,8 +691,8 @@ GSL_EDOM is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 1078</span>
 
 static VALUE
-spline2d_eval_deriv_xx(VALUE self, VALUE v1, VALUE v2){
-#line 41 &quot;gen/tmpl/spline2d_eval.c&quot;
+spline2d_eval_deriv_xx(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline2d_eval_deriv_xx, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -824,8 +824,8 @@ GSL_EDOM is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 1218</span>
 
 static VALUE
-spline2d_eval_deriv_xy(VALUE self, VALUE v1, VALUE v2){
-#line 41 &quot;gen/tmpl/spline2d_eval.c&quot;
+spline2d_eval_deriv_xy(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline2d_eval_deriv_xy, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -957,8 +957,8 @@ GSL_EDOM is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 1008</span>
 
 static VALUE
-spline2d_eval_deriv_y(VALUE self, VALUE v1, VALUE v2){
-#line 41 &quot;gen/tmpl/spline2d_eval.c&quot;
+spline2d_eval_deriv_y(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline2d_eval_deriv_y, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -1090,8 +1090,8 @@ GSL_EDOM is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 1148</span>
 
 static VALUE
-spline2d_eval_deriv_yy(VALUE self, VALUE v1, VALUE v2){
-#line 41 &quot;gen/tmpl/spline2d_eval.c&quot;
+spline2d_eval_deriv_yy(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline2d_eval_deriv_yy, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -1174,8 +1174,8 @@ example, bicubic interpolation requires a minimum of 4 points.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 814</span>
 
 static VALUE
-spline2d_min_size(VALUE self){
-#line 10 &quot;../gen/tmpl/c_uint_f_void.c&quot;
+spline2d_min_size(VALUE self)
+{
     gsl_spline2d *w;
 
     TypedData_Get_Struct(self, gsl_spline2d, &amp;spline2d_data_type, w);
@@ -1249,8 +1249,8 @@ For example,</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 794</span>
 
 static VALUE
-spline2d_name(VALUE self){
-#line 10 &quot;../gen/tmpl/c_str_f_void.c&quot;
+spline2d_name(VALUE self)
+{
     gsl_spline2d *w;
 
     TypedData_Get_Struct(self, gsl_spline2d, &amp;spline2d_data_type, w);
@@ -1267,7 +1267,7 @@ spline2d_name(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:13 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

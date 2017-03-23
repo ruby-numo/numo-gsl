@@ -1804,8 +1804,8 @@ alpha[K], using the formula given above.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 1526</span>
 
 static VALUE
-ran_s_dirichlet_pdf(int argc, VALUE *argv, VALUE mod){
-#line 25 &quot;gen/tmpl/dirichlet.c&quot;
+ran_s_dirichlet_pdf(int argc, VALUE *argv, VALUE mod)
+{
     VALUE reduce;
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{sym_reduce,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
@@ -4024,8 +4024,8 @@ with parameters p[K], using the formula given above.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 1747</span>
 
 static VALUE
-ran_s_multinomial_pdf(int argc, VALUE *argv, VALUE mod){
-#line 25 &quot;gen/tmpl/multinomial.c&quot;
+ran_s_multinomial_pdf(int argc, VALUE *argv, VALUE mod)
+{
     VALUE reduce;
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cUI,0},{sym_reduce,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
@@ -5337,7 +5337,7 @@ ran_s_weibull_pdf(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:09 2017 by
+  Generated on Thu Mar 23 18:35:05 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

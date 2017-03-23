@@ -337,8 +337,8 @@ code of GSL_ENOMEM.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1030</span>
 
 static VALUE
-histogram_pdf_s_new(VALUE self, VALUE v1){
-#line 16 &quot;../gen/tmpl/c_new_sizet.c&quot;
+histogram_pdf_s_new(VALUE self, VALUE v1)
+{
     gsl_histogram_pdf *w;
     w = gsl_histogram_pdf_alloc(NUM2SIZET(v1));
     if (!w) {
@@ -434,8 +434,8 @@ negative values.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1056</span>
 
 static VALUE
-histogram_pdf_init(VALUE self, VALUE v1){
-#line 15 &quot;gen/tmpl/c_bool_f_pdf_init.c&quot;
+histogram_pdf_init(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram_pdf *w;
     gsl_histogram *w1;
@@ -505,8 +505,8 @@ histogram_pdf_init(VALUE self, VALUE v1){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 937</span>
 
 static VALUE
-histogram_pdf_n(VALUE self){
-#line 10 &quot;gen/tmpl/c_sizet_f_field.c&quot;
+histogram_pdf_n(VALUE self)
+{
     gsl_histogram_pdf *w;
 
     TypedData_Get_Struct(self, gsl_histogram_pdf, &amp;histogram_pdf_data_type, w);
@@ -589,8 +589,8 @@ histogram_pdf_n(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 957</span>
 
 static VALUE
-histogram_pdf_range(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram_pdf_range(VALUE self)
+{
     gsl_histogram_pdf *w;
     double *d;
     VALUE v;
@@ -703,8 +703,8 @@ $(r - sum[i])/(sum[i+1] - sum[i])$
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1112</span>
 
 static VALUE
-histogram_pdf_sample(VALUE self, VALUE v1){
-#line 32 &quot;../gen/tmpl/c_DFloat_f_DFloat.c&quot;
+histogram_pdf_sample(VALUE self, VALUE v1)
+{
     gsl_histogram_pdf *w;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
@@ -791,8 +791,8 @@ histogram_pdf_sample(VALUE self, VALUE v1){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 990</span>
 
 static VALUE
-histogram_pdf_sum(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram_pdf_sum(VALUE self)
+{
     gsl_histogram_pdf *w;
     double *d;
     VALUE v;
@@ -823,7 +823,7 @@ histogram_pdf_sum(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:12 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

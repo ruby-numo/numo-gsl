@@ -243,8 +243,8 @@ the behavior for other arrangements is not defined.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 746</span>
 
 static VALUE
-spline2d_bilinear_s_new(VALUE self, VALUE v1, VALUE v2, VALUE v3){
-#line 14 &quot;gen/tmpl/interp2d_type_new.c&quot;
+spline2d_bilinear_s_new(VALUE self, VALUE v1, VALUE v2, VALUE v3)
+{
     return spline2d_s_new(self, gsl_interp2d_bilinear, v1, v2, v3);
 }</pre>
     </td>
@@ -257,7 +257,7 @@ spline2d_bilinear_s_new(VALUE self, VALUE v1, VALUE v2, VALUE v3){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:13 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

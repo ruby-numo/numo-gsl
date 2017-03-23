@@ -2194,8 +2194,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2502</span>
 
 static VALUE
-cdf_beta_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_beta_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_beta_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2320,8 +2320,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2606</span>
 
 static VALUE
-cdf_beta_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_beta_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_beta_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2446,8 +2446,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2554</span>
 
 static VALUE
-cdf_beta_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_beta_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_beta_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2572,8 +2572,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2658</span>
 
 static VALUE
-cdf_beta_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_beta_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_beta_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2699,8 +2699,8 @@ distribution with parameters p and n.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3828</span>
 
 static VALUE
-cdf_binomial_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 40 &quot;../gen/tmpl/m_DFloat_f_UInt_double_uint.c&quot;
+cdf_binomial_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_binomial_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2827,8 +2827,8 @@ distribution with parameters p and n.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3883</span>
 
 static VALUE
-cdf_binomial_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 40 &quot;../gen/tmpl/m_DFloat_f_UInt_double_uint.c&quot;
+cdf_binomial_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_binomial_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2938,8 +2938,8 @@ distribution with scale parameter a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 914</span>
 
 static VALUE
-cdf_cauchy_P(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_cauchy_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_cauchy_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -3047,8 +3047,8 @@ distribution with scale parameter a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1008</span>
 
 static VALUE
-cdf_cauchy_Pinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_cauchy_Pinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_cauchy_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -3156,8 +3156,8 @@ distribution with scale parameter a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 961</span>
 
 static VALUE
-cdf_cauchy_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_cauchy_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_cauchy_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -3265,8 +3265,8 @@ distribution with scale parameter a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1055</span>
 
 static VALUE
-cdf_cauchy_Qinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_cauchy_Qinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_cauchy_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -3374,8 +3374,8 @@ distribution with nu degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1914</span>
 
 static VALUE
-cdf_chisq_P(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_chisq_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_chisq_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -3483,8 +3483,8 @@ distribution with nu degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2008</span>
 
 static VALUE
-cdf_chisq_Pinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_chisq_Pinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_chisq_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -3592,8 +3592,8 @@ distribution with nu degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1961</span>
 
 static VALUE
-cdf_chisq_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_chisq_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_chisq_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -3701,8 +3701,8 @@ distribution with nu degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2055</span>
 
 static VALUE
-cdf_chisq_Qinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_chisq_Qinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_chisq_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -3810,8 +3810,8 @@ distribution with mean mu.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 434</span>
 
 static VALUE
-cdf_exponential_P(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_exponential_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_exponential_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -3919,8 +3919,8 @@ distribution with mean mu.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 528</span>
 
 static VALUE
-cdf_exponential_Pinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_exponential_Pinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_exponential_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -4028,8 +4028,8 @@ distribution with mean mu.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 481</span>
 
 static VALUE
-cdf_exponential_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_exponential_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_exponential_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -4137,8 +4137,8 @@ distribution with mean mu.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 575</span>
 
 static VALUE
-cdf_exponential_Qinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_exponential_Qinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_exponential_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -4262,8 +4262,8 @@ parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 814</span>
 
 static VALUE
-cdf_exppow_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_exppow_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_exppow_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -4388,8 +4388,8 @@ parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 866</span>
 
 static VALUE
-cdf_exppow_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_exppow_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_exppow_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -4514,8 +4514,8 @@ with nu1 and nu2 degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2106</span>
 
 static VALUE
-cdf_fdist_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_fdist_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_fdist_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -4640,8 +4640,8 @@ with nu1 and nu2 degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2210</span>
 
 static VALUE
-cdf_fdist_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_fdist_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_fdist_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -4766,8 +4766,8 @@ with nu1 and nu2 degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2158</span>
 
 static VALUE
-cdf_fdist_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_fdist_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_fdist_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -4892,8 +4892,8 @@ with nu1 and nu2 degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2262</span>
 
 static VALUE
-cdf_fdist_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_fdist_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_fdist_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -5018,8 +5018,8 @@ from a to b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1502</span>
 
 static VALUE
-cdf_flat_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_flat_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_flat_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -5144,8 +5144,8 @@ from a to b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1606</span>
 
 static VALUE
-cdf_flat_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_flat_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_flat_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -5270,8 +5270,8 @@ from a to b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1554</span>
 
 static VALUE
-cdf_flat_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_flat_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_flat_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -5396,8 +5396,8 @@ from a to b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1658</span>
 
 static VALUE
-cdf_flat_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_flat_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_flat_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -5522,8 +5522,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1294</span>
 
 static VALUE
-cdf_gamma_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gamma_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gamma_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -5648,8 +5648,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1398</span>
 
 static VALUE
-cdf_gamma_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gamma_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gamma_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -5774,8 +5774,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1346</span>
 
 static VALUE
-cdf_gamma_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gamma_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gamma_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -5900,8 +5900,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1450</span>
 
 static VALUE
-cdf_gamma_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gamma_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gamma_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -6010,8 +6010,8 @@ distribution with standard deviation sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 86</span>
 
 static VALUE
-cdf_gaussian_P(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_gaussian_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gaussian_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -6119,8 +6119,8 @@ distribution with standard deviation sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 180</span>
 
 static VALUE
-cdf_gaussian_Pinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_gaussian_Pinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gaussian_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -6228,8 +6228,8 @@ distribution with standard deviation sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 133</span>
 
 static VALUE
-cdf_gaussian_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_gaussian_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gaussian_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -6337,8 +6337,8 @@ distribution with standard deviation sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 227</span>
 
 static VALUE
-cdf_gaussian_Qinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_gaussian_Qinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gaussian_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -6446,8 +6446,8 @@ p.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 4149</span>
 
 static VALUE
-cdf_geometric_P(VALUE mod, VALUE v0, VALUE v1){
-#line 35 &quot;../gen/tmpl/m_DFloat_f_UInt_double.c&quot;
+cdf_geometric_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_geometric_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -6555,8 +6555,8 @@ p.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 4197</span>
 
 static VALUE
-cdf_geometric_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 35 &quot;../gen/tmpl/m_DFloat_f_UInt_double.c&quot;
+cdf_geometric_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_geometric_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -6680,8 +6680,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3314</span>
 
 static VALUE
-cdf_gumbel1_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gumbel1_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gumbel1_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -6806,8 +6806,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3418</span>
 
 static VALUE
-cdf_gumbel1_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gumbel1_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gumbel1_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -6932,8 +6932,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3366</span>
 
 static VALUE
-cdf_gumbel1_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gumbel1_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gumbel1_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -7058,8 +7058,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3470</span>
 
 static VALUE
-cdf_gumbel1_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gumbel1_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gumbel1_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -7184,8 +7184,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3522</span>
 
 static VALUE
-cdf_gumbel2_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gumbel2_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gumbel2_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -7310,8 +7310,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3626</span>
 
 static VALUE
-cdf_gumbel2_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gumbel2_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gumbel2_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -7436,8 +7436,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3574</span>
 
 static VALUE
-cdf_gumbel2_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gumbel2_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gumbel2_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -7562,8 +7562,8 @@ distribution with parameters a and b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3678</span>
 
 static VALUE
-cdf_gumbel2_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_gumbel2_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_gumbel2_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -7704,8 +7704,8 @@ parameters n1, n2 and t.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 4251</span>
 
 static VALUE
-cdf_hypergeometric_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
-#line 41 &quot;../gen/tmpl/m_DFloat_f_UInt_uint_x3.c&quot;
+cdf_hypergeometric_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2, VALUE v3)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_hypergeometric_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -7847,8 +7847,8 @@ parameters n1, n2 and t.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 4307</span>
 
 static VALUE
-cdf_hypergeometric_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
-#line 41 &quot;../gen/tmpl/m_DFloat_f_UInt_uint_x3.c&quot;
+cdf_hypergeometric_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2, VALUE v3)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_hypergeometric_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -7958,8 +7958,8 @@ distribution with width a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 622</span>
 
 static VALUE
-cdf_laplace_P(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_laplace_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_laplace_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -8067,8 +8067,8 @@ distribution with width a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 716</span>
 
 static VALUE
-cdf_laplace_Pinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_laplace_Pinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_laplace_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -8176,8 +8176,8 @@ distribution with width a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 669</span>
 
 static VALUE
-cdf_laplace_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_laplace_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_laplace_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -8285,8 +8285,8 @@ distribution with width a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 763</span>
 
 static VALUE
-cdf_laplace_Qinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_laplace_Qinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_laplace_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -8394,8 +8394,8 @@ distribution with scale parameter a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2706</span>
 
 static VALUE
-cdf_logistic_P(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_logistic_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_logistic_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -8503,8 +8503,8 @@ distribution with scale parameter a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2800</span>
 
 static VALUE
-cdf_logistic_Pinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_logistic_Pinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_logistic_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -8612,8 +8612,8 @@ distribution with scale parameter a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2753</span>
 
 static VALUE
-cdf_logistic_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_logistic_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_logistic_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -8721,8 +8721,8 @@ distribution with scale parameter a.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2847</span>
 
 static VALUE
-cdf_logistic_Qinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_logistic_Qinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_logistic_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -8846,8 +8846,8 @@ distribution with parameters zeta and sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1710</span>
 
 static VALUE
-cdf_lognormal_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_lognormal_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_lognormal_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -8972,8 +8972,8 @@ distribution with parameters zeta and sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1814</span>
 
 static VALUE
-cdf_lognormal_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_lognormal_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_lognormal_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -9098,8 +9098,8 @@ distribution with parameters zeta and sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1762</span>
 
 static VALUE
-cdf_lognormal_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_lognormal_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_lognormal_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -9224,8 +9224,8 @@ distribution with parameters zeta and sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1866</span>
 
 static VALUE
-cdf_lognormal_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_lognormal_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_lognormal_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -9350,8 +9350,8 @@ parameters p and n.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3937</span>
 
 static VALUE
-cdf_negative_binomial_P(VALUE mod , VALUE v0, VALUE v1, VALUE v2){
-#line 39 &quot;../gen/tmpl/m_DFloat_f_UInt_double_x2.c&quot;
+cdf_negative_binomial_P(VALUE mod , VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_negative_binomial_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -9476,8 +9476,8 @@ parameters p and n.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3990</span>
 
 static VALUE
-cdf_negative_binomial_Q(VALUE mod , VALUE v0, VALUE v1, VALUE v2){
-#line 39 &quot;../gen/tmpl/m_DFloat_f_UInt_double_x2.c&quot;
+cdf_negative_binomial_Q(VALUE mod , VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_negative_binomial_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -9602,8 +9602,8 @@ distribution with exponent a and scale b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2898</span>
 
 static VALUE
-cdf_pareto_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_pareto_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_pareto_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -9728,8 +9728,8 @@ distribution with exponent a and scale b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3002</span>
 
 static VALUE
-cdf_pareto_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_pareto_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_pareto_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -9854,8 +9854,8 @@ distribution with exponent a and scale b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2950</span>
 
 static VALUE
-cdf_pareto_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_pareto_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_pareto_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -9980,8 +9980,8 @@ distribution with exponent a and scale b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3054</span>
 
 static VALUE
-cdf_pareto_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_pareto_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_pareto_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -10107,8 +10107,8 @@ parameters p and n.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 4044</span>
 
 static VALUE
-cdf_pascal_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 40 &quot;../gen/tmpl/m_DFloat_f_UInt_double_uint.c&quot;
+cdf_pascal_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_pascal_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -10235,8 +10235,8 @@ parameters p and n.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 4099</span>
 
 static VALUE
-cdf_pascal_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 40 &quot;../gen/tmpl/m_DFloat_f_UInt_double_uint.c&quot;
+cdf_pascal_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_pascal_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -10346,8 +10346,8 @@ mu.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3727</span>
 
 static VALUE
-cdf_poisson_P(VALUE mod, VALUE v0, VALUE v1){
-#line 35 &quot;../gen/tmpl/m_DFloat_f_UInt_double.c&quot;
+cdf_poisson_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_poisson_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -10455,8 +10455,8 @@ mu.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3775</span>
 
 static VALUE
-cdf_poisson_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 35 &quot;../gen/tmpl/m_DFloat_f_UInt_double.c&quot;
+cdf_poisson_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cUI,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_poisson_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -10564,8 +10564,8 @@ distribution with scale parameter sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1102</span>
 
 static VALUE
-cdf_rayleigh_P(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_rayleigh_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_rayleigh_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -10673,8 +10673,8 @@ distribution with scale parameter sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1196</span>
 
 static VALUE
-cdf_rayleigh_Pinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_rayleigh_Pinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_rayleigh_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -10782,8 +10782,8 @@ distribution with scale parameter sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1149</span>
 
 static VALUE
-cdf_rayleigh_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_rayleigh_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_rayleigh_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -10891,8 +10891,8 @@ distribution with scale parameter sigma.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 1243</span>
 
 static VALUE
-cdf_rayleigh_Qinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_rayleigh_Qinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_rayleigh_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11000,8 +11000,8 @@ with nu degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2310</span>
 
 static VALUE
-cdf_tdist_P(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_tdist_P(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_tdist_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11109,8 +11109,8 @@ with nu degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2404</span>
 
 static VALUE
-cdf_tdist_Pinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_tdist_Pinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_tdist_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11218,8 +11218,8 @@ with nu degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2357</span>
 
 static VALUE
-cdf_tdist_Q(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_tdist_Q(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_tdist_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11327,8 +11327,8 @@ with nu degrees of freedom.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 2451</span>
 
 static VALUE
-cdf_tdist_Qinv(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_double.c&quot;
+cdf_tdist_Qinv(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_tdist_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11418,8 +11418,8 @@ distribution.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 270</span>
 
 static VALUE
-cdf_ugaussian_P(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+cdf_ugaussian_P(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_ugaussian_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11506,8 +11506,8 @@ distribution.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 350</span>
 
 static VALUE
-cdf_ugaussian_Pinv(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+cdf_ugaussian_Pinv(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_ugaussian_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11594,8 +11594,8 @@ distribution.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 310</span>
 
 static VALUE
-cdf_ugaussian_Q(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+cdf_ugaussian_Q(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_ugaussian_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11682,8 +11682,8 @@ distribution.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 390</span>
 
 static VALUE
-cdf_ugaussian_Qinv(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+cdf_ugaussian_Qinv(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_ugaussian_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11804,8 +11804,8 @@ distribution with scale a and exponent b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3106</span>
 
 static VALUE
-cdf_weibull_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_weibull_P(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_weibull_P, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -11930,8 +11930,8 @@ distribution with scale a and exponent b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3210</span>
 
 static VALUE
-cdf_weibull_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_weibull_Pinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_weibull_Pinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -12056,8 +12056,8 @@ distribution with scale a and exponent b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3158</span>
 
 static VALUE
-cdf_weibull_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_weibull_Q(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_weibull_Q, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -12182,8 +12182,8 @@ distribution with scale a and exponent b.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/cdf/gsl_cdf.c', line 3262</span>
 
 static VALUE
-cdf_weibull_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/m_DFloat_f_DFloat_double_x2.c&quot;
+cdf_weibull_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_cdf_weibull_Qinv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -12204,7 +12204,7 @@ cdf_weibull_Qinv(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:03 2017 by
+  Generated on Thu Mar 23 18:34:59 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

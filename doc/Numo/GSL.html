@@ -79,7 +79,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>ext/numo/gsl/stats/gsl_stats.c<span class="defines">,<br />
-  ext/numo/gsl/rng/gsl_rng.c,<br /> ext/numo/gsl/rstat/gsl_rstat.c,<br /> ext/numo/gsl/histogram/gsl_histogram.c,<br /> ext/numo/gsl/cdf/gsl_cdf.c,<br /> ext/numo/gsl/const/gsl_const.c,<br /> ext/numo/gsl/sys/gsl_sys.c,<br /> ext/numo/gsl/sf/gsl_sf.c,<br /> ext/numo/gsl/ran/gsl_ran.c,<br /> ext/numo/gsl/interp/gsl_interp.c,<br /> ext/numo/gsl/wavelet/gsl_wavelet.c,<br /> ext/numo/gsl/fit/gsl_fit.c</span>
+  ext/numo/gsl/rng/gsl_rng.c,<br /> ext/numo/gsl/rstat/gsl_rstat.c,<br /> ext/numo/gsl/histogram/gsl_histogram.c,<br /> ext/numo/gsl/cdf/gsl_cdf.c,<br /> ext/numo/gsl/const/gsl_const.c,<br /> ext/numo/gsl/sys/gsl_sys.c,<br /> ext/numo/gsl/sf/gsl_sf.c,<br /> ext/numo/gsl/ran/gsl_ran.c,<br /> ext/numo/gsl/interp/gsl_interp.c,<br /> ext/numo/gsl/wavelet/gsl_wavelet.c,<br /> ext/numo/gsl/fit/gsl_fit.c,<br /> ext/numo/gsl/spmatrix/gsl_spmatrix.c</span>
 </dd>
   </dl>
   
@@ -93,7 +93,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="GSL/Histogram.html" title="Numo::GSL::Histogram (class)">Histogram</a></span>, <span class='object_link'><a href="GSL/Histogram2D.html" title="Numo::GSL::Histogram2D (class)">Histogram2D</a></span>, <span class='object_link'><a href="GSL/Histogram2DPdf.html" title="Numo::GSL::Histogram2DPdf (class)">Histogram2DPdf</a></span>, <span class='object_link'><a href="GSL/HistogramPdf.html" title="Numo::GSL::HistogramPdf (class)">HistogramPdf</a></span>, <span class='object_link'><a href="GSL/InterpAccel.html" title="Numo::GSL::InterpAccel (class)">InterpAccel</a></span>, <span class='object_link'><a href="GSL/Rng.html" title="Numo::GSL::Rng (class)">Rng</a></span>, <span class='object_link'><a href="GSL/Rstat.html" title="Numo::GSL::Rstat (class)">Rstat</a></span>, <span class='object_link'><a href="GSL/Spline.html" title="Numo::GSL::Spline (class)">Spline</a></span>, <span class='object_link'><a href="GSL/Spline2D.html" title="Numo::GSL::Spline2D (class)">Spline2D</a></span>, <span class='object_link'><a href="GSL/Wavelet.html" title="Numo::GSL::Wavelet (class)">Wavelet</a></span>, <span class='object_link'><a href="GSL/Wavelet2D.html" title="Numo::GSL::Wavelet2D (class)">Wavelet2D</a></span>, <span class='object_link'><a href="GSL/WaveletWorkspace.html" title="Numo::GSL::WaveletWorkspace (class)">WaveletWorkspace</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="GSL/Histogram.html" title="Numo::GSL::Histogram (class)">Histogram</a></span>, <span class='object_link'><a href="GSL/Histogram2D.html" title="Numo::GSL::Histogram2D (class)">Histogram2D</a></span>, <span class='object_link'><a href="GSL/Histogram2DPdf.html" title="Numo::GSL::Histogram2DPdf (class)">Histogram2DPdf</a></span>, <span class='object_link'><a href="GSL/HistogramPdf.html" title="Numo::GSL::HistogramPdf (class)">HistogramPdf</a></span>, <span class='object_link'><a href="GSL/InterpAccel.html" title="Numo::GSL::InterpAccel (class)">InterpAccel</a></span>, <span class='object_link'><a href="GSL/Rng.html" title="Numo::GSL::Rng (class)">Rng</a></span>, <span class='object_link'><a href="GSL/Rstat.html" title="Numo::GSL::Rstat (class)">Rstat</a></span>, <span class='object_link'><a href="GSL/Spline.html" title="Numo::GSL::Spline (class)">Spline</a></span>, <span class='object_link'><a href="GSL/Spline2D.html" title="Numo::GSL::Spline2D (class)">Spline2D</a></span>, <span class='object_link'><a href="GSL/Spmatrix.html" title="Numo::GSL::Spmatrix (class)">Spmatrix</a></span>, <span class='object_link'><a href="GSL/Wavelet.html" title="Numo::GSL::Wavelet (class)">Wavelet</a></span>, <span class='object_link'><a href="GSL/Wavelet2D.html" title="Numo::GSL::Wavelet2D (class)">Wavelet2D</a></span>, <span class='object_link'><a href="GSL/WaveletWorkspace.html" title="Numo::GSL::WaveletWorkspace (class)">WaveletWorkspace</a></span>
     
   
 </p>
@@ -299,7 +299,7 @@
       <dt id="M_SQRT1_2-constant" class="">M_SQRT1_2 =
         <div class="docstring">
   <div class="discussion">
-    <p>The square root of one-half, $\sqrt1/2$ \sqrt@1/2@</p>
+    <p>The square root of one-half, $\sqrt1/2$ \sqrt[1/2]</p>
 
 
   </div>
@@ -570,7 +570,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>This function computes the value of $\sqrt+ y^2$ \sqrt@+ y^2@ in a way that avoids overflow.</p>
+    <span class="summary_desc"><div class='inline'><p>This function computes the value of $\sqrt+ y^2$ \sqrt[x^2 + y^2] in a way that avoids overflow.</p>
 </div></span>
   
 </li>
@@ -593,7 +593,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>This function computes the value of $\sqrt+ y^2 + z^2$ \sqrt@+ y^2 + z^2@ in a way that avoids overflow.</p>
+    <span class="summary_desc"><div class='inline'><p>This function computes the value of $\sqrt+ y^2 + z^2$ \sqrt[x^2 + y^2 + z^2] in a way that avoids overflow.</p>
 </div></span>
   
 </li>
@@ -1004,8 +1004,8 @@ alternative to the standard math function acosh(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 378</span>
 
 static VALUE
-sys_acosh(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_acosh(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_acosh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -1091,8 +1091,8 @@ alternative to the standard math function asinh(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 417</span>
 
 static VALUE
-sys_asinh(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_asinh(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_asinh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -1178,8 +1178,8 @@ alternative to the standard math function atanh(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 456</span>
 
 static VALUE
-sys_atanh(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_atanh(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_atanh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -1266,8 +1266,8 @@ function expm1(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 249</span>
 
 static VALUE
-sys_expm1(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_expm1(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_expm1, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -1391,8 +1391,8 @@ approximately zero.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1036</span>
 
 static VALUE
-sys_fcmp(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 37 &quot;../gen/tmpl/m_Int_f_DFloat_x3.c&quot;
+sys_fcmp(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
     ndfunc_t ndf = {iter_sys_fcmp, STRIDE_LOOP|NDF_EXTRACT, 3,1, ain,aout};
@@ -1478,8 +1478,8 @@ infinite or not-a-number.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 169</span>
 
 static VALUE
-sys_finite(VALUE mod, VALUE v0){
-#line 31 &quot;../gen/tmpl/m_Int_f_DFloat.c&quot;
+sys_finite(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
     ndfunc_t ndf = {iter_sys_finite, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -1570,8 +1570,8 @@ math function frexp(x, e).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 546</span>
 
 static VALUE
-sys_frexp(VALUE mod, VALUE v0, VALUE v1){
-#line 33 &quot;../gen/tmpl/m_DFloat_Int_f_DFloat.c&quot;
+sys_frexp(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[2] = {{cDF,0},{cInt,0}};
     ndfunc_t ndf = {iter_sys_frexp, STRIDE_LOOP|NDF_EXTRACT, 1,2, ain,aout};
@@ -1596,7 +1596,7 @@ sys_frexp(VALUE mod, VALUE v0, VALUE v1){
   <div class="discussion">
     <p>This function computes the value of
 $\sqrt+ y^2$
-\sqrt@+ y^2@ in a way that avoids overflow. It provides an
+\sqrt[x^2 + y^2] in a way that avoids overflow. It provides an
 alternative to the BSD math function hypot(x,y).</p>
 
 
@@ -1670,8 +1670,8 @@ alternative to the BSD math function hypot(x,y).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 293</span>
 
 static VALUE
-sys_hypot(VALUE mod, VALUE v0, VALUE v1){
-#line 33 &quot;../gen/tmpl/m_DFloat_f_DFloat_x2.c&quot;
+sys_hypot(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_hypot, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -1696,7 +1696,7 @@ sys_hypot(VALUE mod, VALUE v0, VALUE v1){
   <div class="discussion">
     <p>This function computes the value of
 $\sqrt+ y^2 + z^2$
-\sqrt@+ y^2 + z^2@ in a way that avoids overflow.</p>
+\sqrt[x^2 + y^2 + z^2] in a way that avoids overflow.</p>
 
 
   </div>
@@ -1780,8 +1780,8 @@ $\sqrt+ y^2 + z^2$
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 339</span>
 
 static VALUE
-sys_hypot3(VALUE mod, VALUE v0, VALUE v1, VALUE v2){
-#line 36 &quot;../gen/tmpl/m_DFloat_f_DFloat_x3.c&quot;
+sys_hypot3(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_hypot3, STRIDE_LOOP|NDF_EXTRACT, 3,1, ain,aout};
@@ -1874,8 +1874,8 @@ return value from gsl_isinf().</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 129</span>
 
 static VALUE
-sys_isinf(VALUE mod, VALUE v0){
-#line 31 &quot;../gen/tmpl/m_Int_f_DFloat.c&quot;
+sys_isinf(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
     ndfunc_t ndf = {iter_sys_isinf, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -1960,8 +1960,8 @@ sys_isinf(VALUE mod, VALUE v0){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 82</span>
 
 static VALUE
-sys_isnan(VALUE mod, VALUE v0){
-#line 31 &quot;../gen/tmpl/m_Int_f_DFloat.c&quot;
+sys_isnan(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
     ndfunc_t ndf = {iter_sys_isnan, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2058,8 +2058,8 @@ alternative to the standard math function ldexp(x,e).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 499</span>
 
 static VALUE
-sys_ldexp(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_Int.c&quot;
+sys_ldexp(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cInt,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_ldexp, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -2146,8 +2146,8 @@ function log1p(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 209</span>
 
 static VALUE
-sys_log1p(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_log1p(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_log1p, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2236,8 +2236,8 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 680</span>
 
 static VALUE
-sys_pow_2(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_pow_2(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_2, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2326,8 +2326,8 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 722</span>
 
 static VALUE
-sys_pow_3(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_pow_3(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_3, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2416,8 +2416,8 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 764</span>
 
 static VALUE
-sys_pow_4(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_pow_4(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_4, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2506,8 +2506,8 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 806</span>
 
 static VALUE
-sys_pow_5(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_pow_5(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_5, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2596,8 +2596,8 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 848</span>
 
 static VALUE
-sys_pow_6(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_pow_6(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_6, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2686,8 +2686,8 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 890</span>
 
 static VALUE
-sys_pow_7(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_pow_7(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_7, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2776,8 +2776,8 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 932</span>
 
 static VALUE
-sys_pow_8(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_pow_8(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_8, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2866,8 +2866,8 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 974</span>
 
 static VALUE
-sys_pow_9(VALUE mod, VALUE v0){
-#line 30 &quot;../gen/tmpl/m_DFloat_f_DFloat.c&quot;
+sys_pow_9(VALUE mod, VALUE v0)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_9, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -2967,8 +2967,8 @@ available as gsl_sf_pow_int_e.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 592</span>
 
 static VALUE
-sys_pow_int(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_Int.c&quot;
+sys_pow_int(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cInt,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_int, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -3068,8 +3068,8 @@ available as gsl_sf_pow_int_e.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 638</span>
 
 static VALUE
-sys_pow_uint(VALUE mod, VALUE v0, VALUE v1){
-#line 34 &quot;../gen/tmpl/m_DFloat_f_DFloat_UInt.c&quot;
+sys_pow_uint(VALUE mod, VALUE v0, VALUE v1)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cUInt,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_sys_pow_uint, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -3086,7 +3086,7 @@ sys_pow_uint(VALUE mod, VALUE v0, VALUE v1){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:02 2017 by
+  Generated on Thu Mar 23 18:34:58 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

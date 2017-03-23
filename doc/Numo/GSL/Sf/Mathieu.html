@@ -323,8 +323,8 @@
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25451</span>
 
 static VALUE
-sf_mathieu_s_new(VALUE self, VALUE v1, VALUE v2){
-#line 17 &quot;../gen/tmpl/c_new_sizet_double.c&quot;
+sf_mathieu_s_new(VALUE self, VALUE v1, VALUE v2)
+{
     gsl_sf_mathieu_workspace *w;
     w = gsl_sf_mathieu_alloc(NUM2SIZET(v1), NUM2DBL(v2));
     if (!w) {
@@ -455,8 +455,8 @@ order_max inclusive, storing the results in the array result_array.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25492</span>
 
 static VALUE
-sf_mathieu_a_array(VALUE self, VALUE v0, VALUE v1, VALUE v2){
-#line 30 &quot;gen/tmpl/c_DFloat_f_int_x2_DFloat.c&quot;
+sf_mathieu_a_array(VALUE self, VALUE v0, VALUE v1, VALUE v2)
+{
     gsl_sf_mathieu_workspace *w;
     int nmin, nmax;
     size_t shape[1];
@@ -595,8 +595,8 @@ order_max inclusive, storing the results in the array result_array.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25547</span>
 
 static VALUE
-sf_mathieu_b_array(VALUE self, VALUE v0, VALUE v1, VALUE v2){
-#line 30 &quot;gen/tmpl/c_DFloat_f_int_x2_DFloat.c&quot;
+sf_mathieu_b_array(VALUE self, VALUE v0, VALUE v1, VALUE v2)
+{
     gsl_sf_mathieu_workspace *w;
     int nmin, nmax;
     size_t shape[1];
@@ -747,8 +747,8 @@ result_array.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25605</span>
 
 static VALUE
-sf_mathieu_ce_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
-#line 32 &quot;gen/tmpl/c_DFloat_f_int_x2_DFloat_x2.c&quot;
+sf_mathieu_ce_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3)
+{
     gsl_sf_mathieu_workspace *w;
     int nmin, nmax;
     size_t shape[1];
@@ -900,8 +900,8 @@ results in the array result_array.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25721</span>
 
 static VALUE
-sf_mathieu_Mc_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3, VALUE v4){
-#line 33 &quot;gen/tmpl/c_DFloat_f_int_x3_DFloat_x2.c&quot;
+sf_mathieu_Mc_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3, VALUE v4)
+{
     gsl_sf_mathieu_workspace *w;
     int j, nmin, nmax;
     size_t shape[1];
@@ -1055,8 +1055,8 @@ results in the array result_array.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25781</span>
 
 static VALUE
-sf_mathieu_Ms_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3, VALUE v4){
-#line 33 &quot;gen/tmpl/c_DFloat_f_int_x3_DFloat_x2.c&quot;
+sf_mathieu_Ms_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3, VALUE v4)
+{
     gsl_sf_mathieu_workspace *w;
     int j, nmin, nmax;
     size_t shape[1];
@@ -1209,8 +1209,8 @@ result_array.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sf/gsl_sf.c', line 25663</span>
 
 static VALUE
-sf_mathieu_se_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
-#line 32 &quot;gen/tmpl/c_DFloat_f_int_x2_DFloat_x2.c&quot;
+sf_mathieu_se_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3)
+{
     gsl_sf_mathieu_workspace *w;
     int nmin, nmax;
     size_t shape[1];
@@ -1242,7 +1242,7 @@ sf_mathieu_se_array(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:13 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

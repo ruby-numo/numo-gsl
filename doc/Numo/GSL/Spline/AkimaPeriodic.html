@@ -230,8 +230,8 @@ the behavior for other arrangements is not defined.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 341</span>
 
 static VALUE
-spline_akima_periodic_s_new(VALUE self, VALUE v1, VALUE v2){
-#line 13 &quot;gen/tmpl/interp_type_new.c&quot;
+spline_akima_periodic_s_new(VALUE self, VALUE v1, VALUE v2)
+{
     return spline_s_new(self, gsl_interp_akima_periodic, v1, v2);
 }</pre>
     </td>
@@ -244,7 +244,7 @@ spline_akima_periodic_s_new(VALUE self, VALUE v1, VALUE v2){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:13 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

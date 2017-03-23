@@ -465,8 +465,8 @@ The size of the workspace is O(1).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 81</span>
 
 static VALUE
-rstat_s_new(VALUE self){
-#line 15 &quot;../gen/tmpl/c_new_void.c&quot;
+rstat_s_new(VALUE self)
+{
     gsl_rstat_workspace *w;
     w = gsl_rstat_alloc();
     if (!w) {
@@ -563,8 +563,8 @@ standard deviation, skewness, kurtosis, and median.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 148</span>
 
 static VALUE
-rstat_add(VALUE self, VALUE v1){
-#line 38 &quot;../gen/tmpl/c_self_f_DFloat.c&quot;
+rstat_add(VALUE self, VALUE v1)
+{
     gsl_rstat_workspace *w;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_rstat_add, FULL_LOOP, 1,0, ain,0};
@@ -636,8 +636,8 @@ defined as</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 312</span>
 
 static VALUE
-rstat_kurtosis(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+rstat_kurtosis(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -703,8 +703,8 @@ rstat_kurtosis(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 205</span>
 
 static VALUE
-rstat_max(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+rstat_max(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -773,8 +773,8 @@ defined as</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 227</span>
 
 static VALUE
-rstat_mean(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+rstat_mean(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -841,8 +841,8 @@ the accumulator.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 331</span>
 
 static VALUE
-rstat_median(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+rstat_median(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -908,8 +908,8 @@ rstat_median(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 187</span>
 
 static VALUE
-rstat_min(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+rstat_min(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -979,8 +979,8 @@ rstat_min(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 169</span>
 
 static VALUE
-rstat_n(VALUE self){
-#line 10 &quot;../gen/tmpl/c_sizet_f_void.c&quot;
+rstat_n(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -1034,8 +1034,8 @@ so it can begin working on a new set of data.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 100</span>
 
 static VALUE
-rstat_reset(VALUE self){
-#line 9 &quot;../gen/tmpl/c_void_f_void.c&quot;
+rstat_reset(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -1102,8 +1102,8 @@ accumulator, defined as the square root of the variance given above.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 268</span>
 
 static VALUE
-rstat_sd(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+rstat_sd(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -1172,8 +1172,8 @@ defined as</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 290</span>
 
 static VALUE
-rstat_skew(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+rstat_skew(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -1242,8 +1242,8 @@ defined as</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 249</span>
 
 static VALUE
-rstat_variance(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+rstat_variance(VALUE self)
+{
     gsl_rstat_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
@@ -1260,7 +1260,7 @@ rstat_variance(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:12 2017 by
+  Generated on Thu Mar 23 18:35:07 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

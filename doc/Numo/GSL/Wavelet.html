@@ -284,8 +284,8 @@ w.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 332</span>
 
 static VALUE
-wavelet_name(VALUE self){
-#line 10 &quot;../gen/tmpl/c_str_f_void.c&quot;
+wavelet_name(VALUE self)
+{
     gsl_wavelet *w;
 
     TypedData_Get_Struct(self, gsl_wavelet, &amp;wavelet_data_type, w);
@@ -318,7 +318,7 @@ dir can be either forward (+1) or backward
 <p>For the forward transform, the elements of the original array are
 replaced by the discrete wavelet
 transform $f_i \rightarrow w_j,k$
-f_i -&gt; w_@j,k@
+f_i -&gt; w_[j,k]
 in a packed triangular storage layout,
 where j is the index of the level
 $j = 0 \dots J-1$
@@ -330,12 +330,12 @@ k = 0 … (2^j)-1.
 The total number of levels is J = \log_2(n).  The output data
 has the following form,</p>
 
-<p>(s_@-1,0@, d_@0,0@, d_@1,0@, d_@1,1@, d_@2,0@, …,
-d_@j,k@, …, d_@J-1,2^@{J-1@-1@})</p>
+<p>(s_[-1,0], d_[0,0], d_[1,0], d_[1,1], d_[2,0], …,
+d_[j,k], …, d_[J-1,2^[J-1]-1])</p>
 
 <p>where the first element is the smoothing coefficient $s_-1,0$
-s_@-1,0@, followed by the detail coefficients $d_j,k$
-d_@j,k@ for each level
+s_[-1,0], followed by the detail coefficients $d_j,k$
+d_[j,k] for each level
 j.  The backward transform inverts these coefficients to obtain
 the original data.</p>
 
@@ -432,8 +432,8 @@ power of 2 or if insufficient workspace is provided.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 406</span>
 
 static VALUE
-wavelet_transform(VALUE self, VALUE v1, VALUE v2){
-#line 32 &quot;tmpl/wavelet_transform.c&quot;
+wavelet_transform(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{OVERWRITE,1}};
     ndfunc_t ndf = {iter_wavelet_transform, NO_LOOP, 1,0, ain,0};
     gsl_wavelet *w;
@@ -484,7 +484,7 @@ dir can be either forward (+1) or backward
 <p>For the forward transform, the elements of the original array are
 replaced by the discrete wavelet
 transform $f_i \rightarrow w_j,k$
-f_i -&gt; w_@j,k@
+f_i -&gt; w_[j,k]
 in a packed triangular storage layout,
 where j is the index of the level
 $j = 0 \dots J-1$
@@ -496,12 +496,12 @@ k = 0 … (2^j)-1.
 The total number of levels is J = \log_2(n).  The output data
 has the following form,</p>
 
-<p>(s_@-1,0@, d_@0,0@, d_@1,0@, d_@1,1@, d_@2,0@, …,
-d_@j,k@, …, d_@J-1,2^@{J-1@-1@})</p>
+<p>(s_[-1,0], d_[0,0], d_[1,0], d_[1,1], d_[2,0], …,
+d_[j,k], …, d_[J-1,2^[J-1]-1])</p>
 
 <p>where the first element is the smoothing coefficient $s_-1,0$
-s_@-1,0@, followed by the detail coefficients $d_j,k$
-d_@j,k@ for each level
+s_[-1,0], followed by the detail coefficients $d_j,k$
+d_[j,k] for each level
 j.  The backward transform inverts these coefficients to obtain
 the original data.</p>
 
@@ -574,8 +574,8 @@ power of 2 or if insufficient workspace is provided.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 477</span>
 
 static VALUE
-wavelet_transform_forward(VALUE self, VALUE v1){
-#line 11 &quot;tmpl/wavelet_transform2.c&quot;
+wavelet_transform_forward(VALUE self, VALUE v1)
+{
     int dir;
     VALUE v2;
 
@@ -613,7 +613,7 @@ dir can be either forward (+1) or backward
 <p>For the forward transform, the elements of the original array are
 replaced by the discrete wavelet
 transform $f_i \rightarrow w_j,k$
-f_i -&gt; w_@j,k@
+f_i -&gt; w_[j,k]
 in a packed triangular storage layout,
 where j is the index of the level
 $j = 0 \dots J-1$
@@ -625,12 +625,12 @@ k = 0 … (2^j)-1.
 The total number of levels is J = \log_2(n).  The output data
 has the following form,</p>
 
-<p>(s_@-1,0@, d_@0,0@, d_@1,0@, d_@1,1@, d_@2,0@, …,
-d_@j,k@, …, d_@J-1,2^@{J-1@-1@})</p>
+<p>(s_[-1,0], d_[0,0], d_[1,0], d_[1,1], d_[2,0], …,
+d_[j,k], …, d_[J-1,2^[J-1]-1])</p>
 
 <p>where the first element is the smoothing coefficient $s_-1,0$
-s_@-1,0@, followed by the detail coefficients $d_j,k$
-d_@j,k@ for each level
+s_[-1,0], followed by the detail coefficients $d_j,k$
+d_[j,k] for each level
 j.  The backward transform inverts these coefficients to obtain
 the original data.</p>
 
@@ -703,8 +703,8 @@ power of 2 or if insufficient workspace is provided.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 535</span>
 
 static VALUE
-wavelet_transform_inverse(VALUE self, VALUE v1){
-#line 11 &quot;tmpl/wavelet_transform2.c&quot;
+wavelet_transform_inverse(VALUE self, VALUE v1)
+{
     int dir;
     VALUE v2;
 
@@ -726,7 +726,7 @@ wavelet_transform_inverse(VALUE self, VALUE v1){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:14 2017 by
+  Generated on Thu Mar 23 18:35:09 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

@@ -1380,10 +1380,10 @@ stats_s_absdev_m(int argc, VALUE *argv, VALUE mod)
 between the datasets data1 and data2 which must both be of
 the same length n.
 r = cov(x, y) / (\Hat\sigma_x \Hat\sigma_y)
-= @\sum (x_i - \Hat x) (y_i - \Hat y)
+= [1/(n-1) \sum (x_i - \Hat x) (y_i - \Hat y)
    \over
-   \sqrt@{1/(n-1) \sum (x_i - \Hat x)^2@ \sqrt@\sum (y_i - \Hat y)^2@
-  @}</p>
+   \sqrt[1/(n-1) \sum (x_i - \Hat x)^2] \sqrt[1/(n-1) \sum (y_i - \Hat y)^2]
+  ]</p>
 
 
   </div>
@@ -1497,7 +1497,7 @@ stats_s_correlation(int argc, VALUE *argv, VALUE mod)
     <p>This function computes the covariance of the datasets data1 and
 data2 which must both be of the same length n.</p>
 
-<p>covar = (1/(n - 1)) \sum_@= 1@^@n@ (x_i - \Hat x) (y_i - \Hat y)</p>
+<p>covar = (1/(n - 1)) \sum_[i = 1]^[n] (x_i - \Hat x) (y_i - \Hat y)</p>
 
 
   </div>
@@ -1995,9 +1995,9 @@ stats_s_kurtosis_m_sd(int argc, VALUE *argv, VALUE mod)
   <div class="discussion">
     <p>This function computes the lag-1 autocorrelation of the dataset data.</p>
 
-<p>a_1 = @= 1@^@n@ (x_@i@ - \Hat\mu) (x_@i-1@ - \Hat\mu)
+<p>a_1 = [\sum_[i = 1]^[n] (x_[i] - \Hat\mu) (x_[i-1] - \Hat\mu)
      \over
-     \sum_@= 1@^@n@ (x_@i@ - \Hat\mu) (x_@i@ - \Hat\mu)@}</p>
+     \sum_[i = 1]^[n] (x_[i] - \Hat\mu) (x_[i] - \Hat\mu)]</p>
 
 
   </div>
@@ -3069,7 +3069,7 @@ gsl_sort should always be used first.</p>
 
 <p>The quantile is found by interpolation, using the formula</p>
 
-<p>quantile = (1 - \delta) x_i + \delta x_@i+1@</p>
+<p>quantile = (1 - \delta) x_i + \delta x_[i+1]</p>
 
 <p>where i is floor((n - 1)f) and \delta is
 (n-1)f - i.</p>
@@ -6375,7 +6375,7 @@ stats_s_wvariance_with_fixed_mean(int argc, VALUE *argv, VALUE mod)
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:03 2017 by
+  Generated on Thu Mar 23 18:34:58 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

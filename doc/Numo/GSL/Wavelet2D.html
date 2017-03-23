@@ -378,8 +378,8 @@ non-standard form.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 896</span>
 
 static VALUE
-wavelet2d_nstransform(VALUE self, VALUE v1, VALUE v2){
-#line 33 &quot;tmpl/wavelet2d_transform.c&quot;
+wavelet2d_nstransform(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{OVERWRITE,2}};
     ndfunc_t ndf = {iter_wavelet2d_nstransform, NO_LOOP, 1,0, ain,0};
     gsl_wavelet *w;
@@ -488,8 +488,8 @@ non-standard form.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 934</span>
 
 static VALUE
-wavelet2d_nstransform_forward(VALUE self, VALUE v1){
-#line 11 &quot;tmpl/wavelet_transform2.c&quot;
+wavelet2d_nstransform_forward(VALUE self, VALUE v1)
+{
     int dir;
     VALUE v2;
 
@@ -585,8 +585,8 @@ non-standard form.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 959</span>
 
 static VALUE
-wavelet2d_nstransform_inverse(VALUE self, VALUE v1){
-#line 11 &quot;tmpl/wavelet_transform2.c&quot;
+wavelet2d_nstransform_inverse(VALUE self, VALUE v1)
+{
     int dir;
     VALUE v2;
 
@@ -719,8 +719,8 @@ workspace is provided.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 758</span>
 
 static VALUE
-wavelet2d_transform(VALUE self, VALUE v1, VALUE v2){
-#line 33 &quot;tmpl/wavelet2d_transform.c&quot;
+wavelet2d_transform(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[1] = {{OVERWRITE,2}};
     ndfunc_t ndf = {iter_wavelet2d_transform, NO_LOOP, 1,0, ain,0};
     gsl_wavelet *w;
@@ -842,8 +842,8 @@ workspace is provided.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 810</span>
 
 static VALUE
-wavelet2d_transform_forward(VALUE self, VALUE v1){
-#line 11 &quot;tmpl/wavelet_transform2.c&quot;
+wavelet2d_transform_forward(VALUE self, VALUE v1)
+{
     int dir;
     VALUE v2;
 
@@ -952,8 +952,8 @@ workspace is provided.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 849</span>
 
 static VALUE
-wavelet2d_transform_inverse(VALUE self, VALUE v1){
-#line 11 &quot;tmpl/wavelet_transform2.c&quot;
+wavelet2d_transform_inverse(VALUE self, VALUE v1)
+{
     int dir;
     VALUE v2;
 
@@ -975,7 +975,7 @@ wavelet2d_transform_inverse(VALUE self, VALUE v1){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:14 2017 by
+  Generated on Thu Mar 23 18:35:09 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

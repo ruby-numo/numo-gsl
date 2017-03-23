@@ -868,8 +868,8 @@ for use.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 191</span>
 
 static VALUE
-histogram_s_new(VALUE self, VALUE v1){
-#line 16 &quot;../gen/tmpl/c_new_sizet.c&quot;
+histogram_s_new(VALUE self, VALUE v1)
+{
     gsl_histogram *w;
     w = gsl_histogram_alloc(NUM2SIZET(v1));
     if (!w) {
@@ -977,8 +977,8 @@ floating-point number weight.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 390</span>
 
 static VALUE
-histogram_accumulate(VALUE self, VALUE v1, VALUE v2){
-#line 33 &quot;../gen/tmpl/c_self_f_DFloat_x2.c&quot;
+histogram_accumulate(VALUE self, VALUE v1, VALUE v2)
+{
     gsl_histogram *w;
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_t ndf = {iter_histogram_accumulate, STRIDE_LOOP, 2,0, ain,0};
@@ -1067,8 +1067,8 @@ h_2(i).  The two histograms must have identical bin ranges.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 771</span>
 
 static VALUE
-histogram_add(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram_add(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram *w, *w1;
 
@@ -1155,8 +1155,8 @@ histogram_add(VALUE self, VALUE v1){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 149</span>
 
 static VALUE
-histogram_bin(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram_bin(VALUE self)
+{
     gsl_histogram *w;
     double *d;
     VALUE v;
@@ -1239,8 +1239,8 @@ struct directly.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 572</span>
 
 static VALUE
-histogram_bins(VALUE self){
-#line 10 &quot;../gen/tmpl/c_sizet_f_void.c&quot;
+histogram_bins(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -1327,8 +1327,8 @@ identical bin ranges.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 845</span>
 
 static VALUE
-histogram_div(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram_div(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram *w, *w1;
 
@@ -1417,8 +1417,8 @@ otherwise.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 747</span>
 
 static VALUE
-histogram_equal_bins_p(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram_equal_bins_p(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram *w, *w1;
 
@@ -1512,8 +1512,8 @@ GSL_EDOM and the function returns 0.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 443</span>
 
 static VALUE
-histogram_get(VALUE self, VALUE v1){
-#line 39 &quot;gen/tmpl/c_DFloat_f_get.c&quot;
+histogram_get(VALUE self, VALUE v1)
+{
     gsl_histogram *w;
     ndfunc_arg_in_t ain[1] = {{cSSZ,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
@@ -1617,8 +1617,8 @@ an error code of GSL_EDOM.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 506</span>
 
 static VALUE
-histogram_get_range(VALUE self, VALUE v1){
-#line 48 &quot;gen/tmpl/c_DFloat_x2_f_get_range.c&quot;
+histogram_get_range(VALUE self, VALUE v1)
+{
     gsl_histogram *w;
     ndfunc_arg_in_t ain[1] = {{cSSZ,0}};
     ndfunc_arg_out_t aout[2] = {{cDF,0},{cDF,0}};
@@ -1720,8 +1720,8 @@ outside the range of interest.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 344</span>
 
 static VALUE
-histogram_increment(VALUE self, VALUE v1){
-#line 38 &quot;../gen/tmpl/c_self_f_DFloat.c&quot;
+histogram_increment(VALUE self, VALUE v1)
+{
     gsl_histogram *w;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_histogram_increment, FULL_LOOP, 1,0, ain,0};
@@ -1793,8 +1793,8 @@ struct directly.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 530</span>
 
 static VALUE
-histogram_max(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram_max(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -1862,8 +1862,8 @@ smallest index is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 627</span>
 
 static VALUE
-histogram_max_bin(VALUE self){
-#line 10 &quot;../gen/tmpl/c_sizet_f_void.c&quot;
+histogram_max_bin(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -1929,8 +1929,8 @@ histogram_max_bin(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 607</span>
 
 static VALUE
-histogram_max_val(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram_max_val(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -1999,8 +1999,8 @@ result is limited by the bin width.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 686</span>
 
 static VALUE
-histogram_mean(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram_mean(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -2086,8 +2086,8 @@ The two histograms must be of the same size.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 284</span>
 
 static VALUE
-histogram_memcpy(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram_memcpy(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram *w, *w1;
 
@@ -2159,8 +2159,8 @@ struct directly.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 551</span>
 
 static VALUE
-histogram_min(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram_min(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -2228,8 +2228,8 @@ smallest index is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 665</span>
 
 static VALUE
-histogram_min_bin(VALUE self){
-#line 10 &quot;../gen/tmpl/c_sizet_f_void.c&quot;
+histogram_min_bin(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -2295,8 +2295,8 @@ histogram_min_bin(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 645</span>
 
 static VALUE
-histogram_min_val(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram_min_val(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -2383,8 +2383,8 @@ identical bin ranges.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 820</span>
 
 static VALUE
-histogram_mul(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram_mul(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram *w, *w1;
 
@@ -2453,8 +2453,8 @@ histogram_mul(VALUE self, VALUE v1){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 96</span>
 
 static VALUE
-histogram_n(VALUE self){
-#line 10 &quot;gen/tmpl/c_sizet_f_field.c&quot;
+histogram_n(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -2537,8 +2537,8 @@ histogram_n(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 116</span>
 
 static VALUE
-histogram_range(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram_range(VALUE self)
+{
     gsl_histogram *w;
     double *d;
     VALUE v;
@@ -2604,8 +2604,8 @@ histogram_range(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 589</span>
 
 static VALUE
-histogram_reset(VALUE self){
-#line 9 &quot;../gen/tmpl/c_void_f_void.c&quot;
+histogram_reset(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -2689,8 +2689,8 @@ h’_1(i) = h_1(i) * scale.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 869</span>
 
 static VALUE
-histogram_scale(VALUE self, VALUE v1){
-#line 11 &quot;../gen/tmpl/c_void_f_double.c&quot;
+histogram_scale(VALUE self, VALUE v1)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -2729,7 +2729,7 @@ bins with ranges [1,10), [10,100) and [100,1000).</p>
 // bin[1] covers the range 10 &lt;= x &lt; 100
 // bin[2] covers the range 100 &lt;= x &lt; 1000</p>
 
-<p>double range[4] = @{ 1.0, 10.0, 100.0, 1000.0 @};</p>
+<p>double range[4] = [ 1.0, 10.0, 100.0, 1000.0 ];</p>
 
 <p>gsl_histogram_set_ranges (h, range, 4);</p>
 
@@ -2802,8 +2802,8 @@ required for the upper value of the final bin.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 232</span>
 
 static VALUE
-histogram_set_ranges(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_self_f_set_ranges.c&quot;
+histogram_set_ranges(VALUE self, VALUE v1)
+{
     gsl_histogram *w;
     double *p1;
 
@@ -2906,8 +2906,8 @@ below,</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 262</span>
 
 static VALUE
-histogram_set_ranges_uniform(VALUE self, VALUE v1, VALUE v2){
-#line 12 &quot;../gen/tmpl/c_void_f_double_x2.c&quot;
+histogram_set_ranges_uniform(VALUE self, VALUE v1, VALUE v2)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -2992,8 +2992,8 @@ h’_1(i) = h_1(i) + offset.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 891</span>
 
 static VALUE
-histogram_shift(VALUE self, VALUE v1){
-#line 11 &quot;../gen/tmpl/c_void_f_double.c&quot;
+histogram_shift(VALUE self, VALUE v1)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -3063,8 +3063,8 @@ calculation. The accuracy of the result is limited by the bin width.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 707</span>
 
 static VALUE
-histogram_sigma(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram_sigma(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -3150,8 +3150,8 @@ h_1(i) - h_2(i).  The two histograms must have identical bin ranges.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 795</span>
 
 static VALUE
-histogram_sub(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram_sub(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram *w, *w1;
 
@@ -3221,8 +3221,8 @@ are included in the sum.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 726</span>
 
 static VALUE
-histogram_sum(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram_sum(VALUE self)
+{
     gsl_histogram *w;
 
     TypedData_Get_Struct(self, gsl_histogram, &amp;histogram_data_type, w);
@@ -3239,7 +3239,7 @@ histogram_sum(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:12 2017 by
+  Generated on Thu Mar 23 18:35:07 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

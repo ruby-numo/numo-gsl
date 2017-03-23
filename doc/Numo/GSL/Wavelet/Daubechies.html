@@ -216,8 +216,8 @@ available or if a unsupported member is selected.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 222</span>
 
 static VALUE
-wavelet_daubechies_s_new(VALUE self, VALUE v1){
-#line 12 &quot;tmpl/wavelet_type_new.c&quot;
+wavelet_daubechies_s_new(VALUE self, VALUE v1)
+{
     return wavelet_s_new(self, gsl_wavelet_daubechies, v1);
 }</pre>
     </td>
@@ -230,7 +230,7 @@ wavelet_daubechies_s_new(VALUE self, VALUE v1){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:14 2017 by
+  Generated on Thu Mar 23 18:35:09 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

@@ -208,8 +208,8 @@
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 123</span>
 
 static VALUE
-interp_accel_s_new(VALUE self){
-#line 15 &quot;../gen/tmpl/c_new_void.c&quot;
+interp_accel_s_new(VALUE self)
+{
     gsl_interp_accel *w;
     w = gsl_interp_accel_alloc();
     if (!w) {
@@ -271,8 +271,8 @@ applicable—for example, when switching to a new dataset.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 143</span>
 
 static VALUE
-interp_accel_reset(VALUE self){
-#line 9 &quot;../gen/tmpl/c_self_f_void.c&quot;
+interp_accel_reset(VALUE self)
+{
     gsl_interp_accel *w;
 
     TypedData_Get_Struct(self, gsl_interp_accel, &amp;interp_accel_data_type, w);
@@ -289,7 +289,7 @@ interp_accel_reset(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:13 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

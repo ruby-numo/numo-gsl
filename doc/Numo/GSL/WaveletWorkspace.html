@@ -214,8 +214,8 @@ columns. A null pointer is returned if insufficient memory is available.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 150</span>
 
 static VALUE
-wavelet_workspace_s_new(VALUE self, VALUE v1){
-#line 16 &quot;../gen/tmpl/c_new_sizet.c&quot;
+wavelet_workspace_s_new(VALUE self, VALUE v1)
+{
     gsl_wavelet_workspace *w;
     w = gsl_wavelet_workspace_alloc(NUM2SIZET(v1));
     if (!w) {
@@ -233,7 +233,7 @@ wavelet_workspace_s_new(VALUE self, VALUE v1){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:13 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

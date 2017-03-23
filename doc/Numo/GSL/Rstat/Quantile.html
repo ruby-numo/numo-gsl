@@ -263,8 +263,8 @@ is O(1).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 385</span>
 
 static VALUE
-rstat_quantile_s_new(VALUE self, VALUE p){
-#line 16 &quot;../gen/tmpl/c_new_double.c&quot;
+rstat_quantile_s_new(VALUE self, VALUE p)
+{
     gsl_rstat_quantile_workspace *w;
     w = gsl_rstat_quantile_alloc(NUM2DBL(p));
     if (!w) {
@@ -360,8 +360,8 @@ the new data point x.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 433</span>
 
 static VALUE
-rstat_quantile_add(VALUE self, VALUE v1){
-#line 38 &quot;../gen/tmpl/c_self_f_DFloat.c&quot;
+rstat_quantile_add(VALUE self, VALUE v1)
+{
     gsl_rstat_quantile_workspace *w;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_rstat_quantile_add, FULL_LOOP, 1,0, ain,0};
@@ -430,8 +430,8 @@ rstat_quantile_add(VALUE self, VALUE v1){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 454</span>
 
 static VALUE
-rstat_quantile_get(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+rstat_quantile_get(VALUE self)
+{
     gsl_rstat_quantile_workspace *w;
 
     TypedData_Get_Struct(self, gsl_rstat_quantile_workspace, &amp;rstat_quantile_data_type, w);
@@ -448,7 +448,7 @@ rstat_quantile_get(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:12 2017 by
+  Generated on Thu Mar 23 18:35:07 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

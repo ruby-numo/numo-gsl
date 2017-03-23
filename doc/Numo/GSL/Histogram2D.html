@@ -990,8 +990,8 @@
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1272</span>
 
 static VALUE
-histogram2d_s_new(VALUE self, VALUE v1, VALUE v2){
-#line 17 &quot;../gen/tmpl/c_new_sizet_x2.c&quot;
+histogram2d_s_new(VALUE self, VALUE v1, VALUE v2)
+{
     gsl_histogram2d *w;
     w = gsl_histogram2d_alloc(NUM2SIZET(v1), NUM2SIZET(v2));
     if (!w) {
@@ -1110,8 +1110,8 @@ floating-point number weight.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1453</span>
 
 static VALUE
-histogram2d_accumulate(VALUE self, VALUE v1, VALUE v2, VALUE v3){
-#line 36 &quot;../gen/tmpl/c_self_f_DFloat_x3.c&quot;
+histogram2d_accumulate(VALUE self, VALUE v1, VALUE v2, VALUE v3)
+{
     gsl_histogram2d *w;
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_t ndf = {iter_histogram2d_accumulate, STRIDE_LOOP, 3,0, ain,0};
@@ -1201,8 +1201,8 @@ The two histograms must have identical bin ranges.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2034</span>
 
 static VALUE
-histogram2d_add(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram2d_add(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram2d *w, *w1;
 
@@ -1290,8 +1290,8 @@ histogram2d_add(VALUE self, VALUE v1){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1228</span>
 
 static VALUE
-histogram2d_bin(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram2d_bin(VALUE self)
+{
     gsl_histogram2d *w;
     double *d;
     VALUE v;
@@ -1375,8 +1375,8 @@ calculation.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1970</span>
 
 static VALUE
-histogram2d_cov(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_cov(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -1463,8 +1463,8 @@ The two histograms must have identical bin ranges.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2109</span>
 
 static VALUE
-histogram2d_div(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram2d_div(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram2d *w, *w1;
 
@@ -1552,8 +1552,8 @@ histograms are identical, and 0 otherwise.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2009</span>
 
 static VALUE
-histogram2d_equal_bins_p(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram2d_equal_bins_p(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram2d *w, *w1;
 
@@ -1658,8 +1658,8 @@ code of GSL_EDOM and the function returns 0.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1513</span>
 
 static VALUE
-histogram2d_get(VALUE self, VALUE v1, VALUE v2){
-#line 46 &quot;gen/tmpl/c_DFloat_f_2d_get.c&quot;
+histogram2d_get(VALUE self, VALUE v1, VALUE v2)
+{
     gsl_histogram2d *w;
     ndfunc_arg_in_t ain[2] = {{cSSZ,0},{cSSZ,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
@@ -1763,8 +1763,8 @@ the error handler is called with an error code of GSL_EDOM.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1576</span>
 
 static VALUE
-histogram2d_get_xrange(VALUE self, VALUE v1){
-#line 48 &quot;gen/tmpl/c_DFloat_x2_f_get_range.c&quot;
+histogram2d_get_xrange(VALUE self, VALUE v1)
+{
     gsl_histogram2d *w;
     ndfunc_arg_in_t ain[1] = {{cSSZ,0}};
     ndfunc_arg_out_t aout[2] = {{cDF,0},{cDF,0}};
@@ -1868,8 +1868,8 @@ the error handler is called with an error code of GSL_EDOM.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1639</span>
 
 static VALUE
-histogram2d_get_yrange(VALUE self, VALUE v1){
-#line 48 &quot;gen/tmpl/c_DFloat_x2_f_get_range.c&quot;
+histogram2d_get_yrange(VALUE self, VALUE v1)
+{
     gsl_histogram2d *w;
     ndfunc_arg_in_t ain[1] = {{cSSZ,0}};
     ndfunc_arg_out_t aout[2] = {{cDF,0},{cDF,0}};
@@ -1980,8 +1980,8 @@ coordinates outside the range of interest.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1404</span>
 
 static VALUE
-histogram2d_increment(VALUE self, VALUE v1, VALUE v2){
-#line 33 &quot;../gen/tmpl/c_self_f_DFloat_x2.c&quot;
+histogram2d_increment(VALUE self, VALUE v1, VALUE v2)
+{
     gsl_histogram2d *w;
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_t ndf = {iter_histogram2d_increment, STRIDE_LOOP, 2,0, ain,0};
@@ -2059,8 +2059,8 @@ found is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1824</span>
 
 static VALUE
-histogram2d_max_bin(VALUE self){
-#line 10 &quot;../gen/tmpl/c_sizet_x2_f_void.c&quot;
+histogram2d_max_bin(VALUE self)
+{
     size_t i, j;
     gsl_histogram2d *w;
 
@@ -2128,8 +2128,8 @@ histogram2d_max_bin(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1803</span>
 
 static VALUE
-histogram2d_max_val(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_max_val(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -2215,8 +2215,8 @@ The two histograms must be of the same size.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1351</span>
 
 static VALUE
-histogram2d_memcpy(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram2d_memcpy(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram2d *w, *w1;
 
@@ -2294,8 +2294,8 @@ found is returned.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1865</span>
 
 static VALUE
-histogram2d_min_bin(VALUE self){
-#line 10 &quot;../gen/tmpl/c_sizet_x2_f_void.c&quot;
+histogram2d_min_bin(VALUE self)
+{
     size_t i, j;
     gsl_histogram2d *w;
 
@@ -2363,8 +2363,8 @@ histogram2d_min_bin(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1844</span>
 
 static VALUE
-histogram2d_min_val(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_min_val(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -2451,8 +2451,8 @@ The two histograms must have identical bin ranges.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2084</span>
 
 static VALUE
-histogram2d_mul(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram2d_mul(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram2d *w, *w1;
 
@@ -2524,8 +2524,8 @@ accessing the gsl_histogram2d struct directly.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1705</span>
 
 static VALUE
-histogram2d_nx(VALUE self){
-#line 10 &quot;../gen/tmpl/c_sizet_f_void.c&quot;
+histogram2d_nx(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -2594,8 +2594,8 @@ accessing the gsl_histogram2d struct directly.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1768</span>
 
 static VALUE
-histogram2d_ny(VALUE self){
-#line 10 &quot;../gen/tmpl/c_sizet_f_void.c&quot;
+histogram2d_ny(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -2648,8 +2648,8 @@ histogram2d_ny(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1785</span>
 
 static VALUE
-histogram2d_reset(VALUE self){
-#line 9 &quot;../gen/tmpl/c_void_f_void.c&quot;
+histogram2d_reset(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -2733,8 +2733,8 @@ h’_1(i,j) = h_1(i,j) scale.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2133</span>
 
 static VALUE
-histogram2d_scale(VALUE self, VALUE v1){
-#line 11 &quot;../gen/tmpl/c_void_f_double.c&quot;
+histogram2d_scale(VALUE self, VALUE v1)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -2843,8 +2843,8 @@ zero.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1296</span>
 
 static VALUE
-histogram2d_set_ranges(VALUE self, VALUE v1, VALUE v2){
-#line 12 &quot;gen/tmpl/c_self_f_2d_set_ranges.c&quot;
+histogram2d_set_ranges(VALUE self, VALUE v1, VALUE v2)
+{
     gsl_histogram2d *w;
     double *p1, *p2;
 
@@ -2970,8 +2970,8 @@ uniformly.  The values of the histogram bins are reset to zero.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1329</span>
 
 static VALUE
-histogram2d_set_ranges_uniform(VALUE self, VALUE v1, VALUE v2, VALUE v3, VALUE v4){
-#line 14 &quot;../gen/tmpl/c_void_f_double_x4.c&quot;
+histogram2d_set_ranges_uniform(VALUE self, VALUE v1, VALUE v2, VALUE v3, VALUE v4)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3056,8 +3056,8 @@ h’_1(i,j) = h_1(i,j) + offset.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2155</span>
 
 static VALUE
-histogram2d_shift(VALUE self, VALUE v1){
-#line 11 &quot;../gen/tmpl/c_void_f_double.c&quot;
+histogram2d_shift(VALUE self, VALUE v1)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3145,8 +3145,8 @@ The two histograms must have identical bin ranges.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2059</span>
 
 static VALUE
-histogram2d_sub(VALUE self, VALUE v1){
-#line 11 &quot;gen/tmpl/c_bool_f_other.c&quot;
+histogram2d_sub(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram2d *w, *w1;
 
@@ -3216,8 +3216,8 @@ are included in the sum.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1989</span>
 
 static VALUE
-histogram2d_sum(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_sum(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3286,8 +3286,8 @@ accessing the gsl_histogram2d struct directly.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1663</span>
 
 static VALUE
-histogram2d_xmax(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_xmax(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3355,8 +3355,8 @@ are ignored for the purposes of this calculation.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1887</span>
 
 static VALUE
-histogram2d_xmean(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_xmean(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3425,8 +3425,8 @@ accessing the gsl_histogram2d struct directly.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1684</span>
 
 static VALUE
-histogram2d_xmin(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_xmin(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3509,8 +3509,8 @@ histogram2d_xmin(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1162</span>
 
 static VALUE
-histogram2d_xrange(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram2d_xrange(VALUE self)
+{
     gsl_histogram2d *w;
     double *d;
     VALUE v;
@@ -3592,8 +3592,8 @@ calculation.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1928</span>
 
 static VALUE
-histogram2d_xsigma(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_xsigma(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3662,8 +3662,8 @@ accessing the gsl_histogram2d struct directly.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1726</span>
 
 static VALUE
-histogram2d_ymax(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_ymax(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3731,8 +3731,8 @@ are ignored for the purposes of this calculation.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1907</span>
 
 static VALUE
-histogram2d_ymean(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_ymean(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3801,8 +3801,8 @@ accessing the gsl_histogram2d struct directly.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1747</span>
 
 static VALUE
-histogram2d_ymin(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_ymin(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3885,8 +3885,8 @@ histogram2d_ymin(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1195</span>
 
 static VALUE
-histogram2d_yrange(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram2d_yrange(VALUE self)
+{
     gsl_histogram2d *w;
     double *d;
     VALUE v;
@@ -3968,8 +3968,8 @@ calculation.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 1949</span>
 
 static VALUE
-histogram2d_ysigma(VALUE self){
-#line 10 &quot;../gen/tmpl/c_double_f_void.c&quot;
+histogram2d_ysigma(VALUE self)
+{
     gsl_histogram2d *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d, &amp;histogram2d_data_type, w);
@@ -3986,7 +3986,7 @@ histogram2d_ysigma(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:13 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

@@ -345,8 +345,8 @@ in sumsq.  Note: the correlation coefficient of the data can be computed using g
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 108</span>
 
 static VALUE
-fit_s_linear(VALUE mod, VALUE v1, VALUE v2){
-#line 37 &quot;tmpl/fit_linear.c&quot;
+fit_s_linear(VALUE mod, VALUE v1, VALUE v2)
+{
     VALUE r, result;
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{sym_reduce,0}};
     ndfunc_arg_out_t aout[6] = {{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0}};
@@ -471,8 +471,8 @@ c_0 + c_1 X at the point x.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 237</span>
 
 static VALUE
-fit_s_linear_est(VALUE mod, VALUE v1, VALUE v2){
-#line 43 &quot;tmpl/fit_linear_est.c&quot;
+fit_s_linear_est(VALUE mod, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[6] = {{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[2] = {{cDF,0},{cDF,0}};
     ndfunc_t ndf = { iter_fit_s_linear_est, STRIDE_LOOP_NIP|NDF_EXTRACT,
@@ -589,8 +589,8 @@ best-fit line is returned in sumsq.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 293</span>
 
 static VALUE
-fit_s_mul(VALUE mod, VALUE v1, VALUE v2){
-#line 34 &quot;tmpl/fit_mul.c&quot;
+fit_s_mul(VALUE mod, VALUE v1, VALUE v2)
+{
     VALUE r, result;
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{sym_reduce,0}};
     ndfunc_arg_out_t aout[3] = {{cDF,0},{cDF,0},{cDF,0}};
@@ -711,8 +711,8 @@ c_1 X at the point x.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 411</span>
 
 static VALUE
-fit_s_mul_est(VALUE mod, VALUE v1, VALUE v2){
-#line 37 &quot;tmpl/fit_mul_est.c&quot;
+fit_s_mul_est(VALUE mod, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[2] = {{cDF,0},{cDF,0}};
     ndfunc_t ndf = { iter_fit_s_mul_est, STRIDE_LOOP_NIP|NDF_EXTRACT,
@@ -842,8 +842,8 @@ chisq.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 174</span>
 
 static VALUE
-fit_s_wlinear(VALUE mod, VALUE v1, VALUE v2, VALUE v3){
-#line 40 &quot;tmpl/fit_wlinear.c&quot;
+fit_s_wlinear(VALUE mod, VALUE v1, VALUE v2, VALUE v3)
+{
     VALUE r, result;
     ndfunc_arg_in_t ain[4] = {{cDF,0},{cDF,0},{cDF,0},{sym_reduce,0}};
     ndfunc_arg_out_t aout[6] = {{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0}};
@@ -976,8 +976,8 @@ returned in chisq.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 355</span>
 
 static VALUE
-fit_s_wmul(VALUE mod, VALUE v1, VALUE v2, VALUE v3){
-#line 37 &quot;tmpl/fit_wmul.c&quot;
+fit_s_wmul(VALUE mod, VALUE v1, VALUE v2, VALUE v3)
+{
     VALUE r, result;
     ndfunc_arg_in_t ain[4] = {{cDF,0},{cDF,0},{cDF,0},{sym_reduce,0}};
     ndfunc_arg_out_t aout[3] = {{cDF,0},{cDF,0},{cDF,0}};
@@ -1002,7 +1002,7 @@ fit_s_wmul(VALUE mod, VALUE v1, VALUE v2, VALUE v3){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:10 2017 by
+  Generated on Thu Mar 23 18:35:05 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

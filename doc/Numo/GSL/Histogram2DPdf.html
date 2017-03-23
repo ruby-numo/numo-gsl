@@ -346,8 +346,8 @@
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2347</span>
 
 static VALUE
-histogram2d_pdf_s_new(VALUE self, VALUE v1, VALUE v2){
-#line 17 &quot;../gen/tmpl/c_new_sizet_x2.c&quot;
+histogram2d_pdf_s_new(VALUE self, VALUE v1, VALUE v2)
+{
     gsl_histogram2d_pdf *w;
     w = gsl_histogram2d_pdf_alloc(NUM2SIZET(v1), NUM2SIZET(v2));
     if (!w) {
@@ -443,8 +443,8 @@ contain negative values.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2373</span>
 
 static VALUE
-histogram2d_pdf_init(VALUE self, VALUE v1){
-#line 15 &quot;gen/tmpl/c_bool_f_pdf_init.c&quot;
+histogram2d_pdf_init(VALUE self, VALUE v1)
+{
     int stat;
     gsl_histogram2d_pdf *w;
     gsl_histogram2d *w1;
@@ -514,8 +514,8 @@ histogram2d_pdf_init(VALUE self, VALUE v1){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2201</span>
 
 static VALUE
-histogram2d_pdf_nx(VALUE self){
-#line 10 &quot;gen/tmpl/c_sizet_f_field.c&quot;
+histogram2d_pdf_nx(VALUE self)
+{
     gsl_histogram2d_pdf *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d_pdf, &amp;histogram2d_pdf_data_type, w);
@@ -581,8 +581,8 @@ histogram2d_pdf_nx(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2219</span>
 
 static VALUE
-histogram2d_pdf_ny(VALUE self){
-#line 10 &quot;gen/tmpl/c_sizet_f_field.c&quot;
+histogram2d_pdf_ny(VALUE self)
+{
     gsl_histogram2d_pdf *w;
 
     TypedData_Get_Struct(self, gsl_histogram2d_pdf, &amp;histogram2d_pdf_data_type, w);
@@ -685,8 +685,8 @@ two-dimensional probability distribution p.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2425</span>
 
 static VALUE
-histogram2d_pdf_sample(VALUE self, VALUE v1, VALUE v2){
-#line 38 &quot;../gen/tmpl/c_DFloat_x2_f_DFloat_x2.c&quot;
+histogram2d_pdf_sample(VALUE self, VALUE v1, VALUE v2)
+{
     gsl_histogram2d_pdf *w;
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[2] = {{cDF,0},{cDF,0}};
@@ -774,8 +774,8 @@ histogram2d_pdf_sample(VALUE self, VALUE v1, VALUE v2){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2305</span>
 
 static VALUE
-histogram2d_pdf_sum(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram2d_pdf_sum(VALUE self)
+{
     gsl_histogram2d_pdf *w;
     double *d;
     VALUE v;
@@ -873,8 +873,8 @@ histogram2d_pdf_sum(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2239</span>
 
 static VALUE
-histogram2d_pdf_xrange(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram2d_pdf_xrange(VALUE self)
+{
     gsl_histogram2d_pdf *w;
     double *d;
     VALUE v;
@@ -970,8 +970,8 @@ histogram2d_pdf_xrange(VALUE self){
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2272</span>
 
 static VALUE
-histogram2d_pdf_yrange(VALUE self){
-#line 12 &quot;gen/tmpl/c_DFloat_f_field.c&quot;
+histogram2d_pdf_yrange(VALUE self)
+{
     gsl_histogram2d_pdf *w;
     double *d;
     VALUE v;
@@ -1001,7 +1001,7 @@ histogram2d_pdf_yrange(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:13 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Numo::GSL::Spmatrix
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Numo::GSL::Spmatrix";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../x_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Numo.html" title="Numo (module)">Numo</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../GSL.html" title="Numo::GSL (module)">GSL</a></span></span>
+     &raquo; 
+    <span class="title">Spmatrix</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Numo::GSL::Spmatrix
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Numo::GSL::Spmatrix</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>ext/numo/gsl/spmatrix/gsl_spmatrix.c</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(n1, n2, [nzmax,sptype])  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function allocates a sparse matrix of size n1-by-n2 and initializes it to all zeros.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add-instance_method" title="#add (instance method)">#<strong>add</strong>(other)  &#x21d2; Numo::GSL::Spmatrix </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function computes the sum c = a + b.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compcol-instance_method" title="#compcol (instance method)">#<strong>compcol</strong>  &#x21d2; Numo::GSL::Spmatrix </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function creates a sparse matrix in compressed column format from the input sparse matrix T which must be in triplet format.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#equal-instance_method" title="#equal (instance method)">#<strong>equal</strong>(b)  &#x21d2; Numo::GSL::Spmatrix </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns 1 if the matrices a and b are equal (by comparison of element values) and 0 otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(i, j)  &#x21d2; DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns element (i,j) of the matrix m.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#memcpy-instance_method" title="#memcpy (instance method)">#<strong>memcpy</strong>(src)  &#x21d2; Numo::GSL::Spmatrix </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function copies the elements of the sparse matrix src into dest.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#minmax-instance_method" title="#minmax (instance method)">#<strong>minmax</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the minimum and maximum elements of the matrix m, storing them in min_out and max_out, and searching only the non-zero values.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nnz-instance_method" title="#nnz (instance method)">#<strong>nnz</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the number of non-zero elements in m.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#realloc-instance_method" title="#realloc (instance method)">#<strong>realloc</strong>(m)  &#x21d2; Numo::GSL::Spmatrix </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function reallocates the storage space for m to accomodate nzmax non-zero elements.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scale-instance_method" title="#scale (instance method)">#<strong>scale</strong>(x)  &#x21d2; Numo::GSL::Spmatrix </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function scales all elements of the matrix m by the constant factor x.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set-instance_method" title="#set (instance method)">#<strong>set</strong>(i, j, j)  &#x21d2; DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function sets element (i,j) of the matrix m to the value x.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_zero-instance_method" title="#set_zero (instance method)">#<strong>set_zero</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function sets (or resets) all the elements of the matrix m to zero.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sp2d-instance_method" title="#sp2d (instance method)">#<strong>sp2d</strong>  &#x21d2; DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function converts the sparse matrix S into a dense matrix and stores the result in A.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transpose_memcpy-instance_method" title="#transpose_memcpy (instance method)">#<strong>transpose_memcpy</strong>(src)  &#x21d2; Numo::GSL::Spmatrix </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function copies the transpose of the sparse matrix src into dest.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new-class_method">
+  
+    .<strong>new</strong>(n1, n2, [nzmax,sptype])  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function allocates a sparse matrix of size n1-by-n2 and
+initializes it to all zeros. If the size of the matrix is not known at allocation
+time, both n1 and n2 may be set to 1, and they will automatically
+grow as elements are added to the matrix. The parameter nzmax specifies
+the maximum number of non-zero elements which will be added to the matrix.
+It does not need to be precisely known in advance, since storage space will
+automatically grow using gsl_spmatrix_realloc if nzmax is not
+large enough. Accurate knowledge of this parameter reduces the number of
+reallocation calls required. The parameter sptype specifies the
+storage format of the sparse matrix. Possible values are
+The allocated gsl_spmatrix structure is of size O(nzmax).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>n1</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n2</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nzmax</span>
+      
+      
+        <span class='type'>(<tt>Ingeger</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>(default = GSL_SPMATRIX_TRIPLET)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>sptype</span>
+      
+      
+        <span class='type'>(<tt>Ingeger</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 94</span>
+
+static VALUE
+spmatrix_s_new(int argc, VALUE *argv, VALUE klass)
+{
+    gsl_spmatrix *w;
+    int narg;
+    size_t sptype = GSL_SPMATRIX_TRIPLET;
+    VALUE  n1, n2, v3, v4;
+
+    narg = rb_scan_args(argc,argv,&quot;22&quot;,&amp;n1,&amp;n2,&amp;v3,&amp;v4);
+    switch(narg) {
+    case 4:
+        sptype = NUM2SIZET(v4);
+    case 3:
+        w = gsl_spmatrix_alloc_nzmax(NUM2SIZET(n1),NUM2SIZET(n2),NUM2SIZET(v3),sptype);
+        break;
+    case 2:
+        w = gsl_spmatrix_alloc(NUM2SIZET(n1),NUM2SIZET(n2));
+        break;
+    default:
+        rb_raise(rb_eArgError,&quot;invalid number of argument: %d for 2..4&quot;,argc);
+    }
+    if (!w) {
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    }
+    return TypedData_Wrap_Struct(cSpmatrix, &amp;spmatrix_data_type, (void*)w);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add-instance_method">
+  
+    #<strong>add</strong>(other)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function computes the sum c = a + b. The three matrices must
+have the same dimensions and be stored in compressed column format.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>result = self + other</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 316</span>
+
+static VALUE
+spmatrix_add(VALUE self, VALUE other)
+{
+    gsl_spmatrix *a, *b, *c;
+    VALUE result;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, a);
+    TypedData_Get_Struct(other, gsl_spmatrix, &amp;spmatrix_data_type, b);
+
+    if (b-&gt;size1 != a-&gt;size1 || b-&gt;size2 != a-&gt;size2) {
+        rb_raise(nary_eShapeError, &quot;matrices must have same dimensions&quot;);
+    }
+    if (a-&gt;sptype != b-&gt;sptype || a-&gt;sptype != a-&gt;sptype) {
+        rb_raise(nary_eOperationError, &quot;matrices must have same sparse storage format&quot;);
+    }
+
+    c = gsl_spmatrix_alloc_nzmax(a-&gt;size1, a-&gt;size2, a-&gt;nzmax+b-&gt;nzmax, a-&gt;sptype);
+    result = TypedData_Wrap_Struct(cSpmatrix, &amp;spmatrix_data_type, (void*)c);
+
+    gsl_spmatrix_add(c,a,b);
+    return result;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compcol-instance_method">
+  
+    #<strong>compcol</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function creates a sparse matrix in compressed column format
+from the input sparse matrix T which must be in triplet format.
+A pointer to a newly allocated matrix is returned. The calling function
+should free the newly allocated matrix when it is no longer needed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 433</span>
+
+static VALUE
+spmatrix_compcol(VALUE self)
+{
+    gsl_spmatrix *x, *w;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, x);
+
+    w = gsl_spmatrix_compcol(x);
+    if (!w) {
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    }
+    return TypedData_Wrap_Struct(cSpmatrix, &amp;spmatrix_data_type, (void*)w);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="equal-instance_method">
+  
+    #<strong>equal</strong>(b)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns 1 if the matrices a and b are equal (by comparison of
+element values) and 0 otherwise. The matrices a and b must be either
+both triplet format or both compressed format for comparison.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>other</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 389</span>
+
+static VALUE
+spmatrix_equal(VALUE self, VALUE other)
+{
+    gsl_spmatrix *w, *x;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+    TypedData_Get_Struct(other, gsl_spmatrix, &amp;spmatrix_data_type, x);
+    gsl_spmatrix_equal(w,x);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get-instance_method">
+  
+    #<strong>get</strong>(i, j)  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns element (i,j) of the matrix m.
+The matrix may be in triplet or compressed format.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>i</span>
+      
+      
+        <span class='type'>(<tt>UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>j</span>
+      
+      
+        <span class='type'>(<tt>UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>result</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 182</span>
+
+static VALUE
+spmatrix_get(VALUE self, VALUE v1, VALUE v2)
+{
+    gsl_spmatrix *w;
+    ndfunc_arg_in_t ain[2] = {{cSZ,0},{cSZ,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_spmatrix_get, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+
+    return na_ndloop3(&amp;ndf, w, 2, v1, v2);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="memcpy-instance_method">
+  
+    #<strong>memcpy</strong>(src)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function copies the elements of the sparse matrix src into
+dest. The two matrices must have the same dimensions and be in the
+same storage format.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>src</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>other</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 272</span>
+
+static VALUE
+spmatrix_memcpy(VALUE self, VALUE other)
+{
+    gsl_spmatrix *w, *x;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+    TypedData_Get_Struct(other, gsl_spmatrix, &amp;spmatrix_data_type, x);
+    gsl_spmatrix_memcpy(w,x);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="minmax-instance_method">
+  
+    #<strong>minmax</strong>  &#x21d2; <tt>Array</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the minimum and maximum elements of the matrix
+m, storing them in min_out and max_out, and searching
+only the non-zero values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>array of [min_out,max_out]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 410</span>
+
+static VALUE
+spmatrix_minmax(VALUE self)
+{
+    gsl_spmatrix *w;
+    double d1, d2;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+
+    gsl_spmatrix_minmax(w, &amp;d1, &amp;d2);
+    return rb_assoc_new(DBL2NUM(d1),DBL2NUM(d2));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nnz-instance_method">
+  
+    #<strong>nnz</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the number of non-zero elements in m.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+368
+369
+370
+371
+372
+373
+374
+375
+376</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 368</span>
+
+static VALUE
+spmatrix_nnz(VALUE self)
+{
+    gsl_spmatrix *w;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+
+    return SIZET2NUM(gsl_spmatrix_nnz(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="realloc-instance_method">
+  
+    #<strong>realloc</strong>(m)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function reallocates the storage space for m to accomodate
+nzmax non-zero elements. It is typically called internally by
+gsl_spmatrix_set if the user wants to add more elements to the
+sparse matrix than the previously specified nzmax.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>m</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 133</span>
+
+static VALUE
+spmatrix_realloc(VALUE self, VALUE v1)
+{
+    gsl_spmatrix *w;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+
+    
+    gsl_spmatrix_realloc(NUM2SIZET(v1),w);
+    
+#line 20 &quot;../gen/tmpl/c_self_f_sizet.c&quot;
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scale-instance_method">
+  
+    #<strong>scale</strong>(x)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function scales all elements of the matrix m by the constant
+factor x. The result m(i,j) \leftarrow x m(i,j) is stored in m.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 349</span>
+
+static VALUE
+spmatrix_scale(VALUE self, VALUE v1)
+{
+    gsl_spmatrix *w;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+
+    gsl_spmatrix_scale(w, NUM2DBL(v1));
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set-instance_method">
+  
+    #<strong>set</strong>(i, j, j)  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function sets element (i,j) of the matrix m to
+the value x. The matrix must be in triplet representation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>i</span>
+      
+      
+        <span class='type'>(<tt>UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>j</span>
+      
+      
+        <span class='type'>(<tt>UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 231</span>
+
+static VALUE
+spmatrix_set(VALUE self, VALUE v1, VALUE v2, VALUE v3)
+{
+    gsl_spmatrix *w;
+    ndfunc_arg_in_t ain[3] = {{cSZ,0},{cSZ,0},{cDF,0}};
+    ndfunc_t ndf = {iter_spmatrix_set, STRIDE_LOOP|NDF_EXTRACT, 3,0, ain,0};
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+
+    na_ndloop3(&amp;ndf, w, 3, v1, v2, v3);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_zero-instance_method">
+  
+    #<strong>set_zero</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function sets (or resets) all the elements of the matrix m to zero.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+251
+252
+253
+254
+255
+256
+257
+258
+259</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 251</span>
+
+static VALUE
+spmatrix_set_zero(VALUE self)
+{
+    gsl_spmatrix *w;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+    gsl_spmatrix_set_zero(w);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sp2d-instance_method">
+  
+    #<strong>sp2d</strong>  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function converts the sparse matrix S into a dense matrix and
+stores the result in A. S must be in triplet format.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>result</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 456</span>
+
+static VALUE
+spmatrix_sp2d(VALUE self)
+{
+    gsl_spmatrix *s;
+    gsl_matrix *m;
+    size_t shape[2];
+    VALUE result;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, s);
+
+    shape[0] = s-&gt;size1;
+    shape[1] = s-&gt;size2;
+    result = rb_narray_new(cDF, 2, shape);
+
+    m = ALLOC(gsl_matrix);
+    m-&gt;data  = (double*)na_get_pointer_for_write(result);
+    m-&gt;size1 = shape[0];
+    m-&gt;size2 = shape[1];
+    m-&gt;tda   = shape[1];
+    m-&gt;block = 0;
+    m-&gt;owner = 0;
+
+    gsl_spmatrix_sp2d(m,s);
+    free(m);
+    return result;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transpose_memcpy-instance_method">
+  
+    #<strong>transpose_memcpy</strong>(src)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function copies the transpose of the sparse matrix src into
+dest. The dimensions of dest must match the transpose of the
+matrix src. Also, both matrices must use the same sparse storage
+format.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>src</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>other</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Spmatrix (class)">Numo::GSL::Spmatrix</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 295</span>
+
+static VALUE
+spmatrix_transpose_memcpy(VALUE self, VALUE other)
+{
+    gsl_spmatrix *w, *x;
+
+    TypedData_Get_Struct(self, gsl_spmatrix, &amp;spmatrix_data_type, w);
+    TypedData_Get_Struct(other, gsl_spmatrix, &amp;spmatrix_data_type, x);
+    gsl_spmatrix_transpose_memcpy(w,x);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Mar 23 18:35:09 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.4.0).
+</div>
+
+    </div>
+  </body>
+</html>

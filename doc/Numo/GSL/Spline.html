@@ -366,8 +366,8 @@ y.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 456</span>
 
 static VALUE
-spline_eval(VALUE self, VALUE v1){
-#line 37 &quot;gen/tmpl/spline_eval.c&quot;
+spline_eval(VALUE self, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline_eval, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -481,8 +481,8 @@ acc.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 517</span>
 
 static VALUE
-spline_eval_deriv(VALUE self, VALUE v1){
-#line 37 &quot;gen/tmpl/spline_eval.c&quot;
+spline_eval_deriv(VALUE self, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline_eval_deriv, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -596,8 +596,8 @@ acc.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 578</span>
 
 static VALUE
-spline_eval_deriv2(VALUE self, VALUE v1){
-#line 37 &quot;gen/tmpl/spline_eval.c&quot;
+spline_eval_deriv2(VALUE self, VALUE v1)
+{
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline_eval_deriv2, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
@@ -720,8 +720,8 @@ the accelerator acc.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 642</span>
 
 static VALUE
-spline_eval_integ(VALUE self, VALUE v1, VALUE v2){
-#line 40 &quot;gen/tmpl/spline_integ.c&quot;
+spline_eval_integ(VALUE self, VALUE v1, VALUE v2)
+{
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
     ndfunc_t ndf = {iter_spline_eval_integ, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
@@ -800,8 +800,8 @@ example, Akima spline interpolation requires a minimum of 5 points.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 406</span>
 
 static VALUE
-spline_min_size(VALUE self){
-#line 10 &quot;../gen/tmpl/c_uint_f_void.c&quot;
+spline_min_size(VALUE self)
+{
     gsl_spline *w;
 
     TypedData_Get_Struct(self, gsl_spline, &amp;spline_data_type, w);
@@ -875,8 +875,8 @@ For example,</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 386</span>
 
 static VALUE
-spline_name(VALUE self){
-#line 10 &quot;../gen/tmpl/c_str_f_void.c&quot;
+spline_name(VALUE self)
+{
     gsl_spline *w;
 
     TypedData_Get_Struct(self, gsl_spline, &amp;spline_data_type, w);
@@ -893,7 +893,7 @@ spline_name(VALUE self){
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 23 07:16:13 2017 by
+  Generated on Thu Mar 23 18:35:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
