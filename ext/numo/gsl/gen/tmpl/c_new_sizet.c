@@ -11,7 +11,7 @@ set singleton: true
  <%= desc %>
  */
 static VALUE
-<%=c_func%>(VALUE self, VALUE v1)<% set n_arg:1 %>
+<%=c_func(1)%>(VALUE self, VALUE v1)
 {
     <%=struct%> *w;
     w = <%=func_name%>(NUM2SIZET(v1));

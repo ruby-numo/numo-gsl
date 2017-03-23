@@ -9,7 +9,7 @@
   <%= desc %>
   */
 static VALUE
-<%=c_func%>(VALUE self, VALUE v1, VALUE v2, VALUE v3)<% set n_arg:3 %>
+<%=c_func(3)%>(VALUE self, VALUE v1, VALUE v2, VALUE v3)
 {
     return <%=c_interp_new%>(self, <%=interp_type%>, v1, v2, v3);
 }

@@ -167,7 +167,8 @@ class DefClass < DefModule
 end
 
 class DefMethod < ErbPP
-  def c_func
+  def c_func(n_arg=nil)
+    set(n_arg:n_arg) if n_arg
     s = (singleton) ? "_s" : ""
     "#{@parent.name}#{s}_#{@opts[:name]}"
   end

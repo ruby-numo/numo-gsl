@@ -6,7 +6,7 @@ set singleton: true
   :nodoc:
  */
 static VALUE
-<%=c_func%>(VALUE self, const gsl_wavelet_type *t, VALUE v1)<% set n_arg:1 %>
+<%=c_func(1)%>(VALUE self, const gsl_wavelet_type *t, VALUE v1)
 {
     <%=struct%> *w;
     size_t k;

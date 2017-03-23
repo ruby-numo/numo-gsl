@@ -9,7 +9,7 @@
   <%= description %>
 */
 static VALUE
-<%=c_func%>(VALUE self, VALUE v1, VALUE v2, VALUE v3, VALUE v4)<% set n_arg:4 %>
+<%=c_func(4)%>(VALUE self, VALUE v1, VALUE v2, VALUE v3, VALUE v4)
 {
     <%=struct%> *w;
 

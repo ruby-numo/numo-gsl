@@ -96,7 +96,8 @@ class InterpInit < DefMethod
     set type_class: t.split('_').map{|x| x.capitalize}.join("")
   end
 
-  def c_func
+  def c_func(narg=nil)
+    super(narg)
     "#{@parent.name}_#{get(:interp_type_name)}_s_new"
   end
 

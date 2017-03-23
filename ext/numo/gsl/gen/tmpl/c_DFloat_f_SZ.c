@@ -28,7 +28,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
   <%= description %>
 */
 static VALUE
-<%=c_func%>(VALUE self, VALUE v1)<% set n_arg:1 %>
+<%=c_func(1)%>(VALUE self, VALUE v1)
 {
     <%=struct%> *w;
     ndfunc_arg_in_t ain[1] = {{cDF,0}};

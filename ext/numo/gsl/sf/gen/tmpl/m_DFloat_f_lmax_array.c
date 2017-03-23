@@ -24,7 +24,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
   <%= description %>
 */
 static VALUE
-<%=c_func%>(VALUE mod, VALUE v0, VALUE v1)<% set n_arg:2 %>
+<%=c_func(2)%>(VALUE mod, VALUE v0, VALUE v1)
 {
     int c0;
     size_t shape[1];

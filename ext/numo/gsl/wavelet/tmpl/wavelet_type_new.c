@@ -7,7 +7,7 @@
   <%= desc %>
   */
 static VALUE
-<%=c_func%>(VALUE self, VALUE v1)<% set n_arg:1 %>
+<%=c_func(1)%>(VALUE self, VALUE v1)
 {
     return <%=c_superclass_new%>(self, <%=subtype%>, v1);
 }

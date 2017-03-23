@@ -27,7 +27,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
   <%= description %>
 */
 static VALUE
-<%=c_func%>(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3)<% set n_arg:4 %>
+<%=c_func(4)%>(VALUE self, VALUE v0, VALUE v1, VALUE v2, VALUE v3)
 {
     <%=struct%> *w;
     int nmin, nmax;

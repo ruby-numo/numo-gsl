@@ -10,7 +10,7 @@ h_data_type_var = data_type_var.sub(/_pdf/,"")
   <%= description %>
 */
 static VALUE
-<%=c_func%>(VALUE self, VALUE v1)<% set n_arg:1 %>
+<%=c_func(1)%>(VALUE self, VALUE v1)
 {
     int stat;
     <%=struct%> *w;

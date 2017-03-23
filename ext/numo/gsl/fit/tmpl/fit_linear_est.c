@@ -38,7 +38,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
   <%=desc%>
 */
 static VALUE
-<%=c_func%>(VALUE mod, VALUE v1, VALUE v2)<% set n_arg: 2 %>
+<%=c_func(2)%>(VALUE mod, VALUE v1, VALUE v2)
 {
     ndfunc_arg_in_t ain[6] = {{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[2] = {{cDF,0},{cDF,0}};

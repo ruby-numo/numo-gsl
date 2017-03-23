@@ -31,7 +31,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
   <%= description %>
 */
 static VALUE
-<%=c_func%>(VALUE self, VALUE v1, VALUE v2, VALUE v3)<% set n_arg:3 %>
+<%=c_func(3)%>(VALUE self, VALUE v1, VALUE v2, VALUE v3)
 {
     <%=struct%> *w;
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};

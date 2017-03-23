@@ -22,7 +22,7 @@ set singleton: true
   <%= desc %>
  */
 static VALUE
-<%=c_func%>(int argc, VALUE *argv, VALUE klass)<% set n_arg:-1 %>
+<%=c_func(-1)%>(int argc, VALUE *argv, VALUE klass)
 {
     double *p1;
     size_t n1, lo=0, hi=0, idx;

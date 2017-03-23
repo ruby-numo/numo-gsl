@@ -16,6 +16,9 @@ class DefWavelet < DefClass
   end
 
   def lookup(h,tp)
+    ws = tp + "_workspace *"
+    dr = tp + "_direction"
+    tp = tp + " *"
     case h
     when FM(name:/_free$/);                               false
     when FM(name:"gsl_wavelet_workspace_alloc");          "c_new_sizet"
@@ -23,26 +26,17 @@ class DefWavelet < DefClass
     when FM(tp, type:"char *");                           "c_str_f_void"
     when FM(tp, type:"unsigned int");                     "c_uint_f_void"
 
-    when FM("gsl_wavelet *","double *","size_t","size_t",
-            "gsl_wavelet_direction","gsl_wavelet_workspace *");
-                                                          "wavelet_transform"
-    when FM("gsl_wavelet *","double *","size_t","size_t",
-            "gsl_wavelet_workspace *");
-                                                          "wavelet_transform2"
+    when FM(tp,"double *","size_t","size_t",dr,ws);       "wavelet_transform"
+    when FM(tp,"double *","size_t","size_t",ws);          "wavelet_transform2"
+    when FM(tp,"double *",*["size_t"]*3,dr,ws);           "wavelet2d_transform"
+    when FM(tp,"double *",*["size_t"]*3,ws);              "wavelet_transform2"
 
-    when FM("gsl_wavelet *","double *",*["size_t"]*3,
-            "gsl_wavelet_direction","gsl_wavelet_workspace *");
-                                                          "wavelet2d_transform"
-    when FM("gsl_wavelet *","double *",*["size_t"]*3,
-            "gsl_wavelet_workspace *");
-                                                          "wavelet_transform2"
-
-    when FM(tp);                                           "c_self_f_void"
+    when FM(tp);                                          "c_self_f_void"
     end
   end
 
   def check_func(h)
-    if t = lookup(h, get(:struct)+" *")
+    if t = lookup(h, get(:struct))
       Wavelet.new(self, t, **h)
       def_type_new(h)
       return true
@@ -84,7 +78,8 @@ class WaveletAlloc < DefMethod
     set c_superclass_new: "#{parent.name}_s_new"
   end
 
-  def c_func
+  def c_func(narg=nil)
+    super(narg)
     "#{@parent.name}_#{get(:subtype_name)}_s_new"
   end
 

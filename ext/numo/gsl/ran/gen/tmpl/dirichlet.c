@@ -20,7 +20,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
   <%=desc%>
 */
 static VALUE
-<%=c_func%>(int argc, VALUE *argv, VALUE mod)<% set n_arg: -1 %>
+<%=c_func(-1)%>(int argc, VALUE *argv, VALUE mod)
 {
     VALUE reduce;
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{sym_reduce,0}};
