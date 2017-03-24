@@ -1,4 +1,5 @@
 require 'numo/narray'
+require 'numo/gsl/err'
 require 'numo/gsl/sys'
 require 'numo/gsl/const'
 require 'numo/gsl/sf'
