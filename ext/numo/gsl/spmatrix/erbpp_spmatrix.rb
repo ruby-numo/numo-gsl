@@ -22,7 +22,7 @@ DefLib.new(nil,'lib') do
   set ns_var: "mG"
 
   #ErbPP.new(self,"cast_1d_contiguous")
-  #ErbPP.new(self,"cast_2d_contiguous")
+  ErbPP.new(self,"cast_2d_contiguous")
   #ErbPP.new(self,"spmatrix_macro")
   #ErbPP.new(self,"spmatrix_array_check")
 

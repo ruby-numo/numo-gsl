@@ -18,7 +18,7 @@ static VALUE
     shape[1] = s->size2;
     result = rb_narray_new(cDF, 2, shape);
 
-    m = ALLOC(gsl_matrix);
+    m = ALLOCA_N(gsl_matrix,1);
     m->data  = (double*)na_get_pointer_for_write(result);
     m->size1 = shape[0];
     m->size2 = shape[1];
@@ -27,6 +27,5 @@ static VALUE
     m->owner = 0;
 
     <%=func_name%>(m,s);
-    free(m);
     return result;
 }

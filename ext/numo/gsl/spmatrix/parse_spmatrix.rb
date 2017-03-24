@@ -19,6 +19,7 @@ Ccs
     when FM(name:/_alloc$/);                            false
     when FM(name:/_alloc_nzmax$/);                      "spmatrix_new"
     when FM(name:/_sp2d$/);                             "spmatrix_sp2d"
+    when FM(name:/_d2sp$/);                             "spmatrix_d2sp"
     when FM(tp,tp,tp,name:/_add$/);                     "spmatrix_add"
     when FM(tp,*[sz]*2,type:"double");                  "c_DFloat_f_SZ_x2"
     when FM(tp,*[sz]*2,"double");                       "c_self_f_SZ_x2_DFloat"

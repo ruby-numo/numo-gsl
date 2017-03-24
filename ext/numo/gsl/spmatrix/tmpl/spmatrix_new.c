@@ -7,8 +7,8 @@ set singleton: true
   @overload <%=name%>(<%=args[0][1]%>,<%=args[1][1]%>,[<%=args[2][1]%>,<%=args[3][1]%>])
   @param  [Integer]  <%=args[0][1]%>
   @param  [Integer]  <%=args[1][1]%>
-  @param  [Ingeger]  <%=args[2][1]%>  (default = GSL_SPMATRIX_TRIPLET)
-  @param  [Ingeger]  <%=args[3][1]%>
+  @param  [Ingeger]  <%=args[2][1]%>
+  @param  [Ingeger]  <%=args[3][1]%>   (default = GSL_SPMATRIX_TRIPLET)
 
   <%= desc %>
   */
