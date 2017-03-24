@@ -4,7 +4,7 @@ require "erbpp/line_number"
 gsl_list = eval(open("func_def.rb").read)
 
 class_list = [
- ["Spmatrix","spmatrix",[]],
+ ["SpMatrix","spmatrix",[]],
 ]
 
 gsl_list.each do |h|
@@ -26,18 +26,22 @@ DefLib.new(nil,'lib') do
   #ErbPP.new(self,"spmatrix_macro")
   #ErbPP.new(self,"spmatrix_array_check")
 
-  name = "Spmatrix"
+  name = "SpMatrix"
   set file_name: "gsl_#{name}.c"
   set include_files: %w[gsl/gsl_spmatrix.h]
   set lib_name: name.downcase
 
   class_list.each do |name,base,list|
-    DefSpmatrix.new(self,'class') do
+    DefSpMatrix.new(self,'class') do
       set name: base
       set class_name: name
       set class_var: "c"+name
       set full_class_name: "Numo::GSL::"+name
       set struct: "gsl_"+base.sub(/2d/,"")
+
+      def_const "TRIPLET", "INT2FIX(GSL_SPMATRIX_TRIPLET)", desc:"triplet storage"
+      def_const "CCS", "INT2FIX(GSL_SPMATRIX_CCS)", desc:"compressed column storage"
+      #def_const "CRS", "INT2FIX(GSL_SPMATRIX_CRS)", desc:"compressed row storage"
 
       undef_alloc_func
       list.each do |h|

@@ -1,6 +1,6 @@
 require_relative "../gen/func_parser"
 
-class DefSpmatrix < DefClass
+class DefSpMatrix < DefClass
 
   SPMATRIX_TYPES = %w[
 Triplet
@@ -35,7 +35,7 @@ Ccs
 
   def check_func(h)
     if t = lookup(h, get(:struct))
-      Spmatrix.new(self, t, **h)
+      SpMatrix.new(self, t, **h)
       #def_type_new(h)
       return true
     end
@@ -49,13 +49,13 @@ Ccs
     when "gsl_spmatrix_alloc"
       t = "spmatrix_type_new"
       SPMATRIX_TYPES.each do |tp|
-        SpmatrixAlloc.new(self, t, subtype:tp, **h)
+        SpMatrixAlloc.new(self, t, subtype:tp, **h)
       end
     end
   end
 end
 
-class Spmatrix < DefMethod
+class SpMatrix < DefMethod
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
     m = h[:func_name].sub(/^gsl_[^_]+_(accel_)?/,"")
