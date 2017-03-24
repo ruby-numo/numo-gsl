@@ -30,5 +30,6 @@ static VALUE
 
     <%=func_name%>(s, m);
 
+    RB_GC_GUARD(nary);
     return TypedData_Wrap_Struct(<%=class_var%>, &<%=data_type_var%>, (void*)s);
 }

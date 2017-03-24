@@ -14,13 +14,6 @@ static VALUE
     TypedData_Get_Struct(self, <%=struct%>, &<%=data_type_var%>, a);
     TypedData_Get_Struct(other, <%=struct%>, &<%=data_type_var%>, b);
 
-    if (b->size1 != a->size1 || b->size2 != a->size2) {
-        rb_raise(nary_eShapeError, "matrices must have same dimensions");
-    }
-    if (a->sptype != b->sptype || a->sptype != a->sptype) {
-        rb_raise(nary_eOperationError, "matrices must have same sparse storage format");
-    }
-
     c = gsl_spmatrix_alloc_nzmax(a->size1, a->size2, a->nzmax+b->nzmax, a->sptype);
     result = TypedData_Wrap_Struct(<%=class_var%>, &<%=data_type_var%>, (void*)c);
 

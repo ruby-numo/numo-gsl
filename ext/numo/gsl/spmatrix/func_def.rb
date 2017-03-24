@@ -138,4 +138,30 @@
   :args=>[["gsl_matrix *", "A"], ["const gsl_spmatrix *", "S"]],
   :desc=>
    "This function converts the sparse matrix S into a dense matrix and\n" +
-   "stores the result in A. S must be in triplet format."}]
+   "stores the result in A. S must be in triplet format."},
+ {:func_name=>"gsl_spblas_dgemv",
+  :func_type=>"int",
+  :args=>
+   [["const CBLAS_TRANSPOSE_t", "TransA"],
+    ["const double", "alpha"],
+    ["const gsl_spmatrix *", "A"],
+    ["const gsl_vector *", "x"],
+    ["const double", "beta"],
+    ["gsl_vector *", "y"]],
+  :desc=>
+   "This function computes the matrix-vector product and sum\n" +
+   "y \\leftarrow \\alpha op(A) x + \\beta y, where\n" +
+   "op(A) = A, A^T for TransA = CblasNoTrans,\n" +
+   "CblasTrans. In-place computations are not supported, so\n" +
+   "x and y must be distinct vectors.\n" +
+   "The matrix A may be in triplet or compressed format."},
+ {:func_name=>"gsl_spblas_dgemm",
+  :func_type=>"int",
+  :args=>
+   [["const double", "alpha"],
+    ["const gsl_spmatrix *", "A"],
+    ["const gsl_spmatrix *", "B"],
+    ["gsl_spmatrix *", "C"]],
+  :desc=>
+   "This function computes the sparse matrix-matrix product\n" +
+   "C = \\alpha A B. The matrices must be in compressed format."}]
