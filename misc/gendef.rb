@@ -98,6 +98,7 @@ module ParseMacro
 
   def parse_const(f)
     const = []
+    f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
     f.each_line do |line|
       case line
       when /\s*#define\s+([A-Z]\w*)(.*)$/
@@ -109,6 +110,22 @@ module ParseMacro
     end
     const
   end
+
+  def parse_enum(f)
+    enum = []
+    #f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
+    f.read.scan(/\benum\s*\{(.*?)\}/m) do |s,|
+      m = 0
+      s.scan(/(\w+)(?:\s*=\s*([-0-9]+))?(?:\s*,)?(?:\s*\/\*(.*?)\*\/)?/) do |k,n,c|
+        n = n ? n.to_i : m
+        c = c ? c.strip : ""
+        enum << [k,n,c]
+        m = n + 1
+      end
+    end
+    enum
+  end
+
 end
 
 
@@ -116,6 +133,20 @@ if __FILE__ == $0
   require 'pp'
   require 'fileutils'
   require_relative 'parse_texi'
+
+  enum_files =
+  [
+   ["../ext/numo/gsl/sys",
+    %w[
+     gsl/gsl_eigen.h
+     gsl/gsl_errno.h
+     gsl/gsl_ieee_utils.h
+     gsl/gsl_integration.h
+     gsl/gsl_message.h
+     gsl/gsl_monte_vegas.h
+    ],
+   ],
+  ]
 
   src_files =
   [
@@ -208,6 +239,22 @@ if __FILE__ == $0
     if !funcs.empty?
       PP.pp(funcs,open(File.join(out_path,"func_def.rb"),"w"))
       puts "Wrote #{funcs.size} functions to #{out_path}/func_def.rb"
+    end
+  end
+
+  enum_files.each do |out_path,h_pat|
+    enum = []
+    h_pat.each do |h_file|
+      Dir.glob(File.join(src_dir,h_file)) do |fn|
+        puts "# read #{File.basename(fn)}"
+        enum.concat ParseMacro.parse_enum(open(fn))
+      end
+    end
+
+    FileUtils.mkdir_p(out_path)
+    if !enum.empty?
+      PP.pp(enum,open(File.join(out_path,"enum_def.rb"),"w"))
+      puts "Wrote #{enum.size} enums to #{out_path}/enum_def.rb"
     end
   end
 

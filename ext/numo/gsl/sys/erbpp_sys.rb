@@ -1,8 +1,9 @@
-require_relative "../../gen/erbpp2"
+require_relative "../gen/erbpp2"
 require "erbpp/line_number"
 
-func_list = eval(open("gen/func_def.rb").read)
-const_list = eval(open("gen/const_def.rb").read)
+func_list = eval(open("func_def.rb").read)
+const_list = eval(open("const_def.rb").read)
+enum_list = eval(open("enum_def.rb").read)
 prec_list = %w[
 GSL_PREC_DOUBLE
 GSL_PREC_SINGLE
@@ -37,7 +38,7 @@ def find_template(h)
 end
 
 DefLib.new(nil,'lib') do
-  set erb_dir: %w[gen/tmpl ../gen/tmpl]
+  set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
 
   set file_name: "gsl_sys.c"
@@ -70,6 +71,12 @@ DefLib.new(nil,'lib') do
       m = a.sub(/GSL_/,"")
       v = "INT2FIX(#{a})"
       def_const(m, v, desc:"")
+    end
+
+    enum_list.each do |a|
+      m = a[0].sub(/GSL_/,"")
+      v = "INT2FIX(#{a[1]})"
+      def_const(m, v, desc:a[2]||"")
     end
   end
 
