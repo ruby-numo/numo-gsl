@@ -162,7 +162,7 @@ if __FILE__ == $0
     nil,
     /^gsl_multilarge_(.*)$/,
    ],
-   ["doc/spmatrix.texi",
+   ["doc/sp[bml]*.texi",
     "../ext/numo/gsl/spmatrix"],
   ]
   src_dir = "../../gsl-2.1"

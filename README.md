@@ -9,25 +9,21 @@
   * [Mathematical Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL.html)
   * [Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
   * [Special Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html)
-
   * [Random Number Generation and Distriutions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rng.html)
     * [Probability Density Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Ran.html)
     * [Cumulative Distribution Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Cdf.html)
-
   * [Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Stats.html)
     * [Runnning Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rstat.html)
-
   * [Histograms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Histogram.html)
     * [2D Histograms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Histogram2D.html)
   * [Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline.html)
     * [2D Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline2D.html)
-
   * [Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet.html)
     * [2D Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet2D.html)
-
   * [Linear regression](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Fit.html)
-
-  * [Sparse Matrices](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spmatrix.html)
+  * [Sparse Matrices](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpMatrix.html)
+    * [Sparse BLAS](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpBlas.html)
+    * [Sparse Linear Algebra](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpLinalg.html)
 
 More modules will be implemented.
 

@@ -164,4 +164,55 @@
     ["gsl_spmatrix *", "C"]],
   :desc=>
    "This function computes the sparse matrix-matrix product\n" +
-   "C = \\alpha A B. The matrices must be in compressed format."}]
+   "C = \\alpha A B. The matrices must be in compressed format."},
+ {:func_name=>"gsl_splinalg_itersolve_alloc",
+  :func_type=>"gsl_splinalg_itersolve *",
+  :args=>
+   [["const gsl_splinalg_itersolve_type *", "T"],
+    ["const size_t", "n"],
+    ["const size_t", "m"]],
+  :desc=>
+   "This function allocates a workspace for the iterative solution of\n" +
+   "n-by-n sparse matrix systems. The iterative solver type\n" +
+   "is specified by T. The argument m specifies the size\n" +
+   "of the solution candidate subspace {\\cal K}_m. The dimension\n" +
+   "m may be set to 0 in which case a reasonable default value is used."},
+ {:func_name=>"gsl_splinalg_itersolve_free",
+  :func_type=>"void",
+  :args=>[["gsl_splinalg_itersolve *", "w"]],
+  :desc=>"This function frees the memory associated with the workspace w."},
+ {:func_name=>"gsl_splinalg_itersolve_name",
+  :func_type=>"const char *",
+  :args=>[["const gsl_splinalg_itersolve *", "w"]],
+  :desc=>"This function returns a string pointer to the name of the solver."},
+ {:func_name=>"gsl_splinalg_itersolve_iterate",
+  :func_type=>"int",
+  :args=>
+   [["const gsl_spmatrix *", "A"],
+    ["const gsl_vector *", "b"],
+    ["const double", "tol"],
+    ["gsl_vector *", "x"],
+    ["gsl_splinalg_itersolve *", "w"]],
+  :desc=>
+   "This function performs one iteration of the iterative method for\n" +
+   "the sparse linear system specfied by the matrix A, right hand\n" +
+   "side vector b and solution vector x. On input, x\n" +
+   "must be set to an initial guess for the solution. On output,\n" +
+   "x is updated to give the current solution estimate. The\n" +
+   "parameter tol specifies the relative tolerance between the residual\n" +
+   "norm and norm of b in order to check for convergence.\n" +
+   "When the following condition is satisfied:\n" +
+   "|| A x - b || <= tol * || b ||\n" +
+   "the method has converged, the function returns GSL_SUCCESS and\n" +
+   "the final solution is provided in x. Otherwise, the function\n" +
+   "returns GSL_CONTINUE to signal that more iterations are\n" +
+   "required. Here, || \\cdot || represents the Euclidean norm.\n" +
+   "The input matrix A may be in triplet or compressed column\n" +
+   "format."},
+ {:func_name=>"gsl_splinalg_itersolve_normr",
+  :func_type=>"double",
+  :args=>[["const gsl_splinalg_itersolve *", "w"]],
+  :desc=>
+   "This function returns the current residual norm\n" +
+   "||r|| = ||A x - b||, which is updated after each call to\n" +
+   "gsl_splinalg_itersolve_iterate."}]

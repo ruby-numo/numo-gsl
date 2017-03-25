@@ -6,6 +6,7 @@ gsl_list = eval(open("func_def.rb").read)
 class_list = [
  ["SpMatrix","spmatrix",[]],
  ["SpBlas","spblas",[]],
+ ["IterSolve","splinalg_itersolve",[]],
 ]
 list = {}
 class_list.each do |name,base|
@@ -30,13 +31,15 @@ DefLib.new(nil,'lib') do
   ErbPP.new(self,"spmatrix_macro")
   #ErbPP.new(self,"spmatrix_array_check")
 
-  name = cname = "SpMatrix"
-  base = cbase = name.downcase
-  set file_name: "gsl_#{name}.c"
-  set include_files: %w[gsl/gsl_spmatrix.h gsl/gsl_spblas.h]
-  set lib_name: name.downcase
+  cname = "SpMatrix"
+  cbase = cname.downcase
+  set file_name: "gsl_#{cname}.c"
+  set include_files: %w[gsl/gsl_spmatrix.h gsl/gsl_spblas.h gsl/gsl_splinalg.h]
+  set lib_name: cname.downcase
 
   DefSpMatrix.new(self,'class') do
+    name = cname
+    base = cbase
     set name: base
     set class_name: name
     set class_var: "c"+name
@@ -53,10 +56,9 @@ DefLib.new(nil,'lib') do
     end
   end
 
-  name = "SpBlas"
-  base = name.downcase
-
   DefSpBlas.new(self,'module') do
+    name = "SpBlas"
+    base = name.downcase
     set name: base
     set module_name: name
     set module_var: "m"+name
@@ -71,9 +73,36 @@ DefLib.new(nil,'lib') do
     def_const "NOTRANS", "INT2FIX(CblasNoTrans)"
     def_const "TRANS", "INT2FIX(CblasTrans)"
 
-    #undef_alloc_func
     list[name].each do |h|
       check_func(h)
+    end
+  end
+
+  DefModule.new(self,'module') do
+    name = "SpLinalg"
+    base = name.downcase
+    set name: base
+    set module_name: name
+    set module_var: "m"+name
+    set full_module_name: "Numo::GSL::"+name
+
+    DefIterSolve.new(self,'class') do
+      set ns_var: "mSpLinalg"
+      name = "IterSolve"
+      base = "splinalg_itersolve"
+      set name: base
+      set class_name: name
+      set class_var: "c"+name
+      set full_class_name: "Numo::GSL::SpLinalg::"+name
+      set struct: "gsl_"+base
+
+      set sm_struct: "gsl_"+cbase
+      set sm_data_type_var: cbase+"_data_type"
+
+      undef_alloc_func
+      list[name].each do |h|
+        check_func(h)
+      end
     end
   end
 

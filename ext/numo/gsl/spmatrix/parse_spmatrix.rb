@@ -38,22 +38,10 @@ Ccs
   def check_func(h)
     if t = lookup(h, get(:struct))
       SpMatrix.new(self, t, **h)
-      #def_type_new(h)
       return true
     end
-    #$stderr.puts "skip #{h[:func_type]} #{h[:func_name]} #{h[:args].inspect}"
     $stderr.puts "skip #{h[:func_name]}"
     false
-  end
-
-  def def_type_new(h)
-    case h[:func_name]
-    when "gsl_spmatrix_alloc"
-      t = "spmatrix_type_new"
-      SPMATRIX_TYPES.each do |tp|
-        SpMatrixAlloc.new(self, t, subtype:tp, **h)
-      end
-    end
   end
 end
 
@@ -101,5 +89,67 @@ class SpBlas < DefMethod
     @preproc_code = ""
     m = h[:func_name].sub(/^gsl_[^_]+_/,"")
     super(parent,tmpl,name:m,**h)
+  end
+end
+
+# ----------------------------------------------------------
+
+class DefIterSolve < DefClass
+
+  ITERSOLVE_TYPES = %w[
+    gsl_splinalg_itersolve_gmres
+  ]
+
+  def FM(*args,**opts)
+    FuncMatch.new(*args,**opts)
+  end
+
+  def lookup(h,tp)
+    tp = tp + " *"
+    case h
+    when FM(name:/_free$/);             false
+    when FM(name:/_itersolve_alloc$/);  "itersolve_new"
+    when FM(name:/_itersolve_iterate$/);"itersolve_iterate"
+    when FM(tp, type:"char *");         "c_str_f_void"
+    when FM(tp, type:"double");         "c_double_f_void"
+    end
+  end
+
+  def check_func(h)
+    if t = lookup(h, get(:struct))
+      m = h[:func_name].sub(/^gsl_splinalg_itersolve_/,"")
+      DefMethod.new(self, t, name:m, **h)
+      if /_alloc$/ =~ h[:func_name]
+        t = "itersolve_type_new"
+        ITERSOLVE_TYPES.each do |tp|
+          IterSolveAlloc.new(self, t, subtype:tp, **h)
+        end
+      end
+      return true
+    end
+    $stderr.puts "skip #{h[:func_name]}"
+    false
+  end
+
+end
+
+
+class IterSolveAlloc < DefMethod
+  def initialize(parent,tmpl,**h)
+    super(parent, tmpl, name:"new", **h)
+    t = get(:subtype).sub(/gsl_#{parent.name}_/,"")
+    set subtype_name: t
+    set subtype_class: t.split('_').map{|x| x.capitalize}.join("")
+    set c_superclass_new: "#{parent.name}_s_new"
+  end
+
+  def c_func(narg=nil)
+    super(narg)
+    "#{@parent.name}_#{get(:subtype_name)}_s_new"
+  end
+
+  def define
+    "{ VALUE c#{subtype_class} = rb_define_class_under(#{_mod_var},\"#{subtype_class}\",#{_mod_var});
+      rb_define_singleton_method(c#{subtype_class},\"new\",#{c_func},#{n_arg}); }"
   end
 end
