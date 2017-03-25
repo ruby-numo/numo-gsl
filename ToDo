@@ -25,13 +25,16 @@
 * Histograms:
 * Interpolation: - only gsl_spline_* (Higher-level Interface), omit gsl_interp_*
 * Wavelet Transforms: - omit matrix interface
+* Least-Squares Fitting: - only linear regression
+* Sparse Matrices:
+* Sparse BLAS Support:
+* Sparse Linear Algebra:
 
 # To do
 * Polynomials:
-* Least-Squares Fitting:
+* Least-Squares Fitting: - multi-parameter fittings
 * Nonlinear Least-Squares Fitting:
 * Basis Splines:
-* Sparse matrix:
 
 # NArray has
 * Complex Numbers:
@@ -57,6 +60,7 @@
 * Multidimensional Minimization:
 
 # Linalg has
+* BLAS Support:
 * Linear Algebra:
 * Eigensystems:
 
@@ -64,9 +68,5 @@
 * Fast Fourier Transforms:
 
 # ?
-* BLAS Support:
-* Sparse Matrices:
-* Sparse BLAS Support:
-* Sparse Linear Algebra:
 * IEEE floating-point arithmetic:
 * Quasi-Random Sequences:
