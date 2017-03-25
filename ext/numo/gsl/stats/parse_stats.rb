@@ -1,4 +1,4 @@
-require_relative "../../gen/func_parser"
+require_relative "../gen/func_parser"
 
 class DefStats < DefModule
 
@@ -124,7 +124,7 @@ class StatsBasic < GslFunction
 
     def lookup(h)
       tmpl = find_template(h)
-      return tmpl if File.exist?("gen/tmpl/#{tmpl}.c")
+      return tmpl if File.exist?("tmpl/#{tmpl}.c")
     end
 
   end

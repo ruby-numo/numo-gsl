@@ -1,4 +1,4 @@
-require_relative "../../gen/func_parser"
+require_relative "../gen/func_parser"
 
 class DefInterp < DefClass
 

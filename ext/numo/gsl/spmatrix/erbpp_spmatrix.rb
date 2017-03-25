@@ -1,7 +1,17 @@
 require_relative "parse_spmatrix"
 require "erbpp/line_number"
 
-gsl_list = eval(open("func_def.rb").read)
+def read_eval(file)
+  fn = file % `gsl-config --version`.chomp
+  fn = file % "def" unless File.exist?(fn)
+  File.exist?(fn) ? eval(open(fn).read) : []
+end
+
+def read_func
+  read_eval("func_%s.rb")
+end
+
+gsl_list = read_func
 
 class_list = [
  ["SpMatrix","spmatrix",[]],
@@ -29,7 +39,6 @@ DefLib.new(nil,'lib') do
   ErbPP.new(self,"cast_1d_contiguous")
   ErbPP.new(self,"cast_2d_contiguous")
   ErbPP.new(self,"spmatrix_macro")
-  #ErbPP.new(self,"spmatrix_array_check")
 
   cname = "SpMatrix"
   cbase = cname.downcase

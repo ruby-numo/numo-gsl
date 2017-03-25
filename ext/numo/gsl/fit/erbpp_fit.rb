@@ -1,7 +1,19 @@
 require_relative "parse_fit"
 require "erbpp/line_number"
 
-fit_list = eval(open("func_def.rb").read)
+def read_eval(file)
+  fn = file % `gsl-config --version`.chomp
+  fn = file % "def" unless File.exist?(fn)
+  File.exist?(fn) ? eval(open(fn).read) : []
+end
+
+def read_func
+  read_eval("func_%s.rb")
+end
+
+gsl_list = read_func
+
+fit_list = gsl_list
 
 deflib = DefLib.new(nil,'lib') do
   set erb_dir: %w[tmpl ../gen/tmpl]

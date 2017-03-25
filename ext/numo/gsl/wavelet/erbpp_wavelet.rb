@@ -1,7 +1,17 @@
 require_relative "parse_wavelet"
 require "erbpp/line_number"
 
-gsl_list = eval(open("func_def.rb").read)
+def read_eval(file)
+  fn = file % `gsl-config --version`.chomp
+  fn = file % "def" unless File.exist?(fn)
+  File.exist?(fn) ? eval(open(fn).read) : []
+end
+
+def read_func
+  read_eval("func_%s.rb")
+end
+
+gsl_list = read_func
 
 class_list = [
  ["WaveletWorkspace","wavelet_workspace",[]],

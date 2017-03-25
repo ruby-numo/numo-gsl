@@ -1,6 +1,6 @@
 COGEN=erb
 GENSRC=gsl_rng.c
-ERBSRC=gen/gsl_rng.erb.c
+ERBSRC=gsl_rng.erb.c
 GENDEPS=$(ERBSRC)
 
 src : $(GENSRC)

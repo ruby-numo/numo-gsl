@@ -1,7 +1,18 @@
 require_relative "parse_sf"
 require "erbpp/line_number"
 
-gsl_list = eval(open("gen/func_def.rb").read)
+def read_eval(file)
+  fn = file % `gsl-config --version`.chomp
+  fn = file % "def" unless File.exist?(fn)
+  File.exist?(fn) ? eval(open(fn).read) : []
+end
+
+def read_func
+  read_eval("func_%s.rb")
+end
+
+gsl_list = read_func
+
 sf_list = []
 mathieu_list = []
 
@@ -20,7 +31,7 @@ gsl_list.each do |h|
 end
 
 DefLib.new(nil,'lib') do
-  set erb_dir: %w[gen/tmpl ../gen/tmpl]
+  set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
 

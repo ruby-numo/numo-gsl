@@ -407,7 +407,7 @@ rng_s_default_seed(VALUE self)
 
 <%
 $defs = []
-f = eval(open("../ran/gen/func_def.rb").read).
+f = eval(open("../ran/func_def.rb").read).
     select{|h| h[:func_name] =~ /^gsl_ran_(.*)$/}
 
 f.each do |h|

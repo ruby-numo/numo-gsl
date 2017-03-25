@@ -98,7 +98,7 @@ module ParseMacro
 
   def parse_const(f)
     const = []
-    f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
+    f = f.read.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
     f.each_line do |line|
       case line
       when /\s*#define\s+([A-Z]\w*)(.*)$/
@@ -129,75 +129,33 @@ module ParseMacro
 end
 
 
-if __FILE__ == $0
-  require 'pp'
-  require 'fileutils'
-  require_relative 'parse_texi'
+def remove_def
+  const_file = "const_%s.rb"
+  func_file  = "func_%s.rb"
+  enum_file = "enum_%s.rb"
+end
 
-  enum_files =
-  [
-   ["../ext/numo/gsl/sys",
-    %w[
-     gsl/gsl_eigen.h
-     gsl/gsl_errno.h
-     gsl/gsl_ieee_utils.h
-     gsl/gsl_integration.h
-     gsl/gsl_message.h
-     gsl/gsl_monte_vegas.h
-    ],
-   ],
-  ]
+def write_def(out_path, def_file, version, content)
+  fn = File.join(out_path, def_file % version)
+  open(fn,"w"){|f| PP.pp(content,f); f.sync }
+  puts "Wrote #{content.size} items to "+fn
+  dn = File.join(out_path, def_file % "def")
+  if File.exist?(dn)
+    if system("diff -q #{fn} #{dn}")
+      File.delete(fn)
+      puts "Delete #{fn} due to same contents"
+    end
+  else
+    File.rename(fn,dn)
+    puts "Rename #{fn} #{dn}"
+  end
+end
 
-  src_files =
-  [
-   ["doc/const.texi",
-    "../ext/numo/gsl/const/gen",
-    "const/gsl_const_*.h",
-    /^GSL_CONST_(.*)$/,
-   ],
-   ["doc/math.texi",
-    "../ext/numo/gsl/sys/gen",
-    nil,
-    /^M_(.*)$/,
-   ],
-   ["doc/specfunc-*.texi",
-    "../ext/numo/gsl/sf/gen"],
-   ["doc/statistics.texi",
-    "../ext/numo/gsl/stats/gen"],
-   ["doc/randist.texi",
-    "../ext/numo/gsl/ran/gen"],
-   ["doc/rng.texi",
-    "../ext/numo/gsl/rng/gen"],
-   ["doc/rstat.texi",
-    "../ext/numo/gsl/rstat/gen"],
-   ["doc/histogram.texi",
-    "../ext/numo/gsl/histogram/gen"],
-   ["doc/interp.texi",
-    "../ext/numo/gsl/interp/gen"],
-   ["doc/dwt.texi",
-    "../ext/numo/gsl/wavelet"],
-   ["doc/fitting.texi",
-    "../ext/numo/gsl/wavelet"],
-   ["doc/fitting.texi",
-    "../ext/numo/gsl/fit",
-    nil,
-    /^gsl_fit_(.*)$/,
-   ],
-   ["doc/*fit*.texi",
-    "../ext/numo/gsl/multifit",
-    nil,
-    /^gsl_multifit_(.*)$/,
-   ],
-   ["doc/fitting.texi",
-    "../ext/numo/gsl/multilarge",
-    nil,
-    /^gsl_multilarge_(.*)$/,
-   ],
-   ["doc/sp[bml]*.texi",
-    "../ext/numo/gsl/spmatrix"],
-  ]
-  src_dir = "../../gsl-2.1"
-
+def gendef_func(src_dir, src_files)
+  /gsl-([\d.]+)/ =~ src_dir
+  version    = $1
+  const_file = "const_%s.rb"
+  func_file  = "func_%s.rb"
   src_files.each do |texi_pat,out_path,h_pat,name_re|
     funcs = []
     const = {}
@@ -230,18 +188,24 @@ if __FILE__ == $0
       f = f.select{|h| name_re =~ h[:func_name]} if name_re
       funcs.concat(f)
     end
+
     FileUtils.mkdir_p(out_path)
+
     if !const.empty?
       clist = const.keys.sort.map{|k| [k,const[k]]}
-      PP.pp(clist,open(File.join(out_path,"const_def.rb"),"w"))
-      puts "Wrote #{clist.size} constants to #{out_path}/const_def.rb"
+      write_def(out_path, const_file, version, clist)
     end
+
     if !funcs.empty?
-      PP.pp(funcs,open(File.join(out_path,"func_def.rb"),"w"))
-      puts "Wrote #{funcs.size} functions to #{out_path}/func_def.rb"
+      write_def(out_path, func_file, version, funcs)
     end
   end
+end
 
+def gendef_enum(src_dir,enum_files)
+  /gsl-([\d.]+)/ =~ src_dir
+  version   = $1
+  enum_file = "enum_%s.rb"
   enum_files.each do |out_path,h_pat|
     enum = []
     h_pat.each do |h_file|
@@ -252,10 +216,91 @@ if __FILE__ == $0
     end
 
     FileUtils.mkdir_p(out_path)
+
     if !enum.empty?
-      PP.pp(enum,open(File.join(out_path,"enum_def.rb"),"w"))
-      puts "Wrote #{enum.size} enums to #{out_path}/enum_def.rb"
+      write_def(out_path, enum_file, version, enum)
     end
   end
+end
 
+
+if __FILE__ == $0
+  require 'pp'
+  require 'fileutils'
+  require_relative 'parse_texi'
+
+  enum_files =
+  [
+   ["../ext/numo/gsl/sys",
+    %w[
+     eigen/gsl_eigen.h
+     err/gsl_errno.h
+     err/gsl_message.h
+     ieee-utils/gsl_ieee_utils.h
+     integration/gsl_integration.h
+     monte/gsl_monte_vegas.h
+    ],
+   ],
+  ]
+
+  src_files =
+  [
+   ["doc/const.texi",
+    "../ext/numo/gsl/const",
+    "const/gsl_const_*.h",
+    /^GSL_CONST_(.*)$/,
+   ],
+   ["doc/math.texi",
+    "../ext/numo/gsl/sys",
+    nil,
+    /.*/
+   ],
+   ["doc/specfunc-*.texi",
+    "../ext/numo/gsl/sf"],
+   ["doc/statistics.texi",
+    "../ext/numo/gsl/stats"],
+   ["doc/randist.texi",
+    "../ext/numo/gsl/ran"],
+   ["doc/rng.texi",
+    "../ext/numo/gsl/rng"],
+   ["doc/rstat.texi",
+    "../ext/numo/gsl/rstat"],
+   ["doc/histogram.texi",
+    "../ext/numo/gsl/histogram"],
+   ["doc/interp.texi",
+    "../ext/numo/gsl/interp"],
+   ["doc/dwt.texi",
+    "../ext/numo/gsl/wavelet"],
+   ["doc/fitting.texi",
+    "../ext/numo/gsl/fit",
+    nil,
+    /^gsl_fit_(.*)$/,
+   ],
+   ["doc/*fit*.texi",
+    "../ext/numo/gsl/multifit",
+    nil,
+    /^gsl_multifit_(.*)$/,
+   ],
+   ["doc/fitting.texi",
+    "../ext/numo/gsl/multilarge",
+    nil,
+    /^gsl_multilarge_(.*)$/,
+   ],
+   ["doc/sp[bml]*.texi",
+    "../ext/numo/gsl/spmatrix"],
+  ]
+=begin
+  src_files =
+  [
+   ["doc/math.texi",
+    "../ext/numo/gsl/sys",
+    nil,
+    /.*/
+   ],]
+=end
+  Dir.glob("../../gsl-*").reverse.each do |src_dir|
+    puts src_dir
+    gendef_func(src_dir,src_files)
+    gendef_enum(src_dir,enum_files)
+  end
 end

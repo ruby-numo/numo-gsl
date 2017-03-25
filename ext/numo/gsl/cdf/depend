@@ -1,6 +1,6 @@
-COGEN=ruby gen/erbpp_cdf.rb
+COGEN=ruby erbpp_cdf.rb
 GENSRC=gsl_cdf.c
-GENDEPS=gen/erbpp_cdf.rb ../gen/*.rb ../gen/tmpl/*.c
+GENDEPS=erbpp_cdf.rb ../gen/*.rb ../gen/tmpl/*.c
 
 src : $(GENSRC)
 

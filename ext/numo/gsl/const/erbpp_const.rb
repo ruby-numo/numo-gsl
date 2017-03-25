@@ -1,10 +1,22 @@
-require_relative "../../gen/erbpp2"
+require_relative "../gen/erbpp2"
 require "erbpp/line_number"
 
-const_list = eval(open("gen/const_def.rb").read)
+def read_eval(file)
+  fn = file % `gsl-config --version`.chomp
+  fn = file % "def" unless File.exist?(fn)
+  File.exist?(fn) ? eval(open(fn).read) : []
+end
+
+def read_func
+  read_eval("func_%s.rb")
+end
+
+gsl_list = read_func
+
+const_list = gsl_list
 
 DefLib.new(nil,'lib') do
-  set erb_dir: %w[gen/tmpl ../gen/tmpl]
+  set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
 
   set file_name: "gsl_const.c"
