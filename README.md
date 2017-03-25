@@ -3,9 +3,9 @@
 * Pre-alpha version under development.
 * [GitHub site](https://github.com/ruby-numo/gsl)
 
-## Implemented Modules
+## [Numo::GSL API document](http://ruby-numo.github.io/gsl/doc/)
 
-[Numo::GSL API document](http://ruby-numo.github.io/gsl/doc/)
+Implemented Modules:
 
 * [Mathematical Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL.html)
 * [Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
