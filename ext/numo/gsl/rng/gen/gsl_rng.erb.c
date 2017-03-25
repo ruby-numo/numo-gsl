@@ -456,7 +456,7 @@ f.each do |h|
   @param  [Array or Integer]  shape (optional) shape for result NArray
   @return [Float or DFloat]  returns random number
 
-<%= h[:desc] %>
+<%= h[:desc].gsub(/@{/,"[").gsub(/@}/,"]") %>
  */
 static VALUE
 numo_gsl_ran_<%=name%>(int argc, VALUE *argv, VALUE self)
