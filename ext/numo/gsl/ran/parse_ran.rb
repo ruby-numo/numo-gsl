@@ -96,6 +96,8 @@ class RanPdf < GslFunction
       case h[:func_name]
       when /discrete/
         false
+      when /multivariate_gaussian/
+        false
       else
         "mod_func_noloop"
       end
