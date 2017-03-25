@@ -31,6 +31,9 @@ libs.each do |x|
   exit 1 unless have_library(x)
 end
 
+# GSL include files
+$INCFLAGS = [`gsl-config --cflags`.chomp,$INCFLAGS].join(" ")
+
 # check narray.h
 $LOAD_PATH.each do |x|
   if File.exist? File.join(x,'numo','numo/narray.h')
