@@ -79,7 +79,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>ext/numo/gsl/stats/gsl_stats.c<span class="defines">,<br />
-  ext/numo/gsl/rng/gsl_rng.c,<br /> ext/numo/gsl/rstat/gsl_rstat.c,<br /> ext/numo/gsl/histogram/gsl_histogram.c,<br /> ext/numo/gsl/cdf/gsl_cdf.c,<br /> ext/numo/gsl/const/gsl_const.c,<br /> ext/numo/gsl/sys/gsl_sys.c,<br /> ext/numo/gsl/sf/gsl_sf.c,<br /> ext/numo/gsl/ran/gsl_ran.c,<br /> ext/numo/gsl/interp/gsl_interp.c,<br /> ext/numo/gsl/wavelet/gsl_wavelet.c,<br /> ext/numo/gsl/fit/gsl_fit.c,<br /> ext/numo/gsl/spmatrix/gsl_spmatrix.c,<br /> ext/numo/gsl/err/err.c</span>
+  ext/numo/gsl/rng/gsl_rng.c,<br /> ext/numo/gsl/rng/gsl_rng.erb.c,<br /> ext/numo/gsl/rstat/gsl_rstat.c,<br /> ext/numo/gsl/histogram/gsl_histogram.c,<br /> ext/numo/gsl/histogram/gsl_histogram.erb.c,<br /> ext/numo/gsl/cdf/gsl_cdf.c,<br /> ext/numo/gsl/const/gsl_const.c,<br /> ext/numo/gsl/sys/gsl_sys.c,<br /> ext/numo/gsl/sf/gsl_sf.c,<br /> ext/numo/gsl/ran/gsl_ran.c,<br /> ext/numo/gsl/interp/gsl_interp.c,<br /> ext/numo/gsl/wavelet/gsl_wavelet.c,<br /> ext/numo/gsl/fit/gsl_fit.c,<br /> ext/numo/gsl/spmatrix/gsl_spmatrix.c,<br /> ext/numo/gsl/err/err.c</span>
 </dd>
   </dl>
   
@@ -375,6 +375,771 @@
         
       </dt>
       <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_MODE_DEFAULT</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EIGEN_SORT_VAL_ASC-constant" class="">EIGEN_SORT_VAL_ASC =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EIGEN_SORT_VAL_DESC-constant" class="">EIGEN_SORT_VAL_DESC =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EIGEN_SORT_ABS_ASC-constant" class="">EIGEN_SORT_ABS_ASC =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EIGEN_SORT_ABS_DESC-constant" class="">EIGEN_SORT_ABS_DESC =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="SUCCESS-constant" class="">SUCCESS =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="FAILURE-constant" class="">FAILURE =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="CONTINUE-constant" class="">CONTINUE =
+        <div class="docstring">
+  <div class="discussion">
+    <p>iteration has not converged</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>2</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EDOM-constant" class="">EDOM =
+        <div class="docstring">
+  <div class="discussion">
+    <p>input domain error, e.g sqrt(-1)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ERANGE-constant" class="">ERANGE =
+        <div class="docstring">
+  <div class="discussion">
+    <p>output range error, e.g. exp(1e100)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EFAULT-constant" class="">EFAULT =
+        <div class="docstring">
+  <div class="discussion">
+    <p>invalid pointer</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EINVAL-constant" class="">EINVAL =
+        <div class="docstring">
+  <div class="discussion">
+    <p>invalid argument supplied by user</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EFAILED-constant" class="">EFAILED =
+        <div class="docstring">
+  <div class="discussion">
+    <p>generic failure</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>5</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EFACTOR-constant" class="">EFACTOR =
+        <div class="docstring">
+  <div class="discussion">
+    <p>factorization failed</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>6</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ESANITY-constant" class="">ESANITY =
+        <div class="docstring">
+  <div class="discussion">
+    <p>sanity check failed - shouldn’t happen</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>7</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ENOMEM-constant" class="">ENOMEM =
+        <div class="docstring">
+  <div class="discussion">
+    <p>malloc failed</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>8</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EBADFUNC-constant" class="">EBADFUNC =
+        <div class="docstring">
+  <div class="discussion">
+    <p>problem with user-supplied function</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>9</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ERUNAWAY-constant" class="">ERUNAWAY =
+        <div class="docstring">
+  <div class="discussion">
+    <p>iterative process is out of control</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EMAXITER-constant" class="">EMAXITER =
+        <div class="docstring">
+  <div class="discussion">
+    <p>exceeded max number of iterations</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>11</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EZERODIV-constant" class="">EZERODIV =
+        <div class="docstring">
+  <div class="discussion">
+    <p>tried to divide by zero</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>12</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EBADTOL-constant" class="">EBADTOL =
+        <div class="docstring">
+  <div class="discussion">
+    <p>user specified an invalid tolerance</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>13</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ETOL-constant" class="">ETOL =
+        <div class="docstring">
+  <div class="discussion">
+    <p>failed to reach the specified tolerance</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>14</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EUNDRFLW-constant" class="">EUNDRFLW =
+        <div class="docstring">
+  <div class="discussion">
+    <p>underflow</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>15</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EOVRFLW-constant" class="">EOVRFLW =
+        <div class="docstring">
+  <div class="discussion">
+    <p>overflow</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ELOSS-constant" class="">ELOSS =
+        <div class="docstring">
+  <div class="discussion">
+    <p>loss of accuracy</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>17</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EROUND-constant" class="">EROUND =
+        <div class="docstring">
+  <div class="discussion">
+    <p>failed because of roundoff error</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>18</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EBADLEN-constant" class="">EBADLEN =
+        <div class="docstring">
+  <div class="discussion">
+    <p>matrix, vector lengths are not conformant</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>19</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ENOTSQR-constant" class="">ENOTSQR =
+        <div class="docstring">
+  <div class="discussion">
+    <p>matrix not square</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>20</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ESING-constant" class="">ESING =
+        <div class="docstring">
+  <div class="discussion">
+    <p>apparent singularity detected</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>21</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EDIVERGE-constant" class="">EDIVERGE =
+        <div class="docstring">
+  <div class="discussion">
+    <p>integral or series is divergent</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>22</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EUNSUP-constant" class="">EUNSUP =
+        <div class="docstring">
+  <div class="discussion">
+    <p>requested feature is not supported by the hardware</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>23</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EUNIMPL-constant" class="">EUNIMPL =
+        <div class="docstring">
+  <div class="discussion">
+    <p>requested feature not (yet) implemented</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>24</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ECACHE-constant" class="">ECACHE =
+        <div class="docstring">
+  <div class="discussion">
+    <p>cache limit exceeded</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>25</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ETABLE-constant" class="">ETABLE =
+        <div class="docstring">
+  <div class="discussion">
+    <p>table limit exceeded</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>26</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ENOPROG-constant" class="">ENOPROG =
+        <div class="docstring">
+  <div class="discussion">
+    <p>iteration is not making progress towards solution</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>27</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ENOPROGJ-constant" class="">ENOPROGJ =
+        <div class="docstring">
+  <div class="discussion">
+    <p>jacobian evaluations are not improving the solution</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>28</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ETOLF-constant" class="">ETOLF =
+        <div class="docstring">
+  <div class="discussion">
+    <p>cannot reach the specified tolerance in F</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>29</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ETOLX-constant" class="">ETOLX =
+        <div class="docstring">
+  <div class="discussion">
+    <p>cannot reach the specified tolerance in X</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>30</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ETOLG-constant" class="">ETOLG =
+        <div class="docstring">
+  <div class="discussion">
+    <p>cannot reach the specified tolerance in gradient</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>31</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="EOF-constant" class="">EOF =
+        <div class="docstring">
+  <div class="discussion">
+    <p>end of file</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>32</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MESSAGE_MASK_A-constant" class="">MESSAGE_MASK_A =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MESSAGE_MASK_B-constant" class="">MESSAGE_MASK_B =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MESSAGE_MASK_C-constant" class="">MESSAGE_MASK_C =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MESSAGE_MASK_D-constant" class="">MESSAGE_MASK_D =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>8</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MESSAGE_MASK_E-constant" class="">MESSAGE_MASK_E =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MESSAGE_MASK_F-constant" class="">MESSAGE_MASK_F =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>32</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MESSAGE_MASK_G-constant" class="">MESSAGE_MASK_G =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>64</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MESSAGE_MASK_H-constant" class="">MESSAGE_MASK_H =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>128</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_TYPE_NAN-constant" class="">IEEE_TYPE_NAN =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_TYPE_INF-constant" class="">IEEE_TYPE_INF =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_TYPE_NORMAL-constant" class="">IEEE_TYPE_NORMAL =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_TYPE_DENORMAL-constant" class="">IEEE_TYPE_DENORMAL =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_TYPE_ZERO-constant" class="">IEEE_TYPE_ZERO =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>5</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_SINGLE_PRECISION-constant" class="">IEEE_SINGLE_PRECISION =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_DOUBLE_PRECISION-constant" class="">IEEE_DOUBLE_PRECISION =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_EXTENDED_PRECISION-constant" class="">IEEE_EXTENDED_PRECISION =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_ROUND_TO_NEAREST-constant" class="">IEEE_ROUND_TO_NEAREST =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_ROUND_DOWN-constant" class="">IEEE_ROUND_DOWN =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_ROUND_UP-constant" class="">IEEE_ROUND_UP =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_ROUND_TO_ZERO-constant" class="">IEEE_ROUND_TO_ZERO =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_MASK_INVALID-constant" class="">IEEE_MASK_INVALID =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_MASK_DENORMALIZED-constant" class="">IEEE_MASK_DENORMALIZED =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_MASK_DIVISION_BY_ZERO-constant" class="">IEEE_MASK_DIVISION_BY_ZERO =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_MASK_OVERFLOW-constant" class="">IEEE_MASK_OVERFLOW =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>8</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_MASK_UNDERFLOW-constant" class="">IEEE_MASK_UNDERFLOW =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_MASK_ALL-constant" class="">IEEE_MASK_ALL =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>31</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="IEEE_TRAP_INEXACT-constant" class="">IEEE_TRAP_INEXACT =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>32</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="INTEG_GAUSS15-constant" class="">INTEG_GAUSS15 =
+        <div class="docstring">
+  <div class="discussion">
+    <p>15 point Gauss-Kronrod rule</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="INTEG_GAUSS21-constant" class="">INTEG_GAUSS21 =
+        <div class="docstring">
+  <div class="discussion">
+    <p>21 point Gauss-Kronrod rule</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="INTEG_GAUSS31-constant" class="">INTEG_GAUSS31 =
+        <div class="docstring">
+  <div class="discussion">
+    <p>31 point Gauss-Kronrod rule</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="INTEG_GAUSS41-constant" class="">INTEG_GAUSS41 =
+        <div class="docstring">
+  <div class="discussion">
+    <p>41 point Gauss-Kronrod rule</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="INTEG_GAUSS51-constant" class="">INTEG_GAUSS51 =
+        <div class="docstring">
+  <div class="discussion">
+    <p>51 point Gauss-Kronrod rule</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>5</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="INTEG_GAUSS61-constant" class="">INTEG_GAUSS61 =
+        <div class="docstring">
+  <div class="discussion">
+    <p>61 point Gauss-Kronrod rule</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>6</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="VEGAS_MODE_IMPORTANCE-constant" class="">VEGAS_MODE_IMPORTANCE =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="VEGAS_MODE_IMPORTANCE_ONLY-constant" class="">VEGAS_MODE_IMPORTANCE_ONLY =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="VEGAS_MODE_STRATIFIED-constant" class="">VEGAS_MODE_STRATIFIED =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span></pre></dd>
     
   </dl>
 
@@ -3086,7 +3851,7 @@ sys_pow_uint(VALUE mod, VALUE v0, VALUE v1)
 </div>
 
       <div id="footer">
-  Generated on Sat Mar 25 10:15:27 2017 by
+  Generated on Sun Mar 26 14:00:44 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

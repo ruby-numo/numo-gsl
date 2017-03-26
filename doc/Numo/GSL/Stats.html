@@ -1995,7 +1995,7 @@ stats_s_kurtosis_m_sd(int argc, VALUE *argv, VALUE mod)
   <div class="discussion">
     <p>This function computes the lag-1 autocorrelation of the dataset data.</p>
 
-<p>a_1 = [\sum_[i = 1]^[n] (x_[i] - \Hat\mu) (x_[i-1] - \Hat\mu)
+<p>a_1 = [\sum_[i = 2]^[n] (x_[i] - \Hat\mu) (x_[i-1] - \Hat\mu)
      \over
      \sum_[i = 1]^[n] (x_[i] - \Hat\mu) (x_[i] - \Hat\mu)]</p>
 
@@ -6375,7 +6375,7 @@ stats_s_wvariance_with_fixed_mean(int argc, VALUE *argv, VALUE mod)
 </div>
 
       <div id="footer">
-  Generated on Sat Mar 25 10:15:28 2017 by
+  Generated on Sun Mar 26 14:00:44 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

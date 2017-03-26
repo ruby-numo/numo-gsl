@@ -345,6 +345,29 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#rms-instance_method" title="#rms (instance method)">#<strong>rms</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the root mean square of all data added to the accumulator, defined as.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#sd-instance_method" title="#sd (instance method)">#<strong>sd</strong>  &#x21d2; Float </a>
     
 
@@ -360,6 +383,29 @@
 
   
     <span class="summary_desc"><div class='inline'><p>This function returns the standard deviation of all data added to the accumulator, defined as the square root of the variance given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sd_mean-instance_method" title="#sd_mean (instance method)">#<strong>sd_mean</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function returns the standard deviation of the mean, defined as.</p>
 </div></span>
   
 </li>
@@ -622,18 +668,18 @@ defined as</p>
       <pre class="lines">
 
 
-312
-313
-314
-315
-316
-317
-318
-319
-320</pre>
+355
+356
+357
+358
+359
+360
+361
+362
+363</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 312</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 355</span>
 
 static VALUE
 rstat_kurtosis(VALUE self)
@@ -827,18 +873,18 @@ the accumulator.</p>
       <pre class="lines">
 
 
-331
-332
-333
-334
-335
-336
-337
-338
-339</pre>
+374
+375
+376
+377
+378
+379
+380
+381
+382</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 331</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 374</span>
 
 static VALUE
 rstat_median(VALUE self)
@@ -1048,6 +1094,76 @@ rstat_reset(VALUE self)
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="rms-instance_method">
+  
+    #<strong>rms</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the root mean square of all data added to the
+accumulator, defined as</p>
+
+<p>rms = \sqrt ( 1/N \sum x_i^2 )</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+311
+312
+313
+314
+315
+316
+317
+318
+319</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 311</span>
+
+static VALUE
+rstat_rms(VALUE self)
+{
+    gsl_rstat_workspace *w;
+
+    TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
+
+    return DBL2NUM(gsl_rstat_rms(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="sd-instance_method">
   
     #<strong>sd</strong>  &#x21d2; <tt>Float</tt> 
@@ -1116,6 +1232,75 @@ rstat_sd(VALUE self)
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="sd_mean-instance_method">
+  
+    #<strong>sd_mean</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function returns the standard deviation of the mean, defined as</p>
+
+<p>sd_mean = \Hat\sigma / \sqrt[N]</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+289
+290
+291
+292
+293
+294
+295
+296
+297</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 289</span>
+
+static VALUE
+rstat_sd_mean(VALUE self)
+{
+    gsl_rstat_workspace *w;
+
+    TypedData_Get_Struct(self, gsl_rstat_workspace, &amp;rstat_data_type, w);
+
+    return DBL2NUM(gsl_rstat_sd_mean(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="skew-instance_method">
   
     #<strong>skew</strong>  &#x21d2; <tt>Float</tt> 
@@ -1158,18 +1343,18 @@ defined as</p>
       <pre class="lines">
 
 
-290
-291
-292
-293
-294
-295
-296
-297
-298</pre>
+333
+334
+335
+336
+337
+338
+339
+340
+341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 290</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 333</span>
 
 static VALUE
 rstat_skew(VALUE self)
@@ -1260,7 +1445,7 @@ rstat_variance(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sat Mar 25 10:15:37 2017 by
+  Generated on Sun Mar 26 14:00:52 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

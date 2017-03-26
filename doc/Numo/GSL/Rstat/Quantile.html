@@ -192,6 +192,29 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset-instance_method" title="#reset (instance method)">#<strong>reset</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function resets the workspace w to its initial state, so it can begin working on a new set of data.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -248,19 +271,19 @@ is O(1).</p>
       <pre class="lines">
 
 
-385
-386
-387
-388
-389
-390
-391
-392
-393
-394</pre>
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 385</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 428</span>
 
 static VALUE
 rstat_quantile_s_new(VALUE self, VALUE p)
@@ -343,21 +366,21 @@ the new data point x.</p>
       <pre class="lines">
 
 
-433
-434
-435
-436
-437
-438
-439
-440
-441
-442
-443
-444</pre>
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 433</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 494</span>
 
 static VALUE
 rstat_quantile_add(VALUE self, VALUE v1)
@@ -416,18 +439,18 @@ rstat_quantile_add(VALUE self, VALUE v1)
       <pre class="lines">
 
 
-454
-455
-456
-457
-458
-459
-460
-461
-462</pre>
+515
+516
+517
+518
+519
+520
+521
+522
+523</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 454</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 515</span>
 
 static VALUE
 rstat_quantile_get(VALUE self)
@@ -443,12 +466,67 @@ rstat_quantile_get(VALUE self)
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="reset-instance_method">
+  
+    #<strong>reset</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function resets the workspace w to its initial state,
+so it can begin working on a new set of data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+447
+448
+449
+450
+451
+452
+453
+454
+455</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rstat/gsl_rstat.c', line 447</span>
+
+static VALUE
+rstat_quantile_reset(VALUE self)
+{
+    gsl_rstat_quantile_workspace *w;
+
+    TypedData_Get_Struct(self, gsl_rstat_quantile_workspace, &amp;rstat_quantile_data_type, w);
+    gsl_rstat_quantile_reset(w);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Sat Mar 25 10:15:37 2017 by
+  Generated on Sun Mar 26 14:00:53 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

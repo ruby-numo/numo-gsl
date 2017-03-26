@@ -99,20 +99,6 @@
   
 </div>
 
-<div id="subclasses">
-  <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="Wavelet2D/Bspline.html" title="Numo::GSL::Wavelet2D::Bspline (class)">Bspline</a></span>, <span class='object_link'><a href="Wavelet2D/BsplineCentered.html" title="Numo::GSL::Wavelet2D::BsplineCentered (class)">BsplineCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Daubechies.html" title="Numo::GSL::Wavelet2D::Daubechies (class)">Daubechies</a></span>, <span class='object_link'><a href="Wavelet2D/DaubechiesCentered.html" title="Numo::GSL::Wavelet2D::DaubechiesCentered (class)">DaubechiesCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Haar.html" title="Numo::GSL::Wavelet2D::Haar (class)">Haar</a></span>, <span class='object_link'><a href="Wavelet2D/HaarCentered.html" title="Numo::GSL::Wavelet2D::HaarCentered (class)">HaarCentered</a></span></p>
-</div>
-<h2>Defined Under Namespace</h2>
-<p class="children">
-  
-    
-  
-    
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Wavelet2D/Bspline.html" title="Numo::GSL::Wavelet2D::Bspline (class)">Bspline</a></span>, <span class='object_link'><a href="Wavelet2D/BsplineCentered.html" title="Numo::GSL::Wavelet2D::BsplineCentered (class)">BsplineCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Daubechies.html" title="Numo::GSL::Wavelet2D::Daubechies (class)">Daubechies</a></span>, <span class='object_link'><a href="Wavelet2D/DaubechiesCentered.html" title="Numo::GSL::Wavelet2D::DaubechiesCentered (class)">DaubechiesCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Haar.html" title="Numo::GSL::Wavelet2D::Haar (class)">Haar</a></span>, <span class='object_link'><a href="Wavelet2D/HaarCentered.html" title="Numo::GSL::Wavelet2D::HaarCentered (class)">HaarCentered</a></span>
-    
-  
-</p>
 
 
 
@@ -122,11 +108,66 @@
 
   
     <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(, v1)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
       Instance Method Summary
       <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-instance_method" title="#new (instance method)">#<strong>new</strong>(k)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>generate wavelet type BsplineCentered instance.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -271,12 +312,134 @@
 
 
 
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new-class_method">
+  
+    .<strong>new</strong>(, v1)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 584</span>
+
+static VALUE
+wavelet2d_s_new(VALUE self, const gsl_wavelet_type *t, VALUE v1)
+{
+    gsl_wavelet *w;
+    size_t k;
+
+    k = NUM2SIZET(v1);
+    w = gsl_wavelet_alloc(t, k);
+    if (!w) {
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    }
+    return TypedData_Wrap_Struct(cWavelet2D, &amp;wavelet2d_data_type, (void*)w);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="nstransform-instance_method">
+  <h3 class="signature first" id="new-instance_method">
+  
+    #<strong>new</strong>(k)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>generate wavelet type BsplineCentered instance.</p>
+
+<p>This function allocates and initializes a wavelet object of type
+T.  The parameter k selects the specific member of the
+wavelet family.  A null pointer is returned if insufficient memory is
+available or if a unsupported member is selected.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>k</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+611
+612
+613
+614
+615</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 611</span>
+
+static VALUE
+wavelet2d_daubechies_s_new(VALUE self, VALUE v1)
+{
+    return wavelet2d_s_new(self, gsl_wavelet_daubechies, v1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nstransform-instance_method">
   
     #<strong>nstransform</strong>(data, dir)  &#x21d2; <tt>DFloat</tt> 
   
@@ -975,7 +1138,7 @@ wavelet2d_transform_inverse(VALUE self, VALUE v1)
 </div>
 
       <div id="footer">
-  Generated on Sat Mar 25 10:15:38 2017 by
+  Generated on Sun Mar 26 14:00:54 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
