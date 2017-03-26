@@ -30,7 +30,7 @@ gsl_list.each do |h|
   end
 end
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
@@ -40,7 +40,7 @@ DefLib.new(nil,'lib') do
   set include_files: ["gsl/gsl_sf.h"]
   set lib_name: "sf"
 
-  DefSf.new(self,'module') do
+  DefSf.new(self) do
     set name: "sf"
     set module_name: "Sf"
     set module_var: "mSf"
@@ -52,7 +52,7 @@ DefLib.new(nil,'lib') do
   end
 
   name = "Mathieu"
-  def_class('class') do
+  def_class do
     set ns_var: "mSf"
     set name: "sf_"+name.downcase
     set class_name: name

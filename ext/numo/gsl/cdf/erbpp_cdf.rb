@@ -37,7 +37,7 @@ def find_template(h)
   end
 end
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: "../gen/tmpl"
   set erb_suffix: ".c"
 
@@ -47,7 +47,7 @@ DefLib.new(nil,'lib') do
   set lib_name: name.downcase
   set ns_var: "mG"
 
-  def_module('module') do
+  def_module do
     set name: name.downcase
     set module_name: name
     set module_var: "m"+name

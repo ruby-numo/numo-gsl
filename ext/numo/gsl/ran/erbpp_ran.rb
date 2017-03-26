@@ -27,7 +27,7 @@ gsl_list.each do |h|
   end
 end
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
@@ -37,7 +37,7 @@ DefLib.new(nil,'lib') do
   set include_files: ["gsl/gsl_randist.h"]
   set lib_name: "ran"
 
-  DefRan.new(self,'module') do
+  DefRan.new(self) do
     set name: "ran"
     set module_name: "Ran"
     set module_var: "mRan"
@@ -48,7 +48,7 @@ DefLib.new(nil,'lib') do
     end
   end
 
-  def_class('class') do
+  def_class do
     set ns_var: "mRan"
     set name: "ran_discrete"
     set class_name: "Discrete"

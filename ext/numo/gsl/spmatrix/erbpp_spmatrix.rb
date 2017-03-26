@@ -31,7 +31,7 @@ gsl_list.each do |h|
   end
 end
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
@@ -46,7 +46,7 @@ DefLib.new(nil,'lib') do
   set include_files: %w[gsl/gsl_spmatrix.h gsl/gsl_spblas.h gsl/gsl_splinalg.h]
   set lib_name: cname.downcase
 
-  DefSpMatrix.new(self,'class') do
+  DefSpMatrix.new(self) do
     name = cname
     base = cbase
     set name: base
@@ -65,7 +65,7 @@ DefLib.new(nil,'lib') do
     end
   end
 
-  DefSpBlas.new(self,'module') do
+  DefSpBlas.new(self) do
     name = "SpBlas"
     base = name.downcase
     set name: base
@@ -87,7 +87,7 @@ DefLib.new(nil,'lib') do
     end
   end
 
-  DefModule.new(self,'module') do
+  def_module do
     name = "SpLinalg"
     base = name.downcase
     set name: base
@@ -95,7 +95,7 @@ DefLib.new(nil,'lib') do
     set module_var: "m"+name
     set full_module_name: "Numo::GSL::"+name
 
-    DefIterSolve.new(self,'class') do
+    DefIterSolve.new(self) do
       set ns_var: "mSpLinalg"
       name = "IterSolve"
       base = "splinalg_itersolve"

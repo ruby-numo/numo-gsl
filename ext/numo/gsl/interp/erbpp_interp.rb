@@ -48,7 +48,7 @@ gsl_list.each do |h|
 end
 
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
@@ -70,7 +70,7 @@ DefLib.new(nil,'lib') do
    ["Spline2D",    "spline2d",     spline2d_list],
   ].each do |name,base,list|
 
-    DefInterp.new(self,'class') do
+    DefInterp.new(self) do
       set name: base
       set class_name: name
       set class_var: "c"+name

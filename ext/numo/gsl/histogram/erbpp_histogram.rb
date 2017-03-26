@@ -125,7 +125,7 @@ def find_template(h,tp)
   end
 end
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
@@ -142,7 +142,7 @@ DefLib.new(nil,'lib') do
    ["Histogram2D",   "histogram2d",     hist2d_list],
    ["Histogram2DPdf","histogram2d_pdf", hist2d_pdf_list],
   ].each do |name,base,list|
-    def_class('class') do
+    def_class do
       set name: base
       set class_name: name
       set class_var: "c"+name

@@ -15,7 +15,7 @@ gsl_list = read_func
 
 fit_list = gsl_list
 
-deflib = DefLib.new(nil,'lib') do
+deflib = DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
@@ -27,7 +27,7 @@ deflib = DefLib.new(nil,'lib') do
 
   ErbPP.new(self,"check_1d")
 
-  DefFit.new(self,'module') do
+  DefFit.new(self) do
     set name: name.downcase
     set module_name: name
     set module_var: "m"+name

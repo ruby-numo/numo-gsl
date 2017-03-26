@@ -55,7 +55,7 @@ def find_template(h,tp)
   end
 end
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
 
@@ -65,7 +65,7 @@ DefLib.new(nil,'lib') do
   set lib_name: name.downcase
   set ns_var: "mG"
 
-  def_class('class') do
+  def_class do
     set name: name.downcase
     set class_name: name
     set class_var: "c"+name
@@ -86,7 +86,7 @@ DefLib.new(nil,'lib') do
   end
 
   name = "Quantile"
-  def_class('class') do
+  def_class do
     set name: "rstat_"+name.downcase
     set class_name: name
     set class_var: "c"+name

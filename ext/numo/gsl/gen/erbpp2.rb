@@ -1,11 +1,12 @@
 require "erb"
 
-class ErbPpNode
+class ErbPP
 
-  def initialize(parent, **opts, &block)
+  def initialize(parent=nil, erb_base=nil, **opts, &block)
     @parent = parent
     @children = []
     @opts = opts
+    set erb_base: erb_base if erb_base
     @parent.add_child(self) if @parent
     instance_eval(&block) if block
   end
@@ -46,42 +47,28 @@ class ErbPpNode
 
   def method_missing(_meth_id, *args, &block)
     if args.empty?
+      #$stderr.puts _meth_id.inspect
       v = get(_meth_id, *args, &block)
       return v if !v.nil?
     end
     method_missing_alias(_meth_id, *args, &block)
   end
 
-  def run
-  end
+  # ERB Loader
 
-  def result
-  end
-
-  def define
-  end
-end
-
-class ErbPP < ErbPpNode
-
-  def initialize(parent, erb_base, **opts, &block)
-    super(parent, **opts, &block)
-    @opts[:erb_base] = erb_base
-  end
-
-  def load_erb
+  def load_erb(base_name)
     safe_level = nil
     trim_mode = '%<>'
-    file = erb_base + get(:erb_suffix)
+    file = base_name + get(:erb_suffix)
     dirs = get(:erb_dir)
     dirs = [dirs] if !dirs.kind_of?(Array)
     dirs.each do |x|
       Dir.glob(x).each do |dir|
         path = File.join(dir,file)
         if File.exist?(path)
-          @erb = ERB.new(File.read(path), safe_level, trim_mode)
-          @erb.filename = path
-          return path
+          erb = ERB.new(File.read(path), safe_level, trim_mode)
+          erb.filename = path
+          return erb
         end
       end
     end
@@ -89,17 +76,27 @@ class ErbPP < ErbPpNode
   end
 
   def run
-    load_erb #unless @erb
-    @erb.run(binding)
+    if base = @opts[:erb_base]
+      load_erb(base).run(binding)
+    end
   end
 
   def result
-    load_erb #unless @erb
-    @erb.result(binding)
+    if base = @opts[:erb_base]
+      load_erb(base).result(binding)
+    end
+  end
+
+  def define
   end
 end
 
+
 class DefLib < ErbPP
+  def initialize(parent=nil, **opts, &block)
+    opts[:erb_base] ||= 'lib'
+    super(parent, **opts, &block)
+  end
   def id_assign
     ids = []
     @children.each{|c| a=c.get(:id_list); ids.concat(a) if a}
@@ -110,15 +107,19 @@ class DefLib < ErbPP
     @children.each{|c| a=c.get(:id_list); ids.concat(a) if a}
     ids.sort.uniq.map{|x| "ID id_#{x};"}
   end
-  def def_class(erb_path, **opts, &block)
-    DefClass.new(self, erb_path, **opts, &block)
+  def def_class(**opts, &block)
+    DefClass.new(self, **opts, &block)
   end
-  def def_module(erb_path, **opts, &block)
-    DefModule.new(self, erb_path, **opts, &block)
+  def def_module(**opts, &block)
+    DefModule.new(self, **opts, &block)
   end
 end
 
 class DefModule < ErbPP
+  def initialize(parent, **opts, &block)
+    opts[:erb_base] ||= 'module'
+    super(parent, **opts, &block)
+  end
   def id_list
     @id_list ||= []
   end
@@ -126,11 +127,7 @@ class DefModule < ErbPP
     id_list << id
   end
   def define
-    f = get(:erb_base)
-    set erb_base: init_erb
-    s = result
-    set erb_base: f
-    s
+    load_erb(init_erb).result(binding)
   end
   def init_erb
     @opts[:init_erb] || "init_module"
@@ -159,6 +156,10 @@ class DefModule < ErbPP
 end
 
 class DefClass < DefModule
+  def initialize(parent, **opts, &block)
+    opts[:erb_base] ||= 'class'
+    super(parent, **opts, &block)
+  end
   def _mod_var
     @opts[:class_var]
   end
@@ -171,8 +172,13 @@ class DefClass < DefModule
 end
 
 class DefMethod < ErbPP
+  def initialize(parent, erb_base, **opts, &block)
+    super(parent, **opts, &block)
+    set erb_base: erb_base
+  end
+
   def c_func(n_arg=nil)
-    set(n_arg:n_arg) if n_arg
+    set n_arg: n_arg if n_arg
     s = (singleton) ? "_s" : ""
     "#{@parent.name}#{s}_#{@opts[:name]}"
   end
@@ -187,26 +193,26 @@ class DefMethod < ErbPP
   end
 end
 
-class DefAlias < ErbPpNode
+class DefAlias < ErbPP
   def define
     "rb_define_alias(#{_mod_var}, \"#{from}\", \"#{to}\");"
   end
 end
 
-class UndefAllocFunc < ErbPpNode
+class UndefAllocFunc < ErbPP
   def define
     "rb_undef_alloc_func(#{_mod_var});"
   end
 end
 
-class DefConst < ErbPpNode
+class DefConst < ErbPP
   def define
     "/*#{desc}*/
     rb_define_const(#{_mod_var},\"#{name}\",#{value});"
   end
 end
 
-class DefStruct < ErbPpNode
+class DefStruct < ErbPP
   def method_code
     "static VALUE #{class_var};"
   end

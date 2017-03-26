@@ -30,7 +30,7 @@ gsl_list.each do |h|
   end
 end
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
@@ -46,7 +46,7 @@ DefLib.new(nil,'lib') do
   set lib_name: name.downcase
 
   class_list.each do |name,base,list|
-    DefWavelet.new(self,'class') do
+    DefWavelet.new(self) do
       set name: base
       set class_name: name
       set class_var: "c"+name

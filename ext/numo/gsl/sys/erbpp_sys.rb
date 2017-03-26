@@ -56,7 +56,7 @@ def find_template(h)
   end
 end
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
 
@@ -65,7 +65,7 @@ DefLib.new(nil,'lib') do
   set lib_name: "sys"
   set ns_var: "mGSL"
 
-  def_module('module') do
+  def_module do
     set name: "sys"
     set module_name: "GSL"
     set module_var: "mGSL"

@@ -15,7 +15,7 @@ gsl_list = read_func
 
 const_list = gsl_list
 
-DefLib.new(nil,'lib') do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
 
@@ -24,7 +24,7 @@ DefLib.new(nil,'lib') do
   set lib_name: "const"
   set ns_var: "mGSL"
 
-  def_module('module') do
+  def_module do
     set name: "const"
     set module_name: "Const"
     set module_var: "mConst"
