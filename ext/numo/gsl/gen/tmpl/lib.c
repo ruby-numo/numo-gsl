@@ -56,6 +56,6 @@ Init_<%=lib_name%>(void)
     <%= x %><% end %>
 
 <% children.each do |c| %>
-<%= c.define %>
+<%= c.init_def %>
 <% end %>
 }

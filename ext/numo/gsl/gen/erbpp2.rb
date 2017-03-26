@@ -87,7 +87,7 @@ class ErbPP
     end
   end
 
-  def define
+  def init_def
   end
 end
 
@@ -126,7 +126,7 @@ class DefModule < ErbPP
   def add_id(id)
     id_list << id
   end
-  def define
+  def init_def
     load_erb(init_erb).result(binding)
   end
   def init_erb
@@ -183,7 +183,7 @@ class DefMethod < ErbPP
     "#{@parent.name}#{s}_#{@opts[:name]}"
   end
 
-  def define
+  def init_def
     s = (singleton) ? "_singleton" : ""
     "rb_define#{s}_method(#{_mod_var}, \"#{@opts[:name]}\", #{c_func}, #{n_arg});"
   end
@@ -194,19 +194,19 @@ class DefMethod < ErbPP
 end
 
 class DefAlias < ErbPP
-  def define
+  def init_def
     "rb_define_alias(#{_mod_var}, \"#{from}\", \"#{to}\");"
   end
 end
 
 class UndefAllocFunc < ErbPP
-  def define
+  def init_def
     "rb_undef_alloc_func(#{_mod_var});"
   end
 end
 
 class DefConst < ErbPP
-  def define
+  def init_def
     "/*#{desc}*/
     rb_define_const(#{_mod_var},\"#{name}\",#{value});"
   end
@@ -216,7 +216,7 @@ class DefStruct < ErbPP
   def method_code
     "static VALUE #{class_var};"
   end
-  def define
+  def init_def
     items = members.map{|s| "\"#{s}\""}.join(",")
     "/*#{description}*/
     #{class_var} = rb_struct_define(\"#{class_name}\",#{items},NULL);"
