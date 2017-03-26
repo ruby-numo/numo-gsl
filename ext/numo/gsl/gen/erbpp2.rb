@@ -117,8 +117,8 @@ end
 
 class DefModule < ErbPP
   def initialize(parent, **opts, &block)
-    opts[:erb_base] ||= 'module'
-    super(parent, **opts, &block)
+    eb = opts[:erb_base] || 'module'
+    super(parent, erb_base:eb, **opts, &block)
   end
   def id_list
     @id_list ||= []
@@ -157,8 +157,8 @@ end
 
 class DefClass < DefModule
   def initialize(parent, **opts, &block)
-    opts[:erb_base] ||= 'class'
-    super(parent, **opts, &block)
+    eb = opts[:erb_base] || 'class'
+    super(parent, erb_base:eb, **opts, &block)
   end
   def _mod_var
     @opts[:class_var]
