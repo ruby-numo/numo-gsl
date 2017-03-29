@@ -1,27 +1,11 @@
 require_relative "../gen/erbpp2"
+require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
-def read_eval(file)
-  fn = file % `gsl-config --version`.chomp
-  fn = file % "def" unless File.exist?(fn)
-  File.exist?(fn) ? eval(open(fn).read) : []
-end
 
-def read_func
-  read_eval("func_%s.rb")
-end
-
-def read_const
-  read_eval("const_%s.rb")
-end
-
-def read_enum
-  read_eval("enum_%s.rb")
-end
-
-func_list = read_func
-const_list = read_const
-enum_list = read_enum
+func_list = ErbppGsl.read_func
+const_list = ErbppGsl.read_const
+enum_list = ErbppGsl.read_enum
 
 prec_list = %w[
 GSL_PREC_DOUBLE

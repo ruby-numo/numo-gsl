@@ -1,17 +1,8 @@
 require_relative "parse_stats"
+require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
-def read_eval(file)
-  fn = file % `gsl-config --version`.chomp
-  fn = file % "def" unless File.exist?(fn)
-  File.exist?(fn) ? eval(open(fn).read) : []
-end
-
-def read_func
-  read_eval("func_%s.rb")
-end
-
-gsl_list = read_func
+gsl_list = ErbppGsl.read_func
 
 stats_list = []
 

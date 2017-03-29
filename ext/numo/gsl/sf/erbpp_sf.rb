@@ -1,4 +1,5 @@
 require_relative "parse_sf"
+require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
 def read_eval(file)
@@ -11,7 +12,7 @@ def read_func
   read_eval("func_%s.rb")
 end
 
-gsl_list = read_func
+gsl_list = ErbppGsl.read_func
 
 sf_list = []
 mathieu_list = []

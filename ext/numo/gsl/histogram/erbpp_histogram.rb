@@ -1,15 +1,6 @@
 require_relative "../gen/erbpp2"
+require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
-
-def read_eval(file)
-  fn = file % `gsl-config --version`.chomp
-  fn = file % "def" unless File.exist?(fn)
-  File.exist?(fn) ? eval(open(fn).read) : []
-end
-
-def read_func
-  read_eval("func_%s.rb")
-end
 
 hist_list =
 [
@@ -40,7 +31,7 @@ hist2d_pdf_list =
  {func_name:"gsl_histogram2d_pdf_sum",func_type:"double *",args:[["struct",""]]},
 ]
 
-read_func.each do |h|
+ErbppGsl.read_func.each do |h|
   h[:desc].gsub!(/\/\*/,"//")
   h[:desc].gsub!(/\*\//,"")
   case h[:func_name]
