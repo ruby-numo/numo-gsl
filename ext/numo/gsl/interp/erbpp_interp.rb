@@ -3,42 +3,23 @@ require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
 
-gsl_list = ErbppGsl.read_func
+gsl_list = ErbppGsl.read_func_pattern(
+ [/^gsl_interp_accel_(\w+)$/,    interp_accel_list=[]],
+ [/^gsl_interp2d_(\w+)$/,    interp2d_list=[]],
+ [/^gsl_interp_(\w+)$/,    interp_list=[]],
+ [/^gsl_spline2d_(\w+)$/,    spline2d_list=[]],
+ [/^gsl_spline_(\w+)$/,    spline_list=[]],
+)
 
-interp_list = []
-interp_accel_list = []
-interp2d_list = []
-spline_list = []
-spline2d_list = []
 desc = {}
-
 gsl_list.each do |h|
   desc[h[:func_name]] = h[:desc]
 end
-
 gsl_list.each do |h|
   if /^gsl_spline/ =~ h[:func_name] && h[:desc].empty?
     h[:desc] = desc[h[:func_name].sub(/_spline/,"_interp")]
   end
 end
-
-gsl_list.each do |h|
-  case h[:func_name]
-  when /^gsl_interp_accel_(\w+)$/
-    interp_accel_list << h
-  when /^gsl_interp2d_(\w+)$/
-    interp2d_list << h
-  when /^gsl_interp_(\w+)$/
-    interp_list << h
-  when /^gsl_spline2d_(\w+)$/
-    spline2d_list << h
-  when /^gsl_spline_(\w+)$/
-    spline_list << h
-  else
-    $stderr.puts "skip "+h[:func_name]
-  end
-end
-
 
 DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
