@@ -2,18 +2,9 @@ require_relative "parse_stats"
 require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
-gsl_list = ErbppGsl.read_func
-
-stats_list = []
-
-gsl_list.each do |h|
-  case h[:func_name]
-  when /^gsl_stats_(\w+)$/
-    stats_list << h
-  else
-    $stderr.puts "skip "+ h[:func_name]
-  end
-end
+ErbppGsl.read_func_pattern(
+ [/^gsl_stats_(\w+)$/, stats_list=[]]
+)
 
 DefLib.new(nil) do
   set erb_dir: %w[tmpl ../gen/tmpl]

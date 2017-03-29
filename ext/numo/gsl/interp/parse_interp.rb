@@ -82,7 +82,7 @@ class Interp < DefMethod
     super(parent,tmpl,name:m,**h)
   end
 
-  def define
+  def init_def
     super unless /_init$/ =~ get(:func_name)
   end
 end
@@ -101,7 +101,7 @@ class InterpInit < DefMethod
     "#{@parent.name}_#{get(:interp_type_name)}_s_new"
   end
 
-  def define
+  def init_def
     "{ VALUE c#{type_class} = rb_define_class_under(#{_mod_var}, \"#{type_class}\", #{_mod_var});
       rb_define_singleton_method(c#{type_class}, \"new\", #{c_func}, #{n_arg}); }"
   end

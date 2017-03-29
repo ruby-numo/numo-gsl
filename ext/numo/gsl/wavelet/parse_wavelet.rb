@@ -64,7 +64,7 @@ class Wavelet < DefMethod
     super(parent,tmpl,name:m,**h)
   end
 
-  def define
+  def init_def
     super unless "gsl_wavelet_alloc" == get(:func_name)
   end
 end
@@ -83,7 +83,7 @@ class WaveletAlloc < DefMethod
     "#{@parent.name}_#{get(:subtype_name)}_s_new"
   end
 
-  def define
+  def init_def
     "{ VALUE c#{subtype_class} = rb_define_class_under(#{_mod_var}, \"#{subtype_class}\", #{_mod_var});
       rb_define_singleton_method(c#{subtype_class}, \"new\", #{c_func}, #{n_arg}); }"
   end

@@ -2,34 +2,11 @@ require_relative "parse_sf"
 require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
-def read_eval(file)
-  fn = file % `gsl-config --version`.chomp
-  fn = file % "def" unless File.exist?(fn)
-  File.exist?(fn) ? eval(open(fn).read) : []
-end
 
-def read_func
-  read_eval("func_%s.rb")
-end
-
-gsl_list = ErbppGsl.read_func
-
-sf_list = []
-mathieu_list = []
-
-gsl_list.each do |h|
-  if h[:args].any?{|a| a[0] == "gsl_sf_mathieu_workspace *"} ||
-      h[:func_type] == "gsl_sf_mathieu_workspace *"
-    mathieu_list << h
-  else
-    case h[:func_name]
-    when /^gsl_sf_(\w+)$/
-      sf_list << h
-    else
-      $stderr.puts "skip "+ h[:func_name]
-    end
-  end
-end
+ErbppGsl.read_func_pattern(
+ [/gsl_sf_mathieu_(\w+_array|alloc|free)$/,  mathieu_list=[]],
+ [/gsl_sf_(\w+)$/,                           sf_list=[]],
+)
 
 DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]

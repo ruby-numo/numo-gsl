@@ -2,9 +2,7 @@ require_relative "../gen/erbpp2"
 require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
-gsl_list = ErbppGsl.read_func
-
-cdf_methods = gsl_list.select do |h|
+cdf_methods = ErbppGsl.read_func.select do |h|
   h[:func_name] =~ /^gsl_cdf_(\w+)$/ &&
   h[:func_type] == "double"
 end

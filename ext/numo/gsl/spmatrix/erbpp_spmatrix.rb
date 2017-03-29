@@ -2,26 +2,17 @@ require_relative "parse_spmatrix"
 require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
-
-gsl_list = ErbppGsl.read_func
-
 class_list = [
  ["SpMatrix","spmatrix",[]],
  ["SpBlas","spblas",[]],
  ["IterSolve","splinalg_itersolve",[]],
 ]
 list = {}
-class_list.each do |name,base|
-  list[name] = []
+patterns = class_list.map do |name,base|
+  [/gsl_#{base}_/, list[name]=[]]
 end
-gsl_list.each do |h|
-  class_list.each do |name,base|
-    if /gsl_#{base}_/ =~ h[:func_name]
-      list[name] << h
-      break
-    end
-  end
-end
+
+ErbppGsl.read_func_pattern(*patterns)
 
 DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]

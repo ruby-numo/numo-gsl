@@ -31,23 +31,12 @@ hist2d_pdf_list =
  {func_name:"gsl_histogram2d_pdf_sum",func_type:"double *",args:[["struct",""]]},
 ]
 
-ErbppGsl.read_func.each do |h|
-  h[:desc].gsub!(/\/\*/,"//")
-  h[:desc].gsub!(/\*\//,"")
-  case h[:func_name]
-  when /^gsl_histogram2d_pdf_(\w+)$/
-    hist2d_pdf_list << h
-  when /^gsl_histogram2d_(\w+)$/
-    hist2d_list << h
-  when /^gsl_histogram_pdf_(\w+)$/
-    hist_pdf_list << h
-  when /^gsl_histogram_(\w+)$/
-    hist_list << h
-  else
-    $stderr.puts "skip "+h[:func_name]
-  end
-end
-
+ErbppGsl.read_func_pattern(
+ [/^gsl_histogram2d_pdf_(\w+)$/, hist2d_pdf_list],
+ [/^gsl_histogram2d_(\w+)$/,     hist2d_list],
+ [/^gsl_histogram_pdf_(\w+)$/,   hist_pdf_list],
+ [/^gsl_histogram_(\w+)$/,       hist_list],
+)
 
 def find_template(h,tp)
   if /This function is now deprecated/m =~ h[:desc]

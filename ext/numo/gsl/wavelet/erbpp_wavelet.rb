@@ -7,20 +7,13 @@ gsl_list = ErbppGsl.read_func
 
 class_list = [
  ["WaveletWorkspace","wavelet_workspace",[]],
- ["Wavelet","wavelet",[]],
+ ["Wavelet","wavelet",list_1d=[]],
  ["Wavelet2D","wavelet2d",list_2d=[]],
 ]
-gsl_list.each do |h|
-  class_list.each do |name,base,list|
-    if /gsl_#{base}_/ =~ h[:func_name]
-      list << h
-      break
-    end
-    if h[:func_name] == "gsl_wavelet_alloc"
-      list_2d << h
-    end
-  end
-end
+ErbppGsl.read_func_pattern(
+  *class_list.map{|name,base,list| [/gsl_#{base}_/, list]}
+)
+list_2d << list_1d.find{|h| h[:func_name]=="gsl_wavelet_alloc"}
 
 DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]

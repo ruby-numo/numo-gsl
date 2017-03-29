@@ -3,21 +3,10 @@ require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
 
-gsl_list = ErbppGsl.read_func
-
-ran_list = []
-disc_list = []
-
-gsl_list.each do |h|
-  case h[:func_name]
-  when /^gsl_ran_discrete_(\w+)$/
-    disc_list << h
-  when /^gsl_ran_(\w+)_pdf$/
-    ran_list << h
-  else
-  #  $stderr.puts "skip "+ h[:func_name]
-  end
-end
+ErbppGsl.read_func_pattern(
+  [ /^gsl_ran_discrete_(\w+)$/,   disc_list=[]],
+  [ /^gsl_ran_(\w+)_pdf$/,        ran_list=[]],
+)
 
 DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]

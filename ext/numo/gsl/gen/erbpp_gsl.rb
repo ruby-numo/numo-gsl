@@ -9,7 +9,10 @@ module ErbppGsl
   end
 
   def read_func
-    read_eval("func_%s.rb")
+    read_eval("func_%s.rb").each do |h|
+      h[:desc].gsub!(/\/\*/,"//")
+      h[:desc].gsub!(/\*\//,"")
+    end
   end
 
   def read_const
@@ -18,6 +21,22 @@ module ErbppGsl
 
   def read_enum
     read_eval("enum_%s.rb")
+  end
+
+  def read_func_pattern(*a)
+    read_func.each do |h|
+      no_match = true
+      a.each do |re,list|
+        if re === h[:func_name]
+          list << h
+          no_match = false
+          break
+        end
+      end
+      if no_match
+        $stderr.puts "skip "+h[:func_name]
+      end
+    end
   end
 
 end

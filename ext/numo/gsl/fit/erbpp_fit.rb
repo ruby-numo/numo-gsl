@@ -2,9 +2,7 @@ require_relative "parse_fit"
 require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
-gsl_list = ErbppGsl.read_func
-
-fit_list = gsl_list
+fit_list = ErbppGsl.read_func
 
 deflib = DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
@@ -31,6 +29,5 @@ deflib = DefLib.new do
 
   end
 end
-
 
 deflib.run

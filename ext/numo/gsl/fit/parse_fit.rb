@@ -26,7 +26,7 @@ class Fit < DefMethod
     super(parent,tmpl,name:m,singleton:true,n_arg:0,**h)
   end
 
-  def define
+  def init_def
     if /_est$/ =~ func_name
       super
     else

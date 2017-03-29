@@ -2,19 +2,10 @@ require_relative "../gen/erbpp2"
 require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
-gsl_list = ErbppGsl.read_func
-rstat_list = []
-rquantile_list = []
-gsl_list.each do |h|
-  case h[:func_name]
-  when /^gsl_rstat_quantile_(\w+)$/
-    rquantile_list << h
-  when /^gsl_rstat_(\w+)$/
-    rstat_list << h
-  else
-    $stderr.puts "skip "+h[:func_name]
-  end
-end
+ErbppGsl.read_func_pattern(
+  [/^gsl_rstat_quantile_(\w+)$/,rquantile_list=[]],
+  [/^gsl_rstat_(\w+)$/,         rstat_list=[]],
+)
 
 def find_template(h,tp)
   func_type = h[:func_type]
