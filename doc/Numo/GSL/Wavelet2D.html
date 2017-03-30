@@ -99,45 +99,27 @@
   
 </div>
 
-
-
-
-
-
-
-
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Wavelet2D/Bspline.html" title="Numo::GSL::Wavelet2D::Bspline (class)">Bspline</a></span>, <span class='object_link'><a href="Wavelet2D/BsplineCentered.html" title="Numo::GSL::Wavelet2D::BsplineCentered (class)">BsplineCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Daubechies.html" title="Numo::GSL::Wavelet2D::Daubechies (class)">Daubechies</a></span>, <span class='object_link'><a href="Wavelet2D/DaubechiesCentered.html" title="Numo::GSL::Wavelet2D::DaubechiesCentered (class)">DaubechiesCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Haar.html" title="Numo::GSL::Wavelet2D::Haar (class)">Haar</a></span>, <span class='object_link'><a href="Wavelet2D/HaarCentered.html" title="Numo::GSL::Wavelet2D::HaarCentered (class)">HaarCentered</a></span></p>
+</div>
+<h2>Defined Under Namespace</h2>
+<p class="children">
   
-    <h2>
-      Class Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
     
-      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(, v1)  &#x21d2; Object </a>
+  
     
-
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Wavelet2D/Bspline.html" title="Numo::GSL::Wavelet2D::Bspline (class)">Bspline</a></span>, <span class='object_link'><a href="Wavelet2D/BsplineCentered.html" title="Numo::GSL::Wavelet2D::BsplineCentered (class)">BsplineCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Daubechies.html" title="Numo::GSL::Wavelet2D::Daubechies (class)">Daubechies</a></span>, <span class='object_link'><a href="Wavelet2D/DaubechiesCentered.html" title="Numo::GSL::Wavelet2D::DaubechiesCentered (class)">DaubechiesCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Haar.html" title="Numo::GSL::Wavelet2D::Haar (class)">Haar</a></span>, <span class='object_link'><a href="Wavelet2D/HaarCentered.html" title="Numo::GSL::Wavelet2D::HaarCentered (class)">HaarCentered</a></span>
     
-  </span>
   
-  
-  
-  
-  
-  
-  
+</p>
 
-  
-    <span class="summary_desc"><div class='inline'>
-</div></span>
-  
-</li>
 
-      
-    </ul>
+
+
+
+
+
   
     <h2>
       Instance Method Summary
@@ -145,29 +127,6 @@
     </h2>
 
     <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#new-instance_method" title="#new (instance method)">#<strong>new</strong>(k)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>generate wavelet type BsplineCentered instance.</p>
-</div></span>
-  
-</li>
-
       
         <li class="public ">
   <span class="summary_signature">
@@ -312,134 +271,12 @@
 
 
 
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="new-class_method">
-  
-    .<strong>new</strong>(, v1)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-584
-585
-586
-587
-588
-589
-590
-591
-592
-593
-594
-595
-596</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 584</span>
-
-static VALUE
-wavelet2d_s_new(VALUE self, const gsl_wavelet_type *t, VALUE v1)
-{
-    gsl_wavelet *w;
-    size_t k;
-
-    k = NUM2SIZET(v1);
-    w = gsl_wavelet_alloc(t, k);
-    if (!w) {
-        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
-    }
-    return TypedData_Wrap_Struct(cWavelet2D, &amp;wavelet2d_data_type, (void*)w);
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="new-instance_method">
-  
-    #<strong>new</strong>(k)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>generate wavelet type BsplineCentered instance.</p>
-
-<p>This function allocates and initializes a wavelet object of type
-T.  The parameter k selects the specific member of the
-wavelet family.  A null pointer is returned if insufficient memory is
-available or if a unsupported member is selected.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>k</span>
-      
-      
-        <span class='type'>(<tt>DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-611
-612
-613
-614
-615</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 611</span>
-
-static VALUE
-wavelet2d_daubechies_s_new(VALUE self, VALUE v1)
-{
-    return wavelet2d_s_new(self, gsl_wavelet_daubechies, v1);
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="nstransform-instance_method">
+  <h3 class="signature first" id="nstransform-instance_method">
   
     #<strong>nstransform</strong>(data, dir)  &#x21d2; <tt>DFloat</tt> 
   
@@ -509,36 +346,36 @@ non-standard form.</p>
       <pre class="lines">
 
 
-896
-897
-898
-899
-900
-901
-902
-903
-904
-905
-906
-907
-908
-909
-910
-911
-912
-913
-914
-915
-916
-917
-918
-919
-920
-921
-922</pre>
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 896</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 761</span>
 
 static VALUE
 wavelet2d_nstransform(VALUE self, VALUE v1, VALUE v2)
@@ -632,23 +469,23 @@ non-standard form.</p>
       <pre class="lines">
 
 
-934
-935
-936
-937
-938
-939
-940
-941
-942
-943
-944
-945
-946
-947</pre>
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 934</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 799</span>
 
 static VALUE
 wavelet2d_nstransform_forward(VALUE self, VALUE v1)
@@ -729,23 +566,23 @@ non-standard form.</p>
       <pre class="lines">
 
 
-959
-960
-961
-962
-963
-964
-965
-966
-967
-968
-969
-970
-971
-972</pre>
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 959</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 824</span>
 
 static VALUE
 wavelet2d_nstransform_inverse(VALUE self, VALUE v1)
@@ -850,36 +687,36 @@ workspace is provided.</p>
       <pre class="lines">
 
 
-758
-759
-760
-761
-762
-763
-764
-765
-766
-767
-768
-769
-770
-771
-772
-773
-774
-775
-776
-777
-778
-779
-780
-781
-782
-783
-784</pre>
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 758</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 623</span>
 
 static VALUE
 wavelet2d_transform(VALUE self, VALUE v1, VALUE v2)
@@ -986,23 +823,23 @@ workspace is provided.</p>
       <pre class="lines">
 
 
-810
-811
-812
-813
-814
-815
-816
-817
-818
-819
-820
-821
-822
-823</pre>
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 810</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 675</span>
 
 static VALUE
 wavelet2d_transform_forward(VALUE self, VALUE v1)
@@ -1096,23 +933,23 @@ workspace is provided.</p>
       <pre class="lines">
 
 
-849
-850
-851
-852
-853
-854
-855
-856
-857
-858
-859
-860
-861
-862</pre>
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 849</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 714</span>
 
 static VALUE
 wavelet2d_transform_inverse(VALUE self, VALUE v1)
@@ -1138,7 +975,7 @@ wavelet2d_transform_inverse(VALUE self, VALUE v1)
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 26 14:00:54 2017 by
+  Generated on Thu Mar 30 18:48:53 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

@@ -94,47 +94,11 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>ext/numo/gsl/histogram/gsl_histogram.erb.c<span class="defines">,<br />
-  ext/numo/gsl/histogram/gsl_histogram.c,<br /> ext/numo/gsl/histogram/gsl_histogram.erb.c</span>
-</dd>
+    <dd>ext/numo/gsl/histogram/gsl_histogram.c</dd>
   </dl>
   
 </div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    <p>Class for computing running statistics,
-  also known as online statistics, of data. These routines are
-  suitable for handling large datasets for which it may be
-  inconvenient or impractical to store in memory all at once. The
-  data can be processed in a single pass, one point at a
-  time. Each time a data point is added to the accumulator,
-  internal parameters are updated in order to compute the current
-  mean, variance, standard deviation, skewness, and
-  kurtosis. These statistics are exact, and are updated with
-  numerically stable single-pass algorithms. The median and
-  arbitrary quantiles are also available, however these
-  calculations use algorithms which provide approximations, and
-  grow more accurate as more data is added to the accumulator.</p>
-
-<p>See <a href="https://www.gnu.org/software/gsl/manual/html_node/Running-Statistics.html" target="_parent" title="“Running Statistics”">“Running Statistics”</a></p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><h2>Defined Under Namespace</h2>
-<p class="children">
-  
-    
-  
-    
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Histogram/Quantile.html" title="Numo::GSL::Histogram::Quantile (class)">Quantile</a></span>
-    
-  
-</p>
 
 
 
@@ -208,7 +172,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add-instance_method" title="#add (instance method)">#<strong>add</strong>(data)  &#x21d2; Object </a>
+      <a href="#add-instance_method" title="#add (instance method)">#<strong>add</strong>(h2)  &#x21d2; Bool </a>
     
 
     
@@ -222,7 +186,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>This function adds the data point x to the statistical accumulator, updating calculations of the mean, variance, standard deviation, skewness, kurtosis, and median.</p>
+    <span class="summary_desc"><div class='inline'><p>This function adds the contents of the bins in histogram h2 to the corresponding bins of histogram h1,  i.e.</p>
 </div></span>
   
 </li>
@@ -599,11 +563,9 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#n-instance_method" title="#n (instance method)">#<strong>n</strong>  &#x21d2; Object </a>
+      <a href="#n-instance_method" title="#n (instance method)">#<strong>n</strong>  &#x21d2; Integer </a>
     
 
-    
-      (also: #size, #length)
     
   </span>
   
@@ -615,7 +577,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>This function returns the number of data so far added to the accumulator.</p>
+    <span class="summary_desc"><div class='inline'><p>returns n field in gsl_histogram struct.</p>
 </div></span>
   
 </li>
@@ -661,7 +623,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>This function resets all the bins in the histogram h to zero.</p>
 </div></span>
   
 </li>
@@ -1034,7 +996,7 @@ histogram_accumulate(VALUE self, VALUE v1, VALUE v2)
       <div class="method_details ">
   <h3 class="signature " id="add-instance_method">
   
-    #<strong>add</strong>(data)  &#x21d2; <tt>Object</tt> 
+    #<strong>add</strong>(h2)  &#x21d2; <tt>Bool</tt> 
   
 
   
@@ -1042,9 +1004,9 @@ histogram_accumulate(VALUE self, VALUE v1, VALUE v2)
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>This function adds the data point x to the statistical accumulator,
-updating calculations of the mean, variance, standard deviation,
-skewness, kurtosis, and median.</p>
+    <p>This function adds the contents of the bins in histogram h2 to the
+corresponding bins of histogram h1,  i.e. h’_1(i) = h_1(i) +
+h_2(i).  The two histograms must have identical bin ranges.</p>
 
 
   </div>
@@ -1057,21 +1019,30 @@ skewness, kurtosis, and median.</p>
   
     <li>
       
-        <span class='name'>data</span>
+        <span class='name'>h2</span>
       
       
-        <span class='type'>(<tt>DFloat</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Histogram (class)">Histogram</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'><p>Data array.</p>
-</div>
       
     </li>
   
 </ul>
 
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -2431,19 +2402,15 @@ histogram_mul(VALUE self, VALUE v1)
       <div class="method_details ">
   <h3 class="signature " id="n-instance_method">
   
-    #<strong>n</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>n</strong>  &#x21d2; <tt>Integer</tt> 
   
 
-  
-    <span class="aliases">Also known as:
-    <span class="names"><span id='size-instance_method'>size</span>, <span id='length-instance_method'>length</span></span>
-    </span>
   
 
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>This function returns the number of data so far added to the accumulator.</p>
+    <p>returns n field in gsl_histogram struct.</p>
 
 
   </div>
@@ -2452,6 +2419,19 @@ histogram_mul(VALUE self, VALUE v1)
   
   
 
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -2594,7 +2574,7 @@ histogram_range(VALUE self)
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <p>This function resets all the bins in the histogram h to zero.</p>
 
 
   </div>
@@ -3259,7 +3239,7 @@ histogram_sum(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 26 14:00:53 2017 by
+  Generated on Thu Mar 30 18:48:52 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

@@ -99,45 +99,27 @@
   
 </div>
 
-
-
-
-
-
-
-
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Spline/Akima.html" title="Numo::GSL::Spline::Akima (class)">Akima</a></span>, <span class='object_link'><a href="Spline/AkimaPeriodic.html" title="Numo::GSL::Spline::AkimaPeriodic (class)">AkimaPeriodic</a></span>, <span class='object_link'><a href="Spline/Cspline.html" title="Numo::GSL::Spline::Cspline (class)">Cspline</a></span>, <span class='object_link'><a href="Spline/CsplinePeriodic.html" title="Numo::GSL::Spline::CsplinePeriodic (class)">CsplinePeriodic</a></span>, <span class='object_link'><a href="Spline/Linear.html" title="Numo::GSL::Spline::Linear (class)">Linear</a></span>, <span class='object_link'><a href="Spline/Polynomial.html" title="Numo::GSL::Spline::Polynomial (class)">Polynomial</a></span>, <span class='object_link'><a href="Spline/Steffen.html" title="Numo::GSL::Spline::Steffen (class)">Steffen</a></span></p>
+</div>
+<h2>Defined Under Namespace</h2>
+<p class="children">
   
-    <h2>
-      Class Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
     
-      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(, v1, v2)  &#x21d2; Object </a>
+  
     
-
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Spline/Akima.html" title="Numo::GSL::Spline::Akima (class)">Akima</a></span>, <span class='object_link'><a href="Spline/AkimaPeriodic.html" title="Numo::GSL::Spline::AkimaPeriodic (class)">AkimaPeriodic</a></span>, <span class='object_link'><a href="Spline/Cspline.html" title="Numo::GSL::Spline::Cspline (class)">Cspline</a></span>, <span class='object_link'><a href="Spline/CsplinePeriodic.html" title="Numo::GSL::Spline::CsplinePeriodic (class)">CsplinePeriodic</a></span>, <span class='object_link'><a href="Spline/Linear.html" title="Numo::GSL::Spline::Linear (class)">Linear</a></span>, <span class='object_link'><a href="Spline/Polynomial.html" title="Numo::GSL::Spline::Polynomial (class)">Polynomial</a></span>, <span class='object_link'><a href="Spline/Steffen.html" title="Numo::GSL::Spline::Steffen (class)">Steffen</a></span>
     
-  </span>
   
-  
-  
-  
-  
-  
-  
+</p>
 
-  
-    <span class="summary_desc"><div class='inline'>
-</div></span>
-  
-</li>
 
-      
-    </ul>
+
+
+
+
+
   
     <h2>
       Instance Method Summary
@@ -284,105 +266,10 @@
 </li>
 
       
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#new-instance_method" title="#new (instance method)">#<strong>new</strong>(xa[], ya[])  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>allocate instance of Spline class.</p>
-</div></span>
-  
-</li>
-
-      
     </ul>
   
 
 
-
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="new-class_method">
-  
-    .<strong>new</strong>(, v1, v2)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 187</span>
-
-static VALUE
-spline_s_new(VALUE self, const gsl_interp_type *t, VALUE v1, VALUE v2)
-{
-    gsl_spline *w;
-    double *p1, *p2;
-    size_t n1, n2, sz;
-
-    v1 = cast_1d_contiguous(v1, cDF);
-    v2 = cast_1d_contiguous(v2, cDF);
-    n1 = RNARRAY_SIZE(v1);
-    n2 = RNARRAY_SIZE(v2);
-    sz = (n1 &lt; n2) ? n1 : n2;
-    w  = gsl_spline_alloc(t, sz);
-    p1 = (double*)na_get_pointer_for_read(v1);
-    p2 = (double*)na_get_pointer_for_read(v2);
-    gsl_spline_init(w, p1, p2, sz);
-    RB_GC_GUARD(v1);
-    RB_GC_GUARD(v2);
-
-    return TypedData_Wrap_Struct(cSpline, &amp;spline_data_type, (void*)w);
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -1001,92 +888,12 @@ spline_name(VALUE self)
 </table>
 </div>
     
-      <div class="method_details ">
-  <h3 class="signature " id="new-instance_method">
-  
-    #<strong>new</strong>(xa[], ya[])  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>allocate instance of Spline class.</p>
-
-<p>This function initializes the interpolation object interp for the
-data (xa,ya) where xa and ya are arrays of size
-size.  The interpolation object (gsl_interp) does not save
-the data arrays xa and ya and only stores the static state
-computed from the data.  The xa data array is always assumed to be
-strictly ordered, with increasing x values;
-the behavior for other arrangements is not defined.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>xa[]</span>
-      
-      
-        <span class='type'>(<tt>DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>ya[]</span>
-      
-      
-        <span class='type'>(<tt>DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-226
-227
-228
-229
-230</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 226</span>
-
-static VALUE
-spline_linear_s_new(VALUE self, VALUE v1, VALUE v2)
-{
-    return spline_s_new(self, gsl_interp_linear, v1, v2);
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 26 14:00:53 2017 by
+  Generated on Thu Mar 30 18:48:53 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

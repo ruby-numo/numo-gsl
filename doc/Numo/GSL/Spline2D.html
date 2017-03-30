@@ -99,45 +99,27 @@
   
 </div>
 
-
-
-
-
-
-
-
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Spline2D/Bicubic.html" title="Numo::GSL::Spline2D::Bicubic (class)">Bicubic</a></span>, <span class='object_link'><a href="Spline2D/Bilinear.html" title="Numo::GSL::Spline2D::Bilinear (class)">Bilinear</a></span></p>
+</div>
+<h2>Defined Under Namespace</h2>
+<p class="children">
   
-    <h2>
-      Class Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
     
-      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(, v1, v2, v3)  &#x21d2; Object </a>
+  
     
-
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Spline2D/Bicubic.html" title="Numo::GSL::Spline2D::Bicubic (class)">Bicubic</a></span>, <span class='object_link'><a href="Spline2D/Bilinear.html" title="Numo::GSL::Spline2D::Bilinear (class)">Bilinear</a></span>
     
-  </span>
   
-  
-  
-  
-  
-  
-  
+</p>
 
-  
-    <span class="summary_desc"><div class='inline'>
-</div></span>
-  
-</li>
 
-      
-    </ul>
+
+
+
+
+
   
     <h2>
       Instance Method Summary
@@ -330,119 +312,10 @@
 </li>
 
       
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#new-instance_method" title="#new (instance method)">#<strong>new</strong>(spline, xa[], ya[])  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>allocate instance of Spline2D class.</p>
-</div></span>
-  
-</li>
-
-      
     </ul>
   
 
 
-
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="new-class_method">
-  
-    .<strong>new</strong>(, v1, v2, v3)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-697
-698
-699
-700
-701
-702
-703
-704
-705
-706
-707
-708
-709
-710
-711
-712
-713
-714
-715
-716
-717
-718
-719
-720
-721
-722
-723
-724</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 697</span>
-
-static VALUE
-spline2d_s_new(VALUE self, const gsl_interp2d_type *t, VALUE v1, VALUE v2, VALUE v3)
-{
-    double *p1, *p2, *p3;
-    size_t nx, ny;
-    narray_t *na;
-    gsl_spline2d *w;
-
-    v1 = cast_1d_contiguous(v1, cDF);
-    v2 = cast_1d_contiguous(v2, cDF);
-    v3 = cast_2d_contiguous(v3, cDF);
-    nx = RNARRAY_SIZE(v1);
-    ny = RNARRAY_SIZE(v2);
-    GetNArray(v3,na);
-    if (na-&gt;shape[1] != nx || na-&gt;shape[0] != ny) {
-        rb_raise(nary_eShapeError,&quot;za.shape should be [ya.size,xa.size]&quot;);
-    }
-    w  = gsl_spline2d_alloc(t, nx, ny);
-    p1 = (double*)na_get_pointer_for_read(v1);
-    p2 = (double*)na_get_pointer_for_read(v2);
-    p3 = (double*)na_get_pointer_for_read(v3);
-    gsl_spline2d_init(w, p1, p2, p3, nx, ny);
-    RB_GC_GUARD(v1);
-    RB_GC_GUARD(v2);
-    RB_GC_GUARD(v3);
-
-    return TypedData_Wrap_Struct(cSpline2D, &amp;spline2d_data_type, (void*)w);
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -1389,105 +1262,12 @@ spline2d_name(VALUE self)
 </table>
 </div>
     
-      <div class="method_details ">
-  <h3 class="signature " id="new-instance_method">
-  
-    #<strong>new</strong>(spline, xa[], ya[])  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>allocate instance of Spline2D class.</p>
-
-<p>This function initializes the interpolation object interp for the
-data (xa,ya,za) where xa and ya are arrays of
-the x and y grid points of size xsize and ysize
-respectively, and za is an array of function values of size
-xsize*ysize.  The interpolation object (gsl_interp2d) does
-not save the data arrays xa, ya, and za and only stores the
-static state computed from the data. The xa and ya data arrays
-are always assumed to be strictly ordered, with increasing x,y values;
-the behavior for other arrangements is not defined.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>spline</span>
-      
-      
-        <span class='type'>(<tt>DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>xa[]</span>
-      
-      
-        <span class='type'>(<tt>DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>ya[]</span>
-      
-      
-        <span class='type'>(<tt>DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-746
-747
-748
-749
-750</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 746</span>
-
-static VALUE
-spline2d_bilinear_s_new(VALUE self, VALUE v1, VALUE v2, VALUE v3)
-{
-    return spline2d_s_new(self, gsl_interp2d_bilinear, v1, v2, v3);
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 26 14:00:54 2017 by
+  Generated on Thu Mar 30 18:48:53 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

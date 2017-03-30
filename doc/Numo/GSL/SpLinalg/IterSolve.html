@@ -99,6 +99,20 @@
   
 </div>
 
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="IterSolve/Gmres.html" title="Numo::GSL::SpLinalg::IterSolve::Gmres (class)">Gmres</a></span></p>
+</div>
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="IterSolve/Gmres.html" title="Numo::GSL::SpLinalg::IterSolve::Gmres (class)">Gmres</a></span>
+    
+  
+</p>
 
 
 
@@ -187,29 +201,6 @@
 
   
     <span class="summary_desc"><div class='inline'><p>This function returns a string pointer to the name of the solver.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#new-instance_method" title="#new (instance method)">#<strong>new</strong>(n, m)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>generate wavelet type Gmres instance.</p>
 </div></span>
   
 </li>
@@ -379,7 +370,6 @@ format.</p>
       <pre class="lines">
 
 
-859
 860
 861
 862
@@ -412,10 +402,11 @@ format.</p>
 889
 890
 891
-892</pre>
+892
+893</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 859</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 860</span>
 
 static VALUE
 splinalg_itersolve_s_iterate(VALUE self, VALUE vA, VALUE vb, VALUE vtol, VALUE vx)
@@ -471,7 +462,6 @@ splinalg_itersolve_s_iterate(VALUE self, VALUE vA, VALUE vb, VALUE vtol, VALUE v
       <pre class="lines">
 
 
-777
 778
 779
 780
@@ -484,10 +474,11 @@ splinalg_itersolve_s_iterate(VALUE self, VALUE vA, VALUE vb, VALUE vtol, VALUE v
 787
 788
 789
-790</pre>
+790
+791</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 777</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 778</span>
 
 static VALUE
 splinalg_itersolve_s_new(VALUE self, const gsl_splinalg_itersolve_type *t, VALUE v1, VALUE v2)
@@ -554,7 +545,6 @@ splinalg_itersolve_s_new(VALUE self, const gsl_splinalg_itersolve_type *t, VALUE
       <pre class="lines">
 
 
-821
 822
 823
 824
@@ -562,10 +552,11 @@ splinalg_itersolve_s_new(VALUE self, const gsl_splinalg_itersolve_type *t, VALUE
 826
 827
 828
-829</pre>
+829
+830</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 821</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 822</span>
 
 static VALUE
 splinalg_itersolve_name(VALUE self)
@@ -575,84 +566,6 @@ splinalg_itersolve_name(VALUE self)
     TypedData_Get_Struct(self, gsl_splinalg_itersolve, &amp;splinalg_itersolve_data_type, w);
 
     return rb_str_new_cstr(gsl_splinalg_itersolve_name(w));
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="new-instance_method">
-  
-    #<strong>new</strong>(n, m)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>generate wavelet type Gmres instance.</p>
-
-<p>This function allocates a workspace for the iterative solution of
-n-by-n sparse matrix systems. The iterative solver type
-is specified by T. The argument m specifies the size
-of the solution candidate subspace K_m. The dimension
-m may be set to 0 in which case a reasonable default value is used.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>n</span>
-      
-      
-        <span class='type'>(<tt>DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>m</span>
-      
-      
-        <span class='type'>(<tt>DFloat</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-807
-808
-809
-810
-811</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 807</span>
-
-static VALUE
-splinalg_itersolve_gmres_s_new(VALUE self, VALUE v1, VALUE v2)
-{
-    return splinalg_itersolve_s_new(self, gsl_splinalg_itersolve_gmres, v1, v2);
 }</pre>
     </td>
   </tr>
@@ -701,7 +614,6 @@ gsl_splinalg_itersolve_iterate.</p>
       <pre class="lines">
 
 
-904
 905
 906
 907
@@ -709,10 +621,11 @@ gsl_splinalg_itersolve_iterate.</p>
 909
 910
 911
-912</pre>
+912
+913</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 904</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 905</span>
 
 static VALUE
 splinalg_itersolve_normr(VALUE self)
@@ -733,7 +646,7 @@ splinalg_itersolve_normr(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 26 14:00:54 2017 by
+  Generated on Thu Mar 30 18:48:54 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
