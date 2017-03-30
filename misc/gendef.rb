@@ -98,7 +98,7 @@ module ParseMacro
 
   def parse_const(f)
     const = []
-    f = f.read.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
+    f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
     f.each_line do |line|
       case line
       when /\s*#define\s+([A-Z]\w*)(.*)$/
@@ -114,7 +114,7 @@ module ParseMacro
   def parse_enum(f)
     enum = []
     #f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
-    f.read.scan(/\benum\s*\{(.*?)\}/m) do |s,|
+    f.scan(/\benum\s*\{(.*?)\}/m) do |s,|
       m = 0
       s.scan(/(\w+)(?:\s*=\s*([-0-9]+))?(?:\s*,)?(?:\s*\/\*(.*?)\*\/)?/) do |k,n,c|
         n = n ? n.to_i : m
@@ -126,14 +126,20 @@ module ParseMacro
     enum
   end
 
+  def parse_type(f)
+    t = []
+    f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
+    f.each_line do |line|
+      case line
+      when /^\s*GSL_VAR const gsl_\w+_type\s*\*\s*(gsl_\w+)\s*;/
+        t << $1
+      end
+    end
+    t
+  end
+
 end
 
-
-def remove_def
-  const_file = "const_%s.rb"
-  func_file  = "func_%s.rb"
-  enum_file = "enum_%s.rb"
-end
 
 def write_def(out_path, def_file, version, content)
   fn = File.join(out_path, def_file % version)
@@ -156,14 +162,25 @@ def gendef_func(src_dir, src_files)
   version    = $1
   const_file = "const_%s.rb"
   func_file  = "func_%s.rb"
+  type_file  = "type_%s.rb"
+
   src_files.each do |texi_pat,out_path,h_pat,name_re|
     funcs = []
     const = {}
+    types = []
+
+    if h_pat
+      Dir.glob(File.join(src_dir,h_pat)) do |fn|
+        puts "# read #{File.basename(fn)}"
+        t = ParseMacro.parse_type(open(fn).read)
+        types.concat(t)
+      end
+    end
 
     if h_pat && name_re
       Dir.glob(File.join(src_dir,h_pat)) do |fn|
         puts "# read #{File.basename(fn)}"
-        t = ParseMacro.parse_const(open(fn))
+        t = ParseMacro.parse_const(open(fn).read)
         t.each do |x|
           if name_re =~ x[0]
             const[x[0]] = x[1]
@@ -199,6 +216,10 @@ def gendef_func(src_dir, src_files)
     if !funcs.empty?
       write_def(out_path, func_file, version, funcs)
     end
+
+    if !types.empty?
+      write_def(out_path, type_file, version, types)
+    end
   end
 end
 
@@ -211,7 +232,7 @@ def gendef_enum(src_dir,enum_files)
     h_pat.each do |h_file|
       Dir.glob(File.join(src_dir,h_file)) do |fn|
         puts "# read #{File.basename(fn)}"
-        enum.concat ParseMacro.parse_enum(open(fn))
+        enum.concat ParseMacro.parse_enum(open(fn).read)
       end
     end
 
@@ -262,15 +283,21 @@ if __FILE__ == $0
    ["doc/randist.texi",
     "../ext/numo/gsl/ran"],
    ["doc/rng.texi",
-    "../ext/numo/gsl/rng"],
+    "../ext/numo/gsl/rng",
+    "rng/gsl_rng.h",
+   ],
    ["doc/rstat.texi",
     "../ext/numo/gsl/rstat"],
    ["doc/histogram.texi",
     "../ext/numo/gsl/histogram"],
    ["doc/interp.texi",
-    "../ext/numo/gsl/interp"],
+    "../ext/numo/gsl/interp",
+    "interpolation/gsl_interp*.h",
+   ],
    ["doc/dwt.texi",
-    "../ext/numo/gsl/wavelet"],
+    "../ext/numo/gsl/wavelet",
+    "wavelet/gsl_wavelet.h",
+   ],
    ["doc/fitting.texi",
     "../ext/numo/gsl/fit",
     nil,
@@ -278,7 +305,7 @@ if __FILE__ == $0
    ],
    ["doc/*fit*.texi",
     "../ext/numo/gsl/multifit",
-    nil,
+    "multifit_nlinear/gsl_multifit*.h",
     /^gsl_multifit_(.*)$/,
    ],
    ["doc/fitting.texi",
@@ -287,16 +314,15 @@ if __FILE__ == $0
     /^gsl_multilarge_(.*)$/,
    ],
    ["doc/sp[bml]*.texi",
-    "../ext/numo/gsl/spmatrix"],
+    "../ext/numo/gsl/spmatrix",
+    "splinalg/gsl_splinalg.h",
+   ],
   ]
 =begin
   src_files =
   [
-   ["doc/math.texi",
-    "../ext/numo/gsl/sys",
-    nil,
-    /.*/
-   ],]
+  ]
+  enum_files = []
 =end
   Dir.glob("../../gsl-*").reverse.each do |src_dir|
     puts src_dir

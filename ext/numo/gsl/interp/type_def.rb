@@ -1,0 +1,9 @@
+["gsl_interp2d_bilinear",
+ "gsl_interp2d_bicubic",
+ "gsl_interp_linear",
+ "gsl_interp_polynomial",
+ "gsl_interp_cspline",
+ "gsl_interp_cspline_periodic",
+ "gsl_interp_akima",
+ "gsl_interp_akima_periodic",
+ "gsl_interp_steffen"]
