@@ -315,7 +315,13 @@ if __FILE__ == $0
    ],
    ["doc/sp[bml]*.texi",
     "../ext/numo/gsl/spmatrix",
+    nil,
+    /^GSL_(.*)$/,
+   ],
+   ["doc/sp[bml]*.texi",
+    "../ext/numo/gsl/spmatrix",
     "splinalg/gsl_splinalg.h",
+    /^gsl_sp(.*)$/,
    ],
   ]
 =begin

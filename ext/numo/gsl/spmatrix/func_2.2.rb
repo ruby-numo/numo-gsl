@@ -63,11 +63,63 @@
   :desc=>
    "This function sets element (i,j) of the matrix m to\n" +
    "the value x. The matrix must be in triplet representation."},
+ {:func_name=>"gsl_spmatrix_ptr",
+  :func_type=>"double *",
+  :args=>
+   [["gsl_spmatrix *", "m"], ["const size_t", "i"], ["const size_t", "j"]],
+  :desc=>
+   "This function returns a pointer to the (i,j) element of the matrix m.\n" +
+   "If the (i,j) element is not explicitly stored in the matrix,\n" +
+   "a null pointer is returned."},
  {:func_name=>"gsl_spmatrix_set_zero",
   :func_type=>"int",
   :args=>[["gsl_spmatrix *", "m"]],
   :desc=>
    "This function sets (or resets) all the elements of the matrix m to zero."},
+ {:func_name=>"gsl_spmatrix_fwrite",
+  :func_type=>"int",
+  :args=>[["FILE *", "stream"], ["const gsl_spmatrix *", "m"]],
+  :desc=>
+   "This function writes the elements of the matrix m to the stream\n" +
+   "stream in binary format.  The return value is 0 for success and\n" +
+   "GSL_EFAILED if there was a problem writing to the file.  Since the\n" +
+   "data is written in the native binary format it may not be portable\n" +
+   "between different architectures."},
+ {:func_name=>"gsl_spmatrix_fread",
+  :func_type=>"int",
+  :args=>[["FILE *", "stream"], ["gsl_spmatrix *", "m"]],
+  :desc=>
+   "This function reads into the matrix m from the open stream\n" +
+   "stream in binary format.  The matrix m must be preallocated\n" +
+   "with the correct storage format, dimensions and have a sufficiently large nzmax\n" +
+   "in order to read in all matrix elements, otherwise GSL_EBADLEN\n" +
+   "is returned. The return value is 0 for success and\n" +
+   "GSL_EFAILED if there was a problem reading from the file.  The\n" +
+   "data is assumed to have been written in the native binary format on the\n" +
+   "same architecture."},
+ {:func_name=>"gsl_spmatrix_fprintf",
+  :func_type=>"int",
+  :args=>
+   [["FILE *", "stream"],
+    ["const gsl_spmatrix *", "m"],
+    ["const char *", "format"]],
+  :desc=>
+   "This function writes the elements of the matrix m line-by-line to\n" +
+   "the stream stream using the format specifier format, which\n" +
+   "should be one of the %g, %e or %f formats for\n" +
+   "floating point numbers.  The function returns 0 for success and\n" +
+   "GSL_EFAILED if there was a problem writing to the file. The\n" +
+   "input matrix m may be in any storage format, and the output file\n" +
+   "will be written in MatrixMarket format."},
+ {:func_name=>"gsl_spmatrix_fscanf",
+  :func_type=>"gsl_spmatrix *",
+  :args=>[["FILE *", "stream"]],
+  :desc=>
+   "This function reads sparse matrix data in the MatrixMarket format\n" +
+   "from the stream stream and stores it in a newly allocated matrix\n" +
+   "which is returned in triplet format.  The function returns 0 for success and\n" +
+   "GSL_EFAILED if there was a problem reading from the file. The\n" +
+   "user should free the returned matrix when it is no longer needed."},
  {:func_name=>"gsl_spmatrix_memcpy",
   :func_type=>"int",
   :args=>[["gsl_spmatrix *", "dest"], ["const gsl_spmatrix *", "src"]],
@@ -83,6 +135,25 @@
    "dest. The dimensions of dest must match the transpose of the\n" +
    "matrix src. Also, both matrices must use the same sparse storage\n" +
    "format."},
+ {:func_name=>"gsl_spmatrix_transpose",
+  :func_type=>"int",
+  :args=>[["gsl_spmatrix *", "m"]],
+  :desc=>
+   "This function replaces the matrix m by its transpose,\n" +
+   "preserving the storage format of the input matrix. Currently,\n" +
+   "only triplet matrix inputs are supported."},
+ {:func_name=>"gsl_spmatrix_transpose2",
+  :func_type=>"int",
+  :args=>[["gsl_spmatrix *", "m"]],
+  :desc=>
+   "This function replaces the matrix m by its transpose, but\n" +
+   "changes the storage format for compressed matrix inputs. Since\n" +
+   "compressed column storage is the transpose of compressed row storage,\n" +
+   "this function simply converts a CCS matrix to CRS and vice versa.\n" +
+   "This is the most efficient way to transpose a compressed storage\n" +
+   "matrix, but the user should note that the storage format of their\n" +
+   "compressed matrix will change on output. For triplet matrices,\n" +
+   "the output matrix is also in triplet storage."},
  {:func_name=>"gsl_spmatrix_add",
   :func_type=>"int",
   :args=>
@@ -91,7 +162,7 @@
     ["const gsl_spmatrix *", "b"]],
   :desc=>
    "This function computes the sum c = a + b. The three matrices must\n" +
-   "have the same dimensions and be stored in compressed column format."},
+   "have the same dimensions and be stored in a compressed format."},
  {:func_name=>"gsl_spmatrix_scale",
   :func_type=>"int",
   :args=>[["gsl_spmatrix *", "m"], ["const double", "x"]],
@@ -107,8 +178,8 @@
   :args=>[["const gsl_spmatrix *", "a"], ["const gsl_spmatrix *", "b"]],
   :desc=>
    "This function returns 1 if the matrices a and b are equal (by comparison of\n" +
-   "element values) and 0 otherwise. The matrices a and b must be either\n" +
-   "both triplet format or both compressed format for comparison."},
+   "element values) and 0 otherwise. The matrices a and b must be in the same\n" +
+   "sparse storage format for comparison."},
  {:func_name=>"gsl_spmatrix_minmax",
   :func_type=>"int",
   :args=>
@@ -119,11 +190,19 @@
    "This function returns the minimum and maximum elements of the matrix\n" +
    "m, storing them in min_out and max_out, and searching\n" +
    "only the non-zero values."},
- {:func_name=>"gsl_spmatrix_compcol",
+ {:func_name=>"gsl_spmatrix_ccs",
   :func_type=>"gsl_spmatrix *",
   :args=>[["const gsl_spmatrix *", "T"]],
   :desc=>
    "This function creates a sparse matrix in compressed column format\n" +
+   "from the input sparse matrix T which must be in triplet format.\n" +
+   "A pointer to a newly allocated matrix is returned. The calling function\n" +
+   "should free the newly allocated matrix when it is no longer needed."},
+ {:func_name=>"gsl_spmatrix_crs",
+  :func_type=>"gsl_spmatrix *",
+  :args=>[["const gsl_spmatrix *", "T"]],
+  :desc=>
+   "This function creates a sparse matrix in compressed row format\n" +
    "from the input sparse matrix T which must be in triplet format.\n" +
    "A pointer to a newly allocated matrix is returned. The calling function\n" +
    "should free the newly allocated matrix when it is no longer needed."},

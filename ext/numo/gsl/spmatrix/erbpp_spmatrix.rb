@@ -8,11 +8,10 @@ class_list = [
  ["IterSolve","splinalg_itersolve",[]],
 ]
 list = {}
-patterns = class_list.map do |name,base|
+ErbppGsl.read_func_pattern(*class_list.map{|name,base|
   [/gsl_#{base}_/, list[name]=[]]
-end
-
-ErbppGsl.read_func_pattern(*patterns)
+})
+const_list = ErbppGsl.read_const
 
 DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
@@ -38,9 +37,11 @@ DefLib.new do
     set full_class_name: "Numo::GSL::"+name
     set struct: "gsl_"+base
 
-    def_const "TRIPLET","INT2FIX(GSL_SPMATRIX_TRIPLET)",desc:"triplet storage"
-    def_const "CCS","INT2FIX(GSL_SPMATRIX_CCS)",desc:"compressed column storage"
-    #def_const "CRS","INT2FIX(GSL_SPMATRIX_CRS)",desc:"compressed row storage"
+    const_list.each do |a|
+      m = a[0].sub(/^GSL_SPMATRIX_/,"")
+      v = "INT2FIX(#{a[0]})"
+      def_const(m, v, desc:a[1]||"")
+    end
 
     undef_alloc_func
     list[name].each do |h|
