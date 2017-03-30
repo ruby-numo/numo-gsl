@@ -224,3 +224,12 @@ class DefStruct < ErbPP
     #{class_var} = rb_struct_define(\"#{class_name}\",#{items},NULL);"
   end
 end
+
+class DefInclueModule < ErbPP
+  def initialize(parent=nil, incl_class, incl_module, **opts, &block)
+    super(parent,incl_class:incl_class,incl_module:incl_module,**opts,&block)
+  end
+  def init_def
+    "rb_include_module(#{get(:incl_class)}, #{get(:incl_module)});"
+  end
+end

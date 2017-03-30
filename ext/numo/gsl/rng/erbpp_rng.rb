@@ -10,8 +10,6 @@ ran_list = ErbppGsl.read_func("../ran/func").select{|h|
   /gsl_rng \*/ =~ h[:args][0][0]
 }
 
-#$stderr.puts ran_list.inspect
-
 DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
@@ -55,6 +53,8 @@ DefLib.new do
     ran_list.each do |h|
       check_func(h)
     end
+
+    DefInclueModule.new(self,"cRng","mRan")
   end
 
 end.run
