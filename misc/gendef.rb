@@ -282,6 +282,16 @@ if __FILE__ == $0
     "../ext/numo/gsl/stats"],
    ["doc/randist.texi",
     "../ext/numo/gsl/ran"],
+   ["doc/randist.texi",
+    "../ext/numo/gsl/pdf",
+    nil,
+    /^gsl_.*_pdf$/
+   ],
+   ["doc/randist.texi",
+    "../ext/numo/gsl/cdf",
+    nil,
+    /^gsl_cdf_/
+   ],
    ["doc/rng.texi",
     "../ext/numo/gsl/rng",
     "rng/gsl_rng.h",
