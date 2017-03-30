@@ -1,15 +1,9 @@
 require_relative "../gen/func_parser"
+require_relative "../gen/erbpp_gsl"
 
 class DefWavelet < DefClass
 
-  WAVELET_TYPES = %w[
-   gsl_wavelet_daubechies
-   gsl_wavelet_daubechies_centered
-   gsl_wavelet_haar
-   gsl_wavelet_haar_centered
-   gsl_wavelet_bspline
-   gsl_wavelet_bspline_centered
-  ]
+  WAVELET_TYPES = ErbppGsl.read_type.select{|s| /gsl_wavelet_/ =~ s}
 
   def FM(*args,**opts)
     FuncMatch.new(*args,**opts)

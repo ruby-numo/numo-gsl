@@ -1,20 +1,11 @@
 require_relative "../gen/func_parser"
+require_relative "../gen/erbpp_gsl"
 
 class DefInterp < DefClass
 
-  INTERP_TYPES = %w[
-   gsl_interp_linear
-   gsl_interp_polynomial
-   gsl_interp_cspline
-   gsl_interp_cspline_periodic
-   gsl_interp_akima
-   gsl_interp_akima_periodic
-   gsl_interp_steffen
-  ]
-  INTERP2D_TYPES = %w[
-   gsl_interp2d_bilinear
-   gsl_interp2d_bicubic
-  ]
+  types = ErbppGsl.read_type
+  INTERP_TYPES = types.select{|s| /gsl_interp_/ =~ s}
+  INTERP2D_TYPES = types.select{|s| /gsl_interp2d_/ =~ s}
 
   def FM(*args,**opts)
     FuncMatch.new(*args,**opts)

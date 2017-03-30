@@ -1,4 +1,5 @@
 require_relative "../gen/func_parser"
+require_relative "../gen/erbpp_gsl"
 
 class DefSpMatrix < DefClass
 
@@ -96,9 +97,8 @@ end
 
 class DefIterSolve < DefClass
 
-  ITERSOLVE_TYPES = %w[
-    gsl_splinalg_itersolve_gmres
-  ]
+  ITERSOLVE_TYPES = ErbppGsl.read_type.select{|s| /gsl_splinalg_itersolve_/ =~ s}
+
 
   def FM(*args,**opts)
     FuncMatch.new(*args,**opts)
