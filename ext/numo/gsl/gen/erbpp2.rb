@@ -184,8 +184,10 @@ class DefMethod < ErbPP
   end
 
   def init_def
-    s = (singleton) ? "_singleton" : ""
-    "rb_define#{s}_method(#{_mod_var}, \"#{@opts[:name]}\", #{c_func}, #{n_arg});"
+    if n_arg != :nodef
+      s = (singleton) ? "_singleton" : ""
+      "rb_define#{s}_method(#{_mod_var}, \"#{@opts[:name]}\", #{c_func}, #{n_arg});"
+    end
   end
 
   def singleton
