@@ -2,25 +2,32 @@ module ErbppGsl
 
   module_function
 
-  def read_eval(file)
-    fn = file % `gsl-config --version`.chomp
-    fn = file % "def" unless File.exist?(fn)
+  def read_eval(prefix)
+    fmt = prefix + "_%s.rb"
+    fn = fmt % `gsl-config --version`.chomp
+    if !File.exist?(fn)
+      fn = fmt % "def"
+    end
     File.exist?(fn) ? eval(open(fn).read) : []
   end
 
-  def read_func
-    read_eval("func_%s.rb").each do |h|
+  def read_func(prefix="func")
+    read_eval(prefix).each do |h|
       h[:desc].gsub!(/\/\*/,"//")
       h[:desc].gsub!(/\*\//,"")
     end
   end
 
   def read_const
-    read_eval("const_%s.rb")
+    read_eval("const")
   end
 
   def read_enum
-    read_eval("enum_%s.rb")
+    read_eval("enum")
+  end
+
+  def read_type
+    read_eval("type")
   end
 
   def read_func_pattern(*a)
