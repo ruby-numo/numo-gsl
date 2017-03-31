@@ -513,20 +513,3 @@ module FuncParser
   end
 
 end
-
-=begin
-class GslFunction < DefMethod
-  include FuncParser
-
-  def initialize(parent,tmpl,**h)
-    m = h[:name] || h[:func_name].sub(/^gsl_sf_/,"")
-    super(parent,tmpl,name:m,singleton:true,**h)
-    parse_args(h)
-    if @args_param.any?{|a| a.type=="gsl_mode_t"}
-      set n_arg: -1
-    else
-      set n_arg: @args_param.size+@args_in.size
-    end
-  end
-end
-=end

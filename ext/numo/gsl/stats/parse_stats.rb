@@ -1,4 +1,4 @@
-require_relative "../gen/func_parser"
+require_relative "../gen/erbpp_gsl"
 
 class DefStats < DefModule
 
@@ -27,7 +27,8 @@ class DefStats < DefModule
 end
 
 
-class StatsBasic < GslFunction
+class StatsBasic < DefMethod
+  include ErbppGsl
 
   PARAM_DESC =
     {
