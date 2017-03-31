@@ -1,5 +1,4 @@
 require_relative "parse_sf"
-require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
 
@@ -16,21 +15,22 @@ DefLib.new do
   name = "Sf"
   set file_name: "gsl_#{name}.c"
   set include_files: ["gsl/gsl_sf.h"]
-  set lib_name: "sf"
+  set lib_name: name.downcase
 
   DefSf.new(self) do
-    set name: "sf"
-    set module_name: "Sf"
-    set module_var: "mSf"
-    set full_module_name: "Numo::GSL::Sf"
+    name = "Sf"
+    set name: name.downcase
+    set module_name: name
+    set module_var: "m"+name
+    set full_module_name: "Numo::GSL::"+name
 
     sf_list.each do |h|
       check_func(h)
     end
   end
 
-  name = "Mathieu"
   def_class do
+    name = "Mathieu"
     set ns_var: "mSf"
     set name: "sf_"+name.downcase
     set class_name: name

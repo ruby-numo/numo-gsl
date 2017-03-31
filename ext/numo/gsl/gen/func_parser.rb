@@ -342,7 +342,7 @@ end
 
 #----------------------------------------------------------
 
-class GslFunction < DefMethod
+module FuncParser
 
   def self.lookup(h)
     false
@@ -358,35 +358,6 @@ class GslFunction < DefMethod
   def param_names
     self.class::PARAM_NAMES
   end
-
-
-  def initialize(parent,tmpl,**h)
-    parse_args(h)
-    @args_param = @parsed_args.select{|a|a.param}
-    @args_input = @parsed_args.select{|a|a.input}
-    @args_in = @parsed_args.select{|a|a.narray && a.input}
-    @args_out = @parsed_args.select{|a|a.narray && a.output}
-    @parsed_args.each do |a|
-      if a.pass == :array
-        @generate_array = true
-        break
-      end
-    end
-    h[:name] ||= h[:func_name].sub(/^gsl_sf_/,"")
-    h[:singleton] = true
-    super(parent,tmpl,**h)
-    if @args_param.any?{|a| a.type=="gsl_mode_t"}
-      set n_arg: -1
-    else
-      set n_arg: @args_param.size+@args_in.size
-    end
-    @counter = Counter.new
-  end
-
-  #attr_reader :name
-  attr_reader :args_out, :args_in, :args_param
-  attr_reader :generate_array
-  attr_reader :counter
 
   def parse_args(h)
     i = 0
@@ -519,4 +490,37 @@ class GslFunction < DefMethod
     @args_input.map{|a| a.description}+[r]
   end
 
+end
+
+
+class GslFunction < DefMethod
+  include FuncParser
+
+  def initialize(parent,tmpl,**h)
+    parse_args(h)
+    @args_param = @parsed_args.select{|a|a.param}
+    @args_input = @parsed_args.select{|a|a.input}
+    @args_in = @parsed_args.select{|a|a.narray && a.input}
+    @args_out = @parsed_args.select{|a|a.narray && a.output}
+    @parsed_args.each do |a|
+      if a.pass == :array
+        @generate_array = true
+        break
+      end
+    end
+    h[:name] ||= h[:func_name].sub(/^gsl_sf_/,"")
+    h[:singleton] = true
+    super(parent,tmpl,**h)
+    if @args_param.any?{|a| a.type=="gsl_mode_t"}
+      set n_arg: -1
+    else
+      set n_arg: @args_param.size+@args_in.size
+    end
+    @counter = Counter.new
+  end
+
+  #attr_reader :name
+  attr_reader :args_out, :args_in, :args_param
+  attr_reader :generate_array
+  attr_reader :counter
 end
