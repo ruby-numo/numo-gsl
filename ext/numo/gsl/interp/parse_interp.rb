@@ -65,30 +65,11 @@ class DefInterp < DefClass
     end
   end
 end
+
 class Interp < DefMethod
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
     m = h[:func_name].sub(/^gsl_[^_]+_(accel_)?/,"")
     super(parent,tmpl,name:m,**h)
-  end
-end
-
-class InterpInit < DefMethod
-  def initialize(parent,tmpl,**h)
-    super(parent,tmpl,name:"new",**h)
-    t = get(:interp_type).sub(/gsl_interp(2d)?_/,"")
-    set interp_type_name: t
-    set c_interp_new: "#{parent.name}_s_new"
-    set type_class: t.split('_').map{|x| x.capitalize}.join("")
-  end
-
-  def c_func(narg=nil)
-    super(narg)
-    "#{@parent.name}_#{get(:interp_type_name)}_s_new"
-  end
-
-  def init_def
-    "{ VALUE c#{type_class} = rb_define_class_under(#{_mod_var}, \"#{type_class}\", #{_mod_var});
-      rb_define_singleton_method(c#{type_class}, \"new\", #{c_func}, #{n_arg}); }"
   end
 end
