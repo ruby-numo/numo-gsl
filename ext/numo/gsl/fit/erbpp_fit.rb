@@ -4,7 +4,7 @@ require "erbpp/line_number"
 
 fit_list = ErbppGsl.read_func
 
-deflib = DefLib.new do
+DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
@@ -22,12 +22,9 @@ deflib = DefLib.new do
     set module_var: "m"+name
     set full_module_name: "Numo::GSL::"+name
 
-    #undef_alloc_func
     fit_list.each do |h|
       check_func(h)
     end
 
   end
-end
-
-deflib.run
+end.run
