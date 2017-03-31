@@ -21,8 +21,7 @@ class DefSf < DefModule
      SfBasic
     ].each do |c|
       if tmpl = c.lookup(h)
-        #$stderr.puts "#{h[:func_name]}: #{tmpl}"
-        c.new(self,tmpl,**h,singleton:true)
+        c.new(self, tmpl, **h)
         return true
       end
     end
@@ -33,7 +32,8 @@ class DefSf < DefModule
 end
 
 
-class SfTemplate < GslFunction
+class SfTemplate < DefMethod
+  include FuncParser
 
   def self.lookup(h)
     arg_types = h[:args].map{|a| a[0].sub(/^const /,"")}
@@ -62,11 +62,23 @@ class SfTemplate < GslFunction
     end
   end
 
+  def initialize(parent,tmpl,**h)
+    m = h[:name] || h[:func_name].sub(/^gsl_sf_/,"")
+    super(parent, tmpl, name:m, singleton:true, **h)
+    parse_args(h)
+    if @args_param.any?{|a| a.type=="gsl_mode_t"}
+      set n_arg: -1
+    else
+      set n_arg: @args_param.size+@args_in.size
+    end
+    @preproc_code = ""
+  end
+
 end
 
 #----------------------------------------------------------
 
-class SfBasic < GslFunction
+class SfBasic < SfTemplate
   RE = /^gsl_sf_/
 
   PARAM_DESC =
@@ -92,12 +104,6 @@ class SfBasic < GslFunction
    "gsl_mode_t" => true,
    "gsl_sf_mathieu_workspace *"=>true,
   }
-
-  def initialize(parent,tmpl,**h)
-    @preproc_code = ""
-    h[:name] ||= h[:func_name].sub(/^gsl_sf_/,"")
-    super(parent,tmpl,**h)
-  end
 
   def self.lookup(h)
     if RE =~ h[:func_name]

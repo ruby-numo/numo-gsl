@@ -377,7 +377,29 @@ module FuncParser
       prop = argument_property(t,"return")
       @parsed_args << Argument.new(self,i,t,"return",prop)
     end
+    #
+    @args_param = @parsed_args.select{|a|a.param}
+    @args_input = @parsed_args.select{|a|a.input}
+    @args_in = @parsed_args.select{|a|a.narray && a.input}
+    @args_out = @parsed_args.select{|a|a.narray && a.output}
+    @parsed_args.each do |a|
+      if a.pass == :array
+        @generate_array = true
+        break
+      end
+    end
+    @counter = Counter.new
+    if @args_param.any?{|a| a.type=="gsl_mode_t"}
+      set n_arg: -1
+    else
+      set n_arg: @args_param.size+@args_in.size
+    end
   end
+
+  #attr_reader :name
+  attr_reader :args_out, :args_in, :args_param
+  attr_reader :generate_array
+  attr_reader :counter
 
   def argument_property(type,name)
     if name == "return"
@@ -492,35 +514,19 @@ module FuncParser
 
 end
 
-
+=begin
 class GslFunction < DefMethod
   include FuncParser
 
   def initialize(parent,tmpl,**h)
+    m = h[:name] || h[:func_name].sub(/^gsl_sf_/,"")
+    super(parent,tmpl,name:m,singleton:true,**h)
     parse_args(h)
-    @args_param = @parsed_args.select{|a|a.param}
-    @args_input = @parsed_args.select{|a|a.input}
-    @args_in = @parsed_args.select{|a|a.narray && a.input}
-    @args_out = @parsed_args.select{|a|a.narray && a.output}
-    @parsed_args.each do |a|
-      if a.pass == :array
-        @generate_array = true
-        break
-      end
-    end
-    h[:name] ||= h[:func_name].sub(/^gsl_sf_/,"")
-    h[:singleton] = true
-    super(parent,tmpl,**h)
     if @args_param.any?{|a| a.type=="gsl_mode_t"}
       set n_arg: -1
     else
       set n_arg: @args_param.size+@args_in.size
     end
-    @counter = Counter.new
   end
-
-  #attr_reader :name
-  attr_reader :args_out, :args_in, :args_param
-  attr_reader :generate_array
-  attr_reader :counter
 end
+=end
