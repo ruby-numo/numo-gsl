@@ -285,7 +285,7 @@ if __FILE__ == $0
    ["doc/randist.texi",
     "../ext/numo/gsl/pdf",
     nil,
-    /^gsl_.*_pdf$/
+    /^gsl_.*pdf$/
    ],
    ["doc/randist.texi",
     "../ext/numo/gsl/cdf",
