@@ -1,7 +1,5 @@
 require_relative "parse_interp"
-require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
-
 
 gsl_list = ErbppGsl.read_func_pattern(
  [/^gsl_interp_accel_(\w+)$/,    interp_accel_list=[]],

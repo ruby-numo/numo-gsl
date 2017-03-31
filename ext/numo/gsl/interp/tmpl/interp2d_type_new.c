@@ -4,12 +4,14 @@
   @param  [DFloat]  <%=args[1][1]%>
   @param  [DFloat]  <%=args[2][1]%>
 
-  allocate instance of <%=class_name%> class.
+  Generate an instance of <%=full_class_name%>::<%=subtype_class%> class,
+  a subclass of <%=full_class_name%> class with <%=subtype_var%> type.
 
   <%= desc %>
+
   */
 static VALUE
 <%=c_func(3)%>(VALUE self, VALUE v1, VALUE v2, VALUE v3)
 {
-    return <%=c_interp_new%>(self, <%=interp_type%>, v1, v2, v3);
+    return <%=c_superclass_new%>(self, <%=subtype_var%>, v1, v2, v3);
 }

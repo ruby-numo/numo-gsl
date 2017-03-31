@@ -1,20 +1,9 @@
-require_relative "../gen/func_parser"
 require_relative "../gen/erbpp_gsl"
 
 class DefSpMatrix < DefClass
+  include ErbppGsl
 
-  SPMATRIX_TYPES = %w[
-Triplet
-Ccs
-  ]
-
-  def FM(*args,**opts)
-    FuncMatch.new(*args,**opts)
-  end
-
-  def lookup(h,tp)
-    tp = tp + " *"
-    sz = "size_t"
+  def lookup(h)
     case h
     when FM(name:/_free$/);                     false
     when FM(name:/_alloc$/);                    false
@@ -24,9 +13,9 @@ Ccs
     when FM(name:/_d2sp$/);                     "spmatrix_d2sp"
 
     when FM(tp,tp,tp,name:/_add$/);             "spmatrix_add"
-    when FM(tp,*[sz]*2,type:"double");          "c_DFloat_f_SZ_x2"
-    when FM(tp,*[sz]*2,"double");               "c_self_f_SZ_x2_DFloat"
-    when FM(sz,tp); h[:postpose]=true;          "c_self_f_sizet"
+    when FM(tp,*[szt]*2,type:"double");         "c_DFloat_f_SZ_x2"
+    when FM(tp,*[szt]*2,"double");              "c_self_f_SZ_x2_DFloat"
+    when FM(szt,tp); h[:postpose]=true;         "c_self_f_sizet"
     when FM(tp,"double");                       "c_self_f_double"
     when FM(tp,*["double *"]*2);                "c_double_x2_f_void"
     when FM(tp,type:tp);                        "c_other_f_void"
@@ -37,8 +26,9 @@ Ccs
   end
 
   def check_func(h)
-    if t = lookup(h, get(:struct))
-      SpMatrix.new(self, t, **h)
+    if t = lookup(h)
+      m = h[:func_name].sub(/^gsl_[^_]+_/,"")
+      DefMethod.new(self, t, name:m, **h)
       return true
     end
     $stderr.puts "skip #{h[:func_name]}"
@@ -46,28 +36,12 @@ Ccs
   end
 end
 
-class SpMatrix < DefMethod
-  def initialize(parent,tmpl,**h)
-    @preproc_code = ""
-    m = h[:func_name].sub(/^gsl_[^_]+_(accel_)?/,"")
-    super(parent,tmpl,name:m,**h)
-  end
-
-  def init_def
-    super unless "gsl_spmatrix_alloc" == get(:func_name)
-  end
-end
-
 # ----------------------------------------------------------
 
 class DefSpBlas < DefModule
+  include ErbppGsl
 
-  def FM(*args,**opts)
-    FuncMatch.new(*args,**opts)
-  end
-
-  def lookup(h,tp)
-    tp = tp + " *"
+  def lookup(h)
     case h
     when FM(name:/_dgemv$/);    "spblas_dgemv"
     when FM(name:/_dgemm$/);    "spblas_dgemm"
@@ -75,8 +49,9 @@ class DefSpBlas < DefModule
   end
 
   def check_func(h)
-    if t = lookup(h, get(:struct))
-      SpBlas.new(self, t, **h)
+    if t = lookup(h)
+      m = h[:func_name].sub(/^gsl_[^_]+_/,"")
+      DefMethod.new(self, t, name:m, **h)
       return true
     end
     $stderr.puts "skip #{h[:func_name]}"
@@ -85,44 +60,31 @@ class DefSpBlas < DefModule
 
 end
 
-class SpBlas < DefMethod
-  def initialize(parent,tmpl,**h)
-    @preproc_code = ""
-    m = h[:func_name].sub(/^gsl_[^_]+_/,"")
-    super(parent,tmpl,name:m,**h)
-  end
-end
-
 # ----------------------------------------------------------
 
 class DefIterSolve < DefClass
+  include ErbppGsl
 
   ITERSOLVE_TYPES = ErbppGsl.read_type.select{|s| /gsl_splinalg_itersolve_/ =~ s}
 
-
-  def FM(*args,**opts)
-    FuncMatch.new(*args,**opts)
-  end
-
-  def lookup(h,tp)
-    tp = tp + " *"
+  def lookup(h)
     case h
-    when FM(name:/_free$/);             false
-    when FM(name:/_itersolve_alloc$/);  "itersolve_new"
-    when FM(name:/_itersolve_iterate$/);"itersolve_iterate"
-    when FM(tp, type:"char *");         "c_str_f_void"
-    when FM(tp, type:"double");         "c_double_f_void"
+    when FM(name:/_free$/);              false
+    when FM(name:/_itersolve_alloc$/);   "itersolve_new"
+    when FM(name:/_itersolve_iterate$/); "itersolve_iterate"
+    when FM(tp, type:str);               "c_str_f_void"
+    when FM(tp, type:dbl);               "c_double_f_void"
     end
   end
 
   def check_func(h)
-    if t = lookup(h, get(:struct))
+    if t = lookup(h)
       m = h[:func_name].sub(/^gsl_splinalg_itersolve_/,"")
       DefMethod.new(self, t, name:m, **h)
       if /_alloc$/ =~ h[:func_name]
         t = "itersolve_type_new"
-        ITERSOLVE_TYPES.each do |tp|
-          IterSolveAlloc.new(self, t, subtype:tp, **h)
+        ITERSOLVE_TYPES.each do |st|
+          DefSubclassNew.new(self, t, st, **h)
         end
       end
       return true
@@ -131,25 +93,4 @@ class DefIterSolve < DefClass
     false
   end
 
-end
-
-
-class IterSolveAlloc < DefMethod
-  def initialize(parent,tmpl,**h)
-    super(parent, tmpl, name:"new", **h)
-    t = get(:subtype).sub(/gsl_#{parent.name}_/,"")
-    set subtype_name: t
-    set subtype_class: t.split('_').map{|x| x.capitalize}.join("")
-    set c_superclass_new: "#{parent.name}_s_new"
-  end
-
-  def c_func(narg=nil)
-    super(narg)
-    "#{@parent.name}_#{get(:subtype_name)}_s_new"
-  end
-
-  def init_def
-    "{ VALUE c#{subtype_class} = rb_define_class_under(#{_mod_var},\"#{subtype_class}\",#{_mod_var});
-      rb_define_singleton_method(c#{subtype_class},\"new\",#{c_func},#{n_arg}); }"
-  end
 end

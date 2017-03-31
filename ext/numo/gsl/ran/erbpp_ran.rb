@@ -2,7 +2,6 @@ require_relative "parse_ran"
 require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
-
 ErbppGsl.read_func_pattern(
   [ /^gsl_ran_discrete_(\w+)$/,   disc_list=[]],
   [ /^gsl_ran_(\w+)_pdf$/,        ran_list=[]],

@@ -1,42 +1,38 @@
-require_relative "../gen/func_parser"
 require_relative "../gen/erbpp_gsl"
 
 class DefInterp < DefClass
+  include ErbppGsl
 
   types = ErbppGsl.read_type
   INTERP_TYPES = types.select{|s| /gsl_interp_/ =~ s}
   INTERP2D_TYPES = types.select{|s| /gsl_interp2d_/ =~ s}
 
-  def FM(*args,**opts)
-    FuncMatch.new(*args,**opts)
-  end
-
-  def lookup(h,tp)
+  def lookup(h)
+    dblbk = [dbl, /\[\]$/]
     case h
-    when FM(name:/_free$/);  false
-    when FM(tp,*[["double",/\[\]$/]]*3,*["size_t"]*2,name:/_init$/)
-                                                          "interp2d_new"
-    when FM(name:"gsl_interp_bsearch");                   "interp_bsearch"
-    when FM(tp, type:"char *");                           "c_str_f_void"
-    when FM(tp, type:"unsigned int");                     "c_uint_f_void"
-    when FM(tp, *[["double",/\[\]$/]]*2, "size_t", name:/_init$/)
-                                                          "interp_new"
-    when FM(tp, "double",      /accel/,   type:"double"); "spline_eval"
-    when FM(tp,*["double"]*2,  /accel/,   type:"double"); "spline_integ"
-    when FM(tp,*["double"]*2,*[/accel/]*2,type:"double"); "spline2d_eval"
+    when FM(name:/_free$/);                     false
+    when FM(tp,*[dblbk]*3,szt,szt,name:/_init$/); "interp2d_new"
+    when FM(tp,*[dblbk]*2,szt,name:/_init$/);     "interp_new"
+    when FM(name:"gsl_interp_bsearch");         "interp_bsearch"
+    when FM(tp, type:str);                      "c_str_f_void"
+    when FM(tp, type:uint);                     "c_uint_f_void"
+    when FM(tp, dbl,      /accel/,   type:dbl); "spline_eval"
+    when FM(tp,*[dbl]*2,  /accel/,   type:dbl); "spline_integ"
+    when FM(tp,*[dbl]*2,*[/accel/]*2,type:dbl); "spline2d_eval"
 
-    when FM(name:"gsl_interp_accel_alloc");               "c_new_void"
-    when FM(tp);                                          "c_self_f_void"
+    when FM(name:"gsl_interp_accel_alloc");     "c_new_void"
+    when FM(tp);                                "c_self_f_void"
     end
   end
 
   def check_func(h)
-    if t = lookup(h, get(:struct)+" *")
-      Interp.new(self, t, **h)
+    if t = lookup(h)
+      m = h[:func_name].sub(/^gsl_[^_]+_(accel_)?/,"")
+      DefMethod.new(self, t, name:m, **h)
       def_type_new(h)
       return true
     end
-    #$stderr.puts "skip #{h[:func_type]} #{h[:func_name]} #{h[:args].inspect}"
+    $stderr.puts "skip #{h[:func_name]}"
     false
   end
 
@@ -44,37 +40,36 @@ class DefInterp < DefClass
     case h[:func_name]
     when "gsl_interp_init"
       t = "interp_type_new"
-      INTERP_TYPES.each do |tp|
-        InterpInit.new(self, t, interp_type:tp, **h)
+      INTERP_TYPES.each do |v|
+        st = v.sub(/^gsl_interp_/,"")
+        DefSubclassNew.new(self, t, v, st, **h)
       end
     when "gsl_spline_init"
       t = "interp_type_new"
-      INTERP_TYPES.each do |tp|
-        InterpInit.new(self, t, interp_type:tp, **h)
+      INTERP_TYPES.each do |v|
+        st = v.sub(/^gsl_interp_/,"")
+        DefSubclassNew.new(self, t, v, st, **h)
       end
     when "gsl_interp2d_init"
       t = "interp2d_type_new"
-      INTERP2D_TYPES.each do |tp|
-        InterpInit.new(self, t, interp_type:tp, **h)
+      INTERP2D_TYPES.each do |v|
+        st = v.sub(/^gsl_interp2d_/,"")
+        DefSubclassNew.new(self, t, v, st, **h)
       end
     when "gsl_spline2d_init"
       t = "interp2d_type_new"
-      INTERP2D_TYPES.each do |tp|
-        InterpInit.new(self, t, interp_type:tp, **h)
+      INTERP2D_TYPES.each do |v|
+        st = v.sub(/^gsl_interp2d_/,"")
+        DefSubclassNew.new(self, t, v, st, **h)
       end
     end
   end
 end
-
 class Interp < DefMethod
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
     m = h[:func_name].sub(/^gsl_[^_]+_(accel_)?/,"")
     super(parent,tmpl,name:m,**h)
-  end
-
-  def init_def
-    super unless /_init$/ =~ get(:func_name)
   end
 end
 

@@ -26,7 +26,7 @@ class DefRan < DefModule
       end
     end
     if /pdf$/ =~ h[:func_name]
-    $stderr.puts "skip #{h[:func_type]} #{h[:func_name]} #{h[:args].inspect}"
+      $stderr.puts "skip #{h[:func_type]} #{h[:func_name]} #{h[:args].inspect}"
     end
     false
   end

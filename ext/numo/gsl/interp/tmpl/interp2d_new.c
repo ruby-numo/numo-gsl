@@ -7,7 +7,7 @@ set alloc_func: func_name.sub(/_init$/,"_alloc")
   :nodoc:
  */
 static VALUE
-<%=c_func(3)%>(VALUE self, const gsl_interp2d_type *t, VALUE v1, VALUE v2, VALUE v3)
+<%=c_func(:nodef)%>(VALUE self, const gsl_interp2d_type *t, VALUE v1, VALUE v2, VALUE v3)
 {
     double *p1, *p2, *p3;
     size_t nx, ny;

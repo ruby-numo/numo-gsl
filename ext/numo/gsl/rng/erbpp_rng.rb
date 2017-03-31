@@ -1,5 +1,4 @@
 require_relative "parse_rng"
-require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
 ErbppGsl.read_func_pattern(
@@ -32,7 +31,6 @@ DefLib.new do
     set full_class_name: "Numo::GSL::"+name
     set struct: "gsl_"+base
     set type_struct: "gsl_"+base+"_type"
-    set class_types: ErbppGsl.read_type
 
     undef_alloc_func
     rng_list.each do |h|

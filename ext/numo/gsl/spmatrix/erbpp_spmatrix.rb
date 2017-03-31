@@ -1,5 +1,4 @@
 require_relative "parse_spmatrix"
-require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
 class_list = [
