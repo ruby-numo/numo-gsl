@@ -11,17 +11,16 @@ class DefPdf < DefGslModule
     end
   end
 
-  def check_func(h)
-    if t = lookup(h)
-      PdfMethod.new(self, t, **h)
-    else
-      $stderr.puts "skip #{h[:func_name]}"
-    end
+  def define_method(t,**h)
+    PdfMethod.new(self, t, **h)
+  end
+
+  def to_method_name(s)
+    s.sub(/^gsl_ran_(\w+[^_])_?pdf$/,'\1')
   end
 end
 
-class PdfMethod < DefModuleFunction
-  include FuncParser
+class PdfMethod < DefGslModuleFunction
 
   PARAM_DESC = {}
   PARAM_NAMES =
@@ -30,13 +29,6 @@ class PdfMethod < DefModuleFunction
      "unsigned int" => %w[n n1 n2 t],
      "size_t" => true,
     }
-
-  def initialize(parent,tmpl,**h)
-    m = h[:func_name].sub(/^gsl_ran_(\w+[^_])_?pdf$/,'\1')
-    super(parent, tmpl, name:m, **h)
-    parse_args(h)
-    @preproc_code = ""
-  end
 
   def argument_property(type,name)
     if    name == "return";     {output:true, narray:true, pass: :return}

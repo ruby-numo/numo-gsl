@@ -5,9 +5,7 @@ func_list  = ErbppGsl.read_func
 const_list = ErbppGsl.read_const
 enum_list  = ErbppGsl.read_enum
 
-class DefSys < DefModule
-  include ErbppGsl
-
+class DefSys < DefGslModule
   def lookup(h)
     case h
     when FM(dbl, type:int);             "m_Int_f_DFloat"
@@ -22,14 +20,8 @@ class DefSys < DefModule
     end
   end
 
-  def check_func(h,re=nil)
-    re ||= /^gsl_#{name}_/
-    if t = lookup(h)
-      m = h[:func_name].sub(re,"")
-      DefMethod.new(self, t, name:m, **h)
-    else
-      $stderr.puts "skip #{h[:func_name]}"
-    end
+  def to_method_name(s)
+    s.sub(/^gsl_/,"")
   end
 end
 

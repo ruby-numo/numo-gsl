@@ -1,8 +1,6 @@
 require_relative "../gen/erbpp_gsl"
 
-class DefRng < DefClass
-  include ErbppGsl
-
+class DefRng < DefGslClass
   def lookup(h)
     case h
     when FM(name:/_free$/);             false
@@ -32,14 +30,11 @@ class DefRng < DefClass
     $stderr.puts "skip #{h[:func_name]}"
     false
   end
-
 end
 
 # ----------------------------------------------------------
 
-class DefRan < DefModule
-  include ErbppGsl
-
+class DefRan < DefGslModule
   def lookup(h)
     dblbk = [dbl,/\[\]/]
     uintbk = [uint,/\[\]/]
@@ -59,15 +54,9 @@ class DefRan < DefModule
     end
   end
 
-  def check_func(h)
-    if t = lookup(h)
-      RanMethod.new(self, t, **h)
-      return true
-    end
-    $stderr.puts "skip #{h[:func_name]}"
-    false
+  def define_method(t,**h)
+    RanMethod.new(self, t, **h)
   end
-
 end
 
 

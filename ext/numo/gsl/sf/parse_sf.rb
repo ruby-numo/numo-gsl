@@ -32,7 +32,7 @@ class DefSf < DefModule
 end
 
 
-class SfTemplate < DefModuleFunction
+class SfTemplate < DefGslModuleFunction
   include FuncParser
 
   def self.lookup(h)

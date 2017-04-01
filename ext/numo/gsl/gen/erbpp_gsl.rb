@@ -100,14 +100,17 @@ class DefGslClass < DefClass
     # implement in Subclass
   end
 
-  def check_func(h,re=nil)
-    re ||= /^gsl_#{name}_/
+  def check_func(h)
     if t = lookup(h)
-      m = h[:func_name].sub(re,"")
+      m = to_method_name(h[:func_name])
       define_method(t, name:m, **h)
     else
       $stderr.puts "skip #{h[:func_name]}"
     end
+  end
+
+  def to_method_name(s)
+    s.sub(/^gsl_#{name}_/,"")
   end
 
   def define_method(t,**h)
@@ -122,14 +125,17 @@ class DefGslModule < DefModule
     # implement in Subclass
   end
 
-  def check_func(h,re=nil)
-    re ||= /^gsl_#{name}_/
+  def check_func(h)
     if t = lookup(h)
-      m = h[:func_name].sub(re,"")
+      m = to_method_name(h[:func_name])
       define_method(t, name:m, **h)
     else
       $stderr.puts "skip #{h[:func_name]}"
     end
+  end
+
+  def to_method_name(s)
+    s.sub(/^gsl_#{name}_/,"")
   end
 
   def define_method(t,**h)

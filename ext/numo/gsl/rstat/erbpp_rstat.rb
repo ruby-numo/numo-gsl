@@ -6,9 +6,7 @@ ErbppGsl.read_func_pattern(
   [/^gsl_rstat_(\w+)$/,         rstat_list=[]],
 )
 
-class DefRstat < DefClass
-  include ErbppGsl
-
+class DefRstat < DefGslClass
   def lookup(h)
     case h
     when FM(name:/_free$/);             false
@@ -21,19 +19,7 @@ class DefRstat < DefClass
     when FM(dbl,tp); h[:postpose]=true; "c_self_f_DFloat"
     end
   end
-
-  def check_func(h,re=nil)
-    re ||= /^gsl_#{name}_/
-    if t = lookup(h)
-      m = h[:func_name].sub(re,"")
-      DefMethod.new(self, t, name:m, **h)
-    else
-      $stderr.puts "skip #{h[:func_name]}"
-    end
-  end
-
 end
-
 
 DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
@@ -72,7 +58,7 @@ DefLib.new do
 
     undef_alloc_func
     rquantile_list.each do |h|
-      check_func(h,/^gsl_rstat_quantile_/)
+      check_func(h)
     end
   end
 end.run

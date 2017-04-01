@@ -1,7 +1,6 @@
 require_relative "../gen/erbpp_gsl"
 
-class DefWavelet < DefClass
-  include ErbppGsl
+class DefWavelet < DefGslClass
 
   WAVELET_TYPES = ErbppGsl.read_type.select{|s| /gsl_wavelet_/ =~ s}
 
