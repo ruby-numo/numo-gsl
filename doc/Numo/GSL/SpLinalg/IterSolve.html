@@ -151,29 +151,6 @@
 </li>
 
       
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(, v1, v2)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-</div></span>
-  
-</li>
-
-      
     </ul>
   
     <h2>
@@ -370,8 +347,6 @@ format.</p>
       <pre class="lines">
 
 
-860
-861
 862
 863
 864
@@ -403,10 +378,12 @@ format.</p>
 890
 891
 892
-893</pre>
+893
+894
+895</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 860</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 862</span>
 
 static VALUE
 splinalg_itersolve_s_iterate(VALUE self, VALUE vA, VALUE vb, VALUE vtol, VALUE vx)
@@ -441,58 +418,6 @@ splinalg_itersolve_s_iterate(VALUE self, VALUE vA, VALUE vb, VALUE vtol, VALUE v
     status = gsl_splinalg_itersolve_iterate(A, b, tol, x, w);
     RB_GC_GUARD(vb);
     return INT2FIX(status);
-}</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="new-class_method">
-  
-    .<strong>new</strong>(, v1, v2)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-778
-779
-780
-781
-782
-783
-784
-785
-786
-787
-788
-789
-790
-791</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 778</span>
-
-static VALUE
-splinalg_itersolve_s_new(VALUE self, const gsl_splinalg_itersolve_type *t, VALUE v1, VALUE v2)
-{
-    gsl_splinalg_itersolve *w;
-    size_t n, m;
-
-    n = NUM2SIZET(v1);
-    m = NUM2SIZET(v2);
-    w = gsl_splinalg_itersolve_alloc(t, n, m);
-    if (!w) {
-        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
-    }
-    return TypedData_Wrap_Struct(cIterSolve, &amp;splinalg_itersolve_data_type, (void*)w);
 }</pre>
     </td>
   </tr>
@@ -545,18 +470,18 @@ splinalg_itersolve_s_new(VALUE self, const gsl_splinalg_itersolve_type *t, VALUE
       <pre class="lines">
 
 
-822
-823
 824
 825
 826
 827
 828
 829
-830</pre>
+830
+831
+832</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 822</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 824</span>
 
 static VALUE
 splinalg_itersolve_name(VALUE self)
@@ -614,18 +539,18 @@ gsl_splinalg_itersolve_iterate.</p>
       <pre class="lines">
 
 
-905
-906
 907
 908
 909
 910
 911
 912
-913</pre>
+913
+914
+915</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 905</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 907</span>
 
 static VALUE
 splinalg_itersolve_normr(VALUE self)
@@ -646,7 +571,7 @@ splinalg_itersolve_normr(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 18:48:54 2017 by
+  Generated on Fri Mar 31 18:42:16 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

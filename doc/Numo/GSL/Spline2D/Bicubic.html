@@ -133,7 +133,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>allocate instance of Spline2D class.</p>
+    <span class="summary_desc"><div class='inline'><p>Generate an instance of Numo::GSL::Spline2D::Bicubic class, a subclass of Numo::GSL::Spline2D class with gsl_interp2d_bicubic type.</p>
 </div></span>
   
 </li>
@@ -170,7 +170,8 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>allocate instance of Spline2D class.</p>
+    <p>Generate an instance of Numo::GSL::Spline2D::Bicubic class,
+a subclass of Numo::GSL::Spline2D class with gsl_interp2d_bicubic type.</p>
 
 <p>This function initializes the interpolation object interp for the
 data (xa,ya,za) where xa and ya are arrays of
@@ -233,14 +234,14 @@ the behavior for other arrangements is not defined.</p>
       <pre class="lines">
 
 
-772
-773
-774
-775
-776</pre>
+790
+791
+792
+793
+794</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 772</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 790</span>
 
 static VALUE
 spline2d_bicubic_s_new(VALUE self, VALUE v1, VALUE v2, VALUE v3)
@@ -257,7 +258,7 @@ spline2d_bicubic_s_new(VALUE self, VALUE v1, VALUE v2, VALUE v3)
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 18:48:53 2017 by
+  Generated on Fri Mar 31 18:42:15 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

@@ -101,7 +101,7 @@
 
 <div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="Wavelet2D/Bspline.html" title="Numo::GSL::Wavelet2D::Bspline (class)">Bspline</a></span>, <span class='object_link'><a href="Wavelet2D/BsplineCentered.html" title="Numo::GSL::Wavelet2D::BsplineCentered (class)">BsplineCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Daubechies.html" title="Numo::GSL::Wavelet2D::Daubechies (class)">Daubechies</a></span>, <span class='object_link'><a href="Wavelet2D/DaubechiesCentered.html" title="Numo::GSL::Wavelet2D::DaubechiesCentered (class)">DaubechiesCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Haar.html" title="Numo::GSL::Wavelet2D::Haar (class)">Haar</a></span>, <span class='object_link'><a href="Wavelet2D/HaarCentered.html" title="Numo::GSL::Wavelet2D::HaarCentered (class)">HaarCentered</a></span></p>
+  <p class="children"><span class='object_link'><a href="Wavelet2D/GslWaveletBspline.html" title="Numo::GSL::Wavelet2D::GslWaveletBspline (class)">GslWaveletBspline</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletBsplineCentered.html" title="Numo::GSL::Wavelet2D::GslWaveletBsplineCentered (class)">GslWaveletBsplineCentered</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletDaubechies.html" title="Numo::GSL::Wavelet2D::GslWaveletDaubechies (class)">GslWaveletDaubechies</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletDaubechiesCentered.html" title="Numo::GSL::Wavelet2D::GslWaveletDaubechiesCentered (class)">GslWaveletDaubechiesCentered</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletHaar.html" title="Numo::GSL::Wavelet2D::GslWaveletHaar (class)">GslWaveletHaar</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletHaarCentered.html" title="Numo::GSL::Wavelet2D::GslWaveletHaarCentered (class)">GslWaveletHaarCentered</a></span></p>
 </div>
 <h2>Defined Under Namespace</h2>
 <p class="children">
@@ -109,7 +109,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Wavelet2D/Bspline.html" title="Numo::GSL::Wavelet2D::Bspline (class)">Bspline</a></span>, <span class='object_link'><a href="Wavelet2D/BsplineCentered.html" title="Numo::GSL::Wavelet2D::BsplineCentered (class)">BsplineCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Daubechies.html" title="Numo::GSL::Wavelet2D::Daubechies (class)">Daubechies</a></span>, <span class='object_link'><a href="Wavelet2D/DaubechiesCentered.html" title="Numo::GSL::Wavelet2D::DaubechiesCentered (class)">DaubechiesCentered</a></span>, <span class='object_link'><a href="Wavelet2D/Haar.html" title="Numo::GSL::Wavelet2D::Haar (class)">Haar</a></span>, <span class='object_link'><a href="Wavelet2D/HaarCentered.html" title="Numo::GSL::Wavelet2D::HaarCentered (class)">HaarCentered</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Wavelet2D/GslWaveletBspline.html" title="Numo::GSL::Wavelet2D::GslWaveletBspline (class)">GslWaveletBspline</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletBsplineCentered.html" title="Numo::GSL::Wavelet2D::GslWaveletBsplineCentered (class)">GslWaveletBsplineCentered</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletDaubechies.html" title="Numo::GSL::Wavelet2D::GslWaveletDaubechies (class)">GslWaveletDaubechies</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletDaubechiesCentered.html" title="Numo::GSL::Wavelet2D::GslWaveletDaubechiesCentered (class)">GslWaveletDaubechiesCentered</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletHaar.html" title="Numo::GSL::Wavelet2D::GslWaveletHaar (class)">GslWaveletHaar</a></span>, <span class='object_link'><a href="Wavelet2D/GslWaveletHaarCentered.html" title="Numo::GSL::Wavelet2D::GslWaveletHaarCentered (class)">GslWaveletHaarCentered</a></span>
     
   
 </p>
@@ -346,18 +346,6 @@ non-standard form.</p>
       <pre class="lines">
 
 
-761
-762
-763
-764
-765
-766
-767
-768
-769
-770
-771
-772
 773
 774
 775
@@ -372,10 +360,22 @@ non-standard form.</p>
 784
 785
 786
-787</pre>
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 761</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 773</span>
 
 static VALUE
 wavelet2d_nstransform(VALUE self, VALUE v1, VALUE v2)
@@ -469,23 +469,23 @@ non-standard form.</p>
       <pre class="lines">
 
 
-799
-800
-801
-802
-803
-804
-805
-806
-807
-808
-809
-810
 811
-812</pre>
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 799</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 811</span>
 
 static VALUE
 wavelet2d_nstransform_forward(VALUE self, VALUE v1)
@@ -566,23 +566,23 @@ non-standard form.</p>
       <pre class="lines">
 
 
-824
-825
-826
-827
-828
-829
-830
-831
-832
-833
-834
-835
 836
-837</pre>
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 824</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 836</span>
 
 static VALUE
 wavelet2d_nstransform_inverse(VALUE self, VALUE v1)
@@ -687,18 +687,6 @@ workspace is provided.</p>
       <pre class="lines">
 
 
-623
-624
-625
-626
-627
-628
-629
-630
-631
-632
-633
-634
 635
 636
 637
@@ -713,10 +701,22 @@ workspace is provided.</p>
 646
 647
 648
-649</pre>
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 623</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 635</span>
 
 static VALUE
 wavelet2d_transform(VALUE self, VALUE v1, VALUE v2)
@@ -823,23 +823,23 @@ workspace is provided.</p>
       <pre class="lines">
 
 
-675
-676
-677
-678
-679
-680
-681
-682
-683
-684
-685
-686
 687
-688</pre>
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 675</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 687</span>
 
 static VALUE
 wavelet2d_transform_forward(VALUE self, VALUE v1)
@@ -933,23 +933,23 @@ workspace is provided.</p>
       <pre class="lines">
 
 
-714
-715
-716
-717
-718
-719
-720
-721
-722
-723
-724
-725
 726
-727</pre>
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 714</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 726</span>
 
 static VALUE
 wavelet2d_transform_inverse(VALUE self, VALUE v1)
@@ -975,7 +975,7 @@ wavelet2d_transform_inverse(VALUE self, VALUE v1)
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 18:48:53 2017 by
+  Generated on Fri Mar 31 18:42:15 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

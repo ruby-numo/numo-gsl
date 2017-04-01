@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Numo::GSL::Wavelet2D::DaubechiesCentered
+  Class: Numo::GSL::Wavelet2D::GslWaveletHaarCentered
   
     &mdash; Documentation by YARD 0.9.8
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Numo::GSL::Wavelet2D::DaubechiesCentered";
+  pathId = "Numo::GSL::Wavelet2D::GslWaveletHaarCentered";
   relpath = '../../../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../../x_index.html">Index (D)</a> &raquo;
+    <a href="../../../x_index.html">Index (G)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../../Numo.html" title="Numo (module)">Numo</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../GSL.html" title="Numo::GSL (module)">GSL</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Wavelet2D.html" title="Numo::GSL::Wavelet2D (class)">Wavelet2D</a></span></span>
      &raquo; 
-    <span class="title">DaubechiesCentered</span>
+    <span class="title">GslWaveletHaarCentered</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Numo::GSL::Wavelet2D::DaubechiesCentered
+      <div id="content"><h1>Class: Numo::GSL::Wavelet2D::GslWaveletHaarCentered
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'><a href="../Wavelet2D.html" title="Numo::GSL::Wavelet2D (class)">Numo::GSL::Wavelet2D</a></span></li>
           
-            <li class="next">Numo::GSL::Wavelet2D::DaubechiesCentered</li>
+            <li class="next">Numo::GSL::Wavelet2D::GslWaveletHaarCentered</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -133,7 +133,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>generate wavelet type DaubechiesCentered instance.</p>
+    <span class="summary_desc"><div class='inline'><p>Generate an instance of Numo::GSL::Wavelet2D::GslWaveletHaarCentered class, a subclass of Numo::GSL::Wavelet2D class with gsl_wavelet_haar_centered type.</p>
 </div></span>
   
 </li>
@@ -170,7 +170,8 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>generate wavelet type DaubechiesCentered instance.</p>
+    <p>Generate an instance of Numo::GSL::Wavelet2D::GslWaveletHaarCentered class,
+a subclass of Numo::GSL::Wavelet2D class with gsl_wavelet_haar_centered type.</p>
 
 <p>This function allocates and initializes a wavelet object of type
 T.  The parameter k selects the specific member of the
@@ -206,19 +207,19 @@ available or if a unsupported member is selected.</p>
       <pre class="lines">
 
 
-892
-893
-894
-895
-896</pre>
+950
+951
+952
+953
+954</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 892</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/wavelet/gsl_wavelet.c', line 950</span>
 
 static VALUE
-wavelet2d_daubechies_centered_s_new(VALUE self, VALUE v1)
+wavelet2d_gsl_wavelet_haar_centered_s_new(VALUE self, VALUE v1)
 {
-    return wavelet2d_s_new(self, gsl_wavelet_daubechies_centered, v1);
+    return wavelet2d_s_new(self, gsl_wavelet_haar_centered, v1);
 }</pre>
     </td>
   </tr>
@@ -230,7 +231,7 @@ wavelet2d_daubechies_centered_s_new(VALUE self, VALUE v1)
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 18:48:53 2017 by
+  Generated on Fri Mar 31 18:42:15 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

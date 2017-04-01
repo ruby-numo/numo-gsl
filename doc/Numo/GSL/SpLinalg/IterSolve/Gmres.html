@@ -133,7 +133,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>generate wavelet type Gmres instance.</p>
+    <span class="summary_desc"><div class='inline'><p>Generate an instance of Numo::GSL::SpLinalg::IterSolve::Gmres class, a subclass of Numo::GSL::SpLinalg::IterSolve class with gsl_splinalg_itersolve_gmres type.</p>
 </div></span>
   
 </li>
@@ -170,7 +170,8 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>generate wavelet type Gmres instance.</p>
+    <p>Generate an instance of Numo::GSL::SpLinalg::IterSolve::Gmres class,
+a subclass of Numo::GSL::SpLinalg::IterSolve class with gsl_splinalg_itersolve_gmres type.</p>
 
 <p>This function allocates a workspace for the iterative solution of
 n-by-n sparse matrix systems. The iterative solver type
@@ -218,14 +219,14 @@ m may be set to 0 in which case a reasonable default value is used.</p>
       <pre class="lines">
 
 
-808
-809
 810
 811
-812</pre>
+812
+813
+814</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 808</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 810</span>
 
 static VALUE
 splinalg_itersolve_gmres_s_new(VALUE self, VALUE v1, VALUE v2)
@@ -242,7 +243,7 @@ splinalg_itersolve_gmres_s_new(VALUE self, VALUE v1, VALUE v2)
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 18:48:54 2017 by
+  Generated on Fri Mar 31 18:42:16 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

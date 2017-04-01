@@ -133,7 +133,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>allocate instance of Spline class.</p>
+    <span class="summary_desc"><div class='inline'><p>Generate an instance of Numo::GSL::Spline::Polynomial class, a subclass of Numo::GSL::Spline class with gsl_interp_polynomial type.</p>
 </div></span>
   
 </li>
@@ -170,7 +170,8 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>allocate instance of Spline class.</p>
+    <p>Generate an instance of Numo::GSL::Spline::Polynomial class,
+a subclass of Numo::GSL::Spline class with gsl_interp_polynomial type.</p>
 
 <p>This function initializes the interpolation object interp for the
 data (xa,ya) where xa and ya are arrays of size
@@ -220,14 +221,14 @@ the behavior for other arrangements is not defined.</p>
       <pre class="lines">
 
 
-249
-250
-251
-252
-253</pre>
+253
+254
+255
+256
+257</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 249</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/interp/gsl_interp.c', line 253</span>
 
 static VALUE
 spline_polynomial_s_new(VALUE self, VALUE v1, VALUE v2)
@@ -244,7 +245,7 @@ spline_polynomial_s_new(VALUE self, VALUE v1, VALUE v2)
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 18:48:53 2017 by
+  Generated on Fri Mar 31 18:42:15 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
