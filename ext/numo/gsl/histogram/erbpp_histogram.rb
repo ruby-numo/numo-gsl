@@ -1,4 +1,3 @@
-require_relative "../gen/erbpp2"
 require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
@@ -38,69 +37,53 @@ ErbppGsl.read_func_pattern(
  [/^gsl_histogram_(\w+)$/,       hist_list],
 )
 
-def find_template(h,tp)
-  if /This function is now deprecated/m =~ h[:desc]
-    $stderr.puts "depricated: #{h[:func_name]}"
-    return nil
-  end
-  func_type = h[:func_type]
-  arg_types = h[:args].map{|a| a[0].sub(/^const /,"")}
-  h[:postpose] = false
-  case h[:func_name].sub(/gsl_histogram/,"")
-  when /_free$/; nil
-  when /_alloc$/
-    h[:singleton] = true
-    h[:name] = "new"
-    case arg_types
-    when ["size_t"];                   "c_new_sizet"
-    when ["size_t","size_t"];          "c_new_sizet_x2"
+class DefHistogram < DefClass
+  include ErbppGsl
+
+  def lookup(h)
+    case h
+    when FM(name:/_free$/);                 false
+    when FM(szt, name:/_alloc$/);           "c_new_sizet"
+    when FM(szt,szt, name:/_alloc$/);       "c_new_sizet_x2"
+    when FM(name:/2d_set_ranges$/);         "c_self_f_2d_set_ranges"
+    when FM(name:/_set_ranges$/);           "c_self_f_set_ranges"
+    when FM(name:/(2d)?_get_[xy]?range$/);  "c_DFloat_x2_f_get_range"
+    when FM(name:/2d_get$/);                "c_DFloat_f_2d_get"
+    when FM(name:/_get$/);                  "c_DFloat_f_get"
+    when FM(name:/2d_increment$/);          "c_self_f_DFloat_x2"
+    when FM(name:/_increment$/);            "c_self_f_DFloat"
+    when FM(name:/2d_accumulate$/);         "c_self_f_DFloat_x3"
+    when FM(name:/_accumulate$/);           "c_self_f_DFloat_x2"
+    when FM(name:/(2d)?_pdf_init$/);        "c_bool_f_pdf_init"
+    when FM(name:/2d_pdf_sample$/);         "c_DFloat_x2_f_DFloat_x2"
+    when FM(name:/_pdf_sample$/);           "c_DFloat_f_DFloat"
+    when FM(tp, type:dbl);                  "c_double_f_void"
+    when FM(tp,dbl, type:dbl);              "c_double_f_double"
+    when FM(tp,szt, type:dbl);              "c_double_f_sizet"
+    when FM(tp,szt,szt, type:dbl);          "c_double_f_sizet_x2"
+    when FM("struct", type:dblp);           "c_DFloat_f_field"
+    when FM(tp, type:szt);                  "c_sizet_f_void"
+    when FM(tp,dbl, type:szt);              "c_sizet_f_double"
+    when FM(tp,szt, type:szt);              "c_sizet_f_sizet"
+    when FM("struct", type:szt);            "c_sizet_f_field"
+    when FM(tp, type:int);                  "c_void_f_void"
+    when FM(tp,dbl, type:int);              "c_void_f_double"
+    when FM(tp,*[dbl]*2, type:int);         "c_void_f_double_x2"
+    when FM(tp,*[dbl]*4, type:int);         "c_void_f_double_x4"
+    when FM(tp,szt, type:int);              "c_void_f_sizet"
+    when FM(tp,tp, type:int);               "c_bool_f_other"
+    when FM(tp, type:void);                 "c_void_f_void"
+    when FM(tp,*[sztp]*2, type:void);       "c_sizet_x2_f_void"
     end
-  when "_set_ranges";                  "c_self_f_set_ranges"
-  when "2d_set_ranges";                "c_self_f_2d_set_ranges"
-  when "_get";                         "c_DFloat_f_get"
-  when "2d_get";                       "c_DFloat_f_2d_get"
-  when /(2d)?_get_[xy]?range/;         "c_DFloat_x2_f_get_range"
-  when "_increment";                   "c_self_f_DFloat"
-  when "_accumulate";                  "c_self_f_DFloat_x2"
-  when "2d_increment";                 "c_self_f_DFloat_x2"
-  when "2d_accumulate";                "c_self_f_DFloat_x3"
-  when /(2d)?_pdf_init/;               "c_bool_f_pdf_init"
-  when "_pdf_sample";                  "c_DFloat_f_DFloat"
-  when "2d_pdf_sample";                "c_DFloat_x2_f_DFloat_x2"
-  else
-    case func_type
-    when "double"
-      case arg_types
-      when [tp];                       "c_double_f_void"
-      when [tp,"double"];              "c_double_f_double"
-      when [tp,"size_t"];              "c_double_f_sizet"
-      when [tp,"size_t","size_t"];     "c_double_f_sizet_x2"
-      end
-    when "double *"
-      case arg_types
-      when ["struct"];                 "c_DFloat_f_field"
-      end
-    when "size_t"
-      case arg_types
-      when [tp];                       "c_sizet_f_void"
-      when [tp,"double"];              "c_sizet_f_double"
-      when [tp,"size_t"];              "c_sizet_f_sizet"
-      when ["struct"];                 "c_sizet_f_field"
-      end
-    when "int"
-      case arg_types
-      when [tp];                       "c_void_f_void"
-      when [tp,"double"];              "c_void_f_double"
-      when [tp,*["double"]*2];         "c_void_f_double_x2"
-      when [tp,*["double"]*4];         "c_void_f_double_x4"
-      when [tp,"size_t"];              "c_void_f_sizet"
-      when [tp,tp];                    "c_bool_f_other"
-      end
-    when "void"
-      case arg_types
-      when [tp];                       "c_void_f_void"
-      when [tp,*["size_t *"]*2];       "c_sizet_x2_f_void"
-      end
+  end
+
+  def check_func(h,re=nil)
+    re ||= /^gsl_#{name}_/
+    if t = lookup(h)
+      m = h[:func_name].sub(re,"")
+      DefMethod.new(self, t, name:m, **h)
+    else
+      $stderr.puts "skip #{h[:func_name]}"
     end
   end
 end
@@ -122,7 +105,7 @@ DefLib.new do
    ["Histogram2D",   "histogram2d",     hist2d_list],
    ["Histogram2DPdf","histogram2d_pdf", hist2d_pdf_list],
   ].each do |name,base,list|
-    def_class do
+    DefHistogram.new(self) do
       set name: base
       set class_name: name
       set class_var: "c"+name
@@ -131,12 +114,7 @@ DefLib.new do
 
       undef_alloc_func
       list.each do |h|
-        if t = find_template(h, "gsl_#{base} *")
-          m = h[:name] || h[:func_name].sub(/^gsl_#{base}_/,"")
-          def_method(m, t, **h)
-        else
-          $stderr.puts "skip "+h[:func_name]
-        end
+        check_func(h)
       end
     end
   end

@@ -8,14 +8,16 @@ module ErbppGsl
     FuncMatch.new(*args,**opts)
   end
 
-  def dbl;  "double"   end
-  def dblp; "double *" end
-  def str;  "char *"   end
-  def szt;  "size_t"   end
-  def int;  "int"      end
-  def long; "long"     end
-  def uint; "unsigned int" end
+  def dbl;   "double"   end
+  def dblp;  "double *" end
+  def str;   "char *"   end
+  def szt;   "size_t"   end
+  def sztp;  "size_t *" end
+  def int;   "int"      end
+  def long;  "long"     end
+  def uint;  "unsigned int" end
   def ulong; /^unsigned long/ end
+  def void;  "void"     end
   def tp; get(:struct)+" *" end
 
   def read_eval(prefix)
