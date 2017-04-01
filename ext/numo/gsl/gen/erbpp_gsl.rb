@@ -14,6 +14,7 @@ module ErbppGsl
   def szt;   "size_t"   end
   def sztp;  "size_t *" end
   def int;   "int"      end
+  def intp;  "int *"    end
   def long;  "long"     end
   def uint;  "unsigned int" end
   def ulong; /^unsigned long/ end
@@ -87,6 +88,43 @@ class DefSubclassNew < DefMethod
     if n_arg != :nodef
       "{ VALUE c#{subtype_class} = rb_define_class_under(#{_mod_var}, \"#{subtype_class}\", #{_mod_var});
       rb_define_singleton_method(c#{subtype_class}, \"new\", #{c_func}, #{n_arg}); }"
+    end
+  end
+end
+
+
+class DefGslClass < DefClass
+  include ErbppGsl
+
+  def lookup(h)
+    # implement in Subclass
+  end
+
+  def check_func(h,re=nil)
+    re ||= /^gsl_#{name}_/
+    if t = lookup(h)
+      m = h[:func_name].sub(re,"")
+      DefMethod.new(self, t, name:m, **h)
+    else
+      $stderr.puts "skip #{h[:func_name]}"
+    end
+  end
+end
+
+class DefGslModule < DefModule
+  include ErbppGsl
+
+  def lookup(h)
+    # implement in Subclass
+  end
+
+  def check_func(h,re=nil)
+    re ||= /^gsl_#{name}_/
+    if t = lookup(h)
+      m = h[:func_name].sub(re,"")
+      DefModuleFunction.new(self, t, name:m, **h)
+    else
+      $stderr.puts "skip #{h[:func_name]}"
     end
   end
 end
