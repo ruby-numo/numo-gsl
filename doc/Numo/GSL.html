@@ -101,6 +101,26 @@
   <h2>Constant Summary</h2>
   <dl class="constants">
     
+      <dt id="MODE_DEFAULT-constant" class="">MODE_DEFAULT =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'>GSL_MODE_DEFAULT</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="PREC_APPROX-constant" class="">PREC_APPROX =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'>GSL_PREC_APPROX</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="PREC_DOUBLE-constant" class="">PREC_DOUBLE =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'>GSL_PREC_DOUBLE</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="PREC_SINGLE-constant" class="">PREC_SINGLE =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'>GSL_PREC_SINGLE</span><span class='rparen'>)</span></pre></dd>
+    
       <dt id="M_1_PI-constant" class="">M_1_PI =
         <div class="docstring">
   <div class="discussion">
@@ -355,26 +375,6 @@
 </div>
       </dt>
       <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#M_SQRTPI-constant" title="Numo::GSL::M_SQRTPI (constant)">M_SQRTPI</a></span></span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="PREC_DOUBLE-constant" class="">PREC_DOUBLE =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_PREC_DOUBLE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="PREC_SINGLE-constant" class="">PREC_SINGLE =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_PREC_SINGLE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="PREC_APPROX-constant" class="">PREC_APPROX =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_PREC_APPROX</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="MODE_DEFAULT-constant" class="">MODE_DEFAULT =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>GSL_MODE_DEFAULT</span><span class='rparen'>)</span></pre></dd>
     
       <dt id="EIGEN_SORT_VAL_ASC-constant" class="">EIGEN_SORT_VAL_ASC =
         
@@ -1160,7 +1160,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#acosh-instance_method" title="#acosh (instance method)">#<strong>acosh</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_acosh-instance_method" title="#gsl_acosh (instance method)">#<strong>gsl_acosh</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1183,7 +1183,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#asinh-instance_method" title="#asinh (instance method)">#<strong>asinh</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_asinh-instance_method" title="#gsl_asinh (instance method)">#<strong>gsl_asinh</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1206,7 +1206,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#atanh-instance_method" title="#atanh (instance method)">#<strong>atanh</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_atanh-instance_method" title="#gsl_atanh (instance method)">#<strong>gsl_atanh</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1229,7 +1229,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#expm1-instance_method" title="#expm1 (instance method)">#<strong>expm1</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_expm1-instance_method" title="#gsl_expm1 (instance method)">#<strong>gsl_expm1</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1252,7 +1252,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#fcmp-instance_method" title="#fcmp (instance method)">#<strong>fcmp</strong>(x, y, epsilon)  &#x21d2; Int </a>
+      <a href="#gsl_fcmp-instance_method" title="#gsl_fcmp (instance method)">#<strong>gsl_fcmp</strong>(x, y, epsilon)  &#x21d2; Int </a>
     
 
     
@@ -1275,7 +1275,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#finite-instance_method" title="#finite (instance method)">#<strong>finite</strong>(x)  &#x21d2; Int </a>
+      <a href="#gsl_finite-instance_method" title="#gsl_finite (instance method)">#<strong>gsl_finite</strong>(x)  &#x21d2; Int </a>
     
 
     
@@ -1298,7 +1298,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#frexp-instance_method" title="#frexp (instance method)">#<strong>frexp</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_frexp-instance_method" title="#gsl_frexp (instance method)">#<strong>gsl_frexp</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1321,7 +1321,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#hypot-instance_method" title="#hypot (instance method)">#<strong>hypot</strong>(x, y)  &#x21d2; DFloat </a>
+      <a href="#gsl_hypot-instance_method" title="#gsl_hypot (instance method)">#<strong>gsl_hypot</strong>(x, y)  &#x21d2; DFloat </a>
     
 
     
@@ -1344,7 +1344,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#hypot3-instance_method" title="#hypot3 (instance method)">#<strong>hypot3</strong>(x, y, z)  &#x21d2; DFloat </a>
+      <a href="#gsl_hypot3-instance_method" title="#gsl_hypot3 (instance method)">#<strong>gsl_hypot3</strong>(x, y, z)  &#x21d2; DFloat </a>
     
 
     
@@ -1367,7 +1367,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#isinf-instance_method" title="#isinf (instance method)">#<strong>isinf</strong>(x)  &#x21d2; Int </a>
+      <a href="#gsl_isinf-instance_method" title="#gsl_isinf (instance method)">#<strong>gsl_isinf</strong>(x)  &#x21d2; Int </a>
     
 
     
@@ -1390,7 +1390,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#isnan-instance_method" title="#isnan (instance method)">#<strong>isnan</strong>(x)  &#x21d2; Int </a>
+      <a href="#gsl_isnan-instance_method" title="#gsl_isnan (instance method)">#<strong>gsl_isnan</strong>(x)  &#x21d2; Int </a>
     
 
     
@@ -1413,7 +1413,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldexp-instance_method" title="#ldexp (instance method)">#<strong>ldexp</strong>(x, e)  &#x21d2; DFloat </a>
+      <a href="#gsl_ldexp-instance_method" title="#gsl_ldexp (instance method)">#<strong>gsl_ldexp</strong>(x, e)  &#x21d2; DFloat </a>
     
 
     
@@ -1436,7 +1436,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#log1p-instance_method" title="#log1p (instance method)">#<strong>log1p</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_log1p-instance_method" title="#gsl_log1p (instance method)">#<strong>gsl_log1p</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1459,7 +1459,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_2-instance_method" title="#pow_2 (instance method)">#<strong>pow_2</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_2-instance_method" title="#gsl_pow_2 (instance method)">#<strong>gsl_pow_2</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1482,7 +1482,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_3-instance_method" title="#pow_3 (instance method)">#<strong>pow_3</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_3-instance_method" title="#gsl_pow_3 (instance method)">#<strong>gsl_pow_3</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1505,7 +1505,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_4-instance_method" title="#pow_4 (instance method)">#<strong>pow_4</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_4-instance_method" title="#gsl_pow_4 (instance method)">#<strong>gsl_pow_4</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1528,7 +1528,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_5-instance_method" title="#pow_5 (instance method)">#<strong>pow_5</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_5-instance_method" title="#gsl_pow_5 (instance method)">#<strong>gsl_pow_5</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1551,7 +1551,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_6-instance_method" title="#pow_6 (instance method)">#<strong>pow_6</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_6-instance_method" title="#gsl_pow_6 (instance method)">#<strong>gsl_pow_6</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1574,7 +1574,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_7-instance_method" title="#pow_7 (instance method)">#<strong>pow_7</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_7-instance_method" title="#gsl_pow_7 (instance method)">#<strong>gsl_pow_7</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1597,7 +1597,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_8-instance_method" title="#pow_8 (instance method)">#<strong>pow_8</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_8-instance_method" title="#gsl_pow_8 (instance method)">#<strong>gsl_pow_8</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1620,7 +1620,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_9-instance_method" title="#pow_9 (instance method)">#<strong>pow_9</strong>(x)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_9-instance_method" title="#gsl_pow_9 (instance method)">#<strong>gsl_pow_9</strong>(x)  &#x21d2; DFloat </a>
     
 
     
@@ -1643,7 +1643,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_int-instance_method" title="#pow_int (instance method)">#<strong>pow_int</strong>(x, n)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_int-instance_method" title="#gsl_pow_int (instance method)">#<strong>gsl_pow_int</strong>(x, n)  &#x21d2; DFloat </a>
     
 
     
@@ -1666,7 +1666,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pow_uint-instance_method" title="#pow_uint (instance method)">#<strong>pow_uint</strong>(x, n)  &#x21d2; DFloat </a>
+      <a href="#gsl_pow_uint-instance_method" title="#gsl_pow_uint (instance method)">#<strong>gsl_pow_uint</strong>(x, n)  &#x21d2; DFloat </a>
     
 
     
@@ -1696,9 +1696,9 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="acosh-instance_method">
+  <h3 class="signature first" id="gsl_acosh-instance_method">
   
-    #<strong>acosh</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_acosh</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -1769,11 +1769,11 @@ alternative to the standard math function acosh(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 378</span>
 
 static VALUE
-sys_acosh(VALUE mod, VALUE v0)
+sys_gsl_acosh(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_acosh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_acosh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -1783,9 +1783,9 @@ sys_acosh(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="asinh-instance_method">
+  <h3 class="signature " id="gsl_asinh-instance_method">
   
-    #<strong>asinh</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_asinh</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -1856,11 +1856,11 @@ alternative to the standard math function asinh(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 417</span>
 
 static VALUE
-sys_asinh(VALUE mod, VALUE v0)
+sys_gsl_asinh(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_asinh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_asinh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -1870,9 +1870,9 @@ sys_asinh(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="atanh-instance_method">
+  <h3 class="signature " id="gsl_atanh-instance_method">
   
-    #<strong>atanh</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_atanh</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -1943,11 +1943,11 @@ alternative to the standard math function atanh(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 456</span>
 
 static VALUE
-sys_atanh(VALUE mod, VALUE v0)
+sys_gsl_atanh(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_atanh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_atanh, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -1957,9 +1957,9 @@ sys_atanh(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="expm1-instance_method">
+  <h3 class="signature " id="gsl_expm1-instance_method">
   
-    #<strong>expm1</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_expm1</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2031,11 +2031,11 @@ function expm1(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 249</span>
 
 static VALUE
-sys_expm1(VALUE mod, VALUE v0)
+sys_gsl_expm1(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_expm1, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_expm1, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -2045,9 +2045,9 @@ sys_expm1(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="fcmp-instance_method">
+  <h3 class="signature " id="gsl_fcmp-instance_method">
   
-    #<strong>fcmp</strong>(x, y, epsilon)  &#x21d2; <tt>Int</tt> 
+    #<strong>gsl_fcmp</strong>(x, y, epsilon)  &#x21d2; <tt>Int</tt> 
   
 
   
@@ -2156,11 +2156,11 @@ approximately zero.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 1036</span>
 
 static VALUE
-sys_fcmp(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+sys_gsl_fcmp(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
 {
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
-    ndfunc_t ndf = {iter_sys_fcmp, STRIDE_LOOP|NDF_EXTRACT, 3,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_fcmp, STRIDE_LOOP|NDF_EXTRACT, 3,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 3, v0, v1, v2);
 }</pre>
@@ -2170,9 +2170,9 @@ sys_fcmp(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="finite-instance_method">
+  <h3 class="signature " id="gsl_finite-instance_method">
   
-    #<strong>finite</strong>(x)  &#x21d2; <tt>Int</tt> 
+    #<strong>gsl_finite</strong>(x)  &#x21d2; <tt>Int</tt> 
   
 
   
@@ -2243,11 +2243,11 @@ infinite or not-a-number.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 169</span>
 
 static VALUE
-sys_finite(VALUE mod, VALUE v0)
+sys_gsl_finite(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
-    ndfunc_t ndf = {iter_sys_finite, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_finite, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -2257,9 +2257,9 @@ sys_finite(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="frexp-instance_method">
+  <h3 class="signature " id="gsl_frexp-instance_method">
   
-    #<strong>frexp</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_frexp</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2335,11 +2335,11 @@ math function frexp(x, e).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 546</span>
 
 static VALUE
-sys_frexp(VALUE mod, VALUE v0, VALUE v1)
+sys_gsl_frexp(VALUE mod, VALUE v0, VALUE v1)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[2] = {{cDF,0},{cInt,0}};
-    ndfunc_t ndf = {iter_sys_frexp, STRIDE_LOOP|NDF_EXTRACT, 1,2, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_frexp, STRIDE_LOOP|NDF_EXTRACT, 1,2, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -2349,9 +2349,9 @@ sys_frexp(VALUE mod, VALUE v0, VALUE v1)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="hypot-instance_method">
+  <h3 class="signature " id="gsl_hypot-instance_method">
   
-    #<strong>hypot</strong>(x, y)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_hypot</strong>(x, y)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2435,11 +2435,11 @@ alternative to the BSD math function hypot(x,y).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 293</span>
 
 static VALUE
-sys_hypot(VALUE mod, VALUE v0, VALUE v1)
+sys_gsl_hypot(VALUE mod, VALUE v0, VALUE v1)
 {
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_hypot, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_hypot, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 2, v0, v1);
 }</pre>
@@ -2449,9 +2449,9 @@ sys_hypot(VALUE mod, VALUE v0, VALUE v1)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="hypot3-instance_method">
+  <h3 class="signature " id="gsl_hypot3-instance_method">
   
-    #<strong>hypot3</strong>(x, y, z)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_hypot3</strong>(x, y, z)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2545,11 +2545,11 @@ $\sqrt+ y^2 + z^2$
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 339</span>
 
 static VALUE
-sys_hypot3(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+sys_gsl_hypot3(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
 {
     ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_hypot3, STRIDE_LOOP|NDF_EXTRACT, 3,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_hypot3, STRIDE_LOOP|NDF_EXTRACT, 3,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 3, v0, v1, v2);
 }</pre>
@@ -2559,9 +2559,9 @@ sys_hypot3(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="isinf-instance_method">
+  <h3 class="signature " id="gsl_isinf-instance_method">
   
-    #<strong>isinf</strong>(x)  &#x21d2; <tt>Int</tt> 
+    #<strong>gsl_isinf</strong>(x)  &#x21d2; <tt>Int</tt> 
   
 
   
@@ -2639,11 +2639,11 @@ return value from gsl_isinf().</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 129</span>
 
 static VALUE
-sys_isinf(VALUE mod, VALUE v0)
+sys_gsl_isinf(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
-    ndfunc_t ndf = {iter_sys_isinf, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_isinf, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -2653,9 +2653,9 @@ sys_isinf(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="isnan-instance_method">
+  <h3 class="signature " id="gsl_isnan-instance_method">
   
-    #<strong>isnan</strong>(x)  &#x21d2; <tt>Int</tt> 
+    #<strong>gsl_isnan</strong>(x)  &#x21d2; <tt>Int</tt> 
   
 
   
@@ -2725,11 +2725,11 @@ sys_isinf(VALUE mod, VALUE v0)
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 82</span>
 
 static VALUE
-sys_isnan(VALUE mod, VALUE v0)
+sys_gsl_isnan(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cI,0}};
-    ndfunc_t ndf = {iter_sys_isnan, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_isnan, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -2739,9 +2739,9 @@ sys_isnan(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="ldexp-instance_method">
+  <h3 class="signature " id="gsl_ldexp-instance_method">
   
-    #<strong>ldexp</strong>(x, e)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_ldexp</strong>(x, e)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2823,11 +2823,11 @@ alternative to the standard math function ldexp(x,e).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 499</span>
 
 static VALUE
-sys_ldexp(VALUE mod, VALUE v0, VALUE v1)
+sys_gsl_ldexp(VALUE mod, VALUE v0, VALUE v1)
 {
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cInt,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_ldexp, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_ldexp, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 2, v0, v1);
 }</pre>
@@ -2837,9 +2837,9 @@ sys_ldexp(VALUE mod, VALUE v0, VALUE v1)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="log1p-instance_method">
+  <h3 class="signature " id="gsl_log1p-instance_method">
   
-    #<strong>log1p</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_log1p</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -2911,11 +2911,11 @@ function log1p(x).</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 209</span>
 
 static VALUE
-sys_log1p(VALUE mod, VALUE v0)
+sys_gsl_log1p(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_log1p, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_log1p, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -2925,9 +2925,9 @@ sys_log1p(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_2-instance_method">
+  <h3 class="signature " id="gsl_pow_2-instance_method">
   
-    #<strong>pow_2</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_2</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3001,11 +3001,11 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 680</span>
 
 static VALUE
-sys_pow_2(VALUE mod, VALUE v0)
+sys_gsl_pow_2(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_2, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_2, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -3015,9 +3015,9 @@ sys_pow_2(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_3-instance_method">
+  <h3 class="signature " id="gsl_pow_3-instance_method">
   
-    #<strong>pow_3</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_3</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3091,11 +3091,11 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 722</span>
 
 static VALUE
-sys_pow_3(VALUE mod, VALUE v0)
+sys_gsl_pow_3(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_3, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_3, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -3105,9 +3105,9 @@ sys_pow_3(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_4-instance_method">
+  <h3 class="signature " id="gsl_pow_4-instance_method">
   
-    #<strong>pow_4</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_4</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3181,11 +3181,11 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 764</span>
 
 static VALUE
-sys_pow_4(VALUE mod, VALUE v0)
+sys_gsl_pow_4(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_4, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_4, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -3195,9 +3195,9 @@ sys_pow_4(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_5-instance_method">
+  <h3 class="signature " id="gsl_pow_5-instance_method">
   
-    #<strong>pow_5</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_5</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3271,11 +3271,11 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 806</span>
 
 static VALUE
-sys_pow_5(VALUE mod, VALUE v0)
+sys_gsl_pow_5(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_5, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_5, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -3285,9 +3285,9 @@ sys_pow_5(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_6-instance_method">
+  <h3 class="signature " id="gsl_pow_6-instance_method">
   
-    #<strong>pow_6</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_6</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3361,11 +3361,11 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 848</span>
 
 static VALUE
-sys_pow_6(VALUE mod, VALUE v0)
+sys_gsl_pow_6(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_6, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_6, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -3375,9 +3375,9 @@ sys_pow_6(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_7-instance_method">
+  <h3 class="signature " id="gsl_pow_7-instance_method">
   
-    #<strong>pow_7</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_7</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3451,11 +3451,11 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 890</span>
 
 static VALUE
-sys_pow_7(VALUE mod, VALUE v0)
+sys_gsl_pow_7(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_7, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_7, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -3465,9 +3465,9 @@ sys_pow_7(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_8-instance_method">
+  <h3 class="signature " id="gsl_pow_8-instance_method">
   
-    #<strong>pow_8</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_8</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3541,11 +3541,11 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 932</span>
 
 static VALUE
-sys_pow_8(VALUE mod, VALUE v0)
+sys_gsl_pow_8(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_8, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_8, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -3555,9 +3555,9 @@ sys_pow_8(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_9-instance_method">
+  <h3 class="signature " id="gsl_pow_9-instance_method">
   
-    #<strong>pow_9</strong>(x)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_9</strong>(x)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3631,11 +3631,11 @@ product expression.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 974</span>
 
 static VALUE
-sys_pow_9(VALUE mod, VALUE v0)
+sys_gsl_pow_9(VALUE mod, VALUE v0)
 {
     ndfunc_arg_in_t ain[1] = {{cDF,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_9, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_9, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 1, v0);
 }</pre>
@@ -3645,9 +3645,9 @@ sys_pow_9(VALUE mod, VALUE v0)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_int-instance_method">
+  <h3 class="signature " id="gsl_pow_int-instance_method">
   
-    #<strong>pow_int</strong>(x, n)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_int</strong>(x, n)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3732,11 +3732,11 @@ available as gsl_sf_pow_int_e.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 592</span>
 
 static VALUE
-sys_pow_int(VALUE mod, VALUE v0, VALUE v1)
+sys_gsl_pow_int(VALUE mod, VALUE v0, VALUE v1)
 {
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cInt,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_int, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_int, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 2, v0, v1);
 }</pre>
@@ -3746,9 +3746,9 @@ sys_pow_int(VALUE mod, VALUE v0, VALUE v1)
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="pow_uint-instance_method">
+  <h3 class="signature " id="gsl_pow_uint-instance_method">
   
-    #<strong>pow_uint</strong>(x, n)  &#x21d2; <tt>DFloat</tt> 
+    #<strong>gsl_pow_uint</strong>(x, n)  &#x21d2; <tt>DFloat</tt> 
   
 
   
@@ -3833,11 +3833,11 @@ available as gsl_sf_pow_int_e.</p>
       <pre class="code"><span class="info file"># File 'ext/numo/gsl/sys/gsl_sys.c', line 638</span>
 
 static VALUE
-sys_pow_uint(VALUE mod, VALUE v0, VALUE v1)
+sys_gsl_pow_uint(VALUE mod, VALUE v0, VALUE v1)
 {
     ndfunc_arg_in_t ain[2] = {{cDF,0},{cUInt,0}};
     ndfunc_arg_out_t aout[1] = {{cDF,0}};
-    ndfunc_t ndf = {iter_sys_pow_uint, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
+    ndfunc_t ndf = {iter_sys_gsl_pow_uint, STRIDE_LOOP|NDF_EXTRACT, 2,1, ain,aout};
 
     return na_ndloop(&amp;ndf, 2, v0, v1);
 }</pre>
@@ -3851,7 +3851,7 @@ sys_pow_uint(VALUE mod, VALUE v0, VALUE v1)
 </div>
 
       <div id="footer">
-  Generated on Fri Mar 31 18:42:04 2017 by
+  Generated on Sat Apr  1 12:47:25 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
