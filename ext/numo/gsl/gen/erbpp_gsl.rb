@@ -104,10 +104,14 @@ class DefGslClass < DefClass
     re ||= /^gsl_#{name}_/
     if t = lookup(h)
       m = h[:func_name].sub(re,"")
-      DefMethod.new(self, t, name:m, **h)
+      define_method(t, name:m, **h)
     else
       $stderr.puts "skip #{h[:func_name]}"
     end
+  end
+
+  def define_method(t,**h)
+    DefGslMethod.new(self, t, **h)
   end
 end
 
@@ -122,9 +126,31 @@ class DefGslModule < DefModule
     re ||= /^gsl_#{name}_/
     if t = lookup(h)
       m = h[:func_name].sub(re,"")
-      DefModuleFunction.new(self, t, name:m, **h)
+      define_method(t, name:m, **h)
     else
       $stderr.puts "skip #{h[:func_name]}"
     end
+  end
+
+  def define_method(t,**h)
+    DefGslModuleFunction.new(self, t, **h)
+  end
+end
+
+class DefGslModuleFunction < DefModuleFunction
+  include FuncParser
+
+  def initialize(parent,tmpl,**h)
+    super(parent,tmpl,**h)
+    parse_args(h)
+  end
+end
+
+class DefGslMethod < DefMethod
+  include FuncParser
+
+  def initialize(parent,tmpl,**h)
+    super(parent,tmpl,**h)
+    parse_args(h)
   end
 end
