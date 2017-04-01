@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Numo::GSL::Poly
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Numo::GSL::Poly";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../x_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Numo.html" title="Numo (module)">Numo</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../GSL.html" title="Numo::GSL (module)">GSL</a></span></span>
+     &raquo; 
+    <span class="title">Poly</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Numo::GSL::Poly
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>ext/numo/gsl/poly/gsl_poly.c</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#complex_solve-class_method" title="complex_solve (class method)">.<strong>complex_solve</strong>(a)  &#x21d2; Numo::DComplex </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function computes the roots of the general polynomial $P(x) = a_0 + a_1 x + a_2 x^2 + …</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#complex_solve_cubic-class_method" title="complex_solve_cubic (class method)">.<strong>complex_solve_cubic</strong>(a, b, c)  &#x21d2; [Numo::DComplex, Numo::DComplex, Numo::DComplex, Numo::Int] </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function finds the complex roots of the cubic equation,.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#complex_solve_quadratic-class_method" title="complex_solve_quadratic (class method)">.<strong>complex_solve_quadratic</strong>(a, b, c)  &#x21d2; [Numo::DComplex, Numo::DComplex, Numo::Int] </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function finds the complex roots of the quadratic equation,.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eval-class_method" title="eval (class method)">.<strong>eval</strong>(c, x)  &#x21d2; Numo::DFloat or DComplex </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function calls gsl_poly_eval or gsl_poly_complex_eval or gsl_complex_poly_complex_eval according to whether argument is complex or not.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eval_derivs-class_method" title="eval_derivs (class method)">.<strong>eval_derivs</strong>(c, x, lenres)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function evaluates a polynomial and its derivatives storing the results in the array res of size lenres.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#solve_cubic-class_method" title="solve_cubic (class method)">.<strong>solve_cubic</strong>(a, b, c)  &#x21d2; [Numo::DFloat, Numo::DFloat, Numo::DFloat, Numo::Int] </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function finds the real roots of the cubic equation,.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#solve_quadratic-class_method" title="solve_quadratic (class method)">.<strong>solve_quadratic</strong>(a, b, c)  &#x21d2; [Numo::DFloat, Numo::DFloat, Numo::Int] </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This function finds the real roots of the quadratic equation,.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="complex_solve-class_method">
+  
+    .<strong>complex_solve</strong>(a)  &#x21d2; <tt>Numo::DComplex</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function computes the roots of the general polynomial
+$P(x) = a_0 + a_1 x + a_2 x^2 + … + a_n-1 x^n-1$
+P(x) = a_0 + a_1 x + a_2 x^2 + … + a_[n-1] x^[n-1] using
+balanced-QR reduction of the companion matrix.  The parameter n
+specifies the length of the coefficient array.  The coefficient of the
+highest order term must be non-zero.  The function requires a workspace
+w of the appropriate size.  The n-1 roots are returned in
+the packed complex array z of length 2(n-1), alternating
+real and imaginary parts.</p>
+
+<p>The function returns GSL_SUCCESS if all the roots are found. If
+the QR reduction does not converge, the error handler is invoked with
+an error code of GSL_EFAILED.  Note that due to finite precision,
+roots of higher multiplicity are returned as a cluster of simple roots
+with reduced accuracy.  The solution of polynomials with higher-order
+roots requires specialized algorithms that take the multiplicity
+structure into account (see e.g. Z. Zeng, Algorithm 835, ACM
+Transactions on Mathematical Software, Volume 30, Issue 2 (2004), pp
+218–236).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DComplex</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>z result</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/poly/gsl_poly.c', line 612</span>
+
+static VALUE
+poly_s_complex_solve(VALUE mod, VALUE v1)
+{
+    size_t shape[0];
+    ndfunc_arg_in_t ain[1] = {{cDF,1}};
+    ndfunc_arg_out_t aout[1] = {{cDC,1,shape}};
+    ndfunc_t ndf = {iter_poly_s_complex_solve, NO_LOOP, 1,1, ain,aout};
+    gsl_poly_complex_workspace *w;
+    void     *opts[1];
+    VALUE     vz, vws;
+    size_t    n;
+    narray_t *na;
+
+    v1 = rb_funcall(cDF, rb_intern(&quot;cast&quot;), 1, v1);
+    GetNArray(v1,na);
+    if (na-&gt;ndim == 0) {
+        rb_raise(nary_eDimensionError,&quot;ndim(=%d) should &gt;= %d&quot;, na-&gt;ndim, 0);
+    }
+    if (na-&gt;shape[na-&gt;ndim-1] &lt; 2) {
+        rb_raise(nary_eShapeError, &quot;last axis size must be &gt;= 2&quot;);
+    }
+    n = na-&gt;shape[na-&gt;ndim-1];
+    shape[0] = n-1;
+
+    vws = poly_complex_workspace_s_new(cPolyComplexWorkspace, SIZET2NUM(n));
+    TypedData_Get_Struct(vws, gsl_poly_complex_workspace, &amp;poly_complex_workspace_data_type, w);
+    opts[0] = w;
+
+    vz = na_ndloop3(&amp;ndf, opts, 1, v1);
+    RB_GC_GUARD(vws);
+    RB_GC_GUARD(v1);
+    return vz;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="complex_solve_cubic-class_method">
+  
+    .<strong>complex_solve_cubic</strong>(a, b, c)  &#x21d2; <tt>[Numo::DComplex, Numo::DComplex, Numo::DComplex, Numo::Int]</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function finds the complex roots of the cubic equation,</p>
+
+<p>z^3 + a z^2 + b z + c = 0</p>
+
+<p>The number of complex roots is returned (always three) and the locations
+of the roots are stored in z0, z1 and z2.  The roots
+are returned in ascending order, sorted first by their real components
+and then by their imaginary components.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>c</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>[Numo::DComplex, Numo::DComplex, Numo::DComplex, Numo::Int]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>array of [z0, z1, z2, return]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/poly/gsl_poly.c', line 548</span>
+
+static VALUE
+poly_s_complex_solve_cubic(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
+    ndfunc_arg_out_t aout[4] = {{cDC,0},{cDC,0},{cDC,0},{cI,0}};
+    ndfunc_t ndf = {iter_poly_s_complex_solve_cubic,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    3,4,ain,aout};
+    
+    
+#line 52 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop(&amp;ndf,3,v0,v1,v2); 
+#line 54 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="complex_solve_quadratic-class_method">
+  
+    .<strong>complex_solve_quadratic</strong>(a, b, c)  &#x21d2; <tt>[Numo::DComplex, Numo::DComplex, Numo::Int]</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function finds the complex roots of the quadratic equation,</p>
+
+<p>a z^2 + b z + c = 0</p>
+
+<p>The number of complex roots is returned (either one or two) and the
+locations of the roots are stored in z0 and z1.  The roots
+are returned in ascending order, sorted first by their real components
+and then by their imaginary components.  If only one real root is found
+(i.e. if a=0) then it is stored in z0.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>c</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>[Numo::DComplex, Numo::DComplex, Numo::Int]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>array of [z0, z1, return]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/poly/gsl_poly.c', line 401</span>
+
+static VALUE
+poly_s_complex_solve_quadratic(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
+    ndfunc_arg_out_t aout[3] = {{cDC,0},{cDC,0},{cI,0}};
+    ndfunc_t ndf = {iter_poly_s_complex_solve_quadratic,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    3,3,ain,aout};
+    
+    
+#line 52 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop(&amp;ndf,3,v0,v1,v2); 
+#line 54 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eval-class_method">
+  
+    .<strong>eval</strong>(c, x)  &#x21d2; <tt>Numo::DFloat or DComplex</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function calls gsl_poly_eval or gsl_poly_complex_eval
+or gsl_complex_poly_complex_eval according to
+whether argument is complex or not.</p>
+
+<p>This function evaluates a polynomial with real coefficients for the real variable x.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>c</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat or DComplex</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat or DComplex</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat or DComplex</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/poly/gsl_poly.c', line 213</span>
+
+static VALUE
+poly_s_eval(VALUE mod, VALUE v0, VALUE v1)
+{
+    if (is_complex_nary(v0)) {
+        return poly_eval_cc(v0,v1);
+    } else if (is_complex_nary(v1)) {
+        return poly_eval_fc(v0,v1);
+    } else {
+        return poly_eval_ff(v0,v1);
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eval_derivs-class_method">
+  
+    .<strong>eval_derivs</strong>(c, x, lenres)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function evaluates a polynomial and its derivatives storing the
+results in the array res of size lenres.  The output array
+contains the values of d^k P/d x^k for the specified value of
+x starting with k = 0.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>c</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>lenres</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/poly/gsl_poly.c', line 259</span>
+
+static VALUE
+poly_s_eval_derivs(VALUE mod, VALUE v0, VALUE v1, VALUE v2)
+{
+    size_t shape[1];
+    ndfunc_arg_in_t ain[2] = {{cDF,1},{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,1,shape}};
+    ndfunc_t ndf = {iter_poly_s_eval_derivs,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,2,1,ain,aout};
+
+    shape[0] = NUM2SIZET(v2);
+    return na_ndloop(&amp;ndf,2,v0,v1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="solve_cubic-class_method">
+  
+    .<strong>solve_cubic</strong>(a, b, c)  &#x21d2; <tt>[Numo::DFloat, Numo::DFloat, Numo::DFloat, Numo::Int]</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function finds the real roots of the cubic equation,</p>
+
+<p>x^3 + a x^2 + b x + c = 0</p>
+
+<p>with a leading coefficient of unity.  The number of real roots (either
+one or three) is returned, and their locations are stored in x0,
+x1 and x2.  If one real root is found then only x0
+is modified.  When three real roots are found they are stored in
+x0, x1 and x2 in ascending order.  The case of
+coincident roots is not considered special.  For example, the equation
+(x-1)^3=0 will have three roots with exactly equal values.  As
+in the quadratic case, finite precision may cause equal or
+closely-spaced real roots to move off the real axis into the complex
+plane, leading to a discrete change in the number of real roots.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>c</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>[Numo::DFloat, Numo::DFloat, Numo::DFloat, Numo::Int]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>array of [x0, x1, x2, return]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/poly/gsl_poly.c', line 477</span>
+
+static VALUE
+poly_s_solve_cubic(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
+    ndfunc_arg_out_t aout[4] = {{cDF,0},{cDF,0},{cDF,0},{cI,0}};
+    ndfunc_t ndf = {iter_poly_s_solve_cubic,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    3,4,ain,aout};
+    
+    
+#line 52 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop(&amp;ndf,3,v0,v1,v2); 
+#line 54 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="solve_quadratic-class_method">
+  
+    .<strong>solve_quadratic</strong>(a, b, c)  &#x21d2; <tt>[Numo::DFloat, Numo::DFloat, Numo::Int]</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This function finds the real roots of the quadratic equation,</p>
+
+<p>a x^2 + b x + c = 0</p>
+
+<p>The number of real roots (either zero, one or two) is returned, and
+their locations are stored in x0 and x1.  If no real roots
+are found then x0 and x1 are not modified.  If one real root
+is found (i.e. if a=0) then it is stored in x0.  When two
+real roots are found they are stored in x0 and x1 in
+ascending order.  The case of coincident roots is not considered
+special.  For example (x-1)^2=0 will have two roots, which happen
+to have exactly equal values.</p>
+
+<p>The number of roots found depends on the sign of the discriminant
+b^2 - 4 a c.  This will be subject to rounding and cancellation
+errors when computed in double precision, and will also be subject to
+errors if the coefficients of the polynomial are inexact.  These errors
+may cause a discrete change in the number of roots.  However, for
+polynomials with small integer coefficients the discriminant can always
+be computed exactly.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>c</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>[Numo::DFloat, Numo::DFloat, Numo::Int]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>array of [x0, x1, return]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/poly/gsl_poly.c', line 332</span>
+
+static VALUE
+poly_s_solve_quadratic(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{cDF,0}};
+    ndfunc_arg_out_t aout[3] = {{cDF,0},{cDF,0},{cI,0}};
+    ndfunc_t ndf = {iter_poly_s_solve_quadratic,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    3,3,ain,aout};
+    
+    
+#line 52 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop(&amp;ndf,3,v0,v1,v2); 
+#line 54 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Apr  1 18:31:01 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.4.0).
+</div>
+
+    </div>
+  </body>
+</html>
