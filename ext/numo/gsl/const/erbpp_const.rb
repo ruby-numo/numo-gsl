@@ -3,7 +3,7 @@ require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
 
-const_list = ErbppGsl.read_func
+const_list = ErbppGsl.read_const
 
 DefLib.new do
   set erb_dir: %w[tmpl ../gen/tmpl]
