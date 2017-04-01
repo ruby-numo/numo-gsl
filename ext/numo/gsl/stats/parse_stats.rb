@@ -29,12 +29,10 @@ class DefStats < DefModule
 end
 
 
-class StatsBasic < DefMethod
+class StatsBasic < DefModuleFunction
   include FuncParser
 
-  PARAM_DESC =
-    {
-    }
+  PARAM_DESC = {}
   PARAM_NAMES =
     {
      "double" => %w[csphase],
@@ -44,7 +42,7 @@ class StatsBasic < DefMethod
 
   def initialize(parent,tmpl,**h)
     m = h[:func_name].sub(/^gsl_stats_/,"")
-    super(parent, tmpl, name:m, singleton:true, **h)
+    super(parent, tmpl, name:m, **h)
     parse_args(h)
     @varg = -1
     set n_arg: -1
@@ -53,17 +51,12 @@ class StatsBasic < DefMethod
 
   def argument_property(type,name)
     case name
-    when "return"
-      {output:true, narray:true, pass: :return}
-    when /\[\]/
-      {input:true, narray:true, pass: :array}
-    when /^w?stride/,"n"
-      {}
+    when "return";          {output:true, narray:true, pass: :return}
+    when /\[\]/;            {input:true,  narray:true, pass: :array}
+    when /^w?stride/,"n";   {}
     else
-      if /(.+)\*$/ =~ type
-        {output:true, narray:true, pass: :return}
-      else
-        {input:true, param:true}
+      if /(.+)\*$/ =~ type; {output:true, narray:true, pass: :return}
+      else;                 {input:true,  param:true}
       end
     end
   end

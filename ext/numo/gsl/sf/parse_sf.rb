@@ -32,7 +32,7 @@ class DefSf < DefModule
 end
 
 
-class SfTemplate < DefMethod
+class SfTemplate < DefModuleFunction
   include FuncParser
 
   def self.lookup(h)
@@ -64,7 +64,7 @@ class SfTemplate < DefMethod
 
   def initialize(parent,tmpl,**h)
     m = h[:name] || h[:func_name].sub(/^gsl_sf_/,"")
-    super(parent, tmpl, name:m, singleton:true, **h)
+    super(parent, tmpl, name:m, **h)
     parse_args(h)
     if @args_param.any?{|a| a.type=="gsl_mode_t"}
       set n_arg: -1

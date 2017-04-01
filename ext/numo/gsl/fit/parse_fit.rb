@@ -18,7 +18,9 @@ class DefFit < DefModule
   end
 end
 
-class Fit < DefMethod
+
+class Fit < DefModuleFunction
+
   def initialize(parent,tmpl,**h)
     @preproc_code = ""
     m = h[:func_name].sub(/^gsl_[^_]+_/,"")

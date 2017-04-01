@@ -1,6 +1,6 @@
 require_relative "../gen/erbpp_gsl"
 
-class DefInterp < DefClass
+class DefInterp < DefGslClass
   include ErbppGsl
 
   types = ErbppGsl.read_type
@@ -63,13 +63,5 @@ class DefInterp < DefClass
         DefSubclassNew.new(self, t, v, st, **h)
       end
     end
-  end
-end
-
-class Interp < DefMethod
-  def initialize(parent,tmpl,**h)
-    @preproc_code = ""
-    m = h[:func_name].sub(/^gsl_[^_]+_(accel_)?/,"")
-    super(parent,tmpl,name:m,**h)
   end
 end

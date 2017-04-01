@@ -1,8 +1,6 @@
 require_relative "../gen/erbpp_gsl"
 
-class DefSpMatrix < DefClass
-  include ErbppGsl
-
+class DefSpMatrix < DefGslClass
   def lookup(h)
     case h
     when FM(name:/_free$/);                     false
@@ -24,48 +22,20 @@ class DefSpMatrix < DefClass
     when FM(tp,type:"int");                     "c_self_f_void"
     end
   end
-
-  def check_func(h)
-    if t = lookup(h)
-      m = h[:func_name].sub(/^gsl_[^_]+_/,"")
-      DefMethod.new(self, t, name:m, **h)
-      return true
-    end
-    $stderr.puts "skip #{h[:func_name]}"
-    false
-  end
 end
 
-# ----------------------------------------------------------
 
-class DefSpBlas < DefModule
-  include ErbppGsl
-
+class DefSpBlas < DefGslModule
   def lookup(h)
     case h
     when FM(name:/_dgemv$/);    "spblas_dgemv"
     when FM(name:/_dgemm$/);    "spblas_dgemm"
     end
   end
-
-  def check_func(h)
-    if t = lookup(h)
-      m = h[:func_name].sub(/^gsl_[^_]+_/,"")
-      DefMethod.new(self, t, name:m, **h)
-      return true
-    end
-    $stderr.puts "skip #{h[:func_name]}"
-    false
-  end
-
 end
 
-# ----------------------------------------------------------
 
-class DefIterSolve < DefClass
-  include ErbppGsl
-
-  ITERSOLVE_TYPES = ErbppGsl.read_type.select{|s| /gsl_splinalg_itersolve_/ =~ s}
+class DefIterSolve < DefGslClass
 
   def lookup(h)
     case h
@@ -76,6 +46,10 @@ class DefIterSolve < DefClass
     when FM(tp, type:dbl);               "c_double_f_void"
     end
   end
+
+  ITERSOLVE_TYPES = ErbppGsl.read_type.select{|s|
+    /gsl_splinalg_itersolve_/ =~ s
+  }
 
   def check_func(h)
     if t = lookup(h)

@@ -37,9 +37,7 @@ ErbppGsl.read_func_pattern(
  [/^gsl_histogram_(\w+)$/,       hist_list],
 )
 
-class DefHistogram < DefClass
-  include ErbppGsl
-
+class DefHistogram < DefGslClass
   def lookup(h)
     case h
     when FM(name:/_free$/);                 false
@@ -74,16 +72,6 @@ class DefHistogram < DefClass
     when FM(tp,tp, type:int);               "c_bool_f_other"
     when FM(tp, type:void);                 "c_void_f_void"
     when FM(tp,*[sztp]*2, type:void);       "c_sizet_x2_f_void"
-    end
-  end
-
-  def check_func(h,re=nil)
-    re ||= /^gsl_#{name}_/
-    if t = lookup(h)
-      m = h[:func_name].sub(re,"")
-      DefMethod.new(self, t, name:m, **h)
-    else
-      $stderr.puts "skip #{h[:func_name]}"
     end
   end
 end

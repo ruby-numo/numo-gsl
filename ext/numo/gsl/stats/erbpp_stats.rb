@@ -1,5 +1,4 @@
 require_relative "parse_stats"
-require_relative "../gen/erbpp_gsl"
 require "erbpp/line_number"
 
 ErbppGsl.read_func_pattern(

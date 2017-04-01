@@ -273,7 +273,7 @@ if __FILE__ == $0
    ],
    ["doc/math.texi",
     "../ext/numo/gsl/sys",
-    nil,
+    "gsl_mode.h",
     /.*/
    ],
    ["doc/specfunc-*.texi",
