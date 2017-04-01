@@ -32,6 +32,7 @@
 #endif
 
 #define cDF numo_cDFloat
+#define cDC numo_cDComplex
 #define cInt cI
 #define cUInt cUI
 
