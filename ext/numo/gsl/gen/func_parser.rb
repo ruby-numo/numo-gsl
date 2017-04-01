@@ -39,14 +39,16 @@ class Argument
   TYPEMAP =
     {
      "double"=>"cDF",
+     "gsl_complex"=>"cDC",
      "unsigned int"=>"cUI",
      "int"=>"cI",
-     "size_t"=>"cSZ"
+     "size_t"=>"cSZ",
     }
 
   NACLASSMAP =
     {
      "double"=>"Numo::DFloat",
+     "gsl_complex"=>"Numo::DComplex",
      "unsigned int"=>"Numo::UInt",
      "int"=>"Numo::Int",
      "size_t"=>"Numo::UInt64",
@@ -58,6 +60,7 @@ class Argument
   RBCLASSMAP =
     {
      "double"=>"Float",
+     "gsl_complex"=>"Complex",
      "unsigned int"=>"Integer",
      "int"=>"Integer",
      "size_t"=>"Integer",
@@ -72,12 +75,14 @@ class Argument
      #"int"=>"int32_t",
      "unsigned int"=>"unsigned int",
      "int"=>"int",
-     "size_t"=>"uint64_t"
+     "size_t"=>"uint64_t",
+     "gsl_complex"=>"gsl_complex",
     }
 
   RETNAMEMAP =
     {
      "double"=>"Numo::DFloat",
+     "gsl_complex"=>"Numo::DComplex",
      #"unsigned int"=>"Numo::UInt32",
      #"int"=>"Numo::Int32",
      "unsigned int"=>"Numo::UInt",
