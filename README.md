@@ -32,7 +32,7 @@ More modules will be implemented.
 ## Installation
 
 * Install [Numo::NArray](https://github.com/ruby-numo/narray)
-* Install [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version 2.1
+* Install [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version >=2.0, <=2.3.
 
 * Install Numo::GSL
   ```shell
