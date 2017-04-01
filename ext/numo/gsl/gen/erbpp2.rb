@@ -183,15 +183,30 @@ class DefMethod < ErbPP
     "#{@parent.name}#{s}_#{@opts[:name]}"
   end
 
+  def define_method_args
+    "#{_mod_var}, \"#{@opts[:name]}\", #{c_func}, #{n_arg}"
+  end
+
   def init_def
-    if n_arg != :nodef
-      s = (singleton) ? "_singleton" : ""
-      "rb_define#{s}_method(#{_mod_var}, \"#{@opts[:name]}\", #{c_func}, #{n_arg});"
-    end
+    return if n_arg == :nodef
+    s = (singleton) ? "_singleton" : ""
+    "rb_define#{s}_method(#{define_method_args});"
   end
 
   def singleton
     @opts[:singleton]
+  end
+end
+
+class DefModuleFunction < DefMethod
+  def initialize(parent, erb_base, **opts, &block)
+    super(parent, erb_base, **opts, &block)
+    set singleton: true
+  end
+
+  def init_def
+    return if n_arg == :nodef
+    "rb_define_module_function(#{define_method_args});"
   end
 end
 
