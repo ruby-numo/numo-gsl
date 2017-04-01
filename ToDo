@@ -29,9 +29,9 @@
 * Sparse Matrices:
 * Sparse BLAS Support:
 * Sparse Linear Algebra:
+* Polynomials: (except Divided Difference)
 
 # To do
-* Polynomials:
 * Least-Squares Fitting: - multi-parameter fittings
 * Nonlinear Least-Squares Fitting:
 * Basis Splines:

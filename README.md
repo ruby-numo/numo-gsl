@@ -9,6 +9,7 @@ Implemented Modules:
 
 * [Mathematical Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL.html)
 * [Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
+* [Polynomials](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Poly.html)
 * [Special Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html)
 * [Random Number Generation](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rng.html)
   * [Random Number Distriutions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Ran.html)

@@ -276,6 +276,8 @@ if __FILE__ == $0
     "gsl_mode.h",
     /.*/
    ],
+   ["doc/poly.texi",
+    "../ext/numo/gsl/poly"],
    ["doc/specfunc-*.texi",
     "../ext/numo/gsl/sf"],
    ["doc/statistics.texi",
