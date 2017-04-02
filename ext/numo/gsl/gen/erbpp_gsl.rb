@@ -98,14 +98,18 @@ class DefGslClass < DefClass
 
   def lookup(h)
     # implement in Subclass
+    raise NotImplementedError
   end
 
   def check_func(h)
+    fn = h[:func_name]
     if t = lookup(h)
-      m = to_method_name(h[:func_name])
+      m = to_method_name(fn)
       define_method(t, name:m, **h)
+    elsif /_free$/ =~ fn
+      set free_func: fn
     else
-      $stderr.puts "skip #{h[:func_name]}"
+      $stderr.puts "skip #{fn}"
     end
   end
 
