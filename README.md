@@ -35,18 +35,18 @@ More modules will be implemented.
 
 ```
     [C] GSL function/constant => [Ruby] Numo::GSL function/constant
-Constants
+* Constants
     M_2_PI                    => Numo::GSL::M_2_PI
     GSL_CONST_MKSA_ANGSTROM   => Numo::GSL::Const::MKSA_ANGSTROM
-Module function
+* Module function
     gsl_acosh()               => Numo::GSL.acosh()
     gsl_sf_bessel_J0()        => Numo::GSL::Sf.bessel_J0()
-Class method
+* Class method
     gsl_rng_alloc()           => Numo::GSL::Rng.new
     gsl_rng_get()             => Numo::GSL::Rng#get
-Subclass
+* Subclass
     gsl_rng_type *gsl_rng_mt19937; => Numo::GSL::Rng::Mt19937 < Numo::GSL::Rng
-Exception
+* Exception
     gsl_ran_gaussian_pdf()    => Numo::GSL::Pdf.gaussian
     gsl_ran_gaussian()        => Numo::GSL::Rng#gaussian (Rng includes Numo::GSL::Ran)
 ```
