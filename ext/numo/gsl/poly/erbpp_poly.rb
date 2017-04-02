@@ -38,21 +38,6 @@ DefLib.new(nil) do
   set include_files: %w[gsl/gsl_poly.h assert.h]
   set lib_name: base
 
-  DefPolyWs.new(self) do
-    name = "PolyComplexWorkspace"
-    base = "poly_complex_workspace"
-    set name: base
-    set class_name: name
-    set class_var: "c"+name
-    set full_class_name: "Numo::GSL::"+name
-    set struct: "gsl_"+base
-
-    undef_alloc_func
-    polyws_list.each do |h|
-      check_func(h)
-    end
-  end
-
   DefPoly.new(self) do
     name = "Poly"
     base = name.downcase
@@ -60,6 +45,22 @@ DefLib.new(nil) do
     set module_name: name
     set module_var: "m"+name
     set full_module_name: "Numo::GSL::"+name
+
+    DefPolyWs.new(self) do
+      wname = "ComplexWorkspace"
+      wbase = "poly_complex_workspace"
+      set name: wbase
+      set class_name: wname
+      set class_var: "c"+wname
+      set full_class_name: "Numo::GSL::Poly::"+wname
+      set struct: "gsl_"+wbase
+      set ns_var: "mPoly"
+
+      undef_alloc_func
+      polyws_list.each do |h|
+        check_func(h)
+      end
+    end
 
     poly_list.each do |h|
       check_func(h)

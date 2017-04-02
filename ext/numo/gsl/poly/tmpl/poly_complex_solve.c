@@ -48,7 +48,7 @@ static VALUE
     n = na->shape[na->ndim-1];
     shape[0] = n-1;
 
-    vws = poly_complex_workspace_s_new(cPolyComplexWorkspace, SIZET2NUM(n));
+    vws = poly_complex_workspace_s_new(cComplexWorkspace, SIZET2NUM(n));
     TypedData_Get_Struct(vws, gsl_poly_complex_workspace, &poly_complex_workspace_data_type, w);
     opts[0] = w;
 
