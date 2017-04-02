@@ -258,32 +258,32 @@ C = \alpha A B. The matrices must be in compressed format.</p>
       <pre class="lines">
 
 
-712
-713
-714
-715
-716
-717
-718
-719
-720
-721
-722
-723
-724
-725
-726
-727
-728
-729
-730
-731
-732
-733
-734</pre>
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 712</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 664</span>
 
 static VALUE
 spblas_s_dgemm(VALUE mod, VALUE valpha, VALUE va, VALUE vb)
@@ -383,7 +383,7 @@ The matrix A may be in triplet or compressed format.</p>
       
       
         &mdash;
-        <div class='inline'><p>(sparse matrix)</p>
+        <div class='inline'><p>(input sparse matrix)</p>
 </div>
       
     </li>
@@ -398,7 +398,7 @@ The matrix A may be in triplet or compressed format.</p>
       
       
         &mdash;
-        <div class='inline'><p>(vector)</p>
+        <div class='inline'><p>(input vector)</p>
 </div>
       
     </li>
@@ -424,7 +424,14 @@ The matrix A may be in triplet or compressed format.</p>
       
       
         &mdash;
-        <div class='inline'><p>(vector)</p>
+        <div class='inline'><table>
+  <tbody>
+    <tr>
+      <td>(input</td>
+      <td>output vector)</td>
+    </tr>
+  </tbody>
+</table>
 </div>
       
     </li>
@@ -455,37 +462,37 @@ The matrix A may be in triplet or compressed format.</p>
       <pre class="lines">
 
 
-669
-670
-671
-672
-673
-674
-675
-676
-677
-678
-679
-680
-681
-682
-683
-684
-685
-686
-687
-688
-689
-690
-691
-692
-693
-694
-695
-696</pre>
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 669</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 621</span>
 
 static VALUE
 spblas_s_dgemv(VALUE mod, VALUE vTransA, VALUE valpha, VALUE va, VALUE vx, VALUE vbeta, VALUE vy)
@@ -504,12 +511,12 @@ spblas_s_dgemv(VALUE mod, VALUE vTransA, VALUE valpha, VALUE va, VALUE vx, VALUE
     TypedData_Get_Struct(va, gsl_spmatrix, &amp;spmatrix_data_type, A);
 
     vx = cast_1d_contiguous(vx, cDF);
-    ALLOCA_GSLVECTOR_FROM_NARRAY(vx, x);
+    ALLOCA_GSL_VECTOR_FROM_NARRAY_R(vx, x);
     vy = cast_1d_contiguous(vy, cDF);
     if (!TEST_INPLACE(vy)) {
         vy = na_copy(vy);
     }
-    ALLOCA_GSLVECTOR_FROM_NARRAY(vy, y);
+    ALLOCA_GSL_VECTOR_FROM_NARRAY_RW(vy, y);
 
     gsl_spblas_dgemv(TransA, alpha, A, x, beta, y);
     RB_GC_GUARD(vx);
@@ -525,7 +532,7 @@ spblas_s_dgemv(VALUE mod, VALUE vTransA, VALUE valpha, VALUE va, VALUE vx, VALUE
 </div>
 
       <div id="footer">
-  Generated on Sat Apr  1 18:31:01 2017 by
+  Generated on Sun Apr  2 18:12:40 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

@@ -285,6 +285,10 @@ in sumsq.  Note: the correlation coefficient of the data can be computed using g
       
       
       
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
+      
     </li>
   
     <li>
@@ -295,6 +299,10 @@ in sumsq.  Note: the correlation coefficient of the data can be computed using g
         <span class='type'>(<tt>DFloat</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
       
     </li>
   
@@ -311,7 +319,7 @@ in sumsq.  Note: the correlation coefficient of the data can be computed using g
       
       
         &mdash;
-        <div class='inline'><p>result Struct with members:[c0,c1,cov00,cov01,cov11,sumsq]</p>
+        <div class='inline'><p>result Struct with members: c0, c1, cov00, cov01, cov11, sumsq.</p>
 </div>
       
     </li>
@@ -324,38 +332,44 @@ in sumsq.  Note: the correlation coefficient of the data can be computed using g
       <pre class="lines">
 
 
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124</pre>
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 109</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 76</span>
 
 static VALUE
 fit_s_linear(VALUE mod, VALUE v1, VALUE v2)
 {
     VALUE r, result;
-    ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{sym_reduce,0}};
+    ndfunc_arg_in_t ain[2] = {{cDF,1},{cDF,1}};
     ndfunc_arg_out_t aout[6] = {{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0}};
-    ndfunc_t ndf = { iter_fit_s_linear, STRIDE_LOOP_NIP|NDF_EXTRACT,
-                     3, 6, ain, aout };
+    ndfunc_t ndf = { iter_fit_s_linear, NO_LOOP|NDF_EXTRACT,
+                     2, 6, ain, aout };
+    narray_t *x, *y;
 
-    check_1d(v1);
-    check_1d(v2);
-    r = na_ndloop(&amp;ndf, 3, v1, v2, INT2FIX(1));
+    GetNArray(v1,x);
+    GetNArray(v2,y);
+    CHECK_SAME_SIZE_1D_2NARRAY(x,y)
+
+    r = na_ndloop(&amp;ndf, 2, v1, v2);
     result = rb_class_new_instance(6, RARRAY_PTR(r), cLinearResult);
     RB_GC_GUARD(r);
     return result;
@@ -407,7 +421,7 @@ c_0 + c_1 X at the point x.</p>
         <span class='name'>linear_result</span>
       
       
-        <span class='type'>(<tt>LinearResult|WlinearResult</tt>)</span>
+        <span class='type'>(<tt>LinearResult</tt>)</span>
       
       
       
@@ -437,7 +451,7 @@ c_0 + c_1 X at the point x.</p>
       
       
         &mdash;
-        <div class='inline'><p>array of [y,y_err]</p>
+        <div class='inline'><p>array of (y, y_err).</p>
 </div>
       
     </li>
@@ -450,25 +464,25 @@ c_0 + c_1 X at the point x.</p>
       <pre class="lines">
 
 
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253</pre>
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 238</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 212</span>
 
 static VALUE
 fit_s_linear_est(VALUE mod, VALUE v1, VALUE v2)
@@ -529,6 +543,10 @@ best-fit line is returned in sumsq.</p>
       
       
       
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
+      
     </li>
   
     <li>
@@ -539,6 +557,10 @@ best-fit line is returned in sumsq.</p>
         <span class='type'>(<tt>DFloat</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
       
     </li>
   
@@ -555,7 +577,7 @@ best-fit line is returned in sumsq.</p>
       
       
         &mdash;
-        <div class='inline'><p>result Struct with members:[c1,cov11,sumsq]</p>
+        <div class='inline'><p>result Struct with members: c1, cov11, sumsq.</p>
 </div>
       
     </li>
@@ -568,38 +590,44 @@ best-fit line is returned in sumsq.</p>
       <pre class="lines">
 
 
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309</pre>
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 294</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 268</span>
 
 static VALUE
 fit_s_mul(VALUE mod, VALUE v1, VALUE v2)
 {
     VALUE r, result;
-    ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{sym_reduce,0}};
+    ndfunc_arg_in_t ain[2] = {{cDF,1},{cDF,1}};
     ndfunc_arg_out_t aout[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_t ndf = { iter_fit_s_mul, STRIDE_LOOP_NIP|NDF_EXTRACT,
-                     3, 3, ain, aout };
+                     2, 3, ain, aout };
+    narray_t *x,*y;
 
-    check_1d(v1);
-    check_1d(v2);
-    r = na_ndloop(&amp;ndf, 3, v1, v2, INT2FIX(1));
+    GetNArray(v1,x);
+    GetNArray(v2,y);
+    CHECK_SAME_SIZE_1D_2NARRAY(x,y)
+
+    r = na_ndloop(&amp;ndf, 2, v1, v2);
     result = rb_class_new_instance(3, RARRAY_PTR(r), cMulResult);
     RB_GC_GUARD(r);
     return result;
@@ -650,7 +678,7 @@ c_1 X at the point x.</p>
         <span class='name'>mul_result</span>
       
       
-        <span class='type'>(<tt>MulResult|WmulResult</tt>)</span>
+        <span class='type'>(<tt>(M|Wm)ulResult</tt>)</span>
       
       
       
@@ -693,22 +721,22 @@ c_1 X at the point x.</p>
       <pre class="lines">
 
 
-412
-413
-414
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424</pre>
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 412</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 393</span>
 
 static VALUE
 fit_s_mul_est(VALUE mod, VALUE v1, VALUE v2)
@@ -770,6 +798,10 @@ chisq.</p>
       
       
       
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
+      
     </li>
   
     <li>
@@ -781,6 +813,10 @@ chisq.</p>
       
       
       
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
+      
     </li>
   
     <li>
@@ -791,6 +827,10 @@ chisq.</p>
         <span class='type'>(<tt>DFloat</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
       
     </li>
   
@@ -807,7 +847,7 @@ chisq.</p>
       
       
         &mdash;
-        <div class='inline'><p>result Struct with members:[ystride,n,c0,c1,cov00,cov01]</p>
+        <div class='inline'><p>result Struct with members: ystride, n, c0, c1, cov00, cov01.</p>
 </div>
       
     </li>
@@ -820,40 +860,46 @@ chisq.</p>
       <pre class="lines">
 
 
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191</pre>
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 175</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 145</span>
 
 static VALUE
 fit_s_wlinear(VALUE mod, VALUE v1, VALUE v2, VALUE v3)
 {
-    VALUE r, result;
-    ndfunc_arg_in_t ain[4] = {{cDF,0},{cDF,0},{cDF,0},{sym_reduce,0}};
+    ndfunc_arg_in_t ain[3] = {{cDF,1},{cDF,1},{cDF,1}};
     ndfunc_arg_out_t aout[6] = {{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_t ndf = { iter_fit_s_wlinear, STRIDE_LOOP_NIP|NDF_EXTRACT,
                      3, 6, ain, aout };
+    narray_t *x, *y, *w;
+    VALUE r, result;
 
-    check_1d(v1);
-    check_1d(v2);
-    check_1d(v3);
-    r = na_ndloop(&amp;ndf, 4, v1, v2, v3, INT2FIX(1));
+    GetNArray(v1,x);
+    GetNArray(v2,y);
+    GetNArray(v3,w);
+    CHECK_SAME_SIZE_1D_3NARRAY(x,y,w)
+
+    r = na_ndloop(&amp;ndf, 3, v1, v2, v3);
     result = rb_class_new_instance(6, RARRAY_PTR(r), cWlinearResult);
     RB_GC_GUARD(r);
     return result;
@@ -904,6 +950,10 @@ returned in chisq.</p>
       
       
       
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
+      
     </li>
   
     <li>
@@ -915,6 +965,10 @@ returned in chisq.</p>
       
       
       
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
+      
     </li>
   
     <li>
@@ -925,6 +979,10 @@ returned in chisq.</p>
         <span class='type'>(<tt>DFloat</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'><p>(input array)</p>
+</div>
       
     </li>
   
@@ -941,7 +999,7 @@ returned in chisq.</p>
       
       
         &mdash;
-        <div class='inline'><p>result Struct with members:[ystride,n,c1]</p>
+        <div class='inline'><p>result Struct with members: ystride, n, c1.</p>
 </div>
       
     </li>
@@ -954,40 +1012,46 @@ returned in chisq.</p>
       <pre class="lines">
 
 
-356
-357
-358
-359
-360
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370
-371
-372</pre>
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 356</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/fit/gsl_fit.c', line 333</span>
 
 static VALUE
 fit_s_wmul(VALUE mod, VALUE v1, VALUE v2, VALUE v3)
 {
     VALUE r, result;
-    ndfunc_arg_in_t ain[4] = {{cDF,0},{cDF,0},{cDF,0},{sym_reduce,0}};
+    ndfunc_arg_in_t ain[3] = {{cDF,1},{cDF,1},{cDF,1}};
     ndfunc_arg_out_t aout[3] = {{cDF,0},{cDF,0},{cDF,0}};
     ndfunc_t ndf = { iter_fit_s_wmul, STRIDE_LOOP_NIP|NDF_EXTRACT,
                      3, 3, ain, aout };
+    narray_t *x,*y,*w;
 
-    check_1d(v1);
-    check_1d(v2);
-    check_1d(v3);
-    r = na_ndloop(&amp;ndf, 4, v1, v2, v3, INT2FIX(1));
+    GetNArray(v1,x);
+    GetNArray(v2,y);
+    GetNArray(v3,w);
+    CHECK_SAME_SIZE_1D_3NARRAY(x,y,w)
+
+    r = na_ndloop(&amp;ndf, 3, v1, v2, v3);
     result = rb_class_new_instance(3, RARRAY_PTR(r), cWmulResult);
     RB_GC_GUARD(r);
     return result;
@@ -1002,7 +1066,7 @@ fit_s_wmul(VALUE mod, VALUE v1, VALUE v2, VALUE v3)
 </div>
 
       <div id="footer">
-  Generated on Sat Apr  1 18:31:01 2017 by
+  Generated on Sun Apr  2 18:12:40 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

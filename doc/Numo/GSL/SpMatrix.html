@@ -656,34 +656,27 @@ and stores the result in S.</p>
       <pre class="lines">
 
 
-576
-577
-578
-579
-580
-581
-582
-583
-584
-585
-586
-587
-588
-589
-590
-591
-592
-593
-594
-595
-596
-597
-598
-599
-600</pre>
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 576</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 541</span>
 
 static VALUE
 spmatrix_s_d2sp(VALUE klass, VALUE nary)
@@ -695,14 +688,7 @@ spmatrix_s_d2sp(VALUE klass, VALUE nary)
     nary = cast_2d_contiguous(nary,cDF);
     GetNArray(nary,na);
 
-    m = ALLOCA_N(gsl_matrix,1);
-    m-&gt;data  = (double*)na_get_pointer_for_read(nary);
-    m-&gt;size1 = na-&gt;shape[0];
-    m-&gt;size2 = na-&gt;shape[1];
-    m-&gt;tda   = na-&gt;shape[1];
-    m-&gt;block = 0;
-    m-&gt;owner = 0;
-
+    ALLOCA_GSL_MATRIX_FROM_NARRAY_R(nary,m);
     s = gsl_spmatrix_alloc(na-&gt;shape[0], na-&gt;shape[1]);
 
     gsl_spmatrix_d2sp(s, m);
@@ -804,35 +790,35 @@ The allocated gsl_spmatrix structure is of size O(nzmax).</p>
       <pre class="lines">
 
 
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175</pre>
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 150</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 115</span>
 
 static VALUE
 spmatrix_s_new(int argc, VALUE *argv, VALUE klass)
@@ -931,24 +917,24 @@ have the same dimensions and be stored in a compressed format.</p>
       <pre class="lines">
 
 
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424
-425
-426
-427
-428
-429</pre>
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 415</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 380</span>
 
 static VALUE
 spmatrix_add(VALUE self, VALUE other)
@@ -1013,22 +999,22 @@ should free the newly allocated matrix when it is no longer needed.</p>
       <pre class="lines">
 
 
-525
-526
-527
-528
-529
-530
-531
-532
-533
-534
-535
-536
-537</pre>
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 525</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 490</span>
 
 static VALUE
 spmatrix_ccs(VALUE self)
@@ -1091,22 +1077,22 @@ should free the newly allocated matrix when it is no longer needed.</p>
       <pre class="lines">
 
 
-550
-551
-552
-553
-554
-555
-556
-557
-558
-559
-560
-561
-562</pre>
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 550</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 515</span>
 
 static VALUE
 spmatrix_crs(VALUE self)
@@ -1191,19 +1177,19 @@ sparse storage format for comparison.</p>
       <pre class="lines">
 
 
-481
-482
-483
-484
-485
-486
-487
-488
-489
-490</pre>
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 481</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 446</span>
 
 static VALUE
 spmatrix_equal(VALUE self, VALUE other)
@@ -1291,21 +1277,21 @@ The matrix may be in triplet or compressed format.</p>
       <pre class="lines">
 
 
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249</pre>
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 238</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 203</span>
 
 static VALUE
 spmatrix_get(VALUE self, VALUE v1, VALUE v2)
@@ -1389,19 +1375,19 @@ same storage format.</p>
       <pre class="lines">
 
 
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337</pre>
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 328</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 293</span>
 
 static VALUE
 spmatrix_memcpy(VALUE self, VALUE other)
@@ -1464,20 +1450,20 @@ only the non-zero values.</p>
       <pre class="lines">
 
 
-502
-503
-504
-505
-506
-507
-508
-509
-510
-511
-512</pre>
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 502</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 467</span>
 
 static VALUE
 spmatrix_minmax(VALUE self)
@@ -1535,18 +1521,18 @@ spmatrix_minmax(VALUE self)
       <pre class="lines">
 
 
-460
-461
-462
-463
-464
-465
-466
-467
-468</pre>
+425
+426
+427
+428
+429
+430
+431
+432
+433</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 460</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 425</span>
 
 static VALUE
 spmatrix_nnz(VALUE self)
@@ -1624,22 +1610,22 @@ sparse matrix than the previously specified nzmax.</p>
       <pre class="lines">
 
 
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201</pre>
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 189</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 154</span>
 
 static VALUE
 spmatrix_realloc(VALUE self, VALUE v1)
@@ -1719,19 +1705,19 @@ factor x. The result m(i,j) \leftarrow x m(i,j) is stored in m.</p>
       <pre class="lines">
 
 
-441
-442
-443
-444
-445
-446
-447
-448
-449
-450</pre>
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 441</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 406</span>
 
 static VALUE
 spmatrix_scale(VALUE self, VALUE v1)
@@ -1830,21 +1816,21 @@ the value x. The matrix must be in triplet representation.</p>
       <pre class="lines">
 
 
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298</pre>
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 287</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 252</span>
 
 static VALUE
 spmatrix_set(VALUE self, VALUE v1, VALUE v2, VALUE v3)
@@ -1890,18 +1876,18 @@ spmatrix_set(VALUE self, VALUE v1, VALUE v2, VALUE v3)
       <pre class="lines">
 
 
-307
-308
-309
-310
-311
-312
-313
-314
-315</pre>
+272
+273
+274
+275
+276
+277
+278
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 307</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 272</span>
 
 static VALUE
 spmatrix_set_zero(VALUE self)
@@ -1962,34 +1948,28 @@ stores the result in A. S must be in triplet format.</p>
       <pre class="lines">
 
 
-611
-612
-613
-614
-615
-616
-617
-618
-619
-620
-621
-622
-623
-624
-625
-626
-627
-628
-629
-630
-631
-632
-633
-634
-635</pre>
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 611</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 569</span>
 
 static VALUE
 spmatrix_sp2d(VALUE self)
@@ -2005,13 +1985,7 @@ spmatrix_sp2d(VALUE self)
     shape[1] = s-&gt;size2;
     result = rb_narray_new(cDF, 2, shape);
 
-    m = ALLOCA_N(gsl_matrix,1);
-    m-&gt;data  = (double*)na_get_pointer_for_write(result);
-    m-&gt;size1 = shape[0];
-    m-&gt;size2 = shape[1];
-    m-&gt;tda   = shape[1];
-    m-&gt;block = 0;
-    m-&gt;owner = 0;
+    ALLOCA_GSL_MATRIX_FROM_NARRAY_W(result,m);
 
     gsl_spmatrix_sp2d(m,s);
     return result;
@@ -2050,18 +2024,18 @@ only triplet matrix inputs are supported.</p>
       <pre class="lines">
 
 
-371
-372
-373
-374
-375
-376
-377
-378
-379</pre>
+336
+337
+338
+339
+340
+341
+342
+343
+344</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 371</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 336</span>
 
 static VALUE
 spmatrix_transpose(VALUE self)
@@ -2111,18 +2085,18 @@ the output matrix is also in triplet storage.</p>
       <pre class="lines">
 
 
-395
-396
-397
-398
-399
-400
-401
-402
-403</pre>
+360
+361
+362
+363
+364
+365
+366
+367
+368</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 395</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 360</span>
 
 static VALUE
 spmatrix_transpose2(VALUE self)
@@ -2204,19 +2178,19 @@ format.</p>
       <pre class="lines">
 
 
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360</pre>
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 351</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 316</span>
 
 static VALUE
 spmatrix_transpose_memcpy(VALUE self, VALUE other)
@@ -2238,7 +2212,7 @@ spmatrix_transpose_memcpy(VALUE self, VALUE other)
 </div>
 
       <div id="footer">
-  Generated on Sat Apr  1 18:31:06 2017 by
+  Generated on Sun Apr  2 18:12:45 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

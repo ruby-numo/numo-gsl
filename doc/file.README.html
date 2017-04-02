@@ -100,7 +100,11 @@
       <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet2D.html">2D Wavelet Transforms</a></li>
     </ul>
   </li>
-  <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Fit.html">Linear regression</a></li>
+  <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Fit.html">Linear regression</a>
+    <ul>
+      <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/Multifit.html">Multi-parameter regression</a></li>
+    </ul>
+  </li>
   <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpMatrix.html">Sparse Matrices</a>
     <ul>
       <li><a href="http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpBlas.html">Sparse BLAS</a></li>
@@ -110,6 +114,26 @@
 </ul>
 
 <p>More modules will be implemented.</p>
+
+<h2 id="naming-convention">Naming convention</h2>
+
+<p><code>
+    [C] GSL function/constant =&gt; [Ruby] Numo::GSL function/constant
+Constants
+    M_2_PI                    =&gt; Numo::GSL::M_2_PI
+    GSL_CONST_MKSA_ANGSTROM   =&gt; Numo::GSL::Const::MKSA_ANGSTROM
+Module function
+    gsl_acosh()               =&gt; Numo::GSL.acosh()
+    gsl_sf_bessel_J0()        =&gt; Numo::GSL::Sf.bessel_J0()
+Class method
+    gsl_rng_alloc()           =&gt; Numo::GSL::Rng.new
+    gsl_rng_get()             =&gt; Numo::GSL::Rng#get
+Subclass
+    gsl_rng_type *gsl_rng_mt19937; =&gt; Numo::GSL::Rng::Mt19937 &lt; Numo::GSL::Rng
+Exception
+    gsl_ran_gaussian_pdf()    =&gt; Numo::GSL::Pdf.gaussian
+    gsl_ran_gaussian()        =&gt; Numo::GSL::Rng#gaussian (Rng includes Numo::GSL::Ran)
+</code></p>
 
 <h2 id="installation">Installation</h2>
 
@@ -146,7 +170,7 @@ docker run -d -p 8888:8888 numogsl start-notebook.sh --NotebookApp.token=''
 </div></div>
 
       <div id="footer">
-  Generated on Sat Apr  1 18:30:53 2017 by
+  Generated on Sun Apr  2 18:12:32 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>

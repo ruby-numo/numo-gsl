@@ -275,7 +275,7 @@ format.</p>
       
       
         &mdash;
-        <div class='inline'><p>(sparse matrix)</p>
+        <div class='inline'><p>(input sparse matrix)</p>
 </div>
       
     </li>
@@ -290,7 +290,7 @@ format.</p>
       
       
         &mdash;
-        <div class='inline'><p>(vector)</p>
+        <div class='inline'><p>(input vector)</p>
 </div>
       
     </li>
@@ -316,7 +316,14 @@ format.</p>
       
       
         &mdash;
-        <div class='inline'><p>(vector)</p>
+        <div class='inline'><table>
+  <tbody>
+    <tr>
+      <td>(input</td>
+      <td>output vector)</td>
+    </tr>
+  </tbody>
+</table>
 </div>
       
     </li>
@@ -347,43 +354,43 @@ format.</p>
       <pre class="lines">
 
 
-863
-864
-865
-866
-867
-868
-869
-870
-871
-872
-873
-874
-875
-876
-877
-878
-879
-880
-881
-882
-883
-884
-885
-886
-887
-888
-889
-890
-891
-892
-893
-894
-895
-896</pre>
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 863</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 815</span>
 
 static VALUE
 splinalg_itersolve_s_iterate(VALUE self, VALUE vA, VALUE vb, VALUE vtol, VALUE vx)
@@ -400,7 +407,7 @@ splinalg_itersolve_s_iterate(VALUE self, VALUE vA, VALUE vb, VALUE vtol, VALUE v
     TypedData_Get_Struct(vA, gsl_spmatrix, &amp;spmatrix_data_type, A);
 
     vb = cast_1d_contiguous(vb, cDF);
-    ALLOCA_GSLVECTOR_FROM_NARRAY(vb, b);
+    ALLOCA_GSL_VECTOR_FROM_NARRAY_R(vb, b);
     tol = NUM2DBL(vtol);
 
     if (CLASS_OF(vx) != cDF) {
@@ -413,7 +420,7 @@ splinalg_itersolve_s_iterate(VALUE self, VALUE vA, VALUE vb, VALUE vtol, VALUE v
     if (!RTEST(na_check_contiguous(vx))) {
         rb_raise(nary_eOperationError, &quot;x should be contiguous array&quot;);
     }
-    ALLOCA_GSLVECTOR_FROM_NARRAY(vx, x);
+    ALLOCA_GSL_VECTOR_FROM_NARRAY_RW(vx, x);
 
     status = gsl_splinalg_itersolve_iterate(A, b, tol, x, w);
     RB_GC_GUARD(vb);
@@ -470,18 +477,18 @@ splinalg_itersolve_s_iterate(VALUE self, VALUE vA, VALUE vb, VALUE vtol, VALUE v
       <pre class="lines">
 
 
-825
-826
-827
-828
-829
-830
-831
-832
-833</pre>
+777
+778
+779
+780
+781
+782
+783
+784
+785</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 825</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 777</span>
 
 static VALUE
 splinalg_itersolve_name(VALUE self)
@@ -539,18 +546,18 @@ gsl_splinalg_itersolve_iterate.</p>
       <pre class="lines">
 
 
-908
-909
-910
-911
-912
-913
-914
-915
-916</pre>
+860
+861
+862
+863
+864
+865
+866
+867
+868</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 908</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/spmatrix/gsl_spmatrix.c', line 860</span>
 
 static VALUE
 splinalg_itersolve_normr(VALUE self)
@@ -571,7 +578,7 @@ splinalg_itersolve_normr(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sat Apr  1 18:31:06 2017 by
+  Generated on Sun Apr  2 18:12:45 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
