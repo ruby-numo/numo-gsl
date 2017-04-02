@@ -5,7 +5,7 @@ GENDEPS=erbpp_fit.rb ../gen/*.rb ../gen/tmpl/*.c tmpl/*.c
 src : $(GENSRC)
 
 $(GENSRC) : $(GENDEPS)
-	$(COGEN) > $@
+	$(COGEN) $@
 
 doc : $(GENSRC)
 	yard doc $(GENSRC)

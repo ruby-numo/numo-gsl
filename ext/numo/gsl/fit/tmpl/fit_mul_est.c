@@ -26,10 +26,11 @@ iter_<%=c_func%>(na_loop_t *const lp)
 /*
   @overload <%=name%>(<%=args[0][1]%>, mul_result)
   @param  [DFloat]    <%=args[0][1]%>
-  @param  [MulResult|WmulResult]  mul_result  Result of GSL::Fit.mul|wmul
+  @param  [(M|Wm)ulResult]  mul_result  Result of GSL::Fit.mul|wmul
   @return [[DFloat,DFloat]] array of [<%=args[3][1]%>,<%=args[4][1]%>]
 
   <%=desc%>
+
 */
 static VALUE
 <%=c_func(2)%>(VALUE mod, VALUE v1, VALUE v2)
