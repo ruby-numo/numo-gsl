@@ -87,6 +87,12 @@ class ErbPP
     end
   end
 
+  def write(output)
+    File.open(output,"wt") do |f|
+      f.print(result)
+    end
+  end
+
   def init_def
   end
 end
@@ -168,6 +174,9 @@ class DefClass < DefModule
   end
   def super_class
     @opts[:super_class] || "rb_cObject"
+  end
+  def free_func
+    @opts[:free_func] || "gsl_"+get(:name)+"_free"
   end
 end
 
