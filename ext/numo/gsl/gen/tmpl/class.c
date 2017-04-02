@@ -7,7 +7,7 @@ static VALUE <%=class_var%>;
 static void
 <%=name%>_free(void *ptr)
 {
-    gsl_<%=name%>_free(ptr);
+    <%=free_func%>(ptr);
 }
 
 static size_t
