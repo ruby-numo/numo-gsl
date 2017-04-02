@@ -5,10 +5,10 @@ set singleton: true
   @overload <%=name%>(trans_a, alpha, a, x, beta, y)
   @param  [Integer]             trans_a = NO_TRANS | TRANS
   @param  [Float]               alpha
-  @param  [Numo::GSL::SpMatrix] a (sparse matrix)
-  @param  [Numo::DFloat]        x (vector)
+  @param  [Numo::GSL::SpMatrix] a (input sparse matrix)
+  @param  [Numo::DFloat]        x (input vector)
   @param  [Float]               beta
-  @param  [Numo::DFloat]        y (vector)
+  @param  [Numo::DFloat]        y (input|output vector)
   @return [Numo::DFloat]        result (or y)
 
   <%= description %>
@@ -30,12 +30,12 @@ static VALUE
     TypedData_Get_Struct(va, <%=struct%>, &<%=data_type_var%>, A);
 
     vx = cast_1d_contiguous(vx, cDF);
-    ALLOCA_GSLVECTOR_FROM_NARRAY(vx, x);
+    ALLOCA_GSL_VECTOR_FROM_NARRAY_R(vx, x);
     vy = cast_1d_contiguous(vy, cDF);
     if (!TEST_INPLACE(vy)) {
         vy = na_copy(vy);
     }
-    ALLOCA_GSLVECTOR_FROM_NARRAY(vy, y);
+    ALLOCA_GSL_VECTOR_FROM_NARRAY_RW(vy, y);
 
     <%=func_name%>(TransA, alpha, A, x, beta, y);
     RB_GC_GUARD(vx);

@@ -18,14 +18,7 @@ static VALUE
     nary = cast_2d_contiguous(nary,cDF);
     GetNArray(nary,na);
 
-    m = ALLOCA_N(gsl_matrix,1);
-    m->data  = (double*)na_get_pointer_for_read(nary);
-    m->size1 = na->shape[0];
-    m->size2 = na->shape[1];
-    m->tda   = na->shape[1];
-    m->block = 0;
-    m->owner = 0;
-
+    ALLOCA_GSL_MATRIX_FROM_NARRAY_R(nary,m);
     s = gsl_spmatrix_alloc(na->shape[0], na->shape[1]);
 
     <%=func_name%>(s, m);

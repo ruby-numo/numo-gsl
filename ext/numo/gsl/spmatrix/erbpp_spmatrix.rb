@@ -19,7 +19,6 @@ DefLib.new do
 
   ErbPP.new(self,"cast_1d_contiguous")
   ErbPP.new(self,"cast_2d_contiguous")
-  ErbPP.new(self,"spmatrix_macro")
 
   cname = "SpMatrix"
   cbase = cname.downcase
