@@ -24,6 +24,7 @@ Implemented Modules:
 * [Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet.html)
   * [2D Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet2D.html)
 * [Linear regression](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Fit.html)
+  * [Multi-parameter regression](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Multifit.html)
 * [Sparse Matrices](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpMatrix.html)
   * [Sparse BLAS](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpBlas.html)
   * [Sparse Linear Algebra](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpLinalg.html)

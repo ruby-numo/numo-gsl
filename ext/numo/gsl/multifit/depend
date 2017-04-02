@@ -1,0 +1,17 @@
+COGEN=ruby erbpp_multifit.rb
+GENSRC=gsl_multifit.c
+GENDEPS=erbpp_multifit.rb ../gen/*.rb ../gen/tmpl/*.c
+
+src : $(GENSRC)
+
+$(GENSRC) : $(GENDEPS)
+	$(COGEN) $@
+
+doc : $(GENSRC)
+	yard doc $(GENSRC)
+
+clean: cleansrc cleandoc
+cleansrc:
+	-$(Q)$(RM) $(GENSRC)
+cleandoc:
+	-$(Q)$(RM_RF) doc .yardoc
