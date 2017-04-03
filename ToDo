@@ -25,7 +25,7 @@
 * Histograms:
 * Interpolation: - only gsl_spline_* (Higher-level Interface), omit gsl_interp_*
 * Wavelet Transforms: - omit matrix interface
-* Least-Squares Fitting: - only linear regression
+* Least-Squares Fitting: - only linear regression and Multi-parameter regression
 * Sparse Matrices:
 * Sparse BLAS Support:
 * Sparse Linear Algebra:
@@ -35,25 +35,28 @@
 * Least-Squares Fitting: - multi-parameter fittings
 * Nonlinear Least-Squares Fitting:
 * Basis Splines:
+* Chebyshev Approximations:
+* Series Acceleration:
+* Discrete Hankel Transforms:
+* Quasi-Random Sequences:
+
+# non-array?
+* Permutations:
+* Combinations:
+* Multisets:
 
 # NArray has
 * Complex Numbers:
 * Vectors and Matrices:
 * Sorting:
 
-# non-array?
-* Permutations:
-* Combinations:
-* Multisets:
+# require function-call
 * Numerical Integration:
 * N-tuples:
 * Monte Carlo Integration:
 * Simulated Annealing:
 * Ordinary Differential Equations:
 * Numerical Differentiation:
-* Chebyshev Approximations:
-* Series Acceleration:
-* Discrete Hankel Transforms:
 * One dimensional Root-Finding:
 * One dimensional Minimization:
 * Multidimensional Root-Finding:
@@ -69,4 +72,3 @@
 
 # ?
 * IEEE floating-point arithmetic:
-* Quasi-Random Sequences:

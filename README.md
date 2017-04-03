@@ -1,9 +1,11 @@
 # GSL interface for Ruby with Numo::NArray
 
+* [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version >=2.0, <=2.3.
 * Pre-alpha version under development.
 * [GitHub site](https://github.com/ruby-numo/gsl)
+* Call for help! - writing tests and examples.
 
-## [Numo::GSL API document](http://ruby-numo.github.io/gsl/doc/)
+# [Numo::GSL API document](http://ruby-numo.github.io/gsl/doc/)
 
 Implemented Modules:
 
@@ -32,7 +34,7 @@ Implemented Modules:
 
 More modules will be implemented.
 
-## Naming convention
+# Naming convention
 
 ```
     [C] GSL function/constant => [Ruby] Numo::GSL function/constant
@@ -52,10 +54,10 @@ More modules will be implemented.
     gsl_ran_gaussian()        => Numo::GSL::Rng#gaussian (Rng includes Numo::GSL::Ran)
 ```
 
-## Installation
+# Installation
 
 * Install [Numo::NArray](https://github.com/ruby-numo/narray)
-* Install [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version >=2.0, <=2.3. (only tested in 2.1 and 2.3)
+* Install [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - (only tested with version 2.1 and 2.3)
 
 * Install Numo::GSL
   ```shell
