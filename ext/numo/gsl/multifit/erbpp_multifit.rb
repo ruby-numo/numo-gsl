@@ -4,11 +4,19 @@ require "pp"
 
 ErbppGsl.read_func_pattern(
   [/^gsl_multifit_w?linear$/, mfit_list=[]],
+  [/^gsl_multifit_linear(_alloc|_free)$/, linws_list=[]],
   [/^gsl_multifit_w?linear/,  linear_list=[]],
   [/^gsl_multifit_nlinear/,   nlinear_list=[]],
 )
 
-class DefMultifit < DefGslClass
+class DefMultifit < DefGslModule
+  def lookup(h)
+    fn = h[:func_name].sub(/gsl_/,"")
+    return fn if File.exist?("tmpl/#{fn}.c")
+  end
+end
+
+class DefLinearWorkspace < DefGslClass
   def lookup(h)
     case h
     when FM(szt,szt, name:/_alloc$/);   "c_new_sizet_x2"
@@ -51,7 +59,7 @@ DefLib.new do
   set lib_name: name.downcase
   set ns_var: "mG"
 
-  DefModule.new(self) do
+  DefMultifit.new(self) do
     mname = "Multifit"
     mbase = "multifit"
     set name: mbase
@@ -62,7 +70,7 @@ DefLib.new do
     cname = "LinearWorkspace"
     cbase = "multifit_linear_workspace"
 
-    DefMultifit.new(self) do
+    DefLinearWorkspace.new(self) do
       set name: cbase
       set class_name: cname
       set class_var: "c"+cname
@@ -72,7 +80,7 @@ DefLib.new do
       set ns_var: "m"+mname
 
       undef_alloc_func
-      linear_list.each do |h|
+      linws_list.each do |h|
         check_func(h)
       end
 
@@ -83,6 +91,9 @@ DefLib.new do
       end
     end
 
+    linear_list.each do |h|
+      check_func(h)
+    end
   end
 
 end.write(ARGV[0])
