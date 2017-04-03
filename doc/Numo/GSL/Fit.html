@@ -421,7 +421,7 @@ c_0 + c_1 X at the point x.</p>
         <span class='name'>linear_result</span>
       
       
-        <span class='type'>(<tt>LinearResult</tt>)</span>
+        <span class='type'>(<tt>(L|Wl)inearResult</tt>)</span>
       
       
       
@@ -847,7 +847,7 @@ chisq.</p>
       
       
         &mdash;
-        <div class='inline'><p>result Struct with members: ystride, n, c0, c1, cov00, cov01.</p>
+        <div class='inline'><p>result Struct with members: c0, c1, cov00, cov01, cov11, chisq.</p>
 </div>
       
     </li>
@@ -999,7 +999,7 @@ returned in chisq.</p>
       
       
         &mdash;
-        <div class='inline'><p>result Struct with members: ystride, n, c1.</p>
+        <div class='inline'><p>result Struct with members: c1, cov11, sumsq.</p>
 </div>
       
     </li>
@@ -1066,7 +1066,7 @@ fit_s_wmul(VALUE mod, VALUE v1, VALUE v2, VALUE v3)
 </div>
 
       <div id="footer">
-  Generated on Sun Apr  2 18:12:40 2017 by
+  Generated on Mon Apr  3 11:59:50 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.4.0).
 </div>
