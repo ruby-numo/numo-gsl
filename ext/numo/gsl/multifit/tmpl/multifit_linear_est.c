@@ -38,9 +38,9 @@ static VALUE
     GetNArray(v1,x);
     GetNArray(v2,c);
     GetNArray(v3,cov);
-    CHECK_1D(x);
-    CHECK_1D(c);
-    CHECK_2D(cov);
+    CHECK_GE_1D(x);
+    CHECK_GE_1D(c);
+    CHECK_GE_2D(cov);
     CHECK_SIZE_EQ(VEC_SIZE(x),VEC_SIZE(c),"x size does not match c size");
     CHECK_SIZE_EQ(MAT_SIZE1(cov),MAT_SIZE2(cov),"cov is not square matrix");
     CHECK_SIZE_EQ(VEC_SIZE(c),MAT_SIZE1(cov),"c size does not match cov row size");

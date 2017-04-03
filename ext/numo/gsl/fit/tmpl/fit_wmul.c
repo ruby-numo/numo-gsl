@@ -43,7 +43,11 @@ static VALUE
     GetNArray(v1,x);
     GetNArray(v2,y);
     GetNArray(v3,w);
-    CHECK_SAME_SIZE_1D_3NARRAY(x,y,w)
+    CHECK_GE_1D(x);
+    CHECK_GE_1D(y);
+    CHECK_GE_1D(w);
+    CHECK_SIZE_EQ(VEC_SIZE(x),VEC_SIZE(y),"y size does not match x size");
+    CHECK_SIZE_EQ(VEC_SIZE(x),VEC_SIZE(w),"w size does not match x size");
 
     r = na_ndloop(&ndf, 3, v1, v2, v3);
     result = rb_class_new_instance(3, RARRAY_PTR(r), c<%=result_class%>);

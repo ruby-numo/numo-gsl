@@ -43,8 +43,8 @@ static VALUE
 
     GetNArray(v1,X);
     GetNArray(v2,y);
-    CHECK_2D(X);
-    CHECK_1D(y);
+    CHECK_GE_2D(X);
+    CHECK_GE_1D(y);
     n = MAT_SIZE1(X);
     p = MAT_SIZE2(X);
     CHECK_SIZE_EQ(n,VEC_SIZE(y),"y size does not match X column size");

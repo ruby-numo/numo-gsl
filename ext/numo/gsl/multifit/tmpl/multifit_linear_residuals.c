@@ -37,9 +37,9 @@ static VALUE
     GetNArray(v1,x);
     GetNArray(v2,y);
     GetNArray(v3,c);
-    CHECK_2D(x);
-    CHECK_1D(y);
-    CHECK_1D(c);
+    CHECK_GE_2D(x);
+    CHECK_GE_1D(y);
+    CHECK_GE_1D(c);
     CHECK_SIZE_EQ(MAT_SIZE1(x),VEC_SIZE(y),"y size does not match x row size");
     CHECK_SIZE_EQ(MAT_SIZE2(x),VEC_SIZE(c),"c size does not match x column size");
     shape[0] = VEC_SIZE(y);

@@ -107,43 +107,11 @@
         gvec.owner  = 0;                                \
     }
 
-#define CHECK_SAME_SIZE_1D_2NARRAY(x,y)                                 \
-    {                                                                   \
-        if (x->ndim < 1) {                                              \
-            rb_raise(nary_eDimensionError,"1st argument is non array"); \
-        }                                                               \
-        if (y->ndim < 1) {                                              \
-            rb_raise(nary_eDimensionError,"2nd argument is non array"); \
-        }                                                               \
-        if (x->shape[x->ndim-1] != y->shape[y->ndim-1]) {               \
-            rb_raise(nary_eShapeError,                                  \
-                     "array sizes along last axis do not match");       \
-        }                                                               \
-    }
-
-#define CHECK_SAME_SIZE_1D_3NARRAY(x,y,z)                               \
-    {                                                                   \
-        if (x->ndim < 1) {                                              \
-            rb_raise(nary_eDimensionError,"1st argument is non array"); \
-        }                                                               \
-        if (y->ndim < 1) {                                              \
-            rb_raise(nary_eDimensionError,"2nd argument is non array"); \
-        }                                                               \
-        if (z->ndim < 1) {                                              \
-            rb_raise(nary_eDimensionError,"3rd argument is non array"); \
-        }                                                               \
-        if (x->shape[x->ndim-1] != y->shape[y->ndim-1] ||               \
-            x->shape[x->ndim-1] != z->shape[z->ndim-1]) {               \
-            rb_raise(nary_eShapeError,                                  \
-                     "array sizes along last axis do not match");       \
-        }                                                               \
-    }
-
 #define MAT_SIZE1(x) ((x)->shape[(x)->ndim-2])
 #define MAT_SIZE2(x) ((x)->shape[(x)->ndim-1])
 #define VEC_SIZE(x)  ((x)->shape[(x)->ndim-1])
-#define CHECK_1D(x) {if ((x)->ndim < 1) {rb_raise(nary_eDimensionError,#x" dimension must be >= 1");}}
-#define CHECK_2D(x) {if ((x)->ndim < 2) {rb_raise(nary_eDimensionError,#x" dimension must be >= 2");}}
+#define CHECK_GE_1D(x) {if ((x)->ndim < 1) {rb_raise(nary_eDimensionError,#x" dimension must be >= 1");}}
+#define CHECK_GE_2D(x) {if ((x)->ndim < 2) {rb_raise(nary_eDimensionError,#x" dimension must be >= 2");}}
 #define CHECK_SIZE_EQ(x,y,msg) {if ((x)!=(y)) {rb_raise(nary_eShapeError,msg);}}
 
 #endif /* ifndef NUMO_GSL_H */
