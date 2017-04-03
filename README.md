@@ -7,28 +7,28 @@
 
 Implemented Modules:
 
-* [Numo::GSL - Mathematical Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL.html)
+* [Numo::GSL -- Mathematical Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL.html)
   * (Modules/Classes below are defined in Numo::GSL module, e.g., Const => Numo::GSL::Const)
-* [Const - Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
-* [Poly - Polynomials](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Poly.html)
-* [Sf - Special Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html)
-* [Rng - Random Number Generation](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rng.html)
-  * [Ran - Random Number Distriutions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Ran.html)
-  * [Pdf - Probability Density Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Pdf.html)
-  * [Cdf - Cumulative Distribution Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Cdf.html)
-* [Stats - Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Stats.html)
-  * [Rstat - Runnning Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rstat.html)
-* [Histogram - Histograms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Histogram.html)
-  * [Histogram2D - 2D Histograms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Histogram2D.html)
-* [Spline - Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline.html)
-  * [Spline2D - 2D Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline2D.html)
-* [Wavelet - Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet.html)
-  * [Wavelet2D - 2D Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet2D.html)
-* [Fit - Linear regression](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Fit.html)
-  * [Multifit - Multi-parameter regression](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Multifit.html)
-* [SpMatrix - Sparse Matrices](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpMatrix.html)
-  * [SpBlas - Sparse BLAS](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpBlas.html)
-  * [SpLinalg - Sparse Linear Algebra](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpLinalg.html)
+* [Const -- Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
+* [Poly -- Polynomials](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Poly.html)
+* [Sf -- Special Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html)
+* [Rng -- Random Number Generation](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rng.html)
+  * [Ran -- Random Number Distriutions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Ran.html)
+  * [Pdf -- Probability Density Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Pdf.html)
+  * [Cdf -- Cumulative Distribution Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Cdf.html)
+* [Stats -- Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Stats.html)
+  * [Rstat -- Runnning Statistics](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Rstat.html)
+* [Histogram -- Histograms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Histogram.html)
+  * [Histogram2D -- 2D Histograms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Histogram2D.html)
+* [Spline -- Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline.html)
+  * [Spline2D -- 2D Interpolarion](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Spline2D.html)
+* [Wavelet -- Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet.html)
+  * [Wavelet2D -- 2D Wavelet Transforms](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Wavelet2D.html)
+* [Fit -- Linear regression](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Fit.html)
+  * [Multifit -- Multi-parameter regression](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Multifit.html)
+* [SpMatrix -- Sparse Matrices](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpMatrix.html)
+  * [SpBlas -- Sparse BLAS](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpBlas.html)
+  * [SpLinalg -- Sparse Linear Algebra](http://ruby-numo.github.io/gsl/doc/Numo/GSL/SpLinalg.html)
 
 More modules will be implemented.
 
@@ -55,7 +55,7 @@ More modules will be implemented.
 ## Installation
 
 * Install [Numo::NArray](https://github.com/ruby-numo/narray)
-* Install [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version >=2.0, <=2.3.
+* Install [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version >=2.0, <=2.3. (only tested in 2.1 and 2.3)
 
 * Install Numo::GSL
   ```shell
