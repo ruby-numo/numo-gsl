@@ -45,25 +45,14 @@ static VALUE
     GetNArray(v1,X);
     GetNArray(v2,y);
     GetNArray(v3,w);
-    if (X->ndim < 2) {
-        rb_raise(nary_eDimensionError,"X must be a matrix");
-    }
-    if (y->ndim < 1) {
-        rb_raise(nary_eDimensionError,"y must be a vector");
-    }
-    if (w->ndim < 1) {
-        rb_raise(nary_eDimensionError,"w must be a vector");
-    }
-    n = X->shape[X->ndim-2];
-    p = X->shape[X->ndim-1];
-    if (n != y->shape[y->ndim-1]) {
-        rb_raise(nary_eShapeError,
-                 "y size along last axis does not match matrix");
-    }
-    if (n != w->shape[w->ndim-1]) {
-        rb_raise(nary_eShapeError,
-                 "w size along last axis does not match matrix");
-    }
+    CHECK_2D(X);
+    CHECK_1D(y);
+    CHECK_1D(w);
+    n = MAT_SIZE1(X);
+    p = MAT_SIZE2(X);
+    CHECK_SIZE_EQ(n,VEC_SIZE(y),"y size does not match X column size");
+    CHECK_SIZE_EQ(n,VEC_SIZE(w),"w size does not match X column size");
+
     c_shape[0] = cov_shape[0] = cov_shape[1] = p;
 
     ws = gsl_multifit_linear_alloc(n,p);

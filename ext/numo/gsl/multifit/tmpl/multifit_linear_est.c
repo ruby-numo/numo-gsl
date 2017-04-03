@@ -41,8 +41,8 @@ static VALUE
     CHECK_1D(x);
     CHECK_1D(c);
     CHECK_2D(cov);
-    CHECK_SIZE_EQ(VEC_SIZE(x),VEC_SIZE(c),"x and c sizes do not match");
+    CHECK_SIZE_EQ(VEC_SIZE(x),VEC_SIZE(c),"x size does not match c size");
     CHECK_SIZE_EQ(MAT_SIZE1(cov),MAT_SIZE2(cov),"cov is not square matrix");
-    CHECK_SIZE_EQ(VEC_SIZE(c),MAT_SIZE1(cov),"c size does not match cov matrix size");
+    CHECK_SIZE_EQ(VEC_SIZE(c),MAT_SIZE1(cov),"c size does not match cov row size");
     return na_ndloop(&ndf, 3, v1, v2, v3);
 }
