@@ -32,7 +32,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
 /*
   @overload <%=name%>(<%=args[0][1]%>,linear_result)
   @param  [DFloat]    <%=args[0][1]%>
-  @param  [LinearResult]  linear_result  Result of GSL::Fit.linear|wlinear
+  @param  [(L|Wl)inearResult]  linear_result  Result of GSL::Fit.linear|wlinear
   @return [[DFloat,DFloat]] array of (<%=args[6][1]%>, <%=args[7][1]%>).
 
   <%=desc%>

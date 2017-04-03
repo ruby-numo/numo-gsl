@@ -25,7 +25,7 @@ iter_<%=c_func%>(na_loop_t *const lp)
   @param  [DFloat]    <%=args[0][1]%> (input array)
   @param  [DFloat]    <%=args[2][1]%> (input array)
   @param  [DFloat]    <%=args[4][1]%> (input array)
-  @return [GSL::Fit::<%=result_class%>] result Struct with members: <%=args[5][1]%>, <%=args[6][1]%>, <%=args[7][1]%>.
+  @return [GSL::Fit::<%=result_class%>] result Struct with members: <%=args[7][1]%>, <%=args[8][1]%>, <%=args[9][1]%>.
 
   <%=desc%>
 
