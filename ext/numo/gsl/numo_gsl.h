@@ -139,5 +139,11 @@
         }                                                               \
     }
 
+#define MAT_SIZE1(x) ((x)->shape[(x)->ndim-2])
+#define MAT_SIZE2(x) ((x)->shape[(x)->ndim-1])
+#define VEC_SIZE(x)  ((x)->shape[(x)->ndim-1])
+#define CHECK_1D(x) {if ((x)->ndim < 1) {rb_raise(nary_eDimensionError,#x" dimension must be >= 1");}}
+#define CHECK_2D(x) {if ((x)->ndim < 2) {rb_raise(nary_eDimensionError,#x" dimension must be >= 2");}}
+#define CHECK_SIZE_EQ(x,y,msg) {if ((x)!=(y)) {rb_raise(nary_eShapeError,msg);}}
 
 #endif /* ifndef NUMO_GSL_H */
