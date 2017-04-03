@@ -8,7 +8,7 @@
 Implemented Modules:
 
 * [Numo::GSL - Mathematical Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL.html)
-(Constants below are defined in Numo::GSL module, e.g., Const => Numo::GSL::Const)
+  * (Modules/Classes below are defined in Numo::GSL module, e.g., Const => Numo::GSL::Const)
 * [Const - Constants](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Const.html)
 * [Poly - Polynomials](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Poly.html)
 * [Sf - Special Functions](http://ruby-numo.github.io/gsl/doc/Numo/GSL/Sf.html)
