@@ -32,6 +32,6 @@ static VALUE
         rb_raise(rb_eArgError,"wrong number of argument (%d for >=2)",argc);
     }
 
-    reduce = na_reduce_dimension(argc-2, argv+2, 2, argv);
+    reduce = na_reduce_dimension(argc-2, argv+2, 2, argv, 0);
     return na_ndloop(&ndf, 3, argv[0], argv[1], reduce);
 }

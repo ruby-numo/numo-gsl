@@ -38,7 +38,7 @@ static VALUE
 
     GetNArray(argv[0],na);
     opt = ALLOCV_N(double,buf,na->size*2); // todo: get loop size
-    reduce = na_reduce_dimension(argc-2, argv+2, 2, argv);
+    reduce = na_reduce_dimension(argc-2, argv+2, 2, argv, 0);
     v = na_ndloop3(&ndf, opt, 3, argv[0], argv[1], reduce);
     ALLOCV_END(buf);
     return v;

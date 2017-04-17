@@ -60,7 +60,7 @@ static VALUE
     }
     rb_funcall(idx, rb_intern("seq"), 0);
 
-    reduce = na_reduce_dimension(argc-1, argv+1, 1, argv);
+    reduce = na_reduce_dimension(argc-1, argv+1, 1, argv, 0);
 
     return na_ndloop(&ndf, 3, argv[0], idx, reduce);
 }

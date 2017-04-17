@@ -30,6 +30,6 @@ static VALUE
     if (argc<1) {
         rb_raise(rb_eArgError,"wrong number of argument (%d for >=1)",argc);
     }
-    reduce = na_reduce_dimension(argc-1, argv+1, 1, argv);
+    reduce = na_reduce_dimension(argc-1, argv+1, 1, argv, 0);
     return na_ndloop(&ndf, 2, *argv, reduce);
 }

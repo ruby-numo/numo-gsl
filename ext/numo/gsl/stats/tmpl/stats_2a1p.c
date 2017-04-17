@@ -37,6 +37,6 @@ static VALUE
 
     opt[0] = NUM2DBL(argv[2]);
 
-    reduce = na_reduce_dimension(argc-3, argv+3, 2, argv);
+    reduce = na_reduce_dimension(argc-3, argv+3, 2, argv, 0);
     return na_ndloop3(&ndf, opt, 3, argv[0], argv[1], reduce);
 }
