@@ -95,6 +95,14 @@ class ErbPP
 
   def init_def
   end
+
+  def find_tmpl(name)
+    @parent.children.find{|x| x.name == name }
+  end
+
+  def find(name)
+    children.find{|x| x.name == name }
+  end
 end
 
 
@@ -106,12 +114,12 @@ class DefLib < ErbPP
   def id_assign
     ids = []
     @children.each{|c| a=c.get(:id_list); ids.concat(a) if a}
-    ids.sort.uniq.map{|x| "id_#{x} = rb_intern(\"#{x}\");"}
+    ids.sort.uniq.map{|x| "id_#{x[1]} = rb_intern(\"#{x[0]}\");"}
   end
   def id_decl
     ids = []
     @children.each{|c| a=c.get(:id_list); ids.concat(a) if a}
-    ids.sort.uniq.map{|x| "ID id_#{x};"}
+    ids.sort.uniq.map{|x| "static ID id_#{x[1]};\n"}
   end
   def def_class(**opts, &block)
     DefClass.new(self, **opts, &block)
@@ -121,7 +129,32 @@ class DefLib < ErbPP
   end
 end
 
+module DeclMethod
+  def def_alloc_func(m, erb_path=nil, **opts, &block)
+    DefAllocFunc.new(self, erb_path||m, name:m, singleton:true, **opts, &block)
+  end
+  def undef_alloc_func
+    UndefAllocFunc.new(self)
+  end
+  def def_method(m, erb_path=nil, **opts, &block)
+    DefMethod.new(self, erb_path||m, name:m, **opts, &block)
+  end
+  def def_singleton_method(m, erb_path=nil, **opts, &block)
+    DefMethod.new(self, erb_path||m, name:m, singleton:true, **opts, &block)
+  end
+  def def_module_function(m, erb_path=nil, **opts, &block)
+    DefModuleFunction.new(self, erb_path||m, name:m, **opts, &block)
+  end
+  def def_alias(from, to)
+    DefAlias.new(self, from:from, to:to)
+  end
+  def def_const(m, v, **opts, &block)
+    DefConst.new(self, name:m, value:v, **opts, &block)
+  end
+end
+
 class DefModule < ErbPP
+  include DeclMethod
   def initialize(parent, **opts, &block)
     eb = opts[:erb_base] || 'module'
     super(parent, erb_base:eb, **opts, &block)
@@ -129,8 +162,9 @@ class DefModule < ErbPP
   def id_list
     @id_list ||= []
   end
-  def add_id(id)
-    id_list << id
+  def def_id(name,var=nil)
+    var = name.gsub(/\?/,"_p").gsub(/\!/,"_bang") if var.nil?
+    id_list << [name,var]
   end
   def init_def
     load_erb(init_erb).result(binding)
@@ -140,21 +174,6 @@ class DefModule < ErbPP
   end
   def method_code
     @children.map{|c| c.result}.join("\n")
-  end
-  def undef_alloc_func
-    UndefAllocFunc.new(self)
-  end
-  def def_method(m, erb_path, **opts, &block)
-    DefMethod.new(self, erb_path, name:m, **opts, &block)
-  end
-  def def_singleton_method(m, erb_path, **opts, &block)
-    DefMethod.new(self, erb_path, name:m, singleton:true, **opts, &block)
-  end
-  def def_alias(from, to)
-    DefAlias.new(self, from:from, to:to)
-  end
-  def def_const(m, v, **opts, &block)
-    DefConst.new(self, name:m, value:v, **opts, &block)
   end
   def _mod_var
     @opts[:module_var]
@@ -181,19 +200,41 @@ class DefClass < DefModule
 end
 
 class DefMethod < ErbPP
+  include DeclMethod
+
   def initialize(parent, erb_base, **opts, &block)
     super(parent, **opts, &block)
     set erb_base: erb_base
   end
 
+  def id_op
+    if op.size == 1
+      "'#{op}'"
+    else
+      "id_#{c_name}"
+    end
+  end
+
+  def c_name
+    @opts[:name].gsub(/\?/,"_p").gsub(/\!/,"_bang")
+  end
+
+  def op_map
+    @opts[:op] || @opts[:name]
+  end
+
   def c_func(n_arg=nil)
     set n_arg: n_arg if n_arg
     s = (singleton) ? "_s" : ""
-    "#{@parent.name}#{s}_#{@opts[:name]}"
+    "#{@parent.name}#{s}_#{c_name}"
+  end
+
+  def c_iter
+    "iter_#{c_func}"
   end
 
   def define_method_args
-    "#{_mod_var}, \"#{@opts[:name]}\", #{c_func}, #{n_arg}"
+    "#{_mod_var}, \"#{op_map}\", #{c_func}, #{n_arg}"
   end
 
   def init_def
@@ -222,6 +263,12 @@ end
 class DefAlias < ErbPP
   def init_def
     "rb_define_alias(#{_mod_var}, \"#{from}\", \"#{to}\");"
+  end
+end
+
+class DefAllocFunc < DefMethod
+  def init_def
+    "rb_define_alloc_func(#{_mod_var}, #{c_func});"
   end
 end
 
