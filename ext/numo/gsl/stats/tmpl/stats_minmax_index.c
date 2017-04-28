@@ -26,10 +26,11 @@ iter_<%=c_func%>_index<%=i%>(na_loop_t *const lp)
 /*
  <%=desc%>
   @overload <%=name%>() => [Integer, Integer]
-  @overload <%=name%>(axis0,axis1,..) => 2-element array of Integer or Numo::Int32/64
+  @overload <%=name%>(axis:nil, keepdims:false) => 2-element array of Integer or Numo::Int32/64
   <% desc_param.each do |x|%>
   <%=x%><% end %>
-*/
+  @param [Numeric,Array,Range] axis (keyword) Axes along which the operation is performed.
+  @param [TrueClass] keepdims (keyword) If true, the reduced axes are left in th*/
 static VALUE
 <%=c_func%>(int argc, VALUE *argv, VALUE mod)
 {
@@ -60,7 +61,7 @@ static VALUE
     }
     rb_funcall(idx, rb_intern("seq"), 0);
 
-    reduce = na_reduce_dimension(argc-1, argv+1, 1, argv, 0);
+    reduce = nary_reduce_dimension(argc-1, argv+1, 1, argv, &ndf, 0);
 
     return na_ndloop(&ndf, 3, argv[0], idx, reduce);
 }

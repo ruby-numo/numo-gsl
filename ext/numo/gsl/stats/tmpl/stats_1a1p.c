@@ -15,10 +15,11 @@ iter_<%=c_func%>(na_loop_t *const lp)
 
 /*
   <%=desc%>
-  @overload <%=name%>(<%=method_args%>,[axis0,axis1,..])
+  @overload <%=name%>(<%=method_args%>, axis:nil, keepdims:false)
   <% desc_param.each do |x|%>
   <%=x%><% end %>
-*/
+  @param [Numeric,Array,Range] axis (keyword) Axes along which the operation is performed.
+  @param [TrueClass] keepdims (keyword) If true, the reduced axes are left in th*/
 static VALUE
 <%=c_func%>(int argc, VALUE *argv, VALUE mod)
 {
@@ -35,6 +36,6 @@ static VALUE
 
     opt[0] = NUM2DBL(argv[1]);
 
-    reduce = na_reduce_dimension(argc-2, argv+2, 1, argv, 0);
+    reduce = nary_reduce_dimension(argc-2, argv+2, 1, argv, &ndf, 0);
     return na_ndloop3(&ndf, opt, 2, argv[0], reduce);
 }

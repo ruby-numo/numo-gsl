@@ -16,6 +16,8 @@ iter_<%=c_func%>(na_loop_t *const lp)
   @overload <%=name%>(<%=method_args%>,[axis0,axis1,..])
   <% desc_param.each do |x|%>
   <%=x%><% end %>
+  @param [Numeric,Array,Range] axis (keyword) Axes along which the operation is performed.
+  @param [TrueClass] keepdims (keyword) If true, the reduced axes are left in the result array as dimensions with size one.
 
   <%=desc%>
 */
@@ -32,6 +34,6 @@ static VALUE
         rb_raise(rb_eArgError,"wrong number of argument (%d for >=2)",argc);
     }
 
-    reduce = na_reduce_dimension(argc-2, argv+2, 2, argv, 0);
+    reduce = nary_reduce_dimension(argc-2, argv+2, 2, argv, &ndf, 0);
     return na_ndloop(&ndf, 3, argv[0], argv[1], reduce);
 }
