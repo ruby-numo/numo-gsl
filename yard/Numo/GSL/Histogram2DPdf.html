@@ -223,7 +223,7 @@ calculated p from the histogram h.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#sample-instance_method" title="#sample (instance method)">#<strong>sample</strong>(v1, v2)  &#x21d2; Array </a>
+      <a href="#sample-instance_method" title="#sample (instance method)">#<strong>sample</strong>(r1, r2)  &#x21d2; Array </a>
     
 
     
@@ -665,11 +665,7 @@ histogram2d_pdf_ny(VALUE self)
       <div class="method_details ">
   <h3 class="signature " id="sample-instance_method">
   
-    
-      <span class="overload">#<strong>sample</strong>(r1, r2)  &#x21d2; <tt>Array</tt> </span>
-    
-      <span class="overload">#<strong>sample</strong>(r1)  &#x21d2; <tt>Array</tt> </span>
-    
+    #<strong>sample</strong>(r1, r2)  &#x21d2; <tt>Array</tt> 
   
 
   
@@ -686,7 +682,9 @@ distribution p.</p>
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
+  
+  
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -738,6 +736,7 @@ distribution p.</p>
       <pre class="lines">
 
 
+2402
 2403
 2404
 2405
@@ -748,11 +747,10 @@ distribution p.</p>
 2410
 2411
 2412
-2413
-2414</pre>
+2413</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2403</span>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/histogram/gsl_histogram.c', line 2402</span>
 
 static VALUE
 histogram2d_pdf_sample(VALUE self, VALUE v1, VALUE v2)
@@ -1077,7 +1075,7 @@ histogram2d_pdf_yrange(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sat Aug  5 17:43:40 2017 by
+  Generated on Sat Aug  5 17:57:44 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
