@@ -8,9 +8,9 @@ task :doc do
       srcs << d+"/*.c"
     end
   end
-  sh "yard -m markdown -r README.md #{srcs.join(' ')}"
+  sh "yard -m markdown -o yard -r README.md #{srcs.join(' ')}"
 end
 
 task :cleandoc do
-  sh "rm -r doc .yardoc"
+  sh "rm -r yard .yardoc"
 end
