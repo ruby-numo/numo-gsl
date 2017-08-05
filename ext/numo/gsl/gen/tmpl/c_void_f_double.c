@@ -1,6 +1,6 @@
 /*
-  @overload <%=name%>(<%=args.map{|a| a[1]}.join(",")%>)
-  @param  [Float]  <%=args[0][1]%>
+  @overload <%=name%>(<%=args[1][1]%>)
+  @param  [Float]  <%=args[1][1]%>
   @return [Qnil]
 
   <%= description %>
