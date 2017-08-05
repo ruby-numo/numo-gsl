@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Numo::GSL::Rng
+  
+    &mdash; Documentation by YARD 0.9.9
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Numo::GSL::Rng";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../x_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Numo.html" title="Numo (module)">Numo</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../GSL.html" title="Numo::GSL (module)">GSL</a></span></span>
+     &raquo; 
+    <span class="title">Rng</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Numo::GSL::Rng
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Numo::GSL::Rng</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="Ran.html" title="Numo::GSL::Ran (module)">Ran</a></span></dd>
+  </dl>
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>ext/numo/gsl/rng/gsl_rng.c</dd>
+  </dl>
+  
+</div>
+
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Rng/Borosh13.html" title="Numo::GSL::Rng::Borosh13 (class)">Borosh13</a></span>, <span class='object_link'><a href="Rng/Cmrg.html" title="Numo::GSL::Rng::Cmrg (class)">Cmrg</a></span>, <span class='object_link'><a href="Rng/Coveyou.html" title="Numo::GSL::Rng::Coveyou (class)">Coveyou</a></span>, <span class='object_link'><a href="Rng/Default.html" title="Numo::GSL::Rng::Default (class)">Default</a></span>, <span class='object_link'><a href="Rng/Fishman18.html" title="Numo::GSL::Rng::Fishman18 (class)">Fishman18</a></span>, <span class='object_link'><a href="Rng/Fishman20.html" title="Numo::GSL::Rng::Fishman20 (class)">Fishman20</a></span>, <span class='object_link'><a href="Rng/Fishman2x.html" title="Numo::GSL::Rng::Fishman2x (class)">Fishman2x</a></span>, <span class='object_link'><a href="Rng/Gfsr4.html" title="Numo::GSL::Rng::Gfsr4 (class)">Gfsr4</a></span>, <span class='object_link'><a href="Rng/Knuthran.html" title="Numo::GSL::Rng::Knuthran (class)">Knuthran</a></span>, <span class='object_link'><a href="Rng/Knuthran2.html" title="Numo::GSL::Rng::Knuthran2 (class)">Knuthran2</a></span>, <span class='object_link'><a href="Rng/Knuthran2002.html" title="Numo::GSL::Rng::Knuthran2002 (class)">Knuthran2002</a></span>, <span class='object_link'><a href="Rng/Lecuyer21.html" title="Numo::GSL::Rng::Lecuyer21 (class)">Lecuyer21</a></span>, <span class='object_link'><a href="Rng/Minstd.html" title="Numo::GSL::Rng::Minstd (class)">Minstd</a></span>, <span class='object_link'><a href="Rng/Mrg.html" title="Numo::GSL::Rng::Mrg (class)">Mrg</a></span>, <span class='object_link'><a href="Rng/Mt19937.html" title="Numo::GSL::Rng::Mt19937 (class)">Mt19937</a></span>, <span class='object_link'><a href="Rng/Mt199371998.html" title="Numo::GSL::Rng::Mt199371998 (class)">Mt199371998</a></span>, <span class='object_link'><a href="Rng/Mt199371999.html" title="Numo::GSL::Rng::Mt199371999 (class)">Mt199371999</a></span>, <span class='object_link'><a href="Rng/R250.html" title="Numo::GSL::Rng::R250 (class)">R250</a></span>, <span class='object_link'><a href="Rng/Ran0.html" title="Numo::GSL::Rng::Ran0 (class)">Ran0</a></span>, <span class='object_link'><a href="Rng/Ran1.html" title="Numo::GSL::Rng::Ran1 (class)">Ran1</a></span>, <span class='object_link'><a href="Rng/Ran2.html" title="Numo::GSL::Rng::Ran2 (class)">Ran2</a></span>, <span class='object_link'><a href="Rng/Ran3.html" title="Numo::GSL::Rng::Ran3 (class)">Ran3</a></span>, <span class='object_link'><a href="Rng/Rand.html" title="Numo::GSL::Rng::Rand (class)">Rand</a></span>, <span class='object_link'><a href="Rng/Rand48.html" title="Numo::GSL::Rng::Rand48 (class)">Rand48</a></span>, <span class='object_link'><a href="Rng/Random128Bsd.html" title="Numo::GSL::Rng::Random128Bsd (class)">Random128Bsd</a></span>, <span class='object_link'><a href="Rng/Random128Glibc2.html" title="Numo::GSL::Rng::Random128Glibc2 (class)">Random128Glibc2</a></span>, <span class='object_link'><a href="Rng/Random128Libc5.html" title="Numo::GSL::Rng::Random128Libc5 (class)">Random128Libc5</a></span>, <span class='object_link'><a href="Rng/Random256Bsd.html" title="Numo::GSL::Rng::Random256Bsd (class)">Random256Bsd</a></span>, <span class='object_link'><a href="Rng/Random256Glibc2.html" title="Numo::GSL::Rng::Random256Glibc2 (class)">Random256Glibc2</a></span>, <span class='object_link'><a href="Rng/Random256Libc5.html" title="Numo::GSL::Rng::Random256Libc5 (class)">Random256Libc5</a></span>, <span class='object_link'><a href="Rng/Random32Bsd.html" title="Numo::GSL::Rng::Random32Bsd (class)">Random32Bsd</a></span>, <span class='object_link'><a href="Rng/Random32Glibc2.html" title="Numo::GSL::Rng::Random32Glibc2 (class)">Random32Glibc2</a></span>, <span class='object_link'><a href="Rng/Random32Libc5.html" title="Numo::GSL::Rng::Random32Libc5 (class)">Random32Libc5</a></span>, <span class='object_link'><a href="Rng/Random64Bsd.html" title="Numo::GSL::Rng::Random64Bsd (class)">Random64Bsd</a></span>, <span class='object_link'><a href="Rng/Random64Glibc2.html" title="Numo::GSL::Rng::Random64Glibc2 (class)">Random64Glibc2</a></span>, <span class='object_link'><a href="Rng/Random64Libc5.html" title="Numo::GSL::Rng::Random64Libc5 (class)">Random64Libc5</a></span>, <span class='object_link'><a href="Rng/Random8Bsd.html" title="Numo::GSL::Rng::Random8Bsd (class)">Random8Bsd</a></span>, <span class='object_link'><a href="Rng/Random8Glibc2.html" title="Numo::GSL::Rng::Random8Glibc2 (class)">Random8Glibc2</a></span>, <span class='object_link'><a href="Rng/Random8Libc5.html" title="Numo::GSL::Rng::Random8Libc5 (class)">Random8Libc5</a></span>, <span class='object_link'><a href="Rng/RandomBsd.html" title="Numo::GSL::Rng::RandomBsd (class)">RandomBsd</a></span>, <span class='object_link'><a href="Rng/RandomGlibc2.html" title="Numo::GSL::Rng::RandomGlibc2 (class)">RandomGlibc2</a></span>, <span class='object_link'><a href="Rng/RandomLibc5.html" title="Numo::GSL::Rng::RandomLibc5 (class)">RandomLibc5</a></span>, <span class='object_link'><a href="Rng/Randu.html" title="Numo::GSL::Rng::Randu (class)">Randu</a></span>, <span class='object_link'><a href="Rng/Ranf.html" title="Numo::GSL::Rng::Ranf (class)">Ranf</a></span>, <span class='object_link'><a href="Rng/Ranlux.html" title="Numo::GSL::Rng::Ranlux (class)">Ranlux</a></span>, <span class='object_link'><a href="Rng/Ranlux389.html" title="Numo::GSL::Rng::Ranlux389 (class)">Ranlux389</a></span>, <span class='object_link'><a href="Rng/Ranlxd1.html" title="Numo::GSL::Rng::Ranlxd1 (class)">Ranlxd1</a></span>, <span class='object_link'><a href="Rng/Ranlxd2.html" title="Numo::GSL::Rng::Ranlxd2 (class)">Ranlxd2</a></span>, <span class='object_link'><a href="Rng/Ranlxs0.html" title="Numo::GSL::Rng::Ranlxs0 (class)">Ranlxs0</a></span>, <span class='object_link'><a href="Rng/Ranlxs1.html" title="Numo::GSL::Rng::Ranlxs1 (class)">Ranlxs1</a></span>, <span class='object_link'><a href="Rng/Ranlxs2.html" title="Numo::GSL::Rng::Ranlxs2 (class)">Ranlxs2</a></span>, <span class='object_link'><a href="Rng/Ranmar.html" title="Numo::GSL::Rng::Ranmar (class)">Ranmar</a></span>, <span class='object_link'><a href="Rng/Slatec.html" title="Numo::GSL::Rng::Slatec (class)">Slatec</a></span>, <span class='object_link'><a href="Rng/Taus.html" title="Numo::GSL::Rng::Taus (class)">Taus</a></span>, <span class='object_link'><a href="Rng/Taus113.html" title="Numo::GSL::Rng::Taus113 (class)">Taus113</a></span>, <span class='object_link'><a href="Rng/Taus2.html" title="Numo::GSL::Rng::Taus2 (class)">Taus2</a></span>, <span class='object_link'><a href="Rng/Transputer.html" title="Numo::GSL::Rng::Transputer (class)">Transputer</a></span>, <span class='object_link'><a href="Rng/Tt800.html" title="Numo::GSL::Rng::Tt800 (class)">Tt800</a></span>, <span class='object_link'><a href="Rng/Uni.html" title="Numo::GSL::Rng::Uni (class)">Uni</a></span>, <span class='object_link'><a href="Rng/Uni32.html" title="Numo::GSL::Rng::Uni32 (class)">Uni32</a></span>, <span class='object_link'><a href="Rng/Vax.html" title="Numo::GSL::Rng::Vax (class)">Vax</a></span>, <span class='object_link'><a href="Rng/Waterman14.html" title="Numo::GSL::Rng::Waterman14 (class)">Waterman14</a></span>, <span class='object_link'><a href="Rng/Zuf.html" title="Numo::GSL::Rng::Zuf (class)">Zuf</a></span></p>
+</div>
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Rng/Borosh13.html" title="Numo::GSL::Rng::Borosh13 (class)">Borosh13</a></span>, <span class='object_link'><a href="Rng/Cmrg.html" title="Numo::GSL::Rng::Cmrg (class)">Cmrg</a></span>, <span class='object_link'><a href="Rng/Coveyou.html" title="Numo::GSL::Rng::Coveyou (class)">Coveyou</a></span>, <span class='object_link'><a href="Rng/Default.html" title="Numo::GSL::Rng::Default (class)">Default</a></span>, <span class='object_link'><a href="Rng/Fishman18.html" title="Numo::GSL::Rng::Fishman18 (class)">Fishman18</a></span>, <span class='object_link'><a href="Rng/Fishman20.html" title="Numo::GSL::Rng::Fishman20 (class)">Fishman20</a></span>, <span class='object_link'><a href="Rng/Fishman2x.html" title="Numo::GSL::Rng::Fishman2x (class)">Fishman2x</a></span>, <span class='object_link'><a href="Rng/Gfsr4.html" title="Numo::GSL::Rng::Gfsr4 (class)">Gfsr4</a></span>, <span class='object_link'><a href="Rng/Knuthran.html" title="Numo::GSL::Rng::Knuthran (class)">Knuthran</a></span>, <span class='object_link'><a href="Rng/Knuthran2.html" title="Numo::GSL::Rng::Knuthran2 (class)">Knuthran2</a></span>, <span class='object_link'><a href="Rng/Knuthran2002.html" title="Numo::GSL::Rng::Knuthran2002 (class)">Knuthran2002</a></span>, <span class='object_link'><a href="Rng/Lecuyer21.html" title="Numo::GSL::Rng::Lecuyer21 (class)">Lecuyer21</a></span>, <span class='object_link'><a href="Rng/Minstd.html" title="Numo::GSL::Rng::Minstd (class)">Minstd</a></span>, <span class='object_link'><a href="Rng/Mrg.html" title="Numo::GSL::Rng::Mrg (class)">Mrg</a></span>, <span class='object_link'><a href="Rng/Mt19937.html" title="Numo::GSL::Rng::Mt19937 (class)">Mt19937</a></span>, <span class='object_link'><a href="Rng/Mt199371998.html" title="Numo::GSL::Rng::Mt199371998 (class)">Mt199371998</a></span>, <span class='object_link'><a href="Rng/Mt199371999.html" title="Numo::GSL::Rng::Mt199371999 (class)">Mt199371999</a></span>, <span class='object_link'><a href="Rng/R250.html" title="Numo::GSL::Rng::R250 (class)">R250</a></span>, <span class='object_link'><a href="Rng/Ran0.html" title="Numo::GSL::Rng::Ran0 (class)">Ran0</a></span>, <span class='object_link'><a href="Rng/Ran1.html" title="Numo::GSL::Rng::Ran1 (class)">Ran1</a></span>, <span class='object_link'><a href="Rng/Ran2.html" title="Numo::GSL::Rng::Ran2 (class)">Ran2</a></span>, <span class='object_link'><a href="Rng/Ran3.html" title="Numo::GSL::Rng::Ran3 (class)">Ran3</a></span>, <span class='object_link'><a href="Rng/Rand.html" title="Numo::GSL::Rng::Rand (class)">Rand</a></span>, <span class='object_link'><a href="Rng/Rand48.html" title="Numo::GSL::Rng::Rand48 (class)">Rand48</a></span>, <span class='object_link'><a href="Rng/Random128Bsd.html" title="Numo::GSL::Rng::Random128Bsd (class)">Random128Bsd</a></span>, <span class='object_link'><a href="Rng/Random128Glibc2.html" title="Numo::GSL::Rng::Random128Glibc2 (class)">Random128Glibc2</a></span>, <span class='object_link'><a href="Rng/Random128Libc5.html" title="Numo::GSL::Rng::Random128Libc5 (class)">Random128Libc5</a></span>, <span class='object_link'><a href="Rng/Random256Bsd.html" title="Numo::GSL::Rng::Random256Bsd (class)">Random256Bsd</a></span>, <span class='object_link'><a href="Rng/Random256Glibc2.html" title="Numo::GSL::Rng::Random256Glibc2 (class)">Random256Glibc2</a></span>, <span class='object_link'><a href="Rng/Random256Libc5.html" title="Numo::GSL::Rng::Random256Libc5 (class)">Random256Libc5</a></span>, <span class='object_link'><a href="Rng/Random32Bsd.html" title="Numo::GSL::Rng::Random32Bsd (class)">Random32Bsd</a></span>, <span class='object_link'><a href="Rng/Random32Glibc2.html" title="Numo::GSL::Rng::Random32Glibc2 (class)">Random32Glibc2</a></span>, <span class='object_link'><a href="Rng/Random32Libc5.html" title="Numo::GSL::Rng::Random32Libc5 (class)">Random32Libc5</a></span>, <span class='object_link'><a href="Rng/Random64Bsd.html" title="Numo::GSL::Rng::Random64Bsd (class)">Random64Bsd</a></span>, <span class='object_link'><a href="Rng/Random64Glibc2.html" title="Numo::GSL::Rng::Random64Glibc2 (class)">Random64Glibc2</a></span>, <span class='object_link'><a href="Rng/Random64Libc5.html" title="Numo::GSL::Rng::Random64Libc5 (class)">Random64Libc5</a></span>, <span class='object_link'><a href="Rng/Random8Bsd.html" title="Numo::GSL::Rng::Random8Bsd (class)">Random8Bsd</a></span>, <span class='object_link'><a href="Rng/Random8Glibc2.html" title="Numo::GSL::Rng::Random8Glibc2 (class)">Random8Glibc2</a></span>, <span class='object_link'><a href="Rng/Random8Libc5.html" title="Numo::GSL::Rng::Random8Libc5 (class)">Random8Libc5</a></span>, <span class='object_link'><a href="Rng/RandomBsd.html" title="Numo::GSL::Rng::RandomBsd (class)">RandomBsd</a></span>, <span class='object_link'><a href="Rng/RandomGlibc2.html" title="Numo::GSL::Rng::RandomGlibc2 (class)">RandomGlibc2</a></span>, <span class='object_link'><a href="Rng/RandomLibc5.html" title="Numo::GSL::Rng::RandomLibc5 (class)">RandomLibc5</a></span>, <span class='object_link'><a href="Rng/Randu.html" title="Numo::GSL::Rng::Randu (class)">Randu</a></span>, <span class='object_link'><a href="Rng/Ranf.html" title="Numo::GSL::Rng::Ranf (class)">Ranf</a></span>, <span class='object_link'><a href="Rng/Ranlux.html" title="Numo::GSL::Rng::Ranlux (class)">Ranlux</a></span>, <span class='object_link'><a href="Rng/Ranlux389.html" title="Numo::GSL::Rng::Ranlux389 (class)">Ranlux389</a></span>, <span class='object_link'><a href="Rng/Ranlxd1.html" title="Numo::GSL::Rng::Ranlxd1 (class)">Ranlxd1</a></span>, <span class='object_link'><a href="Rng/Ranlxd2.html" title="Numo::GSL::Rng::Ranlxd2 (class)">Ranlxd2</a></span>, <span class='object_link'><a href="Rng/Ranlxs0.html" title="Numo::GSL::Rng::Ranlxs0 (class)">Ranlxs0</a></span>, <span class='object_link'><a href="Rng/Ranlxs1.html" title="Numo::GSL::Rng::Ranlxs1 (class)">Ranlxs1</a></span>, <span class='object_link'><a href="Rng/Ranlxs2.html" title="Numo::GSL::Rng::Ranlxs2 (class)">Ranlxs2</a></span>, <span class='object_link'><a href="Rng/Ranmar.html" title="Numo::GSL::Rng::Ranmar (class)">Ranmar</a></span>, <span class='object_link'><a href="Rng/Slatec.html" title="Numo::GSL::Rng::Slatec (class)">Slatec</a></span>, <span class='object_link'><a href="Rng/Taus.html" title="Numo::GSL::Rng::Taus (class)">Taus</a></span>, <span class='object_link'><a href="Rng/Taus113.html" title="Numo::GSL::Rng::Taus113 (class)">Taus113</a></span>, <span class='object_link'><a href="Rng/Taus2.html" title="Numo::GSL::Rng::Taus2 (class)">Taus2</a></span>, <span class='object_link'><a href="Rng/Transputer.html" title="Numo::GSL::Rng::Transputer (class)">Transputer</a></span>, <span class='object_link'><a href="Rng/Tt800.html" title="Numo::GSL::Rng::Tt800 (class)">Tt800</a></span>, <span class='object_link'><a href="Rng/Uni.html" title="Numo::GSL::Rng::Uni (class)">Uni</a></span>, <span class='object_link'><a href="Rng/Uni32.html" title="Numo::GSL::Rng::Uni32 (class)">Uni32</a></span>, <span class='object_link'><a href="Rng/Vax.html" title="Numo::GSL::Rng::Vax (class)">Vax</a></span>, <span class='object_link'><a href="Rng/Waterman14.html" title="Numo::GSL::Rng::Waterman14 (class)">Waterman14</a></span>, <span class='object_link'><a href="Rng/Zuf.html" title="Numo::GSL::Rng::Zuf (class)">Zuf</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clone-instance_method" title="#clone (instance method)">#<strong>clone</strong>  &#x21d2; Numo::GSL::Rng </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns a pointer to a newly created generator which is an
+exact copy of the generator r.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns a random integer from the generator r.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max-instance_method" title="#max (instance method)">#<strong>max</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>gsl_rng_max returns the largest value that gsl_rng_get can return.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#memcpy-instance_method" title="#memcpy (instance method)">#<strong>memcpy</strong>(src)  &#x21d2; Numo::GSL::Rng </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function copies the random number generator src into the pre-existing
+generator dest, making dest into an exact copy of src.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#min-instance_method" title="#min (instance method)">#<strong>min</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>gsl_rng_min returns the smallest value that gsl_rng_get can return.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns a pointer to the name of the generator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set-instance_method" title="#set (instance method)">#<strong>set</strong>(s)  &#x21d2; Qnil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function initializes (or `seeds&#39;) the random number generator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#size-instance_method" title="#size (instance method)">#<strong>size</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>These functions return a pointer to the state of generator r and its size.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uniform-instance_method" title="#uniform (instance method)">#<strong>uniform</strong>([shape])  &#x21d2; Float or DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns a double precision floating point number uniformly
+distributed in the range [0,1).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uniform_int-instance_method" title="#uniform_int (instance method)">#<strong>uniform_int</strong>(n, [shape])  &#x21d2; Integer or UInt32/UInt64 </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns a random integer from 0 to n-1 inclusive by scaling
+down and/or discarding samples from the generator r.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uniform_pos-instance_method" title="#uniform_pos (instance method)">#<strong>uniform_pos</strong>([shape])  &#x21d2; Float or DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns a positive double precision floating point number
+uniformly distributed in the range (0,1), excluding both 0.0 and 1.0.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Ran.html" title="Numo::GSL::Ran (module)">Ran</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Ran.html#bernoulli-instance_method" title="Numo::GSL::Ran#bernoulli (method)">#bernoulli</a></span>, <span class='object_link'><a href="Ran.html#beta-instance_method" title="Numo::GSL::Ran#beta (method)">#beta</a></span>, <span class='object_link'><a href="Ran.html#binomial-instance_method" title="Numo::GSL::Ran#binomial (method)">#binomial</a></span>, <span class='object_link'><a href="Ran.html#bivariate_gaussian-instance_method" title="Numo::GSL::Ran#bivariate_gaussian (method)">#bivariate_gaussian</a></span>, <span class='object_link'><a href="Ran.html#cauchy-instance_method" title="Numo::GSL::Ran#cauchy (method)">#cauchy</a></span>, <span class='object_link'><a href="Ran.html#chisq-instance_method" title="Numo::GSL::Ran#chisq (method)">#chisq</a></span>, <span class='object_link'><a href="Ran.html#dir_2d-instance_method" title="Numo::GSL::Ran#dir_2d (method)">#dir_2d</a></span>, <span class='object_link'><a href="Ran.html#dir_2d_trig_method-instance_method" title="Numo::GSL::Ran#dir_2d_trig_method (method)">#dir_2d_trig_method</a></span>, <span class='object_link'><a href="Ran.html#dir_3d-instance_method" title="Numo::GSL::Ran#dir_3d (method)">#dir_3d</a></span>, <span class='object_link'><a href="Ran.html#dirichlet-instance_method" title="Numo::GSL::Ran#dirichlet (method)">#dirichlet</a></span>, <span class='object_link'><a href="Ran.html#exponential-instance_method" title="Numo::GSL::Ran#exponential (method)">#exponential</a></span>, <span class='object_link'><a href="Ran.html#exppow-instance_method" title="Numo::GSL::Ran#exppow (method)">#exppow</a></span>, <span class='object_link'><a href="Ran.html#fdist-instance_method" title="Numo::GSL::Ran#fdist (method)">#fdist</a></span>, <span class='object_link'><a href="Ran.html#flat-instance_method" title="Numo::GSL::Ran#flat (method)">#flat</a></span>, <span class='object_link'><a href="Ran.html#gamma-instance_method" title="Numo::GSL::Ran#gamma (method)">#gamma</a></span>, <span class='object_link'><a href="Ran.html#gamma_knuth-instance_method" title="Numo::GSL::Ran#gamma_knuth (method)">#gamma_knuth</a></span>, <span class='object_link'><a href="Ran.html#gaussian-instance_method" title="Numo::GSL::Ran#gaussian (method)">#gaussian</a></span>, <span class='object_link'><a href="Ran.html#gaussian_ratio_method-instance_method" title="Numo::GSL::Ran#gaussian_ratio_method (method)">#gaussian_ratio_method</a></span>, <span class='object_link'><a href="Ran.html#gaussian_tail-instance_method" title="Numo::GSL::Ran#gaussian_tail (method)">#gaussian_tail</a></span>, <span class='object_link'><a href="Ran.html#gaussian_ziggurat-instance_method" title="Numo::GSL::Ran#gaussian_ziggurat (method)">#gaussian_ziggurat</a></span>, <span class='object_link'><a href="Ran.html#geometric-instance_method" title="Numo::GSL::Ran#geometric (method)">#geometric</a></span>, <span class='object_link'><a href="Ran.html#gumbel1-instance_method" title="Numo::GSL::Ran#gumbel1 (method)">#gumbel1</a></span>, <span class='object_link'><a href="Ran.html#gumbel2-instance_method" title="Numo::GSL::Ran#gumbel2 (method)">#gumbel2</a></span>, <span class='object_link'><a href="Ran.html#hypergeometric-instance_method" title="Numo::GSL::Ran#hypergeometric (method)">#hypergeometric</a></span>, <span class='object_link'><a href="Ran.html#landau-instance_method" title="Numo::GSL::Ran#landau (method)">#landau</a></span>, <span class='object_link'><a href="Ran.html#laplace-instance_method" title="Numo::GSL::Ran#laplace (method)">#laplace</a></span>, <span class='object_link'><a href="Ran.html#levy-instance_method" title="Numo::GSL::Ran#levy (method)">#levy</a></span>, <span class='object_link'><a href="Ran.html#logarithmic-instance_method" title="Numo::GSL::Ran#logarithmic (method)">#logarithmic</a></span>, <span class='object_link'><a href="Ran.html#logistic-instance_method" title="Numo::GSL::Ran#logistic (method)">#logistic</a></span>, <span class='object_link'><a href="Ran.html#lognormal-instance_method" title="Numo::GSL::Ran#lognormal (method)">#lognormal</a></span>, <span class='object_link'><a href="Ran.html#multinomial-instance_method" title="Numo::GSL::Ran#multinomial (method)">#multinomial</a></span>, <span class='object_link'><a href="Ran.html#pareto-instance_method" title="Numo::GSL::Ran#pareto (method)">#pareto</a></span>, <span class='object_link'><a href="Ran.html#pascal-instance_method" title="Numo::GSL::Ran#pascal (method)">#pascal</a></span>, <span class='object_link'><a href="Ran.html#poisson-instance_method" title="Numo::GSL::Ran#poisson (method)">#poisson</a></span>, <span class='object_link'><a href="Ran.html#rayleigh-instance_method" title="Numo::GSL::Ran#rayleigh (method)">#rayleigh</a></span>, <span class='object_link'><a href="Ran.html#rayleigh_tail-instance_method" title="Numo::GSL::Ran#rayleigh_tail (method)">#rayleigh_tail</a></span>, <span class='object_link'><a href="Ran.html#tdist-instance_method" title="Numo::GSL::Ran#tdist (method)">#tdist</a></span>, <span class='object_link'><a href="Ran.html#ugaussian-instance_method" title="Numo::GSL::Ran#ugaussian (method)">#ugaussian</a></span>, <span class='object_link'><a href="Ran.html#ugaussian_ratio_method-instance_method" title="Numo::GSL::Ran#ugaussian_ratio_method (method)">#ugaussian_ratio_method</a></span>, <span class='object_link'><a href="Ran.html#ugaussian_tail-instance_method" title="Numo::GSL::Ran#ugaussian_tail (method)">#ugaussian_tail</a></span>, <span class='object_link'><a href="Ran.html#weibull-instance_method" title="Numo::GSL::Ran#weibull (method)">#weibull</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="clone-instance_method">
+  
+    #<strong>clone</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Rng (class)">Numo::GSL::Rng</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns a pointer to a newly created generator which is an
+exact copy of the generator r.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Rng (class)">Numo::GSL::Rng</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2586
+2587
+2588
+2589
+2590
+2591
+2592
+2593
+2594
+2595
+2596
+2597
+2598</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2586</span>
+
+static VALUE
+rng_clone(VALUE self)
+{
+    gsl_rng *x, *w;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, x);
+
+    w = gsl_rng_clone(x);
+    if (!w) {
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    }
+    return TypedData_Wrap_Struct(cRng, &amp;rng_data_type, (void*)w);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get-instance_method">
+  
+    #<strong>get</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns a random integer from the generator r. The minimum
+and maximum values depend on the algorithm used, but all integers in the
+range [min,max] are equally likely. The values of min and max can be
+determined using the auxiliary functions gsl_rng_max ® and gsl_rng_min ®.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2314
+2315
+2316
+2317
+2318
+2319
+2320
+2321
+2322</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2314</span>
+
+static VALUE
+rng_get(VALUE self)
+{
+    gsl_rng *w;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, w);
+
+    return ULONG2NUM(gsl_rng_get(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max-instance_method">
+  
+    #<strong>max</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>gsl_rng_max returns the largest value that gsl_rng_get can return.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2499
+2500
+2501
+2502
+2503
+2504
+2505
+2506
+2507</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2499</span>
+
+static VALUE
+rng_max(VALUE self)
+{
+    gsl_rng *w;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, w);
+
+    return ULONG2NUM(gsl_rng_max(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="memcpy-instance_method">
+  
+    #<strong>memcpy</strong>(src)  &#x21d2; <tt><span class='object_link'><a href="" title="Numo::GSL::Rng (class)">Numo::GSL::Rng</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function copies the random number generator src into the pre-existing
+generator dest, making dest into an exact copy of src. The two generators
+must be of the same type.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>src</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Rng (class)">Numo::GSL::Rng</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>other</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Numo::GSL::Rng (class)">Numo::GSL::Rng</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2566
+2567
+2568
+2569
+2570
+2571
+2572
+2573
+2574
+2575</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2566</span>
+
+static VALUE
+rng_memcpy(VALUE self, VALUE other)
+{
+    gsl_rng *w, *x;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, w);
+    TypedData_Get_Struct(other, gsl_rng, &amp;rng_data_type, x);
+    gsl_rng_memcpy(w,x);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="min-instance_method">
+  
+    #<strong>min</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>gsl_rng_min returns the smallest value that gsl_rng_get can return. Usually
+this value is zero. There are some generators with algorithms that cannot
+return zero, and for these generators the minimum value is 1.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2520
+2521
+2522
+2523
+2524
+2525
+2526
+2527
+2528</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2520</span>
+
+static VALUE
+rng_min(VALUE self)
+{
+    gsl_rng *w;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, w);
+
+    return ULONG2NUM(gsl_rng_min(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  
+    #<strong>name</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns a pointer to the name of the generator. For example,</p>
+
+<p>printf (“r is a &#39;%s&#39; generatorn”,  gsl_rng_name ®);</p>
+
+<p>would print something like r is a &#39;taus&#39; generator.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2480
+2481
+2482
+2483
+2484
+2485
+2486
+2487
+2488</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2480</span>
+
+static VALUE
+rng_name(VALUE self)
+{
+    gsl_rng *w;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, w);
+
+    return rb_str_new_cstr(gsl_rng_name(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set-instance_method">
+  
+    #<strong>set</strong>(s)  &#x21d2; <tt>Qnil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function initializes (or `seeds&#39;) the random number generator. If
+the generator is seeded with the same value of s on two different runs, the
+same stream of random numbers will be generated by successive calls to the
+routines below. If different values of $s geq 1$ s &gt;= 1 are supplied,
+then the generated streams of random numbers should be completely
+different. If the seed s is zero then the standard seed from the original
+implementation is used instead. For example, the original Fortran source
+code for the ranlux generator used a seed of 314159265, and so choosing s
+equal to zero reproduces this when using gsl_rng_ranlux.</p>
+
+<p>When using multiple seeds with the same generator, choose seed values
+greater than zero to avoid collisions with the default setting.</p>
+
+<p>Note that the most generators only accept 32-bit seeds, with higher values
+being reduced modulo $2^32$ 2^32. For generators with smaller ranges the
+maximum seed value will typically be lower.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>s</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Qnil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2291
+2292
+2293
+2294
+2295
+2296
+2297
+2298
+2299
+2300</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2291</span>
+
+static VALUE
+rng_set(VALUE self, VALUE v1)
+{
+    gsl_rng *w;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, w);
+
+    gsl_rng_set(w, NUM2ULONG(v1));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="size-instance_method">
+  
+    #<strong>size</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>These functions return a pointer to the state of generator r and its size.
+You can use this information to access the state directly. For example, the
+following code will write the state of a generator to a stream,</p>
+
+<p>void * state = gsl_rng_state ®; size_t n = gsl_rng_size ®; fwrite (state,
+n, 1, stream);</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2545
+2546
+2547
+2548
+2549
+2550
+2551
+2552
+2553</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2545</span>
+
+static VALUE
+rng_size(VALUE self)
+{
+    gsl_rng *w;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, w);
+
+    return SIZET2NUM(gsl_rng_size(w));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="uniform-instance_method">
+  
+    #<strong>uniform</strong>([shape])  &#x21d2; <tt>Float or DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns a double precision floating point number uniformly
+distributed in the range [0,1). The range includes 0.0 but excludes 1.0.
+The value is typically obtained by dividing the result of gsl_rng_get® by
+gsl_rng_max® + 1.0 in double precision. Some generators compute this ratio
+internally so that they can provide floating point numbers with more than
+32 bits of randomness (the maximum number of bits that can be portably
+represented in a single unsigned long int).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>shape</span>
+      
+      
+        <span class='type'>(<tt>Array or Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(optional) shape for result NArray</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float or DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns random number</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2340
+2341
+2342
+2343
+2344
+2345
+2346
+2347
+2348
+2349
+2350
+2351
+2352
+2353
+2354
+2355
+2356
+2357
+2358
+2359
+2360
+2361</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2340</span>
+
+static VALUE
+rng_uniform(int argc, VALUE *argv, VALUE self)
+{
+    VALUE vshape, vna;
+    size_t i, size;
+    double *ptr;
+    gsl_rng *r;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, r);
+
+    if (rb_scan_args(argc, argv, &quot;01&quot;, &amp;vshape) == 0) {
+        return rb_float_new(gsl_rng_uniform(r));
+    } else {
+        vna = create_new_narray(cDF,vshape);
+        ptr = (double*)na_get_pointer_for_write(vna);
+        size = RNARRAY_SIZE(vna);
+        for (i=0; i&lt;size; i++) {
+            ptr[i] = gsl_rng_uniform(r);
+        }
+        return vna;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="uniform_int-instance_method">
+  
+    #<strong>uniform_int</strong>(n, [shape])  &#x21d2; <tt>Integer or UInt32/UInt64</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns a random integer from 0 to n-1 inclusive by scaling
+down and/or discarding samples from the generator r. All integers in the
+range [0,n-1] are produced with equal probability. For generators with a
+non-zero minimum value an offset is applied so that zero is returned with
+the correct probability.</p>
+
+<p>Note that this function is designed for sampling from ranges smaller than
+the range of the underlying generator. The parameter n must be less than or
+equal to the range of the generator r. If n is larger than the range of the
+generator then the function calls the error handler with an error code of
+GSL_EINVAL and returns zero.</p>
+
+<p>In particular, this function is not intended for generating the full range
+of unsigned integer values $[0,2^32-1]$ [0,2^32-1]. Instead choose a
+generator with the maximal integer range and zero minimum value, such as
+gsl_rng_ranlxd1, gsl_rng_mt19937 or gsl_rng_taus, and sample it directly
+using gsl_rng_get. The range of each generator can be found using the
+auxiliary functions described in the next section.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>n</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>shape</span>
+      
+      
+        <span class='type'>(<tt>Array or Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(optional) shape for result NArray</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer or UInt32/UInt64</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns random number</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2429
+2430
+2431
+2432
+2433
+2434
+2435
+2436
+2437
+2438
+2439
+2440
+2441
+2442
+2443
+2444
+2445
+2446
+2447
+2448
+2449
+2450
+2451
+2452
+2453
+2454
+2455
+2456
+2457
+2458
+2459
+2460
+2461
+2462
+2463
+2464</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2429</span>
+
+static VALUE
+rng_uniform_int(int argc, VALUE *argv, VALUE self)
+{
+    VALUE vshape, vna, vn;
+    size_t i, size;
+    int nargs;
+    unsigned long n;
+    u_int32_t *p32;
+    u_int64_t *p64;
+    gsl_rng *r;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, r);
+
+    nargs = rb_scan_args(argc, argv, &quot;11&quot;, &amp;vn, &amp;vshape);
+    n = NUM2ULONG(vn);
+    if (nargs == 1) {
+        return ULONG2NUM(gsl_rng_uniform_int(r, n));
+    } else {
+        if (n &gt; 4294967295ul) {
+            vna = create_new_narray(numo_cUInt64,vshape);
+            p64 = (u_int64_t*)na_get_pointer_for_write(vna);
+            size = RNARRAY_SIZE(vna);
+            for (i=0; i&lt;size; i++) {
+                p64[i] = (u_int64_t)gsl_rng_uniform_int(r, n);
+            }
+        } else {
+            vna = create_new_narray(numo_cUInt32,vshape);
+            p32 = (u_int32_t*)na_get_pointer_for_write(vna);
+            size = RNARRAY_SIZE(vna);
+            for (i=0; i&lt;size; i++) {
+                p32[i] = (u_int32_t)gsl_rng_uniform_int(r, n);
+            }
+        }
+        return vna;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="uniform_pos-instance_method">
+  
+    #<strong>uniform_pos</strong>([shape])  &#x21d2; <tt>Float or DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns a positive double precision floating point number
+uniformly distributed in the range (0,1), excluding both 0.0 and 1.0. The
+number is obtained by sampling the generator with the algorithm of
+gsl_rng_uniform until a non-zero value is obtained. You can use this
+function if you need to avoid a singularity at 0.0.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>shape</span>
+      
+      
+        <span class='type'>(<tt>Array or Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(optional) shape for result NArray</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float or DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns random number</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2376
+2377
+2378
+2379
+2380
+2381
+2382
+2383
+2384
+2385
+2386
+2387
+2388
+2389
+2390
+2391
+2392
+2393
+2394
+2395
+2396
+2397</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/rng/gsl_rng.c', line 2376</span>
+
+static VALUE
+rng_uniform_pos(int argc, VALUE *argv, VALUE self)
+{
+    VALUE vshape, vna;
+    size_t i, size;
+    double *ptr;
+    gsl_rng *r;
+
+    TypedData_Get_Struct(self, gsl_rng, &amp;rng_data_type, r);
+
+    if (rb_scan_args(argc, argv, &quot;01&quot;, &amp;vshape) == 0) {
+        return rb_float_new(gsl_rng_uniform_pos(r));
+    } else {
+        vna = create_new_narray(cDF,vshape);
+        ptr = (double*)na_get_pointer_for_write(vna);
+        size = RNARRAY_SIZE(vna);
+        for (i=0; i&lt;size; i++) {
+            ptr[i] = gsl_rng_uniform_pos(r);
+        }
+        return vna;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Aug  5 16:54:42 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.9 (ruby-2.4.1).
+</div>
+
+    </div>
+  </body>
+</html>

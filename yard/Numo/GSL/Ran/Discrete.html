@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Numo::GSL::Ran::Discrete
+  
+    &mdash; Documentation by YARD 0.9.9
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Numo::GSL::Ran::Discrete";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../x_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Numo.html" title="Numo (module)">Numo</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../GSL.html" title="Numo::GSL (module)">GSL</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Ran.html" title="Numo::GSL::Ran (module)">Ran</a></span></span>
+     &raquo; 
+    <span class="title">Discrete</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Numo::GSL::Ran::Discrete
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Numo::GSL::Ran::Discrete</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>ext/numo/gsl/ran/gsl_ran.c</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(K)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>allocate instance of Discrete class.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pdf-instance_method" title="#pdf (instance method)">#<strong>pdf</strong>(g)  &#x21d2; DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the probability <a href="k">P</a> of observing the variable k.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new-class_method">
+  
+    .<strong>new</strong>(K)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>allocate instance of Discrete class.</p>
+
+<p>This function returns a pointer to a structure that contains the lookup
+table for the discrete random number generator. The array P[] contains the
+probabilities of the discrete events; these array elements must all be
+positive, but they needn&#39;t add up to one (so you can think of them more
+generally as “weights&#39;&#39;)—the preprocessor will normalize
+appropriately. This return value is used as an argument for the
+gsl_ran_discrete function below.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>K</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 77</span>
+
+static VALUE
+ran_discrete_s_new(VALUE self, VALUE v1)
+{
+    narray_t *na;
+    double *d;
+    gsl_ran_discrete_t *w;
+
+    v1 = rb_funcall(cDF,rb_intern(&quot;cast&quot;),1,v1);
+    GetNArray(v1,na);
+    d = (double*)na_get_pointer_for_read(v1);
+    w = gsl_ran_discrete_preproc(na-&gt;size, d);
+    RB_GC_GUARD(v1);
+    if (!w) {
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    }
+    return TypedData_Wrap_Struct(cDiscrete, &amp;ran_discrete_data_type, (void*)w);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="pdf-instance_method">
+  
+    #<strong>pdf</strong>(g)  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the probability <a href="k">P</a> of observing the variable k.
+Since <a href="k">P</a> is not stored as part of the lookup table, it must
+be recomputed; this computation takes O(K), so if K is large and you care
+about the original array <a href="k">P</a> used to create the lookup table,
+then you should just keep this original array <a href="k">P</a> around.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>g</span>
+      
+      
+        <span class='type'>(<tt>UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>result</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/ran/gsl_ran.c', line 131</span>
+
+static VALUE
+ran_discrete_pdf(VALUE self, VALUE v1)
+{
+    gsl_ran_discrete_t *w;
+    ndfunc_arg_in_t ain[1] = {{cSZ,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_ran_discrete_pdf, STRIDE_LOOP|NDF_EXTRACT, 1,1, ain,aout};
+
+    TypedData_Get_Struct(self, gsl_ran_discrete_t, &amp;ran_discrete_data_type, w);
+
+    return na_ndloop3(&amp;ndf, w, 1, v1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Aug  5 16:54:47 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.9 (ruby-2.4.1).
+</div>
+
+    </div>
+  </body>
+</html>

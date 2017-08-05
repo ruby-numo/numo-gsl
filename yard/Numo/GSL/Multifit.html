@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Numo::GSL::Multifit
+  
+    &mdash; Documentation by YARD 0.9.9
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Numo::GSL::Multifit";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../x_index.html">Index (M)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Numo.html" title="Numo (module)">Numo</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../GSL.html" title="Numo::GSL (module)">GSL</a></span></span>
+     &raquo; 
+    <span class="title">Multifit</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Numo::GSL::Multifit
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>ext/numo/gsl/multifit/gsl_multifit.c</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Multifit/LinearWorkspace.html" title="Numo::GSL::Multifit::LinearWorkspace (class)">LinearWorkspace</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#linear-class_method" title="linear (class method)">.<strong>linear</strong>(X, y)  &#x21d2; GSL::Multifit::LinearResult </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the best-fit parameters c of the model y = X c for
+the observations y and the matrix of predictor variables X, using the
+preallocated workspace provided in work.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#linear_est-class_method" title="linear_est (class method)">.<strong>linear_est</strong>(x, c, cov)  &#x21d2; [DFloat,DFloat] </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function uses the best-fit multilinear regression coefficients c and
+their covariance matrix cov to compute the fitted function value y and its
+standard deviation y_err for the model y = x.c at the point x.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#linear_residuals-class_method" title="linear_residuals (class method)">.<strong>linear_residuals</strong>(X, y, c)  &#x21d2; DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the vector of residuals r = y - X c for the
+observations y, coefficients c and matrix of predictor variables X.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wlinear-class_method" title="wlinear (class method)">.<strong>wlinear</strong>(X, w, y)  &#x21d2; GSL::Multifit::LinearResult </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the best-fit parameters c of the weighted model y =
+X c for the observations y with weights w and the matrix of predictor
+variables X, using the preallocated workspace provided in work.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="linear-class_method">
+  
+    .<strong>linear</strong>(X, y)  &#x21d2; <tt>GSL::Multifit::LinearResult</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the best-fit parameters c of the model y = X c for
+the observations y and the matrix of predictor variables X, using the
+preallocated workspace provided in work. The p-by-p variance-covariance
+matrix of the model parameters cov is set to sigma^2 (X^T X)^-1, where
+sigma is the standard deviation of the fit residuals. The sum of squares of
+the residuals from the best-fit, chi^2, is returned in chisq. If the
+coefficient of determination is desired, it can be computed from the
+expression R^2 = 1 - chi^2 / TSS, where the total sum of squares (TSS) of
+the observations y may be computed from gsl_stats_tss.</p>
+
+<p>The best-fit is found by singular value decomposition of the matrix X using
+the modified Golub-Reinsch SVD algorithm, with column scaling to improve
+the accuracy of the singular values. Any components which have zero
+singular value (to machine precision) are discarded from the fit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>X</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input matrix) predictor variables</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input vector) observation</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>GSL::Multifit::LinearResult</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>result Struct with members: c, cov, chisq.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/multifit/gsl_multifit.c', line 133</span>
+
+static VALUE
+multifit_linear_workspace_s_linear(VALUE mod, VALUE v1, VALUE v2)
+{
+    size_t c_shape[1], cov_shape[2];
+    ndfunc_arg_in_t ain[2] = {{cDF,2},{cDF,1}};
+    ndfunc_arg_out_t aout[3] = {{cDF,1,c_shape},{cDF,2,cov_shape},{cDF,0}};
+    ndfunc_t ndf = { iter_multifit_linear_workspace_s_linear, NO_LOOP|NDF_EXTRACT,
+                     2, 3, ain, aout };
+    VALUE vws, r, result;
+    narray_t *X, *y;
+    size_t n, p;
+    gsl_multifit_linear_workspace *ws;
+
+    GetNArray(v1,X);
+    GetNArray(v2,y);
+    CHECK_GE_2D(X);
+    CHECK_GE_1D(y);
+    n = MAT_SIZE1(X);
+    p = MAT_SIZE2(X);
+    CHECK_SIZE_EQ(n,VEC_SIZE(y),&quot;y size does not match X column size&quot;);
+
+    c_shape[0] = cov_shape[0] = cov_shape[1] = p;
+
+    ws = gsl_multifit_linear_alloc(n,p);
+    if (!ws)
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    vws = TypedData_Wrap_Struct(cLinearWorkspace, &amp;multifit_linear_workspace_data_type, (void*)ws);
+
+    r = na_ndloop3(&amp;ndf, ws, 2, v1, v2);
+
+    result = rb_class_new_instance(3, RARRAY_PTR(r), cLinearResult);
+
+    RB_GC_GUARD(vws);
+    RB_GC_GUARD(r);
+    return result;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="linear_est-class_method">
+  
+    .<strong>linear_est</strong>(x, c, cov)  &#x21d2; <tt>[DFloat,DFloat]</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function uses the best-fit multilinear regression coefficients c and
+their covariance matrix cov to compute the fitted function value y and its
+standard deviation y_err for the model y = x.c at the point x.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input vector) observations</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>c</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input vector) solusions</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>cov</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input matrix) covariance</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>[DFloat,DFloat]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>array of (y, y_err).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/multifit/gsl_multifit.c', line 286</span>
+
+static VALUE
+multifit_s_linear_est(VALUE mod, VALUE v1, VALUE v2, VALUE v3)
+{
+    ndfunc_arg_in_t ain[3] = {{cDF,1},{cDF,1},{cDF,2}};
+    ndfunc_arg_out_t aout[2] = {{cDF,0},{cDF,0}};
+    ndfunc_t ndf = { iter_multifit_s_linear_est, NO_LOOP|NDF_EXTRACT,
+                     3, 2, ain, aout };
+    narray_t *x, *c, *cov;
+
+    GetNArray(v1,x);
+    GetNArray(v2,c);
+    GetNArray(v3,cov);
+    CHECK_GE_1D(x);
+    CHECK_GE_1D(c);
+    CHECK_GE_2D(cov);
+    CHECK_SIZE_EQ(VEC_SIZE(x),VEC_SIZE(c),&quot;x size does not match c size&quot;);
+    CHECK_SIZE_EQ(MAT_SIZE1(cov),MAT_SIZE2(cov),&quot;cov is not square matrix&quot;);
+    CHECK_SIZE_EQ(VEC_SIZE(c),MAT_SIZE1(cov),&quot;c size does not match cov row size&quot;);
+    return na_ndloop(&amp;ndf, 3, v1, v2, v3);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="linear_residuals-class_method">
+  
+    .<strong>linear_residuals</strong>(X, y, c)  &#x21d2; <tt>DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the vector of residuals r = y - X c for the
+observations y, coefficients c and matrix of predictor variables X.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>X</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input matrix) design matrix</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input vector) rhs vector</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>c</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input vector) fit coefficients</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns r</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/multifit/gsl_multifit.c', line 337</span>
+
+static VALUE
+multifit_s_linear_residuals(VALUE mod, VALUE v1, VALUE v2, VALUE v3)
+{
+    size_t shape[1];
+    ndfunc_arg_in_t ain[3] = {{cDF,2},{cDF,1},{cDF,1}};
+    ndfunc_arg_out_t aout[1] = {{cDF,1,shape}};
+    ndfunc_t ndf = { iter_multifit_s_linear_residuals, NO_LOOP|NDF_EXTRACT,
+                     3, 1, ain, aout };
+    narray_t *x, *y, *c;
+
+    GetNArray(v1,x);
+    GetNArray(v2,y);
+    GetNArray(v3,c);
+    CHECK_GE_2D(x);
+    CHECK_GE_1D(y);
+    CHECK_GE_1D(c);
+    CHECK_SIZE_EQ(MAT_SIZE1(x),VEC_SIZE(y),&quot;y size does not match x row size&quot;);
+    CHECK_SIZE_EQ(MAT_SIZE2(x),VEC_SIZE(c),&quot;c size does not match x column size&quot;);
+    shape[0] = VEC_SIZE(y);
+    return na_ndloop(&amp;ndf, 3, v1, v2, v3);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="wlinear-class_method">
+  
+    .<strong>wlinear</strong>(X, w, y)  &#x21d2; <tt>GSL::Multifit::LinearResult</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the best-fit parameters c of the weighted model y =
+X c for the observations y with weights w and the matrix of predictor
+variables X, using the preallocated workspace provided in work. The p-by-p
+covariance matrix of the model parameters cov is computed as (X^T W
+X)^-1. The weighted sum of squares of the residuals from the best-fit,
+chi^2, is returned in chisq. If the coefficient of determination is
+desired, it can be computed from the expression R^2 = 1 - chi^2 / WTSS,
+where the weighted total sum of squares (WTSS) of the observations y may be
+computed from gsl_stats_wtss.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>X</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input matrix) predictor variables</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>w</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input vector) observations</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(input vector) weights</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>GSL::Multifit::LinearResult</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>result Struct with members: c, cov, chisq.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/multifit/gsl_multifit.c', line 212</span>
+
+static VALUE
+multifit_linear_workspace_s_wlinear(VALUE mod, VALUE v1, VALUE v2, VALUE v3)
+{
+    size_t c_shape[1], cov_shape[2];
+    ndfunc_arg_in_t ain[3] = {{cDF,2},{cDF,1},{cDF,1}};
+    ndfunc_arg_out_t aout[3] = {{cDF,1,c_shape},{cDF,2,cov_shape},{cDF,0}};
+    ndfunc_t ndf = { iter_multifit_linear_workspace_s_wlinear, NO_LOOP|NDF_EXTRACT,
+                     3, 3, ain, aout };
+    VALUE vws, r, result;
+    narray_t *X, *y, *w;
+    size_t n, p;
+    gsl_multifit_linear_workspace *ws;
+
+    GetNArray(v1,X);
+    GetNArray(v2,y);
+    GetNArray(v3,w);
+    CHECK_GE_2D(X);
+    CHECK_GE_1D(y);
+    CHECK_GE_1D(w);
+    n = MAT_SIZE1(X);
+    p = MAT_SIZE2(X);
+    CHECK_SIZE_EQ(n,VEC_SIZE(y),&quot;y size does not match X column size&quot;);
+    CHECK_SIZE_EQ(n,VEC_SIZE(w),&quot;w size does not match X column size&quot;);
+
+    c_shape[0] = cov_shape[0] = cov_shape[1] = p;
+
+    ws = gsl_multifit_linear_alloc(n,p);
+    if (!ws)
+        rb_raise(rb_eNoMemError,&quot;fail to allocate struct&quot;);
+    vws = TypedData_Wrap_Struct(cLinearWorkspace, &amp;multifit_linear_workspace_data_type, (void*)ws);
+
+    r = na_ndloop3(&amp;ndf, ws, 3, v1, v2, v3);
+
+    result = rb_class_new_instance(3, RARRAY_PTR(r), cLinearResult);
+
+    RB_GC_GUARD(vws);
+    RB_GC_GUARD(r);
+    return result;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Aug  5 16:54:32 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.9 (ruby-2.4.1).
+</div>
+
+    </div>
+  </body>
+</html>

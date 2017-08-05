@@ -1,0 +1,5871 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Numo::GSL::Pdf
+  
+    &mdash; Documentation by YARD 0.9.9
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Numo::GSL::Pdf";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../x_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Numo.html" title="Numo (module)">Numo</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../GSL.html" title="Numo::GSL (module)">GSL</a></span></span>
+     &raquo; 
+    <span class="title">Pdf</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Numo::GSL::Pdf
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>ext/numo/gsl/pdf/gsl_pdf.c</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bernoulli-class_method" title="bernoulli (class method)">.<strong>bernoulli</strong>(k, p)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability p(k) of obtaining k from a Bernoulli
+distribution with probability parameter p, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#beta-class_method" title="beta (class method)">.<strong>beta</strong>(x, a, b)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a beta
+distribution with parameters a and b, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#binomial-class_method" title="binomial (class method)">.<strong>binomial</strong>(k, p, n)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability p(k) of obtaining k from a binomial
+distribution with parameters p and n, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bivariate_gaussian-class_method" title="bivariate_gaussian (class method)">.<strong>bivariate_gaussian</strong>(x, y, sigma_x, sigma_y, rho)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x,y) at (x,y) for a
+bivariate Gaussian distribution with standard deviations sigma_x, sigma_y
+and correlation coefficient rho, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cauchy-class_method" title="cauchy (class method)">.<strong>cauchy</strong>(x, a)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Cauchy
+distribution with scale parameter a, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chisq-class_method" title="chisq (class method)">.<strong>chisq</strong>(x, nu)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a chi-squared
+distribution with nu degrees of freedom, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dirichlet-class_method" title="dirichlet (class method)">.<strong>dirichlet</strong>(alpha[], theta[], axis: nil, keepdims: false)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density $p(theta_1, ldots ,
+theta_K)$ p(theta_1, … , theta_K) at <a href="K">theta</a> for a Dirichlet
+distribution with parameters <a href="K">alpha</a>, using the formula given
+above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dirichlet_ln-class_method" title="dirichlet_ln (class method)">.<strong>dirichlet_ln</strong>(alpha[], theta[], axis: nil, keepdims: false)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the logarithm of the probability density $p(theta_1,
+ldots , theta_K)$ p(theta_1, … , theta_K) for a Dirichlet distribution with
+parameters <a href="K">alpha</a>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exponential-class_method" title="exponential (class method)">.<strong>exponential</strong>(x, mu)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for an exponential
+distribution with mean mu, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exppow-class_method" title="exppow (class method)">.<strong>exppow</strong>(x, a, b)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for an exponential
+power distribution with scale parameter a and exponent b, using the formula
+given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fdist-class_method" title="fdist (class method)">.<strong>fdist</strong>(x, nu1, nu2)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for an
+F-distribution with nu1 and nu2 degrees of freedom, using the formula given
+above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flat-class_method" title="flat (class method)">.<strong>flat</strong>(x, a, b)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a uniform
+distribution from a to b, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gamma-class_method" title="gamma (class method)">.<strong>gamma</strong>(x, a, b)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a gamma
+distribution with parameters a and b, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gaussian-class_method" title="gaussian (class method)">.<strong>gaussian</strong>(x, sigma)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Gaussian
+distribution with standard deviation sigma, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gaussian_tail-class_method" title="gaussian_tail (class method)">.<strong>gaussian_tail</strong>(x, a, sigma)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Gaussian
+tail distribution with standard deviation sigma and lower limit a, using
+the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#geometric-class_method" title="geometric (class method)">.<strong>geometric</strong>(k, p)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability p(k) of obtaining k from a geometric
+distribution with probability parameter p, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gumbel1-class_method" title="gumbel1 (class method)">.<strong>gumbel1</strong>(x, a, b)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Type-1
+Gumbel distribution with parameters a and b, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gumbel2-class_method" title="gumbel2 (class method)">.<strong>gumbel2</strong>(x, a, b)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Type-2
+Gumbel distribution with parameters a and b, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hypergeometric-class_method" title="hypergeometric (class method)">.<strong>hypergeometric</strong>(k, n1, n2, t)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability p(k) of obtaining k from a
+hypergeometric distribution with parameters n1, n2, t, using the formula
+given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#landau-class_method" title="landau (class method)">.<strong>landau</strong>(x)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for the Landau
+distribution using an approximation to the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#laplace-class_method" title="laplace (class method)">.<strong>laplace</strong>(x, a)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Laplace
+distribution with width a, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#logarithmic-class_method" title="logarithmic (class method)">.<strong>logarithmic</strong>(k, p)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability p(k) of obtaining k from a
+logarithmic distribution with probability parameter p, using the formula
+given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#logistic-class_method" title="logistic (class method)">.<strong>logistic</strong>(x, a)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a logistic
+distribution with scale parameter a, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lognormal-class_method" title="lognormal (class method)">.<strong>lognormal</strong>(x, zeta, sigma)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a lognormal
+distribution with parameters zeta and sigma, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#multinomial-class_method" title="multinomial (class method)">.<strong>multinomial</strong>(p[], n[], [axis0,axis1,..])  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability $P(n_1, n_2, ldots, n_K)$ P(n_1,
+n_2, …, n_K) of sampling <a href="K">n</a> from a multinomial distribution
+with parameters <a href="K">p</a>, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#multinomial_ln-class_method" title="multinomial_ln (class method)">.<strong>multinomial_ln</strong>(p[], n[], [axis0,axis1,..])  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns the logarithm of the probability for the multinomial
+distribution $P(n_1, n_2, ldots, n_K)$ P(n_1, n_2, …, n_K) with parameters
+<a href="K">p</a>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#negative_binomial-class_method" title="negative_binomial (class method)">.<strong>negative_binomial</strong>(k, p, n)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability p(k) of obtaining k from a negative
+binomial distribution with parameters p and n, using the formula given
+above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pareto-class_method" title="pareto (class method)">.<strong>pareto</strong>(x, a, b)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Pareto
+distribution with exponent a and scale b, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pascal-class_method" title="pascal (class method)">.<strong>pascal</strong>(k, p, n)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability p(k) of obtaining k from a Pascal
+distribution with parameters p and n, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#poisson-class_method" title="poisson (class method)">.<strong>poisson</strong>(k, mu)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability p(k) of obtaining k from a Poisson
+distribution with mean mu, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rayleigh-class_method" title="rayleigh (class method)">.<strong>rayleigh</strong>(x, sigma)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Rayleigh
+distribution with scale parameter sigma, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rayleigh_tail-class_method" title="rayleigh_tail (class method)">.<strong>rayleigh_tail</strong>(x, a, sigma)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Rayleigh
+tail distribution with scale parameter sigma and lower limit a, using the
+formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tdist-class_method" title="tdist (class method)">.<strong>tdist</strong>(x, nu)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a
+t-distribution with nu degrees of freedom, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ugaussian-class_method" title="ugaussian (class method)">.<strong>ugaussian</strong>(x)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>These functions compute results for the unit Gaussian distribution.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ugaussian_tail-class_method" title="ugaussian_tail (class method)">.<strong>ugaussian_tail</strong>(x, a)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>These functions compute results for the tail of a unit Gaussian
+distribution.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#weibull-class_method" title="weibull (class method)">.<strong>weibull</strong>(x, a, b)  &#x21d2; Numo::DFloat </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function computes the probability density p(x) at x for a Weibull
+distribution with scale a and exponent b, using the formula given above.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="bernoulli-class_method">
+  
+    .<strong>bernoulli</strong>(k, p)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability p(k) of obtaining k from a Bernoulli
+distribution with probability parameter p, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>k</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>p</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1662
+1663
+1664
+1665
+1666
+1667
+1668
+1669
+1670
+1671
+1672
+1673
+1674
+1675
+1676
+1677
+1678
+1679
+1680
+1681</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1662</span>
+
+static VALUE
+pdf_s_bernoulli(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cUI,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_bernoulli,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //p
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="beta-class_method">
+  
+    .<strong>beta</strong>(x, a, b)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a beta
+distribution with parameters a and b, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1137
+1138
+1139
+1140
+1141
+1142
+1143
+1144
+1145
+1146
+1147
+1148
+1149
+1150
+1151
+1152
+1153
+1154
+1155
+1156
+1157
+1158
+1159
+1160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1137</span>
+
+static VALUE
+pdf_s_beta(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_beta,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //b
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="binomial-class_method">
+  
+    .<strong>binomial</strong>(k, p, n)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability p(k) of obtaining k from a binomial
+distribution with parameters p and n, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>k</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>p</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1723
+1724
+1725
+1726
+1727
+1728
+1729
+1730
+1731
+1732
+1733
+1734
+1735
+1736
+1737
+1738
+1739
+1740
+1741
+1742
+1743
+1744
+1745
+1746</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1723</span>
+
+static VALUE
+pdf_s_binomial(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    unsigned int c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cUI,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_binomial,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //p
+    c2 = NUM2UINT(v2); opt[1] = &amp;c2; //n
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bivariate_gaussian-class_method">
+  
+    .<strong>bivariate_gaussian</strong>(x, y, sigma_x, sigma_y, rho)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x,y) at (x,y) for a
+bivariate Gaussian distribution with standard deviations sigma_x, sigma_y
+and correlation coefficient rho, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>sigma_x</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>sigma_y</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>rho</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 302</span>
+
+static VALUE
+pdf_s_bivariate_gaussian(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3,VALUE v4)
+{
+    
+    double c2;
+    double c3;
+    double c4;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[2] = {{cDF,0},{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_bivariate_gaussian,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    2,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[3];
+    
+    c2 = NUM2DBL(v2); opt[0] = &amp;c2; //sigma_x
+    c3 = NUM2DBL(v3); opt[1] = &amp;c3; //sigma_y
+    c4 = NUM2DBL(v4); opt[2] = &amp;c4; //rho
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,2,v0,v1); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cauchy-class_method">
+  
+    .<strong>cauchy</strong>(x, a)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Cauchy
+distribution with scale parameter a, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 538</span>
+
+static VALUE
+pdf_s_cauchy(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_cauchy,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //a
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chisq-class_method">
+  
+    .<strong>chisq</strong>(x, nu)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a chi-squared
+distribution with nu degrees of freedom, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nu</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+956
+957
+958
+959
+960
+961
+962
+963
+964
+965
+966
+967
+968
+969
+970
+971
+972
+973
+974
+975</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 956</span>
+
+static VALUE
+pdf_s_chisq(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_chisq,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //nu
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dirichlet-class_method">
+  
+    .<strong>dirichlet</strong>(alpha[], theta[], axis: nil, keepdims: false)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density $p(theta_1, ldots ,
+theta_K)$ p(theta_1, … , theta_K) at <a href="K">theta</a> for a Dirichlet
+distribution with parameters <a href="K">alpha</a>, using the formula given
+above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>alpha[]</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>theta[]</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>axis</span>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>Array</tt>, <tt>Range</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(keyword) Axes along which the operation is performed.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>keepdims</span>
+      
+      
+        <span class='type'>(<tt>TrueClass</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(keyword) If true, the reduced axes are left in the result array as
+dimensions with size one.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1508
+1509
+1510
+1511
+1512
+1513
+1514
+1515
+1516
+1517
+1518
+1519
+1520
+1521
+1522
+1523</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1508</span>
+
+static VALUE
+pdf_s_dirichlet(int argc, VALUE *argv, VALUE mod)
+{
+    VALUE reduce;
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{sym_reduce,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = { iter_pdf_s_dirichlet, NDF_HAS_LOOP|NDF_FLAT_REDUCE|NDF_EXTRACT,
+                     3, 1, ain, aout };
+
+    if (argc&lt;2) {
+        rb_raise(rb_eArgError,&quot;wrong number of argument (%d for &gt;=2)&quot;,argc);
+    }
+
+    reduce = nary_reduce_dimension(argc-2, argv+2, 2, argv, &amp;ndf, 0);
+    return na_ndloop(&amp;ndf, 3, argv[0], argv[1], reduce);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dirichlet_ln-class_method">
+  
+    .<strong>dirichlet_ln</strong>(alpha[], theta[], axis: nil, keepdims: false)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the logarithm of the probability density $p(theta_1,
+ldots , theta_K)$ p(theta_1, … , theta_K) for a Dirichlet distribution with
+parameters <a href="K">alpha</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>alpha[]</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>theta[]</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>axis</span>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>Array</tt>, <tt>Range</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(keyword) Axes along which the operation is performed.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>keepdims</span>
+      
+      
+        <span class='type'>(<tt>TrueClass</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(keyword) If true, the reduced axes are left in the result array as
+dimensions with size one.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1556
+1557
+1558
+1559
+1560
+1561
+1562
+1563
+1564
+1565
+1566
+1567
+1568
+1569
+1570
+1571</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1556</span>
+
+static VALUE
+pdf_s_dirichlet_ln(int argc, VALUE *argv, VALUE mod)
+{
+    VALUE reduce;
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{cDF,0},{sym_reduce,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = { iter_pdf_s_dirichlet_ln, NDF_HAS_LOOP|NDF_FLAT_REDUCE|NDF_EXTRACT,
+                     3, 1, ain, aout };
+
+    if (argc&lt;2) {
+        rb_raise(rb_eArgError,&quot;wrong number of argument (%d for &gt;=2)&quot;,argc);
+    }
+
+    reduce = nary_reduce_dimension(argc-2, argv+2, 2, argv, &amp;ndf, 0);
+    return na_ndloop(&amp;ndf, 3, argv[0], argv[1], reduce);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exponential-class_method">
+  
+    .<strong>exponential</strong>(x, mu)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for an exponential
+distribution with mean mu, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>mu</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 363</span>
+
+static VALUE
+pdf_s_exponential(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_exponential,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //mu
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exppow-class_method">
+  
+    .<strong>exppow</strong>(x, a, b)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for an exponential
+power distribution with scale parameter a and exponent b, using the formula
+given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 479</span>
+
+static VALUE
+pdf_s_exppow(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_exppow,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //b
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fdist-class_method">
+  
+    .<strong>fdist</strong>(x, nu1, nu2)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for an
+F-distribution with nu1 and nu2 degrees of freedom, using the formula given
+above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nu1</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nu2</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1017
+1018
+1019
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027
+1028
+1029
+1030
+1031
+1032
+1033
+1034
+1035
+1036
+1037
+1038
+1039
+1040</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1017</span>
+
+static VALUE
+pdf_s_fdist(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_fdist,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //nu1
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //nu2
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flat-class_method">
+  
+    .<strong>flat</strong>(x, a, b)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a uniform
+distribution from a to b, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 832</span>
+
+static VALUE
+pdf_s_flat(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_flat,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //b
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gamma-class_method">
+  
+    .<strong>gamma</strong>(x, a, b)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a gamma
+distribution with parameters a and b, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 767</span>
+
+static VALUE
+pdf_s_gamma(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_gamma,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //b
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gaussian-class_method">
+  
+    .<strong>gaussian</strong>(x, sigma)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Gaussian
+distribution with standard deviation sigma, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>sigma</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 66</span>
+
+static VALUE
+pdf_s_gaussian(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_gaussian,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //sigma
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gaussian_tail-class_method">
+  
+    .<strong>gaussian_tail</strong>(x, a, sigma)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Gaussian
+tail distribution with standard deviation sigma and lower limit a, using
+the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>sigma</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 175</span>
+
+static VALUE
+pdf_s_gaussian_tail(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_gaussian_tail,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //sigma
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="geometric-class_method">
+  
+    .<strong>geometric</strong>(k, p)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability p(k) of obtaining k from a geometric
+distribution with probability parameter p, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>k</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>p</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2006
+2007
+2008
+2009
+2010
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+2024
+2025</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 2006</span>
+
+static VALUE
+pdf_s_geometric(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cUI,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_geometric,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //p
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gumbel1-class_method">
+  
+    .<strong>gumbel1</strong>(x, a, b)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Type-1
+Gumbel distribution with parameters a and b, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1387
+1388
+1389
+1390
+1391
+1392
+1393
+1394
+1395
+1396
+1397
+1398
+1399
+1400
+1401
+1402
+1403
+1404
+1405
+1406
+1407
+1408
+1409
+1410</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1387</span>
+
+static VALUE
+pdf_s_gumbel1(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_gumbel1,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //b
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gumbel2-class_method">
+  
+    .<strong>gumbel2</strong>(x, a, b)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Type-2
+Gumbel distribution with parameters a and b, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1452
+1453
+1454
+1455
+1456
+1457
+1458
+1459
+1460
+1461
+1462
+1463
+1464
+1465
+1466
+1467
+1468
+1469
+1470
+1471
+1472
+1473
+1474
+1475</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1452</span>
+
+static VALUE
+pdf_s_gumbel2(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_gumbel2,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //b
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hypergeometric-class_method">
+  
+    .<strong>hypergeometric</strong>(k, n1, n2, t)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability p(k) of obtaining k from a
+hypergeometric distribution with parameters n1, n2, t, using the formula
+given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>k</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n1</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n2</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>t</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2070
+2071
+2072
+2073
+2074
+2075
+2076
+2077
+2078
+2079
+2080
+2081
+2082
+2083
+2084
+2085
+2086
+2087
+2088
+2089
+2090
+2091
+2092
+2093
+2094
+2095</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 2070</span>
+
+static VALUE
+pdf_s_hypergeometric(VALUE mod,VALUE v0,VALUE v1,VALUE v2,VALUE v3)
+{
+    
+    unsigned int c1;
+    unsigned int c2;
+    unsigned int c3;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cUI,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_hypergeometric,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[3];
+    
+    c1 = NUM2UINT(v1); opt[0] = &amp;c1; //n1
+    c2 = NUM2UINT(v2); opt[1] = &amp;c2; //n2
+    c3 = NUM2UINT(v3); opt[2] = &amp;c3; //t
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="landau-class_method">
+  
+    .<strong>landau</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for the Landau
+distribution using an approximation to the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 709</span>
+
+static VALUE
+pdf_s_landau(VALUE mod,VALUE v0)
+{
+    
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_landau,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    
+#line 52 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop(&amp;ndf,1,v0); 
+#line 54 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="laplace-class_method">
+  
+    .<strong>laplace</strong>(x, a)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Laplace
+distribution with width a, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 418</span>
+
+static VALUE
+pdf_s_laplace(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_laplace,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //a
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="logarithmic-class_method">
+  
+    .<strong>logarithmic</strong>(k, p)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability p(k) of obtaining k from a
+logarithmic distribution with probability parameter p, using the formula
+given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>k</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>p</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2131
+2132
+2133
+2134
+2135
+2136
+2137
+2138
+2139
+2140
+2141
+2142
+2143
+2144
+2145
+2146
+2147
+2148
+2149
+2150</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 2131</span>
+
+static VALUE
+pdf_s_logarithmic(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cUI,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_logarithmic,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //p
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="logistic-class_method">
+  
+    .<strong>logistic</strong>(x, a)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a logistic
+distribution with scale parameter a, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1196
+1197
+1198
+1199
+1200
+1201
+1202
+1203
+1204
+1205
+1206
+1207
+1208
+1209
+1210
+1211
+1212
+1213
+1214
+1215</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1196</span>
+
+static VALUE
+pdf_s_logistic(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_logistic,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //a
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lognormal-class_method">
+  
+    .<strong>lognormal</strong>(x, zeta, sigma)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a lognormal
+distribution with parameters zeta and sigma, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>zeta</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>sigma</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+897
+898
+899
+900
+901
+902
+903
+904
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 897</span>
+
+static VALUE
+pdf_s_lognormal(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_lognormal,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //zeta
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //sigma
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="multinomial-class_method">
+  
+    .<strong>multinomial</strong>(p[], n[], [axis0,axis1,..])  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability $P(n_1, n_2, ldots, n_K)$ P(n_1,
+n_2, …, n_K) of sampling <a href="K">n</a> from a multinomial distribution
+with parameters <a href="K">p</a>, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>p[]</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n[]</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>axis</span>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>Array</tt>, <tt>Range</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(keyword) Axes along which the operation is performed.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>keepdims</span>
+      
+      
+        <span class='type'>(<tt>TrueClass</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(keyword) If true, the reduced axes are left in the result array as
+dimensions with size one.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1779
+1780
+1781
+1782
+1783
+1784
+1785
+1786
+1787
+1788
+1789
+1790
+1791
+1792
+1793
+1794</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1779</span>
+
+static VALUE
+pdf_s_multinomial(int argc, VALUE *argv, VALUE mod)
+{
+    VALUE reduce;
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{cUI,0},{sym_reduce,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = { iter_pdf_s_multinomial, NDF_HAS_LOOP|NDF_FLAT_REDUCE|NDF_EXTRACT,
+                     3, 1, ain, aout };
+
+    if (argc&lt;2) {
+        rb_raise(rb_eArgError,&quot;wrong number of argument (%d for &gt;=2)&quot;,argc);
+    }
+
+    reduce = nary_reduce_dimension(argc-2, argv+2, 2, argv, &amp;ndf, 0);
+    return na_ndloop(&amp;ndf, 3, argv[0], argv[1], reduce);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="multinomial_ln-class_method">
+  
+    .<strong>multinomial_ln</strong>(p[], n[], [axis0,axis1,..])  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns the logarithm of the probability for the multinomial
+distribution $P(n_1, n_2, ldots, n_K)$ P(n_1, n_2, …, n_K) with parameters
+<a href="K">p</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>p[]</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n[]</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>axis</span>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>Array</tt>, <tt>Range</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(keyword) Axes along which the operation is performed.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>keepdims</span>
+      
+      
+        <span class='type'>(<tt>TrueClass</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(keyword) If true, the reduced axes are left in the result array as
+dimensions with size one.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1825
+1826
+1827
+1828
+1829
+1830
+1831
+1832
+1833
+1834
+1835
+1836
+1837
+1838
+1839
+1840</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1825</span>
+
+static VALUE
+pdf_s_multinomial_ln(int argc, VALUE *argv, VALUE mod)
+{
+    VALUE reduce;
+    ndfunc_arg_in_t ain[3] = {{cDF,0},{cUI,0},{sym_reduce,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = { iter_pdf_s_multinomial_ln, NDF_HAS_LOOP|NDF_FLAT_REDUCE|NDF_EXTRACT,
+                     3, 1, ain, aout };
+
+    if (argc&lt;2) {
+        rb_raise(rb_eArgError,&quot;wrong number of argument (%d for &gt;=2)&quot;,argc);
+    }
+
+    reduce = nary_reduce_dimension(argc-2, argv+2, 2, argv, &amp;ndf, 0);
+    return na_ndloop(&amp;ndf, 3, argv[0], argv[1], reduce);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="negative_binomial-class_method">
+  
+    .<strong>negative_binomial</strong>(k, p, n)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability p(k) of obtaining k from a negative
+binomial distribution with parameters p and n, using the formula given
+above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>k</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>p</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1882
+1883
+1884
+1885
+1886
+1887
+1888
+1889
+1890
+1891
+1892
+1893
+1894
+1895
+1896
+1897
+1898
+1899
+1900
+1901
+1902
+1903
+1904
+1905</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1882</span>
+
+static VALUE
+pdf_s_negative_binomial(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cUI,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_negative_binomial,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //p
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //n
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pareto-class_method">
+  
+    .<strong>pareto</strong>(x, a, b)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Pareto
+distribution with exponent a and scale b, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1257
+1258
+1259
+1260
+1261
+1262
+1263
+1264
+1265
+1266
+1267
+1268
+1269
+1270
+1271
+1272
+1273
+1274
+1275
+1276
+1277
+1278
+1279
+1280</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1257</span>
+
+static VALUE
+pdf_s_pareto(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_pareto,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //b
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pascal-class_method">
+  
+    .<strong>pascal</strong>(k, p, n)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability p(k) of obtaining k from a Pascal
+distribution with parameters p and n, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>k</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>p</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>n</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1947
+1948
+1949
+1950
+1951
+1952
+1953
+1954
+1955
+1956
+1957
+1958
+1959
+1960
+1961
+1962
+1963
+1964
+1965
+1966
+1967
+1968
+1969
+1970</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1947</span>
+
+static VALUE
+pdf_s_pascal(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    unsigned int c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cUI,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_pascal,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //p
+    c2 = NUM2UINT(v2); opt[1] = &amp;c2; //n
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="poisson-class_method">
+  
+    .<strong>poisson</strong>(k, mu)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability p(k) of obtaining k from a Poisson
+distribution with mean mu, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>k</span>
+      
+      
+        <span class='type'>(<tt>Numo::UInt</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>mu</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1607
+1608
+1609
+1610
+1611
+1612
+1613
+1614
+1615
+1616
+1617
+1618
+1619
+1620
+1621
+1622
+1623
+1624
+1625
+1626</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1607</span>
+
+static VALUE
+pdf_s_poisson(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cUI,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_poisson,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //mu
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rayleigh-class_method">
+  
+    .<strong>rayleigh</strong>(x, sigma)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Rayleigh
+distribution with scale parameter sigma, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>sigma</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 593</span>
+
+static VALUE
+pdf_s_rayleigh(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_rayleigh,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //sigma
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rayleigh_tail-class_method">
+  
+    .<strong>rayleigh_tail</strong>(x, a, sigma)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Rayleigh
+tail distribution with scale parameter sigma and lower limit a, using the
+formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>sigma</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 654</span>
+
+static VALUE
+pdf_s_rayleigh_tail(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_rayleigh_tail,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //sigma
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tdist-class_method">
+  
+    .<strong>tdist</strong>(x, nu)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a
+t-distribution with nu degrees of freedom, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nu</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1076
+1077
+1078
+1079
+1080
+1081
+1082
+1083
+1084
+1085
+1086
+1087
+1088
+1089
+1090
+1091
+1092
+1093
+1094
+1095</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1076</span>
+
+static VALUE
+pdf_s_tdist(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_tdist,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //nu
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ugaussian-class_method">
+  
+    .<strong>ugaussian</strong>(x)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>These functions compute results for the unit Gaussian distribution. They
+are equivalent to the functions above with a standard deviation of one,
+sigma = 1.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 117</span>
+
+static VALUE
+pdf_s_ugaussian(VALUE mod,VALUE v0)
+{
+    
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_ugaussian,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    
+#line 52 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop(&amp;ndf,1,v0); 
+#line 54 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ugaussian_tail-class_method">
+  
+    .<strong>ugaussian_tail</strong>(x, a)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>These functions compute results for the tail of a unit Gaussian
+distribution. They are equivalent to the functions above with a standard
+deviation of one, sigma = 1.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 234</span>
+
+static VALUE
+pdf_s_ugaussian_tail(VALUE mod,VALUE v0,VALUE v1)
+{
+    
+    double c1;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_ugaussian_tail,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+    void *opt;
+    c1 = NUM2DBL(v1); opt = &amp;c1; //a
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="weibull-class_method">
+  
+    .<strong>weibull</strong>(x, a, b)  &#x21d2; <tt>Numo::DFloat</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function computes the probability density p(x) at x for a Weibull
+distribution with scale a and exponent b, using the formula given above.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>b</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numo::DFloat</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1322
+1323
+1324
+1325
+1326
+1327
+1328
+1329
+1330
+1331
+1332
+1333
+1334
+1335
+1336
+1337
+1338
+1339
+1340
+1341
+1342
+1343
+1344
+1345</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/numo/gsl/pdf/gsl_pdf.c', line 1322</span>
+
+static VALUE
+pdf_s_weibull(VALUE mod,VALUE v0,VALUE v1,VALUE v2)
+{
+    
+    double c1;
+    double c2;
+    
+
+#line 38 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    ndfunc_arg_in_t ain[1] = {{cDF,0}};
+    ndfunc_arg_out_t aout[1] = {{cDF,0}};
+    ndfunc_t ndf = {iter_pdf_s_weibull,NO_LOOP|NDF_INPLACE|NDF_EXTRACT,
+                    1,1,ain,aout};
+    
+#line 46 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    void *opt[2];
+    
+    c1 = NUM2DBL(v1); opt[0] = &amp;c1; //a
+    c2 = NUM2DBL(v2); opt[1] = &amp;c2; //b
+    
+    
+#line 53 &quot;../gen/tmpl/mod_func_noloop.c&quot;
+    return na_ndloop3(&amp;ndf,opt,1,v0); 
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Aug  5 16:54:32 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.9 (ruby-2.4.1).
+</div>
+
+    </div>
+  </body>
+</html>
