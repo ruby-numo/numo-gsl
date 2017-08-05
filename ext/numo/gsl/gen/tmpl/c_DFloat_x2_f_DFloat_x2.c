@@ -25,7 +25,6 @@ iter_<%=c_func%>(na_loop_t *const lp)
 
 /*
   @overload <%=name%>(<%=args[1..2].map{|a| a[1]}.join(",")%>)
-  @overload <%=name%>(<%=args[1][1]%>)
   @param  [DFloat]   <%=args[1][1]%>
   @param  [DFloat]   <%=args[2][1]%>
   @return [Array]    array of [[DFloat] <%=args[3][1]%>, [DFloat] <%=args[4][1]%>]
