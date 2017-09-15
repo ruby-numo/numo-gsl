@@ -1,6 +1,7 @@
 # GSL interface for Ruby with Numo::NArray
 
-[GitHub site](https://github.com/ruby-numo/gsl)
+[GitHub](https://github.com/ruby-numo/gsl) |
+[RubyGems](https://rubygems.org/gems/numo-gsl)
 
 * [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version >=2.0 and <=2.3.
 * Pre-alpha version under development.
@@ -65,8 +66,6 @@ More modules will be implemented.
 ```shell
 $ gem install numo-gsl
 ```
-
-rubygems is to be created.
 
 # Quick start
 
