@@ -2,7 +2,7 @@
 
 [GitHub site](https://github.com/ruby-numo/gsl)
 
-* [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version >=2.0, <=2.3.
+* [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version >=2.0 and <=2.3.
 * Pre-alpha version under development.
 * Call for help! - writing tests and examples.
 
@@ -58,15 +58,12 @@ More modules will be implemented.
 # Installation
 
 * Install [Numo::NArray](https://github.com/ruby-numo/narray)
-* Install [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - (only tested with version 2.1 and 2.3)
+* Install [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) version between 2.0 and 2.3.
 
 * Install Numo::GSL
 
 ```shell
-$ git clone git://github.com/ruby-numo/gsl.git
-$ cd gsl
-$ rake build
-$ gem install pkg/numo-gsl-*.gem
+$ gem install numo-gsl
 ```
 
 rubygems is to be created.
