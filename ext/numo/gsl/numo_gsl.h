@@ -81,7 +81,7 @@
         gvec = ALLOCA_N(gsl_vector,1);                  \
         gvec->data   = (double*)NDL_PTR(lp,i);          \
         gvec->size   = (lp)->args[i].shape[0];          \
-        gvec->stride = NDL_STP(lp,i)/sizeof(double);    \
+        gvec->stride = NDL_SETP(lp,i)/sizeof(double);   \
         gvec->block  = 0;                               \
         gvec->owner  = 0;                               \
     }
@@ -102,7 +102,7 @@
         assert((lp)->args[i].ndim == 1);                \
         gvec.data   = (double*)NDL_PTR(lp,i);           \
         gvec.size   = (lp)->args[i].shape[0];           \
-        gvec.stride = NDL_STP(lp,i)/sizeof(double);     \
+        gvec.stride = NDL_STEP(lp,i)/sizeof(double);    \
         gvec.block  = 0;                                \
         gvec.owner  = 0;                                \
     }
