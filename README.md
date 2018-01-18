@@ -1,6 +1,6 @@
 # GSL interface for Ruby with Numo::NArray
 
-[GitHub](https://github.com/ruby-numo/gsl) |
+[GitHub](https://github.com/ruby-numo/numo-gsl) |
 [RubyGems](https://rubygems.org/gems/numo-gsl)
 
 * [GSL - GNU Scientific Library](http://www.gnu.org/software/gsl/) - version >=2.0 and <=2.3.
@@ -72,7 +72,7 @@ $ gem install numo-gsl
 If you're familiar with Docker, the following commands should work in most cases:
 
 ```
-git clone https://github.com/ruby-numo/gsl
+git clone https://github.com/ruby-numo/numo-gsl
 cd gsl
 docker build -t numogsl .
 docker run -d -p 8888:8888 numogsl start-notebook.sh --NotebookApp.token=''

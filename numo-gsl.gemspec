@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["masa16.tanaka@gmail.com"]
   spec.description   = %q{Numo::GSL development version.}
   spec.summary       = %q{Numo::GSL development version}
-  spec.homepage      = "https://github.com/ruby-numo/gsl"
+  spec.homepage      = "https://github.com/ruby-numo/numo-gsl"
   spec.license       = "GPL-3"
 
   spec.files         = `git ls-files Gemfile README.md Rakefile ext lib numo-gsl.gemspec spec`.split($/)
