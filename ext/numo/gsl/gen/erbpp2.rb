@@ -1,4 +1,5 @@
 require "erb"
+require_relative "erbln"
 
 class ErbPP
 
@@ -66,8 +67,12 @@ class ErbPP
       Dir.glob(x).each do |dir|
         path = File.join(dir,file)
         if File.exist?(path)
-          erb = ERB.new(File.read(path), safe_level, trim_mode)
-          erb.filename = path
+          if get(:line_number)
+            erb = ERBLN.new(File.read(path), path, trim_mode)
+          else
+            erb = ERB.new(File.read(path), safe_level, trim_mode)
+            erb.filename = path
+          end
           return erb
         end
       end
@@ -109,6 +114,7 @@ end
 class DefLib < ErbPP
   def initialize(parent=nil, **opts, &block)
     opts[:erb_base] ||= 'lib'
+    opts[:include_files] ||= []
     super(parent, **opts, &block)
   end
   def id_assign
@@ -139,8 +145,14 @@ module DeclMethod
   def def_method(m, erb_path=nil, **opts, &block)
     DefMethod.new(self, erb_path||m, name:m, **opts, &block)
   end
+  def undef_method(m)
+    UndefMethod.new(self,name:m)
+  end
   def def_singleton_method(m, erb_path=nil, **opts, &block)
     DefMethod.new(self, erb_path||m, name:m, singleton:true, **opts, &block)
+  end
+  def undef_singleton_method(m)
+    UndefSingletonMethod.new(self,name:m)
   end
   def def_module_function(m, erb_path=nil, **opts, &block)
     DefModuleFunction.new(self, erb_path||m, name:m, **opts, &block)
@@ -216,7 +228,7 @@ class DefMethod < ErbPP
   end
 
   def c_name
-    @opts[:name].gsub(/\?/,"_p").gsub(/\!/,"_bang")
+    @opts[:name].gsub(/\?/,"_p").gsub(/\!/,"_bang").gsub(/=/,"_set")
   end
 
   def op_map
@@ -278,10 +290,36 @@ class UndefAllocFunc < ErbPP
   end
 end
 
+class UndefMethod < ErbPP
+  def init_def
+    "rb_undef_method(#{_mod_var},\"#{name}\");"
+  end
+end
+
+class UndefSingletonMethod < ErbPP
+  def init_def
+    "rb_undef_method(rb_singleton_class(#{_mod_var}),\"#{name}\");"
+  end
+end
+
 class DefConst < ErbPP
   def init_def
     "/*#{desc}*/
     rb_define_const(#{_mod_var},\"#{name}\",#{value});"
+  end
+end
+
+class DefError < ErbPP
+  def initialize(parent, name, sup_var, **opts, &block)
+    super(parent, error_name:name, error_var:"e"+name, super_var:sup_var,
+          **opts, &block)
+  end
+  def result
+    "static VALUE #{error_var};"
+  end
+  def init_def
+    "/*#{description}*/
+    #{error_var} = rb_define_class_under(#{ns_var},\"#{error_name}\",#{super_var});"
   end
 end
 
