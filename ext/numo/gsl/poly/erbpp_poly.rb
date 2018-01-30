@@ -1,5 +1,4 @@
 require_relative "../gen/erbpp_gsl"
-require "erbpp/line_number"
 
 func_list = ErbppGsl.read_func
 ErbppGsl.read_func_pattern(
@@ -28,6 +27,7 @@ class DefPoly < DefGslModule
 end
 
 DefLib.new(nil) do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"

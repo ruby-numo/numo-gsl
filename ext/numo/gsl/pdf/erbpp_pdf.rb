@@ -1,7 +1,8 @@
+require_relative "../gen/erbpp_gsl"
 require_relative "parse_pdf"
-require "erbpp/line_number"
 
 DefLib.new do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"

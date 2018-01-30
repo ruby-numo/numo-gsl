@@ -1,5 +1,5 @@
+require_relative "../gen/erbpp_gsl"
 require_relative "parse_ran"
-require "erbpp/line_number"
 
 ErbppGsl.read_func_pattern(
   [ /^gsl_ran_discrete_(\w+)$/,   disc_list=[]],
@@ -7,6 +7,7 @@ ErbppGsl.read_func_pattern(
 )
 
 DefLib.new do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"

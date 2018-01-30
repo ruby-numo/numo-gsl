@@ -1,5 +1,4 @@
 require_relative "../gen/erbpp_gsl"
-require "erbpp/line_number"
 
 ErbppGsl.read_func_pattern(
   [/^gsl_rstat_quantile_(\w+)$/,rquantile_list=[]],
@@ -22,6 +21,7 @@ class DefRstat < DefGslClass
 end
 
 DefLib.new do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
 

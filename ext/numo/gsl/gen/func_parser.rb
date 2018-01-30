@@ -1,5 +1,3 @@
-require_relative "erbpp2"
-
 class Argument
 
   def description

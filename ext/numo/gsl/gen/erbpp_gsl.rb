@@ -1,3 +1,5 @@
+require_relative "erbpp2"
+require_relative "erbln"
 require_relative "func_parser"
 
 module ErbppGsl

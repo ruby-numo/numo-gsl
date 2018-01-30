@@ -1,5 +1,4 @@
 require_relative "../gen/erbpp_gsl"
-require "erbpp/line_number"
 
 cdf_methods = ErbppGsl.read_func.select do |h|
   h[:func_name] =~ /^gsl_cdf_(\w+)$/ &&
@@ -21,6 +20,7 @@ class DefCdf < DefGslModule
 end
 
 DefLib.new do
+  set line_number: true
   set erb_dir: "../gen/tmpl"
   set erb_suffix: ".c"
 

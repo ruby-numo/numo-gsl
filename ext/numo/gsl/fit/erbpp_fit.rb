@@ -1,6 +1,4 @@
-require_relative "../gen/func_parser"
 require_relative "../gen/erbpp_gsl"
-require "erbpp/line_number"
 
 fit_list = ErbppGsl.read_func
 
@@ -51,6 +49,7 @@ class Fit < DefModuleFunction
 end
 
 DefLib.new do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"

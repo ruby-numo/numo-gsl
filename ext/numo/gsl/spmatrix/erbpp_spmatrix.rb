@@ -1,5 +1,5 @@
+require_relative "../gen/erbpp_gsl"
 require_relative "parse_spmatrix"
-require "erbpp/line_number"
 
 class_list = [
  ["SpMatrix","spmatrix",[]],
@@ -13,6 +13,7 @@ ErbppGsl.read_func_pattern(*class_list.map{|name,base|
 const_list = ErbppGsl.read_const
 
 DefLib.new do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"

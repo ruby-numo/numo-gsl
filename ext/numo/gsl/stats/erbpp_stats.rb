@@ -1,11 +1,12 @@
+require_relative "../gen/erbpp_gsl"
 require_relative "parse_stats"
-require "erbpp/line_number"
 
 ErbppGsl.read_func_pattern(
  [/^gsl_stats_(\w+)$/, stats_list=[]]
 )
 
 DefLib.new(nil) do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"

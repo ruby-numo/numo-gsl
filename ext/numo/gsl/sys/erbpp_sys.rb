@@ -1,5 +1,4 @@
 require_relative "../gen/erbpp_gsl"
-require "erbpp/line_number"
 
 func_list  = ErbppGsl.read_func
 const_list = ErbppGsl.read_const
@@ -26,6 +25,7 @@ class DefSys < DefGslModule
 end
 
 DefLib.new do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
 

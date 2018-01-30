@@ -1,6 +1,5 @@
-require_relative "parse_wavelet"
 require_relative "../gen/erbpp_gsl"
-require "erbpp/line_number"
+require_relative "parse_wavelet"
 
 
 gsl_list = ErbppGsl.read_func
@@ -16,6 +15,7 @@ ErbppGsl.read_func_pattern(
 list_2d << list_1d.find{|h| h[:func_name]=="gsl_wavelet_alloc"}
 
 DefLib.new do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"

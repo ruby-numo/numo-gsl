@@ -1,5 +1,4 @@
 require_relative "../gen/erbpp_gsl"
-require "erbpp/line_number"
 require "pp"
 
 ErbppGsl.read_func_pattern(
@@ -50,6 +49,7 @@ end
 
 
 DefLib.new do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
 

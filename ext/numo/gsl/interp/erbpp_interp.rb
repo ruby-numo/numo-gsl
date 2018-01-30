@@ -1,5 +1,5 @@
+require_relative "../gen/erbpp_gsl"
 require_relative "parse_interp"
-require "erbpp/line_number"
 
 gsl_list = ErbppGsl.read_func_pattern(
  [/^gsl_interp_accel_(\w+)$/,    interp_accel_list=[]],
@@ -20,6 +20,7 @@ gsl_list.each do |h|
 end
 
 DefLib.new do
+  set line_number: true
   set erb_dir: %w[tmpl ../gen/tmpl]
   set erb_suffix: ".c"
   set ns_var: "mG"
