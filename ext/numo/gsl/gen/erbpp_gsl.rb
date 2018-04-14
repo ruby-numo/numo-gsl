@@ -25,7 +25,9 @@ module ErbppGsl
 
   def read_eval(prefix)
     fmt = prefix + "_%s.rb"
-    fn = fmt % `gsl-config --version`.chomp
+    # MinGW fails to invoke shell script command (gsl-config)
+    cmd = "sh -c '`which gsl-config` --version'"
+    fn = fmt % `#{cmd}`.chomp
     if !File.exist?(fn)
       fn = fmt % "def"
     end

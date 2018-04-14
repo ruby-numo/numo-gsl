@@ -1,6 +1,7 @@
 require 'rbconfig.rb'
 require 'numo/narray'
 require 'mkmf'
+require_relative './mkmf_gsl'
 
 # configure options: --with-gsl-lib=path
 #dir_config("gsl")
@@ -8,7 +9,8 @@ require 'mkmf'
 # check gsl-config command
 print "checking for gsl-config... "
 begin
-  gsl_libs = `gsl-config --libs`
+  # MinGW fails to invoke shell script command (gsl-config)
+  gsl_libs = `sh -c '\`which gsl-config\` --libs'`.chomp
 rescue
   puts "no"
   exit 1
@@ -32,13 +34,22 @@ libs.each do |x|
 end
 
 # GSL include files
-$INCFLAGS = [`gsl-config --cflags`.chomp,$INCFLAGS].join(" ")
+gsl_cflags = `sh -c '\`which gsl-config\` --cflags'`.chomp
+$INCFLAGS = [gsl_cflags,$INCFLAGS].join(" ")
 
 # check narray.h
-$LOAD_PATH.each do |x|
-  if File.exist? File.join(x,'numo','numo/narray.h')
-    $INCFLAGS = "-I#{x}/numo " + $INCFLAGS
-    break
+find_narray_h
+if !have_header("numo/narray.h")
+  puts "Header numo/narray.h was not found. Give pathname as follows:
+  % ruby extconf.rb --with-narray-include=narray_h_dir"
+  exit(1)
+end
+
+# check libnarray.a
+if RUBY_PLATFORM =~ /mswin|cygwin|mingw/
+  find_libnarray_a
+  unless have_library("narray","nary_new")
+    puts "libnarray.a not found"
+    exit(1)
   end
 end
-exit 1 unless have_header('numo/narray.h')
