@@ -43,6 +43,7 @@ class DefRan < DefGslModule
     when FM(tp, dbl, type:dbl);         "ran"
     when FM(tp, *[dbl]*2, type:dbl);    "ran"
     when FM(tp, dbl, type:uint);        "ran"
+    when FM(tp, *[dbl]*2, type:uint);   "ran"
     when FM(tp, dbl,uint, type:uint);   "ran"
     when FM(tp, *[uint]*3, type:uint);  "ran"
     when FM(tp, *[dbl]*3,*[dblp]*2,);   "ran_DFloat_x2"
