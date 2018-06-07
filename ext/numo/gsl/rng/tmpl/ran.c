@@ -27,7 +27,11 @@ static VALUE
     <% @varconv.each do |x|%><%=x%>
     <% end %>
     if (nargs == <%=@params.size%>) {
+        <% if func_type == ErbppGsl.uint %>
+        return ULONG2NUM(<%=func_name%>(r <%@an.map{|a|%>, <%=a%><%}%>));
+        <% else %>
         return rb_float_new(<%=func_name%>(r <%@an.map{|a|%>, <%=a%><%}%>));
+        <% end %>
     } else {
         vna = create_new_narray(<%=get(:func_type_var)%>,vshape);
         ptr = (<%=func_type%>*)na_get_pointer_for_write(vna);
