@@ -8,9 +8,11 @@ require_relative './mkmf_gsl'
 
 # check gsl-config command
 print "checking for gsl-config... "
+gsl_config = nil
 begin
   # MinGW fails to invoke shell script command (gsl-config)
-  gsl_libs = `sh -c '\`which gsl-config\` --libs'`.chomp
+  gsl_config = `which gsl-config`.chomp
+  raise unless $?.success?
 rescue
   puts "no"
   exit 1
@@ -19,6 +21,7 @@ puts "yes"
 
 # parse GSL libs
 libs = []
+gsl_libs = `sh -c '#{gsl_config} --libs'`.chomp
 gsl_libs.split(/\s+/).each do |x|
   case x
   when /^-L(.+)/
@@ -34,7 +37,7 @@ libs.each do |x|
 end
 
 # GSL include files
-gsl_cflags = `sh -c '\`which gsl-config\` --cflags'`.chomp
+gsl_cflags = `sh -c '#{gsl_config} --cflags'`.chomp
 $INCFLAGS = [gsl_cflags,$INCFLAGS].join(" ")
 
 # check narray.h
