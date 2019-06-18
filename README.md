@@ -21,7 +21,7 @@ Implemented Modules:
   * [Pdf -- Probability Density Functions](http://ruby-numo.github.io/gsl/yard/Numo/GSL/Pdf.html)
   * [Cdf -- Cumulative Distribution Functions](http://ruby-numo.github.io/gsl/yard/Numo/GSL/Cdf.html)
 * [Stats -- Statistics](http://ruby-numo.github.io/gsl/yard/Numo/GSL/Stats.html)
-  * [Rstat -- Runnning Statistics](http://ruby-numo.github.io/gsl/yard/Numo/GSL/Rstat.html)
+  * [Rstat -- Running Statistics](http://ruby-numo.github.io/gsl/yard/Numo/GSL/Rstat.html)
 * [Histogram -- Histograms](http://ruby-numo.github.io/gsl/yard/Numo/GSL/Histogram.html)
   * [Histogram2D -- 2D Histograms](http://ruby-numo.github.io/gsl/yard/Numo/GSL/Histogram2D.html)
 * [Spline -- Interpolarion](http://ruby-numo.github.io/gsl/yard/Numo/GSL/Spline.html)
