@@ -1,3 +1,5 @@
+#!/bin/env ruby
+
 class ParseGslTexi
 
   def initialize
@@ -114,9 +116,9 @@ module ParseMacro
   def parse_enum(f)
     enum = []
     #f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
-    f.scan(/\benum\s*\{(.*?)\}/m) do |s,|
+    f.scan(/\benum\s*\{(.*?)\}/m) do |s,_|
       m = 0
-      s.scan(/(\w+)(?:\s*=\s*([-0-9]+))?(?:\s*,)?(?:\s*\/\*(.*?)\*\/)?/) do |k,n,c|
+      s.scan(%r/(\w+)(?:\s*=\s*([-0-9]+))?(?:\s*,)?(?:\s*\/\*(.*?)\*\/)?/) do |k,n,c|
         n = n ? n.to_i : m
         c = c ? c.strip : ""
         enum << [k,n,c]
@@ -125,7 +127,7 @@ module ParseMacro
     end
     enum
   end
-
+                                      
   def parse_type(f)
     t = []
     f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
@@ -143,7 +145,7 @@ end
 
 def write_def(out_path, def_file, version, content)
   fn = File.join(out_path, def_file % version)
-  open(fn,"w"){|f| PP.pp(content,f); f.sync }
+  open(fn,"w") {|f| PP.pp(content,f); f.sync }
   puts "Wrote #{content.size} items to "+fn
   dn = File.join(out_path, def_file % "def")
   if File.exist?(dn)
@@ -160,6 +162,9 @@ end
 def gendef_func(src_dir, src_files)
   /gsl-([\d.]+)/ =~ src_dir
   version    = $1
+
+  raise "Could not parse version from `#{src_dir}`" unless version
+  
   const_file = "const_%s.rb"
   func_file  = "func_%s.rb"
   type_file  = "type_%s.rb"
@@ -214,6 +219,7 @@ def gendef_func(src_dir, src_files)
     end
 
     if !funcs.empty?
+      funcs.sort! { |a,b| a[:func_name] <=> b[:func_name] }
       write_def(out_path, func_file, version, funcs)
     end
 
@@ -248,6 +254,7 @@ end
 if __FILE__ == $0
   require 'pp'
   require 'fileutils'
+  require 'optparse'
   require_relative 'parse_texi'
 
   enum_files =
@@ -342,7 +349,18 @@ if __FILE__ == $0
   ]
   enum_files = []
 =end
-  Dir.glob("../../gsl-*").reverse.each do |src_dir|
+
+  gsl_source_dir = nil
+  OptionParser.new do |opts|
+    opts.banner = "Usage: gendef.rb [options]"
+    opts.on("-s", "--source-dir=DIR", "GSL source directory") do |o|
+      gsl_source_dir = o
+    end
+  end.parse!
+  
+  raise ArgumentError, "Must provide --source-dir argument" unless gsl_source_dir
+  
+  Dir.glob(gsl_source_dir).reverse.each do |src_dir|
     puts src_dir
     gendef_func(src_dir,src_files)
     gendef_enum(src_dir,enum_files)
