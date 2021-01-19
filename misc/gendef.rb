@@ -330,21 +330,17 @@ if __FILE__ == $0
     "../ext/numo/gsl/wavelet",
     "wavelet/gsl_wavelet.h",
    ],
-   ["doc/fitting.texi",
-    "../ext/numo/gsl/fit",
-    nil,
-    /^gsl_fit_(.*)$/,
-   ],
-   ["doc/*fit*.texi",
-    "../ext/numo/gsl/multifit",
-    "multifit_nlinear/gsl_multifit*.h",
-    /^gsl_multifit_(.*)$/,
-   ],
-   ["doc/fitting.texi",
-    "../ext/numo/gsl/multilarge",
-    nil,
-    /^gsl_multilarge_(.*)$/,
-   ],
+
+   # pre-2.4:
+   ["doc/fitting.texi", "../ext/numo/gsl/fit", nil, /^gsl_fit_(.*)$/, ],
+   ["doc/*fit*.texi", "../ext/numo/gsl/multifit", "multifit_nlinear/gsl_multifit*.h", /^gsl_multifit_(.*)$/, ],
+   ["doc/fitting.texi", "../ext/numo/gsl/multilarge", nil, /^gsl_multilarge_(.*)$/, ],
+
+   # post-2.4:
+   ["doc/lls.rst", "../ext/numo/gsl/fit", nil, /^gsl_fit_(.*)$/, ],
+   ["doc/[ln]ls.rst", "../ext/numo/gsl/multifit", "multifit_nlinear/gsl_multifit*.h", /^gsl_multifit_(.*)$/, ],
+   ["doc/lls.rst", "../ext/numo/gsl/multilarge", nil, /^gsl_multilarge_(.*)$/, ],
+   
    ["doc/sp[bml]*.texi",
     "../ext/numo/gsl/spmatrix",
     nil,

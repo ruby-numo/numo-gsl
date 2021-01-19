@@ -7,6 +7,22 @@
    "allows for type checking of the arguments as an extra safety feature. On\n" +
    "platforms where inline functions are not available the macro\n" +
    "GSL_MAX will be automatically substituted."},
+ {:func_name=>"GSL_MAX_INT",
+  :func_type=>"extern inline int",
+  :args=>[["int", "a"], ["int", "b"]],
+  :desc=>
+   "These functions return the maximum or minimum of the integers a\n" +
+   "and b using an inline function.  On platforms where inline\n" +
+   "functions are not available the macros GSL_MAX or GSL_MIN\n" +
+   "will be automatically substituted."},
+ {:func_name=>"GSL_MAX_LDBL",
+  :func_type=>"extern inline long double",
+  :args=>[["long double", "a"], ["long double", "b"]],
+  :desc=>
+   "These functions return the maximum or minimum of the long doubles a\n" +
+   "and b using an inline function.  On platforms where inline\n" +
+   "functions are not available the macros GSL_MAX or GSL_MIN\n" +
+   "will be automatically substituted."},
  {:func_name=>"GSL_MIN_DBL",
   :func_type=>"extern inline double",
   :args=>[["double", "a"], ["double", "b"]],
@@ -16,6 +32,22 @@
    "allows for type checking of the arguments as an extra safety feature. On\n" +
    "platforms where inline functions are not available the macro\n" +
    "GSL_MIN will be automatically substituted."},
+ {:func_name=>"GSL_MIN_INT",
+  :func_type=>"extern inline int",
+  :args=>[["int", "a"], ["int", "b"]],
+  :desc=>
+   "These functions return the maximum or minimum of the integers a\n" +
+   "and b using an inline function.  On platforms where inline\n" +
+   "functions are not available the macros GSL_MAX or GSL_MIN\n" +
+   "will be automatically substituted."},
+ {:func_name=>"GSL_MIN_LDBL",
+  :func_type=>"extern inline long double",
+  :args=>[["long double", "a"], ["long double", "b"]],
+  :desc=>
+   "These functions return the maximum or minimum of the long doubles a\n" +
+   "and b using an inline function.  On platforms where inline\n" +
+   "functions are not available the macros GSL_MAX or GSL_MIN\n" +
+   "will be automatically substituted."},
  {:func_name=>"gsl_acosh",
   :func_type=>"double",
   :args=>[["const double", "x"]],
@@ -111,4 +143,94 @@
   :desc=>
    "This function computes the value of \\log(1+x) in a way that is\n" +
    "accurate for small x. It provides an alternative to the BSD math\n" +
-   "function log1p(x)."}]
+   "function log1p(x)."},
+ {:func_name=>"gsl_pow_2",
+  :func_type=>"double",
+  :args=>[["const double", "x"]],
+  :desc=>
+   "These functions can be used to compute small integer powers x^2,\n" +
+   "x^3, etc. efficiently. The functions will be inlined when \n" +
+   "HAVE_INLINE is defined, so that use of these functions \n" +
+   "should be as efficient as explicitly writing the corresponding \n" +
+   "product expression::"},
+ {:func_name=>"gsl_pow_3",
+  :func_type=>"double",
+  :args=>[["const double", "x"]],
+  :desc=>
+   "These functions can be used to compute small integer powers x^2,\n" +
+   "x^3, etc. efficiently. The functions will be inlined when \n" +
+   "HAVE_INLINE is defined, so that use of these functions \n" +
+   "should be as efficient as explicitly writing the corresponding \n" +
+   "product expression::"},
+ {:func_name=>"gsl_pow_4",
+  :func_type=>"double",
+  :args=>[["const double", "x"]],
+  :desc=>
+   "These functions can be used to compute small integer powers x^2,\n" +
+   "x^3, etc. efficiently. The functions will be inlined when \n" +
+   "HAVE_INLINE is defined, so that use of these functions \n" +
+   "should be as efficient as explicitly writing the corresponding \n" +
+   "product expression::"},
+ {:func_name=>"gsl_pow_5",
+  :func_type=>"double",
+  :args=>[["const double", "x"]],
+  :desc=>
+   "These functions can be used to compute small integer powers x^2,\n" +
+   "x^3, etc. efficiently. The functions will be inlined when \n" +
+   "HAVE_INLINE is defined, so that use of these functions \n" +
+   "should be as efficient as explicitly writing the corresponding \n" +
+   "product expression::"},
+ {:func_name=>"gsl_pow_6",
+  :func_type=>"double",
+  :args=>[["const double", "x"]],
+  :desc=>
+   "These functions can be used to compute small integer powers x^2,\n" +
+   "x^3, etc. efficiently. The functions will be inlined when \n" +
+   "HAVE_INLINE is defined, so that use of these functions \n" +
+   "should be as efficient as explicitly writing the corresponding \n" +
+   "product expression::"},
+ {:func_name=>"gsl_pow_7",
+  :func_type=>"double",
+  :args=>[["const double", "x"]],
+  :desc=>
+   "These functions can be used to compute small integer powers x^2,\n" +
+   "x^3, etc. efficiently. The functions will be inlined when \n" +
+   "HAVE_INLINE is defined, so that use of these functions \n" +
+   "should be as efficient as explicitly writing the corresponding \n" +
+   "product expression::"},
+ {:func_name=>"gsl_pow_8",
+  :func_type=>"double",
+  :args=>[["const double", "x"]],
+  :desc=>
+   "These functions can be used to compute small integer powers x^2,\n" +
+   "x^3, etc. efficiently. The functions will be inlined when \n" +
+   "HAVE_INLINE is defined, so that use of these functions \n" +
+   "should be as efficient as explicitly writing the corresponding \n" +
+   "product expression::"},
+ {:func_name=>"gsl_pow_9",
+  :func_type=>"double",
+  :args=>[["const double", "x"]],
+  :desc=>
+   "These functions can be used to compute small integer powers x^2,\n" +
+   "x^3, etc. efficiently. The functions will be inlined when \n" +
+   "HAVE_INLINE is defined, so that use of these functions \n" +
+   "should be as efficient as explicitly writing the corresponding \n" +
+   "product expression::"},
+ {:func_name=>"gsl_pow_int",
+  :func_type=>"double",
+  :args=>[["double", "x"], ["int", "n"]],
+  :desc=>
+   "These routines computes the power x^n for integer n.  The\n" +
+   "power is computed efficiently---for example, x^8 is computed as\n" +
+   "((x^2)^2)^2, requiring only 3 multiplications.  A version of this\n" +
+   "function which also computes the numerical error in the result is\n" +
+   "available as gsl_sf_pow_int_e."},
+ {:func_name=>"gsl_pow_uint",
+  :func_type=>"double",
+  :args=>[["double", "x"], ["unsigned int", "n"]],
+  :desc=>
+   "These routines computes the power x^n for integer n.  The\n" +
+   "power is computed efficiently---for example, x^8 is computed as\n" +
+   "((x^2)^2)^2, requiring only 3 multiplications.  A version of this\n" +
+   "function which also computes the numerical error in the result is\n" +
+   "available as gsl_sf_pow_int_e."}]

@@ -10,7 +10,8 @@ class CfuncProto
     parse(str)
   end
   
-  #'int gsl_sf_legendre_H3d_1_e (double lambda, double eta, gsl_sf_result * result)'
+  #example str:
+  #  'int gsl_sf_legendre_H3d_1_e (double lambda, double eta, gsl_sf_result * result)'
   def parse(str)
     matcher = str.match(%r/\A (?<fprefix>.*) \s* \( \s* (?<args>.*) \s* \) \s* (?<tail>.*) \s* \z/x)
     raise "bad match `#{str}`" unless matcher
@@ -44,10 +45,10 @@ class RstMacro
 end
   
 class RstFuncGroup
-  def initialize(funcline)
+  def initialize(funcline=nil)
     @functions = []
     @desc = []
-    add_func(funcline)
+    add_func(funcline) if funcline
   end
   def add_func(funcline)
     func = funcline.strip
@@ -78,13 +79,14 @@ end
 
 class ParseGslRst
 
-  def initialize(fn)
+  def initialize(fn, debug: false)
     @funcs = []
     @macros = []
+    @debug = debug
     parse(fn)
   end
 
-  attr_reader :funcs, :macros
+  attr_reader :funcs, :macros, :debug
   alias_method :tables, :macros
   alias_method :deftypefun, :funcs
 
@@ -96,9 +98,16 @@ class ParseGslRst
     funcgrp, curmacro = nil, nil
     
     lines.each do |line|
-      if line =~ /^\.\. function:: (.*)$/
+      if line =~ /^\.\. function::\s*$/
+        # beginning of a function-group, but without a function on the line
+        # in this case, the function intdentation will be 3 chars.
+        state = :func3
+        funcgrp = RstFuncGroup.new
+        allfgrps << funcgrp
+        
+      elsif line =~ /^\.\. function:: (.*)$/
         # Capture a c-function signature.  There may be more than one.
-        state = :func
+        state = :func14
         funcgrp = RstFuncGroup.new($1)
         allfgrps << funcgrp
         
@@ -108,6 +117,7 @@ class ParseGslRst
         state = :macro
         curmacro = RstMacro.new($1)
         macros << curmacro
+        
       elsif line =~ /^\.\. (Exceptional Return Values:.*)$/
         # comment for a function
         funcgrp.add_desc($1)
@@ -118,11 +128,21 @@ class ParseGslRst
         # this will reset our state machine
         state = nil
         
-      elsif state == :func && line =~ /^\s{14}(.*)$/
-        # an additional function
+
+      elsif %i[func3 func14].include?(state) && line.strip.empty?
+        # if we're in a function group and hit an empty line then
+        # the function group is "closed" and now were in a comment.
+        state = :fcomment
+
+      elsif state == :func14 && line =~ /^\s{14}(.*)$/
+        # an additional function that is fully indented (14-spcs)
         funcgrp.add_func($1)
-        
-      elsif (state == :func || state == :fcomment) && line =~ /^\s{3}(\S.*)/
+
+      elsif state == :func3 && line =~ /^\s{3}(.*)$/
+        # an additional function that is fully indented (3-spcs)
+        funcgrp.add_func($1)
+
+      elsif %i[func14 fcomment].include?(state) && line =~ /^\s{3}(\S.*)/
         raw_desc = $1
         next if raw_desc =~ /^\s*\.\. image::/ # skip images
         # comment for a function
@@ -139,7 +159,8 @@ class ParseGslRst
         # with a word-character then our indented block is finished.
         state = nil
       end
-      #DEBUG-PARSE: p [state, line]
+      #DEBUG-PARSE:
+      p [state, line] if debug
     end
 
     # We now have everything as a list of Objects, but we
@@ -162,9 +183,15 @@ if __FILE__ == $0
   require 'optparse'
   require_relative 'parse_texi'
 
+  debug = nil
+  OptionParser.new do |opts|
+    opts.banner = "Usage: parse_rst.rb [options]"
+    opts.on("-d", "--debug", "debug parse") { debug = true }
+  end.parse!
+
   ARGV.each do |fn|
     p fn
-    data = ParseGslRst.new(fn)
+    data = ParseGslRst.new(fn, debug: debug)
     puts "## Functions ##"
     pp data.funcs
     puts "## Macros ##"
