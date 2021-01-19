@@ -161,9 +161,17 @@ end
 
 def gendef_func(src_dir, src_files)
   /gsl-([\d.]+)/ =~ src_dir
-  version    = $1
+  version = $1
+
 
   raise "Could not parse version from `#{src_dir}`" unless version
+
+  parse_mode = :texi
+  this_version = Gem::Version.new(version)
+  if this_version >= Gem::Version.new("2.4")
+    puts "Parsing .rst files instead of .texi"
+    parse_mode = :rst
+  end
   
   const_file = "const_%s.rb"
   func_file  = "func_%s.rb"
@@ -194,11 +202,19 @@ def gendef_func(src_dir, src_files)
       end
     end
 
-    Dir.glob(File.join(src_dir,texi_pat)) do |fn|
+    doc_pat = (parse_mode == :texi) ? texi_pat : texi_pat.sub(/\.texi/, '.rst')
+    
+    Dir.glob(File.join(src_dir,doc_pat)) do |fn|
       puts "# #{File.basename(fn)}"
-      a = ParseTexi.parse(open(fn))
-      g = ParseGslTexi.new
-      g.parse(a)
+
+      if parse_mode == :rst
+        g = ParseGslRst.new(fn)
+      else
+        a = ParseTexi.parse(open(fn))
+        g = ParseGslTexi.new
+        g.parse(a)
+      end
+
       g.tables.each do |t|
         t.each do |x|
           if name_re && name_re =~ x[0]
@@ -210,7 +226,7 @@ def gendef_func(src_dir, src_files)
       f = f.select{|h| name_re =~ h[:func_name]} if name_re
       funcs.concat(f)
     end
-
+    
     FileUtils.mkdir_p(out_path)
 
     if !const.empty?
@@ -256,6 +272,7 @@ if __FILE__ == $0
   require 'fileutils'
   require 'optparse'
   require_relative 'parse_texi'
+  require_relative 'parse_rst'
 
   enum_files =
   [
@@ -283,14 +300,10 @@ if __FILE__ == $0
     "gsl_mode.h",
     /.*/
    ],
-   ["doc/poly.texi",
-    "../ext/numo/gsl/poly"],
-   ["doc/specfunc-*.texi",
-    "../ext/numo/gsl/sf"],
-   ["doc/statistics.texi",
-    "../ext/numo/gsl/stats"],
-   ["doc/randist.texi",
-    "../ext/numo/gsl/ran"],
+   ["doc/poly.texi", "../ext/numo/gsl/poly"],
+   ["doc/specfunc-*.texi", "../ext/numo/gsl/sf"],
+   ["doc/statistics.texi", "../ext/numo/gsl/stats"],
+   ["doc/randist.texi", "../ext/numo/gsl/ran"],
    ["doc/randist.texi",
     "../ext/numo/gsl/pdf",
     nil,
@@ -362,7 +375,7 @@ if __FILE__ == $0
   
   Dir.glob(gsl_source_dir).reverse.each do |src_dir|
     puts src_dir
-    gendef_func(src_dir,src_files)
-    gendef_enum(src_dir,enum_files)
+    gendef_func(src_dir, src_files)
+    gendef_enum(src_dir, enum_files)
   end
 end

@@ -57,10 +57,11 @@ class RstFuncGroup
   def add_desc(desc)
     @desc << desc
   end
+
+  # join and filter the description on the way out
   def get_desc
-    str = @desc.join("\n")
-    # filter the desc
-    str.gsub!(/:(data|code|func|math):`([^`]*)`/,"\\2")
+    str = @desc.reject{|s| s.empty?}.join("\n")
+    str.gsub!(/:(data|code|func|math|macro):`([^`]*)`/,"\\2")
     #str.gsub!(/:math:`([^`]*)`/,"$\\1$")
     return str
   end
@@ -74,8 +75,6 @@ class RstFuncGroup
   end
   
 end
-
-
 
 class ParseGslRst
 
