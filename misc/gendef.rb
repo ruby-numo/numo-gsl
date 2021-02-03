@@ -1,3 +1,5 @@
+#!/bin/env ruby
+
 class ParseGslTexi
 
   def initialize
@@ -114,9 +116,9 @@ module ParseMacro
   def parse_enum(f)
     enum = []
     #f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
-    f.scan(/\benum\s*\{(.*?)\}/m) do |s,|
+    f.scan(/\benum\s*\{(.*?)\}/m) do |s,_|
       m = 0
-      s.scan(/(\w+)(?:\s*=\s*([-0-9]+))?(?:\s*,)?(?:\s*\/\*(.*?)\*\/)?/) do |k,n,c|
+      s.scan(%r/(\w+)(?:\s*=\s*([-0-9]+))?(?:\s*,)?(?:\s*\/\*(.*?)\*\/)?/) do |k,n,c|
         n = n ? n.to_i : m
         c = c ? c.strip : ""
         enum << [k,n,c]
@@ -125,7 +127,7 @@ module ParseMacro
     end
     enum
   end
-
+                                      
   def parse_type(f)
     t = []
     f = f.gsub(%r|/\*.*?\*/|,"").gsub(%r|//.*$|,"")
@@ -143,7 +145,7 @@ end
 
 def write_def(out_path, def_file, version, content)
   fn = File.join(out_path, def_file % version)
-  open(fn,"w"){|f| PP.pp(content,f); f.sync }
+  open(fn,"w") {|f| PP.pp(content,f); f.sync }
   puts "Wrote #{content.size} items to "+fn
   dn = File.join(out_path, def_file % "def")
   if File.exist?(dn)
@@ -159,7 +161,18 @@ end
 
 def gendef_func(src_dir, src_files)
   /gsl-([\d.]+)/ =~ src_dir
-  version    = $1
+  version = $1
+
+
+  raise "Could not parse version from `#{src_dir}`" unless version
+
+  parse_mode = :texi
+  this_version = Gem::Version.new(version)
+  if this_version >= Gem::Version.new("2.4")
+    puts "Parsing .rst files instead of .texi"
+    parse_mode = :rst
+  end
+  
   const_file = "const_%s.rb"
   func_file  = "func_%s.rb"
   type_file  = "type_%s.rb"
@@ -189,11 +202,19 @@ def gendef_func(src_dir, src_files)
       end
     end
 
-    Dir.glob(File.join(src_dir,texi_pat)) do |fn|
+    doc_pat = (parse_mode == :texi) ? texi_pat : texi_pat.sub(/\.texi/, '.rst')
+    
+    Dir.glob(File.join(src_dir,doc_pat)) do |fn|
       puts "# #{File.basename(fn)}"
-      a = ParseTexi.parse(open(fn))
-      g = ParseGslTexi.new
-      g.parse(a)
+
+      if parse_mode == :rst
+        g = ParseGslRst.new(fn)
+      else
+        a = ParseTexi.parse(open(fn))
+        g = ParseGslTexi.new
+        g.parse(a)
+      end
+
       g.tables.each do |t|
         t.each do |x|
           if name_re && name_re =~ x[0]
@@ -205,7 +226,7 @@ def gendef_func(src_dir, src_files)
       f = f.select{|h| name_re =~ h[:func_name]} if name_re
       funcs.concat(f)
     end
-
+    
     FileUtils.mkdir_p(out_path)
 
     if !const.empty?
@@ -214,6 +235,7 @@ def gendef_func(src_dir, src_files)
     end
 
     if !funcs.empty?
+      funcs.sort! { |a,b| a[:func_name] <=> b[:func_name] }
       write_def(out_path, func_file, version, funcs)
     end
 
@@ -248,7 +270,9 @@ end
 if __FILE__ == $0
   require 'pp'
   require 'fileutils'
+  require 'optparse'
   require_relative 'parse_texi'
+  require_relative 'parse_rst'
 
   enum_files =
   [
@@ -276,14 +300,10 @@ if __FILE__ == $0
     "gsl_mode.h",
     /.*/
    ],
-   ["doc/poly.texi",
-    "../ext/numo/gsl/poly"],
-   ["doc/specfunc-*.texi",
-    "../ext/numo/gsl/sf"],
-   ["doc/statistics.texi",
-    "../ext/numo/gsl/stats"],
-   ["doc/randist.texi",
-    "../ext/numo/gsl/ran"],
+   ["doc/poly.texi", "../ext/numo/gsl/poly"],
+   ["doc/specfunc-*.texi", "../ext/numo/gsl/sf"],
+   ["doc/statistics.texi", "../ext/numo/gsl/stats"],
+   ["doc/randist.texi", "../ext/numo/gsl/ran"],
    ["doc/randist.texi",
     "../ext/numo/gsl/pdf",
     nil,
@@ -310,21 +330,17 @@ if __FILE__ == $0
     "../ext/numo/gsl/wavelet",
     "wavelet/gsl_wavelet.h",
    ],
-   ["doc/fitting.texi",
-    "../ext/numo/gsl/fit",
-    nil,
-    /^gsl_fit_(.*)$/,
-   ],
-   ["doc/*fit*.texi",
-    "../ext/numo/gsl/multifit",
-    "multifit_nlinear/gsl_multifit*.h",
-    /^gsl_multifit_(.*)$/,
-   ],
-   ["doc/fitting.texi",
-    "../ext/numo/gsl/multilarge",
-    nil,
-    /^gsl_multilarge_(.*)$/,
-   ],
+
+   # pre-2.4:
+   ["doc/fitting.texi", "../ext/numo/gsl/fit", nil, /^gsl_fit_(.*)$/, ],
+   ["doc/*fit*.texi", "../ext/numo/gsl/multifit", "multifit_nlinear/gsl_multifit*.h", /^gsl_multifit_(.*)$/, ],
+   ["doc/fitting.texi", "../ext/numo/gsl/multilarge", nil, /^gsl_multilarge_(.*)$/, ],
+
+   # post-2.4:
+   ["doc/lls.rst", "../ext/numo/gsl/fit", nil, /^gsl_fit_(.*)$/, ],
+   ["doc/[ln]ls.rst", "../ext/numo/gsl/multifit", "multifit_nlinear/gsl_multifit*.h", /^gsl_multifit_(.*)$/, ],
+   ["doc/lls.rst", "../ext/numo/gsl/multilarge", nil, /^gsl_multilarge_(.*)$/, ],
+   
    ["doc/sp[bml]*.texi",
     "../ext/numo/gsl/spmatrix",
     nil,
@@ -342,9 +358,20 @@ if __FILE__ == $0
   ]
   enum_files = []
 =end
-  Dir.glob("../../gsl-*").reverse.each do |src_dir|
+
+  gsl_source_dir = nil
+  OptionParser.new do |opts|
+    opts.banner = "Usage: gendef.rb [options]"
+    opts.on("-s", "--source-dir=DIR", "GSL source directory") do |o|
+      gsl_source_dir = o
+    end
+  end.parse!
+  
+  raise ArgumentError, "Must provide --source-dir argument" unless gsl_source_dir
+  
+  Dir.glob(gsl_source_dir).reverse.each do |src_dir|
     puts src_dir
-    gendef_func(src_dir,src_files)
-    gendef_enum(src_dir,enum_files)
+    gendef_func(src_dir, src_files)
+    gendef_enum(src_dir, enum_files)
   end
 end
